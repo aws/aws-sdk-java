@@ -47,7 +47,7 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * One or more custom attributes that describe the endpoint by associating a name with an array of values. For
-     * example, the value of a custom attribute named Interests might be: ["science", "music", "travel"]. You can use
+     * example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use
      * these attributes as filter criteria when you create segments.
      * </p>
      */
@@ -246,12 +246,12 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * One or more custom attributes that describe the endpoint by associating a name with an array of values. For
-     * example, the value of a custom attribute named Interests might be: ["science", "music", "travel"]. You can use
+     * example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use
      * these attributes as filter criteria when you create segments.
      * </p>
      * 
      * @return One or more custom attributes that describe the endpoint by associating a name with an array of values.
-     *         For example, the value of a custom attribute named Interests might be: ["science", "music", "travel"].
+     *         For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"].
      *         You can use these attributes as filter criteria when you create segments.
      */
 
@@ -262,13 +262,13 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * One or more custom attributes that describe the endpoint by associating a name with an array of values. For
-     * example, the value of a custom attribute named Interests might be: ["science", "music", "travel"]. You can use
+     * example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use
      * these attributes as filter criteria when you create segments.
      * </p>
      * 
      * @param attributes
      *        One or more custom attributes that describe the endpoint by associating a name with an array of values.
-     *        For example, the value of a custom attribute named Interests might be: ["science", "music", "travel"]. You
+     *        For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You
      *        can use these attributes as filter criteria when you create segments.
      */
 
@@ -279,13 +279,13 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * One or more custom attributes that describe the endpoint by associating a name with an array of values. For
-     * example, the value of a custom attribute named Interests might be: ["science", "music", "travel"]. You can use
+     * example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use
      * these attributes as filter criteria when you create segments.
      * </p>
      * 
      * @param attributes
      *        One or more custom attributes that describe the endpoint by associating a name with an array of values.
-     *        For example, the value of a custom attribute named Interests might be: ["science", "music", "travel"]. You
+     *        For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You
      *        can use these attributes as filter criteria when you create segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

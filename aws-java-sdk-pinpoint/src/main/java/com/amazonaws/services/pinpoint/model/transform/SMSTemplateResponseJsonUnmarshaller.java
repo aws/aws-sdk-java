@@ -68,6 +68,10 @@ public class SMSTemplateResponseJsonUnmarshaller implements Unmarshaller<SMSTemp
                     context.nextToken();
                     sMSTemplateResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RecommenderId", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateResponse.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     sMSTemplateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

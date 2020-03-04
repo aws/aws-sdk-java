@@ -175,8 +175,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
     private String state;
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the journey. Each tag
-     * consists of a required tag key and an associated tag value.
+     * This object is not used or supported.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -1238,12 +1237,10 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the journey. Each tag
-     * consists of a required tag key and an associated tag value.
+     * This object is not used or supported.
      * </p>
      * 
-     * @return A string-to-string map of key-value pairs that identifies the tags that are associated with the journey.
-     *         Each tag consists of a required tag key and an associated tag value.
+     * @return This object is not used or supported.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1252,13 +1249,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the journey. Each tag
-     * consists of a required tag key and an associated tag value.
+     * This object is not used or supported.
      * </p>
      * 
      * @param tags
-     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the journey.
-     *        Each tag consists of a required tag key and an associated tag value.
+     *        This object is not used or supported.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1267,13 +1262,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the journey. Each tag
-     * consists of a required tag key and an associated tag value.
+     * This object is not used or supported.
      * </p>
      * 
      * @param tags
-     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the journey.
-     *        Each tag consists of a required tag key and an associated tag value.
+     *        This object is not used or supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -475,6 +475,40 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRecommenderConfigurationResult> createRecommenderConfigurationAsync(CreateRecommenderConfigurationRequest request) {
+
+        return createRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRecommenderConfigurationResult> createRecommenderConfigurationAsync(
+            final CreateRecommenderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRecommenderConfigurationRequest, CreateRecommenderConfigurationResult> asyncHandler) {
+        final CreateRecommenderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRecommenderConfigurationResult>() {
+            @Override
+            public CreateRecommenderConfigurationResult call() throws Exception {
+                CreateRecommenderConfigurationResult result = null;
+
+                try {
+                    result = executeCreateRecommenderConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest request) {
 
         return createSegmentAsync(request, null);
@@ -1053,6 +1087,40 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeDeletePushTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRecommenderConfigurationResult> deleteRecommenderConfigurationAsync(DeleteRecommenderConfigurationRequest request) {
+
+        return deleteRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRecommenderConfigurationResult> deleteRecommenderConfigurationAsync(
+            final DeleteRecommenderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRecommenderConfigurationRequest, DeleteRecommenderConfigurationResult> asyncHandler) {
+        final DeleteRecommenderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRecommenderConfigurationResult>() {
+            @Override
+            public DeleteRecommenderConfigurationResult call() throws Exception {
+                DeleteRecommenderConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteRecommenderConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2276,6 +2344,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeGetPushTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationResult> getRecommenderConfigurationAsync(GetRecommenderConfigurationRequest request) {
+
+        return getRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationResult> getRecommenderConfigurationAsync(final GetRecommenderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRecommenderConfigurationRequest, GetRecommenderConfigurationResult> asyncHandler) {
+        final GetRecommenderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRecommenderConfigurationResult>() {
+            @Override
+            public GetRecommenderConfigurationResult call() throws Exception {
+                GetRecommenderConfigurationResult result = null;
+
+                try {
+                    result = executeGetRecommenderConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationsResult> getRecommenderConfigurationsAsync(GetRecommenderConfigurationsRequest request) {
+
+        return getRecommenderConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationsResult> getRecommenderConfigurationsAsync(final GetRecommenderConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRecommenderConfigurationsRequest, GetRecommenderConfigurationsResult> asyncHandler) {
+        final GetRecommenderConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRecommenderConfigurationsResult>() {
+            @Override
+            public GetRecommenderConfigurationsResult call() throws Exception {
+                GetRecommenderConfigurationsResult result = null;
+
+                try {
+                    result = executeGetRecommenderConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3563,6 +3697,40 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeUpdatePushTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRecommenderConfigurationResult> updateRecommenderConfigurationAsync(UpdateRecommenderConfigurationRequest request) {
+
+        return updateRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRecommenderConfigurationResult> updateRecommenderConfigurationAsync(
+            final UpdateRecommenderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRecommenderConfigurationRequest, UpdateRecommenderConfigurationResult> asyncHandler) {
+        final UpdateRecommenderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRecommenderConfigurationResult>() {
+            @Override
+            public UpdateRecommenderConfigurationResult call() throws Exception {
+                UpdateRecommenderConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateRecommenderConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

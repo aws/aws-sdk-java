@@ -64,7 +64,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later.
+     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      * </p>
      * </li>
      * <li>
@@ -181,7 +181,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later.
+     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      * </p>
      * </li>
      * <li>
@@ -229,8 +229,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again
-     *        later.
+     *        TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      *        </p>
      *        </li>
      *        <li>
@@ -285,7 +284,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later.
+     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      * </p>
      * </li>
      * <li>
@@ -332,8 +331,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      *         </li>
      *         <li>
      *         <p>
-     *         TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again
-     *         later.
+     *         TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      *         </p>
      *         </li>
      *         <li>
@@ -388,7 +386,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later.
+     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      * </p>
      * </li>
      * <li>
@@ -436,8 +434,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again
-     *        later.
+     *        TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      *        </p>
      *        </li>
      *        <li>
@@ -494,7 +491,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later.
+     * TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      * </p>
      * </li>
      * <li>
@@ -542,8 +539,7 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again
-     *        later.
+     *        TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.
      *        </p>
      *        </li>
      *        <li>

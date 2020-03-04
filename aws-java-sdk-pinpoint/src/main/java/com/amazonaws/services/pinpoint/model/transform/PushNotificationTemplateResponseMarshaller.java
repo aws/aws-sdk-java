@@ -47,6 +47,8 @@ public class PushNotificationTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCM").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+    private static final MarshallingInfo<String> RECOMMENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -83,6 +85,7 @@ public class PushNotificationTemplateResponseMarshaller {
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getGCM(), GCM_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(pushNotificationTemplateResponse.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);

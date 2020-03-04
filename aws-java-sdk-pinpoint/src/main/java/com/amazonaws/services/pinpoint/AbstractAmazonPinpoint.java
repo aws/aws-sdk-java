@@ -73,6 +73,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public CreateRecommenderConfigurationResult createRecommenderConfiguration(CreateRecommenderConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSegmentResult createSegment(CreateSegmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public DeletePushTemplateResult deletePushTemplate(DeletePushTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRecommenderConfigurationResult deleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -344,6 +354,16 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetPushTemplateResult getPushTemplate(GetPushTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRecommenderConfigurationResult getRecommenderConfiguration(GetRecommenderConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRecommenderConfigurationsResult getRecommenderConfigurations(GetRecommenderConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -539,6 +559,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdatePushTemplateResult updatePushTemplate(UpdatePushTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRecommenderConfigurationResult updateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

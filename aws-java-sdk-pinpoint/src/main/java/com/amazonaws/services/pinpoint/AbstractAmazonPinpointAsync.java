@@ -119,6 +119,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRecommenderConfigurationResult> createRecommenderConfigurationAsync(CreateRecommenderConfigurationRequest request) {
+
+        return createRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRecommenderConfigurationResult> createRecommenderConfigurationAsync(CreateRecommenderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRecommenderConfigurationRequest, CreateRecommenderConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest request) {
 
         return createSegmentAsync(request, null);
@@ -348,6 +361,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<DeletePushTemplateResult> deletePushTemplateAsync(DeletePushTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePushTemplateRequest, DeletePushTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRecommenderConfigurationResult> deleteRecommenderConfigurationAsync(DeleteRecommenderConfigurationRequest request) {
+
+        return deleteRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRecommenderConfigurationResult> deleteRecommenderConfigurationAsync(DeleteRecommenderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRecommenderConfigurationRequest, DeleteRecommenderConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -831,6 +857,32 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetPushTemplateResult> getPushTemplateAsync(GetPushTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPushTemplateRequest, GetPushTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationResult> getRecommenderConfigurationAsync(GetRecommenderConfigurationRequest request) {
+
+        return getRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationResult> getRecommenderConfigurationAsync(GetRecommenderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRecommenderConfigurationRequest, GetRecommenderConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationsResult> getRecommenderConfigurationsAsync(GetRecommenderConfigurationsRequest request) {
+
+        return getRecommenderConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommenderConfigurationsResult> getRecommenderConfigurationsAsync(GetRecommenderConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRecommenderConfigurationsRequest, GetRecommenderConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1338,6 +1390,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<UpdatePushTemplateResult> updatePushTemplateAsync(UpdatePushTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePushTemplateRequest, UpdatePushTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRecommenderConfigurationResult> updateRecommenderConfigurationAsync(UpdateRecommenderConfigurationRequest request) {
+
+        return updateRecommenderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRecommenderConfigurationResult> updateRecommenderConfigurationAsync(UpdateRecommenderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRecommenderConfigurationRequest, UpdateRecommenderConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

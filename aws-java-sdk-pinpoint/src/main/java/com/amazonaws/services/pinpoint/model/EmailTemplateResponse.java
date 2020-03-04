@@ -63,6 +63,12 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
     private String lastModifiedDate;
     /**
      * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     */
+    private String recommenderId;
+    /**
+     * <p>
      * The subject line, or title, that's used in email messages that are based on the message template.
      * </p>
      */
@@ -315,6 +321,46 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
 
     public EmailTemplateResponse withLastModifiedDate(String lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model that's used by the message template.
+     */
+
+    public void setRecommenderId(String recommenderId) {
+        this.recommenderId = recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     * 
+     * @return The unique identifier for the recommender model that's used by the message template.
+     */
+
+    public String getRecommenderId() {
+        return this.recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model that's used by the message template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailTemplateResponse withRecommenderId(String recommenderId) {
+        setRecommenderId(recommenderId);
         return this;
     }
 
@@ -683,6 +729,8 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             sb.append("HtmlPart: ").append(getHtmlPart()).append(",");
         if (getLastModifiedDate() != null)
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getRecommenderId() != null)
+            sb.append("RecommenderId: ").append(getRecommenderId()).append(",");
         if (getSubject() != null)
             sb.append("Subject: ").append(getSubject()).append(",");
         if (getTags() != null)
@@ -731,6 +779,10 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
             return false;
         if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
+        if (other.getRecommenderId() == null ^ this.getRecommenderId() == null)
+            return false;
+        if (other.getRecommenderId() != null && other.getRecommenderId().equals(this.getRecommenderId()) == false)
+            return false;
         if (other.getSubject() == null ^ this.getSubject() == null)
             return false;
         if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
@@ -772,6 +824,7 @@ public class EmailTemplateResponse implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getHtmlPart() == null) ? 0 : getHtmlPart().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getRecommenderId() == null) ? 0 : getRecommenderId().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());

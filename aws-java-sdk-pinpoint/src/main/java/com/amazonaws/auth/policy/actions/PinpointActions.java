@@ -39,6 +39,8 @@ public enum PinpointActions implements Action {
     CreateJourney("pinpoint:CreateJourney"),
     /** Action for the CreatePushTemplate operation. */
     CreatePushTemplate("pinpoint:CreatePushTemplate"),
+    /** Action for the CreateRecommenderConfiguration operation. */
+    CreateRecommenderConfiguration("pinpoint:CreateRecommenderConfiguration"),
     /** Action for the CreateSegment operation. */
     CreateSegment("pinpoint:CreateSegment"),
     /** Action for the CreateSmsTemplate operation. */
@@ -75,6 +77,8 @@ public enum PinpointActions implements Action {
     DeleteJourney("pinpoint:DeleteJourney"),
     /** Action for the DeletePushTemplate operation. */
     DeletePushTemplate("pinpoint:DeletePushTemplate"),
+    /** Action for the DeleteRecommenderConfiguration operation. */
+    DeleteRecommenderConfiguration("pinpoint:DeleteRecommenderConfiguration"),
     /** Action for the DeleteSegment operation. */
     DeleteSegment("pinpoint:DeleteSegment"),
     /** Action for the DeleteSmsChannel operation. */
@@ -149,6 +153,10 @@ public enum PinpointActions implements Action {
     GetJourneyExecutionMetrics("pinpoint:GetJourneyExecutionMetrics"),
     /** Action for the GetPushTemplate operation. */
     GetPushTemplate("pinpoint:GetPushTemplate"),
+    /** Action for the GetRecommenderConfiguration operation. */
+    GetRecommenderConfiguration("pinpoint:GetRecommenderConfiguration"),
+    /** Action for the GetRecommenderConfigurations operation. */
+    GetRecommenderConfigurations("pinpoint:GetRecommenderConfigurations"),
     /** Action for the GetSegment operation. */
     GetSegment("pinpoint:GetSegment"),
     /** Action for the GetSegmentExportJobs operation. */
@@ -227,6 +235,8 @@ public enum PinpointActions implements Action {
     UpdateJourneyState("pinpoint:UpdateJourneyState"),
     /** Action for the UpdatePushTemplate operation. */
     UpdatePushTemplate("pinpoint:UpdatePushTemplate"),
+    /** Action for the UpdateRecommenderConfiguration operation. */
+    UpdateRecommenderConfiguration("pinpoint:UpdateRecommenderConfiguration"),
     /** Action for the UpdateSegment operation. */
     UpdateSegment("pinpoint:UpdateSegment"),
     /** Action for the UpdateSmsChannel operation. */

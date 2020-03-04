@@ -30,9 +30,10 @@ public class TemplateActiveVersionRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unique identifier for the version of the message template to use as the active version of the template. If
-     * specified, this value must match the identifier for an existing template version. To retrieve a list of versions
-     * and version identifiers for a template, use the <link
+     * The version of the message template to use as the active version of the template. Valid values are: latest, for
+     * the most recent version of the template; or, the unique identifier for any existing version of the template. If
+     * you specify an identifier, the value must match the identifier for an existing template version. To retrieve a
+     * list of versions and version identifiers for a template, use the <link
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      */
@@ -40,16 +41,18 @@ public class TemplateActiveVersionRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unique identifier for the version of the message template to use as the active version of the template. If
-     * specified, this value must match the identifier for an existing template version. To retrieve a list of versions
-     * and version identifiers for a template, use the <link
+     * The version of the message template to use as the active version of the template. Valid values are: latest, for
+     * the most recent version of the template; or, the unique identifier for any existing version of the template. If
+     * you specify an identifier, the value must match the identifier for an existing template version. To retrieve a
+     * list of versions and version identifiers for a template, use the <link
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * 
      * @param version
-     *        The unique identifier for the version of the message template to use as the active version of the
-     *        template. If specified, this value must match the identifier for an existing template version. To retrieve
-     *        a list of versions and version identifiers for a template, use the <link
+     *        The version of the message template to use as the active version of the template. Valid values are:
+     *        latest, for the most recent version of the template; or, the unique identifier for any existing version of
+     *        the template. If you specify an identifier, the value must match the identifier for an existing template
+     *        version. To retrieve a list of versions and version identifiers for a template, use the <link
      *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      */
 
@@ -59,15 +62,17 @@ public class TemplateActiveVersionRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unique identifier for the version of the message template to use as the active version of the template. If
-     * specified, this value must match the identifier for an existing template version. To retrieve a list of versions
-     * and version identifiers for a template, use the <link
+     * The version of the message template to use as the active version of the template. Valid values are: latest, for
+     * the most recent version of the template; or, the unique identifier for any existing version of the template. If
+     * you specify an identifier, the value must match the identifier for an existing template version. To retrieve a
+     * list of versions and version identifiers for a template, use the <link
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * 
-     * @return The unique identifier for the version of the message template to use as the active version of the
-     *         template. If specified, this value must match the identifier for an existing template version. To
-     *         retrieve a list of versions and version identifiers for a template, use the <link
+     * @return The version of the message template to use as the active version of the template. Valid values are:
+     *         latest, for the most recent version of the template; or, the unique identifier for any existing version
+     *         of the template. If you specify an identifier, the value must match the identifier for an existing
+     *         template version. To retrieve a list of versions and version identifiers for a template, use the <link
      *         linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      */
 
@@ -77,16 +82,18 @@ public class TemplateActiveVersionRequest implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The unique identifier for the version of the message template to use as the active version of the template. If
-     * specified, this value must match the identifier for an existing template version. To retrieve a list of versions
-     * and version identifiers for a template, use the <link
+     * The version of the message template to use as the active version of the template. Valid values are: latest, for
+     * the most recent version of the template; or, the unique identifier for any existing version of the template. If
+     * you specify an identifier, the value must match the identifier for an existing template version. To retrieve a
+     * list of versions and version identifiers for a template, use the <link
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * 
      * @param version
-     *        The unique identifier for the version of the message template to use as the active version of the
-     *        template. If specified, this value must match the identifier for an existing template version. To retrieve
-     *        a list of versions and version identifiers for a template, use the <link
+     *        The version of the message template to use as the active version of the template. Valid values are:
+     *        latest, for the most recent version of the template; or, the unique identifier for any existing version of
+     *        the template. If you specify an identifier, the value must match the identifier for an existing template
+     *        version. To retrieve a list of versions and version identifiers for a template, use the <link
      *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

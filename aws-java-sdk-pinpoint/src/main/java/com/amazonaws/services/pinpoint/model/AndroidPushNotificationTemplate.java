@@ -107,8 +107,8 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
     private String title;
     /**
      * <p>
-     * The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's based
-     * on the message template and the value of the Action property is URL.
+     * The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on
+     * the message template and the value of the Action property is URL.
      * </p>
      */
     private String url;
@@ -654,12 +654,12 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's based
-     * on the message template and the value of the Action property is URL.
+     * The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on
+     * the message template and the value of the Action property is URL.
      * </p>
      * 
      * @param url
-     *        The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's
+     *        The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's
      *        based on the message template and the value of the Action property is URL.
      */
 
@@ -669,11 +669,11 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's based
-     * on the message template and the value of the Action property is URL.
+     * The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on
+     * the message template and the value of the Action property is URL.
      * </p>
      * 
-     * @return The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's
+     * @return The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's
      *         based on the message template and the value of the Action property is URL.
      */
 
@@ -683,12 +683,12 @@ public class AndroidPushNotificationTemplate implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's based
-     * on the message template and the value of the Action property is URL.
+     * The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on
+     * the message template and the value of the Action property is URL.
      * </p>
      * 
      * @param url
-     *        The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's
+     *        The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's
      *        based on the message template and the value of the Action property is URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

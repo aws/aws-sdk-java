@@ -251,6 +251,41 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
+     * Creates an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param createRecommenderConfigurationRequest
+     * @return A Java Future containing the result of the CreateRecommenderConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsync.CreateRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRecommenderConfigurationResult> createRecommenderConfigurationAsync(
+            CreateRecommenderConfigurationRequest createRecommenderConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param createRecommenderConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRecommenderConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsyncHandler.CreateRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRecommenderConfigurationResult> createRecommenderConfigurationAsync(
+            CreateRecommenderConfigurationRequest createRecommenderConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRecommenderConfigurationRequest, CreateRecommenderConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
      * existing segment that's associated with an application.
      * </p>
@@ -812,6 +847,41 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<DeletePushTemplateResult> deletePushTemplateAsync(DeletePushTemplateRequest deletePushTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePushTemplateRequest, DeletePushTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param deleteRecommenderConfigurationRequest
+     * @return A Java Future containing the result of the DeleteRecommenderConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsync.DeleteRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRecommenderConfigurationResult> deleteRecommenderConfigurationAsync(
+            DeleteRecommenderConfigurationRequest deleteRecommenderConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param deleteRecommenderConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRecommenderConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsyncHandler.DeleteRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRecommenderConfigurationResult> deleteRecommenderConfigurationAsync(
+            DeleteRecommenderConfigurationRequest deleteRecommenderConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRecommenderConfigurationRequest, DeleteRecommenderConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1976,6 +2046,76 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves information about an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param getRecommenderConfigurationRequest
+     * @return A Java Future containing the result of the GetRecommenderConfiguration operation returned by the service.
+     * @sample AmazonPinpointAsync.GetRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRecommenderConfigurationResult> getRecommenderConfigurationAsync(
+            GetRecommenderConfigurationRequest getRecommenderConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param getRecommenderConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRecommenderConfiguration operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRecommenderConfigurationResult> getRecommenderConfigurationAsync(
+            GetRecommenderConfigurationRequest getRecommenderConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRecommenderConfigurationRequest, GetRecommenderConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about all the recommender model configurations that are associated with your Amazon
+     * Pinpoint account.
+     * </p>
+     * 
+     * @param getRecommenderConfigurationsRequest
+     * @return A Java Future containing the result of the GetRecommenderConfigurations operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsync.GetRecommenderConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRecommenderConfigurationsResult> getRecommenderConfigurationsAsync(
+            GetRecommenderConfigurationsRequest getRecommenderConfigurationsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all the recommender model configurations that are associated with your Amazon
+     * Pinpoint account.
+     * </p>
+     * 
+     * @param getRecommenderConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRecommenderConfigurations operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsyncHandler.GetRecommenderConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRecommenderConfigurationsResult> getRecommenderConfigurationsAsync(
+            GetRecommenderConfigurationsRequest getRecommenderConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRecommenderConfigurationsRequest, GetRecommenderConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about the configuration, dimension, and other settings for a specific segment that's
      * associated with an application.
      * </p>
@@ -2358,8 +2498,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves all the tags (keys and values) that are associated with an application, campaign, journey, message
-     * template, or segment.
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or
+     * segment.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2372,8 +2512,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves all the tags (keys and values) that are associated with an application, campaign, journey, message
-     * template, or segment.
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or
+     * segment.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2645,7 +2785,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Adds one or more tags (keys and values) to an application, campaign, journey, message template, or segment.
+     * Adds one or more tags (keys and values) to an application, campaign, message template, or segment.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2658,7 +2798,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Adds one or more tags (keys and values) to an application, campaign, journey, message template, or segment.
+     * Adds one or more tags (keys and values) to an application, campaign, message template, or segment.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2676,7 +2816,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Removes one or more tags (keys and values) from an application, campaign, journey, message template, or segment.
+     * Removes one or more tags (keys and values) from an application, campaign, message template, or segment.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2689,7 +2829,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Removes one or more tags (keys and values) from an application, campaign, journey, message template, or segment.
+     * Removes one or more tags (keys and values) from an application, campaign, message template, or segment.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3230,6 +3370,41 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdatePushTemplateResult> updatePushTemplateAsync(UpdatePushTemplateRequest updatePushTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePushTemplateRequest, UpdatePushTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param updateRecommenderConfigurationRequest
+     * @return A Java Future containing the result of the UpdateRecommenderConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsync.UpdateRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRecommenderConfigurationResult> updateRecommenderConfigurationAsync(
+            UpdateRecommenderConfigurationRequest updateRecommenderConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param updateRecommenderConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRecommenderConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsyncHandler.UpdateRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRecommenderConfigurationResult> updateRecommenderConfigurationAsync(
+            UpdateRecommenderConfigurationRequest updateRecommenderConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRecommenderConfigurationRequest, UpdateRecommenderConfigurationResult> asyncHandler);
 
     /**
      * <p>

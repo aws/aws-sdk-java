@@ -84,6 +84,10 @@ public class PushNotificationTemplateResponseJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     pushNotificationTemplateResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RecommenderId", targetDepth)) {
+                    context.nextToken();
+                    pushNotificationTemplateResponse.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     pushNotificationTemplateResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

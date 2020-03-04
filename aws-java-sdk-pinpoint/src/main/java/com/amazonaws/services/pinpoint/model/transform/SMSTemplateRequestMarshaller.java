@@ -33,6 +33,8 @@ public class SMSTemplateRequestMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<String> DEFAULTSUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
+    private static final MarshallingInfo<String> RECOMMENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class SMSTemplateRequestMarshaller {
         try {
             protocolMarshaller.marshall(sMSTemplateRequest.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(sMSTemplateRequest.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
+            protocolMarshaller.marshall(sMSTemplateRequest.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(sMSTemplateRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(sMSTemplateRequest.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
         } catch (Exception e) {

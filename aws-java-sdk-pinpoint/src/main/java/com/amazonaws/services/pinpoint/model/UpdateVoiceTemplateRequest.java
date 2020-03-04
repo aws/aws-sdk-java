@@ -28,12 +28,13 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
-     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the
+     * template.
      * </p>
      * <p>
-     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
-     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
-     * parameter. Otherwise, an error will occur.
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest
+     * existing version of the template. If you specify a value of true for this parameter, don't specify a value for
+     * the version parameter. Otherwise, an error will occur.
      * </p>
      */
     private Boolean createNewVersion;
@@ -52,8 +53,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -67,7 +68,7 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -85,22 +86,23 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
-     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the
+     * template.
      * </p>
      * <p>
-     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
-     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
-     * parameter. Otherwise, an error will occur.
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest
+     * existing version of the template. If you specify a value of true for this parameter, don't specify a value for
+     * the version parameter. Otherwise, an error will occur.
      * </p>
      * 
      * @param createNewVersion
      *        Specifies whether to save the updates as a new version of the message template. Valid values are: true,
-     *        save the updates as a new version; and, false, save the updates to the latest existing version of the
-     *        template.</p>
+     *        save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version
+     *        of the template.</p>
      *        <p>
-     *        If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
-     *        version of the template. If you specify a value of true for this parameter, don't specify a value for the
-     *        version parameter. Otherwise, an error will occur.
+     *        If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the
+     *        latest existing version of the template. If you specify a value of true for this parameter, don't specify
+     *        a value for the version parameter. Otherwise, an error will occur.
      */
 
     public void setCreateNewVersion(Boolean createNewVersion) {
@@ -110,21 +112,22 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
-     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the
+     * template.
      * </p>
      * <p>
-     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
-     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
-     * parameter. Otherwise, an error will occur.
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest
+     * existing version of the template. If you specify a value of true for this parameter, don't specify a value for
+     * the version parameter. Otherwise, an error will occur.
      * </p>
      * 
      * @return Specifies whether to save the updates as a new version of the message template. Valid values are: true,
-     *         save the updates as a new version; and, false, save the updates to the latest existing version of the
-     *         template.</p>
+     *         save the updates as a new version; and, false, save the updates to (overwrite) the latest existing
+     *         version of the template.</p>
      *         <p>
-     *         If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
-     *         version of the template. If you specify a value of true for this parameter, don't specify a value for the
-     *         version parameter. Otherwise, an error will occur.
+     *         If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the
+     *         latest existing version of the template. If you specify a value of true for this parameter, don't specify
+     *         a value for the version parameter. Otherwise, an error will occur.
      */
 
     public Boolean getCreateNewVersion() {
@@ -134,22 +137,23 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
-     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the
+     * template.
      * </p>
      * <p>
-     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
-     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
-     * parameter. Otherwise, an error will occur.
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest
+     * existing version of the template. If you specify a value of true for this parameter, don't specify a value for
+     * the version parameter. Otherwise, an error will occur.
      * </p>
      * 
      * @param createNewVersion
      *        Specifies whether to save the updates as a new version of the message template. Valid values are: true,
-     *        save the updates as a new version; and, false, save the updates to the latest existing version of the
-     *        template.</p>
+     *        save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version
+     *        of the template.</p>
      *        <p>
-     *        If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
-     *        version of the template. If you specify a value of true for this parameter, don't specify a value for the
-     *        version parameter. Otherwise, an error will occur.
+     *        If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the
+     *        latest existing version of the template. If you specify a value of true for this parameter, don't specify
+     *        a value for the version parameter. Otherwise, an error will occur.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,21 +165,22 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
-     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the
+     * template.
      * </p>
      * <p>
-     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
-     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
-     * parameter. Otherwise, an error will occur.
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest
+     * existing version of the template. If you specify a value of true for this parameter, don't specify a value for
+     * the version parameter. Otherwise, an error will occur.
      * </p>
      * 
      * @return Specifies whether to save the updates as a new version of the message template. Valid values are: true,
-     *         save the updates as a new version; and, false, save the updates to the latest existing version of the
-     *         template.</p>
+     *         save the updates as a new version; and, false, save the updates to (overwrite) the latest existing
+     *         version of the template.</p>
      *         <p>
-     *         If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
-     *         version of the template. If you specify a value of true for this parameter, don't specify a value for the
-     *         version parameter. Otherwise, an error will occur.
+     *         If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the
+     *         latest existing version of the template. If you specify a value of true for this parameter, don't specify
+     *         a value for the version parameter. Otherwise, an error will occur.
      */
 
     public Boolean isCreateNewVersion() {
@@ -241,8 +246,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -256,7 +261,7 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -272,8 +277,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      *        delete. To retrieve identifiers and other information for all the versions of a template, use the <link
      *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
      *        <p>
-     *        If specified, this value must match the identifier of an existing template version. If specified for an
-     *        update operation, this value must match the identifier of the latest existing version of the template.
+     *        If specified, this value must match the identifier for an existing template version. If specified for an
+     *        update operation, this value must match the identifier for the latest existing version of the template.
      *        This restriction helps ensure that race conditions don't occur.
      *        </p>
      *        <p>
@@ -287,8 +292,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        For an update operation, saves the updates to the latest existing version of the template, if the
-     *        create-new-version parameter isn't used or is set to false.
+     *        For an update operation, saves the updates to (overwrites) the latest existing version of the template, if
+     *        the create-new-version parameter isn't used or is set to false.
      *        </p>
      *        </li>
      *        <li>
@@ -309,8 +314,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -324,7 +329,7 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -339,8 +344,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      *         delete. To retrieve identifiers and other information for all the versions of a template, use the <link
      *         linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
      *         <p>
-     *         If specified, this value must match the identifier of an existing template version. If specified for an
-     *         update operation, this value must match the identifier of the latest existing version of the template.
+     *         If specified, this value must match the identifier for an existing template version. If specified for an
+     *         update operation, this value must match the identifier for the latest existing version of the template.
      *         This restriction helps ensure that race conditions don't occur.
      *         </p>
      *         <p>
@@ -354,8 +359,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         For an update operation, saves the updates to the latest existing version of the template, if the
-     *         create-new-version parameter isn't used or is set to false.
+     *         For an update operation, saves the updates to (overwrites) the latest existing version of the template,
+     *         if the create-new-version parameter isn't used or is set to false.
      *         </p>
      *         </li>
      *         <li>
@@ -376,8 +381,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -391,7 +396,7 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -407,8 +412,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      *        delete. To retrieve identifiers and other information for all the versions of a template, use the <link
      *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
      *        <p>
-     *        If specified, this value must match the identifier of an existing template version. If specified for an
-     *        update operation, this value must match the identifier of the latest existing version of the template.
+     *        If specified, this value must match the identifier for an existing template version. If specified for an
+     *        update operation, this value must match the identifier for the latest existing version of the template.
      *        This restriction helps ensure that race conditions don't occur.
      *        </p>
      *        <p>
@@ -422,8 +427,8 @@ public class UpdateVoiceTemplateRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        For an update operation, saves the updates to the latest existing version of the template, if the
-     *        create-new-version parameter isn't used or is set to false.
+     *        For an update operation, saves the updates to (overwrites) the latest existing version of the template, if
+     *        the create-new-version parameter isn't used or is set to false.
      *        </p>
      *        </li>
      *        <li>

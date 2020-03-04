@@ -92,6 +92,12 @@ public class PushNotificationTemplateResponse implements Serializable, Cloneable
     private String lastModifiedDate;
     /**
      * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     */
+    private String recommenderId;
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
      * Each tag consists of a required tag key and an associated tag value.
      * </p>
@@ -528,6 +534,46 @@ public class PushNotificationTemplateResponse implements Serializable, Cloneable
 
     /**
      * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model that's used by the message template.
+     */
+
+    public void setRecommenderId(String recommenderId) {
+        this.recommenderId = recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     * 
+     * @return The unique identifier for the recommender model that's used by the message template.
+     */
+
+    public String getRecommenderId() {
+        return this.recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model that's used by the message template.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model that's used by the message template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PushNotificationTemplateResponse withRecommenderId(String recommenderId) {
+        setRecommenderId(recommenderId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
      * Each tag consists of a required tag key and an associated tag value.
      * </p>
@@ -823,6 +869,8 @@ public class PushNotificationTemplateResponse implements Serializable, Cloneable
             sb.append("GCM: ").append(getGCM()).append(",");
         if (getLastModifiedDate() != null)
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getRecommenderId() != null)
+            sb.append("RecommenderId: ").append(getRecommenderId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTemplateDescription() != null)
@@ -883,6 +931,10 @@ public class PushNotificationTemplateResponse implements Serializable, Cloneable
             return false;
         if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
             return false;
+        if (other.getRecommenderId() == null ^ this.getRecommenderId() == null)
+            return false;
+        if (other.getRecommenderId() != null && other.getRecommenderId().equals(this.getRecommenderId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -920,6 +972,7 @@ public class PushNotificationTemplateResponse implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getGCM() == null) ? 0 : getGCM().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getRecommenderId() == null) ? 0 : getRecommenderId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());

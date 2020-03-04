@@ -37,9 +37,11 @@ public class EndpointSendConfiguration implements Serializable, Cloneable, Struc
     private String bodyOverride;
     /**
      * <p>
-     * A map of custom attributes to attach to the message for the address. For a push notification, this payload is
-     * added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery
-     * receipt event attributes.
+     * A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      */
     private java.util.Map<String, String> context;
@@ -107,14 +109,18 @@ public class EndpointSendConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A map of custom attributes to attach to the message for the address. For a push notification, this payload is
-     * added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery
-     * receipt event attributes.
+     * A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      * 
-     * @return A map of custom attributes to attach to the message for the address. For a push notification, this
-     *         payload is added to the data.pinpoint object. For an email or text message, this payload is added to
-     *         email/SMS delivery receipt event attributes.
+     * @return A map of custom attributes to attach to the message for the address. Attribute names are case
+     *         sensitive.</p>
+     *         <p>
+     *         For a push notification, this payload is added to the data.pinpoint object. For an email or text message,
+     *         this payload is added to email/SMS delivery receipt event attributes.
      */
 
     public java.util.Map<String, String> getContext() {
@@ -123,15 +129,19 @@ public class EndpointSendConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A map of custom attributes to attach to the message for the address. For a push notification, this payload is
-     * added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery
-     * receipt event attributes.
+     * A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      * 
      * @param context
-     *        A map of custom attributes to attach to the message for the address. For a push notification, this payload
-     *        is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS
-     *        delivery receipt event attributes.
+     *        A map of custom attributes to attach to the message for the address. Attribute names are case
+     *        sensitive.</p>
+     *        <p>
+     *        For a push notification, this payload is added to the data.pinpoint object. For an email or text message,
+     *        this payload is added to email/SMS delivery receipt event attributes.
      */
 
     public void setContext(java.util.Map<String, String> context) {
@@ -140,15 +150,19 @@ public class EndpointSendConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A map of custom attributes to attach to the message for the address. For a push notification, this payload is
-     * added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery
-     * receipt event attributes.
+     * A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      * 
      * @param context
-     *        A map of custom attributes to attach to the message for the address. For a push notification, this payload
-     *        is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS
-     *        delivery receipt event attributes.
+     *        A map of custom attributes to attach to the message for the address. Attribute names are case
+     *        sensitive.</p>
+     *        <p>
+     *        For a push notification, this payload is added to the data.pinpoint object. For an email or text message,
+     *        this payload is added to email/SMS delivery receipt event attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,7 +32,7 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * <p>
      * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
      * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
-     * An activity identifier can contain a maximum of 128 characters. The characters must be alphanumeric characters.
+     * An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.
      * </p>
      */
     private java.util.Map<String, Activity> activities;
@@ -114,8 +114,8 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
     private JourneySchedule schedule;
     /**
      * <p>
-     * The unique identifier for the first activity in the journey. An activity identifier can contain a maximum of 128
-     * characters. The characters must be alphanumeric characters.
+     * The unique identifier for the first activity in the journey. The identifier for this activity can contain a
+     * maximum of 128 characters. The characters must be alphanumeric characters.
      * </p>
      */
     private String startActivity;
@@ -155,12 +155,12 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * <p>
      * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
      * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
-     * An activity identifier can contain a maximum of 128 characters. The characters must be alphanumeric characters.
+     * An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.
      * </p>
      * 
      * @return A map that contains a set of Activity objects, one object for each activity in the journey. For each
      *         Activity object, the key is the unique identifier (string) for an activity and the value is the settings
-     *         for the activity. An activity identifier can contain a maximum of 128 characters. The characters must be
+     *         for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be
      *         alphanumeric characters.
      */
 
@@ -172,13 +172,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * <p>
      * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
      * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
-     * An activity identifier can contain a maximum of 128 characters. The characters must be alphanumeric characters.
+     * An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.
      * </p>
      * 
      * @param activities
      *        A map that contains a set of Activity objects, one object for each activity in the journey. For each
      *        Activity object, the key is the unique identifier (string) for an activity and the value is the settings
-     *        for the activity. An activity identifier can contain a maximum of 128 characters. The characters must be
+     *        for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be
      *        alphanumeric characters.
      */
 
@@ -190,13 +190,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * <p>
      * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
      * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
-     * An activity identifier can contain a maximum of 128 characters. The characters must be alphanumeric characters.
+     * An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.
      * </p>
      * 
      * @param activities
      *        A map that contains a set of Activity objects, one object for each activity in the journey. For each
      *        Activity object, the key is the unique identifier (string) for an activity and the value is the settings
-     *        for the activity. An activity identifier can contain a maximum of 128 characters. The characters must be
+     *        for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be
      *        alphanumeric characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -735,13 +735,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The unique identifier for the first activity in the journey. An activity identifier can contain a maximum of 128
-     * characters. The characters must be alphanumeric characters.
+     * The unique identifier for the first activity in the journey. The identifier for this activity can contain a
+     * maximum of 128 characters. The characters must be alphanumeric characters.
      * </p>
      * 
      * @param startActivity
-     *        The unique identifier for the first activity in the journey. An activity identifier can contain a maximum
-     *        of 128 characters. The characters must be alphanumeric characters.
+     *        The unique identifier for the first activity in the journey. The identifier for this activity can contain
+     *        a maximum of 128 characters. The characters must be alphanumeric characters.
      */
 
     public void setStartActivity(String startActivity) {
@@ -750,12 +750,12 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The unique identifier for the first activity in the journey. An activity identifier can contain a maximum of 128
-     * characters. The characters must be alphanumeric characters.
+     * The unique identifier for the first activity in the journey. The identifier for this activity can contain a
+     * maximum of 128 characters. The characters must be alphanumeric characters.
      * </p>
      * 
-     * @return The unique identifier for the first activity in the journey. An activity identifier can contain a maximum
-     *         of 128 characters. The characters must be alphanumeric characters.
+     * @return The unique identifier for the first activity in the journey. The identifier for this activity can contain
+     *         a maximum of 128 characters. The characters must be alphanumeric characters.
      */
 
     public String getStartActivity() {
@@ -764,13 +764,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The unique identifier for the first activity in the journey. An activity identifier can contain a maximum of 128
-     * characters. The characters must be alphanumeric characters.
+     * The unique identifier for the first activity in the journey. The identifier for this activity can contain a
+     * maximum of 128 characters. The characters must be alphanumeric characters.
      * </p>
      * 
      * @param startActivity
-     *        The unique identifier for the first activity in the journey. An activity identifier can contain a maximum
-     *        of 128 characters. The characters must be alphanumeric characters.
+     *        The unique identifier for the first activity in the journey. The identifier for this activity can contain
+     *        a maximum of 128 characters. The characters must be alphanumeric characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

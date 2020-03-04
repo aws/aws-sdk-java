@@ -33,6 +33,8 @@ public class EmailTemplateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
     private static final MarshallingInfo<String> HTMLPART_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HtmlPart").build();
+    private static final MarshallingInfo<String> RECOMMENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<String> SUBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Subject").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,7 @@ public class EmailTemplateRequestMarshaller {
         try {
             protocolMarshaller.marshall(emailTemplateRequest.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(emailTemplateRequest.getHtmlPart(), HTMLPART_BINDING);
+            protocolMarshaller.marshall(emailTemplateRequest.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(emailTemplateRequest.getSubject(), SUBJECT_BINDING);
             protocolMarshaller.marshall(emailTemplateRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(emailTemplateRequest.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);

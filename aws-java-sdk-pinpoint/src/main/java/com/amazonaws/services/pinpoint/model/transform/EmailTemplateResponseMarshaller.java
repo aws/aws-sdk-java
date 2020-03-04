@@ -39,6 +39,8 @@ public class EmailTemplateResponseMarshaller {
             .marshallLocationName("HtmlPart").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+    private static final MarshallingInfo<String> RECOMMENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<String> SUBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Subject").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class EmailTemplateResponseMarshaller {
             protocolMarshaller.marshall(emailTemplateResponse.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getHtmlPart(), HTMLPART_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(emailTemplateResponse.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getSubject(), SUBJECT_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);

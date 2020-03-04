@@ -39,6 +39,8 @@ public class SMSTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+    private static final MarshallingInfo<String> RECOMMENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -71,6 +73,7 @@ public class SMSTemplateResponseMarshaller {
             protocolMarshaller.marshall(sMSTemplateResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(sMSTemplateResponse.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);

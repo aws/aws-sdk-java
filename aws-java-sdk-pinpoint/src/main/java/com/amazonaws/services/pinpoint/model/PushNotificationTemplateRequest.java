@@ -75,6 +75,14 @@ public class PushNotificationTemplateRequest implements Serializable, Cloneable,
     private AndroidPushNotificationTemplate gCM;
     /**
      * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     */
+    private String recommenderId;
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
      * consists of a required tag key and an associated tag value.
      * </p>
@@ -378,6 +386,58 @@ public class PushNotificationTemplateRequest implements Serializable, Cloneable,
 
     /**
      * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this
+     *        value to determine how to retrieve and process data from a recommender model when it sends messages that
+     *        use the template, if the template contains message variables for recommendation data.
+     */
+
+    public void setRecommenderId(String recommenderId) {
+        this.recommenderId = recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @return The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses
+     *         this value to determine how to retrieve and process data from a recommender model when it sends messages
+     *         that use the template, if the template contains message variables for recommendation data.
+     */
+
+    public String getRecommenderId() {
+        return this.recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this
+     *        value to determine how to retrieve and process data from a recommender model when it sends messages that
+     *        use the template, if the template contains message variables for recommendation data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PushNotificationTemplateRequest withRecommenderId(String recommenderId) {
+        setRecommenderId(recommenderId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
      * consists of a required tag key and an associated tag value.
      * </p>
@@ -514,6 +574,8 @@ public class PushNotificationTemplateRequest implements Serializable, Cloneable,
             sb.append("DefaultSubstitutions: ").append(getDefaultSubstitutions()).append(",");
         if (getGCM() != null)
             sb.append("GCM: ").append(getGCM()).append(",");
+        if (getRecommenderId() != null)
+            sb.append("RecommenderId: ").append(getRecommenderId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTemplateDescription() != null)
@@ -556,6 +618,10 @@ public class PushNotificationTemplateRequest implements Serializable, Cloneable,
             return false;
         if (other.getGCM() != null && other.getGCM().equals(this.getGCM()) == false)
             return false;
+        if (other.getRecommenderId() == null ^ this.getRecommenderId() == null)
+            return false;
+        if (other.getRecommenderId() != null && other.getRecommenderId().equals(this.getRecommenderId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -578,6 +644,7 @@ public class PushNotificationTemplateRequest implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getDefault() == null) ? 0 : getDefault().hashCode());
         hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getGCM() == null) ? 0 : getGCM().hashCode());
+        hashCode = prime * hashCode + ((getRecommenderId() == null) ? 0 : getRecommenderId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         return hashCode;

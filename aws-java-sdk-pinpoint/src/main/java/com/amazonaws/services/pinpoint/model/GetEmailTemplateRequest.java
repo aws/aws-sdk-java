@@ -40,8 +40,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -55,7 +55,7 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -127,8 +127,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -142,7 +142,7 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -158,8 +158,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        delete. To retrieve identifiers and other information for all the versions of a template, use the <link
      *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
      *        <p>
-     *        If specified, this value must match the identifier of an existing template version. If specified for an
-     *        update operation, this value must match the identifier of the latest existing version of the template.
+     *        If specified, this value must match the identifier for an existing template version. If specified for an
+     *        update operation, this value must match the identifier for the latest existing version of the template.
      *        This restriction helps ensure that race conditions don't occur.
      *        </p>
      *        <p>
@@ -173,8 +173,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For an update operation, saves the updates to the latest existing version of the template, if the
-     *        create-new-version parameter isn't used or is set to false.
+     *        For an update operation, saves the updates to (overwrites) the latest existing version of the template, if
+     *        the create-new-version parameter isn't used or is set to false.
      *        </p>
      *        </li>
      *        <li>
@@ -195,8 +195,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -210,7 +210,7 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -225,8 +225,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *         delete. To retrieve identifiers and other information for all the versions of a template, use the <link
      *         linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
      *         <p>
-     *         If specified, this value must match the identifier of an existing template version. If specified for an
-     *         update operation, this value must match the identifier of the latest existing version of the template.
+     *         If specified, this value must match the identifier for an existing template version. If specified for an
+     *         update operation, this value must match the identifier for the latest existing version of the template.
      *         This restriction helps ensure that race conditions don't occur.
      *         </p>
      *         <p>
@@ -240,8 +240,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         For an update operation, saves the updates to the latest existing version of the template, if the
-     *         create-new-version parameter isn't used or is set to false.
+     *         For an update operation, saves the updates to (overwrites) the latest existing version of the template,
+     *         if the create-new-version parameter isn't used or is set to false.
      *         </p>
      *         </li>
      *         <li>
@@ -262,8 +262,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
      * </p>
      * <p>
-     * If specified, this value must match the identifier of an existing template version. If specified for an update
-     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * If specified, this value must match the identifier for an existing template version. If specified for an update
+     * operation, this value must match the identifier for the latest existing version of the template. This restriction
      * helps ensure that race conditions don't occur.
      * </p>
      * <p>
@@ -277,7 +277,7 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the
      * create-new-version parameter isn't used or is set to false.
      * </p>
      * </li>
@@ -293,8 +293,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        delete. To retrieve identifiers and other information for all the versions of a template, use the <link
      *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
      *        <p>
-     *        If specified, this value must match the identifier of an existing template version. If specified for an
-     *        update operation, this value must match the identifier of the latest existing version of the template.
+     *        If specified, this value must match the identifier for an existing template version. If specified for an
+     *        update operation, this value must match the identifier for the latest existing version of the template.
      *        This restriction helps ensure that race conditions don't occur.
      *        </p>
      *        <p>
@@ -308,8 +308,8 @@ public class GetEmailTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For an update operation, saves the updates to the latest existing version of the template, if the
-     *        create-new-version parameter isn't used or is set to false.
+     *        For an update operation, saves the updates to (overwrites) the latest existing version of the template, if
+     *        the create-new-version parameter isn't used or is set to false.
      *        </p>
      *        </li>
      *        <li>

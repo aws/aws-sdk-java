@@ -30,7 +30,9 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object.
+     * To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate
+     * operation, depending on the type of template that you want to retrieve the ARN for.
      * </p>
      */
     private String arn;
@@ -43,8 +45,9 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The JSON object that specifies the default values that are used for message variables in the message template.
-     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
-     * value defines the default value for that variable.
+     * This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     * GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of
+     * template that you want to retrieve the object for.
      * </p>
      */
     private String defaultSubstitutions;
@@ -56,14 +59,18 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
     private String lastModifiedDate;
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
-     * Each tag consists of a required tag key and an associated tag value.
+     * A map of key-value pairs that identifies the tags that are associated with the message template. This object
+     * isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate,
+     * GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want
+     * to retrieve the object for.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The custom description of the message template.
+     * The custom description of the message template. This value isn't included in a TemplateResponse object. To
+     * retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     * GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.
      * </p>
      */
     private String templateDescription;
@@ -88,11 +95,15 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object.
+     * To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate
+     * operation, depending on the type of template that you want to retrieve the ARN for.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the message template.
+     *        The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse
+     *        object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     *        GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.
      */
 
     public void setArn(String arn) {
@@ -101,10 +112,14 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object.
+     * To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate
+     * operation, depending on the type of template that you want to retrieve the ARN for.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the message template.
+     * @return The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse
+     *         object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     *         GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.
      */
 
     public String getArn() {
@@ -113,11 +128,15 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the message template.
+     * The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object.
+     * To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate
+     * operation, depending on the type of template that you want to retrieve the ARN for.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the message template.
+     *        The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse
+     *        object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     *        GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,14 +188,16 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The JSON object that specifies the default values that are used for message variables in the message template.
-     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
-     * value defines the default value for that variable.
+     * This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     * GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of
+     * template that you want to retrieve the object for.
      * </p>
      * 
      * @param defaultSubstitutions
      *        The JSON object that specifies the default values that are used for message variables in the message
-     *        template. This object is a set of key-value pairs. Each key defines a message variable in the template.
-     *        The corresponding value defines the default value for that variable.
+     *        template. This object isn't included in a TemplateResponse object. To retrieve this object for a template,
+     *        use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the
+     *        type of template that you want to retrieve the object for.
      */
 
     public void setDefaultSubstitutions(String defaultSubstitutions) {
@@ -186,13 +207,15 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The JSON object that specifies the default values that are used for message variables in the message template.
-     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
-     * value defines the default value for that variable.
+     * This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     * GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of
+     * template that you want to retrieve the object for.
      * </p>
      * 
      * @return The JSON object that specifies the default values that are used for message variables in the message
-     *         template. This object is a set of key-value pairs. Each key defines a message variable in the template.
-     *         The corresponding value defines the default value for that variable.
+     *         template. This object isn't included in a TemplateResponse object. To retrieve this object for a
+     *         template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation,
+     *         depending on the type of template that you want to retrieve the object for.
      */
 
     public String getDefaultSubstitutions() {
@@ -202,14 +225,16 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The JSON object that specifies the default values that are used for message variables in the message template.
-     * This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding
-     * value defines the default value for that variable.
+     * This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     * GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of
+     * template that you want to retrieve the object for.
      * </p>
      * 
      * @param defaultSubstitutions
      *        The JSON object that specifies the default values that are used for message variables in the message
-     *        template. This object is a set of key-value pairs. Each key defines a message variable in the template.
-     *        The corresponding value defines the default value for that variable.
+     *        template. This object isn't included in a TemplateResponse object. To retrieve this object for a template,
+     *        use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the
+     *        type of template that you want to retrieve the object for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,12 +285,16 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
-     * Each tag consists of a required tag key and an associated tag value.
+     * A map of key-value pairs that identifies the tags that are associated with the message template. This object
+     * isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate,
+     * GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want
+     * to retrieve the object for.
      * </p>
      * 
-     * @return A string-to-string map of key-value pairs that identifies the tags that are associated with the message
-     *         template. Each tag consists of a required tag key and an associated tag value.
+     * @return A map of key-value pairs that identifies the tags that are associated with the message template. This
+     *         object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     *         GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type
+     *         of template that you want to retrieve the object for.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -274,13 +303,17 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
-     * Each tag consists of a required tag key and an associated tag value.
+     * A map of key-value pairs that identifies the tags that are associated with the message template. This object
+     * isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate,
+     * GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want
+     * to retrieve the object for.
      * </p>
      * 
      * @param tags
-     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the message
-     *        template. Each tag consists of a required tag key and an associated tag value.
+     *        A map of key-value pairs that identifies the tags that are associated with the message template. This
+     *        object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     *        GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of
+     *        template that you want to retrieve the object for.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -289,13 +322,17 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A string-to-string map of key-value pairs that identifies the tags that are associated with the message template.
-     * Each tag consists of a required tag key and an associated tag value.
+     * A map of key-value pairs that identifies the tags that are associated with the message template. This object
+     * isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate,
+     * GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want
+     * to retrieve the object for.
      * </p>
      * 
      * @param tags
-     *        A string-to-string map of key-value pairs that identifies the tags that are associated with the message
-     *        template. Each tag consists of a required tag key and an associated tag value.
+     *        A map of key-value pairs that identifies the tags that are associated with the message template. This
+     *        object isn't included in a TemplateResponse object. To retrieve this object for a template, use the
+     *        GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of
+     *        template that you want to retrieve the object for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,11 +371,16 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom description of the message template.
+     * The custom description of the message template. This value isn't included in a TemplateResponse object. To
+     * retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     * GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.
      * </p>
      * 
      * @param templateDescription
-     *        The custom description of the message template.
+     *        The custom description of the message template. This value isn't included in a TemplateResponse object. To
+     *        retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     *        GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description
+     *        for.
      */
 
     public void setTemplateDescription(String templateDescription) {
@@ -347,10 +389,15 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom description of the message template.
+     * The custom description of the message template. This value isn't included in a TemplateResponse object. To
+     * retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     * GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.
      * </p>
      * 
-     * @return The custom description of the message template.
+     * @return The custom description of the message template. This value isn't included in a TemplateResponse object.
+     *         To retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     *         GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description
+     *         for.
      */
 
     public String getTemplateDescription() {
@@ -359,11 +406,16 @@ public class TemplateResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom description of the message template.
+     * The custom description of the message template. This value isn't included in a TemplateResponse object. To
+     * retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     * GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.
      * </p>
      * 
      * @param templateDescription
-     *        The custom description of the message template.
+     *        The custom description of the message template. This value isn't included in a TemplateResponse object. To
+     *        retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or
+     *        GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description
+     *        for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

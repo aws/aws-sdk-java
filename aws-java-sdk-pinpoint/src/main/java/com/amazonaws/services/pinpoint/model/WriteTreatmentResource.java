@@ -61,7 +61,7 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     private String treatmentDescription;
     /**
      * <p>
-     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
      * campaign.
      * </p>
      */
@@ -269,13 +269,13 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
      * campaign.
      * </p>
      * 
      * @param treatmentName
-     *        The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of
-     *        a campaign.
+     *        A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     *        campaign.
      */
 
     public void setTreatmentName(String treatmentName) {
@@ -284,11 +284,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
      * campaign.
      * </p>
      * 
-     * @return The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of
+     * @return A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of
      *         a campaign.
      */
 
@@ -298,13 +298,13 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
      * campaign.
      * </p>
      * 
      * @param treatmentName
-     *        The custom name of the treatment. A treatment is a variation of a campaign that's used for A/B testing of
-     *        a campaign.
+     *        A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
+     *        campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

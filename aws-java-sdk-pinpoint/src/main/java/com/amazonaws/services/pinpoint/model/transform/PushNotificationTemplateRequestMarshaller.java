@@ -41,6 +41,8 @@ public class PushNotificationTemplateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSubstitutions").build();
     private static final MarshallingInfo<StructuredPojo> GCM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCM").build();
+    private static final MarshallingInfo<String> RECOMMENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class PushNotificationTemplateRequestMarshaller {
             protocolMarshaller.marshall(pushNotificationTemplateRequest.getDefault(), DEFAULT_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateRequest.getDefaultSubstitutions(), DEFAULTSUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateRequest.getGCM(), GCM_BINDING);
+            protocolMarshaller.marshall(pushNotificationTemplateRequest.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateRequest.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
         } catch (Exception e) {

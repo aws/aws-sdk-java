@@ -48,7 +48,7 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
     private Template sMSTemplate;
     /**
      * <p>
-     * The voice template to use for the message.
+     * The voice template to use for the message. This object isn't supported for campaigns.
      * </p>
      */
     private Template voiceTemplate;
@@ -175,11 +175,11 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The voice template to use for the message.
+     * The voice template to use for the message. This object isn't supported for campaigns.
      * </p>
      * 
      * @param voiceTemplate
-     *        The voice template to use for the message.
+     *        The voice template to use for the message. This object isn't supported for campaigns.
      */
 
     public void setVoiceTemplate(Template voiceTemplate) {
@@ -188,10 +188,10 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The voice template to use for the message.
+     * The voice template to use for the message. This object isn't supported for campaigns.
      * </p>
      * 
-     * @return The voice template to use for the message.
+     * @return The voice template to use for the message. This object isn't supported for campaigns.
      */
 
     public Template getVoiceTemplate() {
@@ -200,11 +200,11 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The voice template to use for the message.
+     * The voice template to use for the message. This object isn't supported for campaigns.
      * </p>
      * 
      * @param voiceTemplate
-     *        The voice template to use for the message.
+     *        The voice template to use for the message. This object isn't supported for campaigns.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

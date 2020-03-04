@@ -88,7 +88,7 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
     private String segmentId;
     /**
      * <p>
-     * The custom name for the segment that's created by the import job, if the value of the DefineSegment property is
+     * A custom name for the segment that's created by the import job, if the value of the DefineSegment property is
      * true.
      * </p>
      */
@@ -546,13 +546,13 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom name for the segment that's created by the import job, if the value of the DefineSegment property is
+     * A custom name for the segment that's created by the import job, if the value of the DefineSegment property is
      * true.
      * </p>
      * 
      * @param segmentName
-     *        The custom name for the segment that's created by the import job, if the value of the DefineSegment
-     *        property is true.
+     *        A custom name for the segment that's created by the import job, if the value of the DefineSegment property
+     *        is true.
      */
 
     public void setSegmentName(String segmentName) {
@@ -561,11 +561,11 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom name for the segment that's created by the import job, if the value of the DefineSegment property is
+     * A custom name for the segment that's created by the import job, if the value of the DefineSegment property is
      * true.
      * </p>
      * 
-     * @return The custom name for the segment that's created by the import job, if the value of the DefineSegment
+     * @return A custom name for the segment that's created by the import job, if the value of the DefineSegment
      *         property is true.
      */
 
@@ -575,13 +575,13 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom name for the segment that's created by the import job, if the value of the DefineSegment property is
+     * A custom name for the segment that's created by the import job, if the value of the DefineSegment property is
      * true.
      * </p>
      * 
      * @param segmentName
-     *        The custom name for the segment that's created by the import job, if the value of the DefineSegment
-     *        property is true.
+     *        A custom name for the segment that's created by the import job, if the value of the DefineSegment property
+     *        is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

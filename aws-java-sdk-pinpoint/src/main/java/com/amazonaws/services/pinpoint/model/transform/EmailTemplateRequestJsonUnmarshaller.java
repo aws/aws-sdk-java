@@ -56,6 +56,10 @@ public class EmailTemplateRequestJsonUnmarshaller implements Unmarshaller<EmailT
                     context.nextToken();
                     emailTemplateRequest.setHtmlPart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RecommenderId", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateRequest.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Subject", targetDepth)) {
                     context.nextToken();
                     emailTemplateRequest.setSubject(context.getUnmarshaller(String.class).unmarshall(context));

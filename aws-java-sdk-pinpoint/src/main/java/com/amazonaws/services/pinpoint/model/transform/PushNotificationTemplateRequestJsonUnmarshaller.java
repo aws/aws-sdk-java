@@ -72,6 +72,10 @@ public class PushNotificationTemplateRequestJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     pushNotificationTemplateRequest.setGCM(AndroidPushNotificationTemplateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RecommenderId", targetDepth)) {
+                    context.nextToken();
+                    pushNotificationTemplateRequest.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     pushNotificationTemplateRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

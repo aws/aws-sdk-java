@@ -56,6 +56,10 @@ public class SMSTemplateRequestJsonUnmarshaller implements Unmarshaller<SMSTempl
                     context.nextToken();
                     sMSTemplateRequest.setDefaultSubstitutions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RecommenderId", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateRequest.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     sMSTemplateRequest

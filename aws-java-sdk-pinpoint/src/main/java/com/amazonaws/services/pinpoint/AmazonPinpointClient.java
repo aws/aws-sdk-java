@@ -87,6 +87,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("MethodNotAllowedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpoint.model.transform.MethodNotAllowedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PayloadTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpoint.model.transform.PayloadTooLargeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpoint.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -308,6 +311,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -376,6 +382,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -510,6 +519,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -578,6 +590,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -646,6 +661,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -770,6 +788,79 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param createRecommenderConfigurationRequest
+     * @return Result of the CreateRecommenderConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.CreateRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRecommenderConfigurationResult createRecommenderConfiguration(CreateRecommenderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRecommenderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateRecommenderConfigurationResult executeCreateRecommenderConfiguration(CreateRecommenderConfigurationRequest createRecommenderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRecommenderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRecommenderConfigurationRequest> request = null;
+        Response<CreateRecommenderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRecommenderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createRecommenderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRecommenderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRecommenderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRecommenderConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
      * existing segment that's associated with an application.
      * </p>
@@ -781,6 +872,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -981,6 +1075,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1049,6 +1146,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1117,6 +1217,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1187,6 +1290,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1256,6 +1362,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1326,6 +1435,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1394,6 +1506,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1462,6 +1577,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1530,6 +1648,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1598,6 +1719,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1666,6 +1790,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1734,6 +1861,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1802,6 +1932,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1870,6 +2003,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1938,6 +2074,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -1996,6 +2135,79 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param deleteRecommenderConfigurationRequest
+     * @return Result of the DeleteRecommenderConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.DeleteRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRecommenderConfigurationResult deleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRecommenderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRecommenderConfigurationResult executeDeleteRecommenderConfiguration(DeleteRecommenderConfigurationRequest deleteRecommenderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRecommenderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRecommenderConfigurationRequest> request = null;
+        Response<DeleteRecommenderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRecommenderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRecommenderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRecommenderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRecommenderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRecommenderConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a segment from an application.
      * </p>
      * 
@@ -2006,6 +2218,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2074,6 +2289,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2142,6 +2360,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2210,6 +2431,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2278,6 +2502,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2346,6 +2573,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2414,6 +2644,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2482,6 +2715,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2550,6 +2786,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2619,6 +2858,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2687,6 +2929,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2757,6 +3002,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2825,6 +3073,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2895,6 +3146,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -2964,6 +3218,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3032,6 +3289,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3100,6 +3360,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3168,6 +3431,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3237,6 +3503,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3307,6 +3576,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3375,6 +3647,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3444,6 +3719,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3512,6 +3790,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3580,6 +3861,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3648,6 +3932,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3716,6 +4003,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3784,6 +4074,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3852,6 +4145,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3920,6 +4216,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -3988,6 +4287,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4056,6 +4358,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4124,6 +4429,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4192,6 +4500,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4260,6 +4571,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4329,6 +4643,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4400,6 +4717,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4471,6 +4791,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4529,6 +4852,153 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Retrieves information about an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param getRecommenderConfigurationRequest
+     * @return Result of the GetRecommenderConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRecommenderConfigurationResult getRecommenderConfiguration(GetRecommenderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRecommenderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetRecommenderConfigurationResult executeGetRecommenderConfiguration(GetRecommenderConfigurationRequest getRecommenderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRecommenderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRecommenderConfigurationRequest> request = null;
+        Response<GetRecommenderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRecommenderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getRecommenderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecommenderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRecommenderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetRecommenderConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about all the recommender model configurations that are associated with your Amazon
+     * Pinpoint account.
+     * </p>
+     * 
+     * @param getRecommenderConfigurationsRequest
+     * @return Result of the GetRecommenderConfigurations operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetRecommenderConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetRecommenderConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRecommenderConfigurationsResult getRecommenderConfigurations(GetRecommenderConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRecommenderConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final GetRecommenderConfigurationsResult executeGetRecommenderConfigurations(GetRecommenderConfigurationsRequest getRecommenderConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRecommenderConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRecommenderConfigurationsRequest> request = null;
+        Response<GetRecommenderConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRecommenderConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getRecommenderConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecommenderConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRecommenderConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetRecommenderConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about the configuration, dimension, and other settings for a specific segment that's
      * associated with an application.
      * </p>
@@ -4540,6 +5010,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4608,6 +5081,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4676,6 +5152,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4745,6 +5224,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4814,6 +5296,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4883,6 +5368,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -4951,6 +5439,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5019,6 +5510,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5087,6 +5581,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5155,6 +5652,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5223,6 +5723,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5292,6 +5795,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5350,8 +5856,8 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves all the tags (keys and values) that are associated with an application, campaign, journey, message
-     * template, or segment.
+     * Retrieves all the tags (keys and values) that are associated with an application, campaign, message template, or
+     * segment.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -5414,6 +5920,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5548,6 +6057,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5617,6 +6129,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5686,6 +6201,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5755,6 +6273,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5823,6 +6344,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5891,6 +6415,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -5949,7 +6476,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Adds one or more tags (keys and values) to an application, campaign, journey, message template, or segment.
+     * Adds one or more tags (keys and values) to an application, campaign, message template, or segment.
      * </p>
      * 
      * @param tagResourceRequest
@@ -6002,7 +6529,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Removes one or more tags (keys and values) from an application, campaign, journey, message template, or segment.
+     * Removes one or more tags (keys and values) from an application, campaign, message template, or segment.
      * </p>
      * 
      * @param untagResourceRequest
@@ -6066,6 +6593,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6135,6 +6665,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6204,6 +6737,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6275,6 +6811,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6345,6 +6884,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6415,6 +6957,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6486,6 +7031,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6554,6 +7102,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6623,6 +7174,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6691,6 +7245,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6761,6 +7318,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6831,6 +7391,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6900,6 +7463,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -6968,6 +7534,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7036,6 +7605,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7104,6 +7676,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7162,6 +7737,79 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Updates an Amazon Pinpoint configuration for a recommender model.
+     * </p>
+     * 
+     * @param updateRecommenderConfigurationRequest
+     * @return Result of the UpdateRecommenderConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateRecommenderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateRecommenderConfigurationResult updateRecommenderConfiguration(UpdateRecommenderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRecommenderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRecommenderConfigurationResult executeUpdateRecommenderConfiguration(UpdateRecommenderConfigurationRequest updateRecommenderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRecommenderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRecommenderConfigurationRequest> request = null;
+        Response<UpdateRecommenderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRecommenderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateRecommenderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRecommenderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRecommenderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateRecommenderConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new segment for an application or updates the configuration, dimension, and other settings for an
      * existing segment that's associated with an application.
      * </p>
@@ -7173,6 +7821,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7242,6 +7893,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7310,6 +7964,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7378,6 +8035,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7449,6 +8109,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException
@@ -7517,6 +8180,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @throws InternalServerErrorException
      *         The request failed due to an unknown internal server error, exception, or failure
      *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
      * @throws ForbiddenException
      *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
      * @throws NotFoundException

@@ -46,6 +46,14 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
     private String defaultSubstitutions;
     /**
      * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     */
+    private String recommenderId;
+    /**
+     * <p>
      * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
      * consists of a required tag key and an associated tag value.
      * </p>
@@ -154,6 +162,58 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
 
     public SMSTemplateRequest withDefaultSubstitutions(String defaultSubstitutions) {
         setDefaultSubstitutions(defaultSubstitutions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this
+     *        value to determine how to retrieve and process data from a recommender model when it sends messages that
+     *        use the template, if the template contains message variables for recommendation data.
+     */
+
+    public void setRecommenderId(String recommenderId) {
+        this.recommenderId = recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @return The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses
+     *         this value to determine how to retrieve and process data from a recommender model when it sends messages
+     *         that use the template, if the template contains message variables for recommendation data.
+     */
+
+    public String getRecommenderId() {
+        return this.recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this
+     *        value to determine how to retrieve and process data from a recommender model when it sends messages that
+     *        use the template, if the template contains message variables for recommendation data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSTemplateRequest withRecommenderId(String recommenderId) {
+        setRecommenderId(recommenderId);
         return this;
     }
 
@@ -287,6 +347,8 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
             sb.append("Body: ").append(getBody()).append(",");
         if (getDefaultSubstitutions() != null)
             sb.append("DefaultSubstitutions: ").append(getDefaultSubstitutions()).append(",");
+        if (getRecommenderId() != null)
+            sb.append("RecommenderId: ").append(getRecommenderId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTemplateDescription() != null)
@@ -313,6 +375,10 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getDefaultSubstitutions() != null && other.getDefaultSubstitutions().equals(this.getDefaultSubstitutions()) == false)
             return false;
+        if (other.getRecommenderId() == null ^ this.getRecommenderId() == null)
+            return false;
+        if (other.getRecommenderId() != null && other.getRecommenderId().equals(this.getRecommenderId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -331,6 +397,7 @@ public class SMSTemplateRequest implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
+        hashCode = prime * hashCode + ((getRecommenderId() == null) ? 0 : getRecommenderId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         return hashCode;

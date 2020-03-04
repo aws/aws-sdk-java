@@ -85,7 +85,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private QuietTime quietTime;
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     * The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign
+     * immediately; or, a specific time in ISO 8601 format.
      * </p>
      */
     private String startTime;
@@ -495,11 +496,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     * The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign
+     * immediately; or, a specific time in ISO 8601 format.
      * </p>
      * 
      * @param startTime
-     *        The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     *        The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the
+     *        campaign immediately; or, a specific time in ISO 8601 format.
      */
 
     public void setStartTime(String startTime) {
@@ -508,10 +511,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     * The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign
+     * immediately; or, a specific time in ISO 8601 format.
      * </p>
      * 
-     * @return The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     * @return The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the
+     *         campaign immediately; or, a specific time in ISO 8601 format.
      */
 
     public String getStartTime() {
@@ -520,11 +525,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     * The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign
+     * immediately; or, a specific time in ISO 8601 format.
      * </p>
      * 
      * @param startTime
-     *        The scheduled time, in ISO 8601 format, when the campaign began or will begin.
+     *        The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the
+     *        campaign immediately; or, a specific time in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

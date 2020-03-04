@@ -42,9 +42,12 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     private String channelType;
     /**
      * <p>
-     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
-     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
-     * added to email/SMS delivery receipt event attributes.
+     * An object that maps custom attributes to attributes for the address and is attached to the message. Attribute
+     * names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      */
     private java.util.Map<String, String> context;
@@ -187,14 +190,19 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
-     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
-     * added to email/SMS delivery receipt event attributes.
+     * An object that maps custom attributes to attributes for the address and is attached to the message. Attribute
+     * names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      * 
-     * @return An object that maps custom attributes to attributes for the address and is attached to the message. For a
-     *         push notification, this payload is added to the data.pinpoint object. For an email or text message, this
-     *         payload is added to email/SMS delivery receipt event attributes.
+     * @return An object that maps custom attributes to attributes for the address and is attached to the message.
+     *         Attribute names are case sensitive.</p>
+     *         <p>
+     *         For a push notification, this payload is added to the data.pinpoint object. For an email or text message,
+     *         this payload is added to email/SMS delivery receipt event attributes.
      */
 
     public java.util.Map<String, String> getContext() {
@@ -203,15 +211,20 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
-     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
-     * added to email/SMS delivery receipt event attributes.
+     * An object that maps custom attributes to attributes for the address and is attached to the message. Attribute
+     * names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      * 
      * @param context
-     *        An object that maps custom attributes to attributes for the address and is attached to the message. For a
-     *        push notification, this payload is added to the data.pinpoint object. For an email or text message, this
-     *        payload is added to email/SMS delivery receipt event attributes.
+     *        An object that maps custom attributes to attributes for the address and is attached to the message.
+     *        Attribute names are case sensitive.</p>
+     *        <p>
+     *        For a push notification, this payload is added to the data.pinpoint object. For an email or text message,
+     *        this payload is added to email/SMS delivery receipt event attributes.
      */
 
     public void setContext(java.util.Map<String, String> context) {
@@ -220,15 +233,20 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that maps custom attributes to attributes for the address and is attached to the message. For a push
-     * notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is
-     * added to email/SMS delivery receipt event attributes.
+     * An object that maps custom attributes to attributes for the address and is attached to the message. Attribute
+     * names are case sensitive.
+     * </p>
+     * <p>
+     * For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this
+     * payload is added to email/SMS delivery receipt event attributes.
      * </p>
      * 
      * @param context
-     *        An object that maps custom attributes to attributes for the address and is attached to the message. For a
-     *        push notification, this payload is added to the data.pinpoint object. For an email or text message, this
-     *        payload is added to email/SMS delivery receipt event attributes.
+     *        An object that maps custom attributes to attributes for the address and is attached to the message.
+     *        Attribute names are case sensitive.</p>
+     *        <p>
+     *        For a push notification, this payload is added to the data.pinpoint object. For an email or text message,
+     *        this payload is added to email/SMS delivery receipt event attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

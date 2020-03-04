@@ -68,6 +68,10 @@ public class EmailTemplateResponseJsonUnmarshaller implements Unmarshaller<Email
                     context.nextToken();
                     emailTemplateResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RecommenderId", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateResponse.setRecommenderId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Subject", targetDepth)) {
                     context.nextToken();
                     emailTemplateResponse.setSubject(context.getUnmarshaller(String.class).unmarshall(context));

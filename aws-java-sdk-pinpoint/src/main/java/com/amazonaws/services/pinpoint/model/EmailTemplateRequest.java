@@ -48,6 +48,14 @@ public class EmailTemplateRequest implements Serializable, Cloneable, Structured
     private String htmlPart;
     /**
      * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     */
+    private String recommenderId;
+    /**
+     * <p>
      * The subject line, or title, to use in email messages that are based on the message template.
      * </p>
      */
@@ -182,6 +190,58 @@ public class EmailTemplateRequest implements Serializable, Cloneable, Structured
 
     public EmailTemplateRequest withHtmlPart(String htmlPart) {
         setHtmlPart(htmlPart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this
+     *        value to determine how to retrieve and process data from a recommender model when it sends messages that
+     *        use the template, if the template contains message variables for recommendation data.
+     */
+
+    public void setRecommenderId(String recommenderId) {
+        this.recommenderId = recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @return The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses
+     *         this value to determine how to retrieve and process data from a recommender model when it sends messages
+     *         that use the template, if the template contains message variables for recommendation data.
+     */
+
+    public String getRecommenderId() {
+        return this.recommenderId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value
+     * to determine how to retrieve and process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation data.
+     * </p>
+     * 
+     * @param recommenderId
+     *        The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this
+     *        value to determine how to retrieve and process data from a recommender model when it sends messages that
+     *        use the template, if the template contains message variables for recommendation data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailTemplateRequest withRecommenderId(String recommenderId) {
+        setRecommenderId(recommenderId);
         return this;
     }
 
@@ -407,6 +467,8 @@ public class EmailTemplateRequest implements Serializable, Cloneable, Structured
             sb.append("DefaultSubstitutions: ").append(getDefaultSubstitutions()).append(",");
         if (getHtmlPart() != null)
             sb.append("HtmlPart: ").append(getHtmlPart()).append(",");
+        if (getRecommenderId() != null)
+            sb.append("RecommenderId: ").append(getRecommenderId()).append(",");
         if (getSubject() != null)
             sb.append("Subject: ").append(getSubject()).append(",");
         if (getTags() != null)
@@ -437,6 +499,10 @@ public class EmailTemplateRequest implements Serializable, Cloneable, Structured
             return false;
         if (other.getHtmlPart() != null && other.getHtmlPart().equals(this.getHtmlPart()) == false)
             return false;
+        if (other.getRecommenderId() == null ^ this.getRecommenderId() == null)
+            return false;
+        if (other.getRecommenderId() != null && other.getRecommenderId().equals(this.getRecommenderId()) == false)
+            return false;
         if (other.getSubject() == null ^ this.getSubject() == null)
             return false;
         if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
@@ -463,6 +529,7 @@ public class EmailTemplateRequest implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getDefaultSubstitutions() == null) ? 0 : getDefaultSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getHtmlPart() == null) ? 0 : getHtmlPart().hashCode());
+        hashCode = prime * hashCode + ((getRecommenderId() == null) ? 0 : getRecommenderId().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
