@@ -421,6 +421,11 @@ public interface AmazonEC2 {
      * multiple subnets from the same VPC with a Client VPN endpoint. You can associate only one subnet in each
      * Availability Zone. We recommend that you associate at least two subnets to provide Availability Zone redundancy.
      * </p>
+     * <p>
+     * If you specified a VPC when you created the Client VPN endpoint or if you have previous subnet associations, the
+     * specified subnet must be in the same VPC. To specify a subnet that's in a different VPC, you must first modify
+     * the Client VPN endpoint (<a>ModifyClientVpnEndpoint</a>) and change the VPC that's associated with it.
+     * </p>
      * 
      * @param associateClientVpnTargetNetworkRequest
      * @return Result of the AssociateClientVpnTargetNetwork operation returned by the service.
@@ -3054,9 +3059,9 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the specified virtual private gateway. We recommend that before you delete a virtual private gateway, you
-     * detach it from the VPC and delete the VPN connection. Note that you don't need to delete the virtual private
-     * gateway if you plan to delete and recreate the VPN connection between your VPC and your network.
+     * Deletes the specified virtual private gateway. You must first detach the virtual private gateway from the VPC.
+     * Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN
+     * connection between your VPC and your network.
      * </p>
      * 
      * @param deleteVpnGatewayRequest
@@ -6470,9 +6475,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Client VPN endpoint. You can only modify an endpoint's server certificate information,
-     * client connection logging information, DNS server, and description. Modifying the DNS server resets existing
-     * client connections.
+     * Modifies the specified Client VPN endpoint. Modifying the DNS server resets existing client connections.
      * </p>
      * 
      * @param modifyClientVpnEndpointRequest
@@ -7334,8 +7337,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * After you perform this operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel options
-     * remain intact. Your s2slong; connection will be temporarily unavailable for approximately 10 minutes while we
-     * provision the new endpoints
+     * remain intact. Your AWS Site-to-Site VPN connection will be temporarily unavailable for a brief period while we
+     * provision the new endpoints.
      * </p>
      * 
      * @param modifyVpnConnectionRequest

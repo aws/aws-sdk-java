@@ -164,6 +164,24 @@ public class CreateClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> createClientVpnEndpointRequestSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createClientVpnEndpointRequest
+                .getSecurityGroupIds();
+        if (!createClientVpnEndpointRequestSecurityGroupIdsList.isEmpty() || !createClientVpnEndpointRequestSecurityGroupIdsList.isAutoConstruct()) {
+            int securityGroupIdsListIndex = 1;
+
+            for (String createClientVpnEndpointRequestSecurityGroupIdsListValue : createClientVpnEndpointRequestSecurityGroupIdsList) {
+                if (createClientVpnEndpointRequestSecurityGroupIdsListValue != null) {
+                    request.addParameter("SecurityGroupId." + securityGroupIdsListIndex,
+                            StringUtils.fromString(createClientVpnEndpointRequestSecurityGroupIdsListValue));
+                }
+                securityGroupIdsListIndex++;
+            }
+        }
+
+        if (createClientVpnEndpointRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createClientVpnEndpointRequest.getVpcId()));
+        }
+
         return request;
     }
 

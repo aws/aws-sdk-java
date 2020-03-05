@@ -52,6 +52,10 @@ public class PortProbeDetailJsonUnmarshaller implements Unmarshaller<PortProbeDe
                     context.nextToken();
                     portProbeDetail.setLocalPortDetails(LocalPortDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("localIpDetails", targetDepth)) {
+                    context.nextToken();
+                    portProbeDetail.setLocalIpDetails(LocalIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("remoteIpDetails", targetDepth)) {
                     context.nextToken();
                     portProbeDetail.setRemoteIpDetails(RemoteIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));

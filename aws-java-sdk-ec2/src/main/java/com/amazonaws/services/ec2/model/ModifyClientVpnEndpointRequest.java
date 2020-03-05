@@ -107,6 +107,18 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private Boolean splitTunnel;
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint.
+     * </p>
+     */
+    private String vpcId;
 
     /**
      * <p>
@@ -635,6 +647,119 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network.
+     * </p>
+     * 
+     * @return The IDs of one or more security groups to apply to the target network.
+     */
+
+    public java.util.List<String> getSecurityGroupIds() {
+        if (securityGroupIds == null) {
+            securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return securityGroupIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups to apply to the target network.
+     */
+
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups to apply to the target network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClientVpnEndpointRequest withSecurityGroupIds(String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups to apply to the target network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClientVpnEndpointRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC to associate with the Client VPN endpoint.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint.
+     * </p>
+     * 
+     * @return The ID of the VPC to associate with the Client VPN endpoint.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC to associate with the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClientVpnEndpointRequest withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -670,7 +795,11 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSplitTunnel() != null)
-            sb.append("SplitTunnel: ").append(getSplitTunnel());
+            sb.append("SplitTunnel: ").append(getSplitTunnel()).append(",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -713,6 +842,14 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getSplitTunnel() != null && other.getSplitTunnel().equals(this.getSplitTunnel()) == false)
             return false;
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
         return true;
     }
 
@@ -728,6 +865,8 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getVpnPort() == null) ? 0 : getVpnPort().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

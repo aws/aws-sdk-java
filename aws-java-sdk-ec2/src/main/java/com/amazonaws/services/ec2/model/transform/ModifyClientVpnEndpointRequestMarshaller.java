@@ -98,6 +98,24 @@ public class ModifyClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             request.addParameter("SplitTunnel", StringUtils.fromBoolean(modifyClientVpnEndpointRequest.getSplitTunnel()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> modifyClientVpnEndpointRequestSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClientVpnEndpointRequest
+                .getSecurityGroupIds();
+        if (!modifyClientVpnEndpointRequestSecurityGroupIdsList.isEmpty() || !modifyClientVpnEndpointRequestSecurityGroupIdsList.isAutoConstruct()) {
+            int securityGroupIdsListIndex = 1;
+
+            for (String modifyClientVpnEndpointRequestSecurityGroupIdsListValue : modifyClientVpnEndpointRequestSecurityGroupIdsList) {
+                if (modifyClientVpnEndpointRequestSecurityGroupIdsListValue != null) {
+                    request.addParameter("SecurityGroupId." + securityGroupIdsListIndex,
+                            StringUtils.fromString(modifyClientVpnEndpointRequestSecurityGroupIdsListValue));
+                }
+                securityGroupIdsListIndex++;
+            }
+        }
+
+        if (modifyClientVpnEndpointRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(modifyClientVpnEndpointRequest.getVpcId()));
+        }
+
         return request;
     }
 

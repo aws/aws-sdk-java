@@ -13,7 +13,7 @@
 package com.amazonaws.services.eks.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -57,6 +57,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> ENCRYPTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionConfig").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -88,6 +90,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(cluster.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(cluster.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(cluster.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

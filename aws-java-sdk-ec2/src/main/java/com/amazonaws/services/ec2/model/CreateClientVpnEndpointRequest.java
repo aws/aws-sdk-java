@@ -143,6 +143,20 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC
+     * that contains the security groups.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the
+     * request, the default security group for the VPC is applied.
+     * </p>
+     */
+    private String vpcId;
 
     /**
      * <p>
@@ -1035,6 +1049,133 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC
+     * that contains the security groups.
+     * </p>
+     * 
+     * @return The IDs of one or more security groups to apply to the target network. You must also specify the ID of
+     *         the VPC that contains the security groups.
+     */
+
+    public java.util.List<String> getSecurityGroupIds() {
+        if (securityGroupIds == null) {
+            securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return securityGroupIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC
+     * that contains the security groups.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups to apply to the target network. You must also specify the ID of the
+     *        VPC that contains the security groups.
+     */
+
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC
+     * that contains the security groups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups to apply to the target network. You must also specify the ID of the
+     *        VPC that contains the security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClientVpnEndpointRequest withSecurityGroupIds(String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC
+     * that contains the security groups.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups to apply to the target network. You must also specify the ID of the
+     *        VPC that contains the security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClientVpnEndpointRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the
+     * request, the default security group for the VPC is applied.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the
+     *        request, the default security group for the VPC is applied.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the
+     * request, the default security group for the VPC is applied.
+     * </p>
+     * 
+     * @return The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in
+     *         the request, the default security group for the VPC is applied.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the
+     * request, the default security group for the VPC is applied.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the
+     *        request, the default security group for the VPC is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClientVpnEndpointRequest withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1078,7 +1219,11 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -1137,6 +1282,14 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
         return true;
     }
 
@@ -1156,6 +1309,8 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

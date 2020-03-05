@@ -86,6 +86,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The encryption configuration for the cluster.
+     * </p>
+     */
+    private java.util.List<EncryptionConfig> encryptionConfig;
 
     /**
      * <p>
@@ -510,6 +516,76 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The encryption configuration for the cluster.
+     * </p>
+     * 
+     * @return The encryption configuration for the cluster.
+     */
+
+    public java.util.List<EncryptionConfig> getEncryptionConfig() {
+        return encryptionConfig;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the cluster.
+     * </p>
+     * 
+     * @param encryptionConfig
+     *        The encryption configuration for the cluster.
+     */
+
+    public void setEncryptionConfig(java.util.Collection<EncryptionConfig> encryptionConfig) {
+        if (encryptionConfig == null) {
+            this.encryptionConfig = null;
+            return;
+        }
+
+        this.encryptionConfig = new java.util.ArrayList<EncryptionConfig>(encryptionConfig);
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEncryptionConfig(java.util.Collection)} or {@link #withEncryptionConfig(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param encryptionConfig
+     *        The encryption configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withEncryptionConfig(EncryptionConfig... encryptionConfig) {
+        if (this.encryptionConfig == null) {
+            setEncryptionConfig(new java.util.ArrayList<EncryptionConfig>(encryptionConfig.length));
+        }
+        for (EncryptionConfig ele : encryptionConfig) {
+            this.encryptionConfig.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the cluster.
+     * </p>
+     * 
+     * @param encryptionConfig
+     *        The encryption configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withEncryptionConfig(java.util.Collection<EncryptionConfig> encryptionConfig) {
+        setEncryptionConfig(encryptionConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -534,7 +610,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEncryptionConfig() != null)
+            sb.append("EncryptionConfig: ").append(getEncryptionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -577,6 +655,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEncryptionConfig() == null ^ this.getEncryptionConfig() == null)
+            return false;
+        if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
+            return false;
         return true;
     }
 
@@ -592,6 +674,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         return hashCode;
     }
 

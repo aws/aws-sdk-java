@@ -29,6 +29,8 @@ public class PortProbeDetailMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> LOCALPORTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("localPortDetails").build();
+    private static final MarshallingInfo<StructuredPojo> LOCALIPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("localIpDetails").build();
     private static final MarshallingInfo<StructuredPojo> REMOTEIPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteIpDetails").build();
 
@@ -49,6 +51,7 @@ public class PortProbeDetailMarshaller {
 
         try {
             protocolMarshaller.marshall(portProbeDetail.getLocalPortDetails(), LOCALPORTDETAILS_BINDING);
+            protocolMarshaller.marshall(portProbeDetail.getLocalIpDetails(), LOCALIPDETAILS_BINDING);
             protocolMarshaller.marshall(portProbeDetail.getRemoteIpDetails(), REMOTEIPDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -36,6 +36,12 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
     private LocalPortDetails localPortDetails;
     /**
      * <p>
+     * Local IP information of the connection.
+     * </p>
+     */
+    private LocalIpDetails localIpDetails;
+    /**
+     * <p>
      * Remote IP information of the connection.
      * </p>
      */
@@ -78,6 +84,46 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     public PortProbeDetail withLocalPortDetails(LocalPortDetails localPortDetails) {
         setLocalPortDetails(localPortDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Local IP information of the connection.
+     * </p>
+     * 
+     * @param localIpDetails
+     *        Local IP information of the connection.
+     */
+
+    public void setLocalIpDetails(LocalIpDetails localIpDetails) {
+        this.localIpDetails = localIpDetails;
+    }
+
+    /**
+     * <p>
+     * Local IP information of the connection.
+     * </p>
+     * 
+     * @return Local IP information of the connection.
+     */
+
+    public LocalIpDetails getLocalIpDetails() {
+        return this.localIpDetails;
+    }
+
+    /**
+     * <p>
+     * Local IP information of the connection.
+     * </p>
+     * 
+     * @param localIpDetails
+     *        Local IP information of the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortProbeDetail withLocalIpDetails(LocalIpDetails localIpDetails) {
+        setLocalIpDetails(localIpDetails);
         return this;
     }
 
@@ -135,6 +181,8 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getLocalPortDetails() != null)
             sb.append("LocalPortDetails: ").append(getLocalPortDetails()).append(",");
+        if (getLocalIpDetails() != null)
+            sb.append("LocalIpDetails: ").append(getLocalIpDetails()).append(",");
         if (getRemoteIpDetails() != null)
             sb.append("RemoteIpDetails: ").append(getRemoteIpDetails());
         sb.append("}");
@@ -155,6 +203,10 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLocalPortDetails() != null && other.getLocalPortDetails().equals(this.getLocalPortDetails()) == false)
             return false;
+        if (other.getLocalIpDetails() == null ^ this.getLocalIpDetails() == null)
+            return false;
+        if (other.getLocalIpDetails() != null && other.getLocalIpDetails().equals(this.getLocalIpDetails()) == false)
+            return false;
         if (other.getRemoteIpDetails() == null ^ this.getRemoteIpDetails() == null)
             return false;
         if (other.getRemoteIpDetails() != null && other.getRemoteIpDetails().equals(this.getRemoteIpDetails()) == false)
@@ -168,6 +220,7 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLocalPortDetails() == null) ? 0 : getLocalPortDetails().hashCode());
+        hashCode = prime * hashCode + ((getLocalIpDetails() == null) ? 0 : getLocalIpDetails().hashCode());
         hashCode = prime * hashCode + ((getRemoteIpDetails() == null) ? 0 : getRemoteIpDetails().hashCode());
         return hashCode;
     }

@@ -35,6 +35,8 @@ public class NetworkConnectionActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("localPortDetails").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("protocol").build();
+    private static final MarshallingInfo<StructuredPojo> LOCALIPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("localIpDetails").build();
     private static final MarshallingInfo<StructuredPojo> REMOTEIPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteIpDetails").build();
     private static final MarshallingInfo<StructuredPojo> REMOTEPORTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class NetworkConnectionActionMarshaller {
             protocolMarshaller.marshall(networkConnectionAction.getConnectionDirection(), CONNECTIONDIRECTION_BINDING);
             protocolMarshaller.marshall(networkConnectionAction.getLocalPortDetails(), LOCALPORTDETAILS_BINDING);
             protocolMarshaller.marshall(networkConnectionAction.getProtocol(), PROTOCOL_BINDING);
+            protocolMarshaller.marshall(networkConnectionAction.getLocalIpDetails(), LOCALIPDETAILS_BINDING);
             protocolMarshaller.marshall(networkConnectionAction.getRemoteIpDetails(), REMOTEIPDETAILS_BINDING);
             protocolMarshaller.marshall(networkConnectionAction.getRemotePortDetails(), REMOTEPORTDETAILS_BINDING);
         } catch (Exception e) {

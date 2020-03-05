@@ -64,6 +64,10 @@ public class NetworkConnectionActionJsonUnmarshaller implements Unmarshaller<Net
                     context.nextToken();
                     networkConnectionAction.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("localIpDetails", targetDepth)) {
+                    context.nextToken();
+                    networkConnectionAction.setLocalIpDetails(LocalIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("remoteIpDetails", targetDepth)) {
                     context.nextToken();
                     networkConnectionAction.setRemoteIpDetails(RemoteIpDetailsJsonUnmarshaller.getInstance().unmarshall(context));
