@@ -17,6 +17,7 @@ package com.amazonaws.regions;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.util.AwsHostNameUtils;
 import java.net.URI;
+import java.net.URISyntaxException;
 
 /**
  * Utilities to attempt to convert from a hostname/endpoint to an AWS region.
@@ -68,7 +69,12 @@ public class EndpointToRegion {
             return new RegionOrRegionName();
         }
 
-        String host = URI.create(endpoint).getHost();
+        String host = null;
+        try {
+            host = new URI(endpoint).getHost();
+        } catch (URISyntaxException x) {
+            // proceed
+        }
         if (host == null) {
             host = URI.create("http://" + endpoint).getHost();
         }

@@ -111,6 +111,18 @@ public class EndpointToRegionTest {
         verifyRegionAndPartitionForHostname("us-gov-west-1", "aws-us-gov", "iam.us-gov-west-1.banana.com", "iam");
     }
 
+    @Test
+    public void guessRegionForHostname_ipAddress() {
+        assertNull(guessRegionNameForEndpoint("http://localhost"));
+        assertNull(guessRegionNameForEndpoint("http://localhost:1234"));
+        assertNull(guessRegionNameForEndpoint("http://127.0.0.1"));
+        assertNull(guessRegionNameForEndpoint("http://127.0.0.1:1234"));
+        assertNull(guessRegionNameForEndpoint("localhost"));
+        assertNull(guessRegionNameForEndpoint("localhost:1234"));
+        assertNull(guessRegionNameForEndpoint("127.0.0.1"));
+        assertNull(guessRegionNameForEndpoint("127.0.0.1:1234"));
+    }
+
     /**
      * We migrated from AwsHostNameUtils.parseRegion to EndpointToRegion.guessRegionNameForHostname, because EndpointToRegion
      * can consider the contents of endpoints.json.
