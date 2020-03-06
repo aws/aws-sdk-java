@@ -52,6 +52,14 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private PortForwardingConfig portForwardingConfig;
+    /**
+     * <p>
+     * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
+     * RoboMaker will configure a connection so you can interact with your application as it is running in the
+     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * </p>
+     */
+    private Boolean streamUI;
 
     /**
      * <p>
@@ -242,6 +250,78 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
+     * RoboMaker will configure a connection so you can interact with your application as it is running in the
+     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * </p>
+     * 
+     * @param streamUI
+     *        Boolean indicating whether a streaming session will be configured for the application. If
+     *        <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
+     *        it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *        user interface.
+     */
+
+    public void setStreamUI(Boolean streamUI) {
+        this.streamUI = streamUI;
+    }
+
+    /**
+     * <p>
+     * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
+     * RoboMaker will configure a connection so you can interact with your application as it is running in the
+     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * </p>
+     * 
+     * @return Boolean indicating whether a streaming session will be configured for the application. If
+     *         <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
+     *         it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *         user interface.
+     */
+
+    public Boolean getStreamUI() {
+        return this.streamUI;
+    }
+
+    /**
+     * <p>
+     * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
+     * RoboMaker will configure a connection so you can interact with your application as it is running in the
+     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * </p>
+     * 
+     * @param streamUI
+     *        Boolean indicating whether a streaming session will be configured for the application. If
+     *        <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
+     *        it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *        user interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchConfig withStreamUI(Boolean streamUI) {
+        setStreamUI(streamUI);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
+     * RoboMaker will configure a connection so you can interact with your application as it is running in the
+     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * </p>
+     * 
+     * @return Boolean indicating whether a streaming session will be configured for the application. If
+     *         <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
+     *         it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *         user interface.
+     */
+
+    public Boolean isStreamUI() {
+        return this.streamUI;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -260,7 +340,9 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
         if (getEnvironmentVariables() != null)
             sb.append("EnvironmentVariables: ").append(getEnvironmentVariables()).append(",");
         if (getPortForwardingConfig() != null)
-            sb.append("PortForwardingConfig: ").append(getPortForwardingConfig());
+            sb.append("PortForwardingConfig: ").append(getPortForwardingConfig()).append(",");
+        if (getStreamUI() != null)
+            sb.append("StreamUI: ").append(getStreamUI());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +373,10 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPortForwardingConfig() != null && other.getPortForwardingConfig().equals(this.getPortForwardingConfig()) == false)
             return false;
+        if (other.getStreamUI() == null ^ this.getStreamUI() == null)
+            return false;
+        if (other.getStreamUI() != null && other.getStreamUI().equals(this.getStreamUI()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +389,7 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLaunchFile() == null) ? 0 : getLaunchFile().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getPortForwardingConfig() == null) ? 0 : getPortForwardingConfig().hashCode());
+        hashCode = prime * hashCode + ((getStreamUI() == null) ? 0 : getStreamUI().hashCode());
         return hashCode;
     }
 

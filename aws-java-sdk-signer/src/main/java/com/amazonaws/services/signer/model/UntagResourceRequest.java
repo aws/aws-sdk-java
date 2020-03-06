@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile .
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * A list of tag keys to be removed from the signing profile .
+     * A list of tag keys to be removed from the signing profile.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile .
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
      * @param resourceArn
-     *        Amazon Resource Name (ARN) for the signing profile .
+     *        The Amazon Resource Name (ARN) for the signing profile.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile .
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) for the signing profile .
+     * @return The Amazon Resource Name (ARN) for the signing profile.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile .
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
      * @param resourceArn
-     *        Amazon Resource Name (ARN) for the signing profile .
+     *        The Amazon Resource Name (ARN) for the signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys to be removed from the signing profile .
+     * A list of tag keys to be removed from the signing profile.
      * </p>
      * 
-     * @return A list of tag keys to be removed from the signing profile .
+     * @return A list of tag keys to be removed from the signing profile.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys to be removed from the signing profile .
+     * A list of tag keys to be removed from the signing profile.
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys to be removed from the signing profile .
+     *        A list of tag keys to be removed from the signing profile.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys to be removed from the signing profile .
+     * A list of tag keys to be removed from the signing profile.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys to be removed from the signing profile .
+     *        A list of tag keys to be removed from the signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of tag keys to be removed from the signing profile .
+     * A list of tag keys to be removed from the signing profile.
      * </p>
      * 
      * @param tagKeys
-     *        A list of tag keys to be removed from the signing profile .
+     *        A list of tag keys to be removed from the signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

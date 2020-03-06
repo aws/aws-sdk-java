@@ -76,6 +76,10 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                     context.nextToken();
                     instanceDetails.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("launchTime", targetDepth)) {
                     context.nextToken();
                     instanceDetails.setLaunchTime(context.getUnmarshaller(String.class).unmarshall(context));

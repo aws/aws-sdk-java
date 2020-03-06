@@ -29,6 +29,8 @@ public class DescribeMeshRequestMarshaller {
 
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("meshOwner").build();
 
     private static final DescribeMeshRequestMarshaller instance = new DescribeMeshRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeMeshRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeMeshRequest.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(describeMeshRequest.getMeshOwner(), MESHOWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

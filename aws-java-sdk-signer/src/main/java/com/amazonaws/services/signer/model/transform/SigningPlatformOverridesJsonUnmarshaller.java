@@ -52,6 +52,10 @@ public class SigningPlatformOverridesJsonUnmarshaller implements Unmarshaller<Si
                     context.nextToken();
                     signingPlatformOverrides.setSigningConfiguration(SigningConfigurationOverridesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("signingImageFormat", targetDepth)) {
+                    context.nextToken();
+                    signingPlatformOverrides.setSigningImageFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

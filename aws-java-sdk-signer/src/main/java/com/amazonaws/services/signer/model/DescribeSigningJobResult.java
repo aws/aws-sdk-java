@@ -37,7 +37,7 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
     private Source source;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of your code signing certificate.
+     * The Amazon Resource Name (ARN) of your code signing certificate.
      * </p>
      */
     private SigningMaterial signingMaterial;
@@ -185,11 +185,11 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of your code signing certificate.
+     * The Amazon Resource Name (ARN) of your code signing certificate.
      * </p>
      * 
      * @param signingMaterial
-     *        Amazon Resource Name (ARN) of your code signing certificate.
+     *        The Amazon Resource Name (ARN) of your code signing certificate.
      */
 
     public void setSigningMaterial(SigningMaterial signingMaterial) {
@@ -198,10 +198,10 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of your code signing certificate.
+     * The Amazon Resource Name (ARN) of your code signing certificate.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of your code signing certificate.
+     * @return The Amazon Resource Name (ARN) of your code signing certificate.
      */
 
     public SigningMaterial getSigningMaterial() {
@@ -210,11 +210,11 @@ public class DescribeSigningJobResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of your code signing certificate.
+     * The Amazon Resource Name (ARN) of your code signing certificate.
      * </p>
      * 
      * @param signingMaterial
-     *        Amazon Resource Name (ARN) of your code signing certificate.
+     *        The Amazon Resource Name (ARN) of your code signing certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

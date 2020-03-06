@@ -31,6 +31,8 @@ public class ListVirtualNodesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("meshOwner").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
 
@@ -52,6 +54,7 @@ public class ListVirtualNodesRequestMarshaller {
         try {
             protocolMarshaller.marshall(listVirtualNodesRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(listVirtualNodesRequest.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(listVirtualNodesRequest.getMeshOwner(), MESHOWNER_BINDING);
             protocolMarshaller.marshall(listVirtualNodesRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

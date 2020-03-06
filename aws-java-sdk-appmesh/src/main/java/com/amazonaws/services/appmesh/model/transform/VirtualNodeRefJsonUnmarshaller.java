@@ -56,6 +56,14 @@ public class VirtualNodeRefJsonUnmarshaller implements Unmarshaller<VirtualNodeR
                     context.nextToken();
                     virtualNodeRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("meshOwner", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwner", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualNodeName", targetDepth)) {
                     context.nextToken();
                     virtualNodeRef.setVirtualNodeName(context.getUnmarshaller(String.class).unmarshall(context));

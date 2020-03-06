@@ -111,7 +111,7 @@ public interface AWSAppMesh {
      * </p>
      * <p>
      * For more information about routes, see <a
-     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.
      * </p>
      * 
      * @param createRouteRequest
@@ -171,7 +171,7 @@ public interface AWSAppMesh {
      * </note>
      * <p>
      * For more information about virtual nodes, see <a
-     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual Nodes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual Nodes</a>.
      * </p>
      * 
      * @param createVirtualNodeRequest
@@ -216,7 +216,7 @@ public interface AWSAppMesh {
      * </p>
      * <p>
      * For more information about virtual routers, see <a
-     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual Routers</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual Routers</a>.
      * </p>
      * 
      * @param createVirtualRouterRequest
@@ -259,7 +259,7 @@ public interface AWSAppMesh {
      * </p>
      * <p>
      * For more information about virtual services, see <a
-     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual Services</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual Services</a>.
      * </p>
      * 
      * @param createVirtualServiceRequest

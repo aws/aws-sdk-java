@@ -56,6 +56,14 @@ public class VirtualRouterRefJsonUnmarshaller implements Unmarshaller<VirtualRou
                     context.nextToken();
                     virtualRouterRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("meshOwner", targetDepth)) {
+                    context.nextToken();
+                    virtualRouterRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwner", targetDepth)) {
+                    context.nextToken();
+                    virtualRouterRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualRouterName", targetDepth)) {
                     context.nextToken();
                     virtualRouterRef.setVirtualRouterName(context.getUnmarshaller(String.class).unmarshall(context));

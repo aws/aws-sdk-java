@@ -72,6 +72,12 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
     private String instanceType;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * The launch time of the EC2 instance.
      * </p>
      */
@@ -378,6 +384,46 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public InstanceDetails withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS Outposts instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceDetails withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -697,6 +743,8 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("InstanceState: ").append(getInstanceState()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getLaunchTime() != null)
             sb.append("LaunchTime: ").append(getLaunchTime()).append(",");
         if (getNetworkInterfaces() != null)
@@ -749,6 +797,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getLaunchTime() == null ^ this.getLaunchTime() == null)
             return false;
         if (other.getLaunchTime() != null && other.getLaunchTime().equals(this.getLaunchTime()) == false)
@@ -784,6 +836,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getLaunchTime() == null) ? 0 : getLaunchTime().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());

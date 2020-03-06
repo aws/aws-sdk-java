@@ -35,6 +35,8 @@ public class CreateVirtualRouterRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("meshOwner").build();
     private static final MarshallingInfo<StructuredPojo> SPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spec").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,7 @@ public class CreateVirtualRouterRequestMarshaller {
         try {
             protocolMarshaller.marshall(createVirtualRouterRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createVirtualRouterRequest.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(createVirtualRouterRequest.getMeshOwner(), MESHOWNER_BINDING);
             protocolMarshaller.marshall(createVirtualRouterRequest.getSpec(), SPEC_BINDING);
             protocolMarshaller.marshall(createVirtualRouterRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createVirtualRouterRequest.getVirtualRouterName(), VIRTUALROUTERNAME_BINDING);

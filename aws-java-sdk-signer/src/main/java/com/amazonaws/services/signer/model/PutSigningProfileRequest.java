@@ -39,7 +39,7 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     private SigningMaterial signingMaterial;
     /**
      * <p>
-     * The ID of the signing profile to be created.
+     * The ID of the signing platform to be created.
      * </p>
      */
     private String platformId;
@@ -58,7 +58,7 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, String> signingParameters;
     /**
      * <p>
-     * Tags to be associated with the signing profile being created.
+     * Tags to be associated with the signing profile that is being created.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -145,11 +145,11 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the signing profile to be created.
+     * The ID of the signing platform to be created.
      * </p>
      * 
      * @param platformId
-     *        The ID of the signing profile to be created.
+     *        The ID of the signing platform to be created.
      */
 
     public void setPlatformId(String platformId) {
@@ -158,10 +158,10 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the signing profile to be created.
+     * The ID of the signing platform to be created.
      * </p>
      * 
-     * @return The ID of the signing profile to be created.
+     * @return The ID of the signing platform to be created.
      */
 
     public String getPlatformId() {
@@ -170,11 +170,11 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the signing profile to be created.
+     * The ID of the signing platform to be created.
      * </p>
      * 
      * @param platformId
-     *        The ID of the signing profile to be created.
+     *        The ID of the signing platform to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,10 +303,10 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Tags to be associated with the signing profile being created.
+     * Tags to be associated with the signing profile that is being created.
      * </p>
      * 
-     * @return Tags to be associated with the signing profile being created.
+     * @return Tags to be associated with the signing profile that is being created.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -315,11 +315,11 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Tags to be associated with the signing profile being created.
+     * Tags to be associated with the signing profile that is being created.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the signing profile being created.
+     *        Tags to be associated with the signing profile that is being created.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -328,11 +328,11 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Tags to be associated with the signing profile being created.
+     * Tags to be associated with the signing profile that is being created.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the signing profile being created.
+     *        Tags to be associated with the signing profile that is being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -98,6 +98,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * resource.instanceDetails.outpostArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -425,6 +430,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * resource.instanceDetails.outpostArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -683,6 +693,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        resource.instanceDetails.instanceId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.instanceDetails.outpostArn
      *        </p>
      *        </li>
      *        <li>
@@ -955,6 +970,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * resource.instanceDetails.outpostArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -1212,6 +1232,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         resource.instanceDetails.instanceId
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.instanceDetails.outpostArn
      *         </p>
      *         </li>
      *         <li>
@@ -1484,6 +1509,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * resource.instanceDetails.outpostArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -1742,6 +1772,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        resource.instanceDetails.instanceId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.instanceDetails.outpostArn
      *        </p>
      *        </li>
      *        <li>

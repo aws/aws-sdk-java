@@ -5453,6 +5453,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(ModifyAvailabilityZoneGroupRequest request) {
+
+        return modifyAvailabilityZoneGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(ModifyAvailabilityZoneGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyAvailabilityZoneGroupRequest, ModifyAvailabilityZoneGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyCapacityReservationResult> modifyCapacityReservationAsync(ModifyCapacityReservationRequest request) {
 
         return modifyCapacityReservationAsync(request, null);

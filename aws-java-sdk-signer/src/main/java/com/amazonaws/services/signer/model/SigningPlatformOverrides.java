@@ -34,6 +34,15 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
      * </p>
      */
     private SigningConfigurationOverrides signingConfiguration;
+    /**
+     * <p>
+     * A signed image is a JSON object. When overriding the default signing platform configuration, a customer can
+     * select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format
+     * value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the
+     * payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.
+     * </p>
+     */
+    private String signingImageFormat;
 
     /**
      * <p>
@@ -76,6 +85,93 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * A signed image is a JSON object. When overriding the default signing platform configuration, a customer can
+     * select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format
+     * value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the
+     * payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.
+     * </p>
+     * 
+     * @param signingImageFormat
+     *        A signed image is a JSON object. When overriding the default signing platform configuration, a customer
+     *        can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third
+     *        format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing
+     *        image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in
+     *        the signing image.
+     * @see ImageFormat
+     */
+
+    public void setSigningImageFormat(String signingImageFormat) {
+        this.signingImageFormat = signingImageFormat;
+    }
+
+    /**
+     * <p>
+     * A signed image is a JSON object. When overriding the default signing platform configuration, a customer can
+     * select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format
+     * value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the
+     * payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.
+     * </p>
+     * 
+     * @return A signed image is a JSON object. When overriding the default signing platform configuration, a customer
+     *         can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A
+     *         third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the
+     *         signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be
+     *         embedded in the signing image.
+     * @see ImageFormat
+     */
+
+    public String getSigningImageFormat() {
+        return this.signingImageFormat;
+    }
+
+    /**
+     * <p>
+     * A signed image is a JSON object. When overriding the default signing platform configuration, a customer can
+     * select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format
+     * value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the
+     * payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.
+     * </p>
+     * 
+     * @param signingImageFormat
+     *        A signed image is a JSON object. When overriding the default signing platform configuration, a customer
+     *        can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third
+     *        format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing
+     *        image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in
+     *        the signing image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageFormat
+     */
+
+    public SigningPlatformOverrides withSigningImageFormat(String signingImageFormat) {
+        setSigningImageFormat(signingImageFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A signed image is a JSON object. When overriding the default signing platform configuration, a customer can
+     * select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format
+     * value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the
+     * payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.
+     * </p>
+     * 
+     * @param signingImageFormat
+     *        A signed image is a JSON object. When overriding the default signing platform configuration, a customer
+     *        can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third
+     *        format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing
+     *        image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in
+     *        the signing image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageFormat
+     */
+
+    public SigningPlatformOverrides withSigningImageFormat(ImageFormat signingImageFormat) {
+        this.signingImageFormat = signingImageFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +184,9 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSigningConfiguration() != null)
-            sb.append("SigningConfiguration: ").append(getSigningConfiguration());
+            sb.append("SigningConfiguration: ").append(getSigningConfiguration()).append(",");
+        if (getSigningImageFormat() != null)
+            sb.append("SigningImageFormat: ").append(getSigningImageFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +205,10 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
             return false;
         if (other.getSigningConfiguration() != null && other.getSigningConfiguration().equals(this.getSigningConfiguration()) == false)
             return false;
+        if (other.getSigningImageFormat() == null ^ this.getSigningImageFormat() == null)
+            return false;
+        if (other.getSigningImageFormat() != null && other.getSigningImageFormat().equals(this.getSigningImageFormat()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +218,7 @@ public class SigningPlatformOverrides implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSigningConfiguration() == null) ? 0 : getSigningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSigningImageFormat() == null) ? 0 : getSigningImageFormat().hashCode());
         return hashCode;
     }
 

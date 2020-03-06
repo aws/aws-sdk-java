@@ -31,6 +31,10 @@ public class RouteRefMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("meshOwner").build();
+    private static final MarshallingInfo<String> RESOURCEOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwner").build();
     private static final MarshallingInfo<String> ROUTENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("routeName").build();
     private static final MarshallingInfo<String> VIRTUALROUTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +58,8 @@ public class RouteRefMarshaller {
         try {
             protocolMarshaller.marshall(routeRef.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(routeRef.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(routeRef.getMeshOwner(), MESHOWNER_BINDING);
+            protocolMarshaller.marshall(routeRef.getResourceOwner(), RESOURCEOWNER_BINDING);
             protocolMarshaller.marshall(routeRef.getRouteName(), ROUTENAME_BINDING);
             protocolMarshaller.marshall(routeRef.getVirtualRouterName(), VIRTUALROUTERNAME_BINDING);
         } catch (Exception e) {

@@ -29,6 +29,8 @@ public class DeleteVirtualNodeRequestMarshaller {
 
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("meshOwner").build();
     private static final MarshallingInfo<String> VIRTUALNODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("virtualNodeName").build();
 
@@ -49,6 +51,7 @@ public class DeleteVirtualNodeRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteVirtualNodeRequest.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(deleteVirtualNodeRequest.getMeshOwner(), MESHOWNER_BINDING);
             protocolMarshaller.marshall(deleteVirtualNodeRequest.getVirtualNodeName(), VIRTUALNODENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

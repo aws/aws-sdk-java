@@ -60,6 +60,14 @@ public class ResourceMetadataJsonUnmarshaller implements Unmarshaller<ResourceMe
                     context.nextToken();
                     resourceMetadata.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("meshOwner", targetDepth)) {
+                    context.nextToken();
+                    resourceMetadata.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwner", targetDepth)) {
+                    context.nextToken();
+                    resourceMetadata.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("uid", targetDepth)) {
                     context.nextToken();
                     resourceMetadata.setUid(context.getUnmarshaller(String.class).unmarshall(context));

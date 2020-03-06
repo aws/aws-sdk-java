@@ -56,6 +56,14 @@ public class RouteRefJsonUnmarshaller implements Unmarshaller<RouteRef, JsonUnma
                     context.nextToken();
                     routeRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("meshOwner", targetDepth)) {
+                    context.nextToken();
+                    routeRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwner", targetDepth)) {
+                    context.nextToken();
+                    routeRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("routeName", targetDepth)) {
                     context.nextToken();
                     routeRef.setRouteName(context.getUnmarshaller(String.class).unmarshall(context));

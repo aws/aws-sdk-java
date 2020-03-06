@@ -31,6 +31,10 @@ public class VirtualServiceRefMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("meshOwner").build();
+    private static final MarshallingInfo<String> RESOURCEOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwner").build();
     private static final MarshallingInfo<String> VIRTUALSERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualServiceName").build();
 
@@ -52,6 +56,8 @@ public class VirtualServiceRefMarshaller {
         try {
             protocolMarshaller.marshall(virtualServiceRef.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(virtualServiceRef.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(virtualServiceRef.getMeshOwner(), MESHOWNER_BINDING);
+            protocolMarshaller.marshall(virtualServiceRef.getResourceOwner(), RESOURCEOWNER_BINDING);
             protocolMarshaller.marshall(virtualServiceRef.getVirtualServiceName(), VIRTUALSERVICENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

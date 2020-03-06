@@ -32,8 +32,8 @@ public class ListenerTlsAcmCertificate implements Serializable, Cloneable, Struc
      * <p>
      * The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must
      * have proxy authorization enabled. For more information, see <a href=
-     * "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">TLS
-     * Encryption</a>.
+     * "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     * >Transport Layer Security (TLS)</a>.
      * </p>
      */
     private String certificateArn;
@@ -42,15 +42,15 @@ public class ListenerTlsAcmCertificate implements Serializable, Cloneable, Struc
      * <p>
      * The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must
      * have proxy authorization enabled. For more information, see <a href=
-     * "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">TLS
-     * Encryption</a>.
+     * "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     * >Transport Layer Security (TLS)</a>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and
      *        you must have proxy authorization enabled. For more information, see <a href=
-     *        "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
-     *        >TLS Encryption</a>.
+     *        "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     *        >Transport Layer Security (TLS)</a>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -61,14 +61,14 @@ public class ListenerTlsAcmCertificate implements Serializable, Cloneable, Struc
      * <p>
      * The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must
      * have proxy authorization enabled. For more information, see <a href=
-     * "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">TLS
-     * Encryption</a>.
+     * "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     * >Transport Layer Security (TLS)</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and
      *         you must have proxy authorization enabled. For more information, see <a href=
-     *         "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
-     *         >TLS Encryption</a>.
+     *         "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     *         >Transport Layer Security (TLS)</a>.
      */
 
     public String getCertificateArn() {
@@ -79,15 +79,15 @@ public class ListenerTlsAcmCertificate implements Serializable, Cloneable, Struc
      * <p>
      * The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must
      * have proxy authorization enabled. For more information, see <a href=
-     * "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">TLS
-     * Encryption</a>.
+     * "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     * >Transport Layer Security (TLS)</a>.
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and
      *        you must have proxy authorization enabled. For more information, see <a href=
-     *        "https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
-     *        >TLS Encryption</a>.
+     *        "https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites"
+     *        >Transport Layer Security (TLS)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

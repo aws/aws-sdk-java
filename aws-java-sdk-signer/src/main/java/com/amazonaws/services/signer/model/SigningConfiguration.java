@@ -36,7 +36,7 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
     private EncryptionAlgorithmOptions encryptionAlgorithmOptions;
     /**
      * <p>
-     * The hash algorithm options that are available for a a code signing job.
+     * The hash algorithm options that are available for a code signing job.
      * </p>
      */
     private HashAlgorithmOptions hashAlgorithmOptions;
@@ -83,11 +83,11 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The hash algorithm options that are available for a a code signing job.
+     * The hash algorithm options that are available for a code signing job.
      * </p>
      * 
      * @param hashAlgorithmOptions
-     *        The hash algorithm options that are available for a a code signing job.
+     *        The hash algorithm options that are available for a code signing job.
      */
 
     public void setHashAlgorithmOptions(HashAlgorithmOptions hashAlgorithmOptions) {
@@ -96,10 +96,10 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The hash algorithm options that are available for a a code signing job.
+     * The hash algorithm options that are available for a code signing job.
      * </p>
      * 
-     * @return The hash algorithm options that are available for a a code signing job.
+     * @return The hash algorithm options that are available for a code signing job.
      */
 
     public HashAlgorithmOptions getHashAlgorithmOptions() {
@@ -108,11 +108,11 @@ public class SigningConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The hash algorithm options that are available for a a code signing job.
+     * The hash algorithm options that are available for a code signing job.
      * </p>
      * 
      * @param hashAlgorithmOptions
-     *        The hash algorithm options that are available for a a code signing job.
+     *        The hash algorithm options that are available for a code signing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

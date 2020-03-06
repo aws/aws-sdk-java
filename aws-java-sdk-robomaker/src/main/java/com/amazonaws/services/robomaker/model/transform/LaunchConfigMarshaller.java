@@ -37,6 +37,8 @@ public class LaunchConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariables").build();
     private static final MarshallingInfo<StructuredPojo> PORTFORWARDINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portForwardingConfig").build();
+    private static final MarshallingInfo<Boolean> STREAMUI_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamUI").build();
 
     private static final LaunchConfigMarshaller instance = new LaunchConfigMarshaller();
 
@@ -58,6 +60,7 @@ public class LaunchConfigMarshaller {
             protocolMarshaller.marshall(launchConfig.getLaunchFile(), LAUNCHFILE_BINDING);
             protocolMarshaller.marshall(launchConfig.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(launchConfig.getPortForwardingConfig(), PORTFORWARDINGCONFIG_BINDING);
+            protocolMarshaller.marshall(launchConfig.getStreamUI(), STREAMUI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

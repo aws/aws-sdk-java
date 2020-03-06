@@ -6459,6 +6459,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Enables or disables a Zone Group for your account. To use Local Zones, you must first enable the Zone Group.
+     * </p>
+     * 
+     * @param modifyAvailabilityZoneGroupRequest
+     * @return Result of the ModifyAvailabilityZoneGroup operation returned by the service.
+     * @sample AmazonEC2.ModifyAvailabilityZoneGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyAvailabilityZoneGroupResult modifyAvailabilityZoneGroup(ModifyAvailabilityZoneGroupRequest modifyAvailabilityZoneGroupRequest);
+
+    /**
+     * <p>
      * Modifies a Capacity Reservation's capacity and the conditions under which it is to be released. You cannot change
      * a Capacity Reservation's instance type, EBS optimization, instance store settings, platform, Availability Zone,
      * or instance eligibility. If you need to modify any of these attributes, we recommend that you cancel the Capacity

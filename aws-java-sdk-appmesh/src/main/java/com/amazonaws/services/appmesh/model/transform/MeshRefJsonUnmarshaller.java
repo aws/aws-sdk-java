@@ -56,6 +56,14 @@ public class MeshRefJsonUnmarshaller implements Unmarshaller<MeshRef, JsonUnmars
                     context.nextToken();
                     meshRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("meshOwner", targetDepth)) {
+                    context.nextToken();
+                    meshRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwner", targetDepth)) {
+                    context.nextToken();
+                    meshRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

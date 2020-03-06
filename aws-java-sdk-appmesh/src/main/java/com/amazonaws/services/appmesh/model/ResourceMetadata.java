@@ -48,6 +48,22 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     */
+    private String meshOwner;
+    /**
+     * <p>
+     * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
+     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     */
+    private String resourceOwner;
+    /**
+     * <p>
      * The unique identifier for the resource.
      * </p>
      */
@@ -182,6 +198,113 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public void setMeshOwner(String meshOwner) {
+        this.meshOwner = meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *         the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public String getMeshOwner() {
+        return this.meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceMetadata withMeshOwner(String meshOwner) {
+        setMeshOwner(meshOwner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
+     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param resourceOwner
+     *        The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
+     *        mesh owner, or another account that the mesh is shared with. For more information about mesh sharing, see
+     *        <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
+     *        Meshes</a>.
+     */
+
+    public void setResourceOwner(String resourceOwner) {
+        this.resourceOwner = resourceOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
+     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @return The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
+     *         mesh owner, or another account that the mesh is shared with. For more information about mesh sharing, see
+     *         <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
+     *         Meshes</a>.
+     */
+
+    public String getResourceOwner() {
+        return this.resourceOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
+     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param resourceOwner
+     *        The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
+     *        mesh owner, or another account that the mesh is shared with. For more information about mesh sharing, see
+     *        <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
+     *        Meshes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceMetadata withResourceOwner(String resourceOwner) {
+        setResourceOwner(resourceOwner);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique identifier for the resource.
      * </p>
      * 
@@ -284,6 +407,10 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getMeshOwner() != null)
+            sb.append("MeshOwner: ").append(getMeshOwner()).append(",");
+        if (getResourceOwner() != null)
+            sb.append("ResourceOwner: ").append(getResourceOwner()).append(",");
         if (getUid() != null)
             sb.append("Uid: ").append(getUid()).append(",");
         if (getVersion() != null)
@@ -314,6 +441,14 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
+        if (other.getMeshOwner() == null ^ this.getMeshOwner() == null)
+            return false;
+        if (other.getMeshOwner() != null && other.getMeshOwner().equals(this.getMeshOwner()) == false)
+            return false;
+        if (other.getResourceOwner() == null ^ this.getResourceOwner() == null)
+            return false;
+        if (other.getResourceOwner() != null && other.getResourceOwner().equals(this.getResourceOwner()) == false)
+            return false;
         if (other.getUid() == null ^ this.getUid() == null)
             return false;
         if (other.getUid() != null && other.getUid().equals(this.getUid()) == false)
@@ -333,6 +468,8 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getMeshOwner() == null) ? 0 : getMeshOwner().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwner() == null) ? 0 : getResourceOwner().hashCode());
         hashCode = prime * hashCode + ((getUid() == null) ? 0 : getUid().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;

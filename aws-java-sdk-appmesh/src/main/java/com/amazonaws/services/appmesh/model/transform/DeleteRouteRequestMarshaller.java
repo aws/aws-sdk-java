@@ -29,6 +29,8 @@ public class DeleteRouteRequestMarshaller {
 
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("meshName").build();
+    private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("meshOwner").build();
     private static final MarshallingInfo<String> ROUTENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("routeName").build();
     private static final MarshallingInfo<String> VIRTUALROUTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class DeleteRouteRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteRouteRequest.getMeshName(), MESHNAME_BINDING);
+            protocolMarshaller.marshall(deleteRouteRequest.getMeshOwner(), MESHOWNER_BINDING);
             protocolMarshaller.marshall(deleteRouteRequest.getRouteName(), ROUTENAME_BINDING);
             protocolMarshaller.marshall(deleteRouteRequest.getVirtualRouterName(), VIRTUALROUTERNAME_BINDING);
         } catch (Exception e) {

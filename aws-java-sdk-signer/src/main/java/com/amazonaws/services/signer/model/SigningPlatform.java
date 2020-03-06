@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the signing configurations and parameters that is used to perform a code signing job.
+ * Contains information about the signing configurations and parameters that are used to perform a code signing job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatform" target="_top">AWS API

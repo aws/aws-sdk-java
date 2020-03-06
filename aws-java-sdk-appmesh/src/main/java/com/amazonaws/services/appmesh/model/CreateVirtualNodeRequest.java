@@ -40,6 +40,15 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
     private String meshName;
     /**
      * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
+     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
+     * information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     */
+    private String meshOwner;
+    /**
+     * <p>
      * The virtual node specification to apply.
      * </p>
      */
@@ -142,6 +151,64 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public CreateVirtualNodeRequest withMeshName(String meshName) {
         setMeshName(meshName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
+     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
+     * information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that
+     *        you specify must share the mesh with your account before you can create the resource in the service mesh.
+     *        For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public void setMeshOwner(String meshOwner) {
+        this.meshOwner = meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
+     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
+     * information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account
+     *         that you specify must share the mesh with your account before you can create the resource in the service
+     *         mesh. For more information about mesh sharing, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public String getMeshOwner() {
+        return this.meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you
+     * specify must share the mesh with your account before you can create the resource in the service mesh. For more
+     * information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that
+     *        you specify must share the mesh with your account before you can create the resource in the service mesh.
+     *        For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVirtualNodeRequest withMeshOwner(String meshOwner) {
+        setMeshOwner(meshOwner);
         return this;
     }
 
@@ -327,6 +394,8 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getMeshName() != null)
             sb.append("MeshName: ").append(getMeshName()).append(",");
+        if (getMeshOwner() != null)
+            sb.append("MeshOwner: ").append(getMeshOwner()).append(",");
         if (getSpec() != null)
             sb.append("Spec: ").append(getSpec()).append(",");
         if (getTags() != null)
@@ -355,6 +424,10 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMeshName() != null && other.getMeshName().equals(this.getMeshName()) == false)
             return false;
+        if (other.getMeshOwner() == null ^ this.getMeshOwner() == null)
+            return false;
+        if (other.getMeshOwner() != null && other.getMeshOwner().equals(this.getMeshOwner()) == false)
+            return false;
         if (other.getSpec() == null ^ this.getSpec() == null)
             return false;
         if (other.getSpec() != null && other.getSpec().equals(this.getSpec()) == false)
@@ -377,6 +450,7 @@ public class CreateVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
+        hashCode = prime * hashCode + ((getMeshOwner() == null) ? 0 : getMeshOwner().hashCode());
         hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVirtualNodeName() == null) ? 0 : getVirtualNodeName().hashCode());

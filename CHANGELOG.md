@@ -1,3 +1,24 @@
+# __1.11.739__ __2020-03-06__
+## __AWS App Mesh__
+  - ### Features
+    - App Mesh now supports sharing a Mesh with other AWS accounts. Customers can use AWS Resource Access Manager to share their Mesh with other accounts in their organization to connection applications within a single service mesh. See https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html for details.
+
+## __AWS RoboMaker__
+  - ### Features
+    - Added support for streaming a GUI from robot and simulation applications
+
+## __AWS Signer__
+  - ### Features
+    - This release enables signing image format override in PutSigningProfile requests, adding two more enum fields, JSONEmbedded and JSONDetached. This release also extends the length limit of SigningProfile name from 20 to 64.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release provides customers with a self-service option to enable Local Zones.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Amazon GuardDuty findings now include the OutpostArn if the finding is generated for an AWS Outposts EC2 host.
+
 # __1.11.738__ __2020-03-05__
 ## __AWS OpsWorks CM__
   - ### Features

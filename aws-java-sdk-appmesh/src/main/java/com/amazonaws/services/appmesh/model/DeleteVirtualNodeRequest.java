@@ -33,6 +33,14 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
     private String meshName;
     /**
      * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     */
+    private String meshOwner;
+    /**
+     * <p>
      * The name of the virtual node to delete.
      * </p>
      */
@@ -75,6 +83,58 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public DeleteVirtualNodeRequest withMeshName(String meshName) {
         setMeshName(meshName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public void setMeshOwner(String meshOwner) {
+        this.meshOwner = meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *         the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public String getMeshOwner() {
+        return this.meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteVirtualNodeRequest withMeshOwner(String meshOwner) {
+        setMeshOwner(meshOwner);
         return this;
     }
 
@@ -132,6 +192,8 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getMeshName() != null)
             sb.append("MeshName: ").append(getMeshName()).append(",");
+        if (getMeshOwner() != null)
+            sb.append("MeshOwner: ").append(getMeshOwner()).append(",");
         if (getVirtualNodeName() != null)
             sb.append("VirtualNodeName: ").append(getVirtualNodeName());
         sb.append("}");
@@ -152,6 +214,10 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMeshName() != null && other.getMeshName().equals(this.getMeshName()) == false)
             return false;
+        if (other.getMeshOwner() == null ^ this.getMeshOwner() == null)
+            return false;
+        if (other.getMeshOwner() != null && other.getMeshOwner().equals(this.getMeshOwner()) == false)
+            return false;
         if (other.getVirtualNodeName() == null ^ this.getVirtualNodeName() == null)
             return false;
         if (other.getVirtualNodeName() != null && other.getVirtualNodeName().equals(this.getVirtualNodeName()) == false)
@@ -165,6 +231,7 @@ public class DeleteVirtualNodeRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
+        hashCode = prime * hashCode + ((getMeshOwner() == null) ? 0 : getMeshOwner().hashCode());
         hashCode = prime * hashCode + ((getVirtualNodeName() == null) ? 0 : getVirtualNodeName().hashCode());
         return hashCode;
     }

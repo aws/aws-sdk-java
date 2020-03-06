@@ -56,6 +56,14 @@ public class VirtualServiceRefJsonUnmarshaller implements Unmarshaller<VirtualSe
                     context.nextToken();
                     virtualServiceRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("meshOwner", targetDepth)) {
+                    context.nextToken();
+                    virtualServiceRef.setMeshOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceOwner", targetDepth)) {
+                    context.nextToken();
+                    virtualServiceRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("virtualServiceName", targetDepth)) {
                     context.nextToken();
                     virtualServiceRef.setVirtualServiceName(context.getUnmarshaller(String.class).unmarshall(context));

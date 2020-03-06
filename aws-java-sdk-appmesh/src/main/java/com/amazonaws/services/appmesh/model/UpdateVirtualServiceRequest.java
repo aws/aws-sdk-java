@@ -40,6 +40,14 @@ public class UpdateVirtualServiceRequest extends com.amazonaws.AmazonWebServiceR
     private String meshName;
     /**
      * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     */
+    private String meshOwner;
+    /**
+     * <p>
      * The new virtual service specification to apply. This overwrites the existing data.
      * </p>
      */
@@ -139,6 +147,58 @@ public class UpdateVirtualServiceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public void setMeshOwner(String meshOwner) {
+        this.meshOwner = meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @return The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *         the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     */
+
+    public String getMeshOwner() {
+        return this.meshOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the
+     * account that shared the mesh with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * </p>
+     * 
+     * @param meshOwner
+     *        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of
+     *        the account that shared the mesh with your account. For more information about mesh sharing, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateVirtualServiceRequest withMeshOwner(String meshOwner) {
+        setMeshOwner(meshOwner);
+        return this;
+    }
+
+    /**
+     * <p>
      * The new virtual service specification to apply. This overwrites the existing data.
      * </p>
      * 
@@ -233,6 +293,8 @@ public class UpdateVirtualServiceRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getMeshName() != null)
             sb.append("MeshName: ").append(getMeshName()).append(",");
+        if (getMeshOwner() != null)
+            sb.append("MeshOwner: ").append(getMeshOwner()).append(",");
         if (getSpec() != null)
             sb.append("Spec: ").append(getSpec()).append(",");
         if (getVirtualServiceName() != null)
@@ -259,6 +321,10 @@ public class UpdateVirtualServiceRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getMeshName() != null && other.getMeshName().equals(this.getMeshName()) == false)
             return false;
+        if (other.getMeshOwner() == null ^ this.getMeshOwner() == null)
+            return false;
+        if (other.getMeshOwner() != null && other.getMeshOwner().equals(this.getMeshOwner()) == false)
+            return false;
         if (other.getSpec() == null ^ this.getSpec() == null)
             return false;
         if (other.getSpec() != null && other.getSpec().equals(this.getSpec()) == false)
@@ -277,6 +343,7 @@ public class UpdateVirtualServiceRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
+        hashCode = prime * hashCode + ((getMeshOwner() == null) ? 0 : getMeshOwner().hashCode());
         hashCode = prime * hashCode + ((getSpec() == null) ? 0 : getSpec().hashCode());
         hashCode = prime * hashCode + ((getVirtualServiceName() == null) ? 0 : getVirtualServiceName().hashCode());
         return hashCode;

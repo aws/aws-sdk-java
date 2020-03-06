@@ -14720,6 +14720,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Enables or disables a Zone Group for your account. To use Local Zones, you must first enable the Zone Group.
+     * </p>
+     * 
+     * @param modifyAvailabilityZoneGroupRequest
+     * @return A Java Future containing the result of the ModifyAvailabilityZoneGroup operation returned by the service.
+     * @sample AmazonEC2Async.ModifyAvailabilityZoneGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(
+            ModifyAvailabilityZoneGroupRequest modifyAvailabilityZoneGroupRequest);
+
+    /**
+     * <p>
+     * Enables or disables a Zone Group for your account. To use Local Zones, you must first enable the Zone Group.
+     * </p>
+     * 
+     * @param modifyAvailabilityZoneGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyAvailabilityZoneGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyAvailabilityZoneGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAvailabilityZoneGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(
+            ModifyAvailabilityZoneGroupRequest modifyAvailabilityZoneGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyAvailabilityZoneGroupRequest, ModifyAvailabilityZoneGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies a Capacity Reservation's capacity and the conditions under which it is to be released. You cannot change
      * a Capacity Reservation's instance type, EBS optimization, instance store settings, platform, Availability Zone,
      * or instance eligibility. If you need to modify any of these attributes, we recommend that you cancel the Capacity

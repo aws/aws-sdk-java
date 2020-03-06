@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
      * @param resourceArn
-     *        Amazon Resource Name (ARN) for the signing profile.
+     *        The Amazon Resource Name (ARN) for the signing profile.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) for the signing profile.
+     * @return The Amazon Resource Name (ARN) for the signing profile.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
      * @param resourceArn
-     *        Amazon Resource Name (ARN) for the signing profile.
+     *        The Amazon Resource Name (ARN) for the signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

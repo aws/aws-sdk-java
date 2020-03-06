@@ -318,8 +318,8 @@ public interface AWSsigner {
     /**
      * <p>
      * Adds one or more tags to a signing profile. Tags are labels that you can use to identify and organize your AWS
-     * resources. Each tag consists of a key and an optional value. You specify the signing profile using its Amazon
-     * Resource Name (ARN). You specify the tag by using a key-value pair.
+     * resources. Each tag consists of a key and an optional value. To specify the signing profile, use its Amazon
+     * Resource Name (ARN). To specify the tag, use a key-value pair.
      * </p>
      * 
      * @param tagResourceRequest
@@ -339,7 +339,7 @@ public interface AWSsigner {
 
     /**
      * <p>
-     * Remove one or more tags from a signing profile. Specify a list of tag keys to remove the tags.
+     * Removes one or more tags from a signing profile. To remove the tags, specify a list of tag keys.
      * </p>
      * 
      * @param untagResourceRequest

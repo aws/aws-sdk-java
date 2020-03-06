@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ImageFormat {
 
-    JSON("JSON");
+    JSON("JSON"),
+    JSONEmbedded("JSONEmbedded"),
+    JSONDetached("JSONDetached");
 
     private String value;
 

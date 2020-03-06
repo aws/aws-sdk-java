@@ -11900,6 +11900,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(ModifyAvailabilityZoneGroupRequest request) {
+
+        return modifyAvailabilityZoneGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAvailabilityZoneGroupResult> modifyAvailabilityZoneGroupAsync(final ModifyAvailabilityZoneGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyAvailabilityZoneGroupRequest, ModifyAvailabilityZoneGroupResult> asyncHandler) {
+        final ModifyAvailabilityZoneGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyAvailabilityZoneGroupResult>() {
+            @Override
+            public ModifyAvailabilityZoneGroupResult call() throws Exception {
+                ModifyAvailabilityZoneGroupResult result = null;
+
+                try {
+                    result = executeModifyAvailabilityZoneGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyCapacityReservationResult> modifyCapacityReservationAsync(ModifyCapacityReservationRequest request) {
 
         return modifyCapacityReservationAsync(request, null);

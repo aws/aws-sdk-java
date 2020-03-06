@@ -61,7 +61,7 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      */
     private String arn;
@@ -321,11 +321,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
      * @param arn
-     *        Amazon Resource Name (ARN) for the signing profile.
+     *        The Amazon Resource Name (ARN) for the signing profile.
      */
 
     public void setArn(String arn) {
@@ -334,10 +334,10 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) for the signing profile.
+     * @return The Amazon Resource Name (ARN) for the signing profile.
      */
 
     public String getArn() {
@@ -346,11 +346,11 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) for the signing profile.
+     * The Amazon Resource Name (ARN) for the signing profile.
      * </p>
      * 
      * @param arn
-     *        Amazon Resource Name (ARN) for the signing profile.
+     *        The Amazon Resource Name (ARN) for the signing profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
