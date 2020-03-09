@@ -33,6 +33,16 @@ public class KinesisSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageFormat").build();
     private static final MarshallingInfo<String> SERVICEACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccessRoleArn").build();
+    private static final MarshallingInfo<Boolean> INCLUDETRANSACTIONDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeTransactionDetails").build();
+    private static final MarshallingInfo<Boolean> INCLUDEPARTITIONVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludePartitionValue").build();
+    private static final MarshallingInfo<Boolean> PARTITIONINCLUDESCHEMATABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PartitionIncludeSchemaTable").build();
+    private static final MarshallingInfo<Boolean> INCLUDETABLEALTEROPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeTableAlterOperations").build();
+    private static final MarshallingInfo<Boolean> INCLUDECONTROLDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeControlDetails").build();
 
     private static final KinesisSettingsMarshaller instance = new KinesisSettingsMarshaller();
 
@@ -53,6 +63,11 @@ public class KinesisSettingsMarshaller {
             protocolMarshaller.marshall(kinesisSettings.getStreamArn(), STREAMARN_BINDING);
             protocolMarshaller.marshall(kinesisSettings.getMessageFormat(), MESSAGEFORMAT_BINDING);
             protocolMarshaller.marshall(kinesisSettings.getServiceAccessRoleArn(), SERVICEACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(kinesisSettings.getIncludeTransactionDetails(), INCLUDETRANSACTIONDETAILS_BINDING);
+            protocolMarshaller.marshall(kinesisSettings.getIncludePartitionValue(), INCLUDEPARTITIONVALUE_BINDING);
+            protocolMarshaller.marshall(kinesisSettings.getPartitionIncludeSchemaTable(), PARTITIONINCLUDESCHEMATABLE_BINDING);
+            protocolMarshaller.marshall(kinesisSettings.getIncludeTableAlterOperations(), INCLUDETABLEALTEROPERATIONS_BINDING);
+            protocolMarshaller.marshall(kinesisSettings.getIncludeControlDetails(), INCLUDECONTROLDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

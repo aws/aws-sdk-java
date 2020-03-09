@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Describes an identifiable significant activity that affects a replication instance or task. This object can provide
+ * the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Event" target="_top">AWS API Documentation</a>
  */

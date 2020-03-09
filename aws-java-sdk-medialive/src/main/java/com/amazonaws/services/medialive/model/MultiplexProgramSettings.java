@@ -26,12 +26,65 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MultiplexProgramSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Indicates which pipeline is preferred by the multiplex for program ingest. */
+    private String preferredChannelPipeline;
     /** Unique program number. */
     private Integer programNumber;
     /** Transport stream service descriptor configuration for the Multiplex program. */
     private MultiplexProgramServiceDescriptor serviceDescriptor;
     /** Program video settings configuration. */
     private MultiplexVideoSettings videoSettings;
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     * 
+     * @param preferredChannelPipeline
+     *        Indicates which pipeline is preferred by the multiplex for program ingest.
+     * @see PreferredChannelPipeline
+     */
+
+    public void setPreferredChannelPipeline(String preferredChannelPipeline) {
+        this.preferredChannelPipeline = preferredChannelPipeline;
+    }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     * 
+     * @return Indicates which pipeline is preferred by the multiplex for program ingest.
+     * @see PreferredChannelPipeline
+     */
+
+    public String getPreferredChannelPipeline() {
+        return this.preferredChannelPipeline;
+    }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     * 
+     * @param preferredChannelPipeline
+     *        Indicates which pipeline is preferred by the multiplex for program ingest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PreferredChannelPipeline
+     */
+
+    public MultiplexProgramSettings withPreferredChannelPipeline(String preferredChannelPipeline) {
+        setPreferredChannelPipeline(preferredChannelPipeline);
+        return this;
+    }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     * 
+     * @param preferredChannelPipeline
+     *        Indicates which pipeline is preferred by the multiplex for program ingest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PreferredChannelPipeline
+     */
+
+    public MultiplexProgramSettings withPreferredChannelPipeline(PreferredChannelPipeline preferredChannelPipeline) {
+        this.preferredChannelPipeline = preferredChannelPipeline.toString();
+        return this;
+    }
 
     /**
      * Unique program number.
@@ -147,6 +200,8 @@ public class MultiplexProgramSettings implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPreferredChannelPipeline() != null)
+            sb.append("PreferredChannelPipeline: ").append(getPreferredChannelPipeline()).append(",");
         if (getProgramNumber() != null)
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
         if (getServiceDescriptor() != null)
@@ -167,6 +222,10 @@ public class MultiplexProgramSettings implements Serializable, Cloneable, Struct
         if (obj instanceof MultiplexProgramSettings == false)
             return false;
         MultiplexProgramSettings other = (MultiplexProgramSettings) obj;
+        if (other.getPreferredChannelPipeline() == null ^ this.getPreferredChannelPipeline() == null)
+            return false;
+        if (other.getPreferredChannelPipeline() != null && other.getPreferredChannelPipeline().equals(this.getPreferredChannelPipeline()) == false)
+            return false;
         if (other.getProgramNumber() == null ^ this.getProgramNumber() == null)
             return false;
         if (other.getProgramNumber() != null && other.getProgramNumber().equals(this.getProgramNumber()) == false)
@@ -187,6 +246,7 @@ public class MultiplexProgramSettings implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPreferredChannelPipeline() == null) ? 0 : getPreferredChannelPipeline().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getServiceDescriptor() == null) ? 0 : getServiceDescriptor().hashCode());
         hashCode = prime * hashCode + ((getVideoSettings() == null) ? 0 : getVideoSettings().hashCode());

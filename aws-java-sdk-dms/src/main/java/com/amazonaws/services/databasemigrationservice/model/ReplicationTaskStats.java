@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of
+ * statistics about a replication task.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTaskStats" target="_top">AWS API
  *      Documentation</a>
@@ -85,7 +88,7 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
     private java.util.Date stopDate;
     /**
      * <p>
-     * The date the the replication task full load was started.
+     * The date the replication task full load was started.
      * </p>
      */
     private java.util.Date fullLoadStartDate;
@@ -476,11 +479,11 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the the replication task full load was started.
+     * The date the replication task full load was started.
      * </p>
      * 
      * @param fullLoadStartDate
-     *        The date the the replication task full load was started.
+     *        The date the replication task full load was started.
      */
 
     public void setFullLoadStartDate(java.util.Date fullLoadStartDate) {
@@ -489,10 +492,10 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the the replication task full load was started.
+     * The date the replication task full load was started.
      * </p>
      * 
-     * @return The date the the replication task full load was started.
+     * @return The date the replication task full load was started.
      */
 
     public java.util.Date getFullLoadStartDate() {
@@ -501,11 +504,11 @@ public class ReplicationTaskStats implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date the the replication task full load was started.
+     * The date the replication task full load was started.
      * </p>
      * 
      * @param fullLoadStartDate
-     *        The date the the replication task full load was started.
+     *        The date the replication task full load was started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

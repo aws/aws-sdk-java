@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MessageFormatValue {
 
-    Json("json");
+    Json("json"),
+    JsonUnformatted("json-unformatted");
 
     private String value;
 

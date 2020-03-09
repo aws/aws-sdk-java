@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MultiplexProgramSettingsMarshaller {
 
+    private static final MarshallingInfo<String> PREFERREDCHANNELPIPELINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preferredChannelPipeline").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programNumber").build();
     private static final MarshallingInfo<StructuredPojo> SERVICEDESCRIPTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -50,6 +52,7 @@ public class MultiplexProgramSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(multiplexProgramSettings.getPreferredChannelPipeline(), PREFERREDCHANNELPIPELINE_BINDING);
             protocolMarshaller.marshall(multiplexProgramSettings.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(multiplexProgramSettings.getServiceDescriptor(), SERVICEDESCRIPTOR_BINDING);
             protocolMarshaller.marshall(multiplexProgramSettings.getVideoSettings(), VIDEOSETTINGS_BINDING);

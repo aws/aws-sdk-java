@@ -84,7 +84,7 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
@@ -108,12 +108,30 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private Boolean allowMajorVersionUpgrade;
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     * maintenance window. Changing this parameter does not result in an outage except in the following case and the
-     * change is asynchronously applied as soon as possible. An outage will result if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS has enabled
-     * auto patching for that engine version.
+     * A value that indicates that minor version upgrades are applied automatically to the replication instance during
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * following. The change is asynchronously applied as soon as possible.
      * </p>
+     * <p>
+     * An outage does result if these factors apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This parameter is set to <code>true</code> during the maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A newer minor version is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS DMS has enabled automatic patching for the given engine version.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Boolean autoMinorVersionUpgrade;
     /**
@@ -524,12 +542,12 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -539,11 +557,11 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -553,12 +571,12 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -570,11 +588,11 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -714,19 +732,54 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     * maintenance window. Changing this parameter does not result in an outage except in the following case and the
-     * change is asynchronously applied as soon as possible. An outage will result if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS has enabled
-     * auto patching for that engine version.
+     * A value that indicates that minor version upgrades are applied automatically to the replication instance during
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * following. The change is asynchronously applied as soon as possible.
      * </p>
+     * <p>
+     * An outage does result if these factors apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This parameter is set to <code>true</code> during the maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A newer minor version is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS DMS has enabled automatic patching for the given engine version.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     *        maintenance window. Changing this parameter does not result in an outage except in the following case and
-     *        the change is asynchronously applied as soon as possible. An outage will result if this parameter is set
-     *        to <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS
-     *        has enabled auto patching for that engine version.
+     *        A value that indicates that minor version upgrades are applied automatically to the replication instance
+     *        during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
+     *        dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *        <p>
+     *        An outage does result if these factors apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        This parameter is set to <code>true</code> during the maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A newer minor version is available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AWS DMS has enabled automatic patching for the given engine version.
+     *        </p>
+     *        </li>
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -735,18 +788,53 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     * maintenance window. Changing this parameter does not result in an outage except in the following case and the
-     * change is asynchronously applied as soon as possible. An outage will result if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS has enabled
-     * auto patching for that engine version.
+     * A value that indicates that minor version upgrades are applied automatically to the replication instance during
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * following. The change is asynchronously applied as soon as possible.
      * </p>
+     * <p>
+     * An outage does result if these factors apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This parameter is set to <code>true</code> during the maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A newer minor version is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS DMS has enabled automatic patching for the given engine version.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates that minor version upgrades will be applied automatically to the replication instance during
-     *         the maintenance window. Changing this parameter does not result in an outage except in the following case
-     *         and the change is asynchronously applied as soon as possible. An outage will result if this parameter is
-     *         set to <code>true</code> during the maintenance window, and a newer minor version is available, and AWS
-     *         DMS has enabled auto patching for that engine version.
+     * @return A value that indicates that minor version upgrades are applied automatically to the replication instance
+     *         during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
+     *         dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *         <p>
+     *         An outage does result if these factors apply:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         This parameter is set to <code>true</code> during the maintenance window.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A newer minor version is available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AWS DMS has enabled automatic patching for the given engine version.
+     *         </p>
+     *         </li>
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -755,19 +843,54 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     * maintenance window. Changing this parameter does not result in an outage except in the following case and the
-     * change is asynchronously applied as soon as possible. An outage will result if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS has enabled
-     * auto patching for that engine version.
+     * A value that indicates that minor version upgrades are applied automatically to the replication instance during
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * following. The change is asynchronously applied as soon as possible.
      * </p>
+     * <p>
+     * An outage does result if these factors apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This parameter is set to <code>true</code> during the maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A newer minor version is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS DMS has enabled automatic patching for the given engine version.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     *        maintenance window. Changing this parameter does not result in an outage except in the following case and
-     *        the change is asynchronously applied as soon as possible. An outage will result if this parameter is set
-     *        to <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS
-     *        has enabled auto patching for that engine version.
+     *        A value that indicates that minor version upgrades are applied automatically to the replication instance
+     *        during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
+     *        dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *        <p>
+     *        An outage does result if these factors apply:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        This parameter is set to <code>true</code> during the maintenance window.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A newer minor version is available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AWS DMS has enabled automatic patching for the given engine version.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -778,18 +901,53 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the replication instance during the
-     * maintenance window. Changing this parameter does not result in an outage except in the following case and the
-     * change is asynchronously applied as soon as possible. An outage will result if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is available, and AWS DMS has enabled
-     * auto patching for that engine version.
+     * A value that indicates that minor version upgrades are applied automatically to the replication instance during
+     * the maintenance window. Changing this parameter doesn't result in an outage, except in the case dsecribed
+     * following. The change is asynchronously applied as soon as possible.
      * </p>
+     * <p>
+     * An outage does result if these factors apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * This parameter is set to <code>true</code> during the maintenance window.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A newer minor version is available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS DMS has enabled automatic patching for the given engine version.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates that minor version upgrades will be applied automatically to the replication instance during
-     *         the maintenance window. Changing this parameter does not result in an outage except in the following case
-     *         and the change is asynchronously applied as soon as possible. An outage will result if this parameter is
-     *         set to <code>true</code> during the maintenance window, and a newer minor version is available, and AWS
-     *         DMS has enabled auto patching for that engine version.
+     * @return A value that indicates that minor version upgrades are applied automatically to the replication instance
+     *         during the maintenance window. Changing this parameter doesn't result in an outage, except in the case
+     *         dsecribed following. The change is asynchronously applied as soon as possible. </p>
+     *         <p>
+     *         An outage does result if these factors apply:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         This parameter is set to <code>true</code> during the maintenance window.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A newer minor version is available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AWS DMS has enabled automatic patching for the given engine version.
+     *         </p>
+     *         </li>
      */
 
     public Boolean isAutoMinorVersionUpgrade() {

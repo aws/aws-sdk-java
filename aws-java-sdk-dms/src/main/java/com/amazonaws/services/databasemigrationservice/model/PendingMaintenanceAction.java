@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data
+ * type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/PendingMaintenanceAction" target="_top">AWS API
  *      Documentation</a>
@@ -34,7 +37,7 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
     private String action;
     /**
      * <p>
-     * The date of the maintenance window when the action will be applied. The maintenance action will be applied to the
+     * The date of the maintenance window when the action is to be applied. The maintenance action is applied to the
      * resource during its first maintenance window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.
      * </p>
@@ -42,7 +45,7 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
     private java.util.Date autoAppliedAfterDate;
     /**
      * <p>
-     * The date when the maintenance action will be automatically applied. The maintenance action will be applied to the
+     * The date when the maintenance action will be automatically applied. The maintenance action is applied to the
      * resource on this date regardless of the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.
      * </p>
@@ -50,16 +53,16 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
     private java.util.Date forcedApplyDate;
     /**
      * <p>
-     * Indicates the type of opt-in request that has been received for the resource.
+     * The type of opt-in request that has been received for the resource.
      * </p>
      */
     private String optInStatus;
     /**
      * <p>
      * The effective date when the pending maintenance action will be applied to the resource. This date takes into
-     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
-     * has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
+     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an
+     * opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.
      * </p>
      */
@@ -113,14 +116,14 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date of the maintenance window when the action will be applied. The maintenance action will be applied to the
+     * The date of the maintenance window when the action is to be applied. The maintenance action is applied to the
      * resource during its first maintenance window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.
      * </p>
      * 
      * @param autoAppliedAfterDate
-     *        The date of the maintenance window when the action will be applied. The maintenance action will be applied
-     *        to the resource during its first maintenance window after this date. If this date is specified, any
+     *        The date of the maintenance window when the action is to be applied. The maintenance action is applied to
+     *        the resource during its first maintenance window after this date. If this date is specified, any
      *        <code>next-maintenance</code> opt-in requests are ignored.
      */
 
@@ -130,14 +133,14 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date of the maintenance window when the action will be applied. The maintenance action will be applied to the
+     * The date of the maintenance window when the action is to be applied. The maintenance action is applied to the
      * resource during its first maintenance window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.
      * </p>
      * 
-     * @return The date of the maintenance window when the action will be applied. The maintenance action will be
-     *         applied to the resource during its first maintenance window after this date. If this date is specified,
-     *         any <code>next-maintenance</code> opt-in requests are ignored.
+     * @return The date of the maintenance window when the action is to be applied. The maintenance action is applied to
+     *         the resource during its first maintenance window after this date. If this date is specified, any
+     *         <code>next-maintenance</code> opt-in requests are ignored.
      */
 
     public java.util.Date getAutoAppliedAfterDate() {
@@ -146,14 +149,14 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date of the maintenance window when the action will be applied. The maintenance action will be applied to the
+     * The date of the maintenance window when the action is to be applied. The maintenance action is applied to the
      * resource during its first maintenance window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.
      * </p>
      * 
      * @param autoAppliedAfterDate
-     *        The date of the maintenance window when the action will be applied. The maintenance action will be applied
-     *        to the resource during its first maintenance window after this date. If this date is specified, any
+     *        The date of the maintenance window when the action is to be applied. The maintenance action is applied to
+     *        the resource during its first maintenance window after this date. If this date is specified, any
      *        <code>next-maintenance</code> opt-in requests are ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -165,14 +168,14 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date when the maintenance action will be automatically applied. The maintenance action will be applied to the
+     * The date when the maintenance action will be automatically applied. The maintenance action is applied to the
      * resource on this date regardless of the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.
      * </p>
      * 
      * @param forcedApplyDate
-     *        The date when the maintenance action will be automatically applied. The maintenance action will be applied
-     *        to the resource on this date regardless of the maintenance window for the resource. If this date is
+     *        The date when the maintenance action will be automatically applied. The maintenance action is applied to
+     *        the resource on this date regardless of the maintenance window for the resource. If this date is
      *        specified, any <code>immediate</code> opt-in requests are ignored.
      */
 
@@ -182,14 +185,14 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date when the maintenance action will be automatically applied. The maintenance action will be applied to the
+     * The date when the maintenance action will be automatically applied. The maintenance action is applied to the
      * resource on this date regardless of the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.
      * </p>
      * 
-     * @return The date when the maintenance action will be automatically applied. The maintenance action will be
-     *         applied to the resource on this date regardless of the maintenance window for the resource. If this date
-     *         is specified, any <code>immediate</code> opt-in requests are ignored.
+     * @return The date when the maintenance action will be automatically applied. The maintenance action is applied to
+     *         the resource on this date regardless of the maintenance window for the resource. If this date is
+     *         specified, any <code>immediate</code> opt-in requests are ignored.
      */
 
     public java.util.Date getForcedApplyDate() {
@@ -198,14 +201,14 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date when the maintenance action will be automatically applied. The maintenance action will be applied to the
+     * The date when the maintenance action will be automatically applied. The maintenance action is applied to the
      * resource on this date regardless of the maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.
      * </p>
      * 
      * @param forcedApplyDate
-     *        The date when the maintenance action will be automatically applied. The maintenance action will be applied
-     *        to the resource on this date regardless of the maintenance window for the resource. If this date is
+     *        The date when the maintenance action will be automatically applied. The maintenance action is applied to
+     *        the resource on this date regardless of the maintenance window for the resource. If this date is
      *        specified, any <code>immediate</code> opt-in requests are ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -217,11 +220,11 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates the type of opt-in request that has been received for the resource.
+     * The type of opt-in request that has been received for the resource.
      * </p>
      * 
      * @param optInStatus
-     *        Indicates the type of opt-in request that has been received for the resource.
+     *        The type of opt-in request that has been received for the resource.
      */
 
     public void setOptInStatus(String optInStatus) {
@@ -230,10 +233,10 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates the type of opt-in request that has been received for the resource.
+     * The type of opt-in request that has been received for the resource.
      * </p>
      * 
-     * @return Indicates the type of opt-in request that has been received for the resource.
+     * @return The type of opt-in request that has been received for the resource.
      */
 
     public String getOptInStatus() {
@@ -242,11 +245,11 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates the type of opt-in request that has been received for the resource.
+     * The type of opt-in request that has been received for the resource.
      * </p>
      * 
      * @param optInStatus
-     *        Indicates the type of opt-in request that has been received for the resource.
+     *        The type of opt-in request that has been received for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,18 +261,18 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The effective date when the pending maintenance action will be applied to the resource. This date takes into
-     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
-     * has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
+     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an
+     * opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.
      * </p>
      * 
      * @param currentApplyDate
      *        The effective date when the pending maintenance action will be applied to the resource. This date takes
-     *        into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     *        <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in
-     *        request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
-     *        <code>ForcedApplyDate</code>.
+     *        into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation,
+     *        and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This
+     *        value is blank if an opt-in request has not been received and nothing has been specified for
+     *        <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
      */
 
     public void setCurrentApplyDate(java.util.Date currentApplyDate) {
@@ -279,17 +282,17 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The effective date when the pending maintenance action will be applied to the resource. This date takes into
-     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
-     * has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
+     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an
+     * opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.
      * </p>
      * 
      * @return The effective date when the pending maintenance action will be applied to the resource. This date takes
-     *         into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     *         <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in
-     *         request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
-     *         <code>ForcedApplyDate</code>.
+     *         into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation,
+     *         and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This
+     *         value is blank if an opt-in request has not been received and nothing has been specified for
+     *         <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
      */
 
     public java.util.Date getCurrentApplyDate() {
@@ -299,18 +302,18 @@ public class PendingMaintenanceAction implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The effective date when the pending maintenance action will be applied to the resource. This date takes into
-     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in request
-     * has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
+     * account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This value is blank if an
+     * opt-in request has not been received and nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.
      * </p>
      * 
      * @param currentApplyDate
      *        The effective date when the pending maintenance action will be applied to the resource. This date takes
-     *        into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API, the
-     *        <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This value is blank if an opt-in
-     *        request has not been received and nothing has been specified as <code>AutoAppliedAfterDate</code> or
-     *        <code>ForcedApplyDate</code>.
+     *        into account opt-in requests received from the <code>ApplyPendingMaintenanceAction</code> API operation,
+     *        and also the <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values. This
+     *        value is blank if an opt-in request has not been received and nothing has been specified for
+     *        <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

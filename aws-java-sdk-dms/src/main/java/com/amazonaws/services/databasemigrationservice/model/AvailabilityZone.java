@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * The name of the Availability Zone for use during database migration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AvailabilityZone" target="_top">AWS API
  *      Documentation</a>
@@ -28,18 +30,18 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the availability zone.
+     * The name of the Availability Zone.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the availability zone.
+     * The name of the Availability Zone.
      * </p>
      * 
      * @param name
-     *        The name of the availability zone.
+     *        The name of the Availability Zone.
      */
 
     public void setName(String name) {
@@ -48,10 +50,10 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the availability zone.
+     * The name of the Availability Zone.
      * </p>
      * 
-     * @return The name of the availability zone.
+     * @return The name of the Availability Zone.
      */
 
     public String getName() {
@@ -60,11 +62,11 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the availability zone.
+     * The name of the Availability Zone.
      * </p>
      * 
      * @param name
-     *        The name of the availability zone.
+     *        The name of the Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,7 +55,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not specified, then
+     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then
      * the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      * </p>
      */
@@ -68,8 +68,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to
-     * NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet file formats.
+     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either
+     * set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies
+     * to both .csv and .parquet file formats.
      * </p>
      */
     private String compressionType;
@@ -258,11 +259,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
-     * more information about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     * parameters for output to .csv files only. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      */
@@ -288,8 +288,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-     * parameters in versions 3.1.4 and later.
+     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
      * </p>
      * </note>
      */
@@ -359,6 +364,36 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private Boolean parquetTimestampInMillisecond;
+    /**
+     * <p>
+     * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
+     * (columnar storage) output files. The default setting is <code>false</code>, but when
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
+     * source database are migrated to the .csv or .parquet file.
+     * </p>
+     * <p>
+     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
+     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
+     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
+     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
+     * about how these settings work together, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
+     * </p>
+     * </note>
+     */
+    private Boolean cdcInsertsAndUpdates;
 
     /**
      * <p>
@@ -526,13 +561,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not specified, then
+     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then
      * the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      * </p>
      * 
      * @param bucketFolder
      *        An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     *        <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not
+     *        <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't
      *        specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      */
 
@@ -543,12 +578,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not specified, then
+     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then
      * the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      * </p>
      * 
      * @return An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     *         <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not
+     *         <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't
      *         specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      */
 
@@ -559,13 +594,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not specified, then
+     * <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't specified, then
      * the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      * </p>
      * 
      * @param bucketFolder
      *        An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path
-     *        <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter is not
+     *        <code> <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>. If this parameter isn't
      *        specified, then the path used is <code> <i>schema_name</i>/<i>table_name</i>/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -617,14 +652,15 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to
-     * NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet file formats.
+     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either
+     * set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies
+     * to both .csv and .parquet file formats.
      * </p>
      * 
      * @param compressionType
      *        An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files.
-     *        Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet
-     *        file formats.
+     *        Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This
+     *        parameter applies to both .csv and .parquet file formats.
      * @see CompressionTypeValue
      */
 
@@ -634,13 +670,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to
-     * NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet file formats.
+     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either
+     * set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies
+     * to both .csv and .parquet file formats.
      * </p>
      * 
      * @return An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files.
-     *         Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and
-     *         .parquet file formats.
+     *         Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This
+     *         parameter applies to both .csv and .parquet file formats.
      * @see CompressionTypeValue
      */
 
@@ -650,14 +687,15 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to
-     * NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet file formats.
+     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either
+     * set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies
+     * to both .csv and .parquet file formats.
      * </p>
      * 
      * @param compressionType
      *        An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files.
-     *        Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet
-     *        file formats.
+     *        Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This
+     *        parameter applies to both .csv and .parquet file formats.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionTypeValue
      */
@@ -669,14 +707,15 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to
-     * NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet file formats.
+     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either
+     * set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies
+     * to both .csv and .parquet file formats.
      * </p>
      * 
      * @param compressionType
      *        An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files.
-     *        Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet
-     *        file formats.
+     *        Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This
+     *        parameter applies to both .csv and .parquet file formats.
      * @see CompressionTypeValue
      */
 
@@ -686,14 +725,15 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to
-     * NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet file formats.
+     * An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Either
+     * set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This parameter applies
+     * to both .csv and .parquet file formats.
      * </p>
      * 
      * @param compressionType
      *        An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files.
-     *        Set to NONE (the default) or do not use to leave the files uncompressed. Applies to both .csv and .parquet
-     *        file formats.
+     *        Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed. This
+     *        parameter applies to both .csv and .parquet file formats.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionTypeValue
      */
@@ -2260,11 +2300,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
-     * more information about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     * parameters for output to .csv files only. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
@@ -2284,8 +2323,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
-     *        For more information about how these settings work together, see <a href=
+     *        This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     *        parameters for output to .csv files only. For more information about how these settings work together, see
+     *        <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *        Guide.</i>.
@@ -2315,11 +2355,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
-     * more information about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     * parameters for output to .csv files only. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
@@ -2338,8 +2377,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
-     *         For more information about how these settings work together, see <a href=
+     *         This setting works together with the <code>CdcInsertsOnly</code> and the
+     *         <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For more information about
+     *         how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *         Guide.</i>.
@@ -2369,11 +2409,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
-     * more information about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     * parameters for output to .csv files only. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
@@ -2393,8 +2432,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
-     *        For more information about how these settings work together, see <a href=
+     *        This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     *        parameters for output to .csv files only. For more information about how these settings work together, see
+     *        <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *        Guide.</i>.
@@ -2426,11 +2466,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only. For
-     * more information about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
-     * Guide.</i>.
+     * This setting works together with the <code>CdcInsertsOnly</code> and the <code>CdcInsertsAndUpdates</code>
+     * parameters for output to .csv files only. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User Guide.</i>.
      * </p>
      * </note>
      * 
@@ -2449,8 +2488,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         This setting works together with the <code>CdcInsertsOnly</code> parameter for output to .csv files only.
-     *         For more information about how these settings work together, see <a href=
+     *         This setting works together with the <code>CdcInsertsOnly</code> and the
+     *         <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For more information about
+     *         how these settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
      *         Guide.</i>.
@@ -2482,8 +2522,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-     * parameters in versions 3.1.4 and later.
+     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
      * </p>
      * </note>
      * 
@@ -2506,8 +2551,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *        AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *        <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     *        </p>
+     *        <p>
+     *        <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *        for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *        <code>true</code> for the same endpoint, but not both.
      *        </p>
      */
 
@@ -2536,8 +2586,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-     * parameters in versions 3.1.4 and later.
+     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
      * </p>
      * </note>
      * 
@@ -2560,8 +2615,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *         AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *         <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     *         </p>
+     *         <p>
+     *         <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *         for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *         <code>true</code> for the same endpoint, but not both.
      *         </p>
      */
 
@@ -2590,8 +2650,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-     * parameters in versions 3.1.4 and later.
+     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
      * </p>
      * </note>
      * 
@@ -2614,8 +2679,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *        AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *        <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     *        </p>
+     *        <p>
+     *        <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *        for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *        <code>true</code> for the same endpoint, but not both.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2646,8 +2716,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code>
-     * parameters in versions 3.1.4 and later.
+     * AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
+     * <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
      * </p>
      * </note>
      * 
@@ -2670,8 +2745,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         AWS DMS supports this interaction between the <code>CdcInsertsOnly</code> and
+     *         AWS DMS supports the interaction described preceding between the <code>CdcInsertsOnly</code> and
      *         <code>IncludeOpForFullLoad</code> parameters in versions 3.1.4 and later.
+     *         </p>
+     *         <p>
+     *         <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *         for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *         <code>true</code> for the same endpoint, but not both.
      *         </p>
      */
 
@@ -3128,6 +3208,246 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
+     * (columnar storage) output files. The default setting is <code>false</code>, but when
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
+     * source database are migrated to the .csv or .parquet file.
+     * </p>
+     * <p>
+     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
+     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
+     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
+     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
+     * about how these settings work together, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param cdcInsertsAndUpdates
+     *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
+     *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
+     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
+     *        the source database are migrated to the .csv or .parquet file. </p>
+     *        <p>
+     *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
+     *        <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
+     *        to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to
+     *        <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the
+     *        source. For more information about how these settings work together, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        Guide.</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *        </p>
+     *        <p>
+     *        <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *        for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *        <code>true</code> for the same endpoint, but not both.
+     *        </p>
+     */
+
+    public void setCdcInsertsAndUpdates(Boolean cdcInsertsAndUpdates) {
+        this.cdcInsertsAndUpdates = cdcInsertsAndUpdates;
+    }
+
+    /**
+     * <p>
+     * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
+     * (columnar storage) output files. The default setting is <code>false</code>, but when
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
+     * source database are migrated to the .csv or .parquet file.
+     * </p>
+     * <p>
+     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
+     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
+     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
+     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
+     * about how these settings work together, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
+     * </p>
+     * </note>
+     * 
+     * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
+     *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
+     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
+     *         the source database are migrated to the .csv or .parquet file. </p>
+     *         <p>
+     *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
+     *         <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
+     *         to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set
+     *         to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at
+     *         the source. For more information about how these settings work together, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         Guide.</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *         </p>
+     *         <p>
+     *         <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *         for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *         <code>true</code> for the same endpoint, but not both.
+     *         </p>
+     */
+
+    public Boolean getCdcInsertsAndUpdates() {
+        return this.cdcInsertsAndUpdates;
+    }
+
+    /**
+     * <p>
+     * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
+     * (columnar storage) output files. The default setting is <code>false</code>, but when
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
+     * source database are migrated to the .csv or .parquet file.
+     * </p>
+     * <p>
+     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
+     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
+     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
+     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
+     * about how these settings work together, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param cdcInsertsAndUpdates
+     *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
+     *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
+     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
+     *        the source database are migrated to the .csv or .parquet file. </p>
+     *        <p>
+     *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
+     *        <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
+     *        to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to
+     *        <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the
+     *        source. For more information about how these settings work together, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *        Guide.</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *        </p>
+     *        <p>
+     *        <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *        for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *        <code>true</code> for the same endpoint, but not both.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withCdcInsertsAndUpdates(Boolean cdcInsertsAndUpdates) {
+        setCdcInsertsAndUpdates(cdcInsertsAndUpdates);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
+     * (columnar storage) output files. The default setting is <code>false</code>, but when
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
+     * source database are migrated to the .csv or .parquet file.
+     * </p>
+     * <p>
+     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
+     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
+     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
+     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
+     * about how these settings work together, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>.
+     * </p>
+     * <note>
+     * <p>
+     * AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     * </p>
+     * <p>
+     * <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code> for the
+     * same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+     * for the same endpoint, but not both.
+     * </p>
+     * </note>
+     * 
+     * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
+     *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
+     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
+     *         the source database are migrated to the .csv or .parquet file. </p>
+     *         <p>
+     *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
+     *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
+     *         <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
+     *         to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set
+     *         to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at
+     *         the source. For more information about how these settings work together, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
+     *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>AWS Database Migration Service User
+     *         Guide.</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         AWS DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in versions 3.3.1 and later.
+     *         </p>
+     *         <p>
+     *         <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't both be set to <code>true</code>
+     *         for the same endpoint. Set either <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to
+     *         <code>true</code> for the same endpoint, but not both.
+     *         </p>
+     */
+
+    public Boolean isCdcInsertsAndUpdates() {
+        return this.cdcInsertsAndUpdates;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3178,7 +3498,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getTimestampColumnName() != null)
             sb.append("TimestampColumnName: ").append(getTimestampColumnName()).append(",");
         if (getParquetTimestampInMillisecond() != null)
-            sb.append("ParquetTimestampInMillisecond: ").append(getParquetTimestampInMillisecond());
+            sb.append("ParquetTimestampInMillisecond: ").append(getParquetTimestampInMillisecond()).append(",");
+        if (getCdcInsertsAndUpdates() != null)
+            sb.append("CdcInsertsAndUpdates: ").append(getCdcInsertsAndUpdates());
         sb.append("}");
         return sb.toString();
     }
@@ -3274,6 +3596,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getParquetTimestampInMillisecond() != null
                 && other.getParquetTimestampInMillisecond().equals(this.getParquetTimestampInMillisecond()) == false)
             return false;
+        if (other.getCdcInsertsAndUpdates() == null ^ this.getCdcInsertsAndUpdates() == null)
+            return false;
+        if (other.getCdcInsertsAndUpdates() != null && other.getCdcInsertsAndUpdates().equals(this.getCdcInsertsAndUpdates()) == false)
+            return false;
         return true;
     }
 
@@ -3302,6 +3628,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCdcInsertsOnly() == null) ? 0 : getCdcInsertsOnly().hashCode());
         hashCode = prime * hashCode + ((getTimestampColumnName() == null) ? 0 : getTimestampColumnName().hashCode());
         hashCode = prime * hashCode + ((getParquetTimestampInMillisecond() == null) ? 0 : getParquetTimestampInMillisecond().hashCode());
+        hashCode = prime * hashCode + ((getCdcInsertsAndUpdates() == null) ? 0 : getCdcInsertsAndUpdates().hashCode());
         return hashCode;
     }
 

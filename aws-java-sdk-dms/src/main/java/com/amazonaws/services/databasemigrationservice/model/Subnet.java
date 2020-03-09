@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * In response to a request by the <code>DescribeReplicationSubnetGroup</code> operation, this object identifies a
+ * subnet by its given Availability Zone, subnet identifier, and status.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Subnet" target="_top">AWS API Documentation</a>
  */

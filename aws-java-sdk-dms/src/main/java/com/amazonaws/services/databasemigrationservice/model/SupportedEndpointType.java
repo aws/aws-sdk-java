@@ -18,7 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides information about types of supported endpoints in response to a request by the
+ * <code>DescribeEndpointTypes</code> operation. This information includes the type of endpoint, the database engine
+ * name, and whether change data capture (CDC) is supported.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/SupportedEndpointType" target="_top">AWS API
  *      Documentation</a>
@@ -28,8 +32,12 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      */
     private String engineName;
@@ -55,13 +63,21 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     *        The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     *        <code>"sqlserver"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -70,12 +86,20 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      * 
-     * @return The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
-     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * @return The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     *         <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     *         <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     *         <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *         <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     *         and <code>"sqlserver"</code>.
      */
 
     public String getEngineName() {
@@ -84,13 +108,21 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     *        The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     *        <code>"sqlserver"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

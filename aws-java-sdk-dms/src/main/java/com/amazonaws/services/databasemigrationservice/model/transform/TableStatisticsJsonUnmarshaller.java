@@ -84,6 +84,18 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
                     context.nextToken();
                     tableStatistics.setFullLoadErrorRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("FullLoadStartTime", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("FullLoadEndTime", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("FullLoadReloaded", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadReloaded(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
                     tableStatistics.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

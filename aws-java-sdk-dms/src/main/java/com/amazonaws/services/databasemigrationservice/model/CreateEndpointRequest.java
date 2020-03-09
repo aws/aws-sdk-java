@@ -28,8 +28,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      */
     private String endpointIdentifier;
@@ -42,9 +42,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
-     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
-     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
-     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
+     * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      * </p>
      */
     private String engineName;
@@ -134,9 +136,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String externalTableDefinition;
     /**
      * <p>
-     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
-     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object Mapping to
+     * Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private DynamoDbSettings dynamoDbSettings;
@@ -188,14 +190,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
      * the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a Target for
      * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private MongoDbSettings mongoDbSettings;
     /**
      * <p>
-     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about other
      * available settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
@@ -203,6 +205,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private KinesisSettings kinesisSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the target Apache Kafka endpoint. For information about other available settings, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">
+     * Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     */
+    private KafkaSettings kafkaSettings;
     /**
      * <p>
      * Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings,
@@ -218,13 +229,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
-     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     *        The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+     *        letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      */
 
     public void setEndpointIdentifier(String endpointIdentifier) {
@@ -233,12 +244,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
-     * @return The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
-     *         digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * @return The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+     *         letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      */
 
     public String getEndpointIdentifier() {
@@ -247,13 +258,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
-     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     *        The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+     *        letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,17 +349,20 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
-     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
-     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
-     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
+     * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
-     *        include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
-     *        <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
-     *        <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
-     *        and <code>sqlserver</code>.
+     *        include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     *        <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     *        <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     *        <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     *        <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -358,16 +372,19 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
-     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
-     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
-     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
+     * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      * </p>
      * 
      * @return The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
-     *         include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
-     *         <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
-     *         <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
-     *         and <code>sqlserver</code>.
+     *         include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     *         <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     *         <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     *         <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     *         <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      */
 
     public String getEngineName() {
@@ -377,17 +394,20 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
-     * <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>, <code>aurora</code>,
-     * <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>, <code>db2</code>, <code>azuredb</code>,
-     * <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>, and <code>sqlserver</code>.
+     * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
-     *        include <code>mysql</code>, <code>oracle</code>, <code>postgres</code>, <code>mariadb</code>,
-     *        <code>aurora</code>, <code>aurora-postgresql</code>, <code>redshift</code>, <code>s3</code>,
-     *        <code>db2</code>, <code>azuredb</code>, <code>sybase</code>, <code>dynamodb</code>, <code>mongodb</code>,
-     *        and <code>sqlserver</code>.
+     *        include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
+     *        <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     *        <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     *        <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     *        <code>"documentdb"</code>, and <code>"sqlserver"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1010,13 +1030,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
-     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object Mapping to
+     * Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param dynamoDbSettings
-     *        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     *        Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available
      *        settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      *        Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
@@ -1027,12 +1047,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
-     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object Mapping to
+     * Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
-     * @return Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     * @return Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available
      *         settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      *         Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
@@ -1043,13 +1063,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
-     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object
-     * Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object Mapping to
+     * Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param dynamoDbSettings
-     *        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     *        Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available
      *        settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      *        Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1339,15 +1359,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
      * the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a Target for
      * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param mongoDbSettings
      *        Settings in JSON format for the source MongoDB endpoint. For more information about the available
      *        settings, see the configuration properties section in <a
-     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a
-     *        Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a Target
+     *        for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setMongoDbSettings(MongoDbSettings mongoDbSettings) {
@@ -1358,13 +1378,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
      * the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a Target for
      * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Settings in JSON format for the source MongoDB endpoint. For more information about the available
      *         settings, see the configuration properties section in <a
-     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a
      *         Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
@@ -1376,15 +1396,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
      * the configuration properties section in <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a Target for
      * AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param mongoDbSettings
      *        Settings in JSON format for the source MongoDB endpoint. For more information about the available
      *        settings, see the configuration properties section in <a
-     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a
-     *        Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using MongoDB as a Target
+     *        for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1395,7 +1415,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about other
      * available settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
@@ -1403,8 +1423,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param kinesisSettings
-     *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
-     *        the available settings, see <a href=
+     *        Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about
+     *        other available settings, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *        Guide.</i>
@@ -1416,15 +1436,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about other
      * available settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      * Guide.</i>
      * </p>
      * 
-     * @return Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
-     *         the available settings, see <a href=
+     * @return Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about
+     *         other available settings, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *         >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *         Guide.</i>
@@ -1436,7 +1456,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about the
+     * Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about other
      * available settings, see <a href=
      * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      * >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
@@ -1444,8 +1464,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param kinesisSettings
-     *        Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more information about
-     *        the available settings, see <a href=
+     *        Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For information about
+     *        other available settings, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping"
      *        >Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS Database Migration User
      *        Guide.</i>
@@ -1454,6 +1474,65 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateEndpointRequest withKinesisSettings(KinesisSettings kinesisSettings) {
         setKinesisSettings(kinesisSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Apache Kafka endpoint. For information about other available settings, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">
+     * Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param kafkaSettings
+     *        Settings in JSON format for the target Apache Kafka endpoint. For information about other available
+     *        settings, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping"
+     *        >Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public void setKafkaSettings(KafkaSettings kafkaSettings) {
+        this.kafkaSettings = kafkaSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Apache Kafka endpoint. For information about other available settings, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">
+     * Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the target Apache Kafka endpoint. For information about other available
+     *         settings, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping"
+     *         >Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User
+     *         Guide.</i>
+     */
+
+    public KafkaSettings getKafkaSettings() {
+        return this.kafkaSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Apache Kafka endpoint. For information about other available settings, see
+     * <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">
+     * Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param kafkaSettings
+     *        Settings in JSON format for the target Apache Kafka endpoint. For information about other available
+     *        settings, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping"
+     *        >Using Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database Migration User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withKafkaSettings(KafkaSettings kafkaSettings) {
+        setKafkaSettings(kafkaSettings);
         return this;
     }
 
@@ -1599,6 +1678,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("MongoDbSettings: ").append(getMongoDbSettings()).append(",");
         if (getKinesisSettings() != null)
             sb.append("KinesisSettings: ").append(getKinesisSettings()).append(",");
+        if (getKafkaSettings() != null)
+            sb.append("KafkaSettings: ").append(getKafkaSettings()).append(",");
         if (getElasticsearchSettings() != null)
             sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings()).append(",");
         if (getRedshiftSettings() != null)
@@ -1697,6 +1778,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getKinesisSettings() != null && other.getKinesisSettings().equals(this.getKinesisSettings()) == false)
             return false;
+        if (other.getKafkaSettings() == null ^ this.getKafkaSettings() == null)
+            return false;
+        if (other.getKafkaSettings() != null && other.getKafkaSettings().equals(this.getKafkaSettings()) == false)
+            return false;
         if (other.getElasticsearchSettings() == null ^ this.getElasticsearchSettings() == null)
             return false;
         if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
@@ -1733,6 +1818,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDmsTransferSettings() == null) ? 0 : getDmsTransferSettings().hashCode());
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
         hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
+        hashCode = prime * hashCode + ((getKafkaSettings() == null) ? 0 : getKafkaSettings().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
         hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
         return hashCode;

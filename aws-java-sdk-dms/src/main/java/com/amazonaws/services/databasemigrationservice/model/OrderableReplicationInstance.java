@@ -18,7 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * In response to the <code>DescribeOrderableReplicationInstances</code> operation, this object describes an available
+ * replication instance. This description includes the replication instance's type, engine version, and allocated
+ * storage.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/OrderableReplicationInstance" target="_top">AWS
  *      API Documentation</a>

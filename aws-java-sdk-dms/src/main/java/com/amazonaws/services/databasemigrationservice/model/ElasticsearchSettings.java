@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides information that defines an Elasticsearch endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ElasticsearchSettings" target="_top">AWS API
  *      Documentation</a>
@@ -46,7 +48,7 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
     private Integer fullLoadErrorPercentage;
     /**
      * <p>
-     * The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     * The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      * </p>
      */
     private Integer errorRetryDuration;
@@ -173,11 +175,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     * The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      * </p>
      * 
      * @param errorRetryDuration
-     *        The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     *        The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      */
 
     public void setErrorRetryDuration(Integer errorRetryDuration) {
@@ -186,10 +188,10 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     * The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      * </p>
      * 
-     * @return The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     * @return The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      */
 
     public Integer getErrorRetryDuration() {
@@ -198,11 +200,11 @@ public class ElasticsearchSettings implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     * The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      * </p>
      * 
      * @param errorRetryDuration
-     *        The maximum number of seconds that DMS retries failed API requests to the Elasticsearch cluster.
+     *        The maximum number of seconds for which DMS retries failed API requests to the Elasticsearch cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

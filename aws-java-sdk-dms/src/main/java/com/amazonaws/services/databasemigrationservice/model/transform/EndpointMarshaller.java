@@ -71,6 +71,8 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MongoDbSettings").build();
     private static final MarshallingInfo<StructuredPojo> KINESISSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisSettings").build();
+    private static final MarshallingInfo<StructuredPojo> KAFKASETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KafkaSettings").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchSettings").build();
     private static final MarshallingInfo<StructuredPojo> REDSHIFTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -114,6 +116,7 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getDmsTransferSettings(), DMSTRANSFERSETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getMongoDbSettings(), MONGODBSETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getKinesisSettings(), KINESISSETTINGS_BINDING);
+            protocolMarshaller.marshall(endpoint.getKafkaSettings(), KAFKASETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getElasticsearchSettings(), ELASTICSEARCHSETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getRedshiftSettings(), REDSHIFTSETTINGS_BINDING);
         } catch (Exception e) {

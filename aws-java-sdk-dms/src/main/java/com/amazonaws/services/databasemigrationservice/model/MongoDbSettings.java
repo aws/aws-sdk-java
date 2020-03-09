@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides information that defines a MongoDB endpoint.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MongoDbSettings" target="_top">AWS API
  *      Documentation</a>
@@ -76,7 +78,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
      * </p>
      * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not
+     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
      * used when authType=No.
      * </p>
      */
@@ -114,7 +116,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     private String docsToInvestigate;
     /**
      * <p>
-     * The MongoDB database name. This setting is not used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
      * </p>
      * <p>
      * The default is admin.
@@ -467,7 +469,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
      * </p>
      * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not
+     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
      * used when authType=No.
      * </p>
      * 
@@ -478,7 +480,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        is not used when authType=No.
+     *        isn't used when authType=No.
      * @see AuthMechanismValue
      */
 
@@ -494,7 +496,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
      * </p>
      * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not
+     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
      * used when authType=No.
      * </p>
      * 
@@ -504,7 +506,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <p>
      *         DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *         is not used when authType=No.
+     *         isn't used when authType=No.
      * @see AuthMechanismValue
      */
 
@@ -520,7 +522,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
      * </p>
      * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not
+     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
      * used when authType=No.
      * </p>
      * 
@@ -531,7 +533,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        is not used when authType=No.
+     *        isn't used when authType=No.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMechanismValue
      */
@@ -549,7 +551,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
      * </p>
      * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not
+     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
      * used when authType=No.
      * </p>
      * 
@@ -560,7 +562,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        is not used when authType=No.
+     *        isn't used when authType=No.
      * @see AuthMechanismValue
      */
 
@@ -576,7 +578,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1
      * </p>
      * <p>
-     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting is not
+     * DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting isn't
      * used when authType=No.
      * </p>
      * 
@@ -587,7 +589,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This setting
-     *        is not used when authType=No.
+     *        isn't used when authType=No.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMechanismValue
      */
@@ -843,14 +845,14 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The MongoDB database name. This setting is not used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
      * </p>
      * <p>
      * The default is admin.
      * </p>
      * 
      * @param authSource
-     *        The MongoDB database name. This setting is not used when <code>authType=NO</code>. </p>
+     *        The MongoDB database name. This setting isn't used when <code>authType=NO</code>. </p>
      *        <p>
      *        The default is admin.
      */
@@ -861,13 +863,13 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The MongoDB database name. This setting is not used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
      * </p>
      * <p>
      * The default is admin.
      * </p>
      * 
-     * @return The MongoDB database name. This setting is not used when <code>authType=NO</code>. </p>
+     * @return The MongoDB database name. This setting isn't used when <code>authType=NO</code>. </p>
      *         <p>
      *         The default is admin.
      */
@@ -878,14 +880,14 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The MongoDB database name. This setting is not used when <code>authType=NO</code>.
+     * The MongoDB database name. This setting isn't used when <code>authType=NO</code>.
      * </p>
      * <p>
      * The default is admin.
      * </p>
      * 
      * @param authSource
-     *        The MongoDB database name. This setting is not used when <code>authType=NO</code>. </p>
+     *        The MongoDB database name. This setting isn't used when <code>authType=NO</code>. </p>
      *        <p>
      *        The default is admin.
      * @return Returns a reference to this object so that method calls can be chained together.

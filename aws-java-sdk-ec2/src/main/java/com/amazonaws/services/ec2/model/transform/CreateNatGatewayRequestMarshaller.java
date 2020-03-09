@@ -21,6 +21,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CreateNatGatewayRequest Marshaller
@@ -44,12 +45,45 @@ public class CreateNatGatewayRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("AllocationId", StringUtils.fromString(createNatGatewayRequest.getAllocationId()));
         }
 
-        if (createNatGatewayRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(createNatGatewayRequest.getClientToken()));
-        }
+        request.addParameter("ClientToken", IdempotentUtils.resolveString(createNatGatewayRequest.getClientToken()));
 
         if (createNatGatewayRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(createNatGatewayRequest.getSubnetId()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createNatGatewayRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createNatGatewayRequest
+                .getTagSpecifications();
+        if (!createNatGatewayRequestTagSpecificationsList.isEmpty() || !createNatGatewayRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createNatGatewayRequestTagSpecificationsListValue : createNatGatewayRequestTagSpecificationsList) {
+
+                if (createNatGatewayRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createNatGatewayRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createNatGatewayRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
         }
 
         return request;

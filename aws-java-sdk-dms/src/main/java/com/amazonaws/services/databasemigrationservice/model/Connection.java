@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and
+ * the last error message issued.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Connection" target="_top">AWS API
  *      Documentation</a>
@@ -28,13 +31,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The ARN of the replication instance.
      * </p>
      */
     private String replicationInstanceArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * The ARN string that uniquely identifies the endpoint.
      * </p>
      */
     private String endpointArn;
@@ -52,8 +55,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String lastFailureMessage;
     /**
      * <p>
-     * The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits,
+     * and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      */
     private String endpointIdentifier;
@@ -66,11 +69,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The ARN of the replication instance.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The Amazon Resource Name (ARN) of the replication instance.
+     *        The ARN of the replication instance.
      */
 
     public void setReplicationInstanceArn(String replicationInstanceArn) {
@@ -79,10 +82,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The ARN of the replication instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the replication instance.
+     * @return The ARN of the replication instance.
      */
 
     public String getReplicationInstanceArn() {
@@ -91,11 +94,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The ARN of the replication instance.
      * </p>
      * 
      * @param replicationInstanceArn
-     *        The Amazon Resource Name (ARN) of the replication instance.
+     *        The ARN of the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +109,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * The ARN string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     *        The ARN string that uniquely identifies the endpoint.
      */
 
     public void setEndpointArn(String endpointArn) {
@@ -119,10 +122,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * The ARN string that uniquely identifies the endpoint.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * @return The ARN string that uniquely identifies the endpoint.
      */
 
     public String getEndpointArn() {
@@ -131,11 +134,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     * The ARN string that uniquely identifies the endpoint.
      * </p>
      * 
      * @param endpointArn
-     *        The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+     *        The ARN string that uniquely identifies the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,13 +229,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits,
+     * and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters,
-     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     *        The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters,
+     *        digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      */
 
     public void setEndpointIdentifier(String endpointIdentifier) {
@@ -241,12 +244,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits,
+     * and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
-     * @return The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters,
-     *         digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * @return The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters,
+     *         digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      */
 
     public String getEndpointIdentifier() {
@@ -255,13 +258,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters, digits,
+     * and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The identifier of the endpoint. Identifiers must begin with a letter; must contain only ASCII letters,
-     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     *        The identifier of the endpoint. Identifiers must begin with a letter and must contain only ASCII letters,
+     *        digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

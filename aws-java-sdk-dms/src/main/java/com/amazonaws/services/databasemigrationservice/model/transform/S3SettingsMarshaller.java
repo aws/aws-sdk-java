@@ -67,6 +67,8 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestampColumnName").build();
     private static final MarshallingInfo<Boolean> PARQUETTIMESTAMPINMILLISECOND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParquetTimestampInMillisecond").build();
+    private static final MarshallingInfo<Boolean> CDCINSERTSANDUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcInsertsAndUpdates").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -104,6 +106,7 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getCdcInsertsOnly(), CDCINSERTSONLY_BINDING);
             protocolMarshaller.marshall(s3Settings.getTimestampColumnName(), TIMESTAMPCOLUMNNAME_BINDING);
             protocolMarshaller.marshall(s3Settings.getParquetTimestampInMillisecond(), PARQUETTIMESTAMPINMILLISECOND_BINDING);
+            protocolMarshaller.marshall(s3Settings.getCdcInsertsAndUpdates(), CDCINSERTSANDUPDATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

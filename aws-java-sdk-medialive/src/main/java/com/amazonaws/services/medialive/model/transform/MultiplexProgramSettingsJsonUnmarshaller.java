@@ -48,6 +48,10 @@ public class MultiplexProgramSettingsJsonUnmarshaller implements Unmarshaller<Mu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("preferredChannelPipeline", targetDepth)) {
+                    context.nextToken();
+                    multiplexProgramSettings.setPreferredChannelPipeline(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("programNumber", targetDepth)) {
                     context.nextToken();
                     multiplexProgramSettings.setProgramNumber(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code>
+ * operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TableStatistics" target="_top">AWS API
  *      Documentation</a>
@@ -58,33 +61,52 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
     private Long updates;
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     * The data definition language (DDL) used to build and modify the structure of your tables.
      * </p>
      */
     private Long ddls;
     /**
      * <p>
-     * The number of rows added during the Full Load operation.
+     * The number of rows added during the full load operation.
      * </p>
      */
     private Long fullLoadRows;
     /**
      * <p>
-     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
-     * target migrations).
+     * The number of rows that failed conditional checks during the full load operation (valid only for migrations where
+     * DynamoDB is the target).
      * </p>
      */
     private Long fullLoadCondtnlChkFailedRows;
     /**
      * <p>
-     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
-     * migrations).
+     * The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB
+     * is the target).
      * </p>
      */
     private Long fullLoadErrorRows;
     /**
      * <p>
-     * The last time the table was updated.
+     * The time when the full load operation started.
+     * </p>
+     */
+    private java.util.Date fullLoadStartTime;
+    /**
+     * <p>
+     * The time when the full load operation completed.
+     * </p>
+     */
+    private java.util.Date fullLoadEndTime;
+    /**
+     * <p>
+     * A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     * operation (<code>false</code>).
+     * </p>
+     */
+    private Boolean fullLoadReloaded;
+    /**
+     * <p>
+     * The last time a table was updated.
      * </p>
      */
     private java.util.Date lastUpdateTime;
@@ -112,7 +134,7 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
     private Long validationFailedRecords;
     /**
      * <p>
-     * The number of records that could not be validated.
+     * The number of records that couldn't be validated.
      * </p>
      */
     private Long validationSuspendedRecords;
@@ -121,47 +143,47 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * The validation state of the table.
      * </p>
      * <p>
-     * The parameter can have the following values
+     * This parameter can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Not enabled—Validation is not enabled for the table in the migration task.
+     * Not enabled - Validation isn't enabled for the table in the migration task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending records—Some records in the table are waiting for validation.
+     * Pending records - Some records in the table are waiting for validation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Mismatched records—Some records in the table do not match between the source and target.
+     * Mismatched records - Some records in the table don't match between the source and target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Suspended records—Some records in the table could not be validated.
+     * Suspended records - Some records in the table couldn't be validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * No primary key—The table could not be validated because it had no primary key.
+     * No primary key - The table couldn't be validated because it has no primary key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * Validated - All rows in the table are validated. If the table is updated, the status can change from Validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Error—The table could not be validated because of an unexpected error.
+     * Error - The table couldn't be validated because of an unexpected error.
      * </p>
      * </li>
      * </ul>
@@ -376,11 +398,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     * The data definition language (DDL) used to build and modify the structure of your tables.
      * </p>
      * 
      * @param ddls
-     *        The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     *        The data definition language (DDL) used to build and modify the structure of your tables.
      */
 
     public void setDdls(Long ddls) {
@@ -389,10 +411,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     * The data definition language (DDL) used to build and modify the structure of your tables.
      * </p>
      * 
-     * @return The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     * @return The data definition language (DDL) used to build and modify the structure of your tables.
      */
 
     public Long getDdls() {
@@ -401,11 +423,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     * The data definition language (DDL) used to build and modify the structure of your tables.
      * </p>
      * 
      * @param ddls
-     *        The Data Definition Language (DDL) used to build and modify the structure of your tables.
+     *        The data definition language (DDL) used to build and modify the structure of your tables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,11 +438,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows added during the Full Load operation.
+     * The number of rows added during the full load operation.
      * </p>
      * 
      * @param fullLoadRows
-     *        The number of rows added during the Full Load operation.
+     *        The number of rows added during the full load operation.
      */
 
     public void setFullLoadRows(Long fullLoadRows) {
@@ -429,10 +451,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows added during the Full Load operation.
+     * The number of rows added during the full load operation.
      * </p>
      * 
-     * @return The number of rows added during the Full Load operation.
+     * @return The number of rows added during the full load operation.
      */
 
     public Long getFullLoadRows() {
@@ -441,11 +463,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows added during the Full Load operation.
+     * The number of rows added during the full load operation.
      * </p>
      * 
      * @param fullLoadRows
-     *        The number of rows added during the Full Load operation.
+     *        The number of rows added during the full load operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,13 +478,13 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
-     * target migrations).
+     * The number of rows that failed conditional checks during the full load operation (valid only for migrations where
+     * DynamoDB is the target).
      * </p>
      * 
      * @param fullLoadCondtnlChkFailedRows
-     *        The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB
-     *        as a target migrations).
+     *        The number of rows that failed conditional checks during the full load operation (valid only for
+     *        migrations where DynamoDB is the target).
      */
 
     public void setFullLoadCondtnlChkFailedRows(Long fullLoadCondtnlChkFailedRows) {
@@ -471,12 +493,12 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
-     * target migrations).
+     * The number of rows that failed conditional checks during the full load operation (valid only for migrations where
+     * DynamoDB is the target).
      * </p>
      * 
-     * @return The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB
-     *         as a target migrations).
+     * @return The number of rows that failed conditional checks during the full load operation (valid only for
+     *         migrations where DynamoDB is the target).
      */
 
     public Long getFullLoadCondtnlChkFailedRows() {
@@ -485,13 +507,13 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
-     * target migrations).
+     * The number of rows that failed conditional checks during the full load operation (valid only for migrations where
+     * DynamoDB is the target).
      * </p>
      * 
      * @param fullLoadCondtnlChkFailedRows
-     *        The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB
-     *        as a target migrations).
+     *        The number of rows that failed conditional checks during the full load operation (valid only for
+     *        migrations where DynamoDB is the target).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,13 +524,13 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
-     * migrations).
+     * The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB
+     * is the target).
      * </p>
      * 
      * @param fullLoadErrorRows
-     *        The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
-     *        migrations).
+     *        The number of rows that failed to load during the full load operation (valid only for migrations where
+     *        DynamoDB is the target).
      */
 
     public void setFullLoadErrorRows(Long fullLoadErrorRows) {
@@ -517,12 +539,12 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
-     * migrations).
+     * The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB
+     * is the target).
      * </p>
      * 
-     * @return The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a
-     *         target migrations).
+     * @return The number of rows that failed to load during the full load operation (valid only for migrations where
+     *         DynamoDB is the target).
      */
 
     public Long getFullLoadErrorRows() {
@@ -531,13 +553,13 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
-     * migrations).
+     * The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB
+     * is the target).
      * </p>
      * 
      * @param fullLoadErrorRows
-     *        The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
-     *        migrations).
+     *        The number of rows that failed to load during the full load operation (valid only for migrations where
+     *        DynamoDB is the target).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,11 +570,151 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time the table was updated.
+     * The time when the full load operation started.
+     * </p>
+     * 
+     * @param fullLoadStartTime
+     *        The time when the full load operation started.
+     */
+
+    public void setFullLoadStartTime(java.util.Date fullLoadStartTime) {
+        this.fullLoadStartTime = fullLoadStartTime;
+    }
+
+    /**
+     * <p>
+     * The time when the full load operation started.
+     * </p>
+     * 
+     * @return The time when the full load operation started.
+     */
+
+    public java.util.Date getFullLoadStartTime() {
+        return this.fullLoadStartTime;
+    }
+
+    /**
+     * <p>
+     * The time when the full load operation started.
+     * </p>
+     * 
+     * @param fullLoadStartTime
+     *        The time when the full load operation started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withFullLoadStartTime(java.util.Date fullLoadStartTime) {
+        setFullLoadStartTime(fullLoadStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the full load operation completed.
+     * </p>
+     * 
+     * @param fullLoadEndTime
+     *        The time when the full load operation completed.
+     */
+
+    public void setFullLoadEndTime(java.util.Date fullLoadEndTime) {
+        this.fullLoadEndTime = fullLoadEndTime;
+    }
+
+    /**
+     * <p>
+     * The time when the full load operation completed.
+     * </p>
+     * 
+     * @return The time when the full load operation completed.
+     */
+
+    public java.util.Date getFullLoadEndTime() {
+        return this.fullLoadEndTime;
+    }
+
+    /**
+     * <p>
+     * The time when the full load operation completed.
+     * </p>
+     * 
+     * @param fullLoadEndTime
+     *        The time when the full load operation completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withFullLoadEndTime(java.util.Date fullLoadEndTime) {
+        setFullLoadEndTime(fullLoadEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     * operation (<code>false</code>).
+     * </p>
+     * 
+     * @param fullLoadReloaded
+     *        A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     *        operation (<code>false</code>).
+     */
+
+    public void setFullLoadReloaded(Boolean fullLoadReloaded) {
+        this.fullLoadReloaded = fullLoadReloaded;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     * operation (<code>false</code>).
+     * </p>
+     * 
+     * @return A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     *         operation (<code>false</code>).
+     */
+
+    public Boolean getFullLoadReloaded() {
+        return this.fullLoadReloaded;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     * operation (<code>false</code>).
+     * </p>
+     * 
+     * @param fullLoadReloaded
+     *        A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     *        operation (<code>false</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withFullLoadReloaded(Boolean fullLoadReloaded) {
+        setFullLoadReloaded(fullLoadReloaded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     * operation (<code>false</code>).
+     * </p>
+     * 
+     * @return A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load
+     *         operation (<code>false</code>).
+     */
+
+    public Boolean isFullLoadReloaded() {
+        return this.fullLoadReloaded;
+    }
+
+    /**
+     * <p>
+     * The last time a table was updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The last time the table was updated.
+     *        The last time a table was updated.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -561,10 +723,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time the table was updated.
+     * The last time a table was updated.
      * </p>
      * 
-     * @return The last time the table was updated.
+     * @return The last time a table was updated.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -573,11 +735,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time the table was updated.
+     * The last time a table was updated.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The last time the table was updated.
+     *        The last time a table was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -729,11 +891,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of records that could not be validated.
+     * The number of records that couldn't be validated.
      * </p>
      * 
      * @param validationSuspendedRecords
-     *        The number of records that could not be validated.
+     *        The number of records that couldn't be validated.
      */
 
     public void setValidationSuspendedRecords(Long validationSuspendedRecords) {
@@ -742,10 +904,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of records that could not be validated.
+     * The number of records that couldn't be validated.
      * </p>
      * 
-     * @return The number of records that could not be validated.
+     * @return The number of records that couldn't be validated.
      */
 
     public Long getValidationSuspendedRecords() {
@@ -754,11 +916,11 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of records that could not be validated.
+     * The number of records that couldn't be validated.
      * </p>
      * 
      * @param validationSuspendedRecords
-     *        The number of records that could not be validated.
+     *        The number of records that couldn't be validated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -772,47 +934,47 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * The validation state of the table.
      * </p>
      * <p>
-     * The parameter can have the following values
+     * This parameter can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Not enabled—Validation is not enabled for the table in the migration task.
+     * Not enabled - Validation isn't enabled for the table in the migration task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending records—Some records in the table are waiting for validation.
+     * Pending records - Some records in the table are waiting for validation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Mismatched records—Some records in the table do not match between the source and target.
+     * Mismatched records - Some records in the table don't match between the source and target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Suspended records—Some records in the table could not be validated.
+     * Suspended records - Some records in the table couldn't be validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * No primary key—The table could not be validated because it had no primary key.
+     * No primary key - The table couldn't be validated because it has no primary key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * Validated - All rows in the table are validated. If the table is updated, the status can change from Validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Error—The table could not be validated because of an unexpected error.
+     * Error - The table couldn't be validated because of an unexpected error.
      * </p>
      * </li>
      * </ul>
@@ -820,48 +982,48 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * @param validationState
      *        The validation state of the table.</p>
      *        <p>
-     *        The parameter can have the following values
+     *        This parameter can have the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Not enabled—Validation is not enabled for the table in the migration task.
+     *        Not enabled - Validation isn't enabled for the table in the migration task.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Pending records—Some records in the table are waiting for validation.
+     *        Pending records - Some records in the table are waiting for validation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Mismatched records—Some records in the table do not match between the source and target.
+     *        Mismatched records - Some records in the table don't match between the source and target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Suspended records—Some records in the table could not be validated.
+     *        Suspended records - Some records in the table couldn't be validated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        No primary key—The table could not be validated because it had no primary key.
+     *        No primary key - The table couldn't be validated because it has no primary key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Table error—The table was not validated because it was in an error state and some data was not migrated.
+     *        Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Validated—All rows in the table were validated. If the table is updated, the status can change from
+     *        Validated - All rows in the table are validated. If the table is updated, the status can change from
      *        Validated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Error—The table could not be validated because of an unexpected error.
+     *        Error - The table couldn't be validated because of an unexpected error.
      *        </p>
      *        </li>
      */
@@ -875,95 +1037,95 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * The validation state of the table.
      * </p>
      * <p>
-     * The parameter can have the following values
+     * This parameter can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Not enabled—Validation is not enabled for the table in the migration task.
+     * Not enabled - Validation isn't enabled for the table in the migration task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending records—Some records in the table are waiting for validation.
+     * Pending records - Some records in the table are waiting for validation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Mismatched records—Some records in the table do not match between the source and target.
+     * Mismatched records - Some records in the table don't match between the source and target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Suspended records—Some records in the table could not be validated.
+     * Suspended records - Some records in the table couldn't be validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * No primary key—The table could not be validated because it had no primary key.
+     * No primary key - The table couldn't be validated because it has no primary key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * Validated - All rows in the table are validated. If the table is updated, the status can change from Validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Error—The table could not be validated because of an unexpected error.
+     * Error - The table couldn't be validated because of an unexpected error.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The validation state of the table.</p>
      *         <p>
-     *         The parameter can have the following values
+     *         This parameter can have the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Not enabled—Validation is not enabled for the table in the migration task.
+     *         Not enabled - Validation isn't enabled for the table in the migration task.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Pending records—Some records in the table are waiting for validation.
+     *         Pending records - Some records in the table are waiting for validation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Mismatched records—Some records in the table do not match between the source and target.
+     *         Mismatched records - Some records in the table don't match between the source and target.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Suspended records—Some records in the table could not be validated.
+     *         Suspended records - Some records in the table couldn't be validated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         No primary key—The table could not be validated because it had no primary key.
+     *         No primary key - The table couldn't be validated because it has no primary key.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Table error—The table was not validated because it was in an error state and some data was not migrated.
+     *         Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Validated—All rows in the table were validated. If the table is updated, the status can change from
+     *         Validated - All rows in the table are validated. If the table is updated, the status can change from
      *         Validated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Error—The table could not be validated because of an unexpected error.
+     *         Error - The table couldn't be validated because of an unexpected error.
      *         </p>
      *         </li>
      */
@@ -977,47 +1139,47 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * The validation state of the table.
      * </p>
      * <p>
-     * The parameter can have the following values
+     * This parameter can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Not enabled—Validation is not enabled for the table in the migration task.
+     * Not enabled - Validation isn't enabled for the table in the migration task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pending records—Some records in the table are waiting for validation.
+     * Pending records - Some records in the table are waiting for validation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Mismatched records—Some records in the table do not match between the source and target.
+     * Mismatched records - Some records in the table don't match between the source and target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Suspended records—Some records in the table could not be validated.
+     * Suspended records - Some records in the table couldn't be validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * No primary key—The table could not be validated because it had no primary key.
+     * No primary key - The table couldn't be validated because it has no primary key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Table error—The table was not validated because it was in an error state and some data was not migrated.
+     * Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Validated—All rows in the table were validated. If the table is updated, the status can change from Validated.
+     * Validated - All rows in the table are validated. If the table is updated, the status can change from Validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Error—The table could not be validated because of an unexpected error.
+     * Error - The table couldn't be validated because of an unexpected error.
      * </p>
      * </li>
      * </ul>
@@ -1025,48 +1187,48 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * @param validationState
      *        The validation state of the table.</p>
      *        <p>
-     *        The parameter can have the following values
+     *        This parameter can have the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Not enabled—Validation is not enabled for the table in the migration task.
+     *        Not enabled - Validation isn't enabled for the table in the migration task.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Pending records—Some records in the table are waiting for validation.
+     *        Pending records - Some records in the table are waiting for validation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Mismatched records—Some records in the table do not match between the source and target.
+     *        Mismatched records - Some records in the table don't match between the source and target.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Suspended records—Some records in the table could not be validated.
+     *        Suspended records - Some records in the table couldn't be validated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        No primary key—The table could not be validated because it had no primary key.
+     *        No primary key - The table couldn't be validated because it has no primary key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Table error—The table was not validated because it was in an error state and some data was not migrated.
+     *        Table error - The table wasn't validated because it's in an error state and some data wasn't migrated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Validated—All rows in the table were validated. If the table is updated, the status can change from
+     *        Validated - All rows in the table are validated. If the table is updated, the status can change from
      *        Validated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Error—The table could not be validated because of an unexpected error.
+     *        Error - The table couldn't be validated because of an unexpected error.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1147,6 +1309,12 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             sb.append("FullLoadCondtnlChkFailedRows: ").append(getFullLoadCondtnlChkFailedRows()).append(",");
         if (getFullLoadErrorRows() != null)
             sb.append("FullLoadErrorRows: ").append(getFullLoadErrorRows()).append(",");
+        if (getFullLoadStartTime() != null)
+            sb.append("FullLoadStartTime: ").append(getFullLoadStartTime()).append(",");
+        if (getFullLoadEndTime() != null)
+            sb.append("FullLoadEndTime: ").append(getFullLoadEndTime()).append(",");
+        if (getFullLoadReloaded() != null)
+            sb.append("FullLoadReloaded: ").append(getFullLoadReloaded()).append(",");
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getTableState() != null)
@@ -1211,6 +1379,18 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFullLoadErrorRows() != null && other.getFullLoadErrorRows().equals(this.getFullLoadErrorRows()) == false)
             return false;
+        if (other.getFullLoadStartTime() == null ^ this.getFullLoadStartTime() == null)
+            return false;
+        if (other.getFullLoadStartTime() != null && other.getFullLoadStartTime().equals(this.getFullLoadStartTime()) == false)
+            return false;
+        if (other.getFullLoadEndTime() == null ^ this.getFullLoadEndTime() == null)
+            return false;
+        if (other.getFullLoadEndTime() != null && other.getFullLoadEndTime().equals(this.getFullLoadEndTime()) == false)
+            return false;
+        if (other.getFullLoadReloaded() == null ^ this.getFullLoadReloaded() == null)
+            return false;
+        if (other.getFullLoadReloaded() != null && other.getFullLoadReloaded().equals(this.getFullLoadReloaded()) == false)
+            return false;
         if (other.getLastUpdateTime() == null ^ this.getLastUpdateTime() == null)
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
@@ -1256,6 +1436,9 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getFullLoadRows() == null) ? 0 : getFullLoadRows().hashCode());
         hashCode = prime * hashCode + ((getFullLoadCondtnlChkFailedRows() == null) ? 0 : getFullLoadCondtnlChkFailedRows().hashCode());
         hashCode = prime * hashCode + ((getFullLoadErrorRows() == null) ? 0 : getFullLoadErrorRows().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadStartTime() == null) ? 0 : getFullLoadStartTime().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadEndTime() == null) ? 0 : getFullLoadEndTime().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadReloaded() == null) ? 0 : getFullLoadReloaded().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getTableState() == null) ? 0 : getTableState().hashCode());
         hashCode = prime * hashCode + ((getValidationPendingRecords() == null) ? 0 : getValidationPendingRecords().hashCode());

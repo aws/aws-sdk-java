@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides information that defines a replication instance.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationInstance" target="_top">AWS API
  *      Documentation</a>
@@ -115,7 +117,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private ReplicationPendingModifiedValues pendingModifiedValues;
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
@@ -188,7 +190,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      * </p>
      */
     private String secondaryAvailabilityZone;
@@ -793,12 +795,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -808,11 +810,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -822,12 +824,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -839,11 +841,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -1360,11 +1362,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      * </p>
      * 
      * @param secondaryAvailabilityZone
-     *        The availability zone of the standby replication instance in a Multi-AZ deployment.
+     *        The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      */
 
     public void setSecondaryAvailabilityZone(String secondaryAvailabilityZone) {
@@ -1373,10 +1375,10 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      * </p>
      * 
-     * @return The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * @return The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      */
 
     public String getSecondaryAvailabilityZone() {
@@ -1385,11 +1387,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      * </p>
      * 
      * @param secondaryAvailabilityZone
-     *        The availability zone of the standby replication instance in a Multi-AZ deployment.
+     *        The Availability Zone of the standby replication instance in a Multi-AZ deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

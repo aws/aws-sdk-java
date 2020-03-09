@@ -46,7 +46,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -80,7 +80,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      */
@@ -112,7 +112,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      */
@@ -125,8 +125,8 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     private String engineVersion;
     /**
      * <p>
-     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window. This parameter defaults to <code>true</code>.
+     * A value that indicates whether minor engine upgrades are applied automatically to the replication instance during
+     * the maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -188,7 +188,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -214,7 +214,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -246,7 +246,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -271,7 +271,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         Can't end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      *         </ul>
@@ -303,7 +303,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -329,7 +329,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -527,12 +527,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     *        The Availability Zone where the replication instance will be created. The default value is a random,
      *        system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      */
 
@@ -542,11 +542,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      * 
-     * @return The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * @return The Availability Zone where the replication instance will be created. The default value is a random,
      *         system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      */
 
@@ -556,12 +556,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The AWS Availability Zone where the replication instance will be created. The default value is a random,
+     *        The Availability Zone where the replication instance will be created. The default value is a random,
      *        system-chosen Availability Zone in the endpoint's AWS Region, for example: <code>us-east-1d</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -728,12 +728,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -743,11 +743,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -757,12 +757,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
      * @param multiAZ
-     *        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     *        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *        <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -774,11 +774,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      * <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the
+     * @return Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
      *         <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
      */
 
@@ -828,16 +828,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window. This parameter defaults to <code>true</code>.
+     * A value that indicates whether minor engine upgrades are applied automatically to the replication instance during
+     * the maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates whether minor engine upgrades will be applied automatically to the replication instance during
-     *        the maintenance window. This parameter defaults to <code>true</code>.</p>
+     *        A value that indicates whether minor engine upgrades are applied automatically to the replication instance
+     *        during the maintenance window. This parameter defaults to <code>true</code>.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -848,15 +848,15 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window. This parameter defaults to <code>true</code>.
+     * A value that indicates whether minor engine upgrades are applied automatically to the replication instance during
+     * the maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates whether minor engine upgrades will be applied automatically to the replication instance during
-     *         the maintenance window. This parameter defaults to <code>true</code>.</p>
+     * @return A value that indicates whether minor engine upgrades are applied automatically to the replication
+     *         instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -867,16 +867,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window. This parameter defaults to <code>true</code>.
+     * A value that indicates whether minor engine upgrades are applied automatically to the replication instance during
+     * the maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates whether minor engine upgrades will be applied automatically to the replication instance during
-     *        the maintenance window. This parameter defaults to <code>true</code>.</p>
+     *        A value that indicates whether minor engine upgrades are applied automatically to the replication instance
+     *        during the maintenance window. This parameter defaults to <code>true</code>.</p>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -889,15 +889,15 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Indicates whether minor engine upgrades will be applied automatically to the replication instance during the
-     * maintenance window. This parameter defaults to <code>true</code>.
+     * A value that indicates whether minor engine upgrades are applied automatically to the replication instance during
+     * the maintenance window. This parameter defaults to <code>true</code>.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates whether minor engine upgrades will be applied automatically to the replication instance during
-     *         the maintenance window. This parameter defaults to <code>true</code>.</p>
+     * @return A value that indicates whether minor engine upgrades are applied automatically to the replication
+     *         instance during the maintenance window. This parameter defaults to <code>true</code>.</p>
      *         <p>
      *         Default: <code>true</code>
      */

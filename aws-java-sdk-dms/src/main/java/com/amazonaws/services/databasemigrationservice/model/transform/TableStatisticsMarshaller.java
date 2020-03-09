@@ -45,6 +45,12 @@ public class TableStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadCondtnlChkFailedRows").build();
     private static final MarshallingInfo<Long> FULLLOADERRORROWS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadErrorRows").build();
+    private static final MarshallingInfo<java.util.Date> FULLLOADSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadStartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> FULLLOADENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadEndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> FULLLOADRELOADED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadReloaded").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TABLESTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -85,6 +91,9 @@ public class TableStatisticsMarshaller {
             protocolMarshaller.marshall(tableStatistics.getFullLoadRows(), FULLLOADROWS_BINDING);
             protocolMarshaller.marshall(tableStatistics.getFullLoadCondtnlChkFailedRows(), FULLLOADCONDTNLCHKFAILEDROWS_BINDING);
             protocolMarshaller.marshall(tableStatistics.getFullLoadErrorRows(), FULLLOADERRORROWS_BINDING);
+            protocolMarshaller.marshall(tableStatistics.getFullLoadStartTime(), FULLLOADSTARTTIME_BINDING);
+            protocolMarshaller.marshall(tableStatistics.getFullLoadEndTime(), FULLLOADENDTIME_BINDING);
+            protocolMarshaller.marshall(tableStatistics.getFullLoadReloaded(), FULLLOADRELOADED_BINDING);
             protocolMarshaller.marshall(tableStatistics.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(tableStatistics.getTableState(), TABLESTATE_BINDING);
             protocolMarshaller.marshall(tableStatistics.getValidationPendingRecords(), VALIDATIONPENDINGRECORDS_BINDING);

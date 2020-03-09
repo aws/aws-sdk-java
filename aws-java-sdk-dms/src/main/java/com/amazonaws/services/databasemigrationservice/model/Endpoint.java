@@ -18,7 +18,31 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Describes an endpoint of a database instance in response to operations such as the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>CreateEndpoint</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DescribeEndpoint</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DescribeEndpointTypes</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ModifyEndpoint</code>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Endpoint" target="_top">AWS API Documentation</a>
  */
@@ -27,8 +51,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      */
     private String endpointIdentifier;
@@ -40,8 +64,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private String endpointType;
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      */
     private String engineName;
@@ -196,11 +224,18 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private MongoDbSettings mongoDbSettings;
     /**
      * <p>
-     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code>
      * structure.
      * </p>
      */
     private KinesisSettings kinesisSettings;
+    /**
+     * <p>
+     * The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
+     * structure.
+     * </p>
+     */
+    private KafkaSettings kafkaSettings;
     /**
      * <p>
      * The settings for the Elasticsearch source endpoint. For more information, see the
@@ -217,13 +252,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
-     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     *        The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+     *        letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      */
 
     public void setEndpointIdentifier(String endpointIdentifier) {
@@ -232,12 +267,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
-     * @return The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
-     *         digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * @return The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+     *         letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      */
 
     public String getEndpointIdentifier() {
@@ -246,13 +281,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits,
-     * and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     * The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param endpointIdentifier
-     *        The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters,
-     *        digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+     *        The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII
+     *        letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,13 +371,21 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     *        The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     *        <code>"sqlserver"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -351,12 +394,20 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      * 
-     * @return The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
-     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * @return The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     *         <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     *         <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     *         <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *         <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     *         and <code>"sqlserver"</code>.
      */
 
     public String getEngineName() {
@@ -365,13 +416,21 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres, mariadb,
-     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values, depending on the EndpointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+     *        The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+     *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     *        <code>"sqlserver"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1378,12 +1437,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code>
      * structure.
      * </p>
      * 
      * @param kinesisSettings
-     *        The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *        The settings for the Amazon Kinesis target endpoint. For more information, see the
      *        <code>KinesisSettings</code> structure.
      */
 
@@ -1393,11 +1452,11 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code>
      * structure.
      * </p>
      * 
-     * @return The settings for the Amazon Kinesis source endpoint. For more information, see the
+     * @return The settings for the Amazon Kinesis target endpoint. For more information, see the
      *         <code>KinesisSettings</code> structure.
      */
 
@@ -1407,18 +1466,64 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the Amazon Kinesis source endpoint. For more information, see the <code>KinesisSettings</code>
+     * The settings for the Amazon Kinesis target endpoint. For more information, see the <code>KinesisSettings</code>
      * structure.
      * </p>
      * 
      * @param kinesisSettings
-     *        The settings for the Amazon Kinesis source endpoint. For more information, see the
+     *        The settings for the Amazon Kinesis target endpoint. For more information, see the
      *        <code>KinesisSettings</code> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withKinesisSettings(KinesisSettings kinesisSettings) {
         setKinesisSettings(kinesisSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param kafkaSettings
+     *        The settings for the Apache Kafka target endpoint. For more information, see the
+     *        <code>KafkaSettings</code> structure.
+     */
+
+    public void setKafkaSettings(KafkaSettings kafkaSettings) {
+        this.kafkaSettings = kafkaSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the Apache Kafka target endpoint. For more information, see the
+     *         <code>KafkaSettings</code> structure.
+     */
+
+    public KafkaSettings getKafkaSettings() {
+        return this.kafkaSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param kafkaSettings
+     *        The settings for the Apache Kafka target endpoint. For more information, see the
+     *        <code>KafkaSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withKafkaSettings(KafkaSettings kafkaSettings) {
+        setKafkaSettings(kafkaSettings);
         return this;
     }
 
@@ -1564,6 +1669,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("MongoDbSettings: ").append(getMongoDbSettings()).append(",");
         if (getKinesisSettings() != null)
             sb.append("KinesisSettings: ").append(getKinesisSettings()).append(",");
+        if (getKafkaSettings() != null)
+            sb.append("KafkaSettings: ").append(getKafkaSettings()).append(",");
         if (getElasticsearchSettings() != null)
             sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings()).append(",");
         if (getRedshiftSettings() != null)
@@ -1670,6 +1777,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKinesisSettings() != null && other.getKinesisSettings().equals(this.getKinesisSettings()) == false)
             return false;
+        if (other.getKafkaSettings() == null ^ this.getKafkaSettings() == null)
+            return false;
+        if (other.getKafkaSettings() != null && other.getKafkaSettings().equals(this.getKafkaSettings()) == false)
+            return false;
         if (other.getElasticsearchSettings() == null ^ this.getElasticsearchSettings() == null)
             return false;
         if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
@@ -1708,6 +1819,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDmsTransferSettings() == null) ? 0 : getDmsTransferSettings().hashCode());
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
         hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
+        hashCode = prime * hashCode + ((getKafkaSettings() == null) ? 0 : getKafkaSettings().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
         hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
         return hashCode;

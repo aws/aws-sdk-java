@@ -1,3 +1,16 @@
+# __1.11.740__ __2020-03-09__
+## __AWS Database Migration Service__
+  - ### Features
+    - Added new settings for Kinesis target to include detailed transaction info; to capture table DDL details; to use single-line unformatted json, which can be directly queried by AWS Athena if data is streamed into S3 through AWS Kinesis Firehose. Added CdcInsertsAndUpdates in S3 target settings to allow capture ongoing insertions and updates only.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports the ability to configure the Preferred Channel Pipeline for channels contributing to a Multiplex.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon Virtual Private Cloud (VPC) NAT Gateway adds support for tagging on resource creation.
+
 # __1.11.739__ __2020-03-06__
 ## __AWS App Mesh__
   - ### Features

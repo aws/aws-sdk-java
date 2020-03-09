@@ -136,6 +136,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setKinesisSettings(KinesisSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("KafkaSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setKafkaSettings(KafkaSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ElasticsearchSettings", targetDepth)) {
                     context.nextToken();
                     endpoint.setElasticsearchSettings(ElasticsearchSettingsJsonUnmarshaller.getInstance().unmarshall(context));
