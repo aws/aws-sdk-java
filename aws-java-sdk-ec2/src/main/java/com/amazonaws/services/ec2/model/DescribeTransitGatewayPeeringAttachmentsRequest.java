@@ -34,8 +34,37 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
     private com.amazonaws.internal.SdkInternalList<String> transitGatewayAttachmentIds;
     /**
      * <p>
-     * One or more filters.
+     * One or more filters. The possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-owner-id</code> - The ID of your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -127,10 +156,68 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more filters.
+     * One or more filters. The possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-owner-id</code> - The ID of your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters.
+     * @return One or more filters. The possible values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>local-owner-id</code> - The ID of your AWS account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit
+     *         gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -142,11 +229,69 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more filters.
+     * One or more filters. The possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-owner-id</code> - The ID of your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters. The possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-owner-id</code> - The ID of your AWS account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit
+     *        gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -160,8 +305,37 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more filters.
+     * One or more filters. The possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-owner-id</code> - The ID of your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -169,7 +343,36 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters. The possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-owner-id</code> - The ID of your AWS account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit
+     *        gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +388,69 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more filters.
+     * One or more filters. The possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-owner-id</code> - The ID of your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters. The possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-owner-id</code> - The ID of your AWS account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>remote-owner-id</code> - The ID of the AWS account in the remote Region that owns the transit
+     *        gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

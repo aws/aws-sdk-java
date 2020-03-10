@@ -30,6 +30,8 @@ public class ApplicationPolicyStatementMarshaller {
 
     private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("actions").build();
+    private static final MarshallingInfo<List> PRINCIPALORGIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("principalOrgIDs").build();
     private static final MarshallingInfo<List> PRINCIPALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("principals").build();
     private static final MarshallingInfo<String> STATEMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class ApplicationPolicyStatementMarshaller {
 
         try {
             protocolMarshaller.marshall(applicationPolicyStatement.getActions(), ACTIONS_BINDING);
+            protocolMarshaller.marshall(applicationPolicyStatement.getPrincipalOrgIDs(), PRINCIPALORGIDS_BINDING);
             protocolMarshaller.marshall(applicationPolicyStatement.getPrincipals(), PRINCIPALS_BINDING);
             protocolMarshaller.marshall(applicationPolicyStatement.getStatementId(), STATEMENTID_BINDING);
         } catch (Exception e) {

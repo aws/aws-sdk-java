@@ -28,24 +28,27 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The names of the Zone Group.
+     * The name of the Availability Zone Group.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     * Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must contact
+     * <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     * >AWS Support</a> to disable an Availability Zone group.
      * </p>
      */
     private String optInStatus;
 
     /**
      * <p>
-     * The names of the Zone Group.
+     * The name of the Availability Zone Group.
      * </p>
      * 
      * @param groupName
-     *        The names of the Zone Group.
+     *        The name of the Availability Zone Group.
      */
 
     public void setGroupName(String groupName) {
@@ -54,10 +57,10 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The names of the Zone Group.
+     * The name of the Availability Zone Group.
      * </p>
      * 
-     * @return The names of the Zone Group.
+     * @return The name of the Availability Zone Group.
      */
 
     public String getGroupName() {
@@ -66,11 +69,11 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The names of the Zone Group.
+     * The name of the Availability Zone Group.
      * </p>
      * 
      * @param groupName
-     *        The names of the Zone Group.
+     *        The name of the Availability Zone Group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +84,17 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     * Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must contact
+     * <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     * >AWS Support</a> to disable an Availability Zone group.
      * </p>
      * 
      * @param optInStatus
-     *        Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     *        Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must
+     *        contact <a href=
+     *        "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     *        >AWS Support</a> to disable an Availability Zone group.
      * @see ModifyAvailabilityZoneOptInStatus
      */
 
@@ -95,10 +104,16 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     * Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must contact
+     * <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     * >AWS Support</a> to disable an Availability Zone group.
      * </p>
      * 
-     * @return Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     * @return Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must
+     *         contact <a href=
+     *         "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     *         >AWS Support</a> to disable an Availability Zone group.
      * @see ModifyAvailabilityZoneOptInStatus
      */
 
@@ -108,11 +123,17 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     * Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must contact
+     * <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     * >AWS Support</a> to disable an Availability Zone group.
      * </p>
      * 
      * @param optInStatus
-     *        Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     *        Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must
+     *        contact <a href=
+     *        "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     *        >AWS Support</a> to disable an Availability Zone group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModifyAvailabilityZoneOptInStatus
      */
@@ -124,11 +145,17 @@ public class ModifyAvailabilityZoneGroupRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     * Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must contact
+     * <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     * >AWS Support</a> to disable an Availability Zone group.
      * </p>
      * 
      * @param optInStatus
-     *        Indicates whether to enable or disable Zone Group membership. The valid values are <code>opted-in</code>.
+     *        Indicates whether to enable or disable membership. The valid values are <code>opted-in</code>. You must
+     *        contact <a href=
+     *        "https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services"
+     *        >AWS Support</a> to disable an Availability Zone group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModifyAvailabilityZoneOptInStatus
      */

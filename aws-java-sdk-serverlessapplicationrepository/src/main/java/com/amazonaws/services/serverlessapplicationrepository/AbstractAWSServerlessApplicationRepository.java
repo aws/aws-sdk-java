@@ -88,6 +88,11 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
     }
 
     @Override
+    public UnshareApplicationResult unshareApplication(UnshareApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

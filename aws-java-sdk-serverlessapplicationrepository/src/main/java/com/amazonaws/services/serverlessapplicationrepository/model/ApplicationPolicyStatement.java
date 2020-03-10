@@ -38,6 +38,14 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
     private java.util.List<String> actions;
     /**
      * <p>
+     * An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     * >aws:PrincipalOrgID</a> global condition key.
+     * </p>
+     */
+    private java.util.List<String> principalOrgIDs;
+    /**
+     * <p>
      * An array of AWS account IDs, or * to make the application public.
      * </p>
      */
@@ -132,6 +140,92 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     public ApplicationPolicyStatement withActions(java.util.Collection<String> actions) {
         setActions(actions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     * >aws:PrincipalOrgID</a> global condition key.
+     * </p>
+     * 
+     * @return An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     *         >aws:PrincipalOrgID</a> global condition key.
+     */
+
+    public java.util.List<String> getPrincipalOrgIDs() {
+        return principalOrgIDs;
+    }
+
+    /**
+     * <p>
+     * An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     * >aws:PrincipalOrgID</a> global condition key.
+     * </p>
+     * 
+     * @param principalOrgIDs
+     *        An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     *        >aws:PrincipalOrgID</a> global condition key.
+     */
+
+    public void setPrincipalOrgIDs(java.util.Collection<String> principalOrgIDs) {
+        if (principalOrgIDs == null) {
+            this.principalOrgIDs = null;
+            return;
+        }
+
+        this.principalOrgIDs = new java.util.ArrayList<String>(principalOrgIDs);
+    }
+
+    /**
+     * <p>
+     * An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     * >aws:PrincipalOrgID</a> global condition key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrincipalOrgIDs(java.util.Collection)} or {@link #withPrincipalOrgIDs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param principalOrgIDs
+     *        An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     *        >aws:PrincipalOrgID</a> global condition key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationPolicyStatement withPrincipalOrgIDs(String... principalOrgIDs) {
+        if (this.principalOrgIDs == null) {
+            setPrincipalOrgIDs(new java.util.ArrayList<String>(principalOrgIDs.length));
+        }
+        for (String ele : principalOrgIDs) {
+            this.principalOrgIDs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     * >aws:PrincipalOrgID</a> global condition key.
+     * </p>
+     * 
+     * @param principalOrgIDs
+     *        An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id"
+     *        >aws:PrincipalOrgID</a> global condition key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationPolicyStatement withPrincipalOrgIDs(java.util.Collection<String> principalOrgIDs) {
+        setPrincipalOrgIDs(principalOrgIDs);
         return this;
     }
 
@@ -259,6 +353,8 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getActions() != null)
             sb.append("Actions: ").append(getActions()).append(",");
+        if (getPrincipalOrgIDs() != null)
+            sb.append("PrincipalOrgIDs: ").append(getPrincipalOrgIDs()).append(",");
         if (getPrincipals() != null)
             sb.append("Principals: ").append(getPrincipals()).append(",");
         if (getStatementId() != null)
@@ -281,6 +377,10 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
             return false;
         if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
+        if (other.getPrincipalOrgIDs() == null ^ this.getPrincipalOrgIDs() == null)
+            return false;
+        if (other.getPrincipalOrgIDs() != null && other.getPrincipalOrgIDs().equals(this.getPrincipalOrgIDs()) == false)
+            return false;
         if (other.getPrincipals() == null ^ this.getPrincipals() == null)
             return false;
         if (other.getPrincipals() != null && other.getPrincipals().equals(this.getPrincipals()) == false)
@@ -298,6 +398,7 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalOrgIDs() == null) ? 0 : getPrincipalOrgIDs().hashCode());
         hashCode = prime * hashCode + ((getPrincipals() == null) ? 0 : getPrincipals().hashCode());
         hashCode = prime * hashCode + ((getStatementId() == null) ? 0 : getStatementId().hashCode());
         return hashCode;

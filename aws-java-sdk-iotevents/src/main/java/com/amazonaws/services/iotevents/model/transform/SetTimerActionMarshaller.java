@@ -31,6 +31,8 @@ public class SetTimerActionMarshaller {
             .marshallLocationName("timerName").build();
     private static final MarshallingInfo<Integer> SECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("seconds").build();
+    private static final MarshallingInfo<String> DURATIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("durationExpression").build();
 
     private static final SetTimerActionMarshaller instance = new SetTimerActionMarshaller();
 
@@ -50,6 +52,7 @@ public class SetTimerActionMarshaller {
         try {
             protocolMarshaller.marshall(setTimerAction.getTimerName(), TIMERNAME_BINDING);
             protocolMarshaller.marshall(setTimerAction.getSeconds(), SECONDS_BINDING);
+            protocolMarshaller.marshall(setTimerAction.getDurationExpression(), DURATIONEXPRESSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

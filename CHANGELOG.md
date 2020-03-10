@@ -1,3 +1,24 @@
+# __1.11.741__ __2020-03-10__
+## __AWS IoT Events__
+  - ### Features
+    - API update that adds a new parameter, durationExpression, to SetTimerAction, and deprecates seconds
+
+## __AWS Marketplace Commerce Analytics__
+  - ### Features
+    - Change the disbursement data set to look past 31 days instead until the beginning of the month.
+
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - AWS Serverless Application Repository now supports sharing applications privately with AWS Organizations.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for EC2
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe's Automatic Content Redaction feature enables you to automatically redact sensitive personally identifiable information (PII) from transcription results. It replaces each instance of an identified PII utterance with a [PII] tag in the transcript.
+
 # __1.11.740__ __2020-03-09__
 ## __AWS Database Migration Service__
   - ### Features

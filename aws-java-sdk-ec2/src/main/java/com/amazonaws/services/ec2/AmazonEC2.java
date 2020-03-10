@@ -6049,6 +6049,11 @@ public interface AmazonEC2 {
      * Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes
      * are exported. Alternatively, you can filter by CIDR range.
      * </p>
+     * <p>
+     * The routes are saved to the specified bucket in a JSON file. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export Route
+     * Tables to Amazon S3</a> in <i>Transit Gateways</i>.
+     * </p>
      * 
      * @param exportTransitGatewayRoutesRequest
      * @return Result of the ExportTransitGatewayRoutes operation returned by the service.
@@ -6459,7 +6464,12 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Enables or disables a Zone Group for your account. To use Local Zones, you must first enable the Zone Group.
+     * Enables or disables an Availability Zone group for your account.
+     * </p>
+     * <p>
+     * Use <a href=
+     * "https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html"
+     * >describe-availability-zones</a> to view the value for <code>GroupName</code>.
      * </p>
      * 
      * @param modifyAvailabilityZoneGroupRequest
@@ -7926,8 +7936,9 @@ public interface AmazonEC2 {
      * you can improve the availability of your fleet.
      * </p>
      * <p>
-     * You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource types in a Spot Fleet
-     * request because only the <code>spot-fleet-request</code> and <code>instance</code> resource types are supported.
+     * You can specify tags for the Spot Fleet request and instances launched by the fleet. You cannot tag other
+     * resource types in a Spot Fleet request because only the <code>spot-fleet-request</code> and <code>instance</code>
+     * resource types are supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -8426,8 +8437,9 @@ public interface AmazonEC2 {
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed instances. For
-     * information about using hibernation for Spot Instances, see <a
+     * You can't stop or hibernate instance store-backed instances. You can't use the Stop action to hibernate Spot
+     * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances when they are interrupted. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
      * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>

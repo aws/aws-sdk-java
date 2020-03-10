@@ -52,6 +52,10 @@ public class ApplicationPolicyStatementJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     applicationPolicyStatement.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("principalOrgIDs", targetDepth)) {
+                    context.nextToken();
+                    applicationPolicyStatement.setPrincipalOrgIDs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("principals", targetDepth)) {
                     context.nextToken();
                     applicationPolicyStatement.setPrincipals(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

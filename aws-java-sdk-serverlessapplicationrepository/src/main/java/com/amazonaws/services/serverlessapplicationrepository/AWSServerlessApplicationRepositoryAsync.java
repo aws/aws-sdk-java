@@ -457,6 +457,43 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
+     * Unshares an application from an AWS Organization.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param unshareApplicationRequest
+     * @return A Java Future containing the result of the UnshareApplication operation returned by the service.
+     * @sample AWSServerlessApplicationRepositoryAsync.UnshareApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(UnshareApplicationRequest unshareApplicationRequest);
+
+    /**
+     * <p>
+     * Unshares an application from an AWS Organization.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param unshareApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnshareApplication operation returned by the service.
+     * @sample AWSServerlessApplicationRepositoryAsyncHandler.UnshareApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(UnshareApplicationRequest unshareApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UnshareApplicationRequest, UnshareApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the specified application.
      * </p>
      * 

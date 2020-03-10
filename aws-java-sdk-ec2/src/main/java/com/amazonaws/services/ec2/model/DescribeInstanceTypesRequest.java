@@ -66,13 +66,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>true</code> | <code>false</code>)
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
+     * | <code>unsupported</code>)
      * </p>
      * </li>
      * <li>
@@ -349,13 +349,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>true</code> | <code>false</code>)
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
+     * | <code>unsupported</code>)
      * </p>
      * </li>
      * <li>
@@ -493,13 +493,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *         <code>true</code> | <code>false</code>)
+     *         <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *         <code>true</code> | <code>false</code>)
+     *         <code>supported</code> | <code>unsupported</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -650,13 +650,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>true</code> | <code>false</code>)
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
+     * | <code>unsupported</code>)
      * </p>
      * </li>
      * <li>
@@ -795,13 +795,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>supported</code> | <code>unsupported</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -954,13 +954,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>true</code> | <code>false</code>)
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
+     * | <code>unsupported</code>)
      * </p>
      * </li>
      * <li>
@@ -1104,13 +1104,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>supported</code> | <code>unsupported</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -1265,13 +1265,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>true</code> | <code>false</code>)
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
+     * | <code>unsupported</code>)
      * </p>
      * </li>
      * <li>
@@ -1410,13 +1410,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>supported</code> | <code>unsupported</code>)
      *        </p>
      *        </li>
      *        <li>

@@ -185,6 +185,19 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     }
 
     @Override
+    public java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(UnshareApplicationRequest request) {
+
+        return unshareApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(UnshareApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UnshareApplicationRequest, UnshareApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
 
         return updateApplicationAsync(request, null);

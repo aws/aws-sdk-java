@@ -492,6 +492,39 @@ public class AWSServerlessApplicationRepositoryAsyncClient extends AWSServerless
     }
 
     @Override
+    public java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(UnshareApplicationRequest request) {
+
+        return unshareApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(final UnshareApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnshareApplicationRequest, UnshareApplicationResult> asyncHandler) {
+        final UnshareApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UnshareApplicationResult>() {
+            @Override
+            public UnshareApplicationResult call() throws Exception {
+                UnshareApplicationResult result = null;
+
+                try {
+                    result = executeUnshareApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
 
         return updateApplicationAsync(request, null);

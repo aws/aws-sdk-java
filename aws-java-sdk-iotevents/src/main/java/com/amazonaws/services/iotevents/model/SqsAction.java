@@ -36,8 +36,7 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
     private String queueUrl;
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
-     * this to FALSE.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      * </p>
      */
     private Boolean useBase64;
@@ -84,13 +83,11 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
-     * this to FALSE.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      * </p>
      * 
      * @param useBase64
-     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
-     *        set this to FALSE.
+     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      */
 
     public void setUseBase64(Boolean useBase64) {
@@ -99,12 +96,10 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
-     * this to FALSE.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      * </p>
      * 
-     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
-     *         set this to FALSE.
+     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      */
 
     public Boolean getUseBase64() {
@@ -113,13 +108,11 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
-     * this to FALSE.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      * </p>
      * 
      * @param useBase64
-     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
-     *        set this to FALSE.
+     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,12 +123,10 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
-     * this to FALSE.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      * </p>
      * 
-     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
-     *         set this to FALSE.
+     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
      */
 
     public Boolean isUseBase64() {

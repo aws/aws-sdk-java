@@ -147,9 +147,10 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
     private String dataSetType;
     /**
      * The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired
-     * day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will
-     * be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day
-     * value will be ignored).
+     * day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity
+     * for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date
+     * with day-level granularity for the desired day. For these data sets we will look backwards in time over the range
+     * of 31 days until the first data set is found (the latest one).
      */
     private java.util.Date dataSetPublicationDate;
     /**
@@ -1379,15 +1380,17 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired
-     * day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will
-     * be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day
-     * value will be ignored).
+     * day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity
+     * for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date
+     * with day-level granularity for the desired day. For these data sets we will look backwards in time over the range
+     * of 31 days until the first data set is found (the latest one).
      * 
      * @param dataSetPublicationDate
      *        The date a data set was published. For daily data sets, provide a date with day-level granularity for the
-     *        desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the
-     *        day value will be ignored). For monthly data sets, provide a date with month-level granularity for the
-     *        desired month (the day value will be ignored).
+     *        desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with
+     *        month-level granularity for the desired month (the day value will be ignored). For data sets with prefix
+     *        disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we
+     *        will look backwards in time over the range of 31 days until the first data set is found (the latest one).
      */
 
     public void setDataSetPublicationDate(java.util.Date dataSetPublicationDate) {
@@ -1396,14 +1399,16 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired
-     * day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will
-     * be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day
-     * value will be ignored).
+     * day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity
+     * for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date
+     * with day-level granularity for the desired day. For these data sets we will look backwards in time over the range
+     * of 31 days until the first data set is found (the latest one).
      * 
      * @return The date a data set was published. For daily data sets, provide a date with day-level granularity for the
-     *         desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the
-     *         day value will be ignored). For monthly data sets, provide a date with month-level granularity for the
-     *         desired month (the day value will be ignored).
+     *         desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with
+     *         month-level granularity for the desired month (the day value will be ignored). For data sets with prefix
+     *         disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we
+     *         will look backwards in time over the range of 31 days until the first data set is found (the latest one).
      */
 
     public java.util.Date getDataSetPublicationDate() {
@@ -1412,15 +1417,17 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired
-     * day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will
-     * be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day
-     * value will be ignored).
+     * day. For monthly data sets except those with prefix disbursed_amount, provide a date with month-level granularity
+     * for the desired month (the day value will be ignored). For data sets with prefix disbursed_amount, provide a date
+     * with day-level granularity for the desired day. For these data sets we will look backwards in time over the range
+     * of 31 days until the first data set is found (the latest one).
      * 
      * @param dataSetPublicationDate
      *        The date a data set was published. For daily data sets, provide a date with day-level granularity for the
-     *        desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the
-     *        day value will be ignored). For monthly data sets, provide a date with month-level granularity for the
-     *        desired month (the day value will be ignored).
+     *        desired day. For monthly data sets except those with prefix disbursed_amount, provide a date with
+     *        month-level granularity for the desired month (the day value will be ignored). For data sets with prefix
+     *        disbursed_amount, provide a date with day-level granularity for the desired day. For these data sets we
+     *        will look backwards in time over the range of 31 days until the first data set is found (the latest one).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

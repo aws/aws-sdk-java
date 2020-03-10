@@ -950,6 +950,72 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
+     * Unshares an application from an AWS Organization.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param unshareApplicationRequest
+     * @return Result of the UnshareApplication operation returned by the service.
+     * @throws NotFoundException
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws InternalServerErrorException
+     *         The AWS Serverless Application Repository service encountered an internal error.
+     * @throws ForbiddenException
+     *         The client is not authenticated.
+     * @sample AWSServerlessApplicationRepository.UnshareApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UnshareApplicationResult unshareApplication(UnshareApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnshareApplication(request);
+    }
+
+    @SdkInternalApi
+    final UnshareApplicationResult executeUnshareApplication(UnshareApplicationRequest unshareApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unshareApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnshareApplicationRequest> request = null;
+        Response<UnshareApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnshareApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unshareApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnshareApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnshareApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnshareApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the specified application.
      * </p>
      * 
