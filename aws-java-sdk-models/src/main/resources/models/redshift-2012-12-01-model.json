@@ -1069,7 +1069,8 @@
         {"shape":"BucketNotFoundFault"},
         {"shape":"InsufficientS3BucketPolicyFault"},
         {"shape":"InvalidS3KeyPrefixFault"},
-        {"shape":"InvalidS3BucketNameFault"}
+        {"shape":"InvalidS3BucketNameFault"},
+        {"shape":"InvalidClusterStateFault"}
       ],
       "documentation":"<p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>"
     },
@@ -1218,7 +1219,8 @@
         "resultWrapper":"ModifyClusterMaintenanceResult"
       },
       "errors":[
-        {"shape":"ClusterNotFoundFault"}
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"}
       ],
       "documentation":"<p>Modifies the maintenance settings of a cluster.</p>"
     },
@@ -1374,6 +1376,23 @@
       ],
       "documentation":"<p>Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.</p>"
     },
+    "PauseCluster":{
+      "name":"PauseCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PauseClusterMessage"},
+      "output":{
+        "shape":"PauseClusterResult",
+        "resultWrapper":"PauseClusterResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Pauses a cluster.</p>"
+    },
     "PurchaseReservedNodeOffering":{
       "name":"PurchaseReservedNodeOffering",
       "http":{
@@ -1512,6 +1531,23 @@
         {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p>"
+    },
+    "ResumeCluster":{
+      "name":"ResumeCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ResumeClusterMessage"},
+      "output":{
+        "shape":"ResumeClusterResult",
+        "resultWrapper":"ResumeClusterResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Resumes a paused cluster.</p>"
     },
     "RevokeClusterSecurityGroupIngress":{
       "name":"RevokeClusterSecurityGroupIngress",
@@ -1941,7 +1977,7 @@
         },
         "ClusterStatus":{
           "shape":"String",
-          "documentation":"<p> The current state of the cluster. Possible values are the following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available, prep-for-resize</code> </p> </li> <li> <p> <code>available, resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p> <code>incompatible-parameters</code> </p> </li> <li> <p> <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code> </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>"
+          "documentation":"<p> The current state of the cluster. Possible values are the following:</p> <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available, prep-for-resize</code> </p> </li> <li> <p> <code>available, resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p> <code>incompatible-parameters</code> </p> </li> <li> <p> <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code> </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>"
         },
         "ClusterAvailabilityStatus":{
           "shape":"String",
@@ -5929,6 +5965,22 @@
         "locationName":"Parameter"
       }
     },
+    "PauseClusterMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to be paused.</p>"
+        }
+      }
+    },
+    "PauseClusterResult":{
+      "type":"structure",
+      "members":{
+        "Cluster":{"shape":"Cluster"}
+      }
+    },
     "PendingActionsList":{
       "type":"list",
       "member":{"shape":"String"}
@@ -6621,6 +6673,22 @@
         "TableRestoreStatus":{"shape":"TableRestoreStatus"}
       }
     },
+    "ResumeClusterMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to be resumed.</p>"
+        }
+      }
+    },
+    "ResumeClusterResult":{
+      "type":"structure",
+      "members":{
+        "Cluster":{"shape":"Cluster"}
+      }
+    },
     "RevisionTarget":{
       "type":"structure",
       "members":{
@@ -6920,6 +6988,14 @@
         "ResizeCluster":{
           "shape":"ResizeClusterMessage",
           "documentation":"<p>An action that runs a <code>ResizeCluster</code> API operation. </p>"
+        },
+        "PauseCluster":{
+          "shape":"PauseClusterMessage",
+          "documentation":"<p>An action that runs a <code>PauseCluster</code> API operation. </p>"
+        },
+        "ResumeCluster":{
+          "shape":"ResumeClusterMessage",
+          "documentation":"<p>An action that runs a <code>ResumeCluster</code> API operation. </p>"
         }
       },
       "documentation":"<p>The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. </p>"
@@ -6938,7 +7014,11 @@
     },
     "ScheduledActionTypeValues":{
       "type":"string",
-      "enum":["ResizeCluster"]
+      "enum":[
+        "ResizeCluster",
+        "PauseCluster",
+        "ResumeCluster"
+      ]
     },
     "ScheduledActionsMessage":{
       "type":"structure",

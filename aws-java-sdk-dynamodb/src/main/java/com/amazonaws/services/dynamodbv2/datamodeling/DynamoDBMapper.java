@@ -82,6 +82,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -2551,18 +2552,29 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             }
         }
         Map<String, AttributeValue> keyAttributeValueMap = new HashMap<String, AttributeValue>();
-        Map<String, AttributeValue> nonKeyNonNullAttributeValueMap = new HashMap<String, AttributeValue>();
+        // Copy attributeValueMap
+        Map<String, AttributeValue> nonKeyNonNullAttributeValueMap = new HashMap<String, AttributeValue>(attributeValueMap);
         // These are the non-key attributes that are present in the model and not in the customer object,
         // meaning they're to be removed in this update
         List<String> nullValuedNonKeyAttributeNames = new ArrayList<String>();
 
+        // Categorize modeled fields as key, non-key, and removed
         for (final DynamoDBMapperFieldModel<Object,Object> field : model.fields()) {
             if (field.keyType() != null) {
-                keyAttributeValueMap.put(field.name(), attributeValueMap.get(field.name()));
-            } else if (attributeValueMap.get(field.name()) != null) {
-                nonKeyNonNullAttributeValueMap.put(field.name(), attributeValueMap.get(field.name()));
-            } else {
+                keyAttributeValueMap.put(field.name(), nonKeyNonNullAttributeValueMap.remove(field.name()));
+            } else if (nonKeyNonNullAttributeValueMap.get(field.name()) == null) {
                 nullValuedNonKeyAttributeNames.add(field.name());
+                nonKeyNonNullAttributeValueMap.remove(field.name());
+            }
+        }
+
+        // Categorize null non-modeled fields (using iterator to avoid ConcurrentModificationException)
+        Iterator<String> iterator = nonKeyNonNullAttributeValueMap.keySet().iterator();
+        while (iterator.hasNext()) {
+            String key = iterator.next();
+            if (nonKeyNonNullAttributeValueMap.get(key) == null) {
+                nullValuedNonKeyAttributeNames.add(key);
+                iterator.remove();
             }
         }
 

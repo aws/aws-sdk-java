@@ -110,6 +110,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>paused</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rebooting</code>
      * </p>
      * </li>
@@ -636,6 +641,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>paused</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rebooting</code>
      * </p>
      * </li>
@@ -732,6 +742,11 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>modifying</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>paused</code>
      *        </p>
      *        </li>
      *        <li>
@@ -842,6 +857,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>paused</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rebooting</code>
      * </p>
      * </li>
@@ -937,6 +957,11 @@ public class Cluster implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>modifying</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>paused</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1047,6 +1072,11 @@ public class Cluster implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>paused</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rebooting</code>
      * </p>
      * </li>
@@ -1143,6 +1173,11 @@ public class Cluster implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>modifying</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>paused</code>
      *        </p>
      *        </li>
      *        <li>

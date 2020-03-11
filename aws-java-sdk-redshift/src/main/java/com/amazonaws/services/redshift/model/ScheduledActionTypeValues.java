@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ScheduledActionTypeValues {
 
-    ResizeCluster("ResizeCluster");
+    ResizeCluster("ResizeCluster"),
+    PauseCluster("PauseCluster"),
+    ResumeCluster("ResumeCluster");
 
     private String value;
 

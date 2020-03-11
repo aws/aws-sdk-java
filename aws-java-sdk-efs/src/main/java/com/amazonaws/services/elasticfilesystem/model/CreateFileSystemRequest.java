@@ -83,6 +83,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to
      * true.
      * </p>
+     * <important>
+     * <p>
+     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * </p>
+     * </important>
      */
     private String kmsKeyId;
     /**
@@ -369,6 +374,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to
      * true.
      * </p>
+     * <important>
+     * <p>
+     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * </p>
+     * </important>
      * 
      * @param kmsKeyId
      *        The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required
@@ -401,6 +411,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set
      *        to true.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     *        </p>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -441,6 +456,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to
      * true.
      * </p>
+     * <important>
+     * <p>
+     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * </p>
+     * </important>
      * 
      * @return The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only
      *         required if you want to use a nondefault CMK. If this parameter is not specified, the default CMK for
@@ -472,6 +492,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set
      *         to true.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     *         </p>
      */
 
     public String getKmsKeyId() {
@@ -512,6 +537,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to
      * true.
      * </p>
+     * <important>
+     * <p>
+     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * </p>
+     * </important>
      * 
      * @param kmsKeyId
      *        The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required
@@ -544,6 +574,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If <code>KmsKeyId</code> is specified, the <a>CreateFileSystemRequest$Encrypted</a> parameter must be set
      *        to true.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

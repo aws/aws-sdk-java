@@ -1847,6 +1847,8 @@ public interface AmazonRedshift {
      *         The S3 bucket name is invalid. For more information about naming rules, go to <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
      *         Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
      * @sample AmazonRedshift.EnableLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging" target="_top">AWS API
      *      Documentation</a>
@@ -2081,6 +2083,8 @@ public interface AmazonRedshift {
      * @return Result of the ModifyClusterMaintenance operation returned by the service.
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
      * @sample AmazonRedshift.ModifyClusterMaintenance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance"
      *      target="_top">AWS API Documentation</a>
@@ -2289,6 +2293,23 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest);
+
+    /**
+     * <p>
+     * Pauses a cluster.
+     * </p>
+     * 
+     * @param pauseClusterRequest
+     * @return Result of the PauseCluster operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.PauseCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    Cluster pauseCluster(PauseClusterRequest pauseClusterRequest);
 
     /**
      * <p>
@@ -2564,6 +2585,23 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     TableRestoreStatus restoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest);
+
+    /**
+     * <p>
+     * Resumes a paused cluster.
+     * </p>
+     * 
+     * @param resumeClusterRequest
+     * @return Result of the ResumeCluster operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.ResumeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    Cluster resumeCluster(ResumeClusterRequest resumeClusterRequest);
 
     /**
      * <p>

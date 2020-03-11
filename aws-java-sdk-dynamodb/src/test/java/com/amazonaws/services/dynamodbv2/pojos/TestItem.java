@@ -22,8 +22,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
-@DynamoDBTable(tableName = "aws-java-sdk-dynamodb-mapper-save-config-test")
+@DynamoDBTable(tableName = TestItem.TABLE_NAME)
 public class TestItem {
+
+    public static final String TABLE_NAME = "aws-java-sdk-dynamodb-mapper-save-config-test";
 
     private String hashKey;
     private Long rangeKey;

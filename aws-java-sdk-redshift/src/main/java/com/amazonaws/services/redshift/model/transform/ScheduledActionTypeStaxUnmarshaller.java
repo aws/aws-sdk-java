@@ -47,6 +47,16 @@ public class ScheduledActionTypeStaxUnmarshaller implements Unmarshaller<Schedul
                     scheduledActionType.setResizeCluster(ResizeClusterMessageStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PauseCluster", targetDepth)) {
+                    scheduledActionType.setPauseCluster(PauseClusterMessageStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ResumeCluster", targetDepth)) {
+                    scheduledActionType.setResumeCluster(ResumeClusterMessageStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return scheduledActionType;

@@ -1431,6 +1431,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<Cluster> pauseClusterAsync(PauseClusterRequest request) {
+
+        return pauseClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> pauseClusterAsync(PauseClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<PauseClusterRequest, Cluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ReservedNode> purchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest request) {
 
         return purchaseReservedNodeOfferingAsync(request, null);
@@ -1504,6 +1517,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreTableFromClusterSnapshotRequest, TableRestoreStatus> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> resumeClusterAsync(ResumeClusterRequest request) {
+
+        return resumeClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Cluster> resumeClusterAsync(ResumeClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResumeClusterRequest, Cluster> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -3620,6 +3620,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Pauses a cluster.
+     * </p>
+     * 
+     * @param pauseClusterRequest
+     * @return A Java Future containing the result of the PauseCluster operation returned by the service.
+     * @sample AmazonRedshiftAsync.PauseCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> pauseClusterAsync(PauseClusterRequest pauseClusterRequest);
+
+    /**
+     * <p>
+     * Pauses a cluster.
+     * </p>
+     * 
+     * @param pauseClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PauseCluster operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.PauseCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> pauseClusterAsync(PauseClusterRequest pauseClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<PauseClusterRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
      * Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You
      * can purchase one or more of the offerings. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain
      * the available reserved node offerings. You can call this API by providing a specific reserved node offering and
@@ -3975,6 +4006,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     java.util.concurrent.Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(
             RestoreTableFromClusterSnapshotRequest restoreTableFromClusterSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreTableFromClusterSnapshotRequest, TableRestoreStatus> asyncHandler);
+
+    /**
+     * <p>
+     * Resumes a paused cluster.
+     * </p>
+     * 
+     * @param resumeClusterRequest
+     * @return A Java Future containing the result of the ResumeCluster operation returned by the service.
+     * @sample AmazonRedshiftAsync.ResumeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> resumeClusterAsync(ResumeClusterRequest resumeClusterRequest);
+
+    /**
+     * <p>
+     * Resumes a paused cluster.
+     * </p>
+     * 
+     * @param resumeClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResumeCluster operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ResumeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> resumeClusterAsync(ResumeClusterRequest resumeClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ResumeClusterRequest, Cluster> asyncHandler);
 
     /**
      * <p>

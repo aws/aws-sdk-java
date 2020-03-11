@@ -179,6 +179,8 @@ public enum RedshiftActions implements Action {
     ModifySnapshotCopyRetentionPeriod("redshift:ModifySnapshotCopyRetentionPeriod"),
     /** Action for the ModifySnapshotSchedule operation. */
     ModifySnapshotSchedule("redshift:ModifySnapshotSchedule"),
+    /** Action for the PauseCluster operation. */
+    PauseCluster("redshift:PauseCluster"),
     /** Action for the PurchaseReservedNodeOffering operation. */
     PurchaseReservedNodeOffering("redshift:PurchaseReservedNodeOffering"),
     /** Action for the RebootCluster operation. */
@@ -191,6 +193,8 @@ public enum RedshiftActions implements Action {
     RestoreFromClusterSnapshot("redshift:RestoreFromClusterSnapshot"),
     /** Action for the RestoreTableFromClusterSnapshot operation. */
     RestoreTableFromClusterSnapshot("redshift:RestoreTableFromClusterSnapshot"),
+    /** Action for the ResumeCluster operation. */
+    ResumeCluster("redshift:ResumeCluster"),
     /** Action for the RevokeClusterSecurityGroupIngress operation. */
     RevokeClusterSecurityGroupIngress("redshift:RevokeClusterSecurityGroupIngress"),
     /** Action for the RevokeSnapshotAccess operation. */

@@ -1,3 +1,16 @@
+# __1.11.742__ __2020-03-11__
+## __Amazon DynamoDB Mapper__
+  - ### Bugfixes
+    - Add support for DynamoDBMapper transaction update to include additional attribute values provided by an AttributeTransformer.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - Documentation updates for elasticfilesystem
+
+## __Amazon Redshift__
+  - ### Features
+    - Amazon Redshift now supports operations to pause and resume a cluster on demand or on a schedule.
+
 # __1.11.741__ __2020-03-10__
 ## __AWS IoT Events__
   - ### Features

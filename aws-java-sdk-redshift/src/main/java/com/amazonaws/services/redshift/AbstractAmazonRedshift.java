@@ -509,6 +509,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public Cluster pauseCluster(PauseClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ReservedNode purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -535,6 +540,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public TableRestoreStatus restoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public Cluster resumeCluster(ResumeClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -73,6 +73,26 @@ public class ModifyScheduledActionRequestMarshaller implements Marshaller<Reques
                         }
                     }
                 }
+
+                {
+                    PauseClusterMessage pauseCluster = targetAction.getPauseCluster();
+                    if (pauseCluster != null) {
+
+                        if (pauseCluster.getClusterIdentifier() != null) {
+                            request.addParameter("TargetAction.PauseCluster.ClusterIdentifier", StringUtils.fromString(pauseCluster.getClusterIdentifier()));
+                        }
+                    }
+                }
+
+                {
+                    ResumeClusterMessage resumeCluster = targetAction.getResumeCluster();
+                    if (resumeCluster != null) {
+
+                        if (resumeCluster.getClusterIdentifier() != null) {
+                            request.addParameter("TargetAction.ResumeCluster.ClusterIdentifier", StringUtils.fromString(resumeCluster.getClusterIdentifier()));
+                        }
+                    }
+                }
             }
         }
 
