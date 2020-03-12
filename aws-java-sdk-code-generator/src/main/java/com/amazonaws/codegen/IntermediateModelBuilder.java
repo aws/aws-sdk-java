@@ -117,11 +117,20 @@ public class IntermediateModelBuilder {
         authorizers.putAll(new AddCustomAuthorizers(this.service, getNamingStrategy()).constructAuthorizers());
 
         OperationModel endpointOperation = null;
+        boolean endpointCacheRequired = false;
 
         for (OperationModel o : operations.values()) {
             if (o.isEndpointOperation()) {
                 endpointOperation = o;
             }
+
+            if (o.getEndpointDiscovery() != null && o.getEndpointDiscovery().isRequired()) {
+                endpointCacheRequired = true;
+            }
+        }
+
+        if (endpointOperation != null) {
+            endpointOperation.setEndpointCacheRequired(endpointCacheRequired);
         }
 
         for (IntermediateModelShapeProcessor processor : shapeProcessors) {

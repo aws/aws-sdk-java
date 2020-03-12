@@ -40,6 +40,18 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String ownerName;
+    /**
+     * <p>
+     * The date and time when the S3 bucket was created.
+     * </p>
+     */
+    private String createdAt;
+    /**
+     * <p>
+     * The encryption rules that are applied to the S3 bucket.
+     * </p>
+     */
+    private AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
 
     /**
      * <p>
@@ -122,6 +134,86 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The date and time when the S3 bucket was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time when the S3 bucket was created.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the S3 bucket was created.
+     * </p>
+     * 
+     * @return The date and time when the S3 bucket was created.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the S3 bucket was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time when the S3 bucket was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption rules that are applied to the S3 bucket.
+     * </p>
+     * 
+     * @param serverSideEncryptionConfiguration
+     *        The encryption rules that are applied to the S3 bucket.
+     */
+
+    public void setServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
+        this.serverSideEncryptionConfiguration = serverSideEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The encryption rules that are applied to the S3 bucket.
+     * </p>
+     * 
+     * @return The encryption rules that are applied to the S3 bucket.
+     */
+
+    public AwsS3BucketServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
+        return this.serverSideEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The encryption rules that are applied to the S3 bucket.
+     * </p>
+     * 
+     * @param serverSideEncryptionConfiguration
+     *        The encryption rules that are applied to the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
+        setServerSideEncryptionConfiguration(serverSideEncryptionConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +228,11 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (getOwnerId() != null)
             sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getOwnerName() != null)
-            sb.append("OwnerName: ").append(getOwnerName());
+            sb.append("OwnerName: ").append(getOwnerName()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getServerSideEncryptionConfiguration() != null)
+            sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +255,15 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getOwnerName() != null && other.getOwnerName().equals(this.getOwnerName()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getServerSideEncryptionConfiguration() == null ^ this.getServerSideEncryptionConfiguration() == null)
+            return false;
+        if (other.getServerSideEncryptionConfiguration() != null
+                && other.getServerSideEncryptionConfiguration().equals(this.getServerSideEncryptionConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +274,8 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getOwnerName() == null) ? 0 : getOwnerName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         return hashCode;
     }
 

@@ -110,6 +110,10 @@ abstract class AddShapes {
                                                               getProtocol(), parentShape,
                                                               getServiceModel().getShapes());
 
+                if (memberModel.isEndpointDiscoveryId()) {
+                    shapeModel.addEndpointDiscoveryMember(memberModel.getC2jName());
+                }
+
                 if (memberModel.getHttp().getLocation() == Location.HEADER) {
                     hasHeaderMember = true;
 
@@ -184,6 +188,7 @@ abstract class AddShapes {
 
         memberModel.setDocumentation(c2jMemberDefinition.getDocumentation());
         memberModel.setDeprecated(c2jMemberDefinition.isDeprecated());
+        memberModel.setEndpointDiscoveryId(c2jMemberDefinition.isEndpointDiscoveryId());
         memberModel.setSensitive(isSensitiveShapeOrContainer(c2jMemberDefinition, allC2jShapes));
         memberModel.withGetterMethodName(namingStrategy.getGetterMethodName(c2jMemberName))
                    .withSetterMethodName(namingStrategy.getSetterMethodName(c2jMemberName))

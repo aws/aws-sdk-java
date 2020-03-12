@@ -355,6 +355,62 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Creates a VPC link.
+     * </p>
+     * 
+     * @param createVpcLinkRequest
+     *        Creates a VPC link
+     * @return A Java Future containing the result of the CreateVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.CreateVpcLink
+     */
+    java.util.concurrent.Future<CreateVpcLinkResult> createVpcLinkAsync(CreateVpcLinkRequest createVpcLinkRequest);
+
+    /**
+     * <p>
+     * Creates a VPC link.
+     * </p>
+     * 
+     * @param createVpcLinkRequest
+     *        Creates a VPC link
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.CreateVpcLink
+     */
+    java.util.concurrent.Future<CreateVpcLinkResult> createVpcLinkAsync(CreateVpcLinkRequest createVpcLinkRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcLinkRequest, CreateVpcLinkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.
+     * </p>
+     * 
+     * @param deleteAccessLogSettingsRequest
+     * @return A Java Future containing the result of the DeleteAccessLogSettings operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.DeleteAccessLogSettings
+     */
+    java.util.concurrent.Future<DeleteAccessLogSettingsResult> deleteAccessLogSettingsAsync(DeleteAccessLogSettingsRequest deleteAccessLogSettingsRequest);
+
+    /**
+     * <p>
+     * Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.
+     * </p>
+     * 
+     * @param deleteAccessLogSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessLogSettings operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.DeleteAccessLogSettings
+     */
+    java.util.concurrent.Future<DeleteAccessLogSettingsResult> deleteAccessLogSettingsAsync(DeleteAccessLogSettingsRequest deleteAccessLogSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessLogSettingsRequest, DeleteAccessLogSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an Api resource.
      * </p>
      * 
@@ -627,6 +683,35 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Deletes a route request parameter.
+     * </p>
+     * 
+     * @param deleteRouteRequestParameterRequest
+     * @return A Java Future containing the result of the DeleteRouteRequestParameter operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.DeleteRouteRequestParameter
+     */
+    java.util.concurrent.Future<DeleteRouteRequestParameterResult> deleteRouteRequestParameterAsync(
+            DeleteRouteRequestParameterRequest deleteRouteRequestParameterRequest);
+
+    /**
+     * <p>
+     * Deletes a route request parameter.
+     * </p>
+     * 
+     * @param deleteRouteRequestParameterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRouteRequestParameter operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.DeleteRouteRequestParameter
+     */
+    java.util.concurrent.Future<DeleteRouteRequestParameterResult> deleteRouteRequestParameterAsync(
+            DeleteRouteRequestParameterRequest deleteRouteRequestParameterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteRequestParameterRequest, DeleteRouteRequestParameterResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a RouteResponse.
      * </p>
      * 
@@ -705,6 +790,33 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      */
     java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(DeleteStageRequest deleteStageRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStageRequest, DeleteStageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a VPC link.
+     * </p>
+     * 
+     * @param deleteVpcLinkRequest
+     * @return A Java Future containing the result of the DeleteVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.DeleteVpcLink
+     */
+    java.util.concurrent.Future<DeleteVpcLinkResult> deleteVpcLinkAsync(DeleteVpcLinkRequest deleteVpcLinkRequest);
+
+    /**
+     * <p>
+     * Deletes a VPC link.
+     * </p>
+     * 
+     * @param deleteVpcLinkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.DeleteVpcLink
+     */
+    java.util.concurrent.Future<DeleteVpcLinkResult> deleteVpcLinkAsync(DeleteVpcLinkRequest deleteVpcLinkRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcLinkRequest, DeleteVpcLinkResult> asyncHandler);
 
     /**
      * <p>
@@ -1356,6 +1468,60 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Gets a VPC link.
+     * </p>
+     * 
+     * @param getVpcLinkRequest
+     * @return A Java Future containing the result of the GetVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.GetVpcLink
+     */
+    java.util.concurrent.Future<GetVpcLinkResult> getVpcLinkAsync(GetVpcLinkRequest getVpcLinkRequest);
+
+    /**
+     * <p>
+     * Gets a VPC link.
+     * </p>
+     * 
+     * @param getVpcLinkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.GetVpcLink
+     */
+    java.util.concurrent.Future<GetVpcLinkResult> getVpcLinkAsync(GetVpcLinkRequest getVpcLinkRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVpcLinkRequest, GetVpcLinkResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a collection of VPC links.
+     * </p>
+     * 
+     * @param getVpcLinksRequest
+     * @return A Java Future containing the result of the GetVpcLinks operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.GetVpcLinks
+     */
+    java.util.concurrent.Future<GetVpcLinksResult> getVpcLinksAsync(GetVpcLinksRequest getVpcLinksRequest);
+
+    /**
+     * <p>
+     * Gets a collection of VPC links.
+     * </p>
+     * 
+     * @param getVpcLinksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVpcLinks operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.GetVpcLinks
+     */
+    java.util.concurrent.Future<GetVpcLinksResult> getVpcLinksAsync(GetVpcLinksRequest getVpcLinksRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVpcLinksRequest, GetVpcLinksResult> asyncHandler);
+
+    /**
+     * <p>
      * Imports an API.
      * </p>
      * 
@@ -1784,5 +1950,34 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      */
     java.util.concurrent.Future<UpdateStageResult> updateStageAsync(UpdateStageRequest updateStageRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateStageRequest, UpdateStageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a VPC link.
+     * </p>
+     * 
+     * @param updateVpcLinkRequest
+     *        Updates a VPC link.
+     * @return A Java Future containing the result of the UpdateVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.UpdateVpcLink
+     */
+    java.util.concurrent.Future<UpdateVpcLinkResult> updateVpcLinkAsync(UpdateVpcLinkRequest updateVpcLinkRequest);
+
+    /**
+     * <p>
+     * Updates a VPC link.
+     * </p>
+     * 
+     * @param updateVpcLinkRequest
+     *        Updates a VPC link.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVpcLink operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.UpdateVpcLink
+     */
+    java.util.concurrent.Future<UpdateVpcLinkResult> updateVpcLinkAsync(UpdateVpcLinkRequest updateVpcLinkRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVpcLinkRequest, UpdateVpcLinkResult> asyncHandler);
 
 }

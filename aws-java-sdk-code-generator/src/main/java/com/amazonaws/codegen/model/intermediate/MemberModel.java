@@ -54,6 +54,8 @@ public class MemberModel extends DocumentationModel {
 
     private boolean deprecated;
 
+    private boolean endpointDiscoveryId;
+
     private boolean sensitive;
 
     private ListModel listModel;
@@ -223,6 +225,14 @@ public class MemberModel extends DocumentationModel {
 
     public void setSensitive(boolean sensitive) {
         this.sensitive = sensitive;
+    }
+
+    public boolean isEndpointDiscoveryId() {
+        return endpointDiscoveryId;
+    }
+
+    public void setEndpointDiscoveryId(boolean endpointDiscoveryId) {
+        this.endpointDiscoveryId = endpointDiscoveryId;
     }
 
     public ListModel getListModel() {

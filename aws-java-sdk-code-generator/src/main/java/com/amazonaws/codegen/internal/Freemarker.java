@@ -251,4 +251,12 @@ public class Freemarker {
     public Template getEndpointDiscoveryCacheLoaderTemplate() throws IOException {
         return getTemplate(templateConfig.getEndpointDiscoveryCacheLoader());
     }
+
+    public Template getEndpointDiscoveryIdentifiersCacheTemplate() throws IOException {
+        return getTemplate(templateConfig.getEndpointDiscoveryIdentifiersCache());
+    }
+
+    public Template getEndpointDiscoveryIdentifiersCacheLoaderTemplate() throws IOException {
+        return getTemplate(templateConfig.getEndpointDiscoveryIdentifiersCacheLoader());
+    }
 }

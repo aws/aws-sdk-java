@@ -217,6 +217,14 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private Boolean createVersion;
+    /**
+     * <p>
+     * A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     * <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code>
+     * operation.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -1632,6 +1640,92 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     * <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code>
+     * operation.
+     * </p>
+     * 
+     * @return A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     *         <code>PutBot</code> operation to update the tags on a bot. To update tags, use the
+     *         <code>TagResource</code> operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     * <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code>
+     * operation.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     *        <code>PutBot</code> operation to update the tags on a bot. To update tags, use the
+     *        <code>TagResource</code> operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     * <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code>
+     * operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     *        <code>PutBot</code> operation to update the tags on a bot. To update tags, use the
+     *        <code>TagResource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     * <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code>
+     * operation.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the
+     *        <code>PutBot</code> operation to update the tags on a bot. To update tags, use the
+     *        <code>TagResource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1668,7 +1762,9 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         if (getDetectSentiment() != null)
             sb.append("DetectSentiment: ").append(getDetectSentiment()).append(",");
         if (getCreateVersion() != null)
-            sb.append("CreateVersion: ").append(getCreateVersion());
+            sb.append("CreateVersion: ").append(getCreateVersion()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1735,6 +1831,10 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1756,6 +1856,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
         hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -33,7 +33,9 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate acceptorClass = new TopLevelTemplate("/templates/waiter/Acceptor.ftl", null);
     private TopLevelTemplate waiterClass = new TopLevelTemplate("/templates/waiter/Waiter.ftl", null);
     private TopLevelTemplate endpointDiscoveryCache = new TopLevelTemplate("/templates/endpoint-discovery/Cache.ftl", null);
+    private TopLevelTemplate endpointDiscoveryIdentifiersCache = new TopLevelTemplate("/templates/endpoint-discovery/IdentifiersCache.ftl", null);
     private TopLevelTemplate endpointDiscoveryCacheLoader = new TopLevelTemplate("/templates/endpoint-discovery/CacheLoader.ftl", null);
+    private TopLevelTemplate endpointDiscoveryIdentifiersCacheLoader = new TopLevelTemplate("/templates/endpoint-discovery/IdentifiersCacheLoader.ftl", null);
     private TopLevelTemplate syncClient;
     private TopLevelTemplate asyncClient;
     private TopLevelTemplate syncAbstractClass;
@@ -398,5 +400,13 @@ public class CodeGenTemplatesConfig {
 
     public TopLevelTemplate getEndpointDiscoveryCacheLoader() {
         return endpointDiscoveryCacheLoader;
+    }
+
+        public TopLevelTemplate getEndpointDiscoveryIdentifiersCache() {
+        return endpointDiscoveryIdentifiersCache;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryIdentifiersCacheLoader() {
+        return endpointDiscoveryIdentifiersCacheLoader;
     }
 }

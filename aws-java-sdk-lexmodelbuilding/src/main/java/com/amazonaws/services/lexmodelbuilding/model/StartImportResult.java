@@ -56,6 +56,12 @@ public class StartImportResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String importStatus;
     /**
      * <p>
+     * A list of tags added to the imported bot.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
      * A timestamp for the date and time that the import job was requested.
      * </p>
      */
@@ -328,6 +334,76 @@ public class StartImportResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * A list of tags added to the imported bot.
+     * </p>
+     * 
+     * @return A list of tags added to the imported bot.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags added to the imported bot.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags added to the imported bot.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags added to the imported bot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags added to the imported bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartImportResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags added to the imported bot.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags added to the imported bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartImportResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * A timestamp for the date and time that the import job was requested.
      * </p>
      * 
@@ -388,6 +464,8 @@ public class StartImportResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("ImportId: ").append(getImportId()).append(",");
         if (getImportStatus() != null)
             sb.append("ImportStatus: ").append(getImportStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate());
         sb.append("}");
@@ -424,6 +502,10 @@ public class StartImportResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getImportStatus() != null && other.getImportStatus().equals(this.getImportStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -441,6 +523,7 @@ public class StartImportResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getMergeStrategy() == null) ? 0 : getMergeStrategy().hashCode());
         hashCode = prime * hashCode + ((getImportId() == null) ? 0 : getImportId().hashCode());
         hashCode = prime * hashCode + ((getImportStatus() == null) ? 0 : getImportStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         return hashCode;
     }

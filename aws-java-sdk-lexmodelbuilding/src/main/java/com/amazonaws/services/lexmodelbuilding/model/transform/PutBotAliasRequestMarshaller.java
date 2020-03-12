@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lexmodelbuilding.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class PutBotAliasRequestMarshaller {
             .marshallLocationName("checksum").build();
     private static final MarshallingInfo<StructuredPojo> CONVERSATIONLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversationLogs").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PutBotAliasRequestMarshaller instance = new PutBotAliasRequestMarshaller();
 
@@ -62,6 +65,7 @@ public class PutBotAliasRequestMarshaller {
             protocolMarshaller.marshall(putBotAliasRequest.getBotName(), BOTNAME_BINDING);
             protocolMarshaller.marshall(putBotAliasRequest.getChecksum(), CHECKSUM_BINDING);
             protocolMarshaller.marshall(putBotAliasRequest.getConversationLogs(), CONVERSATIONLOGS_BINDING);
+            protocolMarshaller.marshall(putBotAliasRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -92,6 +92,10 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setCloudwatchAlarm(CloudwatchAlarmActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("cloudwatchLogs", targetDepth)) {
+                    context.nextToken();
+                    action.setCloudwatchLogs(CloudwatchLogsActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("elasticsearch", targetDepth)) {
                     context.nextToken();
                     action.setElasticsearch(ElasticsearchActionJsonUnmarshaller.getInstance().unmarshall(context));

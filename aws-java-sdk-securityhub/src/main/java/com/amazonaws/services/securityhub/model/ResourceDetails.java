@@ -90,6 +90,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsS3BucketDetails awsS3Bucket;
     /**
      * <p>
+     * Details about an Amazon S3 object related to a finding.
+     * </p>
+     */
+    private AwsS3ObjectDetails awsS3Object;
+    /**
+     * <p>
      * Details about an IAM access key related to a finding.
      * </p>
      */
@@ -488,6 +494,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsS3Bucket(AwsS3BucketDetails awsS3Bucket) {
         setAwsS3Bucket(awsS3Bucket);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon S3 object related to a finding.
+     * </p>
+     * 
+     * @param awsS3Object
+     *        Details about an Amazon S3 object related to a finding.
+     */
+
+    public void setAwsS3Object(AwsS3ObjectDetails awsS3Object) {
+        this.awsS3Object = awsS3Object;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon S3 object related to a finding.
+     * </p>
+     * 
+     * @return Details about an Amazon S3 object related to a finding.
+     */
+
+    public AwsS3ObjectDetails getAwsS3Object() {
+        return this.awsS3Object;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon S3 object related to a finding.
+     * </p>
+     * 
+     * @param awsS3Object
+     *        Details about an Amazon S3 object related to a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsS3Object(AwsS3ObjectDetails awsS3Object) {
+        setAwsS3Object(awsS3Object);
         return this;
     }
 
@@ -1080,6 +1126,8 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsElasticsearchDomain: ").append(getAwsElasticsearchDomain()).append(",");
         if (getAwsS3Bucket() != null)
             sb.append("AwsS3Bucket: ").append(getAwsS3Bucket()).append(",");
+        if (getAwsS3Object() != null)
+            sb.append("AwsS3Object: ").append(getAwsS3Object()).append(",");
         if (getAwsIamAccessKey() != null)
             sb.append("AwsIamAccessKey: ").append(getAwsIamAccessKey()).append(",");
         if (getAwsIamRole() != null)
@@ -1148,6 +1196,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsS3Bucket() != null && other.getAwsS3Bucket().equals(this.getAwsS3Bucket()) == false)
             return false;
+        if (other.getAwsS3Object() == null ^ this.getAwsS3Object() == null)
+            return false;
+        if (other.getAwsS3Object() != null && other.getAwsS3Object().equals(this.getAwsS3Object()) == false)
+            return false;
         if (other.getAwsIamAccessKey() == null ^ this.getAwsIamAccessKey() == null)
             return false;
         if (other.getAwsIamAccessKey() != null && other.getAwsIamAccessKey().equals(this.getAwsIamAccessKey()) == false)
@@ -1208,6 +1260,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsElbv2LoadBalancer() == null) ? 0 : getAwsElbv2LoadBalancer().hashCode());
         hashCode = prime * hashCode + ((getAwsElasticsearchDomain() == null) ? 0 : getAwsElasticsearchDomain().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Bucket() == null) ? 0 : getAwsS3Bucket().hashCode());
+        hashCode = prime * hashCode + ((getAwsS3Object() == null) ? 0 : getAwsS3Object().hashCode());
         hashCode = prime * hashCode + ((getAwsIamAccessKey() == null) ? 0 : getAwsIamAccessKey().hashCode());
         hashCode = prime * hashCode + ((getAwsIamRole() == null) ? 0 : getAwsIamRole().hashCode());
         hashCode = prime * hashCode + ((getAwsKmsKey() == null) ? 0 : getAwsKmsKey().hashCode());

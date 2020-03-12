@@ -80,6 +80,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsS3Bucket(AwsS3BucketDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsS3Object", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsS3Object(AwsS3ObjectDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsIamAccessKey", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsIamAccessKey(AwsIamAccessKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));

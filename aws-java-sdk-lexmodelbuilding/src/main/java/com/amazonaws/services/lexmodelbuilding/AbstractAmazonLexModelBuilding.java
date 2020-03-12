@@ -183,6 +183,11 @@ public class AbstractAmazonLexModelBuilding implements AmazonLexModelBuilding {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutBotResult putBot(PutBotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +209,16 @@ public class AbstractAmazonLexModelBuilding implements AmazonLexModelBuilding {
 
     @Override
     public StartImportResult startImport(StartImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -118,6 +118,10 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
                     context.nextToken();
                     integration.setTimeoutInMillis(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("tlsConfig", targetDepth)) {
+                    context.nextToken();
+                    integration.setTlsConfig(TlsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

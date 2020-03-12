@@ -166,6 +166,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private Boolean detectSentiment;
+    /**
+     * <p>
+     * A list of tags associated with the bot.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -1330,6 +1336,76 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * A list of tags associated with the bot.
+     * </p>
+     * 
+     * @return A list of tags associated with the bot.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags associated with the bot.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with the bot.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags associated with the bot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with the bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags associated with the bot.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags associated with the bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1374,7 +1450,9 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getCreateVersion() != null)
             sb.append("CreateVersion: ").append(getCreateVersion()).append(",");
         if (getDetectSentiment() != null)
-            sb.append("DetectSentiment: ").append(getDetectSentiment());
+            sb.append("DetectSentiment: ").append(getDetectSentiment()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1457,6 +1535,10 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1482,6 +1564,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
         hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

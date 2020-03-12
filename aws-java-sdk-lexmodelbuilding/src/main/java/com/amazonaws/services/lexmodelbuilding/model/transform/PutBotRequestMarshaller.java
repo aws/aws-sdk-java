@@ -54,6 +54,8 @@ public class PutBotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("detectSentiment").build();
     private static final MarshallingInfo<Boolean> CREATEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createVersion").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PutBotRequestMarshaller instance = new PutBotRequestMarshaller();
 
@@ -84,6 +86,7 @@ public class PutBotRequestMarshaller {
             protocolMarshaller.marshall(putBotRequest.getChildDirected(), CHILDDIRECTED_BINDING);
             protocolMarshaller.marshall(putBotRequest.getDetectSentiment(), DETECTSENTIMENT_BINDING);
             protocolMarshaller.marshall(putBotRequest.getCreateVersion(), CREATEVERSION_BINDING);
+            protocolMarshaller.marshall(putBotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

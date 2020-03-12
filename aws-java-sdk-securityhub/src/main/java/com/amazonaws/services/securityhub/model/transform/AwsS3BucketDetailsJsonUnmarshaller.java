@@ -56,6 +56,15 @@ public class AwsS3BucketDetailsJsonUnmarshaller implements Unmarshaller<AwsS3Buc
                     context.nextToken();
                     awsS3BucketDetails.setOwnerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreatedAt", targetDepth)) {
+                    context.nextToken();
+                    awsS3BucketDetails.setCreatedAt(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ServerSideEncryptionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    awsS3BucketDetails.setServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -24,7 +24,7 @@ public enum LoggingLevel {
 
     ERROR("ERROR"),
     INFO("INFO"),
-    False("false");
+    OFF("OFF");
 
     private String value;
 

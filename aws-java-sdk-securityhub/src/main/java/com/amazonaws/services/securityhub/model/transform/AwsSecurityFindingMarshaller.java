@@ -83,6 +83,8 @@ public class AwsSecurityFindingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerificationState").build();
     private static final MarshallingInfo<String> WORKFLOWSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowState").build();
+    private static final MarshallingInfo<StructuredPojo> WORKFLOW_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Workflow").build();
     private static final MarshallingInfo<String> RECORDSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecordState").build();
     private static final MarshallingInfo<List> RELATEDFINDINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -133,6 +135,7 @@ public class AwsSecurityFindingMarshaller {
             protocolMarshaller.marshall(awsSecurityFinding.getCompliance(), COMPLIANCE_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getVerificationState(), VERIFICATIONSTATE_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getWorkflowState(), WORKFLOWSTATE_BINDING);
+            protocolMarshaller.marshall(awsSecurityFinding.getWorkflow(), WORKFLOW_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getRecordState(), RECORDSTATE_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getRelatedFindings(), RELATEDFINDINGS_BINDING);
             protocolMarshaller.marshall(awsSecurityFinding.getNote(), NOTE_BINDING);

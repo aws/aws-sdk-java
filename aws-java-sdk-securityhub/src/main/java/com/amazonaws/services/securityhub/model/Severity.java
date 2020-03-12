@@ -36,8 +36,73 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
     private Double product;
     /**
      * <p>
-     * The normalized severity of a finding.
+     * The severity value of the finding. The allowed values are the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code> - No issue was found.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code> - The issue does not require action on its own.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code> - The issue must be addressed as a priority.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String label;
+    /**
+     * <p>
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
+     * </p>
+     * <p>
+     * If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     * automatically as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 0 - <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1–39 - <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 40–69 - <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 70–89 - <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 90–100 - <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer normalized;
 
@@ -86,11 +151,345 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The normalized severity of a finding.
+     * The severity value of the finding. The allowed values are the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code> - No issue was found.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code> - The issue does not require action on its own.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code> - The issue must be addressed as a priority.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param label
+     *        The severity value of the finding. The allowed values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INFORMATIONAL</code> - No issue was found.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOW</code> - The issue does not require action on its own.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIGH</code> - The issue must be addressed as a priority.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     *        </p>
+     *        </li>
+     * @see SeverityLabel
+     */
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * <p>
+     * The severity value of the finding. The allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code> - No issue was found.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code> - The issue does not require action on its own.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code> - The issue must be addressed as a priority.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The severity value of the finding. The allowed values are the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>INFORMATIONAL</code> - No issue was found.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LOW</code> - The issue does not require action on its own.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HIGH</code> - The issue must be addressed as a priority.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     *         </p>
+     *         </li>
+     * @see SeverityLabel
+     */
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
+     * <p>
+     * The severity value of the finding. The allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code> - No issue was found.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code> - The issue does not require action on its own.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code> - The issue must be addressed as a priority.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param label
+     *        The severity value of the finding. The allowed values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INFORMATIONAL</code> - No issue was found.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOW</code> - The issue does not require action on its own.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIGH</code> - The issue must be addressed as a priority.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SeverityLabel
+     */
+
+    public Severity withLabel(String label) {
+        setLabel(label);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity value of the finding. The allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>INFORMATIONAL</code> - No issue was found.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOW</code> - The issue does not require action on its own.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HIGH</code> - The issue must be addressed as a priority.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param label
+     *        The severity value of the finding. The allowed values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>INFORMATIONAL</code> - No issue was found.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOW</code> - The issue does not require action on its own.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code> - The issue must be addressed but not urgently.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HIGH</code> - The issue must be addressed as a priority.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SeverityLabel
+     */
+
+    public Severity withLabel(SeverityLabel label) {
+        this.label = label.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
+     * </p>
+     * <p>
+     * If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     * automatically as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 0 - <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1–39 - <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 40–69 - <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 70–89 - <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 90–100 - <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param normalized
-     *        The normalized severity of a finding.
+     *        Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     *        <code>Label</code>.</p>
+     *        <p>
+     *        If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     *        automatically as follows.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        0 - <code>INFORMATIONAL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1–39 - <code>LOW</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        40–69 - <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        70–89 - <code>HIGH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        90–100 - <code>CRITICAL</code>
+     *        </p>
+     *        </li>
      */
 
     public void setNormalized(Integer normalized) {
@@ -99,10 +498,73 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The normalized severity of a finding.
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
      * </p>
+     * <p>
+     * If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     * automatically as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 0 - <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1–39 - <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 40–69 - <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 70–89 - <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 90–100 - <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The normalized severity of a finding.
+     * @return Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     *         <code>Label</code>.</p>
+     *         <p>
+     *         If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     *         automatically as follows.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         0 - <code>INFORMATIONAL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1–39 - <code>LOW</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         40–69 - <code>MEDIUM</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         70–89 - <code>HIGH</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         90–100 - <code>CRITICAL</code>
+     *         </p>
+     *         </li>
      */
 
     public Integer getNormalized() {
@@ -111,11 +573,74 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The normalized severity of a finding.
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
      * </p>
+     * <p>
+     * If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     * automatically as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 0 - <code>INFORMATIONAL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1–39 - <code>LOW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 40–69 - <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 70–89 - <code>HIGH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 90–100 - <code>CRITICAL</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param normalized
-     *        The normalized severity of a finding.
+     *        Deprecated. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide
+     *        <code>Label</code>.</p>
+     *        <p>
+     *        If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code> is set
+     *        automatically as follows.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        0 - <code>INFORMATIONAL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1–39 - <code>LOW</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        40–69 - <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        70–89 - <code>HIGH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        90–100 - <code>CRITICAL</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,6 +663,8 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getProduct() != null)
             sb.append("Product: ").append(getProduct()).append(",");
+        if (getLabel() != null)
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getNormalized() != null)
             sb.append("Normalized: ").append(getNormalized());
         sb.append("}");
@@ -158,6 +685,10 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProduct() != null && other.getProduct().equals(this.getProduct()) == false)
             return false;
+        if (other.getLabel() == null ^ this.getLabel() == null)
+            return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
+            return false;
         if (other.getNormalized() == null ^ this.getNormalized() == null)
             return false;
         if (other.getNormalized() != null && other.getNormalized().equals(this.getNormalized()) == false)
@@ -171,6 +702,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProduct() == null) ? 0 : getProduct().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         hashCode = prime * hashCode + ((getNormalized() == null) ? 0 : getNormalized().hashCode());
         return hashCode;
     }

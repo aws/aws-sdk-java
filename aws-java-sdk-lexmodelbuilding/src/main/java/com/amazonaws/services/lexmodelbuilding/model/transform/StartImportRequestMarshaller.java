@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lexmodelbuilding.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class StartImportRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> MERGESTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mergeStrategy").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final StartImportRequestMarshaller instance = new StartImportRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class StartImportRequestMarshaller {
             protocolMarshaller.marshall(startImportRequest.getPayload(), PAYLOAD_BINDING);
             protocolMarshaller.marshall(startImportRequest.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(startImportRequest.getMergeStrategy(), MERGESTRATEGY_BINDING);
+            protocolMarshaller.marshall(startImportRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

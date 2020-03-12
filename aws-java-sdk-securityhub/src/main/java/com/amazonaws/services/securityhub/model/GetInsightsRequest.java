@@ -27,7 +27,8 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights to describe.
+     * The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code>
+     * returns all of your custom insights. It does not return any managed insights.
      * </p>
      */
     private java.util.List<String> insightArns;
@@ -51,10 +52,12 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights to describe.
+     * The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code>
+     * returns all of your custom insights. It does not return any managed insights.
      * </p>
      * 
-     * @return The ARNs of the insights to describe.
+     * @return The ARNs of the insights to describe. If you do not provide any insight ARNs, then
+     *         <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.
      */
 
     public java.util.List<String> getInsightArns() {
@@ -63,11 +66,13 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights to describe.
+     * The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code>
+     * returns all of your custom insights. It does not return any managed insights.
      * </p>
      * 
      * @param insightArns
-     *        The ARNs of the insights to describe.
+     *        The ARNs of the insights to describe. If you do not provide any insight ARNs, then
+     *        <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.
      */
 
     public void setInsightArns(java.util.Collection<String> insightArns) {
@@ -81,7 +86,8 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights to describe.
+     * The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code>
+     * returns all of your custom insights. It does not return any managed insights.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +96,8 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param insightArns
-     *        The ARNs of the insights to describe.
+     *        The ARNs of the insights to describe. If you do not provide any insight ARNs, then
+     *        <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +113,13 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights to describe.
+     * The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code>
+     * returns all of your custom insights. It does not return any managed insights.
      * </p>
      * 
      * @param insightArns
-     *        The ARNs of the insights to describe.
+     *        The ARNs of the insights to describe. If you do not provide any insight ARNs, then
+     *        <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

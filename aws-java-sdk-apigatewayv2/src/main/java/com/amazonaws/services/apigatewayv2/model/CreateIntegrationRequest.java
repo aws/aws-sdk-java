@@ -33,14 +33,15 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String apiId;
     /**
      * <p>
-     * The connection ID.
+     * The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
-     * connections through the public routable internet.
+     * The type of the network connection to the integration endpoint. Specify INTERNET for connections through the
+     * public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The
+     * default value is INTERNET.
      * </p>
      */
     private String connectionType;
@@ -101,8 +102,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * the HTTP custom integration. Supported only for WebSocket APIs.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
-     * as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed
+     * through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an
+     * HTTP_PROXY integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -112,7 +114,18 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String integrationType;
     /**
      * <p>
-     * For a Lambda proxy integration, this is the URI of the Lambda function.
+     * For a Lambda integration, specify the URI of a Lambda function.
+     * </p>
+     * <p>
+     * For an HTTP integration, specify a fully-qualified URL.
+     * </p>
+     * <p>
+     * For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load
+     * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
+     * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS account.
      * </p>
      */
     private String integrationUri;
@@ -138,8 +151,7 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String passthroughBehavior;
     /**
      * <p>
-     * Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only supported
-     * value is 1.0.
+     * Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      * </p>
      */
     private String payloadFormatVersion;
@@ -176,6 +188,13 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Integer timeoutInMillis;
+    /**
+     * <p>
+     * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic
+     * uses the HTTPS protocol. Supported only for HTTP APIs.
+     * </p>
+     */
+    private TlsConfigInput tlsConfig;
 
     /**
      * <p>
@@ -219,11 +238,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The connection ID.
+     * The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID.
+     *        The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      */
 
     public void setConnectionId(String connectionId) {
@@ -232,10 +251,10 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The connection ID.
+     * The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      * </p>
      * 
-     * @return The connection ID.
+     * @return The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      */
 
     public String getConnectionId() {
@@ -244,11 +263,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The connection ID.
+     * The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID.
+     *        The ID of the VPC link for a private integration. Supported only for HTTP APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,13 +278,15 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
-     * connections through the public routable internet.
+     * The type of the network connection to the integration endpoint. Specify INTERNET for connections through the
+     * public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The
+     * default value is INTERNET.
      * </p>
      * 
      * @param connectionType
-     *        The type of the network connection to the integration endpoint. Currently the only valid value is
-     *        INTERNET, for connections through the public routable internet.
+     *        The type of the network connection to the integration endpoint. Specify INTERNET for connections through
+     *        the public routable internet or VPC_LINK for private connections between API Gateway and resources in a
+     *        VPC. The default value is INTERNET.
      * @see ConnectionType
      */
 
@@ -275,12 +296,14 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
-     * connections through the public routable internet.
+     * The type of the network connection to the integration endpoint. Specify INTERNET for connections through the
+     * public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The
+     * default value is INTERNET.
      * </p>
      * 
-     * @return The type of the network connection to the integration endpoint. Currently the only valid value is
-     *         INTERNET, for connections through the public routable internet.
+     * @return The type of the network connection to the integration endpoint. Specify INTERNET for connections through
+     *         the public routable internet or VPC_LINK for private connections between API Gateway and resources in a
+     *         VPC. The default value is INTERNET.
      * @see ConnectionType
      */
 
@@ -290,13 +313,15 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
-     * connections through the public routable internet.
+     * The type of the network connection to the integration endpoint. Specify INTERNET for connections through the
+     * public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The
+     * default value is INTERNET.
      * </p>
      * 
      * @param connectionType
-     *        The type of the network connection to the integration endpoint. Currently the only valid value is
-     *        INTERNET, for connections through the public routable internet.
+     *        The type of the network connection to the integration endpoint. Specify INTERNET for connections through
+     *        the public routable internet or VPC_LINK for private connections between API Gateway and resources in a
+     *        VPC. The default value is INTERNET.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -308,13 +333,15 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for
-     * connections through the public routable internet.
+     * The type of the network connection to the integration endpoint. Specify INTERNET for connections through the
+     * public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The
+     * default value is INTERNET.
      * </p>
      * 
      * @param connectionType
-     *        The type of the network connection to the integration endpoint. Currently the only valid value is
-     *        INTERNET, for connections through the public routable internet.
+     *        The type of the network connection to the integration endpoint. Specify INTERNET for connections through
+     *        the public routable internet or VPC_LINK for private connections between API Gateway and resources in a
+     *        VPC. The default value is INTERNET.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -628,8 +655,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * the HTTP custom integration. Supported only for WebSocket APIs.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
-     * as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed
+     * through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an
+     * HTTP_PROXY integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -653,8 +681,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        to as the HTTP custom integration. Supported only for WebSocket APIs.
      *        </p>
      *        <p>
-     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
-     *        through as-is. This is also referred to as HTTP proxy integration.
+     *        HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request
+     *        passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private
+     *        integrations, use an HTTP_PROXY integration.
      *        </p>
      *        <p>
      *        MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -685,8 +714,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * the HTTP custom integration. Supported only for WebSocket APIs.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
-     * as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed
+     * through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an
+     * HTTP_PROXY integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -709,8 +739,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         referred to as the HTTP custom integration. Supported only for WebSocket APIs.
      *         </p>
      *         <p>
-     *         HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
-     *         through as-is. This is also referred to as HTTP proxy integration.
+     *         HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request
+     *         passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private
+     *         integrations, use an HTTP_PROXY integration.
      *         </p>
      *         <p>
      *         MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -741,8 +772,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * the HTTP custom integration. Supported only for WebSocket APIs.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
-     * as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed
+     * through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an
+     * HTTP_PROXY integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -766,8 +798,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        to as the HTTP custom integration. Supported only for WebSocket APIs.
      *        </p>
      *        <p>
-     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
-     *        through as-is. This is also referred to as HTTP proxy integration.
+     *        HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request
+     *        passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private
+     *        integrations, use an HTTP_PROXY integration.
      *        </p>
      *        <p>
      *        MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -800,8 +833,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * the HTTP custom integration. Supported only for WebSocket APIs.
      * </p>
      * <p>
-     * HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through
-     * as-is. This is also referred to as HTTP proxy integration.
+     * HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed
+     * through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an
+     * HTTP_PROXY integration.
      * </p>
      * <p>
      * MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any
@@ -825,8 +859,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        to as the HTTP custom integration. Supported only for WebSocket APIs.
      *        </p>
      *        <p>
-     *        HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed
-     *        through as-is. This is also referred to as HTTP proxy integration.
+     *        HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request
+     *        passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private
+     *        integrations, use an HTTP_PROXY integration.
      *        </p>
      *        <p>
      *        MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without
@@ -842,11 +877,32 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * For a Lambda proxy integration, this is the URI of the Lambda function.
+     * For a Lambda integration, specify the URI of a Lambda function.
+     * </p>
+     * <p>
+     * For an HTTP integration, specify a fully-qualified URL.
+     * </p>
+     * <p>
+     * For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load
+     * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
+     * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS account.
      * </p>
      * 
      * @param integrationUri
-     *        For a Lambda proxy integration, this is the URI of the Lambda function.
+     *        For a Lambda integration, specify the URI of a Lambda function.</p>
+     *        <p>
+     *        For an HTTP integration, specify a fully-qualified URL.
+     *        </p>
+     *        <p>
+     *        For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network
+     *        Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API
+     *        Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific
+     *        resources. To learn more, see <a
+     *        href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html"
+     *        >DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.
      */
 
     public void setIntegrationUri(String integrationUri) {
@@ -855,10 +911,31 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * For a Lambda proxy integration, this is the URI of the Lambda function.
+     * For a Lambda integration, specify the URI of a Lambda function.
+     * </p>
+     * <p>
+     * For an HTTP integration, specify a fully-qualified URL.
+     * </p>
+     * <p>
+     * For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load
+     * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
+     * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS account.
      * </p>
      * 
-     * @return For a Lambda proxy integration, this is the URI of the Lambda function.
+     * @return For a Lambda integration, specify the URI of a Lambda function.</p>
+     *         <p>
+     *         For an HTTP integration, specify a fully-qualified URL.
+     *         </p>
+     *         <p>
+     *         For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network
+     *         Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API
+     *         Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific
+     *         resources. To learn more, see <a
+     *         href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html"
+     *         >DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.
      */
 
     public String getIntegrationUri() {
@@ -867,11 +944,32 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * For a Lambda proxy integration, this is the URI of the Lambda function.
+     * For a Lambda integration, specify the URI of a Lambda function.
+     * </p>
+     * <p>
+     * For an HTTP integration, specify a fully-qualified URL.
+     * </p>
+     * <p>
+     * For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load
+     * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
+     * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS account.
      * </p>
      * 
      * @param integrationUri
-     *        For a Lambda proxy integration, this is the URI of the Lambda function.
+     *        For a Lambda integration, specify the URI of a Lambda function.</p>
+     *        <p>
+     *        For an HTTP integration, specify a fully-qualified URL.
+     *        </p>
+     *        <p>
+     *        For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network
+     *        Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API
+     *        Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific
+     *        resources. To learn more, see <a
+     *        href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html"
+     *        >DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1053,13 +1151,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only supported
-     * value is 1.0.
+     * Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      * </p>
      * 
      * @param payloadFormatVersion
-     *        Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only
-     *        supported value is 1.0.
+     *        Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      */
 
     public void setPayloadFormatVersion(String payloadFormatVersion) {
@@ -1068,12 +1164,10 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only supported
-     * value is 1.0.
+     * Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      * </p>
      * 
-     * @return Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only
-     *         supported value is 1.0.
+     * @return Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      */
 
     public String getPayloadFormatVersion() {
@@ -1082,13 +1176,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only supported
-     * value is 1.0.
+     * Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      * </p>
      * 
      * @param payloadFormatVersion
-     *        Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only
-     *        supported value is 1.0.
+     *        Specifies the format of the payload sent to an integration. Required for HTTP APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1371,6 +1463,52 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic
+     * uses the HTTPS protocol. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        The TLS configuration for a private integration. If you specify a TLS configuration, private integration
+     *        traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+     */
+
+    public void setTlsConfig(TlsConfigInput tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic
+     * uses the HTTPS protocol. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return The TLS configuration for a private integration. If you specify a TLS configuration, private integration
+     *         traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+     */
+
+    public TlsConfigInput getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic
+     * uses the HTTPS protocol. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        The TLS configuration for a private integration. If you specify a TLS configuration, private integration
+     *        traffic uses the HTTPS protocol. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntegrationRequest withTlsConfig(TlsConfigInput tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1411,7 +1549,9 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getTemplateSelectionExpression() != null)
             sb.append("TemplateSelectionExpression: ").append(getTemplateSelectionExpression()).append(",");
         if (getTimeoutInMillis() != null)
-            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis());
+            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1486,6 +1626,10 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTimeoutInMillis() != null && other.getTimeoutInMillis().equals(this.getTimeoutInMillis()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1509,6 +1653,7 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRequestTemplates() == null) ? 0 : getRequestTemplates().hashCode());
         hashCode = prime * hashCode + ((getTemplateSelectionExpression() == null) ? 0 : getTemplateSelectionExpression().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

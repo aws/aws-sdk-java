@@ -24,5 +24,11 @@ import com.amazonaws.annotation.SdkInternalApi;
  */
 @SdkInternalApi
 public interface CacheLoader<K, V> {
+
+    /**
+     * Interface for loading an item from a cache based on a key.
+     *
+     * @param key The key to lookup in the cache
+     */
     V load(K key);
 }

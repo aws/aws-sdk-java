@@ -159,6 +159,10 @@ public class AwsSecurityFindingJsonUnmarshaller implements Unmarshaller<AwsSecur
                     context.nextToken();
                     awsSecurityFinding.setWorkflowState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Workflow", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFinding.setWorkflow(WorkflowJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RecordState", targetDepth)) {
                     context.nextToken();
                     awsSecurityFinding.setRecordState(context.getUnmarshaller(String.class).unmarshall(context));

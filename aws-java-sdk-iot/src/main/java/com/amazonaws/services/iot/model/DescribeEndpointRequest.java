@@ -57,6 +57,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues
+     * related to the widespread distrust of Symantec certificate authorities.
+     * </p>
      */
     private String endpointType;
 
@@ -92,6 +96,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues
+     * related to the widespread distrust of Symantec certificate authorities.
+     * </p>
      * 
      * @param endpointType
      *        The endpoint type. Valid endpoint types include:</p>
@@ -122,6 +130,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues
+     *        related to the widespread distrust of Symantec certificate authorities.
      */
 
     public void setEndpointType(String endpointType) {
@@ -160,6 +172,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues
+     * related to the widespread distrust of Symantec certificate authorities.
+     * </p>
      * 
      * @return The endpoint type. Valid endpoint types include:</p>
      *         <ul>
@@ -189,6 +205,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid
+     *         issues related to the widespread distrust of Symantec certificate authorities.
      */
 
     public String getEndpointType() {
@@ -227,6 +247,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues
+     * related to the widespread distrust of Symantec certificate authorities.
+     * </p>
      * 
      * @param endpointType
      *        The endpoint type. Valid endpoint types include:</p>
@@ -257,6 +281,10 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API endpoint.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues
+     *        related to the widespread distrust of Symantec certificate authorities.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

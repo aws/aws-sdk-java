@@ -49,6 +49,8 @@ public class ShapeModel extends DocumentationModel {
     // For AWS service requests
     private String signerType;
 
+    private List<String> endpointDiscoveryMembers;
+
     private List<MemberModel> members;
     // Any constructor in addition to the default no-arg
     private List<ConstructorModel> additionalConstructors;
@@ -266,6 +268,21 @@ public class ShapeModel extends DocumentationModel {
             }
         }
         return null;
+    }
+
+    public List<String> getEndpointDiscoveryMembers() {
+        return endpointDiscoveryMembers;
+    }
+
+    public void setEndpointDiscoveryMembers(List<String> endpointDiscoveryMembers) {
+        this.endpointDiscoveryMembers = endpointDiscoveryMembers;
+    }
+
+    public void addEndpointDiscoveryMember(String endpointDiscoveryMember) {
+        if (this.endpointDiscoveryMembers == null) {
+            this.endpointDiscoveryMembers = new ArrayList<String>();
+        }
+        endpointDiscoveryMembers.add(endpointDiscoveryMember);
     }
 
     public List<MemberModel> getMembers() {

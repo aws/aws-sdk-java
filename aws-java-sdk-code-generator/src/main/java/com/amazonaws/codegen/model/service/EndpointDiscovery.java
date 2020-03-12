@@ -16,5 +16,13 @@ package com.amazonaws.codegen.model.service;
 
 public class EndpointDiscovery {
 
-    public EndpointDiscovery() {}
+    private boolean required;
+
+    public boolean isRequired() {
+        return required;
+    }
+
+    public void setRequired(boolean required) {
+        this.required = required;
+    }
 }

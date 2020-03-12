@@ -506,6 +506,35 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> workflowState;
     /**
      * <p>
+     * The status of the investigation into a finding. Allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when
+     * the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<StringFilter> workflowStatus;
+    /**
+     * <p>
      * The updated record state for the finding.
      * </p>
      */
@@ -6022,6 +6051,256 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The status of the investigation into a finding. Allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when
+     * the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The status of the investigation into a finding. Allowed values are the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue.
+     *         Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<StringFilter> getWorkflowStatus() {
+        return workflowStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the investigation into a finding. Allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when
+     * the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param workflowStatus
+     *        The status of the investigation into a finding. Allowed values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used
+     *        when the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     *        </p>
+     *        </li>
+     */
+
+    public void setWorkflowStatus(java.util.Collection<StringFilter> workflowStatus) {
+        if (workflowStatus == null) {
+            this.workflowStatus = null;
+            return;
+        }
+
+        this.workflowStatus = new java.util.ArrayList<StringFilter>(workflowStatus);
+    }
+
+    /**
+     * <p>
+     * The status of the investigation into a finding. Allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when
+     * the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkflowStatus(java.util.Collection)} or {@link #withWorkflowStatus(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param workflowStatus
+     *        The status of the investigation into a finding. Allowed values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used
+     *        when the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withWorkflowStatus(StringFilter... workflowStatus) {
+        if (this.workflowStatus == null) {
+            setWorkflowStatus(new java.util.ArrayList<StringFilter>(workflowStatus.length));
+        }
+        for (StringFilter ele : workflowStatus) {
+            this.workflowStatus.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the investigation into a finding. Allowed values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when
+     * the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param workflowStatus
+     *        The status of the investigation into a finding. Allowed values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used
+     *        when the initial reviewer is not the resource owner, and needs intervention from the resource owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SUPPRESSED</code> - The finding will not be reviewed again and will not be acted upon.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withWorkflowStatus(java.util.Collection<StringFilter> workflowStatus) {
+        setWorkflowStatus(workflowStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The updated record state for the finding.
      * </p>
      * 
@@ -6674,6 +6953,8 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
             sb.append("VerificationState: ").append(getVerificationState()).append(",");
         if (getWorkflowState() != null)
             sb.append("WorkflowState: ").append(getWorkflowState()).append(",");
+        if (getWorkflowStatus() != null)
+            sb.append("WorkflowStatus: ").append(getWorkflowStatus()).append(",");
         if (getRecordState() != null)
             sb.append("RecordState: ").append(getRecordState()).append(",");
         if (getRelatedFindingsProductArn() != null)
@@ -7018,6 +7299,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
             return false;
         if (other.getWorkflowState() != null && other.getWorkflowState().equals(this.getWorkflowState()) == false)
             return false;
+        if (other.getWorkflowStatus() == null ^ this.getWorkflowStatus() == null)
+            return false;
+        if (other.getWorkflowStatus() != null && other.getWorkflowStatus().equals(this.getWorkflowStatus()) == false)
+            return false;
         if (other.getRecordState() == null ^ this.getRecordState() == null)
             return false;
         if (other.getRecordState() != null && other.getRecordState().equals(this.getRecordState()) == false)
@@ -7131,6 +7416,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getComplianceStatus() == null) ? 0 : getComplianceStatus().hashCode());
         hashCode = prime * hashCode + ((getVerificationState() == null) ? 0 : getVerificationState().hashCode());
         hashCode = prime * hashCode + ((getWorkflowState() == null) ? 0 : getWorkflowState().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowStatus() == null) ? 0 : getWorkflowStatus().hashCode());
         hashCode = prime * hashCode + ((getRecordState() == null) ? 0 : getRecordState().hashCode());
         hashCode = prime * hashCode + ((getRelatedFindingsProductArn() == null) ? 0 : getRelatedFindingsProductArn().hashCode());
         hashCode = prime * hashCode + ((getRelatedFindingsId() == null) ? 0 : getRelatedFindingsId().hashCode());

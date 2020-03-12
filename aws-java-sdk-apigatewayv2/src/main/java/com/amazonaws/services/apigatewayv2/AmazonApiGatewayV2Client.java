@@ -397,6 +397,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * @throws ConflictException
      *         The resource already exists.
      * @throws AccessDeniedException
+     *         403 response
      * @sample AmazonApiGatewayV2.CreateDomainName
      */
     @Override
@@ -793,6 +794,119 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateStageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a VPC link.
+     * </p>
+     * 
+     * @param createVpcLinkRequest
+     *        Creates a VPC link
+     * @return Result of the CreateVpcLink operation returned by the service.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.CreateVpcLink
+     */
+    @Override
+    public CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcLinkResult executeCreateVpcLink(CreateVpcLinkRequest createVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcLinkRequest> request = null;
+        Response<CreateVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVpcLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.
+     * </p>
+     * 
+     * @param deleteAccessLogSettingsRequest
+     * @return Result of the DeleteAccessLogSettings operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteAccessLogSettings
+     */
+    @Override
+    public DeleteAccessLogSettingsResult deleteAccessLogSettings(DeleteAccessLogSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessLogSettings(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessLogSettingsResult executeDeleteAccessLogSettings(DeleteAccessLogSettingsRequest deleteAccessLogSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessLogSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessLogSettingsRequest> request = null;
+        Response<DeleteAccessLogSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessLogSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAccessLogSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessLogSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccessLogSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAccessLogSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1361,6 +1475,63 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Deletes a route request parameter.
+     * </p>
+     * 
+     * @param deleteRouteRequestParameterRequest
+     * @return Result of the DeleteRouteRequestParameter operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteRouteRequestParameter
+     */
+    @Override
+    public DeleteRouteRequestParameterResult deleteRouteRequestParameter(DeleteRouteRequestParameterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRouteRequestParameter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRouteRequestParameterResult executeDeleteRouteRequestParameter(DeleteRouteRequestParameterRequest deleteRouteRequestParameterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRouteRequestParameterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRouteRequestParameterRequest> request = null;
+        Response<DeleteRouteRequestParameterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRouteRequestParameterRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRouteRequestParameterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRouteRequestParameter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRouteRequestParameterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRouteRequestParameterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a RouteResponse.
      * </p>
      * 
@@ -1514,6 +1685,61 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteStageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a VPC link.
+     * </p>
+     * 
+     * @param deleteVpcLinkRequest
+     * @return Result of the DeleteVpcLink operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteVpcLink
+     */
+    @Override
+    public DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVpcLinkResult executeDeleteVpcLink(DeleteVpcLinkRequest deleteVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcLinkRequest> request = null;
+        Response<DeleteVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVpcLinkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2877,6 +3103,116 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Gets a VPC link.
+     * </p>
+     * 
+     * @param getVpcLinkRequest
+     * @return Result of the GetVpcLink operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.GetVpcLink
+     */
+    @Override
+    public GetVpcLinkResult getVpcLink(GetVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final GetVpcLinkResult executeGetVpcLink(GetVpcLinkRequest getVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVpcLinkRequest> request = null;
+        Response<GetVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVpcLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVpcLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a collection of VPC links.
+     * </p>
+     * 
+     * @param getVpcLinksRequest
+     * @return Result of the GetVpcLinks operation returned by the service.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.GetVpcLinks
+     */
+    @Override
+    public GetVpcLinksResult getVpcLinks(GetVpcLinksRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVpcLinks(request);
+    }
+
+    @SdkInternalApi
+    final GetVpcLinksResult executeGetVpcLinks(GetVpcLinksRequest getVpcLinksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVpcLinksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVpcLinksRequest> request = null;
+        Response<GetVpcLinksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVpcLinksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVpcLinksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVpcLinks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVpcLinksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVpcLinksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Imports an API.
      * </p>
      * 
@@ -3764,6 +4100,64 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateStageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a VPC link.
+     * </p>
+     * 
+     * @param updateVpcLinkRequest
+     *        Updates a VPC link.
+     * @return Result of the UpdateVpcLink operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @sample AmazonApiGatewayV2.UpdateVpcLink
+     */
+    @Override
+    public UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVpcLinkResult executeUpdateVpcLink(UpdateVpcLinkRequest updateVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVpcLinkRequest> request = null;
+        Response<UpdateVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVpcLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVpcLinkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

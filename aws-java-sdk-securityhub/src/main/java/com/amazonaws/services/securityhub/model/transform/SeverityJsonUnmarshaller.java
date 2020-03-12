@@ -52,6 +52,10 @@ public class SeverityJsonUnmarshaller implements Unmarshaller<Severity, JsonUnma
                     context.nextToken();
                     severity.setProduct(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("Label", targetDepth)) {
+                    context.nextToken();
+                    severity.setLabel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Normalized", targetDepth)) {
                     context.nextToken();
                     severity.setNormalized(context.getUnmarshaller(Integer.class).unmarshall(context));

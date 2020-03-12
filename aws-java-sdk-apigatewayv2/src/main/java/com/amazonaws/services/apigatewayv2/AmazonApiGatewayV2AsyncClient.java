@@ -426,6 +426,72 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVpcLinkResult> createVpcLinkAsync(CreateVpcLinkRequest request) {
+
+        return createVpcLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcLinkResult> createVpcLinkAsync(final CreateVpcLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcLinkRequest, CreateVpcLinkResult> asyncHandler) {
+        final CreateVpcLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcLinkResult>() {
+            @Override
+            public CreateVpcLinkResult call() throws Exception {
+                CreateVpcLinkResult result = null;
+
+                try {
+                    result = executeCreateVpcLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessLogSettingsResult> deleteAccessLogSettingsAsync(DeleteAccessLogSettingsRequest request) {
+
+        return deleteAccessLogSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessLogSettingsResult> deleteAccessLogSettingsAsync(final DeleteAccessLogSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessLogSettingsRequest, DeleteAccessLogSettingsResult> asyncHandler) {
+        final DeleteAccessLogSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessLogSettingsResult>() {
+            @Override
+            public DeleteAccessLogSettingsResult call() throws Exception {
+                DeleteAccessLogSettingsResult result = null;
+
+                try {
+                    result = executeDeleteAccessLogSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApiResult> deleteApiAsync(DeleteApiRequest request) {
 
         return deleteApiAsync(request, null);
@@ -756,6 +822,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRouteRequestParameterResult> deleteRouteRequestParameterAsync(DeleteRouteRequestParameterRequest request) {
+
+        return deleteRouteRequestParameterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteRequestParameterResult> deleteRouteRequestParameterAsync(final DeleteRouteRequestParameterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRouteRequestParameterRequest, DeleteRouteRequestParameterResult> asyncHandler) {
+        final DeleteRouteRequestParameterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRouteRequestParameterResult>() {
+            @Override
+            public DeleteRouteRequestParameterResult call() throws Exception {
+                DeleteRouteRequestParameterResult result = null;
+
+                try {
+                    result = executeDeleteRouteRequestParameter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRouteResponseResult> deleteRouteResponseAsync(DeleteRouteResponseRequest request) {
 
         return deleteRouteResponseAsync(request, null);
@@ -839,6 +938,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
 
                 try {
                     result = executeDeleteStage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcLinkResult> deleteVpcLinkAsync(DeleteVpcLinkRequest request) {
+
+        return deleteVpcLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcLinkResult> deleteVpcLinkAsync(final DeleteVpcLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcLinkRequest, DeleteVpcLinkResult> asyncHandler) {
+        final DeleteVpcLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVpcLinkResult>() {
+            @Override
+            public DeleteVpcLinkResult call() throws Exception {
+                DeleteVpcLinkResult result = null;
+
+                try {
+                    result = executeDeleteVpcLink(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1647,6 +1779,72 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetVpcLinkResult> getVpcLinkAsync(GetVpcLinkRequest request) {
+
+        return getVpcLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVpcLinkResult> getVpcLinkAsync(final GetVpcLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVpcLinkRequest, GetVpcLinkResult> asyncHandler) {
+        final GetVpcLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVpcLinkResult>() {
+            @Override
+            public GetVpcLinkResult call() throws Exception {
+                GetVpcLinkResult result = null;
+
+                try {
+                    result = executeGetVpcLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVpcLinksResult> getVpcLinksAsync(GetVpcLinksRequest request) {
+
+        return getVpcLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVpcLinksResult> getVpcLinksAsync(final GetVpcLinksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVpcLinksRequest, GetVpcLinksResult> asyncHandler) {
+        final GetVpcLinksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVpcLinksResult>() {
+            @Override
+            public GetVpcLinksResult call() throws Exception {
+                GetVpcLinksResult result = null;
+
+                try {
+                    result = executeGetVpcLinks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportApiResult> importApiAsync(ImportApiRequest request) {
 
         return importApiAsync(request, null);
@@ -2126,6 +2324,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
 
                 try {
                     result = executeUpdateStage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcLinkResult> updateVpcLinkAsync(UpdateVpcLinkRequest request) {
+
+        return updateVpcLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcLinkResult> updateVpcLinkAsync(final UpdateVpcLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVpcLinkRequest, UpdateVpcLinkResult> asyncHandler) {
+        final UpdateVpcLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVpcLinkResult>() {
+            @Override
+            public UpdateVpcLinkResult call() throws Exception {
+                UpdateVpcLinkResult result = null;
+
+                try {
+                    result = executeUpdateVpcLink(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

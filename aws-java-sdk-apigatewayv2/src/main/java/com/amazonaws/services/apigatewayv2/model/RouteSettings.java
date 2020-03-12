@@ -47,13 +47,13 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     private String loggingLevel;
     /**
      * <p>
-     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     * Specifies the throttling burst limit.
      * </p>
      */
     private Integer throttlingBurstLimit;
     /**
      * <p>
-     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     * Specifies the throttling rate limit.
      * </p>
      */
     private Double throttlingRateLimit;
@@ -239,11 +239,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     * Specifies the throttling burst limit.
      * </p>
      * 
      * @param throttlingBurstLimit
-     *        Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     *        Specifies the throttling burst limit.
      */
 
     public void setThrottlingBurstLimit(Integer throttlingBurstLimit) {
@@ -252,10 +252,10 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     * Specifies the throttling burst limit.
      * </p>
      * 
-     * @return Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     * @return Specifies the throttling burst limit.
      */
 
     public Integer getThrottlingBurstLimit() {
@@ -264,11 +264,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     * Specifies the throttling burst limit.
      * </p>
      * 
      * @param throttlingBurstLimit
-     *        Specifies the throttling burst limit. Supported only for WebSocket APIs.
+     *        Specifies the throttling burst limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     * Specifies the throttling rate limit.
      * </p>
      * 
      * @param throttlingRateLimit
-     *        Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     *        Specifies the throttling rate limit.
      */
 
     public void setThrottlingRateLimit(Double throttlingRateLimit) {
@@ -292,10 +292,10 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     * Specifies the throttling rate limit.
      * </p>
      * 
-     * @return Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     * @return Specifies the throttling rate limit.
      */
 
     public Double getThrottlingRateLimit() {
@@ -304,11 +304,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     * Specifies the throttling rate limit.
      * </p>
      * 
      * @param throttlingRateLimit
-     *        Specifies the throttling rate limit. Supported only for WebSocket APIs.
+     *        Specifies the throttling rate limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

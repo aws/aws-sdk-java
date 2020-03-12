@@ -413,6 +413,11 @@ public class AwsSecurityFindingFiltersJsonUnmarshaller implements Unmarshaller<A
                     awsSecurityFindingFilters.setWorkflowState(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("WorkflowStatus", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setWorkflowStatus(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("RecordState", targetDepth)) {
                     context.nextToken();
                     awsSecurityFindingFilters

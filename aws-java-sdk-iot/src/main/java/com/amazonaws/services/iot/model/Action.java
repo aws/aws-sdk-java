@@ -94,6 +94,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private CloudwatchAlarmAction cloudwatchAlarm;
     /**
      * <p>
+     * Send data to CloudWatch logs.
+     * </p>
+     */
+    private CloudwatchLogsAction cloudwatchLogs;
+    /**
+     * <p>
      * Write data to an Amazon Elasticsearch Service domain.
      * </p>
      */
@@ -583,6 +589,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Send data to CloudWatch logs.
+     * </p>
+     * 
+     * @param cloudwatchLogs
+     *        Send data to CloudWatch logs.
+     */
+
+    public void setCloudwatchLogs(CloudwatchLogsAction cloudwatchLogs) {
+        this.cloudwatchLogs = cloudwatchLogs;
+    }
+
+    /**
+     * <p>
+     * Send data to CloudWatch logs.
+     * </p>
+     * 
+     * @return Send data to CloudWatch logs.
+     */
+
+    public CloudwatchLogsAction getCloudwatchLogs() {
+        return this.cloudwatchLogs;
+    }
+
+    /**
+     * <p>
+     * Send data to CloudWatch logs.
+     * </p>
+     * 
+     * @param cloudwatchLogs
+     *        Send data to CloudWatch logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withCloudwatchLogs(CloudwatchLogsAction cloudwatchLogs) {
+        setCloudwatchLogs(cloudwatchLogs);
+        return this;
+    }
+
+    /**
+     * <p>
      * Write data to an Amazon Elasticsearch Service domain.
      * </p>
      * 
@@ -895,6 +941,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             sb.append("CloudwatchMetric: ").append(getCloudwatchMetric()).append(",");
         if (getCloudwatchAlarm() != null)
             sb.append("CloudwatchAlarm: ").append(getCloudwatchAlarm()).append(",");
+        if (getCloudwatchLogs() != null)
+            sb.append("CloudwatchLogs: ").append(getCloudwatchLogs()).append(",");
         if (getElasticsearch() != null)
             sb.append("Elasticsearch: ").append(getElasticsearch()).append(",");
         if (getSalesforce() != null)
@@ -967,6 +1015,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCloudwatchAlarm() != null && other.getCloudwatchAlarm().equals(this.getCloudwatchAlarm()) == false)
             return false;
+        if (other.getCloudwatchLogs() == null ^ this.getCloudwatchLogs() == null)
+            return false;
+        if (other.getCloudwatchLogs() != null && other.getCloudwatchLogs().equals(this.getCloudwatchLogs()) == false)
+            return false;
         if (other.getElasticsearch() == null ^ this.getElasticsearch() == null)
             return false;
         if (other.getElasticsearch() != null && other.getElasticsearch().equals(this.getElasticsearch()) == false)
@@ -1014,6 +1066,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchMetric() == null) ? 0 : getCloudwatchMetric().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm().hashCode());
+        hashCode = prime * hashCode + ((getCloudwatchLogs() == null) ? 0 : getCloudwatchLogs().hashCode());
         hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());

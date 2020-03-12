@@ -49,7 +49,22 @@
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            <#if operationModel.endpointDiscovery?has_content>
+            <#if operationModel.endpointDiscovery?has_content && operationModel.endpointDiscovery.required == true>
+                URI cachedEndpoint = null;
+                if (endpointDiscoveryEnabled) {
+                    DescribeEndpointsRequest discoveryRequest = new DescribeEndpointsRequest();
+                    <#if operationModel.inputShape.endpointDiscoveryMembers?has_content>
+                    discoveryRequest.setOperation("${operationModel.operationName}");
+                    Map<String, String> discoveryIdentifiers = new HashMap<String, String>();
+                    <#list operationModel.inputShape.endpointDiscoveryMembers as edMember>
+                    discoveryIdentifiers.put("${edMember}", ${operationModel.input.variableName}.get${edMember?cap_first}());
+                    </#list>
+                    discoveryRequest.setIdentifiers(discoveryIdentifiers);
+                    </#if>
+                    cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), discoveryRequest, ${operationModel.endpointDiscovery.required?c}, endpoint);
+                }
+            </#if>
+            <#if operationModel.endpointDiscovery?has_content && operationModel.endpointDiscovery.required == false>
                 URI cachedEndpoint = null;
                 if (endpointDiscoveryEnabled) {
                     cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);

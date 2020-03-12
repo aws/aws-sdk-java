@@ -26,7 +26,11 @@ public final class ${metadata.syncClientBuilderClassName}
     <#if endpointOperation?has_content>
     private static final EndpointDiscoveryProviderChain DEFAULT_ENDPOINT_DISCOVERY_PROVIDER = new DefaultEndpointDiscoveryProviderChain();
 
+    <#if endpointOperation.endpointCacheRequired == true>
+    private boolean endpointDiscoveryEnabled = true;
+    <#else>
     private boolean endpointDiscoveryEnabled = false;
+    </#if>
     private boolean endpointDiscoveryDisabled = false;
     </#if>
 

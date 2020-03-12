@@ -49,6 +49,8 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudwatchMetric").build();
     private static final MarshallingInfo<StructuredPojo> CLOUDWATCHALARM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudwatchAlarm").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudwatchLogs").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("elasticsearch").build();
     private static final MarshallingInfo<StructuredPojo> SALESFORCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -91,6 +93,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getFirehose(), FIREHOSE_BINDING);
             protocolMarshaller.marshall(action.getCloudwatchMetric(), CLOUDWATCHMETRIC_BINDING);
             protocolMarshaller.marshall(action.getCloudwatchAlarm(), CLOUDWATCHALARM_BINDING);
+            protocolMarshaller.marshall(action.getCloudwatchLogs(), CLOUDWATCHLOGS_BINDING);
             protocolMarshaller.marshall(action.getElasticsearch(), ELASTICSEARCH_BINDING);
             protocolMarshaller.marshall(action.getSalesforce(), SALESFORCE_BINDING);
             protocolMarshaller.marshall(action.getIotAnalytics(), IOTANALYTICS_BINDING);

@@ -45,6 +45,8 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElasticsearchDomain").build();
     private static final MarshallingInfo<StructuredPojo> AWSS3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsS3Bucket").build();
+    private static final MarshallingInfo<StructuredPojo> AWSS3OBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsS3Object").build();
     private static final MarshallingInfo<StructuredPojo> AWSIAMACCESSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamAccessKey").build();
     private static final MarshallingInfo<StructuredPojo> AWSIAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -92,6 +94,7 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsElbv2LoadBalancer(), AWSELBV2LOADBALANCER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElasticsearchDomain(), AWSELASTICSEARCHDOMAIN_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3Bucket(), AWSS3BUCKET_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsS3Object(), AWSS3OBJECT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamAccessKey(), AWSIAMACCESSKEY_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamRole(), AWSIAMROLE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsKmsKey(), AWSKMSKEY_BINDING);

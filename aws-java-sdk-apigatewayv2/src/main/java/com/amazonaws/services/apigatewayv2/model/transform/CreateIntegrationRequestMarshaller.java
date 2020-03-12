@@ -59,6 +59,8 @@ public class CreateIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateSelectionExpression").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMillis").build();
+    private static final MarshallingInfo<StructuredPojo> TLSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsConfig").build();
 
     private static final CreateIntegrationRequestMarshaller instance = new CreateIntegrationRequestMarshaller();
 
@@ -91,6 +93,7 @@ public class CreateIntegrationRequestMarshaller {
             protocolMarshaller.marshall(createIntegrationRequest.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getTemplateSelectionExpression(), TEMPLATESELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
+            protocolMarshaller.marshall(createIntegrationRequest.getTlsConfig(), TLSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

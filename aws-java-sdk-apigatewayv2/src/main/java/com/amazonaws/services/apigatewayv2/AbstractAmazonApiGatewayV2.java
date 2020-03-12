@@ -83,6 +83,16 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
     }
 
     @Override
+    public CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessLogSettingsResult deleteAccessLogSettings(DeleteAccessLogSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApiResult deleteApi(DeleteApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,6 +143,11 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
     }
 
     @Override
+    public DeleteRouteRequestParameterResult deleteRouteRequestParameter(DeleteRouteRequestParameterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRouteResponseResult deleteRouteResponse(DeleteRouteResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +159,11 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
 
     @Override
     public DeleteStageResult deleteStage(DeleteStageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,6 +288,16 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
     }
 
     @Override
+    public GetVpcLinkResult getVpcLink(GetVpcLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVpcLinksResult getVpcLinks(GetVpcLinksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportApiResult importApi(ImportApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -339,6 +369,11 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
 
     @Override
     public UpdateStageResult updateStage(UpdateStageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

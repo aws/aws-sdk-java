@@ -94,7 +94,7 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      * </p>
      */
     private java.util.Map<String, String> stageVariables;
@@ -652,12 +652,11 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      * </p>
      * 
      * @return A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and
-     *         underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for
-     *         WebSocket APIs.
+     *         underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      */
 
     public java.util.Map<String, String> getStageVariables() {
@@ -667,13 +666,12 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      * </p>
      * 
      * @param stageVariables
      *        A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and
-     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket
-     *        APIs.
+     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      */
 
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
@@ -683,13 +681,12 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      * </p>
      * 
      * @param stageVariables
      *        A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and
-     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket
-     *        APIs.
+     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

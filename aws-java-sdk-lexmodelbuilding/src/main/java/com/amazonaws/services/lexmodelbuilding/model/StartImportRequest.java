@@ -70,6 +70,13 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private String mergeStrategy;
+    /**
+     * <p>
+     * A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an
+     * intent or slot type.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -467,6 +474,84 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an
+     * intent or slot type.
+     * </p>
+     * 
+     * @return A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add
+     *         tags to an intent or slot type.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an
+     * intent or slot type.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags
+     *        to an intent or slot type.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an
+     * intent or slot type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags
+     *        to an intent or slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartImportRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an
+     * intent or slot type.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags
+     *        to an intent or slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartImportRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -483,7 +568,9 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getMergeStrategy() != null)
-            sb.append("MergeStrategy: ").append(getMergeStrategy());
+            sb.append("MergeStrategy: ").append(getMergeStrategy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +597,10 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getMergeStrategy() != null && other.getMergeStrategy().equals(this.getMergeStrategy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +612,7 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getMergeStrategy() == null) ? 0 : getMergeStrategy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

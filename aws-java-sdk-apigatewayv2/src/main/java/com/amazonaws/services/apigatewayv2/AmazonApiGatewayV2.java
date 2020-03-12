@@ -138,6 +138,7 @@ public interface AmazonApiGatewayV2 {
      * @throws ConflictException
      *         The resource already exists.
      * @throws AccessDeniedException
+     *         403 response
      * @sample AmazonApiGatewayV2.CreateDomainName
      */
     CreateDomainNameResult createDomainName(CreateDomainNameRequest createDomainNameRequest);
@@ -261,6 +262,37 @@ public interface AmazonApiGatewayV2 {
      * @sample AmazonApiGatewayV2.CreateStage
      */
     CreateStageResult createStage(CreateStageRequest createStageRequest);
+
+    /**
+     * <p>
+     * Creates a VPC link.
+     * </p>
+     * 
+     * @param createVpcLinkRequest
+     *        Creates a VPC link
+     * @return Result of the CreateVpcLink operation returned by the service.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.CreateVpcLink
+     */
+    CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest createVpcLinkRequest);
+
+    /**
+     * <p>
+     * Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.
+     * </p>
+     * 
+     * @param deleteAccessLogSettingsRequest
+     * @return Result of the DeleteAccessLogSettings operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteAccessLogSettings
+     */
+    DeleteAccessLogSettingsResult deleteAccessLogSettings(DeleteAccessLogSettingsRequest deleteAccessLogSettingsRequest);
 
     /**
      * <p>
@@ -416,6 +448,21 @@ public interface AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Deletes a route request parameter.
+     * </p>
+     * 
+     * @param deleteRouteRequestParameterRequest
+     * @return Result of the DeleteRouteRequestParameter operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteRouteRequestParameter
+     */
+    DeleteRouteRequestParameterResult deleteRouteRequestParameter(DeleteRouteRequestParameterRequest deleteRouteRequestParameterRequest);
+
+    /**
+     * <p>
      * Deletes a RouteResponse.
      * </p>
      * 
@@ -458,6 +505,21 @@ public interface AmazonApiGatewayV2 {
      * @sample AmazonApiGatewayV2.DeleteStage
      */
     DeleteStageResult deleteStage(DeleteStageRequest deleteStageRequest);
+
+    /**
+     * <p>
+     * Deletes a VPC link.
+     * </p>
+     * 
+     * @param deleteVpcLinkRequest
+     * @return Result of the DeleteVpcLink operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteVpcLink
+     */
+    DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest deleteVpcLinkRequest);
 
     /**
      * <p>
@@ -849,6 +911,36 @@ public interface AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Gets a VPC link.
+     * </p>
+     * 
+     * @param getVpcLinkRequest
+     * @return Result of the GetVpcLink operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.GetVpcLink
+     */
+    GetVpcLinkResult getVpcLink(GetVpcLinkRequest getVpcLinkRequest);
+
+    /**
+     * <p>
+     * Gets a collection of VPC links.
+     * </p>
+     * 
+     * @param getVpcLinksRequest
+     * @return Result of the GetVpcLinks operation returned by the service.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.GetVpcLinks
+     */
+    GetVpcLinksResult getVpcLinks(GetVpcLinksRequest getVpcLinksRequest);
+
+    /**
+     * <p>
      * Imports an API.
      * </p>
      * 
@@ -1143,6 +1235,24 @@ public interface AmazonApiGatewayV2 {
      * @sample AmazonApiGatewayV2.UpdateStage
      */
     UpdateStageResult updateStage(UpdateStageRequest updateStageRequest);
+
+    /**
+     * <p>
+     * Updates a VPC link.
+     * </p>
+     * 
+     * @param updateVpcLinkRequest
+     *        Updates a VPC link.
+     * @return Result of the UpdateVpcLink operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @sample AmazonApiGatewayV2.UpdateVpcLink
+     */
+    UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest updateVpcLinkRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

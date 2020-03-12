@@ -15,6 +15,8 @@
 
 package com.amazonaws.codegen.model.service;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Member {
 
     private String shape;
@@ -44,6 +46,9 @@ public class Member {
     private boolean deprecated;
 
     private boolean sensitive;
+
+    @JsonProperty(value = "endpointdiscoveryid")
+    private boolean endpointDiscoveryId;
 
     private String timestampFormat;
 
@@ -158,6 +163,15 @@ public class Member {
     public void setSensitive(boolean sensitive) {
         this.sensitive = sensitive;
     }
+
+    public boolean isEndpointDiscoveryId() {
+        return endpointDiscoveryId;
+    }
+
+    public void setEndpointDiscoveryId(boolean endpointDiscoveryId) {
+        this.endpointDiscoveryId = endpointDiscoveryId;
+    }
+
     public String getTimestampFormat() {
         return timestampFormat;
     }
