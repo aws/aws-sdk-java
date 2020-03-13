@@ -45,10 +45,12 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
     private String description;
     /**
      * <p>
-     * A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM Parameter
-     * Store parameter. For an SSM document, specify either the document name in the format
-     * <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
+     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an
+     * Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>.
+     * Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
      * </p>
      */
     private String locationUri;
@@ -194,18 +196,22 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM Parameter
-     * Store parameter. For an SSM document, specify either the document name in the format
-     * <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
+     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an
+     * Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>.
+     * Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
      * </p>
      * 
      * @param locationUri
-     *        A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM
-     *        Parameter Store parameter. For an SSM document, specify either the document name in the format
-     *        <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     *        specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or the
-     *        ARN.
+     *        A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter
+     *        Store parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the
+     *        format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a
+     *        parameter, specify either the parameter name in the format
+     *        <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI
+     *        in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     *        s3://my-bucket/my-app/us-east-1/my-config.json
      */
 
     public void setLocationUri(String locationUri) {
@@ -214,17 +220,21 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM Parameter
-     * Store parameter. For an SSM document, specify either the document name in the format
-     * <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
+     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an
+     * Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>.
+     * Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
      * </p>
      * 
-     * @return A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM
-     *         Parameter Store parameter. For an SSM document, specify either the document name in the format
-     *         <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     *         specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or
-     *         the ARN.
+     * @return A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter
+     *         Store parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the
+     *         format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a
+     *         parameter, specify either the parameter name in the format
+     *         <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI
+     *         in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     *         s3://my-bucket/my-app/us-east-1/my-config.json
      */
 
     public String getLocationUri() {
@@ -233,18 +243,22 @@ public class CreateConfigurationProfileRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM Parameter
-     * Store parameter. For an SSM document, specify either the document name in the format
-     * <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or the ARN.
+     * A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter Store
+     * parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
+     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an
+     * Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>.
+     * Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
      * </p>
      * 
      * @param locationUri
-     *        A URI to locate the configuration. You can specify either a Systems Manager (SSM) document or an SSM
-     *        Parameter Store parameter. For an SSM document, specify either the document name in the format
-     *        <code>ssm-document://&lt;Document name&gt;</code> or the Amazon Resource Name (ARN). For a parameter,
-     *        specify either the parameter name in the format <code>ssm-parameter://&lt;Parameter name&gt;</code> or the
-     *        ARN.
+     *        A URI to locate the configuration. You can specify a Systems Manager (SSM) document, an SSM Parameter
+     *        Store parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the
+     *        format <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name (ARN). For a
+     *        parameter, specify either the parameter name in the format
+     *        <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3 object, specify the URI
+     *        in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     *        s3://my-bucket/my-app/us-east-1/my-config.json
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

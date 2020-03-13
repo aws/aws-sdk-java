@@ -27,19 +27,19 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The application to get.
+     * The application to get. Specify either the application name or the application ID.
      * </p>
      */
     private String application;
     /**
      * <p>
-     * The environment to get.
+     * The environment to get. Specify either the environment name or the environment ID.
      * </p>
      */
     private String environment;
     /**
      * <p>
-     * The configuration to get.
+     * The configuration to get. Specify either the configuration name or the configuration ID.
      * </p>
      */
     private String configuration;
@@ -59,11 +59,11 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The application to get.
+     * The application to get. Specify either the application name or the application ID.
      * </p>
      * 
      * @param application
-     *        The application to get.
+     *        The application to get. Specify either the application name or the application ID.
      */
 
     public void setApplication(String application) {
@@ -72,10 +72,10 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The application to get.
+     * The application to get. Specify either the application name or the application ID.
      * </p>
      * 
-     * @return The application to get.
+     * @return The application to get. Specify either the application name or the application ID.
      */
 
     public String getApplication() {
@@ -84,11 +84,11 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The application to get.
+     * The application to get. Specify either the application name or the application ID.
      * </p>
      * 
      * @param application
-     *        The application to get.
+     *        The application to get. Specify either the application name or the application ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The environment to get.
+     * The environment to get. Specify either the environment name or the environment ID.
      * </p>
      * 
      * @param environment
-     *        The environment to get.
+     *        The environment to get. Specify either the environment name or the environment ID.
      */
 
     public void setEnvironment(String environment) {
@@ -112,10 +112,10 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The environment to get.
+     * The environment to get. Specify either the environment name or the environment ID.
      * </p>
      * 
-     * @return The environment to get.
+     * @return The environment to get. Specify either the environment name or the environment ID.
      */
 
     public String getEnvironment() {
@@ -124,11 +124,11 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The environment to get.
+     * The environment to get. Specify either the environment name or the environment ID.
      * </p>
      * 
      * @param environment
-     *        The environment to get.
+     *        The environment to get. Specify either the environment name or the environment ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration to get.
+     * The configuration to get. Specify either the configuration name or the configuration ID.
      * </p>
      * 
      * @param configuration
-     *        The configuration to get.
+     *        The configuration to get. Specify either the configuration name or the configuration ID.
      */
 
     public void setConfiguration(String configuration) {
@@ -152,10 +152,10 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration to get.
+     * The configuration to get. Specify either the configuration name or the configuration ID.
      * </p>
      * 
-     * @return The configuration to get.
+     * @return The configuration to get. Specify either the configuration name or the configuration ID.
      */
 
     public String getConfiguration() {
@@ -164,11 +164,11 @@ public class GetConfigurationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration to get.
+     * The configuration to get. Specify either the configuration name or the configuration ID.
      * </p>
      * 
      * @param configuration
-     *        The configuration to get.
+     *        The configuration to get. Specify either the configuration name or the configuration ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

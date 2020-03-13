@@ -114,8 +114,8 @@ public interface AmazonAppConfig {
     /**
      * <p>
      * Information that enables AppConfig to access the configuration source. Valid configuration sources include
-     * Systems Manager (SSM) documents and SSM Parameter Store parameters. A configuration profile includes the
-     * following information.
+     * Systems Manager (SSM) documents, SSM Parameter Store parameters, and Amazon S3 objects. A configuration profile
+     * includes the following information.
      * </p>
      * <ul>
      * <li>
@@ -135,6 +135,11 @@ public interface AmazonAppConfig {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html"
+     * >Create a Configuration and a Configuration Profile</a> in the <i>AWS AppConfig User Guide</i>.
+     * </p>
      * 
      * @param createConfigurationProfileRequest
      * @return Result of the CreateConfigurationProfile operation returned by the service.
