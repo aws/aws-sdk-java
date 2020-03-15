@@ -20,6 +20,7 @@ import com.amazonaws.services.s3.transfer.Transfer;
 import java.io.File;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
@@ -41,17 +42,23 @@ public class CompleteMultipartDownload implements Callable<File> {
 
     @Override
     public File call() throws Exception {
+        int index = 0;
         try {
-            for (Future<Long> file : partFiles) {
-                long filePosition = file.get();
+            for (; index < partFiles.size(); index++) {
+                long filePosition = partFiles.get(index).get();
                 download.updatePersistableTransfer(currentPartNumber++, filePosition);
             }
-
             download.setState(Transfer.TransferState.Completed);
+        } catch (ExecutionException e) {
+            // if any part fails, we cancel remaining part downloads and notify clients of the failure.
+            for (int i = index; i < partFiles.size(); i++){
+                partFiles.get(i).cancel(true);
+            }
+            download.setState(Transfer.TransferState.Failed);
+            throw e;
         } finally {
             FileLocks.unlock(destinationFile);
         }
-
         return destinationFile;
     }
 }
