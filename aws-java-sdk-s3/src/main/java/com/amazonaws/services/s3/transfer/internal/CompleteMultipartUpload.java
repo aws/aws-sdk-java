@@ -115,17 +115,23 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
      */
     private List<PartETag> collectPartETags() {
 
-        final List<PartETag> partETags = new ArrayList<PartETag>();
+        final List<PartETag> partETags = new ArrayList<PartETag>(eTagsBeforeResume.size());
         partETags.addAll(eTagsBeforeResume);
-        for (Future<PartETag> future : futures) {
-            try {
-                partETags.add(future.get());
-            } catch (Exception e) {
-                throw new SdkClientException(
-                        "Unable to complete multi-part upload. Individual part upload failed : "
-                                + e.getCause().getMessage(), e.getCause());
+
+        int index = 0;
+        try {
+            for (; index < futures.size(); index++) {
+                partETags.add(futures.get(index).get());
             }
+        } catch (Exception e) {
+            for (; index < futures.size(); index++) {
+                futures.get(index).cancel(true);
+            }
+            throw new SdkClientException(
+                    "Unable to complete multi-part upload. Individual part upload failed : "
+                            + e.getCause().getMessage(), e.getCause());
         }
+
         return partETags;
     }
 }
