@@ -14,12 +14,14 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.transfer.Transfer;
 import java.io.File;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
@@ -41,13 +43,23 @@ public class CompleteMultipartDownload implements Callable<File> {
 
     @Override
     public File call() throws Exception {
+        int index = 0;
         try {
-            for (Future<Long> file : partFiles) {
-                long filePosition = file.get();
+            for (; index < partFiles.size(); index++) {
+                long filePosition = partFiles.get(index).get();
                 download.updatePersistableTransfer(currentPartNumber++, filePosition);
             }
-
             download.setState(Transfer.TransferState.Completed);
+        } catch (ExecutionException e) {
+            // if any part fails, we cancel remaining part downloads and notify clients of the failure.
+            for (; index < partFiles.size(); index++){
+                partFiles.get(index).cancel(true);
+            }
+            download.setState(Transfer.TransferState.Failed);
+            throw new SdkClientException(
+                    "Unable to complete multi-part download. Individual part download failed : "
+                            + e.getCause().getMessage(), e.getCause());
+
         } finally {
             FileLocks.unlock(destinationFile);
         }
