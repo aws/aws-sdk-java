@@ -82,6 +82,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * An optional set of tags to associate with the job when it is created.
+     * </p>
+     */
+    private java.util.List<S3Tag> tags;
 
     /**
      * <p/>
@@ -492,6 +498,76 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * An optional set of tags to associate with the job when it is created.
+     * </p>
+     * 
+     * @return An optional set of tags to associate with the job when it is created.
+     */
+
+    public java.util.List<S3Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An optional set of tags to associate with the job when it is created.
+     * </p>
+     * 
+     * @param tags
+     *        An optional set of tags to associate with the job when it is created.
+     */
+
+    public void setTags(java.util.Collection<S3Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<S3Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An optional set of tags to associate with the job when it is created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An optional set of tags to associate with the job when it is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withTags(S3Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<S3Tag>(tags.length));
+        }
+        for (S3Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional set of tags to associate with the job when it is created.
+     * </p>
+     * 
+     * @param tags
+     *        An optional set of tags to associate with the job when it is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withTags(java.util.Collection<S3Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -520,7 +596,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -571,6 +649,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -588,6 +670,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

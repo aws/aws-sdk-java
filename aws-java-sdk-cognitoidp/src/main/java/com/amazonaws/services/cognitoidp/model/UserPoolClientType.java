@@ -242,6 +242,12 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Pinpoint analytics configuration for the user pool client.
      * </p>
+     * <note>
+     * <p>
+     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * </p>
+     * </note>
      */
     private AnalyticsConfigurationType analyticsConfiguration;
     /**
@@ -2214,9 +2220,19 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Pinpoint analytics configuration for the user pool client.
      * </p>
+     * <note>
+     * <p>
+     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * </p>
+     * </note>
      * 
      * @param analyticsConfiguration
-     *        The Amazon Pinpoint analytics configuration for the user pool client.
+     *        The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
+     *        <p>
+     *        Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     *        us-east-1 Region, regardless of the region in which the user pool resides.
+     *        </p>
      */
 
     public void setAnalyticsConfiguration(AnalyticsConfigurationType analyticsConfiguration) {
@@ -2227,8 +2243,18 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Pinpoint analytics configuration for the user pool client.
      * </p>
+     * <note>
+     * <p>
+     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * </p>
+     * </note>
      * 
-     * @return The Amazon Pinpoint analytics configuration for the user pool client.
+     * @return The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
+     *         <p>
+     *         Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     *         us-east-1 Region, regardless of the region in which the user pool resides.
+     *         </p>
      */
 
     public AnalyticsConfigurationType getAnalyticsConfiguration() {
@@ -2239,9 +2265,19 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Pinpoint analytics configuration for the user pool client.
      * </p>
+     * <note>
+     * <p>
+     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * </p>
+     * </note>
      * 
      * @param analyticsConfiguration
-     *        The Amazon Pinpoint analytics configuration for the user pool client.
+     *        The Amazon Pinpoint analytics configuration for the user pool client.</p> <note>
+     *        <p>
+     *        Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
+     *        us-east-1 Region, regardless of the region in which the user pool resides.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

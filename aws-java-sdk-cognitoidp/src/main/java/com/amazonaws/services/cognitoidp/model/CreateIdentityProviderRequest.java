@@ -172,7 +172,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -475,7 +475,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -608,7 +608,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         IDPSignOut <i>optional</i>
+     *         IDPSignout <i>optional</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -748,7 +748,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -882,7 +882,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignOut <i>optional</i>
+     *        IDPSignout <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1022,7 +1022,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * IDPSignOut <i>optional</i>
+     * IDPSignout <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -1156,7 +1156,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        IDPSignOut <i>optional</i>
+     *        IDPSignout <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>

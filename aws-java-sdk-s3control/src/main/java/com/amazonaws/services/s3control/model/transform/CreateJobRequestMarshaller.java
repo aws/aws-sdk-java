@@ -487,6 +487,25 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 if (createJobRequest.getRoleArn() != null) {
                     xmlWriter.startElement("RoleArn").value(createJobRequest.getRoleArn()).endElement();
                 }
+
+                java.util.List<S3Tag> createJobRequestTagsList = createJobRequest.getTags();
+                if (createJobRequestTagsList != null) {
+                    xmlWriter.startElement("Tags");
+
+                    for (S3Tag createJobRequestTagsListValue : createJobRequestTagsList) {
+                        xmlWriter.startElement("member");
+
+                        if (createJobRequestTagsListValue.getKey() != null) {
+                            xmlWriter.startElement("Key").value(createJobRequestTagsListValue.getKey()).endElement();
+                        }
+
+                        if (createJobRequestTagsListValue.getValue() != null) {
+                            xmlWriter.startElement("Value").value(createJobRequestTagsListValue.getValue()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
+                }
             }
             xmlWriter.endElement();
 

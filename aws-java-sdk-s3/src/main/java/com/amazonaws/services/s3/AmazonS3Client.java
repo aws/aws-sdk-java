@@ -4035,9 +4035,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 String region = bucketRegionCache.get(bucketName);
                 if (region != null) {
                      // If cache contains the region for the bucket, create an endpoint for the region and
-                     // update the request with that endpoint.
+                     // update the request with that endpoint if accelerate mode is not enabled
                      request.addHandlerContext(HandlerContextKey.SIGNING_REGION, region);
-                     resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
+                     if (!clientOptions.isAccelerateModeEnabled()) {
+                         resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
+                     }
                      return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
                     String signerRegion = getSignerRegion();

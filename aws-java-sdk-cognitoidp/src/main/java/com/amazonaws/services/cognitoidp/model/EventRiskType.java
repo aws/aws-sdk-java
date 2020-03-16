@@ -40,6 +40,12 @@ public class EventRiskType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String riskLevel;
+    /**
+     * <p>
+     * Indicates whether compromised credentials were detected during an authentication event.
+     * </p>
+     */
+    private Boolean compromisedCredentialsDetected;
 
     /**
      * <p>
@@ -160,6 +166,58 @@ public class EventRiskType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether compromised credentials were detected during an authentication event.
+     * </p>
+     * 
+     * @param compromisedCredentialsDetected
+     *        Indicates whether compromised credentials were detected during an authentication event.
+     */
+
+    public void setCompromisedCredentialsDetected(Boolean compromisedCredentialsDetected) {
+        this.compromisedCredentialsDetected = compromisedCredentialsDetected;
+    }
+
+    /**
+     * <p>
+     * Indicates whether compromised credentials were detected during an authentication event.
+     * </p>
+     * 
+     * @return Indicates whether compromised credentials were detected during an authentication event.
+     */
+
+    public Boolean getCompromisedCredentialsDetected() {
+        return this.compromisedCredentialsDetected;
+    }
+
+    /**
+     * <p>
+     * Indicates whether compromised credentials were detected during an authentication event.
+     * </p>
+     * 
+     * @param compromisedCredentialsDetected
+     *        Indicates whether compromised credentials were detected during an authentication event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventRiskType withCompromisedCredentialsDetected(Boolean compromisedCredentialsDetected) {
+        setCompromisedCredentialsDetected(compromisedCredentialsDetected);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether compromised credentials were detected during an authentication event.
+     * </p>
+     * 
+     * @return Indicates whether compromised credentials were detected during an authentication event.
+     */
+
+    public Boolean isCompromisedCredentialsDetected() {
+        return this.compromisedCredentialsDetected;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -174,7 +232,9 @@ public class EventRiskType implements Serializable, Cloneable, StructuredPojo {
         if (getRiskDecision() != null)
             sb.append("RiskDecision: ").append(getRiskDecision()).append(",");
         if (getRiskLevel() != null)
-            sb.append("RiskLevel: ").append(getRiskLevel());
+            sb.append("RiskLevel: ").append(getRiskLevel()).append(",");
+        if (getCompromisedCredentialsDetected() != null)
+            sb.append("CompromisedCredentialsDetected: ").append(getCompromisedCredentialsDetected());
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +257,11 @@ public class EventRiskType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRiskLevel() != null && other.getRiskLevel().equals(this.getRiskLevel()) == false)
             return false;
+        if (other.getCompromisedCredentialsDetected() == null ^ this.getCompromisedCredentialsDetected() == null)
+            return false;
+        if (other.getCompromisedCredentialsDetected() != null
+                && other.getCompromisedCredentialsDetected().equals(this.getCompromisedCredentialsDetected()) == false)
+            return false;
         return true;
     }
 
@@ -207,6 +272,7 @@ public class EventRiskType implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getRiskDecision() == null) ? 0 : getRiskDecision().hashCode());
         hashCode = prime * hashCode + ((getRiskLevel() == null) ? 0 : getRiskLevel().hashCode());
+        hashCode = prime * hashCode + ((getCompromisedCredentialsDetected() == null) ? 0 : getCompromisedCredentialsDetected().hashCode());
         return hashCode;
     }
 

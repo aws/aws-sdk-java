@@ -99,6 +99,22 @@ public interface AWSS3Control {
 
     /**
      * <p>
+     * Delete the tags on a Amazon S3 batch operations job, if any.
+     * </p>
+     * 
+     * @param deleteJobTaggingRequest
+     * @return Result of the DeleteJobTagging operation returned by the service.
+     * @throws InternalServiceException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @sample AWSS3Control.DeleteJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteJobTaggingResult deleteJobTagging(DeleteJobTaggingRequest deleteJobTaggingRequest);
+
+    /**
+     * <p>
      * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
@@ -171,6 +187,22 @@ public interface AWSS3Control {
 
     /**
      * <p>
+     * Retrieve the tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param getJobTaggingRequest
+     * @return Result of the GetJobTagging operation returned by the service.
+     * @throws InternalServiceException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @sample AWSS3Control.GetJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetJobTaggingResult getJobTagging(GetJobTaggingRequest getJobTaggingRequest);
+
+    /**
+     * <p>
      * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
@@ -230,6 +262,23 @@ public interface AWSS3Control {
      *      API Documentation</a>
      */
     PutAccessPointPolicyResult putAccessPointPolicy(PutAccessPointPolicyRequest putAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Replace the set of tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param putJobTaggingRequest
+     * @return Result of the PutJobTagging operation returned by the service.
+     * @throws InternalServiceException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @throws TooManyTagsException
+     * @sample AWSS3Control.PutJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutJobTaggingResult putJobTagging(PutJobTaggingRequest putJobTaggingRequest);
 
     /**
      * <p>

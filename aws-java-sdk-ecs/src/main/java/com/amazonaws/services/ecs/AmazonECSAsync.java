@@ -164,7 +164,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
      * a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified
-     * cluster. To update an existing service, see <a>UpdateService</a>.
+     * cluster. To update an existing service, see the UpdateService action.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
@@ -292,7 +292,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
      * a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified
-     * cluster. To update an existing service, see <a>UpdateService</a>.
+     * cluster. To update an existing service, see the UpdateService action.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind

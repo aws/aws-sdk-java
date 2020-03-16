@@ -48,6 +48,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public DeleteJobTaggingResult deleteJobTagging(DeleteJobTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePublicAccessBlockResult deletePublicAccessBlock(DeletePublicAccessBlockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +78,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetJobTaggingResult getJobTagging(GetJobTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +99,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public PutAccessPointPolicyResult putAccessPointPolicy(PutAccessPointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutJobTaggingResult putJobTagging(PutJobTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

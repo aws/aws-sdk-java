@@ -194,6 +194,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteJobTaggingResult> deleteJobTaggingAsync(DeleteJobTaggingRequest request) {
+
+        return deleteJobTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTaggingResult> deleteJobTaggingAsync(final DeleteJobTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteJobTaggingRequest, DeleteJobTaggingResult> asyncHandler) {
+        final DeleteJobTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteJobTaggingResult>() {
+            @Override
+            public DeleteJobTaggingResult call() throws Exception {
+                DeleteJobTaggingResult result = null;
+
+                try {
+                    result = executeDeleteJobTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePublicAccessBlockResult> deletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request) {
 
         return deletePublicAccessBlockAsync(request, null);
@@ -359,6 +392,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(GetJobTaggingRequest request) {
+
+        return getJobTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(final GetJobTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetJobTaggingRequest, GetJobTaggingResult> asyncHandler) {
+        final GetJobTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetJobTaggingResult>() {
+            @Override
+            public GetJobTaggingResult call() throws Exception {
+                GetJobTaggingResult result = null;
+
+                try {
+                    result = executeGetJobTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest request) {
 
         return getPublicAccessBlockAsync(request, null);
@@ -475,6 +541,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executePutAccessPointPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutJobTaggingResult> putJobTaggingAsync(PutJobTaggingRequest request) {
+
+        return putJobTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutJobTaggingResult> putJobTaggingAsync(final PutJobTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutJobTaggingRequest, PutJobTaggingResult> asyncHandler) {
+        final PutJobTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutJobTaggingResult>() {
+            @Override
+            public PutJobTaggingResult call() throws Exception {
+                PutJobTaggingResult result = null;
+
+                try {
+                    result = executePutJobTagging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

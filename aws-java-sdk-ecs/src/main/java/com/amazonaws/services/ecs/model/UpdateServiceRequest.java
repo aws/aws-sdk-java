@@ -76,6 +76,31 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
+     * An array of task placement constraint objects to update the service to use. If no value is specified, the
+     * existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     * override any existing placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.
+     * </p>
+     * <p>
+     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
+    /**
+     * <p>
+     * The task placement strategy objects to update the service to use. If no value is specified, the existing
+     * placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     * existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty
+     * object.
+     * </p>
+     * <p>
+     * You can specify a maximum of five strategy rules per service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
+    /**
+     * <p>
      * The platform version on which your tasks in the service are running. A platform version is only specified for
      * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
      * version is used by default. For more information, see <a
@@ -487,6 +512,248 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * An array of task placement constraint objects to update the service to use. If no value is specified, the
+     * existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     * override any existing placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.
+     * </p>
+     * <p>
+     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).
+     * </p>
+     * 
+     * @return An array of task placement constraint objects to update the service to use. If no value is specified, the
+     *         existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     *         override any existing placement constraints defined for the service. To remove all existing placement
+     *         constraints, specify an empty array.</p>
+     *         <p>
+     *         You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
+     *         definition and those specified at runtime).
+     */
+
+    public java.util.List<PlacementConstraint> getPlacementConstraints() {
+        if (placementConstraints == null) {
+            placementConstraints = new com.amazonaws.internal.SdkInternalList<PlacementConstraint>();
+        }
+        return placementConstraints;
+    }
+
+    /**
+     * <p>
+     * An array of task placement constraint objects to update the service to use. If no value is specified, the
+     * existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     * override any existing placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.
+     * </p>
+     * <p>
+     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of task placement constraint objects to update the service to use. If no value is specified, the
+     *        existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     *        override any existing placement constraints defined for the service. To remove all existing placement
+     *        constraints, specify an empty array.</p>
+     *        <p>
+     *        You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
+     *        definition and those specified at runtime).
+     */
+
+    public void setPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
+        if (placementConstraints == null) {
+            this.placementConstraints = null;
+            return;
+        }
+
+        this.placementConstraints = new com.amazonaws.internal.SdkInternalList<PlacementConstraint>(placementConstraints);
+    }
+
+    /**
+     * <p>
+     * An array of task placement constraint objects to update the service to use. If no value is specified, the
+     * existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     * override any existing placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.
+     * </p>
+     * <p>
+     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementConstraints(java.util.Collection)} or {@link #withPlacementConstraints(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of task placement constraint objects to update the service to use. If no value is specified, the
+     *        existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     *        override any existing placement constraints defined for the service. To remove all existing placement
+     *        constraints, specify an empty array.</p>
+     *        <p>
+     *        You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
+     *        definition and those specified at runtime).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withPlacementConstraints(PlacementConstraint... placementConstraints) {
+        if (this.placementConstraints == null) {
+            setPlacementConstraints(new com.amazonaws.internal.SdkInternalList<PlacementConstraint>(placementConstraints.length));
+        }
+        for (PlacementConstraint ele : placementConstraints) {
+            this.placementConstraints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of task placement constraint objects to update the service to use. If no value is specified, the
+     * existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     * override any existing placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.
+     * </p>
+     * <p>
+     * You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).
+     * </p>
+     * 
+     * @param placementConstraints
+     *        An array of task placement constraint objects to update the service to use. If no value is specified, the
+     *        existing placement constraints for the service will remain unchanged. If this value is specified, it will
+     *        override any existing placement constraints defined for the service. To remove all existing placement
+     *        constraints, specify an empty array.</p>
+     *        <p>
+     *        You can specify a maximum of 10 constraints per task (this limit includes constraints in the task
+     *        definition and those specified at runtime).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withPlacementConstraints(java.util.Collection<PlacementConstraint> placementConstraints) {
+        setPlacementConstraints(placementConstraints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The task placement strategy objects to update the service to use. If no value is specified, the existing
+     * placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     * existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty
+     * object.
+     * </p>
+     * <p>
+     * You can specify a maximum of five strategy rules per service.
+     * </p>
+     * 
+     * @return The task placement strategy objects to update the service to use. If no value is specified, the existing
+     *         placement strategy for the service will remain unchanged. If this value is specified, it will override
+     *         the existing placement strategy defined for the service. To remove an existing placement strategy,
+     *         specify an empty object.</p>
+     *         <p>
+     *         You can specify a maximum of five strategy rules per service.
+     */
+
+    public java.util.List<PlacementStrategy> getPlacementStrategy() {
+        if (placementStrategy == null) {
+            placementStrategy = new com.amazonaws.internal.SdkInternalList<PlacementStrategy>();
+        }
+        return placementStrategy;
+    }
+
+    /**
+     * <p>
+     * The task placement strategy objects to update the service to use. If no value is specified, the existing
+     * placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     * existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty
+     * object.
+     * </p>
+     * <p>
+     * You can specify a maximum of five strategy rules per service.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The task placement strategy objects to update the service to use. If no value is specified, the existing
+     *        placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     *        existing placement strategy defined for the service. To remove an existing placement strategy, specify an
+     *        empty object.</p>
+     *        <p>
+     *        You can specify a maximum of five strategy rules per service.
+     */
+
+    public void setPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
+        if (placementStrategy == null) {
+            this.placementStrategy = null;
+            return;
+        }
+
+        this.placementStrategy = new com.amazonaws.internal.SdkInternalList<PlacementStrategy>(placementStrategy);
+    }
+
+    /**
+     * <p>
+     * The task placement strategy objects to update the service to use. If no value is specified, the existing
+     * placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     * existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty
+     * object.
+     * </p>
+     * <p>
+     * You can specify a maximum of five strategy rules per service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementStrategy(java.util.Collection)} or {@link #withPlacementStrategy(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The task placement strategy objects to update the service to use. If no value is specified, the existing
+     *        placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     *        existing placement strategy defined for the service. To remove an existing placement strategy, specify an
+     *        empty object.</p>
+     *        <p>
+     *        You can specify a maximum of five strategy rules per service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withPlacementStrategy(PlacementStrategy... placementStrategy) {
+        if (this.placementStrategy == null) {
+            setPlacementStrategy(new com.amazonaws.internal.SdkInternalList<PlacementStrategy>(placementStrategy.length));
+        }
+        for (PlacementStrategy ele : placementStrategy) {
+            this.placementStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The task placement strategy objects to update the service to use. If no value is specified, the existing
+     * placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     * existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty
+     * object.
+     * </p>
+     * <p>
+     * You can specify a maximum of five strategy rules per service.
+     * </p>
+     * 
+     * @param placementStrategy
+     *        The task placement strategy objects to update the service to use. If no value is specified, the existing
+     *        placement strategy for the service will remain unchanged. If this value is specified, it will override the
+     *        existing placement strategy defined for the service. To remove an existing placement strategy, specify an
+     *        empty object.</p>
+     *        <p>
+     *        You can specify a maximum of five strategy rules per service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
+        setPlacementStrategy(placementStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The platform version on which your tasks in the service are running. A platform version is only specified for
      * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
      * version is used by default. For more information, see <a
@@ -727,6 +994,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration()).append(",");
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getPlacementConstraints() != null)
+            sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
+        if (getPlacementStrategy() != null)
+            sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
         if (getPlatformVersion() != null)
             sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getForceNewDeployment() != null)
@@ -775,6 +1046,14 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getPlacementConstraints() == null ^ this.getPlacementConstraints() == null)
+            return false;
+        if (other.getPlacementConstraints() != null && other.getPlacementConstraints().equals(this.getPlacementConstraints()) == false)
+            return false;
+        if (other.getPlacementStrategy() == null ^ this.getPlacementStrategy() == null)
+            return false;
+        if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
+            return false;
         if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
             return false;
         if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
@@ -803,6 +1082,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getCapacityProviderStrategy() == null) ? 0 : getCapacityProviderStrategy().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
+        hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getForceNewDeployment() == null) ? 0 : getForceNewDeployment().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());

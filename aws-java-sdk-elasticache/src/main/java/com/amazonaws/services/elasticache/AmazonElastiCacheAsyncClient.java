@@ -586,6 +586,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> createGlobalReplicationGroupAsync(CreateGlobalReplicationGroupRequest request) {
+
+        return createGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> createGlobalReplicationGroupAsync(final CreateGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final CreateGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeCreateGlobalReplicationGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReplicationGroup> createReplicationGroupAsync(CreateReplicationGroupRequest request) {
 
         return createReplicationGroupAsync(request, null);
@@ -636,6 +669,41 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
 
                 try {
                     result = executeCreateSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> decreaseNodeGroupsInGlobalReplicationGroupAsync(
+            DecreaseNodeGroupsInGlobalReplicationGroupRequest request) {
+
+        return decreaseNodeGroupsInGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> decreaseNodeGroupsInGlobalReplicationGroupAsync(
+            final DecreaseNodeGroupsInGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DecreaseNodeGroupsInGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final DecreaseNodeGroupsInGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeDecreaseNodeGroupsInGlobalReplicationGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -801,6 +869,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
 
                 try {
                     result = executeDeleteCacheSubnetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> deleteGlobalReplicationGroupAsync(DeleteGlobalReplicationGroupRequest request) {
+
+        return deleteGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> deleteGlobalReplicationGroupAsync(final DeleteGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final DeleteGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeDeleteGlobalReplicationGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1285,6 +1386,41 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGlobalReplicationGroupsResult> describeGlobalReplicationGroupsAsync(
+            DescribeGlobalReplicationGroupsRequest request) {
+
+        return describeGlobalReplicationGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGlobalReplicationGroupsResult> describeGlobalReplicationGroupsAsync(
+            final DescribeGlobalReplicationGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGlobalReplicationGroupsRequest, DescribeGlobalReplicationGroupsResult> asyncHandler) {
+        final DescribeGlobalReplicationGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGlobalReplicationGroupsResult>() {
+            @Override
+            public DescribeGlobalReplicationGroupsResult call() throws Exception {
+                DescribeGlobalReplicationGroupsResult result = null;
+
+                try {
+                    result = executeDescribeGlobalReplicationGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeReplicationGroupsResult> describeReplicationGroupsAsync(DescribeReplicationGroupsRequest request) {
 
         return describeReplicationGroupsAsync(request, null);
@@ -1578,6 +1714,107 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> disassociateGlobalReplicationGroupAsync(DisassociateGlobalReplicationGroupRequest request) {
+
+        return disassociateGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> disassociateGlobalReplicationGroupAsync(final DisassociateGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final DisassociateGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeDisassociateGlobalReplicationGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> failoverGlobalReplicationGroupAsync(FailoverGlobalReplicationGroupRequest request) {
+
+        return failoverGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> failoverGlobalReplicationGroupAsync(final FailoverGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<FailoverGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final FailoverGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeFailoverGlobalReplicationGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> increaseNodeGroupsInGlobalReplicationGroupAsync(
+            IncreaseNodeGroupsInGlobalReplicationGroupRequest request) {
+
+        return increaseNodeGroupsInGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> increaseNodeGroupsInGlobalReplicationGroupAsync(
+            final IncreaseNodeGroupsInGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<IncreaseNodeGroupsInGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final IncreaseNodeGroupsInGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeIncreaseNodeGroupsInGlobalReplicationGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReplicationGroup> increaseReplicaCountAsync(IncreaseReplicaCountRequest request) {
 
         return increaseReplicaCountAsync(request, null);
@@ -1802,6 +2039,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> modifyGlobalReplicationGroupAsync(ModifyGlobalReplicationGroupRequest request) {
+
+        return modifyGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> modifyGlobalReplicationGroupAsync(final ModifyGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final ModifyGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeModifyGlobalReplicationGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReplicationGroup> modifyReplicationGroupAsync(ModifyReplicationGroupRequest request) {
 
         return modifyReplicationGroupAsync(request, null);
@@ -1886,6 +2156,40 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
 
                 try {
                     result = executePurchaseReservedCacheNodesOffering(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> rebalanceSlotsInGlobalReplicationGroupAsync(RebalanceSlotsInGlobalReplicationGroupRequest request) {
+
+        return rebalanceSlotsInGlobalReplicationGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalReplicationGroup> rebalanceSlotsInGlobalReplicationGroupAsync(
+            final RebalanceSlotsInGlobalReplicationGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RebalanceSlotsInGlobalReplicationGroupRequest, GlobalReplicationGroup> asyncHandler) {
+        final RebalanceSlotsInGlobalReplicationGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalReplicationGroup>() {
+            @Override
+            public GlobalReplicationGroup call() throws Exception {
+                GlobalReplicationGroup result = null;
+
+                try {
+                    result = executeRebalanceSlotsInGlobalReplicationGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -404,9 +404,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
-     * agent to enable a container start timeout value. However, we recommend using the latest container agent version.
-     * For information about checking your agent version and updating to the latest version, see <a
+     * For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version
+     * 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_START_TIMEOUT</code> is used by
+     * default. If neither the <code>startTimeout</code> parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 3 minutes for Linux containers and 8 minutes on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container start timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -414,10 +422,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
-     * later.
      * </p>
      */
     private Integer startTimeout;
@@ -427,15 +431,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * own.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
-     * service requires platform version <code>1.3.0</code> or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later. The max
+     * stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container instances
-     * require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we
-     * recommend using the latest container agent version. For information about checking your agent version and
-     * updating to the latest version, see <a
+     * For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by
+     * default. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container stop timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3593,9 +3599,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
-     * agent to enable a container start timeout value. However, we recommend using the latest container agent version.
-     * For information about checking your agent version and updating to the latest version, see <a
+     * For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version
+     * 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_START_TIMEOUT</code> is used by
+     * default. If neither the <code>startTimeout</code> parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 3 minutes for Linux containers and 8 minutes on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container start timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3603,10 +3617,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
-     * later.
      * </p>
      * 
      * @param startTimeout
@@ -3617,10 +3627,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        within that time then containerA will give up and not start. This results in the task transitioning to a
      *        <code>STOPPED</code> state.</p>
      *        <p>
-     *        For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
-     *        container agent to enable a container start timeout value. However, we recommend using the latest
-     *        container agent version. For information about checking your agent version and updating to the latest
-     *        version, see <a
+     *        For tasks using the Fargate launch type, this parameter requires that the task or service uses platform
+     *        version 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     *        </p>
+     *        <p>
+     *        For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the
+     *        value set for the Amazon ECS container agent configuration variable
+     *        <code>ECS_CONTAINER_START_TIMEOUT</code> is used by default. If neither the <code>startTimeout</code>
+     *        parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent configuration variable are set, then the
+     *        default values of 3 minutes for Linux containers and 8 minutes on Windows containers are used. Your
+     *        container instances require at least version 1.26.0 of the container agent to enable a container start
+     *        timeout value. However, we recommend using the latest container agent version. For information about
+     *        checking your agent version and updating to the latest version, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
      *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
      *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
@@ -3629,10 +3647,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
-     *        or later.
      */
 
     public void setStartTimeout(Integer startTimeout) {
@@ -3648,9 +3662,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
-     * agent to enable a container start timeout value. However, we recommend using the latest container agent version.
-     * For information about checking your agent version and updating to the latest version, see <a
+     * For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version
+     * 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_START_TIMEOUT</code> is used by
+     * default. If neither the <code>startTimeout</code> parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 3 minutes for Linux containers and 8 minutes on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container start timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3658,10 +3680,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
-     * later.
      * </p>
      * 
      * @return Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
@@ -3671,10 +3689,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         within that time then containerA will give up and not start. This results in the task transitioning to a
      *         <code>STOPPED</code> state.</p>
      *         <p>
-     *         For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
-     *         container agent to enable a container start timeout value. However, we recommend using the latest
-     *         container agent version. For information about checking your agent version and updating to the latest
-     *         version, see <a
+     *         For tasks using the Fargate launch type, this parameter requires that the task or service uses platform
+     *         version 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     *         </p>
+     *         <p>
+     *         For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the
+     *         value set for the Amazon ECS container agent configuration variable
+     *         <code>ECS_CONTAINER_START_TIMEOUT</code> is used by default. If neither the <code>startTimeout</code>
+     *         parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent configuration variable are set, then the
+     *         default values of 3 minutes for Linux containers and 8 minutes on Windows containers are used. Your
+     *         container instances require at least version 1.26.0 of the container agent to enable a container start
+     *         timeout value. However, we recommend using the latest container agent version. For information about
+     *         checking your agent version and updating to the latest version, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
      *         Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
      *         using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
@@ -3683,10 +3709,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>ecs-init</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *         ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *         </p>
-     *         <p>
-     *         For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
-     *         or later.
      */
 
     public Integer getStartTimeout() {
@@ -3702,9 +3724,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container
-     * agent to enable a container start timeout value. However, we recommend using the latest container agent version.
-     * For information about checking your agent version and updating to the latest version, see <a
+     * For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version
+     * 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     * </p>
+     * <p>
+     * For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_START_TIMEOUT</code> is used by
+     * default. If neither the <code>startTimeout</code> parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 3 minutes for Linux containers and 8 minutes on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container start timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3712,10 +3742,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * versions of the container agent and <code>ecs-init</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon ECS-optimized
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code> or
-     * later.
      * </p>
      * 
      * @param startTimeout
@@ -3726,10 +3752,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        within that time then containerA will give up and not start. This results in the task transitioning to a
      *        <code>STOPPED</code> state.</p>
      *        <p>
-     *        For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the
-     *        container agent to enable a container start timeout value. However, we recommend using the latest
-     *        container agent version. For information about checking your agent version and updating to the latest
-     *        version, see <a
+     *        For tasks using the Fargate launch type, this parameter requires that the task or service uses platform
+     *        version 1.3.0 or later. If this parameter is not specified, the default value of 3 minutes is used.
+     *        </p>
+     *        <p>
+     *        For tasks using the EC2 launch type, if the <code>startTimeout</code> parameter is not specified, the
+     *        value set for the Amazon ECS container agent configuration variable
+     *        <code>ECS_CONTAINER_START_TIMEOUT</code> is used by default. If neither the <code>startTimeout</code>
+     *        parameter or the <code>ECS_CONTAINER_START_TIMEOUT</code> agent configuration variable are set, then the
+     *        default values of 3 minutes for Linux containers and 8 minutes on Windows containers are used. Your
+     *        container instances require at least version 1.26.0 of the container agent to enable a container start
+     *        timeout value. However, we recommend using the latest container agent version. For information about
+     *        checking your agent version and updating to the latest version, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
      *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
      *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
@@ -3738,10 +3772,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
      *        ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        For tasks using the Fargate launch type, the task or service requires platform version <code>1.3.0</code>
-     *        or later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3756,15 +3786,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * own.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
-     * service requires platform version <code>1.3.0</code> or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later. The max
+     * stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container instances
-     * require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we
-     * recommend using the latest container agent version. For information about checking your agent version and
-     * updating to the latest version, see <a
+     * For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by
+     * default. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container stop timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3778,15 +3810,19 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
      *        on its own.</p>
      *        <p>
-     *        For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task
-     *        or service requires platform version <code>1.3.0</code> or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later. The
+     *        max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30
+     *        seconds is used.
      *        </p>
      *        <p>
-     *        For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
-     *        instances require at least version 1.26.0 of the container agent to enable a container stop timeout value.
-     *        However, we recommend using the latest container agent version. For information about checking your agent
-     *        version and updating to the latest version, see <a
+     *        For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the value
+     *        set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is
+     *        used by default. If neither the <code>stopTimeout</code> parameter or the
+     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of
+     *        30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances
+     *        require at least version 1.26.0 of the container agent to enable a container stop timeout value. However,
+     *        we recommend using the latest container agent version. For information about checking your agent version
+     *        and updating to the latest version, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
      *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
      *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
@@ -3807,15 +3843,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * own.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
-     * service requires platform version <code>1.3.0</code> or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later. The max
+     * stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container instances
-     * require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we
-     * recommend using the latest container agent version. For information about checking your agent version and
-     * updating to the latest version, see <a
+     * For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by
+     * default. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container stop timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3828,15 +3866,19 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @return Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
      *         on its own.</p>
      *         <p>
-     *         For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task
-     *         or service requires platform version <code>1.3.0</code> or later.
+     *         For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
+     *         The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30
+     *         seconds is used.
      *         </p>
      *         <p>
-     *         For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
-     *         instances require at least version 1.26.0 of the container agent to enable a container stop timeout
-     *         value. However, we recommend using the latest container agent version. For information about checking
-     *         your agent version and updating to the latest version, see <a
+     *         For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the
+     *         value set for the Amazon ECS container agent configuration variable
+     *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by default. If neither the <code>stopTimeout</code>
+     *         parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the
+     *         default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used. Your
+     *         container instances require at least version 1.26.0 of the container agent to enable a container stop
+     *         timeout value. However, we recommend using the latest container agent version. For information about
+     *         checking your agent version and updating to the latest version, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
      *         Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
      *         using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the
@@ -3857,15 +3899,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * own.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task or
-     * service requires platform version <code>1.3.0</code> or later.
+     * For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later. The max
+     * stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container instances
-     * require at least version 1.26.0 of the container agent to enable a container stop timeout value. However, we
-     * recommend using the latest container agent version. For information about checking your agent version and
-     * updating to the latest version, see <a
+     * For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the value set
+     * for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used by
+     * default. If neither the <code>stopTimeout</code> parameter or the <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent
+     * configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on
+     * Windows containers are used. Your container instances require at least version 1.26.0 of the container agent to
+     * enable a container stop timeout value. However, we recommend using the latest container agent version. For
+     * information about checking your agent version and updating to the latest version, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the Amazon ECS
      * Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon
      * ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If
@@ -3879,15 +3923,19 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
      *        on its own.</p>
      *        <p>
-     *        For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes and the task
-     *        or service requires platform version <code>1.3.0</code> or later.
+     *        For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later. The
+     *        max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30
+     *        seconds is used.
      *        </p>
      *        <p>
-     *        For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
-     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
-     *        instances require at least version 1.26.0 of the container agent to enable a container stop timeout value.
-     *        However, we recommend using the latest container agent version. For information about checking your agent
-     *        version and updating to the latest version, see <a
+     *        For tasks using the EC2 launch type, if the <code>stopTimeout</code> parameter is not specified, the value
+     *        set for the Amazon ECS container agent configuration variable <code>ECS_CONTAINER_STOP_TIMEOUT</code> is
+     *        used by default. If neither the <code>stopTimeout</code> parameter or the
+     *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set, then the default values of
+     *        30 seconds for Linux containers and 30 seconds on Windows containers are used. Your container instances
+     *        require at least version 1.26.0 of the container agent to enable a container stop timeout value. However,
+     *        we recommend using the latest container agent version. For information about checking your agent version
+     *        and updating to the latest version, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating the
      *        Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are
      *        using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the

@@ -48,6 +48,12 @@ public class CacheParameterGroup implements Serializable, Cloneable {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Indicates whether the parameter group is associated with a Global Datastore
+     * </p>
+     */
+    private Boolean isGlobal;
 
     /**
      * <p>
@@ -191,6 +197,58 @@ public class CacheParameterGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the parameter group is associated with a Global Datastore
+     * </p>
+     * 
+     * @param isGlobal
+     *        Indicates whether the parameter group is associated with a Global Datastore
+     */
+
+    public void setIsGlobal(Boolean isGlobal) {
+        this.isGlobal = isGlobal;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the parameter group is associated with a Global Datastore
+     * </p>
+     * 
+     * @return Indicates whether the parameter group is associated with a Global Datastore
+     */
+
+    public Boolean getIsGlobal() {
+        return this.isGlobal;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the parameter group is associated with a Global Datastore
+     * </p>
+     * 
+     * @param isGlobal
+     *        Indicates whether the parameter group is associated with a Global Datastore
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheParameterGroup withIsGlobal(Boolean isGlobal) {
+        setIsGlobal(isGlobal);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the parameter group is associated with a Global Datastore
+     * </p>
+     * 
+     * @return Indicates whether the parameter group is associated with a Global Datastore
+     */
+
+    public Boolean isGlobal() {
+        return this.isGlobal;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +265,9 @@ public class CacheParameterGroup implements Serializable, Cloneable {
         if (getCacheParameterGroupFamily() != null)
             sb.append("CacheParameterGroupFamily: ").append(getCacheParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getIsGlobal() != null)
+            sb.append("IsGlobal: ").append(getIsGlobal());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +294,10 @@ public class CacheParameterGroup implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getIsGlobal() == null ^ this.getIsGlobal() == null)
+            return false;
+        if (other.getIsGlobal() != null && other.getIsGlobal().equals(this.getIsGlobal()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +309,7 @@ public class CacheParameterGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIsGlobal() == null) ? 0 : getIsGlobal().hashCode());
         return hashCode;
     }
 

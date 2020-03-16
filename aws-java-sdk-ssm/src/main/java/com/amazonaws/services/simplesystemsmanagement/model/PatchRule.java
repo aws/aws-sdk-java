@@ -51,8 +51,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     private Integer approveAfterDays;
     /**
      * <p>
-     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
-     * installed automatically
+     * Example API
      * </p>
      */
     private String approveUntilDate;
@@ -241,13 +240,11 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
-     * installed automatically
+     * Example API
      * </p>
      * 
      * @param approveUntilDate
-     *        The cutoff date for auto approval of released patches. Any patches released on or before this date will be
-     *        installed automatically
+     *        Example API
      */
 
     public void setApproveUntilDate(String approveUntilDate) {
@@ -256,12 +253,10 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
-     * installed automatically
+     * Example API
      * </p>
      * 
-     * @return The cutoff date for auto approval of released patches. Any patches released on or before this date will
-     *         be installed automatically
+     * @return Example API
      */
 
     public String getApproveUntilDate() {
@@ -270,13 +265,11 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
-     * installed automatically
+     * Example API
      * </p>
      * 
      * @param approveUntilDate
-     *        The cutoff date for auto approval of released patches. Any patches released on or before this date will be
-     *        installed automatically
+     *        Example API
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

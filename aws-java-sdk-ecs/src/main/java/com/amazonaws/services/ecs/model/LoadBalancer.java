@@ -19,7 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details on the load balancer or load balancers to use with a service or task set.
+ * The load balancer configuration to use with a service or task set.
+ * </p>
+ * <p>
+ * For specific notes and restrictions regarding the use of load balancers with services and task sets, see the
+ * CreateService and CreateTaskSet actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LoadBalancer" target="_top">AWS API
@@ -35,7 +39,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer this should be omitted.
+     * using a Classic Load Balancer the target group ARN should be omitted.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -66,7 +70,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load
-     * Balancer or a Network Load Balancer this should be omitted.
+     * Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      * </p>
      */
     private String loadBalancerName;
@@ -93,7 +97,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer this should be omitted.
+     * using a Classic Load Balancer the target group ARN should be omitted.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -122,7 +126,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *        service or task set.</p>
      *        <p>
      *        A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If
-     *        you are using a Classic Load Balancer this should be omitted.
+     *        you are using a Classic Load Balancer the target group ARN should be omitted.
      *        </p>
      *        <p>
      *        For services using the <code>ECS</code> deployment controller, you can specify one or multiple target
@@ -157,7 +161,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer this should be omitted.
+     * using a Classic Load Balancer the target group ARN should be omitted.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -185,7 +189,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *         a service or task set.</p>
      *         <p>
      *         A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If
-     *         you are using a Classic Load Balancer this should be omitted.
+     *         you are using a Classic Load Balancer the target group ARN should be omitted.
      *         </p>
      *         <p>
      *         For services using the <code>ECS</code> deployment controller, you can specify one or multiple target
@@ -221,7 +225,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If you are
-     * using a Classic Load Balancer this should be omitted.
+     * using a Classic Load Balancer the target group ARN should be omitted.
      * </p>
      * <p>
      * For services using the <code>ECS</code> deployment controller, you can specify one or multiple target groups. For
@@ -250,7 +254,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      *        service or task set.</p>
      *        <p>
      *        A target group ARN is only specified when using an Application Load Balancer or Network Load Balancer. If
-     *        you are using a Classic Load Balancer this should be omitted.
+     *        you are using a Classic Load Balancer the target group ARN should be omitted.
      *        </p>
      *        <p>
      *        For services using the <code>ECS</code> deployment controller, you can specify one or multiple target
@@ -286,14 +290,14 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load
-     * Balancer or a Network Load Balancer this should be omitted.
+     * Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      * </p>
      * 
      * @param loadBalancerName
      *        The name of the load balancer to associate with the Amazon ECS service or task set.</p>
      *        <p>
      *        A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application
-     *        Load Balancer or a Network Load Balancer this should be omitted.
+     *        Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      */
 
     public void setLoadBalancerName(String loadBalancerName) {
@@ -306,13 +310,13 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load
-     * Balancer or a Network Load Balancer this should be omitted.
+     * Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      * </p>
      * 
      * @return The name of the load balancer to associate with the Amazon ECS service or task set.</p>
      *         <p>
      *         A load balancer name is only specified when using a Classic Load Balancer. If you are using an
-     *         Application Load Balancer or a Network Load Balancer this should be omitted.
+     *         Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      */
 
     public String getLoadBalancerName() {
@@ -325,14 +329,14 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application Load
-     * Balancer or a Network Load Balancer this should be omitted.
+     * Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      * </p>
      * 
      * @param loadBalancerName
      *        The name of the load balancer to associate with the Amazon ECS service or task set.</p>
      *        <p>
      *        A load balancer name is only specified when using a Classic Load Balancer. If you are using an Application
-     *        Load Balancer or a Network Load Balancer this should be omitted.
+     *        Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -2153,11 +2153,11 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
-     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. If a
-     * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
-     * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
-     * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
-     * resetting the password, call .
+     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method
+     * used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more
+     * information, see <a href="">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither
+     * a verified phone number nor a verified email exists, an <code>InvalidParameterException</code> is thrown. To use
+     * the confirmation code for resetting the password, call .
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -2172,11 +2172,11 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
-     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. If a
-     * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
-     * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
-     * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
-     * resetting the password, call .
+     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method
+     * used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more
+     * information, see <a href="">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither
+     * a verified phone number nor a verified email exists, an <code>InvalidParameterException</code> is thrown. To use
+     * the confirmation code for resetting the password, call .
      * </p>
      * 
      * @param forgotPasswordRequest

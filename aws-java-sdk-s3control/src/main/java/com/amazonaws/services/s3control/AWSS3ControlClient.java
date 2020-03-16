@@ -112,6 +112,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new JobStatusExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
@@ -339,6 +340,62 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
             StaxResponseHandler<DeleteAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointPolicyResult>(
                     new DeleteAccessPointPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete the tags on a Amazon S3 batch operations job, if any.
+     * </p>
+     * 
+     * @param deleteJobTaggingRequest
+     * @return Result of the DeleteJobTagging operation returned by the service.
+     * @throws InternalServiceException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @sample AWSS3Control.DeleteJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteJobTaggingResult deleteJobTagging(DeleteJobTaggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJobTagging(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobTaggingResult executeDeleteJobTagging(DeleteJobTaggingRequest deleteJobTaggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteJobTaggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteJobTaggingRequest> request = null;
+        Response<DeleteJobTaggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(deleteJobTaggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobTagging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteJobTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteJobTaggingResult>(
+                    new DeleteJobTaggingResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -623,6 +680,62 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Retrieve the tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param getJobTaggingRequest
+     * @return Result of the GetJobTagging operation returned by the service.
+     * @throws InternalServiceException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @sample AWSS3Control.GetJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetJobTaggingResult getJobTagging(GetJobTaggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJobTagging(request);
+    }
+
+    @SdkInternalApi
+    final GetJobTaggingResult executeGetJobTagging(GetJobTaggingRequest getJobTaggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getJobTaggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetJobTaggingRequest> request = null;
+        Response<GetJobTaggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(getJobTaggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobTagging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetJobTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetJobTaggingResult>(
+                    new GetJobTaggingResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
@@ -833,6 +946,63 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
             StaxResponseHandler<PutAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutAccessPointPolicyResult>(
                     new PutAccessPointPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Replace the set of tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param putJobTaggingRequest
+     * @return Result of the PutJobTagging operation returned by the service.
+     * @throws InternalServiceException
+     * @throws TooManyRequestsException
+     * @throws NotFoundException
+     * @throws TooManyTagsException
+     * @sample AWSS3Control.PutJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutJobTaggingResult putJobTagging(PutJobTaggingRequest request) {
+        request = beforeClientExecution(request);
+        return executePutJobTagging(request);
+    }
+
+    @SdkInternalApi
+    final PutJobTaggingResult executePutJobTagging(PutJobTaggingRequest putJobTaggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putJobTaggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutJobTaggingRequest> request = null;
+        Response<PutJobTaggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(putJobTaggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutJobTagging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutJobTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutJobTaggingResult>(
+                    new PutJobTaggingResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

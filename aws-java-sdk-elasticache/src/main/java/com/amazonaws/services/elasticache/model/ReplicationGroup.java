@@ -40,6 +40,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
+     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * </p>
+     */
+    private GlobalReplicationGroupInfo globalReplicationGroupInfo;
+    /**
+     * <p>
      * The current state of this replication group - <code>creating</code>, <code>available</code>,
      * <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
      * </p>
@@ -286,6 +292,46 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     public ReplicationGroup withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * </p>
+     * 
+     * @param globalReplicationGroupInfo
+     *        The name of the Global Datastore and role of this replication group in the Global Datastore.
+     */
+
+    public void setGlobalReplicationGroupInfo(GlobalReplicationGroupInfo globalReplicationGroupInfo) {
+        this.globalReplicationGroupInfo = globalReplicationGroupInfo;
+    }
+
+    /**
+     * <p>
+     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * </p>
+     * 
+     * @return The name of the Global Datastore and role of this replication group in the Global Datastore.
+     */
+
+    public GlobalReplicationGroupInfo getGlobalReplicationGroupInfo() {
+        return this.globalReplicationGroupInfo;
+    }
+
+    /**
+     * <p>
+     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * </p>
+     * 
+     * @param globalReplicationGroupInfo
+     *        The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withGlobalReplicationGroupInfo(GlobalReplicationGroupInfo globalReplicationGroupInfo) {
+        setGlobalReplicationGroupInfo(globalReplicationGroupInfo);
         return this;
     }
 
@@ -1655,6 +1701,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
             sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getGlobalReplicationGroupInfo() != null)
+            sb.append("GlobalReplicationGroupInfo: ").append(getGlobalReplicationGroupInfo()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getPendingModifiedValues() != null)
@@ -1708,6 +1756,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getGlobalReplicationGroupInfo() == null ^ this.getGlobalReplicationGroupInfo() == null)
+            return false;
+        if (other.getGlobalReplicationGroupInfo() != null && other.getGlobalReplicationGroupInfo().equals(this.getGlobalReplicationGroupInfo()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -1783,6 +1835,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getReplicationGroupId() == null) ? 0 : getReplicationGroupId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGlobalReplicationGroupInfo() == null) ? 0 : getGlobalReplicationGroupInfo().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode());
         hashCode = prime * hashCode + ((getMemberClusters() == null) ? 0 : getMemberClusters().hashCode());

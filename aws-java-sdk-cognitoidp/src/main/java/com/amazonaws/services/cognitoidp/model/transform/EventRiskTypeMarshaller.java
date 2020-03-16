@@ -31,6 +31,8 @@ public class EventRiskTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RiskDecision").build();
     private static final MarshallingInfo<String> RISKLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RiskLevel").build();
+    private static final MarshallingInfo<Boolean> COMPROMISEDCREDENTIALSDETECTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompromisedCredentialsDetected").build();
 
     private static final EventRiskTypeMarshaller instance = new EventRiskTypeMarshaller();
 
@@ -50,6 +52,7 @@ public class EventRiskTypeMarshaller {
         try {
             protocolMarshaller.marshall(eventRiskType.getRiskDecision(), RISKDECISION_BINDING);
             protocolMarshaller.marshall(eventRiskType.getRiskLevel(), RISKLEVEL_BINDING);
+            protocolMarshaller.marshall(eventRiskType.getCompromisedCredentialsDetected(), COMPROMISEDCREDENTIALSDETECTED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

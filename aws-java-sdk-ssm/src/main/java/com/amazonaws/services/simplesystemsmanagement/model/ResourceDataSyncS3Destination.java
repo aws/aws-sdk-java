@@ -59,6 +59,12 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
      * </p>
      */
     private String aWSKMSKeyARN;
+    /**
+     * <p>
+     * Enables destination data sharing. By default, this field is <code>null</code>.
+     * </p>
+     */
+    private ResourceDataSyncDestinationDataSharing destinationDataSharing;
 
     /**
      * <p>
@@ -300,6 +306,46 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * Enables destination data sharing. By default, this field is <code>null</code>.
+     * </p>
+     * 
+     * @param destinationDataSharing
+     *        Enables destination data sharing. By default, this field is <code>null</code>.
+     */
+
+    public void setDestinationDataSharing(ResourceDataSyncDestinationDataSharing destinationDataSharing) {
+        this.destinationDataSharing = destinationDataSharing;
+    }
+
+    /**
+     * <p>
+     * Enables destination data sharing. By default, this field is <code>null</code>.
+     * </p>
+     * 
+     * @return Enables destination data sharing. By default, this field is <code>null</code>.
+     */
+
+    public ResourceDataSyncDestinationDataSharing getDestinationDataSharing() {
+        return this.destinationDataSharing;
+    }
+
+    /**
+     * <p>
+     * Enables destination data sharing. By default, this field is <code>null</code>.
+     * </p>
+     * 
+     * @param destinationDataSharing
+     *        Enables destination data sharing. By default, this field is <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncS3Destination withDestinationDataSharing(ResourceDataSyncDestinationDataSharing destinationDataSharing) {
+        setDestinationDataSharing(destinationDataSharing);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -320,7 +366,9 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getAWSKMSKeyARN() != null)
-            sb.append("AWSKMSKeyARN: ").append(getAWSKMSKeyARN());
+            sb.append("AWSKMSKeyARN: ").append(getAWSKMSKeyARN()).append(",");
+        if (getDestinationDataSharing() != null)
+            sb.append("DestinationDataSharing: ").append(getDestinationDataSharing());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +403,10 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
             return false;
         if (other.getAWSKMSKeyARN() != null && other.getAWSKMSKeyARN().equals(this.getAWSKMSKeyARN()) == false)
             return false;
+        if (other.getDestinationDataSharing() == null ^ this.getDestinationDataSharing() == null)
+            return false;
+        if (other.getDestinationDataSharing() != null && other.getDestinationDataSharing().equals(this.getDestinationDataSharing()) == false)
+            return false;
         return true;
     }
 
@@ -368,6 +420,7 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getSyncFormat() == null) ? 0 : getSyncFormat().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAWSKMSKeyARN() == null) ? 0 : getAWSKMSKeyARN().hashCode());
+        hashCode = prime * hashCode + ((getDestinationDataSharing() == null) ? 0 : getDestinationDataSharing().hashCode());
         return hashCode;
     }
 

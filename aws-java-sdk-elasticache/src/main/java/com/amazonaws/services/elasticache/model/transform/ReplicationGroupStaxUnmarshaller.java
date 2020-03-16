@@ -55,6 +55,11 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     continue;
                 }
 
+                if (context.testExpression("GlobalReplicationGroupInfo", targetDepth)) {
+                    replicationGroup.setGlobalReplicationGroupInfo(GlobalReplicationGroupInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Status", targetDepth)) {
                     replicationGroup.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

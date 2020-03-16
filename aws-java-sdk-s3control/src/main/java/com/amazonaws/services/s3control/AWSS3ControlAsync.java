@@ -158,6 +158,37 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Delete the tags on a Amazon S3 batch operations job, if any.
+     * </p>
+     * 
+     * @param deleteJobTaggingRequest
+     * @return A Java Future containing the result of the DeleteJobTagging operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteJobTaggingResult> deleteJobTaggingAsync(DeleteJobTaggingRequest deleteJobTaggingRequest);
+
+    /**
+     * <p>
+     * Delete the tags on a Amazon S3 batch operations job, if any.
+     * </p>
+     * 
+     * @param deleteJobTaggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteJobTagging operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteJobTaggingResult> deleteJobTaggingAsync(DeleteJobTaggingRequest deleteJobTaggingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobTaggingRequest, DeleteJobTaggingResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
@@ -321,6 +352,37 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Retrieve the tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param getJobTaggingRequest
+     * @return A Java Future containing the result of the GetJobTagging operation returned by the service.
+     * @sample AWSS3ControlAsync.GetJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(GetJobTaggingRequest getJobTaggingRequest);
+
+    /**
+     * <p>
+     * Retrieve the tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param getJobTaggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJobTagging operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(GetJobTaggingRequest getJobTaggingRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJobTaggingRequest, GetJobTaggingResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
@@ -450,6 +512,37 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      */
     java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest putAccessPointPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyRequest, PutAccessPointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replace the set of tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param putJobTaggingRequest
+     * @return A Java Future containing the result of the PutJobTagging operation returned by the service.
+     * @sample AWSS3ControlAsync.PutJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutJobTaggingResult> putJobTaggingAsync(PutJobTaggingRequest putJobTaggingRequest);
+
+    /**
+     * <p>
+     * Replace the set of tags on a Amazon S3 batch operations job.
+     * </p>
+     * 
+     * @param putJobTaggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutJobTagging operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.PutJobTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutJobTaggingResult> putJobTaggingAsync(PutJobTaggingRequest putJobTaggingRequest,
+            com.amazonaws.handlers.AsyncHandler<PutJobTaggingRequest, PutJobTaggingResult> asyncHandler);
 
     /**
      * <p>

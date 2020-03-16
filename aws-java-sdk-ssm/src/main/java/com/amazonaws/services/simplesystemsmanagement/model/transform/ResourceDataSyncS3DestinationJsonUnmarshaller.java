@@ -68,6 +68,11 @@ public class ResourceDataSyncS3DestinationJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     resourceDataSyncS3Destination.setAWSKMSKeyARN(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DestinationDataSharing", targetDepth)) {
+                    context.nextToken();
+                    resourceDataSyncS3Destination.setDestinationDataSharing(ResourceDataSyncDestinationDataSharingJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

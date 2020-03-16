@@ -48,6 +48,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("ReplicationGroupDescription", StringUtils.fromString(createReplicationGroupRequest.getReplicationGroupDescription()));
         }
 
+        if (createReplicationGroupRequest.getGlobalReplicationGroupId() != null) {
+            request.addParameter("GlobalReplicationGroupId", StringUtils.fromString(createReplicationGroupRequest.getGlobalReplicationGroupId()));
+        }
+
         if (createReplicationGroupRequest.getPrimaryClusterId() != null) {
             request.addParameter("PrimaryClusterId", StringUtils.fromString(createReplicationGroupRequest.getPrimaryClusterId()));
         }
