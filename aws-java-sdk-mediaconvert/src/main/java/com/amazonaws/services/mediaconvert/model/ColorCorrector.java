@@ -30,9 +30,9 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     private Integer brightness;
     /**
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
-     * SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion
-     * doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an
-     * unconverted output.
+     * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
+     * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
      */
     private String colorSpaceConversion;
     /** Contrast level. */
@@ -89,15 +89,16 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
-     * SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion
-     * doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an
-     * unconverted output.
+     * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
+     * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
      * 
      * @param colorSpaceConversion
      *        Specify the color space you want for this output. The service supports conversion between HDR formats,
-     *        between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to
-     *        HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually
-     *        appears the same as an unconverted output.
+     *        between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
+     *        dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
+     *        output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
+     *        manually regrading from HDR to SDR.
      * @see ColorSpaceConversion
      */
 
@@ -107,14 +108,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
-     * SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion
-     * doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an
-     * unconverted output.
+     * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
+     * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
      * 
      * @return Specify the color space you want for this output. The service supports conversion between HDR formats,
-     *         between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to
-     *         HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually
-     *         appears the same as an unconverted output.
+     *         between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
+     *         dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
+     *         output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
+     *         manually regrading from HDR to SDR.
      * @see ColorSpaceConversion
      */
 
@@ -124,15 +126,16 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
-     * SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion
-     * doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an
-     * unconverted output.
+     * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
+     * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
      * 
      * @param colorSpaceConversion
      *        Specify the color space you want for this output. The service supports conversion between HDR formats,
-     *        between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to
-     *        HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually
-     *        appears the same as an unconverted output.
+     *        between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
+     *        dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
+     *        output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
+     *        manually regrading from HDR to SDR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */
@@ -144,15 +147,16 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
-     * SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to HDR conversion
-     * doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an
-     * unconverted output.
+     * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
+     * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
      * 
      * @param colorSpaceConversion
      *        Specify the color space you want for this output. The service supports conversion between HDR formats,
-     *        between SDR formats, and from SDR to HDR. The service doesn't support conversion from HDR to SDR. SDR to
-     *        HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually
-     *        appears the same as an unconverted output.
+     *        between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
+     *        dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
+     *        output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
+     *        manually regrading from HDR to SDR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */

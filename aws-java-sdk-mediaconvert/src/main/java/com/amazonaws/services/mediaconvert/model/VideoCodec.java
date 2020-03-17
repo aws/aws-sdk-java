@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum VideoCodec {
 
     FRAME_CAPTURE("FRAME_CAPTURE"),
+    AV1("AV1"),
     H_264("H_264"),
     H_265("H_265"),
     MPEG2("MPEG2"),

@@ -48,6 +48,10 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("av1Settings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setAv1Settings(Av1SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("codec", targetDepth)) {
                     context.nextToken();
                     videoCodecSettings.setCodec(context.getUnmarshaller(String.class).unmarshall(context));

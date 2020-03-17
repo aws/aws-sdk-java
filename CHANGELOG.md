@@ -1,3 +1,8 @@
+# __1.11.746__ __2020-03-17__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for: AV1 encoding in File Group MP4, DASH and CMAF DASH outputs; PCM/WAV audio output in MPEG2-TS containers; and Opus audio in Webm inputs.
+
 # __1.11.745__ __2020-03-16__
 ## __AWS S3 Control__
   - ### Features
