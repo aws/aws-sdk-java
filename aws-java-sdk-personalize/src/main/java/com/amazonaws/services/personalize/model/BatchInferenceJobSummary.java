@@ -87,6 +87,12 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The ARN of the solution version used by the batch inference job.
+     * </p>
+     */
+    private String solutionVersionArn;
 
     /**
      * <p>
@@ -458,6 +464,46 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The ARN of the solution version used by the batch inference job.
+     * </p>
+     * 
+     * @param solutionVersionArn
+     *        The ARN of the solution version used by the batch inference job.
+     */
+
+    public void setSolutionVersionArn(String solutionVersionArn) {
+        this.solutionVersionArn = solutionVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the solution version used by the batch inference job.
+     * </p>
+     * 
+     * @return The ARN of the solution version used by the batch inference job.
+     */
+
+    public String getSolutionVersionArn() {
+        return this.solutionVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the solution version used by the batch inference job.
+     * </p>
+     * 
+     * @param solutionVersionArn
+     *        The ARN of the solution version used by the batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchInferenceJobSummary withSolutionVersionArn(String solutionVersionArn) {
+        setSolutionVersionArn(solutionVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -480,7 +526,9 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
         if (getLastUpdatedDateTime() != null)
             sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getSolutionVersionArn() != null)
+            sb.append("SolutionVersionArn: ").append(getSolutionVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -519,6 +567,10 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getSolutionVersionArn() == null ^ this.getSolutionVersionArn() == null)
+            return false;
+        if (other.getSolutionVersionArn() != null && other.getSolutionVersionArn().equals(this.getSolutionVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -533,6 +585,7 @@ public class BatchInferenceJobSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         return hashCode;
     }
 

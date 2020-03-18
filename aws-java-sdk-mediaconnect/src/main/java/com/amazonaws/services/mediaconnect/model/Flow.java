@@ -48,6 +48,10 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Output> outputs;
 
     private Source source;
+
+    private FailoverConfig sourceFailoverConfig;
+
+    private java.util.List<Source> sources;
     /** The current status of the flow. */
     private String status;
 
@@ -384,6 +388,84 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param sourceFailoverConfig
+     */
+
+    public void setSourceFailoverConfig(FailoverConfig sourceFailoverConfig) {
+        this.sourceFailoverConfig = sourceFailoverConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public FailoverConfig getSourceFailoverConfig() {
+        return this.sourceFailoverConfig;
+    }
+
+    /**
+     * @param sourceFailoverConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Flow withSourceFailoverConfig(FailoverConfig sourceFailoverConfig) {
+        setSourceFailoverConfig(sourceFailoverConfig);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<Source> getSources() {
+        return sources;
+    }
+
+    /**
+     * @param sources
+     */
+
+    public void setSources(java.util.Collection<Source> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<Source>(sources);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Flow withSources(Source... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<Source>(sources.length));
+        }
+        for (Source ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param sources
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Flow withSources(java.util.Collection<Source> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * The current status of the flow.
      * 
      * @param status
@@ -462,6 +544,10 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getSourceFailoverConfig() != null)
+            sb.append("SourceFailoverConfig: ").append(getSourceFailoverConfig()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus());
         sb.append("}");
@@ -510,6 +596,14 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getSourceFailoverConfig() == null ^ this.getSourceFailoverConfig() == null)
+            return false;
+        if (other.getSourceFailoverConfig() != null && other.getSourceFailoverConfig().equals(this.getSourceFailoverConfig()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -530,6 +624,8 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getSourceFailoverConfig() == null) ? 0 : getSourceFailoverConfig().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }

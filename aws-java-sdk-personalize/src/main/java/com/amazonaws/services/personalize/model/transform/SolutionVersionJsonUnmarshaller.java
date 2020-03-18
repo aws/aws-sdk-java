@@ -88,6 +88,10 @@ public class SolutionVersionJsonUnmarshaller implements Unmarshaller<SolutionVer
                     context.nextToken();
                     solutionVersion.setTrainingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tunedHPOParams", targetDepth)) {
+                    context.nextToken();
+                    solutionVersion.setTunedHPOParams(TunedHPOParamsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     solutionVersion.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

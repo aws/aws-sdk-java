@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 20) and
+ * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and
  * entitlements (up to 50).
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlow" target="_top">AWS API
@@ -40,6 +40,10 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<AddOutputRequest> outputs;
 
     private SetSourceRequest source;
+
+    private FailoverConfig sourceFailoverConfig;
+
+    private java.util.List<SetSourceRequest> sources;
 
     /**
      * The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones
@@ -266,6 +270,84 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @param sourceFailoverConfig
+     */
+
+    public void setSourceFailoverConfig(FailoverConfig sourceFailoverConfig) {
+        this.sourceFailoverConfig = sourceFailoverConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public FailoverConfig getSourceFailoverConfig() {
+        return this.sourceFailoverConfig;
+    }
+
+    /**
+     * @param sourceFailoverConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withSourceFailoverConfig(FailoverConfig sourceFailoverConfig) {
+        setSourceFailoverConfig(sourceFailoverConfig);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<SetSourceRequest> getSources() {
+        return sources;
+    }
+
+    /**
+     * @param sources
+     */
+
+    public void setSources(java.util.Collection<SetSourceRequest> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<SetSourceRequest>(sources);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withSources(SetSourceRequest... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<SetSourceRequest>(sources.length));
+        }
+        for (SetSourceRequest ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param sources
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withSources(java.util.Collection<SetSourceRequest> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -286,7 +368,11 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getSource() != null)
-            sb.append("Source: ").append(getSource());
+            sb.append("Source: ").append(getSource()).append(",");
+        if (getSourceFailoverConfig() != null)
+            sb.append("SourceFailoverConfig: ").append(getSourceFailoverConfig()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -321,6 +407,14 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getSourceFailoverConfig() == null ^ this.getSourceFailoverConfig() == null)
+            return false;
+        if (other.getSourceFailoverConfig() != null && other.getSourceFailoverConfig().equals(this.getSourceFailoverConfig()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +428,8 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getSourceFailoverConfig() == null) ? 0 : getSourceFailoverConfig().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

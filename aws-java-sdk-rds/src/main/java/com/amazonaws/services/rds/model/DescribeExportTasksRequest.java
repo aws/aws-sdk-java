@@ -90,7 +90,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * Constraints: Minimum 20, maximum 100.
      * </p>
      */
-    private String maxRecords;
+    private Integer maxRecords;
 
     /**
      * <p>
@@ -525,7 +525,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        Constraints: Minimum 20, maximum 100.
      */
 
-    public void setMaxRecords(String maxRecords) {
+    public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
 
@@ -552,7 +552,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *         Constraints: Minimum 20, maximum 100.
      */
 
-    public String getMaxRecords() {
+    public Integer getMaxRecords() {
         return this.maxRecords;
     }
 
@@ -581,7 +581,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeExportTasksRequest withMaxRecords(String maxRecords) {
+    public DescribeExportTasksRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;
     }

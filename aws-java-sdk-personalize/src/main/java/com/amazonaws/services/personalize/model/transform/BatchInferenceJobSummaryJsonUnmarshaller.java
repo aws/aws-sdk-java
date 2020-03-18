@@ -72,6 +72,10 @@ public class BatchInferenceJobSummaryJsonUnmarshaller implements Unmarshaller<Ba
                     context.nextToken();
                     batchInferenceJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("solutionVersionArn", targetDepth)) {
+                    context.nextToken();
+                    batchInferenceJobSummary.setSolutionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

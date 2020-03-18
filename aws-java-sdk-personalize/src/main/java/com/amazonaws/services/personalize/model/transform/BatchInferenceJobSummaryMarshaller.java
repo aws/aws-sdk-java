@@ -39,6 +39,8 @@ public class BatchInferenceJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
+    private static final MarshallingInfo<String> SOLUTIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("solutionVersionArn").build();
 
     private static final BatchInferenceJobSummaryMarshaller instance = new BatchInferenceJobSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class BatchInferenceJobSummaryMarshaller {
             protocolMarshaller.marshall(batchInferenceJobSummary.getCreationDateTime(), CREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(batchInferenceJobSummary.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(batchInferenceJobSummary.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(batchInferenceJobSummary.getSolutionVersionArn(), SOLUTIONVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

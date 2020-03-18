@@ -82,7 +82,7 @@ public class DescribeExportTasksRequestMarshaller implements Marshaller<Request<
         }
 
         if (describeExportTasksRequest.getMaxRecords() != null) {
-            request.addParameter("MaxRecords", StringUtils.fromString(describeExportTasksRequest.getMaxRecords()));
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeExportTasksRequest.getMaxRecords()));
         }
 
         return request;

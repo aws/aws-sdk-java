@@ -31,7 +31,7 @@ import com.amazonaws.services.mediaconnect.model.*;
 public interface AWSMediaConnectAsync extends AWSMediaConnect {
 
     /**
-     * Adds outputs to an existing flow. You can create up to 20 outputs per flow.
+     * Adds outputs to an existing flow. You can create up to 50 outputs per flow.
      * 
      * @param addFlowOutputsRequest
      *        A request to add outputs to the specified flow.
@@ -43,7 +43,7 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
     java.util.concurrent.Future<AddFlowOutputsResult> addFlowOutputsAsync(AddFlowOutputsRequest addFlowOutputsRequest);
 
     /**
-     * Adds outputs to an existing flow. You can create up to 20 outputs per flow.
+     * Adds outputs to an existing flow. You can create up to 50 outputs per flow.
      * 
      * @param addFlowOutputsRequest
      *        A request to add outputs to the specified flow.
@@ -60,12 +60,41 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<AddFlowOutputsRequest, AddFlowOutputsResult> asyncHandler);
 
     /**
-     * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 20)
+     * Adds Sources to flow
+     * 
+     * @param addFlowSourcesRequest
+     *        A request to add sources to the flow.
+     * @return A Java Future containing the result of the AddFlowSources operation returned by the service.
+     * @sample AWSMediaConnectAsync.AddFlowSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddFlowSourcesResult> addFlowSourcesAsync(AddFlowSourcesRequest addFlowSourcesRequest);
+
+    /**
+     * Adds Sources to flow
+     * 
+     * @param addFlowSourcesRequest
+     *        A request to add sources to the flow.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddFlowSources operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.AddFlowSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddFlowSourcesResult> addFlowSourcesAsync(AddFlowSourcesRequest addFlowSourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<AddFlowSourcesRequest, AddFlowSourcesResult> asyncHandler);
+
+    /**
+     * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
      * @param createFlowRequest
      *        Creates a new flow. The request must include one source. The request optionally can include outputs (up to
-     *        20) and entitlements (up to 50).
+     *        50) and entitlements (up to 50).
      * @return A Java Future containing the result of the CreateFlow operation returned by the service.
      * @sample AWSMediaConnectAsync.CreateFlow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlow" target="_top">AWS API
@@ -74,12 +103,12 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
     java.util.concurrent.Future<CreateFlowResult> createFlowAsync(CreateFlowRequest createFlowRequest);
 
     /**
-     * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 20)
+     * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
      * @param createFlowRequest
      *        Creates a new flow. The request must include one source. The request optionally can include outputs (up to
-     *        20) and entitlements (up to 50).
+     *        50) and entitlements (up to 50).
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -292,6 +321,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<RemoveFlowOutputRequest, RemoveFlowOutputResult> asyncHandler);
 
     /**
+     * Removes a source from an existing flow. This request can be made only if there is more than one source on the
+     * flow.
+     * 
+     * @param removeFlowSourceRequest
+     * @return A Java Future containing the result of the RemoveFlowSource operation returned by the service.
+     * @sample AWSMediaConnectAsync.RemoveFlowSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveFlowSourceResult> removeFlowSourceAsync(RemoveFlowSourceRequest removeFlowSourceRequest);
+
+    /**
+     * Removes a source from an existing flow. This request can be made only if there is more than one source on the
+     * flow.
+     * 
+     * @param removeFlowSourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveFlowSource operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.RemoveFlowSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveFlowSourceResult> removeFlowSourceAsync(RemoveFlowSourceRequest removeFlowSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveFlowSourceRequest, RemoveFlowSourceResult> asyncHandler);
+
+    /**
      * Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the
      * subscriber and the associated output is removed.
      * 
@@ -435,6 +493,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * Updates flow
+     * 
+     * @param updateFlowRequest
+     *        A request to update flow.
+     * @return A Java Future containing the result of the UpdateFlow operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFlowResult> updateFlowAsync(UpdateFlowRequest updateFlowRequest);
+
+    /**
+     * Updates flow
+     * 
+     * @param updateFlowRequest
+     *        A request to update flow.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFlow operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFlowResult> updateFlowAsync(UpdateFlowRequest updateFlowRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFlowRequest, UpdateFlowResult> asyncHandler);
 
     /**
      * You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the

@@ -40,14 +40,14 @@ public interface AWSMediaConnect {
     String ENDPOINT_PREFIX = "mediaconnect";
 
     /**
-     * Adds outputs to an existing flow. You can create up to 20 outputs per flow.
+     * Adds outputs to an existing flow. You can create up to 50 outputs per flow.
      * 
      * @param addFlowOutputsRequest
      *        A request to add outputs to the specified flow.
      * @return Result of the AddFlowOutputs operation returned by the service.
      * @throws AddFlowOutputs420Exception
      *         AWS Elemental MediaConnect can't complete this request because this flow already has the maximum number
-     *         of allowed outputs (20). For more information, contact AWS Customer Support.
+     *         of allowed outputs (50). For more information, contact AWS Customer Support.
      * @throws BadRequestException
      *         The request that you submitted is not valid.
      * @throws InternalServerErrorException
@@ -67,12 +67,36 @@ public interface AWSMediaConnect {
     AddFlowOutputsResult addFlowOutputs(AddFlowOutputsRequest addFlowOutputsRequest);
 
     /**
-     * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 20)
+     * Adds Sources to flow
+     * 
+     * @param addFlowSourcesRequest
+     *        A request to add sources to the flow.
+     * @return Result of the AddFlowSources operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.AddFlowSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AddFlowSourcesResult addFlowSources(AddFlowSourcesRequest addFlowSourcesRequest);
+
+    /**
+     * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
      * @param createFlowRequest
      *        Creates a new flow. The request must include one source. The request optionally can include outputs (up to
-     *        20) and entitlements (up to 50).
+     *        50) and entitlements (up to 50).
      * @return Result of the CreateFlow operation returned by the service.
      * @throws CreateFlow420Exception
      *         Your account already contains the maximum number of 20 flows per account, per Region. For more
@@ -249,6 +273,30 @@ public interface AWSMediaConnect {
     RemoveFlowOutputResult removeFlowOutput(RemoveFlowOutputRequest removeFlowOutputRequest);
 
     /**
+     * Removes a source from an existing flow. This request can be made only if there is more than one source on the
+     * flow.
+     * 
+     * @param removeFlowSourceRequest
+     * @return Result of the RemoveFlowSource operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.RemoveFlowSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RemoveFlowSourceResult removeFlowSource(RemoveFlowSourceRequest removeFlowSourceRequest);
+
+    /**
      * Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the
      * subscriber and the associated output is removed.
      * 
@@ -355,6 +403,30 @@ public interface AWSMediaConnect {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * Updates flow
+     * 
+     * @param updateFlowRequest
+     *        A request to update flow.
+     * @return Result of the UpdateFlow operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.UpdateFlow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFlowResult updateFlow(UpdateFlowRequest updateFlowRequest);
 
     /**
      * You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the

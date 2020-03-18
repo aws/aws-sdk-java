@@ -101,6 +101,12 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
     private String trainingMode;
     /**
      * <p>
+     * If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.
+     * </p>
+     */
+    private TunedHPOParams tunedHPOParams;
+    /**
+     * <p>
      * The status of the solution version.
      * </p>
      * <p>
@@ -680,6 +686,49 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.
+     * </p>
+     * 
+     * @param tunedHPOParams
+     *        If hyperparameter optimization was performed, contains the hyperparameter values of the best performing
+     *        model.
+     */
+
+    public void setTunedHPOParams(TunedHPOParams tunedHPOParams) {
+        this.tunedHPOParams = tunedHPOParams;
+    }
+
+    /**
+     * <p>
+     * If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.
+     * </p>
+     * 
+     * @return If hyperparameter optimization was performed, contains the hyperparameter values of the best performing
+     *         model.
+     */
+
+    public TunedHPOParams getTunedHPOParams() {
+        return this.tunedHPOParams;
+    }
+
+    /**
+     * <p>
+     * If hyperparameter optimization was performed, contains the hyperparameter values of the best performing model.
+     * </p>
+     * 
+     * @param tunedHPOParams
+     *        If hyperparameter optimization was performed, contains the hyperparameter values of the best performing
+     *        model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SolutionVersion withTunedHPOParams(TunedHPOParams tunedHPOParams) {
+        setTunedHPOParams(tunedHPOParams);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the solution version.
      * </p>
      * <p>
@@ -1017,6 +1066,8 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
             sb.append("TrainingHours: ").append(getTrainingHours()).append(",");
         if (getTrainingMode() != null)
             sb.append("TrainingMode: ").append(getTrainingMode()).append(",");
+        if (getTunedHPOParams() != null)
+            sb.append("TunedHPOParams: ").append(getTunedHPOParams()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFailureReason() != null)
@@ -1079,6 +1130,10 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTrainingMode() != null && other.getTrainingMode().equals(this.getTrainingMode()) == false)
             return false;
+        if (other.getTunedHPOParams() == null ^ this.getTunedHPOParams() == null)
+            return false;
+        if (other.getTunedHPOParams() != null && other.getTunedHPOParams().equals(this.getTunedHPOParams()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -1113,6 +1168,7 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSolutionConfig() == null) ? 0 : getSolutionConfig().hashCode());
         hashCode = prime * hashCode + ((getTrainingHours() == null) ? 0 : getTrainingHours().hashCode());
         hashCode = prime * hashCode + ((getTrainingMode() == null) ? 0 : getTrainingMode().hashCode());
+        hashCode = prime * hashCode + ((getTunedHPOParams() == null) ? 0 : getTunedHPOParams().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());

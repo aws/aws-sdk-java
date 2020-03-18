@@ -44,6 +44,10 @@ public class FlowMarshaller {
             .marshallLocationName("outputs").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCEFAILOVERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFailoverConfig").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
 
@@ -71,6 +75,8 @@ public class FlowMarshaller {
             protocolMarshaller.marshall(flow.getName(), NAME_BINDING);
             protocolMarshaller.marshall(flow.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(flow.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(flow.getSourceFailoverConfig(), SOURCEFAILOVERCONFIG_BINDING);
+            protocolMarshaller.marshall(flow.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(flow.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
