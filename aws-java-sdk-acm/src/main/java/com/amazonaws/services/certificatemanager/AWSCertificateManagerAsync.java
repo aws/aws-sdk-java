@@ -226,10 +226,10 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
-     * Retrieves a certificate specified by an ARN and its certificate chain . The chain is an ordered list of
-     * certificates that contains the end entity certificate, intermediate certificates of subordinate CAs, and the root
-     * certificate in that order. The certificate and certificate chain are base64 encoded. If you want to decode the
-     * certificate to see the individual fields, you can use OpenSSL.
+     * Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of the certificate of the
+     * issuing CA and the intermediate certificates of any other subordinate CAs. All of the certificates are base64
+     * encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
+     * the certificates and inspect individual fields.
      * </p>
      * 
      * @param getCertificateRequest
@@ -242,10 +242,10 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
-     * Retrieves a certificate specified by an ARN and its certificate chain . The chain is an ordered list of
-     * certificates that contains the end entity certificate, intermediate certificates of subordinate CAs, and the root
-     * certificate in that order. The certificate and certificate chain are base64 encoded. If you want to decode the
-     * certificate to see the individual fields, you can use OpenSSL.
+     * Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of the certificate of the
+     * issuing CA and the intermediate certificates of any other subordinate CAs. All of the certificates are base64
+     * encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
+     * the certificates and inspect individual fields.
      * </p>
      * 
      * @param getCertificateRequest

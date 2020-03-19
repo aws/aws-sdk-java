@@ -25,24 +25,25 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM certificate represented by the ARN specified at input.
+     * The ACM-issued certificate corresponding to the ARN specified as input.
      * </p>
      */
     private String certificate;
     /**
      * <p>
-     * The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     * Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the
+     * issuing CA and the intermediate certificates of any other subordinate CAs.
      * </p>
      */
     private String certificateChain;
 
     /**
      * <p>
-     * String that contains the ACM certificate represented by the ARN specified at input.
+     * The ACM-issued certificate corresponding to the ARN specified as input.
      * </p>
      * 
      * @param certificate
-     *        String that contains the ACM certificate represented by the ARN specified at input.
+     *        The ACM-issued certificate corresponding to the ARN specified as input.
      */
 
     public void setCertificate(String certificate) {
@@ -51,10 +52,10 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM certificate represented by the ARN specified at input.
+     * The ACM-issued certificate corresponding to the ARN specified as input.
      * </p>
      * 
-     * @return String that contains the ACM certificate represented by the ARN specified at input.
+     * @return The ACM-issued certificate corresponding to the ARN specified as input.
      */
 
     public String getCertificate() {
@@ -63,11 +64,11 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * String that contains the ACM certificate represented by the ARN specified at input.
+     * The ACM-issued certificate corresponding to the ARN specified as input.
      * </p>
      * 
      * @param certificate
-     *        String that contains the ACM certificate represented by the ARN specified at input.
+     *        The ACM-issued certificate corresponding to the ARN specified as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +79,13 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     * Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the
+     * issuing CA and the intermediate certificates of any other subordinate CAs.
      * </p>
      * 
      * @param certificateChain
-     *        The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     *        Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of
+     *        the issuing CA and the intermediate certificates of any other subordinate CAs.
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -91,10 +94,12 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     * Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the
+     * issuing CA and the intermediate certificates of any other subordinate CAs.
      * </p>
      * 
-     * @return The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     * @return Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of
+     *         the issuing CA and the intermediate certificates of any other subordinate CAs.
      */
 
     public String getCertificateChain() {
@@ -103,11 +108,13 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     * Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the
+     * issuing CA and the intermediate certificates of any other subordinate CAs.
      * </p>
      * 
      * @param certificateChain
-     *        The certificate chain that contains the root certificate issued by the certificate authority (CA).
+     *        Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of
+     *        the issuing CA and the intermediate certificates of any other subordinate CAs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
