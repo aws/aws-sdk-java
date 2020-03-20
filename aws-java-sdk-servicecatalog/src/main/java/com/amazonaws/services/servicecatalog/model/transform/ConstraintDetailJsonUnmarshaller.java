@@ -64,6 +64,14 @@ public class ConstraintDetailJsonUnmarshaller implements Unmarshaller<Constraint
                     context.nextToken();
                     constraintDetail.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProductId", targetDepth)) {
+                    context.nextToken();
+                    constraintDetail.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PortfolioId", targetDepth)) {
+                    context.nextToken();
+                    constraintDetail.setPortfolioId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

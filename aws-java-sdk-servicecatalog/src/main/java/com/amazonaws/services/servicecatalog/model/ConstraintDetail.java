@@ -74,6 +74,20 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String owner;
+    /**
+     * <p>
+     * The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of
+     * a product within a certain portfolio.
+     * </p>
+     */
+    private String productId;
+    /**
+     * <p>
+     * The identifier of the portfolio the product resides in. The constraint applies only to the instance of the
+     * product that lives within this portfolio.
+     * </p>
+     */
+    private String portfolioId;
 
     /**
      * <p>
@@ -365,6 +379,98 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of
+     * a product within a certain portfolio.
+     * </p>
+     * 
+     * @param productId
+     *        The identifier of the product the constraint applies to. Note that a constraint applies to a specific
+     *        instance of a product within a certain portfolio.
+     */
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of
+     * a product within a certain portfolio.
+     * </p>
+     * 
+     * @return The identifier of the product the constraint applies to. Note that a constraint applies to a specific
+     *         instance of a product within a certain portfolio.
+     */
+
+    public String getProductId() {
+        return this.productId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the product the constraint applies to. Note that a constraint applies to a specific instance of
+     * a product within a certain portfolio.
+     * </p>
+     * 
+     * @param productId
+     *        The identifier of the product the constraint applies to. Note that a constraint applies to a specific
+     *        instance of a product within a certain portfolio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConstraintDetail withProductId(String productId) {
+        setProductId(productId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the portfolio the product resides in. The constraint applies only to the instance of the
+     * product that lives within this portfolio.
+     * </p>
+     * 
+     * @param portfolioId
+     *        The identifier of the portfolio the product resides in. The constraint applies only to the instance of the
+     *        product that lives within this portfolio.
+     */
+
+    public void setPortfolioId(String portfolioId) {
+        this.portfolioId = portfolioId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the portfolio the product resides in. The constraint applies only to the instance of the
+     * product that lives within this portfolio.
+     * </p>
+     * 
+     * @return The identifier of the portfolio the product resides in. The constraint applies only to the instance of
+     *         the product that lives within this portfolio.
+     */
+
+    public String getPortfolioId() {
+        return this.portfolioId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the portfolio the product resides in. The constraint applies only to the instance of the
+     * product that lives within this portfolio.
+     * </p>
+     * 
+     * @param portfolioId
+     *        The identifier of the portfolio the product resides in. The constraint applies only to the instance of the
+     *        product that lives within this portfolio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConstraintDetail withPortfolioId(String portfolioId) {
+        setPortfolioId(portfolioId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -383,7 +489,11 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: ").append(getOwner());
+            sb.append("Owner: ").append(getOwner()).append(",");
+        if (getProductId() != null)
+            sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getPortfolioId() != null)
+            sb.append("PortfolioId: ").append(getPortfolioId());
         sb.append("}");
         return sb.toString();
     }
@@ -414,6 +524,14 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
             return false;
+        if (other.getProductId() == null ^ this.getProductId() == null)
+            return false;
+        if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
+            return false;
+        if (other.getPortfolioId() == null ^ this.getPortfolioId() == null)
+            return false;
+        if (other.getPortfolioId() != null && other.getPortfolioId().equals(this.getPortfolioId()) == false)
+            return false;
         return true;
     }
 
@@ -426,6 +544,8 @@ public class ConstraintDetail implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
         return hashCode;
     }
 

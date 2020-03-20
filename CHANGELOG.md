@@ -1,3 +1,8 @@
+# __1.11.749__ __2020-03-20__
+## __AWS Service Catalog__
+  - ### Features
+    - Added "productId" and "portfolioId" to responses from CreateConstraint, UpdateConstraint, ListConstraintsForPortfolio, and DescribeConstraint APIs
+
 # __1.11.748__ __2020-03-19__
 ## __AWS Certificate Manager__
   - ### Features
