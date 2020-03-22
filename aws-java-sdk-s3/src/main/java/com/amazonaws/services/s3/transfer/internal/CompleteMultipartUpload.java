@@ -115,7 +115,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
      */
     private List<PartETag> collectPartETags() {
 
-        final List<PartETag> partETags = new ArrayList<PartETag>(eTagsBeforeResume.size());
+        final List<PartETag> partETags = new ArrayList<PartETag>(eTagsBeforeResume.size() +  futures.size());
         partETags.addAll(eTagsBeforeResume);
 
         int index = 0;
