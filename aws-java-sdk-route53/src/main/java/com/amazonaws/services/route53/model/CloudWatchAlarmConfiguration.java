@@ -62,7 +62,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The namespace of the metric that the alarm is associated with. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      */
@@ -77,7 +77,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * <p>
      * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the
      * dimensions for the metric. For information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      */
@@ -338,13 +338,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The namespace of the metric that the alarm is associated with. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param namespace
      *        The namespace of the metric that the alarm is associated with. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *        CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
@@ -355,12 +355,12 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The namespace of the metric that the alarm is associated with. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @return The namespace of the metric that the alarm is associated with. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *         CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
@@ -371,13 +371,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The namespace of the metric that the alarm is associated with. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param namespace
      *        The namespace of the metric that the alarm is associated with. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *        CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -464,13 +464,13 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * <p>
      * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the
      * dimensions for the metric. For information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @return For the metric that the CloudWatch alarm is associated with, a complex type that contains information
      *         about the dimensions for the metric. For information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *         CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
@@ -485,14 +485,14 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * <p>
      * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the
      * dimensions for the metric. For information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param dimensions
      *        For the metric that the CloudWatch alarm is associated with, a complex type that contains information
      *        about the dimensions for the metric. For information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *        CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
@@ -509,7 +509,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * <p>
      * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the
      * dimensions for the metric. For information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * <p>
@@ -521,7 +521,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @param dimensions
      *        For the metric that the CloudWatch alarm is associated with, a complex type that contains information
      *        about the dimensions for the metric. For information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *        CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -540,14 +540,14 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * <p>
      * For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the
      * dimensions for the metric. For information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param dimensions
      *        For the metric that the CloudWatch alarm is associated with, a complex type that contains information
      *        about the dimensions for the metric. For information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
      *        CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

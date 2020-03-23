@@ -36,7 +36,9 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
     private String hostedZoneId;
     /**
      * <p>
-     * The first name in the lexicographic ordering of resource record sets that you want to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list. If the specified
+     * record name doesn't exist, the results begin with the first resource record set that has a name greater than the
+     * value of <code>name</code>.
      * </p>
      */
     private String startRecordName;
@@ -80,12 +82,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>Amazon S3 bucket</b>: A
+     * <b>S3 bucket</b>: A
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A
+     * <b>VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -180,11 +182,15 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of resource record sets that you want to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list. If the specified
+     * record name doesn't exist, the results begin with the first resource record set that has a name greater than the
+     * value of <code>name</code>.
      * </p>
      * 
      * @param startRecordName
-     *        The first name in the lexicographic ordering of resource record sets that you want to list.
+     *        The first name in the lexicographic ordering of resource record sets that you want to list. If the
+     *        specified record name doesn't exist, the results begin with the first resource record set that has a name
+     *        greater than the value of <code>name</code>.
      */
 
     public void setStartRecordName(String startRecordName) {
@@ -193,10 +199,14 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of resource record sets that you want to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list. If the specified
+     * record name doesn't exist, the results begin with the first resource record set that has a name greater than the
+     * value of <code>name</code>.
      * </p>
      * 
-     * @return The first name in the lexicographic ordering of resource record sets that you want to list.
+     * @return The first name in the lexicographic ordering of resource record sets that you want to list. If the
+     *         specified record name doesn't exist, the results begin with the first resource record set that has a name
+     *         greater than the value of <code>name</code>.
      */
 
     public String getStartRecordName() {
@@ -205,11 +215,15 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The first name in the lexicographic ordering of resource record sets that you want to list.
+     * The first name in the lexicographic ordering of resource record sets that you want to list. If the specified
+     * record name doesn't exist, the results begin with the first resource record set that has a name greater than the
+     * value of <code>name</code>.
      * </p>
      * 
      * @param startRecordName
-     *        The first name in the lexicographic ordering of resource record sets that you want to list.
+     *        The first name in the lexicographic ordering of resource record sets that you want to list. If the
+     *        specified record name doesn't exist, the results begin with the first resource record set that has a name
+     *        greater than the value of <code>name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,12 +272,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>Amazon S3 bucket</b>: A
+     * <b>S3 bucket</b>: A
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A
+     * <b>VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -316,12 +330,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon S3 bucket</b>: A
+     *        <b>S3 bucket</b>: A
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon VPC interface VPC endpoint</b>: A
+     *        <b>VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>
@@ -381,12 +395,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>Amazon S3 bucket</b>: A
+     * <b>S3 bucket</b>: A
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A
+     * <b>VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -438,12 +452,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon S3 bucket</b>: A
+     *         <b>S3 bucket</b>: A
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon VPC interface VPC endpoint</b>: A
+     *         <b>VPC interface VPC endpoint</b>: A
      *         </p>
      *         </li>
      *         <li>
@@ -503,12 +517,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>Amazon S3 bucket</b>: A
+     * <b>S3 bucket</b>: A
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A
+     * <b>VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -561,12 +575,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon S3 bucket</b>: A
+     *        <b>S3 bucket</b>: A
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon VPC interface VPC endpoint</b>: A
+     *        <b>VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>
@@ -628,12 +642,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>Amazon S3 bucket</b>: A
+     * <b>S3 bucket</b>: A
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A
+     * <b>VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -686,12 +700,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon S3 bucket</b>: A
+     *        <b>S3 bucket</b>: A
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon VPC interface VPC endpoint</b>: A
+     *        <b>VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>
@@ -751,12 +765,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>Amazon S3 bucket</b>: A
+     * <b>S3 bucket</b>: A
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A
+     * <b>VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -809,12 +823,12 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon S3 bucket</b>: A
+     *        <b>S3 bucket</b>: A
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon VPC interface VPC endpoint</b>: A
+     *        <b>VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>

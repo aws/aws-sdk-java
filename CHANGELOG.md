@@ -1,3 +1,21 @@
+# __1.11.750__ __2020-03-23__
+## __AWS S3 Transfer Manager__
+  - ### Bugfixes
+    - Fix an issue in multipart download where the SDK did not report failed status for individual part download failure. See [#2263](https://github.com/aws/aws-sdk-java/issues/2263).
+    - Fix an issue in mutlipart upload where the remaining part futures were not cancelled when multipart upload failed. See [#2267](https://github.com/aws/aws-sdk-java/issues/2267)
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Adding new error code IamLimitExceeded for Nodegroups in EKS
+
+## __Amazon Route 53__
+  - ### Features
+    - Documentation updates for Route 53.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Documentation updates to reflect that the default timeout for integrations is now 30 seconds for HTTP APIs.
+
 # __1.11.749__ __2020-03-20__
 ## __AWS Service Catalog__
   - ### Features

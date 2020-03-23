@@ -477,7 +477,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * If you have managed node groups or Fargate profiles attached to the cluster, you must delete them first. For more
-     * information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
+     * information, see <a>DeleteNodegroup</a> and <a>DeleteFargateProfile</a>.
      * </p>
      * 
      * @param deleteClusterRequest

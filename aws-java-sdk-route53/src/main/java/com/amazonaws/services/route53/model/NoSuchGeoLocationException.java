@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Route 53 doesn't support the specified geographic location.
+ * Amazon Route 53 doesn't support the specified geographic location. For a list of supported geolocation codes, see the
+ * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

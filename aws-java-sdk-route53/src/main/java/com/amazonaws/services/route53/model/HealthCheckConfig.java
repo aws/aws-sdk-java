@@ -92,9 +92,14 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private String iPAddress;
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      */
     private Integer port;
     /**
@@ -263,7 +268,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     private String fullyQualifiedDomainName;
     /**
      * <p>
-     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you want
+     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want
      * Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the
      * response body, Route 53 considers the resource healthy.
      * </p>
@@ -291,7 +296,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -851,13 +856,21 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      * 
      * @param port
-     *        The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     *        <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     *        The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
+     *        <p>
+     *        Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     *        <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     *        </p>
      */
 
     public void setPort(Integer port) {
@@ -866,12 +879,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      * 
-     * @return The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     *         <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     * @return The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
+     *         <p>
+     *         Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     *         <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     *         </p>
      */
 
     public Integer getPort() {
@@ -880,13 +901,21 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     * <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      * 
      * @param port
-     *        The port on the endpoint on which you want Amazon Route 53 to perform health checks. Specify a value for
-     *        <code>Port</code> only when you specify a value for <code>IPAddress</code>.
+     *        The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
+     *        <p>
+     *        Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     *        <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2195,7 +2224,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you want
+     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want
      * Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the
      * response body, Route 53 considers the resource healthy.
      * </p>
@@ -2204,7 +2233,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param searchString
-     *        If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you
+     *        If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you
      *        want Amazon Route 53 to search for in the response body from the specified resource. If the string appears
      *        in the response body, Route 53 considers the resource healthy.</p>
      *        <p>
@@ -2217,7 +2246,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you want
+     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want
      * Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the
      * response body, Route 53 considers the resource healthy.
      * </p>
@@ -2225,7 +2254,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * Route 53 considers case when searching for <code>SearchString</code> in the response body.
      * </p>
      * 
-     * @return If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you
+     * @return If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you
      *         want Amazon Route 53 to search for in the response body from the specified resource. If the string
      *         appears in the response body, Route 53 considers the resource healthy.</p>
      *         <p>
@@ -2238,7 +2267,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you want
+     * If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want
      * Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the
      * response body, Route 53 considers the resource healthy.
      * </p>
@@ -2247,7 +2276,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param searchString
-     *        If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that you
+     *        If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you
      *        want Amazon Route 53 to search for in the response body from the specified resource. If the string appears
      *        in the response body, Route 53 considers the resource healthy.</p>
      *        <p>
@@ -2358,7 +2387,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -2369,7 +2398,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *        the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *        Guide</i>.</p>
      *        <p>
@@ -2384,7 +2413,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -2394,7 +2423,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *         the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.</p>
      *         <p>
@@ -2409,7 +2438,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -2420,7 +2449,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *        the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *        Guide</i>.</p>
      *        <p>

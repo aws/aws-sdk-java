@@ -191,8 +191,8 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     private String templateSelectionExpression;
     /**
      * <p>
-     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for
-     * WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     * Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for
+     * HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
      * </p>
      */
     private Integer timeoutInMillis;
@@ -1540,13 +1540,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for
-     * WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     * Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for
+     * HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
      * </p>
      * 
      * @param timeoutInMillis
-     *        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds
-     *        for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     *        Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000
+     *        milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP
+     *        APIs.
      */
 
     public void setTimeoutInMillis(Integer timeoutInMillis) {
@@ -1555,12 +1556,13 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for
-     * WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     * Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for
+     * HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
      * </p>
      * 
-     * @return Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds
-     *         for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     * @return Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000
+     *         milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP
+     *         APIs.
      */
 
     public Integer getTimeoutInMillis() {
@@ -1569,13 +1571,14 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for
-     * WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     * Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for
+     * HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
      * </p>
      * 
      * @param timeoutInMillis
-     *        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds
-     *        for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+     *        Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000
+     *        milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP
+     *        APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

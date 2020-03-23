@@ -81,10 +81,11 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     private RemoteAccessConfig remoteAccess;
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these
+     * API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and
+     * register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
      * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -576,20 +577,21 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these
+     * API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and
+     * register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
      * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param nodeRole
-     *        The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes
-     *        calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM
-     *        instance profile and associated policies. Before you can launch worker nodes and register them into a
-     *        cluster, you must create an IAM role for those worker nodes to use when they are launched. For more
-     *        information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
+     *        node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions
+     *        for these API calls through an IAM instance profile and associated policies. Before you can launch worker
+     *        nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when
+     *        they are launched. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node
      *        IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -600,19 +602,20 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these
+     * API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and
+     * register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
      * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
-     * @return The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon
-     *         makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an
-     *         IAM instance profile and associated policies. Before you can launch worker nodes and register them into a
-     *         cluster, you must create an IAM role for those worker nodes to use when they are launched. For more
-     *         information, see <a
+     * @return The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
+     *         node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions
+     *         for these API calls through an IAM instance profile and associated policies. Before you can launch worker
+     *         nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when
+     *         they are launched. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node
      *         IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -623,20 +626,21 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these
+     * API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and
+     * register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
      * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param nodeRole
-     *        The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes
-     *        calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM
-     *        instance profile and associated policies. Before you can launch worker nodes and register them into a
-     *        cluster, you must create an IAM role for those worker nodes to use when they are launched. For more
-     *        information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
+     *        node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions
+     *        for these API calls through an IAM instance profile and associated policies. Before you can launch worker
+     *        nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when
+     *        they are launched. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node
      *        IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.

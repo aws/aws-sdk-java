@@ -28,6 +28,7 @@ public enum NodegroupIssueCode {
     Ec2LaunchTemplateVersionMismatch("Ec2LaunchTemplateVersionMismatch"),
     Ec2SubnetNotFound("Ec2SubnetNotFound"),
     IamInstanceProfileNotFound("IamInstanceProfileNotFound"),
+    IamLimitExceeded("IamLimitExceeded"),
     IamNodeRoleNotFound("IamNodeRoleNotFound"),
     AsgInstanceLaunchFailures("AsgInstanceLaunchFailures"),
     InstanceLimitExceeded("InstanceLimitExceeded"),

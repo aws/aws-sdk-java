@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.transfer.Transfer;
@@ -48,10 +49,20 @@ public class CompleteMultipartDownload implements Callable<File> {
             }
 
             download.setState(Transfer.TransferState.Completed);
+        } catch (Exception exception) {
+            cleanUpAfterException();
+            throw new SdkClientException("Unable to complete multipart download. Individual part download failed.", exception);
         } finally {
             FileLocks.unlock(destinationFile);
         }
 
         return destinationFile;
+    }
+
+    private void cleanUpAfterException()  {
+        for (Future<Long> file : partFiles) {
+            file.cancel(false);
+        }
+        download.setState(Transfer.TransferState.Failed);
     }
 }

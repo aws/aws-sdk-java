@@ -43,7 +43,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
      * (hyphen) and how to specify internationalized domain names, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -83,7 +83,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * The DNS record type. For information about different record types and how data is encoded for them, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -132,7 +132,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     * <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -221,8 +221,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options
+     * for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -236,7 +237,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -283,7 +285,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
+     * it's not supported.
      * </p>
      * </note>
      * <p>
@@ -305,10 +308,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
      * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
      * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
-     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
-     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
-     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
-     * "no answer" response for queries from those locations.
+     * set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the
+     * resource that you specify in this record: queries that come from locations for which you haven't created
+     * geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     * locations.
      * </p>
      * </important>
      * <p>
@@ -371,13 +375,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -502,7 +506,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
@@ -556,13 +560,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -737,7 +741,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
      *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -774,7 +778,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>prod*.example.com</code>.
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -825,7 +829,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *        <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -882,7 +886,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
      *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -919,7 +923,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>prod*.example.com</code>.
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -970,7 +974,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *        <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1024,7 +1028,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
      * (hyphen) and how to specify internationalized domain names, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1076,7 +1080,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
      *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -1134,7 +1138,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
      * (hyphen) and how to specify internationalized domain names, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1185,7 +1189,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <p>
      *         For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
      *         <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
      *         Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>
      *         <p>
@@ -1243,7 +1247,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code>
      * (hyphen) and how to specify internationalized domain names, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
      * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1295,7 +1299,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and
      *        <code>-</code> (hyphen) and how to specify internationalized domain names, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
      *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -1341,7 +1345,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * The DNS record type. For information about different record types and how data is encoded for them, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1390,7 +1394,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     * <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1425,7 +1429,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * 
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
@@ -1475,7 +1479,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *        <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1516,7 +1520,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * The DNS record type. For information about different record types and how data is encoded for them, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1565,7 +1569,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     * <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1599,8 +1603,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @return The DNS record type. For information about different record types and how data is encoded for them, see
-     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
-     *         Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+     *         <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported
+     *         DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *         <p>
      *         Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
      *         <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
@@ -1649,7 +1653,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *         <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1690,7 +1694,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * The DNS record type. For information about different record types and how data is encoded for them, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1739,7 +1743,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     * <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1774,7 +1778,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * 
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
@@ -1824,7 +1828,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *        <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1867,7 +1871,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * The DNS record type. For information about different record types and how data is encoded for them, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1916,7 +1920,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     * <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1951,7 +1955,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * 
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
@@ -2001,7 +2005,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *        <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2042,7 +2046,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     /**
      * <p>
      * The DNS record type. For information about different record types and how data is encoded for them, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource
      * Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -2091,7 +2095,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     * <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -2126,7 +2130,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * 
      * @param type
      *        The DNS record type. For information about different record types and how data is encoded for them, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS
      *        Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> |
@@ -2176,7 +2180,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AWS Elastic Beanstalk environment that has a regionalized subdomain</b>: <code>A</code>
+     *        <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2345,8 +2349,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options
+     * for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2391,7 +2396,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks
      *        with weighted resource record sets. For more information, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
      *        >Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53
      *        Developer Guide</i>.
      *        </p>
@@ -2443,8 +2448,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options
+     * for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2488,7 +2494,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <p>
      *         The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks
      *         with weighted resource record sets. For more information, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
      *         >Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53
      *         Developer Guide</i>.
      *         </p>
@@ -2540,8 +2546,9 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <p>
      * The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with
      * weighted resource record sets. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for
-     * Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options
+     * for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2586,7 +2593,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <p>
      *        The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks
      *        with weighted resource record sets. For more information, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html"
      *        >Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53
      *        Developer Guide</i>.
      *        </p>
@@ -2607,7 +2614,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -2650,7 +2658,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
-     *        Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
+     *        not supported.
      *        </p>
      *        </note>
      *        <p>
@@ -2701,7 +2710,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -2743,7 +2753,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *         type.</p> <note>
      *         <p>
-     *         Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     *         Although creating latency and latency alias resource record sets in a private hosted zone is allowed,
+     *         it's not supported.
      *         </p>
      *         </note>
      *         <p>
@@ -2794,7 +2805,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -2837,7 +2849,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
-     *        Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
+     *        not supported.
      *        </p>
      *        </note>
      *        <p>
@@ -2890,7 +2903,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -2933,7 +2947,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
-     *        Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
+     *        not supported.
      *        </p>
      *        </note>
      *        <p>
@@ -2984,7 +2999,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -3027,7 +3043,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record
      *        type.</p> <note>
      *        <p>
-     *        Creating latency and latency alias resource record sets in private hosted zones is not supported.
+     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
+     *        not supported.
      *        </p>
      *        </note>
      *        <p>
@@ -3081,7 +3098,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
+     * it's not supported.
      * </p>
      * </note>
      * <p>
@@ -3103,10 +3121,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
      * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
      * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
-     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
-     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
-     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
-     * "no answer" response for queries from those locations.
+     * set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the
+     * resource that you specify in this record: queries that come from locations for which you haven't created
+     * geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     * locations.
      * </p>
      * </important>
      * <p>
@@ -3121,7 +3140,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>
      *        .</p> <note>
      *        <p>
-     *        Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     *        Although creating geolocation and geolocation alias resource record sets in a private hosted zone is
+     *        allowed, it's not supported.
      *        </p>
      *        </note>
      *        <p>
@@ -3143,11 +3163,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to
      *        geographic locations, so even if you create geolocation resource record sets that cover all seven
      *        continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend
-     *        that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>,
-     *        which handles both queries that come from locations for which you haven't created geolocation resource
-     *        record sets and queries from IP addresses that aren't mapped to a location. If you don't create a
-     *        <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
-     *        locations.
+     *        that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>.
+     *        Two groups of queries are routed to the resource that you specify in this record: queries that come from
+     *        locations for which you haven't created geolocation resource record sets and queries from IP addresses
+     *        that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53
+     *        returns a "no answer" response for queries from those locations.
      *        </p>
      *        </important>
      *        <p>
@@ -3168,7 +3188,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
+     * it's not supported.
      * </p>
      * </note>
      * <p>
@@ -3190,10 +3211,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
      * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
      * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
-     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
-     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
-     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
-     * "no answer" response for queries from those locations.
+     * set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the
+     * resource that you specify in this record: queries that come from locations for which you haven't created
+     * geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     * locations.
      * </p>
      * </important>
      * <p>
@@ -3207,7 +3229,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of
      *         <code>AF</code>.</p> <note>
      *         <p>
-     *         Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     *         Although creating geolocation and geolocation alias resource record sets in a private hosted zone is
+     *         allowed, it's not supported.
      *         </p>
      *         </note>
      *         <p>
@@ -3229,11 +3252,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to
      *         geographic locations, so even if you create geolocation resource record sets that cover all seven
      *         continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend
-     *         that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>,
-     *         which handles both queries that come from locations for which you haven't created geolocation resource
-     *         record sets and queries from IP addresses that aren't mapped to a location. If you don't create a
-     *         <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
-     *         locations.
+     *         that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>.
+     *         Two groups of queries are routed to the resource that you specify in this record: queries that come from
+     *         locations for which you haven't created geolocation resource record sets and queries from IP addresses
+     *         that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53
+     *         returns a "no answer" response for queries from those locations.
      *         </p>
      *         </important>
      *         <p>
@@ -3254,7 +3277,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     * Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed,
+     * it's not supported.
      * </p>
      * </note>
      * <p>
@@ -3276,10 +3300,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic
      * locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will
      * receive some DNS queries from locations that it can't identify. We recommend that you create a resource record
-     * set for which the value of <code>CountryCode</code> is <code>*</code>, which handles both queries that come from
-     * locations for which you haven't created geolocation resource record sets and queries from IP addresses that
-     * aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a
-     * "no answer" response for queries from those locations.
+     * set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the
+     * resource that you specify in this record: queries that come from locations for which you haven't created
+     * geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't
+     * create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
+     * locations.
      * </p>
      * </important>
      * <p>
@@ -3294,7 +3319,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>
      *        .</p> <note>
      *        <p>
-     *        Creating geolocation and geolocation alias resource record sets in private hosted zones is not supported.
+     *        Although creating geolocation and geolocation alias resource record sets in a private hosted zone is
+     *        allowed, it's not supported.
      *        </p>
      *        </note>
      *        <p>
@@ -3316,11 +3342,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to
      *        geographic locations, so even if you create geolocation resource record sets that cover all seven
      *        continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend
-     *        that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>,
-     *        which handles both queries that come from locations for which you haven't created geolocation resource
-     *        record sets and queries from IP addresses that aren't mapped to a location. If you don't create a
-     *        <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those
-     *        locations.
+     *        that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>.
+     *        Two groups of queries are routed to the resource that you specify in this record: queries that come from
+     *        locations for which you haven't created geolocation resource record sets and queries from IP addresses
+     *        that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53
+     *        returns a "no answer" response for queries from those locations.
      *        </p>
      *        </important>
      *        <p>
@@ -3388,13 +3414,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -3453,13 +3479,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
@@ -3524,13 +3551,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -3588,15 +3615,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *         <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *         Checks and DNS Failover</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
-     *         Configuring Failover in a Private Hosted Zone</a>
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     *         >Configuring Failover in a Private Hosted Zone</a>
      *         </p>
      *         </li>
      * @see ResourceRecordSetFailover
@@ -3660,13 +3687,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -3725,13 +3752,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
@@ -3798,13 +3826,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -3863,13 +3891,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
@@ -3934,13 +3963,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -3999,13 +4028,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
@@ -4745,7 +4775,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
@@ -4773,7 +4803,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For information about creating failover resource record sets in a private hosted zone, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      *        >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        </li>
@@ -4807,7 +4837,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
@@ -4834,7 +4864,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         For information about creating failover resource record sets in a private hosted zone, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      *         >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>
      *         </li>
@@ -4868,7 +4898,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * For information about creating failover resource record sets in a private hosted zone, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      * >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
@@ -4896,7 +4926,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        For information about creating failover resource record sets in a private hosted zone, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
      *        >Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        </li>
@@ -4955,13 +4985,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -5136,13 +5166,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>
@@ -5324,13 +5355,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -5504,15 +5535,15 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *         <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *         Checks and DNS Failover</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
-     *         Configuring Failover in a Private Hosted Zone</a>
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html"
+     *         >Configuring Failover in a Private Hosted Zone</a>
      *         </p>
      *         </li>
      *         </ul>
@@ -5694,13 +5725,13 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and
      * DNS Failover</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     * <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      * Configuring Failover in a Private Hosted Zone</a>
      * </p>
      * </li>
@@ -5875,13 +5906,14 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
+     *        <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health
      *        Checks and DNS Failover</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">
      *        Configuring Failover in a Private Hosted Zone</a>
      *        </p>
      *        </li>

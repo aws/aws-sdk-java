@@ -144,8 +144,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     private String iPAddress;
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      */
     private Integer port;
     /**
@@ -249,7 +255,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     private String fullyQualifiedDomainName;
     /**
      * <p>
-     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that
+     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that
      * you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in
      * the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when
      * you update a health check.)
@@ -260,7 +266,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1150,11 +1156,21 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      * 
      * @param port
-     *        The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     *        The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
+     *        <p>
+     *        Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     *        <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     *        </p>
      */
 
     public void setPort(Integer port) {
@@ -1163,10 +1179,20 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      * 
-     * @return The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     * @return The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
+     *         <p>
+     *         Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     *         <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     *         </p>
      */
 
     public Integer getPort() {
@@ -1175,11 +1201,21 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     * The port on the endpoint that you want Amazon Route 53 to perform health checks on.
      * </p>
+     * <note>
+     * <p>
+     * Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     * <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     * </p>
+     * </note>
      * 
      * @param port
-     *        The port on the endpoint on which you want Amazon Route 53 to perform health checks.
+     *        The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
+     *        <p>
+     *        Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of
+     *        <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1789,14 +1825,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that
+     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that
      * you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in
      * the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when
      * you update a health check.)
      * </p>
      * 
      * @param searchString
-     *        If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the
+     *        If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the
      *        string that you want Amazon Route 53 to search for in the response body from the specified resource. If
      *        the string appears in the response body, Route 53 considers the resource healthy. (You can't change the
      *        value of <code>Type</code> when you update a health check.)
@@ -1808,13 +1844,13 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that
+     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that
      * you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in
      * the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when
      * you update a health check.)
      * </p>
      * 
-     * @return If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the
+     * @return If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the
      *         string that you want Amazon Route 53 to search for in the response body from the specified resource. If
      *         the string appears in the response body, Route 53 considers the resource healthy. (You can't change the
      *         value of <code>Type</code> when you update a health check.)
@@ -1826,14 +1862,14 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the string that
+     * If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that
      * you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in
      * the response body, Route 53 considers the resource healthy. (You can't change the value of <code>Type</code> when
      * you update a health check.)
      * </p>
      * 
      * @param searchString
-     *        If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTP_STR_MATCH</code>, the
+     *        If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the
      *        string that you want Amazon Route 53 to search for in the response body from the specified resource. If
      *        the string appears in the response body, Route 53 considers the resource healthy. (You can't change the
      *        value of <code>Type</code> when you update a health check.)
@@ -1849,7 +1885,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1860,7 +1896,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *        the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *        Guide</i>.</p>
      *        <p>
@@ -1875,7 +1911,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1885,7 +1921,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *         the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.</p>
      *         <p>
@@ -1900,7 +1936,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the
      * current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -1911,7 +1947,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change
      *        the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer
      *        Guide</i>.</p>
      *        <p>

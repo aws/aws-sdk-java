@@ -93,6 +93,9 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
         } catch (Exception e) {
             monitor.uploadFailure();
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
+            for (Future<PartETag> future : futures) {
+                future.cancel(false);
+            }
             throw e;
         }
 
@@ -122,8 +125,9 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
                 partETags.add(future.get());
             } catch (Exception e) {
                 throw new SdkClientException(
-                        "Unable to complete multi-part upload. Individual part upload failed : "
-                                + e.getCause().getMessage(), e.getCause());
+                    "Unable to complete multi-part upload. Individual part upload failed : "
+                    + e.getCause().getMessage(), e.getCause());
+
             }
         }
         return partETags;

@@ -2763,9 +2763,9 @@
           "documentation" : "<p>The template selection expression for the integration.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfigInput",
@@ -2851,9 +2851,9 @@
           "documentation" : "<p>The template selection expression for the integration.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfigInput",
@@ -2948,9 +2948,9 @@
           "documentation" : "<p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfig",
@@ -4786,9 +4786,9 @@
           "documentation" : "<p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfig",
@@ -5656,11 +5656,11 @@
       "min" : 0,
       "max" : 3600
     },
-    "IntegerWithLengthBetween50And29000" : {
+    "IntegerWithLengthBetween50And30000" : {
       "type" : "integer",
-      "documentation" : "<p>An integer with a value between [50-29000].</p>",
+      "documentation" : "<p>An integer with a value between [50-30000].</p>",
       "min" : 50,
-      "max" : 29000
+      "max" : 30000
     },
     "IntegerWithLengthBetweenMinus1And86400" : {
       "type" : "integer",
@@ -5752,9 +5752,9 @@
           "documentation" : "<p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfig",
@@ -7204,9 +7204,9 @@
           "documentation" : "<p>The template selection expression for the integration.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfigInput",
@@ -7297,9 +7297,9 @@
           "documentation" : "<p>The template selection expression for the integration.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfigInput",
@@ -7394,9 +7394,9 @@
           "documentation" : "<p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>"
         },
         "TimeoutInMillis" : {
-          "shape" : "IntegerWithLengthBetween50And29000",
+          "shape" : "IntegerWithLengthBetween50And30000",
           "locationName" : "timeoutInMillis",
-          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.</p>"
+          "documentation" : "<p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>"
         },
         "TlsConfig" : {
           "shape" : "TlsConfig",

@@ -33,7 +33,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * For information about creating failover resource record sets in a private hosted zone, see <a
- * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
+ * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring
  * Failover in a Private Hosted Zone</a>.
  * </p>
  * </li>
@@ -93,8 +93,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -106,10 +106,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
-     * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that there are separate columns for
-     * Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
+     * value that corresponds with the region that you created your load balancer in. Note that there are separate
+     * columns for Application and Classic Load Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -127,14 +127,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
@@ -164,13 +164,19 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     * </p>
+     * </dd>
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     * values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage
-     * Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services
-     * General Reference</i>.
+     * values, see the table <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -233,8 +239,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Your CloudFront distribution must include an alternate domain name that matches the name of the resource record
      * set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
-     * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain
+     * Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
@@ -271,7 +277,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
@@ -279,7 +285,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
@@ -287,8 +293,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -319,14 +325,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
@@ -356,15 +362,37 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify the DNS name for your accelerator:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Global Accelerator API:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     * >DescribeAccelerator</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     * >describe-accelerator</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
      * <dt>Amazon S3 bucket that is configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets
+     * for websites, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
      * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </dd>
@@ -472,14 +500,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
      * group of weighted records) but is not another alias record, we recommend that you associate a health check with
      * all of the records in the alias target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * For more information and examples, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
      * and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
@@ -543,9 +571,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General
-     *        Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *        Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -557,9 +584,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
-     *        table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
-     *        the value that corresponds with the region that you created your load balancer in. Note that there are
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     *        "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
+     *        Use the value that corresponds with the region that you created your load balancer in. Note that there are
      *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
      *        </p>
      *        </li>
@@ -579,14 +606,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Classic Load Balancers: Use <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Application and Network Load Balancers: Use <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
@@ -616,13 +643,19 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
+     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dd>
+     *        <p>
+     *        Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     *        </p>
+     *        </dd>
      *        <dt>An Amazon S3 bucket configured as a static website</dt>
      *        <dd>
      *        <p>
      *        Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     *        values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
-     *        Storage Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon
-     *        Web Services General Reference</i>.
+     *        values, see the table <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -684,7 +717,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your
      *        CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *        Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
@@ -724,7 +757,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
@@ -732,7 +765,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
@@ -740,8 +773,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *        >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     *        >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -774,14 +807,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Classic Load Balancers: <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Application and Network Load Balancers: <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a>
      *        </p>
      *        </li>
@@ -811,15 +844,37 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
+     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the DNS name for your accelerator:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Global Accelerator API:</b> To get the DNS name, use <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     *        >DescribeAccelerator</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AWS CLI:</b> To get the DNS name, use <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     *        >describe-accelerator</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
      *        <dt>Amazon S3 bucket that is configured as a static website</dt>
      *        <dd>
      *        <p>
      *        Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      *        <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
-     *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
-     *        using S3 buckets for websites, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *        href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     *        buckets for websites, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
      *        Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *        </p>
      *        </dd>
@@ -890,8 +945,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -903,10 +958,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
-     * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that there are separate columns for
-     * Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
+     * value that corresponds with the region that you created your load balancer in. Note that there are separate
+     * columns for Application and Classic Load Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -924,14 +979,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
@@ -961,13 +1016,19 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     * </p>
+     * </dd>
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     * values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage
-     * Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services
-     * General Reference</i>.
+     * values, see the table <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -1026,9 +1087,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General
-     *        Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *        Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -1040,9 +1100,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
-     *        table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
-     *        the value that corresponds with the region that you created your load balancer in. Note that there are
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     *        "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
+     *        Use the value that corresponds with the region that you created your load balancer in. Note that there are
      *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
      *        </p>
      *        </li>
@@ -1062,14 +1122,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Classic Load Balancers: Use <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Application and Network Load Balancers: Use <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
@@ -1099,13 +1159,19 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
+     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dd>
+     *        <p>
+     *        Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     *        </p>
+     *        </dd>
      *        <dt>An Amazon S3 bucket configured as a static website</dt>
      *        <dd>
      *        <p>
      *        Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     *        values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
-     *        Storage Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon
-     *        Web Services General Reference</i>.
+     *        values, see the table <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -1169,8 +1235,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -1182,10 +1248,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
-     * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that there are separate columns for
-     * Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
+     * value that corresponds with the region that you created your load balancer in. Note that there are separate
+     * columns for Application and Classic Load Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1203,14 +1269,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
@@ -1240,13 +1306,19 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     * </p>
+     * </dd>
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     * values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage
-     * Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services
-     * General Reference</i>.
+     * values, see the table <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -1305,9 +1377,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         Specify the hosted zone ID for the region that you created the environment in. The environment must have
      *         a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *         Beanstalk</a> in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General
-     *         Reference</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *         Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>ELB load balancer</dt>
@@ -1319,10 +1390,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
-     *         table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
-     *         the value that corresponds with the region that you created your load balancer in. Note that there are
-     *         separate columns for Application and Classic Load Balancers and for Network Load Balancers.
+     *         <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     *         "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
+     *         Use the value that corresponds with the region that you created your load balancer in. Note that there
+     *         are separate columns for Application and Classic Load Balancers and for Network Load Balancers.
      *         </p>
      *         </li>
      *         <li>
@@ -1341,14 +1412,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         Classic Load Balancers: Use <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *         >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Application and Network Load Balancers: Use <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *         >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *         </p>
      *         </li>
@@ -1378,13 +1449,19 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         </dd>
+     *         <dt>AWS Global Accelerator accelerator</dt>
+     *         <dd>
+     *         <p>
+     *         Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     *         </p>
+     *         </dd>
      *         <dt>An Amazon S3 bucket configured as a static website</dt>
      *         <dd>
      *         <p>
      *         Specify the hosted zone ID for the region that you created the bucket in. For more information about
-     *         valid values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
-     *         Simple Storage Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the
-     *         <i>Amazon Web Services General Reference</i>.
+     *         valid values, see the table <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3
+     *         Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -1448,8 +1525,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      * regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
-     * in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a>
+     * in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>ELB load balancer</dt>
@@ -1461,10 +1538,10 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a> table in
-     * the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use the value that
-     * corresponds with the region that you created your load balancer in. Note that there are separate columns for
-     * Application and Classic Load Balancers and for Network Load Balancers.
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     * "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>: Use the
+     * value that corresponds with the region that you created your load balancer in. Note that there are separate
+     * columns for Application and Classic Load Balancers and for Network Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1482,14 +1559,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: Use <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      * </p>
      * </li>
@@ -1519,13 +1596,19 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     * </p>
+     * </dd>
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     * values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage
-     * Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services
-     * General Reference</i>.
+     * values, see the table <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -1584,9 +1667,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        Specify the hosted zone ID for the region that you created the environment in. The environment must have a
      *        regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
-     *        Beanstalk</a> in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General
-     *        Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic
+     *        Beanstalk</a> in the "AWS Service Endpoints" chapter of the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>ELB load balancer</dt>
@@ -1598,9 +1680,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Elastic Load Balancing</a>
-     *        table in the "AWS Regions and Endpoints" chapter of the <i>Amazon Web Services General Reference</i>: Use
-     *        the value that corresponds with the region that you created your load balancer in. Note that there are
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Service Endpoints</a> table in the
+     *        "Elastic Load Balancing Endpoints and Quotas" topic in the <i>Amazon Web Services General Reference</i>:
+     *        Use the value that corresponds with the region that you created your load balancer in. Note that there are
      *        separate columns for Application and Classic Load Balancers and for Network Load Balancers.
      *        </p>
      *        </li>
@@ -1620,14 +1702,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Classic Load Balancers: Use <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Application and Network Load Balancers: Use <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.
      *        </p>
      *        </li>
@@ -1657,13 +1739,19 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
+     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dd>
+     *        <p>
+     *        Specify <code>Z2BJ6XQ5FK7U4H</code>.
+     *        </p>
+     *        </dd>
      *        <dt>An Amazon S3 bucket configured as a static website</dt>
      *        <dd>
      *        <p>
      *        Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
-     *        values, see the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
-     *        Storage Service Website Endpoints</a> table in the "AWS Regions and Endpoints" chapter of the <i>Amazon
-     *        Web Services General Reference</i>.
+     *        values, see the table <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>Another Route 53 resource record set in your hosted zone</dt>
@@ -1731,8 +1819,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Your CloudFront distribution must include an alternate domain name that matches the name of the resource record
      * set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
-     * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain
+     * Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
@@ -1769,7 +1857,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
@@ -1777,7 +1865,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
@@ -1785,8 +1873,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -1817,14 +1905,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
@@ -1854,15 +1942,37 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify the DNS name for your accelerator:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Global Accelerator API:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     * >DescribeAccelerator</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     * >describe-accelerator</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
      * <dt>Amazon S3 bucket that is configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets
+     * for websites, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
      * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </dd>
@@ -1933,7 +2043,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your
      *        CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *        Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
@@ -1973,7 +2083,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
@@ -1981,7 +2091,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
@@ -1989,8 +2099,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *        >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     *        >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2023,14 +2133,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Classic Load Balancers: <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Application and Network Load Balancers: <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a>
      *        </p>
      *        </li>
@@ -2060,15 +2170,37 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
+     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the DNS name for your accelerator:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Global Accelerator API:</b> To get the DNS name, use <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     *        >DescribeAccelerator</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AWS CLI:</b> To get the DNS name, use <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     *        >describe-accelerator</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
      *        <dt>Amazon S3 bucket that is configured as a static website</dt>
      *        <dd>
      *        <p>
      *        Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      *        <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
-     *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
-     *        using S3 buckets for websites, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *        href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     *        buckets for websites, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
      *        Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *        </p>
      *        </dd>
@@ -2141,8 +2273,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Your CloudFront distribution must include an alternate domain name that matches the name of the resource record
      * set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
-     * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain
+     * Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
@@ -2179,7 +2311,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
@@ -2187,7 +2319,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
@@ -2195,8 +2327,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -2227,14 +2359,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
@@ -2264,15 +2396,37 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify the DNS name for your accelerator:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Global Accelerator API:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     * >DescribeAccelerator</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     * >describe-accelerator</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
      * <dt>Amazon S3 bucket that is configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets
+     * for websites, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
      * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </dd>
@@ -2342,7 +2496,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *         record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your
      *         CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *         Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
@@ -2383,15 +2537,15 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
-     *         AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains
+     *         with AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *         <code>CNAME</code> attribute. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *         >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *         </p>
      *         </li>
@@ -2399,8 +2553,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <p>
      *         <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
      *         <code>CNAME</code> attribute. For more information, see <a
-     *         href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *         >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     *         >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -2433,14 +2587,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         Classic Load Balancers: <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *         >DescribeLoadBalancers</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Application and Network Load Balancers: <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *         >DescribeLoadBalancers</a>
      *         </p>
      *         </li>
@@ -2470,16 +2624,38 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         </dd>
+     *         <dt>AWS Global Accelerator accelerator</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the DNS name for your accelerator:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Global Accelerator API:</b> To get the DNS name, use <a
+     *         href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     *         >DescribeAccelerator</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>AWS CLI:</b> To get the DNS name, use <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     *         >describe-accelerator</a>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
      *         <dt>Amazon S3 bucket that is configured as a static website</dt>
      *         <dd>
      *         <p>
      *         Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      *         <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table
-     *         <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
-     *         (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information
-     *         about using S3 buckets for websites, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
-     *         Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
+     *         <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3
+     *         Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
+     *         using S3 buckets for websites, see <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started
+     *         with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *         </p>
      *         </dd>
      *         <dt>Another Route 53 resource record set</dt>
@@ -2552,8 +2728,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * Your CloudFront distribution must include an alternate domain name that matches the name of the resource record
      * set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution
      * must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names
-     * (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain
+     * Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.
@@ -2590,7 +2766,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
@@ -2598,7 +2774,7 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
@@ -2606,8 +2782,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * <p>
      * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
      * attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     * >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      * </p>
      * </li>
      * </ul>
@@ -2638,14 +2814,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * Classic Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * Application and Network Load Balancers: <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      * >DescribeLoadBalancers</a>
      * </p>
      * </li>
@@ -2675,15 +2851,37 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * </ul>
      * </dd>
+     * <dt>AWS Global Accelerator accelerator</dt>
+     * <dd>
+     * <p>
+     * Specify the DNS name for your accelerator:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Global Accelerator API:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     * >DescribeAccelerator</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS CLI:</b> To get the DNS name, use <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     * >describe-accelerator</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
      * <dt>Amazon S3 bucket that is configured as a static website</dt>
      * <dd>
      * <p>
      * Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
-     * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     * Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets
+     * for websites, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
      * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </dd>
@@ -2754,7 +2952,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your
      *        CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate
      *        Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
@@ -2794,7 +2992,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
@@ -2802,7 +3000,7 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
@@ -2810,8 +3008,8 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <p>
      *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
      *        <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
-     *        >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
+     *        >describe-environments</a> in the <i>AWS CLI Command Reference</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2844,14 +3042,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Classic Load Balancers: <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Application and Network Load Balancers: <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
      *        >DescribeLoadBalancers</a>
      *        </p>
      *        </li>
@@ -2881,15 +3079,37 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </dd>
+     *        <dt>AWS Global Accelerator accelerator</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the DNS name for your accelerator:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Global Accelerator API:</b> To get the DNS name, use <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html"
+     *        >DescribeAccelerator</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AWS CLI:</b> To get the DNS name, use <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html"
+     *        >describe-accelerator</a>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
      *        <dt>Amazon S3 bucket that is configured as a static website</dt>
      *        <dd>
      *        <p>
      *        Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example,
      *        <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
-     *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
-     *        using S3 buckets for websites, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *        href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website
+     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
+     *        buckets for websites, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
      *        Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *        </p>
      *        </dd>
@@ -3002,14 +3222,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
      * group of weighted records) but is not another alias record, we recommend that you associate a health check with
      * all of the records in the alias target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * For more information and examples, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
      * and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -3100,14 +3320,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
      *        example, a group of weighted records) but is not another alias record, we recommend that you associate a
      *        health check with all of the records in the alias target. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *        >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        </dd>
      *        </dl>
      *        <p>
      *        For more information and examples, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
      *        Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
@@ -3203,14 +3423,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
      * group of weighted records) but is not another alias record, we recommend that you associate a health check with
      * all of the records in the alias target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * For more information and examples, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
      * and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -3300,14 +3520,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *         If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
      *         example, a group of weighted records) but is not another alias record, we recommend that you associate a
      *         health check with all of the records in the alias target. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *         >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>
      *         </dd>
      *         </dl>
      *         <p>
      *         For more information and examples, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
      *         Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
@@ -3403,14 +3623,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
      * group of weighted records) but is not another alias record, we recommend that you associate a health check with
      * all of the records in the alias target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * For more information and examples, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
      * and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -3501,14 +3721,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *        If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
      *        example, a group of weighted records) but is not another alias record, we recommend that you associate a
      *        health check with all of the records in the alias target. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *        >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *        </p>
      *        </dd>
      *        </dl>
      *        <p>
      *        For more information and examples, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
      *        Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3606,14 +3826,14 @@ public class AliasTarget implements Serializable, Cloneable {
      * If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a
      * group of weighted records) but is not another alias record, we recommend that you associate a health check with
      * all of the records in the alias target. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      * >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </dd>
      * </dl>
      * <p>
      * For more information and examples, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
      * and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -3703,14 +3923,14 @@ public class AliasTarget implements Serializable, Cloneable {
      *         If the AWS resource that you specify in <code>DNSName</code> is a record or a group of records (for
      *         example, a group of weighted records) but is not another alias record, we recommend that you associate a
      *         health check with all of the records in the alias target. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting"
      *         >What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
      *         </p>
      *         </dd>
      *         </dl>
      *         <p>
      *         For more information and examples, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
      *         Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
