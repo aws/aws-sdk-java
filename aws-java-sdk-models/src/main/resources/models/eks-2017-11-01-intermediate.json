@@ -727,7 +727,7 @@
       "asyncReturnType" : "ListNodegroupsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the Amazon EKS node groups associated with the specified cluster in your AWS account in the specified Region.</p>",
+      "documentation" : "<p>Lists the Amazon EKS managed node groups associated with the specified cluster in your AWS account in the specified Region. Self-managed node groups are not listed.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -27867,6 +27867,9 @@
         "name" : "Ec2SubnetNotFound",
         "value" : "Ec2SubnetNotFound"
       }, {
+        "name" : "Ec2SubnetInvalidConfiguration",
+        "value" : "Ec2SubnetInvalidConfiguration"
+      }, {
         "name" : "IamInstanceProfileNotFound",
         "value" : "IamInstanceProfileNotFound"
       }, {
@@ -27875,6 +27878,9 @@
       }, {
         "name" : "IamNodeRoleNotFound",
         "value" : "IamNodeRoleNotFound"
+      }, {
+        "name" : "NodeCreationFailure",
+        "value" : "NodeCreationFailure"
       }, {
         "name" : "AsgInstanceLaunchFailures",
         "value" : "AsgInstanceLaunchFailures"

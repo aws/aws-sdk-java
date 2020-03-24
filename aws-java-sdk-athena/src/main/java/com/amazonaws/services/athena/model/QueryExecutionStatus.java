@@ -30,11 +30,11 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is reserved for
-     * future use. <code>RUNNING</code> indicates that the query has been submitted to the service, and Athena will
-     * execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-     * without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
-     * processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
+     * The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and
+     * Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query
+     * is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+     * <code>FAILED</code> indicates that the query experienced an error and did not complete processing.
+     * <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * </p>
      */
     private String state;
@@ -59,20 +59,19 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is reserved for
-     * future use. <code>RUNNING</code> indicates that the query has been submitted to the service, and Athena will
-     * execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-     * without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
-     * processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
+     * The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and
+     * Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query
+     * is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+     * <code>FAILED</code> indicates that the query experienced an error and did not complete processing.
+     * <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * </p>
      * 
      * @param state
-     *        The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is
-     *        reserved for future use. <code>RUNNING</code> indicates that the query has been submitted to the service,
-     *        and Athena will execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates
-     *        that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error
-     *        and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query
-     *        execution.
+     *        The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the
+     *        service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code>
+     *        indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     *        without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
+     *        processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * @see QueryExecutionState
      */
 
@@ -82,19 +81,18 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is reserved for
-     * future use. <code>RUNNING</code> indicates that the query has been submitted to the service, and Athena will
-     * execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-     * without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
-     * processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
+     * The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and
+     * Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query
+     * is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+     * <code>FAILED</code> indicates that the query experienced an error and did not complete processing.
+     * <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * </p>
      * 
-     * @return The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is
-     *         reserved for future use. <code>RUNNING</code> indicates that the query has been submitted to the service,
-     *         and Athena will execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates
-     *         that the query completed without errors. <code>FAILED</code> indicates that the query experienced an
-     *         error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted
-     *         query execution.
+     * @return The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the
+     *         service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code>
+     *         indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     *         without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
+     *         processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * @see QueryExecutionState
      */
 
@@ -104,20 +102,19 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is reserved for
-     * future use. <code>RUNNING</code> indicates that the query has been submitted to the service, and Athena will
-     * execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-     * without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
-     * processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
+     * The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and
+     * Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query
+     * is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+     * <code>FAILED</code> indicates that the query experienced an error and did not complete processing.
+     * <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * </p>
      * 
      * @param state
-     *        The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is
-     *        reserved for future use. <code>RUNNING</code> indicates that the query has been submitted to the service,
-     *        and Athena will execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates
-     *        that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error
-     *        and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query
-     *        execution.
+     *        The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the
+     *        service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code>
+     *        indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     *        without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
+     *        processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryExecutionState
      */
@@ -129,20 +126,19 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is reserved for
-     * future use. <code>RUNNING</code> indicates that the query has been submitted to the service, and Athena will
-     * execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-     * without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
-     * processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
+     * The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and
+     * Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query
+     * is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+     * <code>FAILED</code> indicates that the query experienced an error and did not complete processing.
+     * <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * </p>
      * 
      * @param state
-     *        The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is
-     *        reserved for future use. <code>RUNNING</code> indicates that the query has been submitted to the service,
-     *        and Athena will execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates
-     *        that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error
-     *        and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query
-     *        execution.
+     *        The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the
+     *        service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code>
+     *        indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     *        without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
+     *        processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * @see QueryExecutionState
      */
 
@@ -152,20 +148,19 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is reserved for
-     * future use. <code>RUNNING</code> indicates that the query has been submitted to the service, and Athena will
-     * execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates that the query completed
-     * without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
-     * processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
+     * The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and
+     * Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query
+     * is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
+     * <code>FAILED</code> indicates that the query experienced an error and did not complete processing.
+     * <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * </p>
      * 
      * @param state
-     *        The state of query execution. <code>QUEUED</code> state is listed but is not used by Athena and is
-     *        reserved for future use. <code>RUNNING</code> indicates that the query has been submitted to the service,
-     *        and Athena will execute the query as soon as resources are available. <code>SUCCEEDED</code> indicates
-     *        that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error
-     *        and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query
-     *        execution.
+     *        The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the
+     *        service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code>
+     *        indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     *        without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete
+     *        processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryExecutionState
      */

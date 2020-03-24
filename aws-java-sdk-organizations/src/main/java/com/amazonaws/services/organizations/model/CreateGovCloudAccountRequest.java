@@ -31,8 +31,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * must not already be associated with another AWS account. You must use a valid email address to complete account
      * creation. You can't access the root user of the account or remove an account that was created with an invalid
      * email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email
-     * address for the AWS GovCloud (US) account originates from the commercial Region. It does not come from the AWS
-     * GovCloud (US) Region.
+     * address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US)
+     * Region.
      * </p>
      */
     private String email;
@@ -59,7 +59,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * For more information about how to use this role to access the member account, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. See also steps 2 and 3 in <a
+     * Guide</i> and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
      * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
@@ -92,8 +92,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * must not already be associated with another AWS account. You must use a valid email address to complete account
      * creation. You can't access the root user of the account or remove an account that was created with an invalid
      * email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email
-     * address for the AWS GovCloud (US) account originates from the commercial Region. It does not come from the AWS
-     * GovCloud (US) Region.
+     * address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US)
+     * Region.
      * </p>
      * 
      * @param email
@@ -101,8 +101,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *        address must not already be associated with another AWS account. You must use a valid email address to
      *        complete account creation. You can't access the root user of the account or remove an account that was
      *        created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>,
-     *        the request for the email address for the AWS GovCloud (US) account originates from the commercial Region.
-     *        It does not come from the AWS GovCloud (US) Region.
+     *        the request for the email address for the AWS GovCloud (US) account originates from the commercial Region,
+     *        not from the AWS GovCloud (US) Region.
      */
 
     public void setEmail(String email) {
@@ -115,8 +115,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * must not already be associated with another AWS account. You must use a valid email address to complete account
      * creation. You can't access the root user of the account or remove an account that was created with an invalid
      * email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email
-     * address for the AWS GovCloud (US) account originates from the commercial Region. It does not come from the AWS
-     * GovCloud (US) Region.
+     * address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US)
+     * Region.
      * </p>
      * 
      * @return The email address of the owner to assign to the new member account in the commercial Region. This email
@@ -124,7 +124,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *         complete account creation. You can't access the root user of the account or remove an account that was
      *         created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>
      *         , the request for the email address for the AWS GovCloud (US) account originates from the commercial
-     *         Region. It does not come from the AWS GovCloud (US) Region.
+     *         Region, not from the AWS GovCloud (US) Region.
      */
 
     public String getEmail() {
@@ -137,8 +137,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * must not already be associated with another AWS account. You must use a valid email address to complete account
      * creation. You can't access the root user of the account or remove an account that was created with an invalid
      * email address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request for the email
-     * address for the AWS GovCloud (US) account originates from the commercial Region. It does not come from the AWS
-     * GovCloud (US) Region.
+     * address for the AWS GovCloud (US) account originates from the commercial Region, not from the AWS GovCloud (US)
+     * Region.
      * </p>
      * 
      * @param email
@@ -146,8 +146,8 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *        address must not already be associated with another AWS account. You must use a valid email address to
      *        complete account creation. You can't access the root user of the account or remove an account that was
      *        created with an invalid email address. Like all request parameters for <code>CreateGovCloudAccount</code>,
-     *        the request for the email address for the AWS GovCloud (US) account originates from the commercial Region.
-     *        It does not come from the AWS GovCloud (US) Region.
+     *        the request for the email address for the AWS GovCloud (US) account originates from the commercial Region,
+     *        not from the AWS GovCloud (US) Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,7 +213,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * For more information about how to use this role to access the member account, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. See also steps 2 and 3 in <a
+     * Guide</i> and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
      * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
@@ -238,7 +238,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *        For more information about how to use this role to access the member account, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     *        Guide</i>. See also steps 2 and 3 in <a
+     *        Guide</i> and steps 2 and 3 in <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      *        </p>
@@ -269,7 +269,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * For more information about how to use this role to access the member account, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. See also steps 2 and 3 in <a
+     * Guide</i> and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
      * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
@@ -294,7 +294,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *         For more information about how to use this role to access the member account, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      *         >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations
-     *         User Guide</i>. See also steps 2 and 3 in <a
+     *         User Guide</i> and steps 2 and 3 in <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      *         Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      *         </p>
@@ -325,7 +325,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      * For more information about how to use this role to access the member account, see <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. See also steps 2 and 3 in <a
+     * Guide</i> and steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
      * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      * </p>
@@ -350,7 +350,7 @@ public class CreateGovCloudAccountRequest extends com.amazonaws.AmazonWebService
      *        For more information about how to use this role to access the member account, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     *        Guide</i>. See also steps 2 and 3 in <a
+     *        Guide</i> and steps 2 and 3 in <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
      *        </p>

@@ -52,13 +52,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a href=
+     * For more information about how to use this role to access the member account, see the following links:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. Also see steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     * Guide</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Steps 2 and 3 in <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The
      * pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following
@@ -76,8 +88,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Guide</i>.
      * </p>
      * <p>
-     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users and
-     * roles with the required permissions to access billing information for the new account.
+     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the
+     * required permissions can access billing information for the new account.
      * </p>
      */
     private String iamUserAccessToBilling;
@@ -190,13 +202,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a href=
+     * For more information about how to use this role to access the member account, see the following links:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. Also see steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     * Guide</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Steps 2 and 3 in <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The
      * pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following
@@ -214,13 +238,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      *        </p>
      *        <p>
-     *        For more information about how to use this role to access the member account, see <a href=
+     *        For more information about how to use this role to access the member account, see the following links:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     *        Guide</i>. Also see steps 2 and 3 in <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     *        Guide</i>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Steps 2 and 3 in <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
+     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter.
      *        The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the
@@ -244,13 +280,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a href=
+     * For more information about how to use this role to access the member account, see the following links:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. Also see steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     * Guide</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Steps 2 and 3 in <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The
      * pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following
@@ -269,13 +317,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         .
      *         </p>
      *         <p>
-     *         For more information about how to use this role to access the member account, see <a href=
+     *         For more information about how to use this role to access the member account, see the following links:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      *         >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations
-     *         User Guide</i>. Also see steps 2 and 3 in <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     *         Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     *         User Guide</i>
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Steps 2 and 3 in <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
+     *         Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter.
      *         The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the
@@ -299,13 +359,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a href=
+     * For more information about how to use this role to access the member account, see the following links:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     * Guide</i>. Also see steps 2 and 3 in <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
-     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     * Guide</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Steps 2 and 3 in <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter. The
      * pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the following
@@ -323,13 +395,25 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      *        </p>
      *        <p>
-     *        For more information about how to use this role to access the member account, see <a href=
+     *        For more information about how to use this role to access the member account, see the following links:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
      *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
-     *        Guide</i>. Also see steps 2 and 3 in <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide.</i>
+     *        Guide</i>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Steps 2 and 3 in <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
+     *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter.
      *        The pattern can include uppercase letters, lowercase letters, digits with no spaces, and any of the
@@ -352,8 +436,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Guide</i>.
      * </p>
      * <p>
-     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users and
-     * roles with the required permissions to access billing information for the new account.
+     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the
+     * required permissions can access billing information for the new account.
      * </p>
      * 
      * @param iamUserAccessToBilling
@@ -364,8 +448,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.</p>
      *        <p>
-     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users
-     *        and roles with the required permissions to access billing information for the new account.
+     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles
+     *        with the required permissions can access billing information for the new account.
      * @see IAMUserAccessToBilling
      */
 
@@ -383,8 +467,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Guide</i>.
      * </p>
      * <p>
-     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users and
-     * roles with the required permissions to access billing information for the new account.
+     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the
+     * required permissions can access billing information for the new account.
      * </p>
      * 
      * @return If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
@@ -394,8 +478,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *         Management User Guide</i>.</p>
      *         <p>
-     *         If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM
-     *         users and roles with the required permissions to access billing information for the new account.
+     *         If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles
+     *         with the required permissions can access billing information for the new account.
      * @see IAMUserAccessToBilling
      */
 
@@ -413,8 +497,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Guide</i>.
      * </p>
      * <p>
-     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users and
-     * roles with the required permissions to access billing information for the new account.
+     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the
+     * required permissions can access billing information for the new account.
      * </p>
      * 
      * @param iamUserAccessToBilling
@@ -425,8 +509,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.</p>
      *        <p>
-     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users
-     *        and roles with the required permissions to access billing information for the new account.
+     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles
+     *        with the required permissions can access billing information for the new account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMUserAccessToBilling
      */
@@ -446,8 +530,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Guide</i>.
      * </p>
      * <p>
-     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users and
-     * roles with the required permissions to access billing information for the new account.
+     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the
+     * required permissions can access billing information for the new account.
      * </p>
      * 
      * @param iamUserAccessToBilling
@@ -458,8 +542,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.</p>
      *        <p>
-     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users
-     *        and roles with the required permissions to access billing information for the new account.
+     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles
+     *        with the required permissions can access billing information for the new account.
      * @see IAMUserAccessToBilling
      */
 
@@ -477,8 +561,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Guide</i>.
      * </p>
      * <p>
-     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users and
-     * roles with the required permissions to access billing information for the new account.
+     * If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles with the
+     * required permissions can access billing information for the new account.
      * </p>
      * 
      * @param iamUserAccessToBilling
@@ -489,8 +573,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.</p>
      *        <p>
-     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>. This value allows IAM users
-     *        and roles with the required permissions to access billing information for the new account.
+     *        If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and IAM users and roles
+     *        with the required permissions can access billing information for the new account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMUserAccessToBilling
      */

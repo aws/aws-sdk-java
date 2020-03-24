@@ -74,7 +74,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
+     * A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
      * attach the policy to roots, OUs, or accounts, but you cannot edit it.
      * </p>
      */
@@ -384,12 +384,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
+     * A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
      * attach the policy to roots, OUs, or accounts, but you cannot edit it.
      * </p>
      * 
      * @param awsManaged
-     *        A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
+     *        A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
      *        can attach the policy to roots, OUs, or accounts, but you cannot edit it.
      */
 
@@ -399,11 +399,11 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
+     * A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
      * attach the policy to roots, OUs, or accounts, but you cannot edit it.
      * </p>
      * 
-     * @return A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
+     * @return A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
      *         can attach the policy to roots, OUs, or accounts, but you cannot edit it.
      */
 
@@ -413,12 +413,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
+     * A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
      * attach the policy to roots, OUs, or accounts, but you cannot edit it.
      * </p>
      * 
      * @param awsManaged
-     *        A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
+     *        A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
      *        can attach the policy to roots, OUs, or accounts, but you cannot edit it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -430,11 +430,11 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
+     * A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can
      * attach the policy to roots, OUs, or accounts, but you cannot edit it.
      * </p>
      * 
-     * @return A Boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
+     * @return A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you
      *         can attach the policy to roots, OUs, or accounts, but you cannot edit it.
      */
 

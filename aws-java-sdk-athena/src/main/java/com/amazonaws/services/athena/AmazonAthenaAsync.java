@@ -434,7 +434,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
-     * access to the workgroup.
+     * access to the workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -453,7 +453,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
-     * access to the workgroup.
+     * access to the workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -476,8 +476,9 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Provides a list of available query execution IDs for the queries in the specified workgroup. Requires you to have
-     * access to the workgroup in which the queries ran.
+     * Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is
+     * not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to
+     * the workgroup in which the queries ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -495,8 +496,9 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Provides a list of available query execution IDs for the queries in the specified workgroup. Requires you to have
-     * access to the workgroup in which the queries ran.
+     * Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is
+     * not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to
+     * the workgroup in which the queries ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a

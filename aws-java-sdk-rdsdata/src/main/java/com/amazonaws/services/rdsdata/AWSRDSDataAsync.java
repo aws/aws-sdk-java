@@ -233,8 +233,7 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * </p>
      * </important>
      * <p>
-     * The response size limit is 1 MB or 1,000 records. If the call returns more than 1 MB of response data or over
-     * 1,000 records, the call is terminated.
+     * The response size limit is 1 MB. If the call returns more than 1 MB of response data, the call is terminated.
      * </p>
      * 
      * @param executeStatementRequest
@@ -257,8 +256,7 @@ public interface AWSRDSDataAsync extends AWSRDSData {
      * </p>
      * </important>
      * <p>
-     * The response size limit is 1 MB or 1,000 records. If the call returns more than 1 MB of response data or over
-     * 1,000 records, the call is terminated.
+     * The response size limit is 1 MB. If the call returns more than 1 MB of response data, the call is terminated.
      * </p>
      * 
      * @param executeStatementRequest

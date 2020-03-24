@@ -16,9 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Performing this operation violates a minimum or maximum value limit. Examples include attempting to remove the last
- * service control policy (SCP) from an OU or root, or attaching too many policies to an account, OU, or root. This
- * exception includes a reason that contains additional information about the violated limit.
+ * Performing this operation violates a minimum or maximum value limit. For example, attempting to remove the last
+ * service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or
+ * attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional
+ * information about the violated limit.
  * </p>
  * <p>
  * Some of the reasons in the following list might not be applicable to this specific API or operation:
@@ -72,6 +73,24 @@ import javax.annotation.Generated;
  * </important></li>
  * <li>
  * <p>
+ * CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
+ * administrator.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister this account as
+ * a delegated administrator.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister all delegated
+ * administrators for this service.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.
  * </p>
  * </li>
@@ -108,6 +127,12 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated administrators than
+ * allowed for the service principal.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can
  * be attached to an entity at one time.
  * </p>
@@ -128,8 +153,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity, which would cause the
- * entity to have fewer than the minimum number of policies of the required type.
+ * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the
+ * entity to have fewer than the minimum number of policies of a certain type required.
  * </p>
  * </li>
  * <li>
@@ -151,15 +176,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.
- * </p>
- * </li>
- * <li>
- * <p>
- * TAG_POLICY_VIOLATION: Tags associated with the resource must be compliant with the tag policy that’s in effect for
- * the account. For more information, see <a
- * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
- * Policies</a> in the <i>AWS Organizations User Guide.</i>
+ * POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an organization.
  * </p>
  * </li>
  * </ul>

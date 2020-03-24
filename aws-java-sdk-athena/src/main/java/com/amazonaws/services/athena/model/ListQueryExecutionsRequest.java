@@ -39,7 +39,8 @@ public class ListQueryExecutionsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * The name of the workgroup from which queries are being returned.
+     * The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of available
+     * query execution IDs for the queries in the primary workgroup is returned.
      * </p>
      */
     private String workGroup;
@@ -126,11 +127,13 @@ public class ListQueryExecutionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the workgroup from which queries are being returned.
+     * The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of available
+     * query execution IDs for the queries in the primary workgroup is returned.
      * </p>
      * 
      * @param workGroup
-     *        The name of the workgroup from which queries are being returned.
+     *        The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of
+     *        available query execution IDs for the queries in the primary workgroup is returned.
      */
 
     public void setWorkGroup(String workGroup) {
@@ -139,10 +142,12 @@ public class ListQueryExecutionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the workgroup from which queries are being returned.
+     * The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of available
+     * query execution IDs for the queries in the primary workgroup is returned.
      * </p>
      * 
-     * @return The name of the workgroup from which queries are being returned.
+     * @return The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of
+     *         available query execution IDs for the queries in the primary workgroup is returned.
      */
 
     public String getWorkGroup() {
@@ -151,11 +156,13 @@ public class ListQueryExecutionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the workgroup from which queries are being returned.
+     * The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of available
+     * query execution IDs for the queries in the primary workgroup is returned.
      * </p>
      * 
      * @param workGroup
-     *        The name of the workgroup from which queries are being returned.
+     *        The name of the workgroup from which queries are returned. If a workgroup is not specified, a list of
+     *        available query execution IDs for the queries in the primary workgroup is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

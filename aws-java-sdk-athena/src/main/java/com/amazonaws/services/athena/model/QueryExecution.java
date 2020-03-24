@@ -73,8 +73,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     private QueryExecutionStatus status;
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
-     * type of statement that was run.
+     * Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     * process, and the type of statement that was run.
      * </p>
      */
     private QueryExecutionStatistics statistics;
@@ -394,13 +394,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
-     * type of statement that was run.
+     * Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     * process, and the type of statement that was run.
      * </p>
      * 
      * @param statistics
-     *        The amount of data scanned during the query execution and the amount of time that it took to execute, and
-     *        the type of statement that was run.
+     *        Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     *        process, and the type of statement that was run.
      */
 
     public void setStatistics(QueryExecutionStatistics statistics) {
@@ -409,12 +409,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
-     * type of statement that was run.
+     * Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     * process, and the type of statement that was run.
      * </p>
      * 
-     * @return The amount of data scanned during the query execution and the amount of time that it took to execute, and
-     *         the type of statement that was run.
+     * @return Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     *         process, and the type of statement that was run.
      */
 
     public QueryExecutionStatistics getStatistics() {
@@ -423,13 +423,13 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of data scanned during the query execution and the amount of time that it took to execute, and the
-     * type of statement that was run.
+     * Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     * process, and the type of statement that was run.
      * </p>
      * 
      * @param statistics
-     *        The amount of data scanned during the query execution and the amount of time that it took to execute, and
-     *        the type of statement that was run.
+     *        Query execution statistics, such as the amount of data scanned, the amount of time that the query took to
+     *        process, and the type of statement that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

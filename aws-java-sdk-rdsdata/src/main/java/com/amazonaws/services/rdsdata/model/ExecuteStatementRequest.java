@@ -57,6 +57,11 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The parameters for the SQL statement.
      * </p>
+     * <note>
+     * <p>
+     * Array parameters are not supported.
+     * </p>
+     * </note>
      */
     private java.util.List<SqlParameter> parameters;
     /**
@@ -300,8 +305,16 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The parameters for the SQL statement.
      * </p>
+     * <note>
+     * <p>
+     * Array parameters are not supported.
+     * </p>
+     * </note>
      * 
-     * @return The parameters for the SQL statement.
+     * @return The parameters for the SQL statement.</p> <note>
+     *         <p>
+     *         Array parameters are not supported.
+     *         </p>
      */
 
     public java.util.List<SqlParameter> getParameters() {
@@ -312,9 +325,17 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The parameters for the SQL statement.
      * </p>
+     * <note>
+     * <p>
+     * Array parameters are not supported.
+     * </p>
+     * </note>
      * 
      * @param parameters
-     *        The parameters for the SQL statement.
+     *        The parameters for the SQL statement.</p> <note>
+     *        <p>
+     *        Array parameters are not supported.
+     *        </p>
      */
 
     public void setParameters(java.util.Collection<SqlParameter> parameters) {
@@ -330,6 +351,11 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The parameters for the SQL statement.
      * </p>
+     * <note>
+     * <p>
+     * Array parameters are not supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
@@ -337,7 +363,10 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param parameters
-     *        The parameters for the SQL statement.
+     *        The parameters for the SQL statement.</p> <note>
+     *        <p>
+     *        Array parameters are not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,9 +384,17 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The parameters for the SQL statement.
      * </p>
+     * <note>
+     * <p>
+     * Array parameters are not supported.
+     * </p>
+     * </note>
      * 
      * @param parameters
-     *        The parameters for the SQL statement.
+     *        The parameters for the SQL statement.</p> <note>
+     *        <p>
+     *        Array parameters are not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,10 +31,9 @@ public class ListPoliciesForTargetResult extends com.amazonaws.AmazonWebServiceR
     private java.util.List<PolicySummary> policies;
     /**
      * <p>
-     * If present, this value indicates that there is more output available than is included in the current response.
-     * Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
-     * next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as
-     * <code>null</code>.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      */
     private String nextToken;
@@ -111,17 +110,16 @@ public class ListPoliciesForTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If present, this value indicates that there is more output available than is included in the current response.
-     * Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
-     * next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as
-     * <code>null</code>.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If present, this value indicates that there is more output available than is included in the current
-     *        response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the
-     *        operation to get the next part of the output. You should repeat this until the <code>NextToken</code>
-     *        response element comes back as <code>null</code>.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,16 +128,15 @@ public class ListPoliciesForTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If present, this value indicates that there is more output available than is included in the current response.
-     * Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
-     * next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as
-     * <code>null</code>.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
-     * @return If present, this value indicates that there is more output available than is included in the current
-     *         response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the
-     *         operation to get the next part of the output. You should repeat this until the <code>NextToken</code>
-     *         response element comes back as <code>null</code>.
+     * @return If present, indicates that more output is available than is included in the current response. Use this
+     *         value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *         next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *         back as <code>null</code>.
      */
 
     public String getNextToken() {
@@ -148,17 +145,16 @@ public class ListPoliciesForTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If present, this value indicates that there is more output available than is included in the current response.
-     * Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
-     * next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as
-     * <code>null</code>.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        If present, this value indicates that there is more output available than is included in the current
-     *        response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the
-     *        operation to get the next part of the output. You should repeat this until the <code>NextToken</code>
-     *        response element comes back as <code>null</code>.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

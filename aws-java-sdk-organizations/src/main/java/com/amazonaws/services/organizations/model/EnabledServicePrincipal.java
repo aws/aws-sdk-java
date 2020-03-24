@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains details of a service principal that is enabled to integrate with AWS Organizations.
+ * A structure that contains details of a service principal that represents an AWS service that is enabled to integrate
+ * with AWS Organizations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnabledServicePrincipal"

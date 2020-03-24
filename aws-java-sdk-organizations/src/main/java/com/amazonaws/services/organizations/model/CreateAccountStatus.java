@@ -117,7 +117,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact AWS Support.
+     * problem persists, contact Customer Support.
      * </p>
      * </li>
      * </ul>
@@ -527,7 +527,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact AWS Support.
+     * problem persists, contact Customer Support.
      * </p>
      * </li>
      * </ul>
@@ -566,7 +566,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact AWS Support.
+     *        problem persists, contact Customer Support.
      *        </p>
      *        </li>
      * @see CreateAccountFailureReason
@@ -612,7 +612,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact AWS Support.
+     * problem persists, contact Customer Support.
      * </p>
      * </li>
      * </ul>
@@ -650,7 +650,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         <li>
      *         <p>
      *         INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If
-     *         the problem persists, contact AWS Support.
+     *         the problem persists, contact Customer Support.
      *         </p>
      *         </li>
      * @see CreateAccountFailureReason
@@ -696,7 +696,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact AWS Support.
+     * problem persists, contact Customer Support.
      * </p>
      * </li>
      * </ul>
@@ -735,7 +735,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact AWS Support.
+     *        problem persists, contact Customer Support.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -783,7 +783,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact AWS Support.
+     * problem persists, contact Customer Support.
      * </p>
      * </li>
      * </ul>
@@ -822,7 +822,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact AWS Support.
+     *        problem persists, contact Customer Support.
      *        </p>
      *        </li>
      * @see CreateAccountFailureReason
@@ -868,7 +868,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact AWS Support.
+     * problem persists, contact Customer Support.
      * </p>
      * </li>
      * </ul>
@@ -907,7 +907,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact AWS Support.
+     *        problem persists, contact Customer Support.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

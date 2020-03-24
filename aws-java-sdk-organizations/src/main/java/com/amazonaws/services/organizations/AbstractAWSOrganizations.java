@@ -98,6 +98,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public DeregisterDelegatedAdministratorResult deregisterDelegatedAdministrator(DeregisterDelegatedAdministratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAccountResult describeAccount(DescribeAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +203,16 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public ListDelegatedAdministratorsResult listDelegatedAdministrators(ListDelegatedAdministratorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDelegatedServicesForAccountResult listDelegatedServicesForAccount(ListDelegatedServicesForAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListHandshakesForAccountResult listHandshakesForAccount(ListHandshakesForAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +259,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
 
     @Override
     public MoveAccountResult moveAccount(MoveAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterDelegatedAdministratorResult registerDelegatedAdministrator(RegisterDelegatedAdministratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

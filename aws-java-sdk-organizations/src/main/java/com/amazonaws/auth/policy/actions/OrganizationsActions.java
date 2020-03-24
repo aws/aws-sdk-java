@@ -49,6 +49,8 @@ public enum OrganizationsActions implements Action {
     DeleteOrganizationalUnit("organizations:DeleteOrganizationalUnit"),
     /** Action for the DeletePolicy operation. */
     DeletePolicy("organizations:DeletePolicy"),
+    /** Action for the DeregisterDelegatedAdministrator operation. */
+    DeregisterDelegatedAdministrator("organizations:DeregisterDelegatedAdministrator"),
     /** Action for the DescribeAccount operation. */
     DescribeAccount("organizations:DescribeAccount"),
     /** Action for the DescribeCreateAccountStatus operation. */
@@ -89,6 +91,10 @@ public enum OrganizationsActions implements Action {
     ListChildren("organizations:ListChildren"),
     /** Action for the ListCreateAccountStatus operation. */
     ListCreateAccountStatus("organizations:ListCreateAccountStatus"),
+    /** Action for the ListDelegatedAdministrators operation. */
+    ListDelegatedAdministrators("organizations:ListDelegatedAdministrators"),
+    /** Action for the ListDelegatedServicesForAccount operation. */
+    ListDelegatedServicesForAccount("organizations:ListDelegatedServicesForAccount"),
     /** Action for the ListHandshakesForAccount operation. */
     ListHandshakesForAccount("organizations:ListHandshakesForAccount"),
     /** Action for the ListHandshakesForOrganization operation. */
@@ -109,6 +115,8 @@ public enum OrganizationsActions implements Action {
     ListTargetsForPolicy("organizations:ListTargetsForPolicy"),
     /** Action for the MoveAccount operation. */
     MoveAccount("organizations:MoveAccount"),
+    /** Action for the RegisterDelegatedAdministrator operation. */
+    RegisterDelegatedAdministrator("organizations:RegisterDelegatedAdministrator"),
     /** Action for the RemoveAccountFromOrganization operation. */
     RemoveAccountFromOrganization("organizations:RemoveAccountFromOrganization"),
     /** Action for the TagResource operation. */

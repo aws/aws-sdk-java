@@ -653,8 +653,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Lists the Amazon EKS node groups associated with the specified cluster in your AWS account in the specified
-     * Region.
+     * Lists the Amazon EKS managed node groups associated with the specified cluster in your AWS account in the
+     * specified Region. Self-managed node groups are not listed.
      * </p>
      * 
      * @param listNodegroupsRequest
@@ -667,8 +667,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Lists the Amazon EKS node groups associated with the specified cluster in your AWS account in the specified
-     * Region.
+     * Lists the Amazon EKS managed node groups associated with the specified cluster in your AWS account in the
+     * specified Region. Self-managed node groups are not listed.
      * </p>
      * 
      * @param listNodegroupsRequest

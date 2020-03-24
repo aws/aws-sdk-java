@@ -638,6 +638,41 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterDelegatedAdministratorResult> deregisterDelegatedAdministratorAsync(
+            DeregisterDelegatedAdministratorRequest request) {
+
+        return deregisterDelegatedAdministratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterDelegatedAdministratorResult> deregisterDelegatedAdministratorAsync(
+            final DeregisterDelegatedAdministratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterDelegatedAdministratorRequest, DeregisterDelegatedAdministratorResult> asyncHandler) {
+        final DeregisterDelegatedAdministratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterDelegatedAdministratorResult>() {
+            @Override
+            public DeregisterDelegatedAdministratorResult call() throws Exception {
+                DeregisterDelegatedAdministratorResult result = null;
+
+                try {
+                    result = executeDeregisterDelegatedAdministrator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountResult> describeAccountAsync(DescribeAccountRequest request) {
 
         return describeAccountAsync(request, null);
@@ -1300,6 +1335,74 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDelegatedAdministratorsResult> listDelegatedAdministratorsAsync(ListDelegatedAdministratorsRequest request) {
+
+        return listDelegatedAdministratorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDelegatedAdministratorsResult> listDelegatedAdministratorsAsync(final ListDelegatedAdministratorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDelegatedAdministratorsRequest, ListDelegatedAdministratorsResult> asyncHandler) {
+        final ListDelegatedAdministratorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDelegatedAdministratorsResult>() {
+            @Override
+            public ListDelegatedAdministratorsResult call() throws Exception {
+                ListDelegatedAdministratorsResult result = null;
+
+                try {
+                    result = executeListDelegatedAdministrators(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDelegatedServicesForAccountResult> listDelegatedServicesForAccountAsync(
+            ListDelegatedServicesForAccountRequest request) {
+
+        return listDelegatedServicesForAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDelegatedServicesForAccountResult> listDelegatedServicesForAccountAsync(
+            final ListDelegatedServicesForAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDelegatedServicesForAccountRequest, ListDelegatedServicesForAccountResult> asyncHandler) {
+        final ListDelegatedServicesForAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDelegatedServicesForAccountResult>() {
+            @Override
+            public ListDelegatedServicesForAccountResult call() throws Exception {
+                ListDelegatedServicesForAccountResult result = null;
+
+                try {
+                    result = executeListDelegatedServicesForAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListHandshakesForAccountResult> listHandshakesForAccountAsync(ListHandshakesForAccountRequest request) {
 
         return listHandshakesForAccountAsync(request, null);
@@ -1617,6 +1720,40 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
 
                 try {
                     result = executeMoveAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDelegatedAdministratorResult> registerDelegatedAdministratorAsync(RegisterDelegatedAdministratorRequest request) {
+
+        return registerDelegatedAdministratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDelegatedAdministratorResult> registerDelegatedAdministratorAsync(
+            final RegisterDelegatedAdministratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterDelegatedAdministratorRequest, RegisterDelegatedAdministratorResult> asyncHandler) {
+        final RegisterDelegatedAdministratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterDelegatedAdministratorResult>() {
+            @Override
+            public RegisterDelegatedAdministratorResult call() throws Exception {
+                RegisterDelegatedAdministratorResult result = null;
+
+                try {
+                    result = executeRegisterDelegatedAdministrator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

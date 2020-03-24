@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find a create account request with the <code>CreateAccountRequestId</code> that you specified.
+ * We can't find an create account request with the <code>CreateAccountRequestId</code> that you specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

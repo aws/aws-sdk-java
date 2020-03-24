@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find an AWS account with the <code>AccountId</code> that you specified. Or the account whose credentials you
+ * We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose credentials you
  * used to make this request isn't a member of an organization.
  * </p>
  */

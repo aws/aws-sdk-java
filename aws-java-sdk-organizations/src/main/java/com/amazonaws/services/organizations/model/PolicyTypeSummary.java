@@ -36,9 +36,8 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
     private String type;
     /**
      * <p>
-     * The status of the policy type as it relates to the associated root. You can attach a policy of the specified type
-     * to a root or to an OU or account in that root. To do so, the policy must be available in the organization and
-     * enabled for that root.
+     * The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a
+     * root or to an OU or account in that root, it must be available in the organization and enabled for that root.
      * </p>
      */
     private String status;
@@ -118,15 +117,14 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the policy type as it relates to the associated root. You can attach a policy of the specified type
-     * to a root or to an OU or account in that root. To do so, the policy must be available in the organization and
-     * enabled for that root.
+     * The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a
+     * root or to an OU or account in that root, it must be available in the organization and enabled for that root.
      * </p>
      * 
      * @param status
-     *        The status of the policy type as it relates to the associated root. You can attach a policy of the
-     *        specified type to a root or to an OU or account in that root. To do so, the policy must be available in
-     *        the organization and enabled for that root.
+     *        The status of the policy type as it relates to the associated root. To attach a policy of the specified
+     *        type to a root or to an OU or account in that root, it must be available in the organization and enabled
+     *        for that root.
      * @see PolicyTypeStatus
      */
 
@@ -136,14 +134,13 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the policy type as it relates to the associated root. You can attach a policy of the specified type
-     * to a root or to an OU or account in that root. To do so, the policy must be available in the organization and
-     * enabled for that root.
+     * The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a
+     * root or to an OU or account in that root, it must be available in the organization and enabled for that root.
      * </p>
      * 
-     * @return The status of the policy type as it relates to the associated root. You can attach a policy of the
-     *         specified type to a root or to an OU or account in that root. To do so, the policy must be available in
-     *         the organization and enabled for that root.
+     * @return The status of the policy type as it relates to the associated root. To attach a policy of the specified
+     *         type to a root or to an OU or account in that root, it must be available in the organization and enabled
+     *         for that root.
      * @see PolicyTypeStatus
      */
 
@@ -153,15 +150,14 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the policy type as it relates to the associated root. You can attach a policy of the specified type
-     * to a root or to an OU or account in that root. To do so, the policy must be available in the organization and
-     * enabled for that root.
+     * The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a
+     * root or to an OU or account in that root, it must be available in the organization and enabled for that root.
      * </p>
      * 
      * @param status
-     *        The status of the policy type as it relates to the associated root. You can attach a policy of the
-     *        specified type to a root or to an OU or account in that root. To do so, the policy must be available in
-     *        the organization and enabled for that root.
+     *        The status of the policy type as it relates to the associated root. To attach a policy of the specified
+     *        type to a root or to an OU or account in that root, it must be available in the organization and enabled
+     *        for that root.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeStatus
      */
@@ -173,15 +169,14 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the policy type as it relates to the associated root. You can attach a policy of the specified type
-     * to a root or to an OU or account in that root. To do so, the policy must be available in the organization and
-     * enabled for that root.
+     * The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a
+     * root or to an OU or account in that root, it must be available in the organization and enabled for that root.
      * </p>
      * 
      * @param status
-     *        The status of the policy type as it relates to the associated root. You can attach a policy of the
-     *        specified type to a root or to an OU or account in that root. To do so, the policy must be available in
-     *        the organization and enabled for that root.
+     *        The status of the policy type as it relates to the associated root. To attach a policy of the specified
+     *        type to a root or to an OU or account in that root, it must be available in the organization and enabled
+     *        for that root.
      * @see PolicyTypeStatus
      */
 
@@ -191,15 +186,14 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the policy type as it relates to the associated root. You can attach a policy of the specified type
-     * to a root or to an OU or account in that root. To do so, the policy must be available in the organization and
-     * enabled for that root.
+     * The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a
+     * root or to an OU or account in that root, it must be available in the organization and enabled for that root.
      * </p>
      * 
      * @param status
-     *        The status of the policy type as it relates to the associated root. You can attach a policy of the
-     *        specified type to a root or to an OU or account in that root. To do so, the policy must be available in
-     *        the organization and enabled for that root.
+     *        The status of the policy type as it relates to the associated root. To attach a policy of the specified
+     *        type to a root or to an OU or account in that root, it must be available in the organization and enabled
+     *        for that root.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeStatus
      */
