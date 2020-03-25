@@ -67,12 +67,10 @@ public class EndpointToRegion {
         if (endpoint == null) {
             return new RegionOrRegionName();
         }
-
-        String host = URI.create(endpoint).getHost();
-        if (host == null) {
-            host = URI.create("http://" + endpoint).getHost();
+        if (!endpoint.contains("://")) {
+            endpoint = "http://" + endpoint;
         }
-
+        String host = URI.create(endpoint).getHost();
         if (host == null) {
             return new RegionOrRegionName();
         }

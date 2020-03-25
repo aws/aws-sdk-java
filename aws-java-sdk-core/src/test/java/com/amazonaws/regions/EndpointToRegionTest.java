@@ -185,6 +185,7 @@ public class EndpointToRegionTest {
         assertEquals("us-gov-west-1", guessRegionNameForEndpoint("s3-fips-us-gov-west-1.amazonaws.com"));
         assertEquals("us-gov-west-1", guessRegionNameForEndpoint("bucket.name.with.periods.s3-fips-us-gov-west-1.amazonaws.com"));
         assertNull(guessRegionNameForEndpoint("54.231.16.200"));
+        assertNull(guessRegionNameForEndpoint("54.231.16.200:8080"));
     }
 
     private void verifyRegionAndPartitionForHostname(String regionName, String partitionName, String hostname) {
