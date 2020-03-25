@@ -46,6 +46,8 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private MemberFrameworkConfiguration frameworkConfiguration;
+    /** <p/> */
+    private MemberLogPublishingConfiguration logPublishingConfiguration;
 
     /**
      * <p>
@@ -168,6 +170,38 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p/>
+     * 
+     * @param logPublishingConfiguration
+     */
+
+    public void setLogPublishingConfiguration(MemberLogPublishingConfiguration logPublishingConfiguration) {
+        this.logPublishingConfiguration = logPublishingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public MemberLogPublishingConfiguration getLogPublishingConfiguration() {
+        return this.logPublishingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param logPublishingConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberConfiguration withLogPublishingConfiguration(MemberLogPublishingConfiguration logPublishingConfiguration) {
+        setLogPublishingConfiguration(logPublishingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +218,9 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getFrameworkConfiguration() != null)
-            sb.append("FrameworkConfiguration: ").append(getFrameworkConfiguration());
+            sb.append("FrameworkConfiguration: ").append(getFrameworkConfiguration()).append(",");
+        if (getLogPublishingConfiguration() != null)
+            sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +247,10 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getFrameworkConfiguration() != null && other.getFrameworkConfiguration().equals(this.getFrameworkConfiguration()) == false)
             return false;
+        if (other.getLogPublishingConfiguration() == null ^ this.getLogPublishingConfiguration() == null)
+            return false;
+        if (other.getLogPublishingConfiguration() != null && other.getLogPublishingConfiguration().equals(this.getLogPublishingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +262,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFrameworkConfiguration() == null) ? 0 : getFrameworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
         return hashCode;
     }
 

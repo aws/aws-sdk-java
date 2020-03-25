@@ -39,12 +39,9 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     private String service;
     /**
      * <p>
-     * The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     * account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     * includes only member accounts when it calculates its recommendations.
-     * </p>
-     * <p>
-     * Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * </p>
      */
     private String accountScope;
@@ -168,20 +165,15 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     * account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     * includes only member accounts when it calculates its recommendations.
-     * </p>
-     * <p>
-     * Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * </p>
      * 
      * @param accountScope
-     *        The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     *        account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     *        includes only member accounts when it calculates its recommendations.</p>
-     *        <p>
-     *        Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * @see AccountScope
      */
 
@@ -191,19 +183,14 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     * account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     * includes only member accounts when it calculates its recommendations.
-     * </p>
-     * <p>
-     * Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * </p>
      * 
-     * @return The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the
-     *         master account and any member accounts when it calculates its recommendations. <code>LINKED</code> means
-     *         that AWS includes only member accounts when it calculates its recommendations.</p>
-     *         <p>
-     *         Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     * @return The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *         including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value
+     *         is <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * @see AccountScope
      */
 
@@ -213,20 +200,15 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     * account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     * includes only member accounts when it calculates its recommendations.
-     * </p>
-     * <p>
-     * Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * </p>
      * 
      * @param accountScope
-     *        The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     *        account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     *        includes only member accounts when it calculates its recommendations.</p>
-     *        <p>
-     *        Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountScope
      */
@@ -238,20 +220,15 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     * account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     * includes only member accounts when it calculates its recommendations.
-     * </p>
-     * <p>
-     * Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * </p>
      * 
      * @param accountScope
-     *        The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master
-     *        account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS
-     *        includes only member accounts when it calculates its recommendations.</p>
-     *        <p>
-     *        Valid values are <code>PAYER</code> and <code>LINKED</code>.
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountScope
      */

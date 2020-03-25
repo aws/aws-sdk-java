@@ -60,6 +60,10 @@ public class MemberConfigurationJsonUnmarshaller implements Unmarshaller<MemberC
                     context.nextToken();
                     memberConfiguration.setFrameworkConfiguration(MemberFrameworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LogPublishingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    memberConfiguration.setLogPublishingConfiguration(MemberLogPublishingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -32,6 +32,8 @@ public class CreateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceGroupName").build();
     private static final MarshallingInfo<Boolean> OPSCENTERENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsCenterEnabled").build();
+    private static final MarshallingInfo<Boolean> CWEMONITORENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CWEMonitorEnabled").build();
     private static final MarshallingInfo<String> OPSITEMSNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsItemSNSTopicArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class CreateApplicationRequestMarshaller {
         try {
             protocolMarshaller.marshall(createApplicationRequest.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getOpsCenterEnabled(), OPSCENTERENABLED_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getCWEMonitorEnabled(), CWEMONITORENABLED_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getOpsItemSNSTopicArn(), OPSITEMSNSTOPICARN_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

@@ -1,3 +1,28 @@
+# __1.11.752__ __2020-03-25__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Customers can now receive Savings Plans recommendations at the member (linked) account level.
+
+## __AWS X-Ray__
+  - ### Features
+    - GetTraceSummaries - Now provides additional root cause attribute ClientImpacting which indicates whether root cause impacted trace client.
+
+## __Amazon CloudWatch Application Insights__
+  - ### Features
+    - Amazon CloudWatch Application Insights for .NET and SQL Server now integrates with Amazon CloudWatch Events (AWS CodeDeploy, AWS Health and Amazon EC2 state changes). This feature enables customers to view events related to problems detected by CloudWatch Application Insights, and reduce mean-time-to-resolution (MTTR).
+
+## __Amazon Detective__
+  - ### Features
+    - The new ACCEPTED_BUT_DISABLED member account status indicates that a member account that accepted the invitation is blocked from contributing data to the behavior graph. The reason is provided in the new DISABLED_REASON property. The new StartMonitoringMember operation enables a blocked member account.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Adding support for customer packages (dictionary files) to Amazon Elasticsearch Service
+
+## __Amazon Managed Blockchain__
+  - ### Features
+    - Amazon Managed Blockchain now has support to publish Hyperledger Fabric peer node, chaincode, and certificate authority (CA) logs to Amazon CloudWatch Logs.
+
 # __1.11.751__ __2020-03-24__
 ## __AWS Organizations__
   - ### Features

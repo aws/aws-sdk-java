@@ -636,6 +636,10 @@
         "Services":{
           "shape":"ErrorRootCauseServices",
           "documentation":"<p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>"
+        },
+        "ClientImpacting":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>A flag that denotes that the root cause impacts the trace client.</p>"
         }
       },
       "documentation":"<p>The root cause of a trace summary error.</p>"
@@ -724,6 +728,10 @@
         "Services":{
           "shape":"FaultRootCauseServices",
           "documentation":"<p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>"
+        },
+        "ClientImpacting":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>A flag that denotes that the root cause impacts the trace client.</p>"
         }
       },
       "documentation":"<p>The root cause information for a trace summary fault.</p>"
@@ -1366,6 +1374,10 @@
         "Services":{
           "shape":"ResponseTimeRootCauseServices",
           "documentation":"<p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>"
+        },
+        "ClientImpacting":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>A flag that denotes that the root cause impacts the trace client.</p>"
         }
       },
       "documentation":"<p>The root cause information for a response time warning.</p>"

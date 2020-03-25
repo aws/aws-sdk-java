@@ -37,6 +37,8 @@ public class MemberMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<StructuredPojo> FRAMEWORKATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkAttributes").build();
+    private static final MarshallingInfo<StructuredPojo> LOGPUBLISHINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingConfiguration").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -63,6 +65,7 @@ public class MemberMarshaller {
             protocolMarshaller.marshall(member.getName(), NAME_BINDING);
             protocolMarshaller.marshall(member.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(member.getFrameworkAttributes(), FRAMEWORKATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(member.getLogPublishingConfiguration(), LOGPUBLISHINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(member.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(member.getCreationDate(), CREATIONDATE_BINDING);
         } catch (Exception e) {

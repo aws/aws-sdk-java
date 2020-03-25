@@ -60,6 +60,12 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private MemberFrameworkAttributes frameworkAttributes;
     /**
      * <p>
+     * Configuration properties for logging events associated with a member.
+     * </p>
+     */
+    private MemberLogPublishingConfiguration logPublishingConfiguration;
+    /**
+     * <p>
      * The status of a member.
      * </p>
      * <ul>
@@ -299,6 +305,46 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     public Member withFrameworkAttributes(MemberFrameworkAttributes frameworkAttributes) {
         setFrameworkAttributes(frameworkAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a member.
+     * </p>
+     * 
+     * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a member.
+     */
+
+    public void setLogPublishingConfiguration(MemberLogPublishingConfiguration logPublishingConfiguration) {
+        this.logPublishingConfiguration = logPublishingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a member.
+     * </p>
+     * 
+     * @return Configuration properties for logging events associated with a member.
+     */
+
+    public MemberLogPublishingConfiguration getLogPublishingConfiguration() {
+        return this.logPublishingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a member.
+     * </p>
+     * 
+     * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a member.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Member withLogPublishingConfiguration(MemberLogPublishingConfiguration logPublishingConfiguration) {
+        setLogPublishingConfiguration(logPublishingConfiguration);
         return this;
     }
 
@@ -667,6 +713,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getFrameworkAttributes() != null)
             sb.append("FrameworkAttributes: ").append(getFrameworkAttributes()).append(",");
+        if (getLogPublishingConfiguration() != null)
+            sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationDate() != null)
@@ -705,6 +753,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFrameworkAttributes() != null && other.getFrameworkAttributes().equals(this.getFrameworkAttributes()) == false)
             return false;
+        if (other.getLogPublishingConfiguration() == null ^ this.getLogPublishingConfiguration() == null)
+            return false;
+        if (other.getLogPublishingConfiguration() != null && other.getLogPublishingConfiguration().equals(this.getLogPublishingConfiguration()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -726,6 +778,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFrameworkAttributes() == null) ? 0 : getFrameworkAttributes().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;

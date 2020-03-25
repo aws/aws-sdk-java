@@ -35,6 +35,8 @@ public class ApplicationInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsItemSNSTopicArn").build();
     private static final MarshallingInfo<Boolean> OPSCENTERENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpsCenterEnabled").build();
+    private static final MarshallingInfo<Boolean> CWEMONITORENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CWEMonitorEnabled").build();
     private static final MarshallingInfo<String> REMARKS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Remarks").build();
 
@@ -58,6 +60,7 @@ public class ApplicationInfoMarshaller {
             protocolMarshaller.marshall(applicationInfo.getLifeCycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(applicationInfo.getOpsItemSNSTopicArn(), OPSITEMSNSTOPICARN_BINDING);
             protocolMarshaller.marshall(applicationInfo.getOpsCenterEnabled(), OPSCENTERENABLED_BINDING);
+            protocolMarshaller.marshall(applicationInfo.getCWEMonitorEnabled(), CWEMONITORENABLED_BINDING);
             protocolMarshaller.marshall(applicationInfo.getRemarks(), REMARKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

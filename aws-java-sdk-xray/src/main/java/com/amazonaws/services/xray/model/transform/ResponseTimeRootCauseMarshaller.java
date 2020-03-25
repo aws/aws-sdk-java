@@ -30,6 +30,8 @@ public class ResponseTimeRootCauseMarshaller {
 
     private static final MarshallingInfo<List> SERVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Services").build();
+    private static final MarshallingInfo<Boolean> CLIENTIMPACTING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientImpacting").build();
 
     private static final ResponseTimeRootCauseMarshaller instance = new ResponseTimeRootCauseMarshaller();
 
@@ -48,6 +50,7 @@ public class ResponseTimeRootCauseMarshaller {
 
         try {
             protocolMarshaller.marshall(responseTimeRootCause.getServices(), SERVICES_BINDING);
+            protocolMarshaller.marshall(responseTimeRootCause.getClientImpacting(), CLIENTIMPACTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -64,6 +64,10 @@ public class ApplicationInfoJsonUnmarshaller implements Unmarshaller<Application
                     context.nextToken();
                     applicationInfo.setOpsCenterEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("CWEMonitorEnabled", targetDepth)) {
+                    context.nextToken();
+                    applicationInfo.setCWEMonitorEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Remarks", targetDepth)) {
                     context.nextToken();
                     applicationInfo.setRemarks(context.getUnmarshaller(String.class).unmarshall(context));

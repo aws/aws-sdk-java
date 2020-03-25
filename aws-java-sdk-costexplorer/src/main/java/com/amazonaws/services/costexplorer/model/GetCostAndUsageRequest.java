@@ -48,14 +48,14 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p>
      */
     private Expression filter;
     /**
      * <p>
      * Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
@@ -239,7 +239,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p>
      * 
      * @param filter
@@ -247,7 +247,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that
      *        service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a>.
      */
 
@@ -261,14 +261,14 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p>
      * 
      * @return Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and
      *         <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that
      *         service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a>.
      */
 
@@ -282,7 +282,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You
      * can nest <code>Expression</code> objects to define any combination of dimension filters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p>
      * 
      * @param filter
@@ -290,7 +290,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that
      *        service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -303,7 +303,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
@@ -325,7 +325,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     *         href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     *         href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *         annotation appear on some line items in my bill?</a>. </p>
      *         <p>
      *         Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
@@ -352,7 +352,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
@@ -375,7 +375,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param metrics
      *        Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     *        href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     *        href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *        annotation appear on some line items in my bill?</a>. </p>
      *        <p>
      *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
@@ -407,7 +407,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
@@ -435,7 +435,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param metrics
      *        Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     *        href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     *        href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *        annotation appear on some line items in my bill?</a>. </p>
      *        <p>
      *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
@@ -469,7 +469,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      * annotation appear on some line items in my bill?</a>.
      * </p>
      * <p>
@@ -492,7 +492,7 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param metrics
      *        Which metrics are returned in the query. For more information about blended and unblended rates, see <a
-     *        href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
+     *        href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended"
      *        annotation appear on some line items in my bill?</a>. </p>
      *        <p>
      *        Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,

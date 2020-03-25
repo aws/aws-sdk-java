@@ -164,6 +164,12 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      * is called by the account that is enabling Detective.
      * </p>
      * <p>
+     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
+     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
+     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
+     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
+     * </p>
+     * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
      * of the new behavior graph.
      * </p>
@@ -191,6 +197,12 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      * <p>
      * Creates a new behavior graph for the calling account, and sets that account as the master account. This operation
      * is called by the account that is enabling Detective.
+     * </p>
+     * <p>
+     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
+     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
+     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
+     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
      * </p>
      * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
@@ -644,5 +656,68 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      */
     java.util.concurrent.Future<RejectInvitationResult> rejectInvitationAsync(RejectInvitationRequest rejectInvitationRequest,
             com.amazonaws.handlers.AsyncHandler<RejectInvitationRequest, RejectInvitationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sends a request to enable data ingest for a member account that has a status of
+     * <code>ACCEPTED_BUT_DISABLED</code>.
+     * </p>
+     * <p>
+     * For valid member accounts, the status is updated as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startMonitoringMemberRequest
+     * @return A Java Future containing the result of the StartMonitoringMember operation returned by the service.
+     * @sample AmazonDetectiveAsync.StartMonitoringMember
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMonitoringMemberResult> startMonitoringMemberAsync(StartMonitoringMemberRequest startMonitoringMemberRequest);
+
+    /**
+     * <p>
+     * Sends a request to enable data ingest for a member account that has a status of
+     * <code>ACCEPTED_BUT_DISABLED</code>.
+     * </p>
+     * <p>
+     * For valid member accounts, the status is updated as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startMonitoringMemberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMonitoringMember operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.StartMonitoringMember
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMonitoringMemberResult> startMonitoringMemberAsync(StartMonitoringMemberRequest startMonitoringMemberRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMonitoringMemberRequest, StartMonitoringMemberResult> asyncHandler);
 
 }

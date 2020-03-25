@@ -30,6 +30,14 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     */
+    private String accountScope;
+    /**
+     * <p>
      * The requested Savings Plans recommendation type.
      * </p>
      */
@@ -64,6 +72,81 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
      * </p>
      */
     private SavingsPlansPurchaseRecommendationSummary savingsPlansPurchaseRecommendationSummary;
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @param accountScope
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @see AccountScope
+     */
+
+    public void setAccountScope(String accountScope) {
+        this.accountScope = accountScope;
+    }
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @return The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *         including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value
+     *         is <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @see AccountScope
+     */
+
+    public String getAccountScope() {
+        return this.accountScope;
+    }
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @param accountScope
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountScope
+     */
+
+    public SavingsPlansPurchaseRecommendation withAccountScope(String accountScope) {
+        setAccountScope(accountScope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @param accountScope
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountScope
+     */
+
+    public SavingsPlansPurchaseRecommendation withAccountScope(AccountScope accountScope) {
+        this.accountScope = accountScope.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -434,6 +517,8 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountScope() != null)
+            sb.append("AccountScope: ").append(getAccountScope()).append(",");
         if (getSavingsPlansType() != null)
             sb.append("SavingsPlansType: ").append(getSavingsPlansType()).append(",");
         if (getTermInYears() != null)
@@ -460,6 +545,10 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
         if (obj instanceof SavingsPlansPurchaseRecommendation == false)
             return false;
         SavingsPlansPurchaseRecommendation other = (SavingsPlansPurchaseRecommendation) obj;
+        if (other.getAccountScope() == null ^ this.getAccountScope() == null)
+            return false;
+        if (other.getAccountScope() != null && other.getAccountScope().equals(this.getAccountScope()) == false)
+            return false;
         if (other.getSavingsPlansType() == null ^ this.getSavingsPlansType() == null)
             return false;
         if (other.getSavingsPlansType() != null && other.getSavingsPlansType().equals(this.getSavingsPlansType()) == false)
@@ -494,6 +583,7 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountScope() == null) ? 0 : getAccountScope().hashCode());
         hashCode = prime * hashCode + ((getSavingsPlansType() == null) ? 0 : getSavingsPlansType().hashCode());
         hashCode = prime * hashCode + ((getTermInYears() == null) ? 0 : getTermInYears().hashCode());
         hashCode = prime * hashCode + ((getPaymentOption() == null) ? 0 : getPaymentOption().hashCode());

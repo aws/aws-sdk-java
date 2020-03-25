@@ -45,6 +45,14 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     private String paymentOption;
     /**
      * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     */
+    private String accountScope;
+    /**
+     * <p>
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
@@ -62,6 +70,21 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
      * </p>
      */
     private String lookbackPeriodInDays;
+    /**
+     * <p>
+     * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
+     * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
+     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * </p>
+     * <p>
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
+     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
+     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
+     * <code>OR</code> operators are not supported.
+     * </p>
+     */
+    private Expression filter;
 
     /**
      * <p>
@@ -242,6 +265,81 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @param accountScope
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @see AccountScope
+     */
+
+    public void setAccountScope(String accountScope) {
+        this.accountScope = accountScope;
+    }
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @return The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *         including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value
+     *         is <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @see AccountScope
+     */
+
+    public String getAccountScope() {
+        return this.accountScope;
+    }
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @param accountScope
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountScope
+     */
+
+    public GetSavingsPlansPurchaseRecommendationRequest withAccountScope(String accountScope) {
+        setAccountScope(accountScope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * </p>
+     * 
+     * @param accountScope
+     *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
+     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
+     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccountScope
+     */
+
+    public GetSavingsPlansPurchaseRecommendationRequest withAccountScope(AccountScope accountScope) {
+        this.accountScope = accountScope.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
@@ -386,6 +484,100 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     }
 
     /**
+     * <p>
+     * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
+     * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
+     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * </p>
+     * <p>
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
+     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
+     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
+     * <code>OR</code> operators are not supported.
+     * </p>
+     * 
+     * @param filter
+     *        You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To
+     *        filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     *        <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase
+     *        recommendations.</p>
+     *        <p>
+     *        For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     *        <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With
+     *        <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can
+     *        be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans
+     *        Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.
+     */
+
+    public void setFilter(Expression filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
+     * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
+     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * </p>
+     * <p>
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
+     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
+     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
+     * <code>OR</code> operators are not supported.
+     * </p>
+     * 
+     * @return You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To
+     *         filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     *         <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase
+     *         recommendations.</p>
+     *         <p>
+     *         For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     *         <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With
+     *         <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can
+     *         be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans
+     *         Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.
+     */
+
+    public Expression getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To filter your
+     * recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and <code>Value</code> as
+     * the comma-separated Acount ID(s) for which you want to see Savings Plans purchase recommendations.
+     * </p>
+     * <p>
+     * For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include <code>CostCategories</code>
+     * or <code>Tags</code>. It only includes <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code>
+     * must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or multiple comma-separated
+     * Account IDs for which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
+     * <code>OR</code> operators are not supported.
+     * </p>
+     * 
+     * @param filter
+     *        You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code> dimension. To
+     *        filter your recommendations by Account ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     *        <code>Value</code> as the comma-separated Acount ID(s) for which you want to see Savings Plans purchase
+     *        recommendations.</p>
+     *        <p>
+     *        For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     *        <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>. With
+     *        <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and <code>Value</code> can
+     *        be a single Account ID or multiple comma-separated Account IDs for which you want to see Savings Plans
+     *        Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSavingsPlansPurchaseRecommendationRequest withFilter(Expression filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -403,12 +595,16 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
             sb.append("TermInYears: ").append(getTermInYears()).append(",");
         if (getPaymentOption() != null)
             sb.append("PaymentOption: ").append(getPaymentOption()).append(",");
+        if (getAccountScope() != null)
+            sb.append("AccountScope: ").append(getAccountScope()).append(",");
         if (getNextPageToken() != null)
             sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getPageSize() != null)
             sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getLookbackPeriodInDays() != null)
-            sb.append("LookbackPeriodInDays: ").append(getLookbackPeriodInDays());
+            sb.append("LookbackPeriodInDays: ").append(getLookbackPeriodInDays()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +631,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
             return false;
         if (other.getPaymentOption() != null && other.getPaymentOption().equals(this.getPaymentOption()) == false)
             return false;
+        if (other.getAccountScope() == null ^ this.getAccountScope() == null)
+            return false;
+        if (other.getAccountScope() != null && other.getAccountScope().equals(this.getAccountScope()) == false)
+            return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
         if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
@@ -447,6 +647,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
             return false;
         if (other.getLookbackPeriodInDays() != null && other.getLookbackPeriodInDays().equals(this.getLookbackPeriodInDays()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         return true;
     }
 
@@ -458,9 +662,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
         hashCode = prime * hashCode + ((getSavingsPlansType() == null) ? 0 : getSavingsPlansType().hashCode());
         hashCode = prime * hashCode + ((getTermInYears() == null) ? 0 : getTermInYears().hashCode());
         hashCode = prime * hashCode + ((getPaymentOption() == null) ? 0 : getPaymentOption().hashCode());
+        hashCode = prime * hashCode + ((getAccountScope() == null) ? 0 : getAccountScope().hashCode());
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         hashCode = prime * hashCode + ((getLookbackPeriodInDays() == null) ? 0 : getLookbackPeriodInDays().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         return hashCode;
     }
 

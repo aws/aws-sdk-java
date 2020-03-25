@@ -68,6 +68,10 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                     context.nextToken();
                     memberDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DisabledReason", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setDisabledReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InvitedTime", targetDepth)) {
                     context.nextToken();
                     memberDetail.setInvitedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -75,6 +79,14 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                 if (context.testExpression("UpdatedTime", targetDepth)) {
                     context.nextToken();
                     memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PercentOfGraphUtilization", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setPercentOfGraphUtilization(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("PercentOfGraphUtilizationUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setPercentOfGraphUtilizationUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

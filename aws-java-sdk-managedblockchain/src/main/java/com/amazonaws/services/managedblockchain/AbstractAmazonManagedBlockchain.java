@@ -113,6 +113,16 @@ public class AbstractAmazonManagedBlockchain implements AmazonManagedBlockchain 
     }
 
     @Override
+    public UpdateMemberResult updateMember(UpdateMemberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNodeResult updateNode(UpdateNodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public VoteOnProposalResult voteOnProposal(VoteOnProposalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

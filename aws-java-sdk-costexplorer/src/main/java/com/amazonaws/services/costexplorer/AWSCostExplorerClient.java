@@ -70,7 +70,7 @@ import com.amazonaws.services.costexplorer.model.transform.*;
  * </ul>
  * <p>
  * For information about costs associated with the Cost Explorer API, see <a
- * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
+ * href="http://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
  * </p>
  */
 @ThreadSafe
@@ -172,7 +172,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * <p>
      * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
      * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
      * </p>
      * </important>
      * <p>
@@ -239,7 +239,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * <p>
      * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
      * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
      * </p>
      * </important>
      * <p>
@@ -306,7 +306,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * <p>
      * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
      * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
      * </p>
      * </important>
      * <p>
@@ -378,7 +378,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
      * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
      * member accounts.
      * </p>
@@ -1396,7 +1396,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * <p>
      * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
      * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
      * </p>
      * </important>
      * <p>
@@ -1463,7 +1463,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * <p>
      * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
      * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
+     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
      * </p>
      * </important>
      * <p>

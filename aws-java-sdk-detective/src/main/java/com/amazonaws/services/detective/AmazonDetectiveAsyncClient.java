@@ -497,6 +497,39 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<StartMonitoringMemberResult> startMonitoringMemberAsync(StartMonitoringMemberRequest request) {
+
+        return startMonitoringMemberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMonitoringMemberResult> startMonitoringMemberAsync(final StartMonitoringMemberRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMonitoringMemberRequest, StartMonitoringMemberResult> asyncHandler) {
+        final StartMonitoringMemberRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMonitoringMemberResult>() {
+            @Override
+            public StartMonitoringMemberResult call() throws Exception {
+                StartMonitoringMemberResult result = null;
+
+                try {
+                    result = executeStartMonitoringMember(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

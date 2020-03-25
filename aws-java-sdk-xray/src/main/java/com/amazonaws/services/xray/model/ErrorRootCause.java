@@ -35,6 +35,12 @@ public class ErrorRootCause implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ErrorRootCauseService> services;
+    /**
+     * <p>
+     * A flag that denotes that the root cause impacts the trace client.
+     * </p>
+     */
+    private Boolean clientImpacting;
 
     /**
      * <p>
@@ -115,6 +121,58 @@ public class ErrorRootCause implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A flag that denotes that the root cause impacts the trace client.
+     * </p>
+     * 
+     * @param clientImpacting
+     *        A flag that denotes that the root cause impacts the trace client.
+     */
+
+    public void setClientImpacting(Boolean clientImpacting) {
+        this.clientImpacting = clientImpacting;
+    }
+
+    /**
+     * <p>
+     * A flag that denotes that the root cause impacts the trace client.
+     * </p>
+     * 
+     * @return A flag that denotes that the root cause impacts the trace client.
+     */
+
+    public Boolean getClientImpacting() {
+        return this.clientImpacting;
+    }
+
+    /**
+     * <p>
+     * A flag that denotes that the root cause impacts the trace client.
+     * </p>
+     * 
+     * @param clientImpacting
+     *        A flag that denotes that the root cause impacts the trace client.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ErrorRootCause withClientImpacting(Boolean clientImpacting) {
+        setClientImpacting(clientImpacting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that denotes that the root cause impacts the trace client.
+     * </p>
+     * 
+     * @return A flag that denotes that the root cause impacts the trace client.
+     */
+
+    public Boolean isClientImpacting() {
+        return this.clientImpacting;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -127,7 +185,9 @@ public class ErrorRootCause implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServices() != null)
-            sb.append("Services: ").append(getServices());
+            sb.append("Services: ").append(getServices()).append(",");
+        if (getClientImpacting() != null)
+            sb.append("ClientImpacting: ").append(getClientImpacting());
         sb.append("}");
         return sb.toString();
     }
@@ -146,6 +206,10 @@ public class ErrorRootCause implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getServices() != null && other.getServices().equals(this.getServices()) == false)
             return false;
+        if (other.getClientImpacting() == null ^ this.getClientImpacting() == null)
+            return false;
+        if (other.getClientImpacting() != null && other.getClientImpacting().equals(this.getClientImpacting()) == false)
+            return false;
         return true;
     }
 
@@ -155,6 +219,7 @@ public class ErrorRootCause implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getServices() == null) ? 0 : getServices().hashCode());
+        hashCode = prime * hashCode + ((getClientImpacting() == null) ? 0 : getClientImpacting().hashCode());
         return hashCode;
     }
 

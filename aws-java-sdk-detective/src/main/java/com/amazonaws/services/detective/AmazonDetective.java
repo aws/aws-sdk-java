@@ -153,6 +153,12 @@ public interface AmazonDetective {
      * is called by the account that is enabling Detective.
      * </p>
      * <p>
+     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
+     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
+     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
+     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
+     * </p>
+     * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
      * of the new behavior graph.
      * </p>
@@ -171,6 +177,26 @@ public interface AmazonDetective {
      *         The request attempted an invalid action.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
+     * @throws ServiceQuotaExceededException
+     *         This request cannot be completed for one of the following reasons.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
+     *         allowed. A behavior graph cannot have more than 1000 member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Detective is unable to verify the data rate for the member account. This is usually because the member
+     *         account is not enrolled in Amazon GuardDuty.
+     *         </p>
+     *         </li>
      * @sample AmazonDetective.CreateGraph
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph" target="_top">AWS API
      *      Documentation</a>
@@ -219,8 +245,25 @@ public interface AmazonDetective {
      * @throws ValidationException
      *         The request parameters are invalid.
      * @throws ServiceQuotaExceededException
-     *         This request would cause the number of member accounts in the behavior graph to exceed the maximum
+     *         This request cannot be completed for one of the following reasons.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
      *         allowed. A behavior graph cannot have more than 1000 member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Detective is unable to verify the data rate for the member account. This is usually because the member
+     *         account is not enrolled in Amazon GuardDuty.
+     *         </p>
+     *         </li>
      * @sample AmazonDetective.CreateMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers" target="_top">AWS API
      *      Documentation</a>
@@ -426,6 +469,63 @@ public interface AmazonDetective {
      *      Documentation</a>
      */
     RejectInvitationResult rejectInvitation(RejectInvitationRequest rejectInvitationRequest);
+
+    /**
+     * <p>
+     * Sends a request to enable data ingest for a member account that has a status of
+     * <code>ACCEPTED_BUT_DISABLED</code>.
+     * </p>
+     * <p>
+     * For valid member accounts, the status is updated as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startMonitoringMemberRequest
+     * @return Result of the StartMonitoringMember operation returned by the service.
+     * @throws ConflictException
+     *         The request attempted an invalid action.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @throws ServiceQuotaExceededException
+     *         This request cannot be completed for one of the following reasons.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The request would cause the number of member accounts in the behavior graph to exceed the maximum
+     *         allowed. A behavior graph cannot have more than 1000 member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The request would cause the data rate for the behavior graph to exceed the maximum allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Detective is unable to verify the data rate for the member account. This is usually because the member
+     *         account is not enrolled in Amazon GuardDuty.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @sample AmazonDetective.StartMonitoringMember
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMonitoringMemberResult startMonitoringMember(StartMonitoringMemberRequest startMonitoringMemberRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

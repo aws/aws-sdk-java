@@ -39,6 +39,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean opsCenterEnabled;
     /**
      * <p>
+     * Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as
+     * <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     * </p>
+     */
+    private Boolean cWEMonitorEnabled;
+    /**
+     * <p>
      * The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to receive
      * notifications for updates to the opsItem.
      * </p>
@@ -143,6 +150,66 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public Boolean isOpsCenterEnabled() {
         return this.opsCenterEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as
+     * <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     * </p>
+     * 
+     * @param cWEMonitorEnabled
+     *        Indicates whether Application Insights can listen to CloudWatch events for the application resources, such
+     *        as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     */
+
+    public void setCWEMonitorEnabled(Boolean cWEMonitorEnabled) {
+        this.cWEMonitorEnabled = cWEMonitorEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as
+     * <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     * </p>
+     * 
+     * @return Indicates whether Application Insights can listen to CloudWatch events for the application resources,
+     *         such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     */
+
+    public Boolean getCWEMonitorEnabled() {
+        return this.cWEMonitorEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as
+     * <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     * </p>
+     * 
+     * @param cWEMonitorEnabled
+     *        Indicates whether Application Insights can listen to CloudWatch events for the application resources, such
+     *        as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withCWEMonitorEnabled(Boolean cWEMonitorEnabled) {
+        setCWEMonitorEnabled(cWEMonitorEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as
+     * <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     * </p>
+     * 
+     * @return Indicates whether Application Insights can listen to CloudWatch events for the application resources,
+     *         such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
+     */
+
+    public Boolean isCWEMonitorEnabled() {
+        return this.cWEMonitorEnabled;
     }
 
     /**
@@ -293,6 +360,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getOpsCenterEnabled() != null)
             sb.append("OpsCenterEnabled: ").append(getOpsCenterEnabled()).append(",");
+        if (getCWEMonitorEnabled() != null)
+            sb.append("CWEMonitorEnabled: ").append(getCWEMonitorEnabled()).append(",");
         if (getOpsItemSNSTopicArn() != null)
             sb.append("OpsItemSNSTopicArn: ").append(getOpsItemSNSTopicArn()).append(",");
         if (getTags() != null)
@@ -319,6 +388,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOpsCenterEnabled() != null && other.getOpsCenterEnabled().equals(this.getOpsCenterEnabled()) == false)
             return false;
+        if (other.getCWEMonitorEnabled() == null ^ this.getCWEMonitorEnabled() == null)
+            return false;
+        if (other.getCWEMonitorEnabled() != null && other.getCWEMonitorEnabled().equals(this.getCWEMonitorEnabled()) == false)
+            return false;
         if (other.getOpsItemSNSTopicArn() == null ^ this.getOpsItemSNSTopicArn() == null)
             return false;
         if (other.getOpsItemSNSTopicArn() != null && other.getOpsItemSNSTopicArn().equals(this.getOpsItemSNSTopicArn()) == false)
@@ -337,6 +410,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getOpsCenterEnabled() == null) ? 0 : getOpsCenterEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCWEMonitorEnabled() == null) ? 0 : getCWEMonitorEnabled().hashCode());
         hashCode = prime * hashCode + ((getOpsItemSNSTopicArn() == null) ? 0 : getOpsItemSNSTopicArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

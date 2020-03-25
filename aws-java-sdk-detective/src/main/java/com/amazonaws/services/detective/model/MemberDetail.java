@@ -84,12 +84,43 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * graph.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
+     * account is blocked.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Member accounts that declined an invitation or that were removed from the behavior graph are not included.
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
+     * blocked.
+     * </p>
+     * <p>
+     * The reason can have one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * behavior graph to be too high.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
+     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String disabledReason;
     /**
      * <p>
      * The date and time that Detective sent the invitation to the member account. The value is in milliseconds since
@@ -103,6 +134,27 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date updatedTime;
+    /**
+     * <p>
+     * The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100
+     * indicates 100 percent.
+     * </p>
+     * <p>
+     * Note that this is not the percentage of the behavior graph data volume.
+     * </p>
+     * <p>
+     * For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day.
+     * If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It
+     * represents 25% of the maximum allowed data volume.
+     * </p>
+     */
+    private Double percentOfGraphUtilization;
+    /**
+     * <p>
+     * The date and time when the graph utilization percentage was last updated.
+     * </p>
+     */
+    private java.util.Date percentOfGraphUtilizationUpdatedTime;
 
     /**
      * <p>
@@ -293,6 +345,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * graph.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
+     * account is blocked.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Member accounts that declined an invitation or that were removed from the behavior graph are not included.
@@ -324,6 +383,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the
      *        behavior graph.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
+     *        blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
+     *        the member account is blocked.
      *        </p>
      *        </li>
      *        </ul>
@@ -365,6 +431,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * graph.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
+     * account is blocked.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Member accounts that declined an invitation or that were removed from the behavior graph are not included.
@@ -395,6 +468,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the
      *         behavior graph.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
+     *         blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
+     *         the member account is blocked.
      *         </p>
      *         </li>
      *         </ul>
@@ -437,6 +517,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * graph.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
+     * account is blocked.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Member accounts that declined an invitation or that were removed from the behavior graph are not included.
@@ -468,6 +555,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>ENABLED</code> - Indicates that the member account accepted the invitation to contribute to the
      *        behavior graph.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
+     *        blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
+     *        the member account is blocked.
      *        </p>
      *        </li>
      *        </ul>
@@ -511,6 +605,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * graph.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
+     * account is blocked.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Member accounts that declined an invitation or that were removed from the behavior graph are not included.
@@ -544,6 +645,13 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        behavior graph.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
+     *        blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
+     *        the member account is blocked.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Member accounts that declined an invitation or that were removed from the behavior graph are not included.
@@ -553,6 +661,205 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
 
     public MemberDetail withStatus(MemberStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
+     * blocked.
+     * </p>
+     * <p>
+     * The reason can have one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * behavior graph to be too high.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
+     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param disabledReason
+     *        For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
+     *        account is blocked.</p>
+     *        <p>
+     *        The reason can have one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     *        behavior graph to be too high.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *        account. This is usually because the member account is not enrolled in Amazon GuardDuty.
+     *        </p>
+     *        </li>
+     * @see MemberDisabledReason
+     */
+
+    public void setDisabledReason(String disabledReason) {
+        this.disabledReason = disabledReason;
+    }
+
+    /**
+     * <p>
+     * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
+     * blocked.
+     * </p>
+     * <p>
+     * The reason can have one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * behavior graph to be too high.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
+     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
+     *         account is blocked.</p>
+     *         <p>
+     *         The reason can have one of the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     *         behavior graph to be too high.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *         account. This is usually because the member account is not enrolled in Amazon GuardDuty.
+     *         </p>
+     *         </li>
+     * @see MemberDisabledReason
+     */
+
+    public String getDisabledReason() {
+        return this.disabledReason;
+    }
+
+    /**
+     * <p>
+     * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
+     * blocked.
+     * </p>
+     * <p>
+     * The reason can have one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * behavior graph to be too high.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
+     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param disabledReason
+     *        For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
+     *        account is blocked.</p>
+     *        <p>
+     *        The reason can have one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     *        behavior graph to be too high.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *        account. This is usually because the member account is not enrolled in Amazon GuardDuty.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MemberDisabledReason
+     */
+
+    public MemberDetail withDisabledReason(String disabledReason) {
+        setDisabledReason(disabledReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
+     * blocked.
+     * </p>
+     * <p>
+     * The reason can have one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * behavior graph to be too high.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
+     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param disabledReason
+     *        For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
+     *        account is blocked.</p>
+     *        <p>
+     *        The reason can have one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     *        behavior graph to be too high.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *        account. This is usually because the member account is not enrolled in Amazon GuardDuty.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MemberDisabledReason
+     */
+
+    public MemberDetail withDisabledReason(MemberDisabledReason disabledReason) {
+        this.disabledReason = disabledReason.toString();
         return this;
     }
 
@@ -643,6 +950,137 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100
+     * indicates 100 percent.
+     * </p>
+     * <p>
+     * Note that this is not the percentage of the behavior graph data volume.
+     * </p>
+     * <p>
+     * For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day.
+     * If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It
+     * represents 25% of the maximum allowed data volume.
+     * </p>
+     * 
+     * @param percentOfGraphUtilization
+     *        The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent,
+     *        and 100 indicates 100 percent.</p>
+     *        <p>
+     *        Note that this is not the percentage of the behavior graph data volume.
+     *        </p>
+     *        <p>
+     *        For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB
+     *        per day. If the data volume for the member account is 40 GB per day, then
+     *        <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.
+     */
+
+    public void setPercentOfGraphUtilization(Double percentOfGraphUtilization) {
+        this.percentOfGraphUtilization = percentOfGraphUtilization;
+    }
+
+    /**
+     * <p>
+     * The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100
+     * indicates 100 percent.
+     * </p>
+     * <p>
+     * Note that this is not the percentage of the behavior graph data volume.
+     * </p>
+     * <p>
+     * For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day.
+     * If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It
+     * represents 25% of the maximum allowed data volume.
+     * </p>
+     * 
+     * @return The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent,
+     *         and 100 indicates 100 percent.</p>
+     *         <p>
+     *         Note that this is not the percentage of the behavior graph data volume.
+     *         </p>
+     *         <p>
+     *         For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB
+     *         per day. If the data volume for the member account is 40 GB per day, then
+     *         <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.
+     */
+
+    public Double getPercentOfGraphUtilization() {
+        return this.percentOfGraphUtilization;
+    }
+
+    /**
+     * <p>
+     * The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100
+     * indicates 100 percent.
+     * </p>
+     * <p>
+     * Note that this is not the percentage of the behavior graph data volume.
+     * </p>
+     * <p>
+     * For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day.
+     * If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It
+     * represents 25% of the maximum allowed data volume.
+     * </p>
+     * 
+     * @param percentOfGraphUtilization
+     *        The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent,
+     *        and 100 indicates 100 percent.</p>
+     *        <p>
+     *        Note that this is not the percentage of the behavior graph data volume.
+     *        </p>
+     *        <p>
+     *        For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB
+     *        per day. If the data volume for the member account is 40 GB per day, then
+     *        <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail withPercentOfGraphUtilization(Double percentOfGraphUtilization) {
+        setPercentOfGraphUtilization(percentOfGraphUtilization);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the graph utilization percentage was last updated.
+     * </p>
+     * 
+     * @param percentOfGraphUtilizationUpdatedTime
+     *        The date and time when the graph utilization percentage was last updated.
+     */
+
+    public void setPercentOfGraphUtilizationUpdatedTime(java.util.Date percentOfGraphUtilizationUpdatedTime) {
+        this.percentOfGraphUtilizationUpdatedTime = percentOfGraphUtilizationUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the graph utilization percentage was last updated.
+     * </p>
+     * 
+     * @return The date and time when the graph utilization percentage was last updated.
+     */
+
+    public java.util.Date getPercentOfGraphUtilizationUpdatedTime() {
+        return this.percentOfGraphUtilizationUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the graph utilization percentage was last updated.
+     * </p>
+     * 
+     * @param percentOfGraphUtilizationUpdatedTime
+     *        The date and time when the graph utilization percentage was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail withPercentOfGraphUtilizationUpdatedTime(java.util.Date percentOfGraphUtilizationUpdatedTime) {
+        setPercentOfGraphUtilizationUpdatedTime(percentOfGraphUtilizationUpdatedTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -664,10 +1102,16 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("MasterId: ").append(getMasterId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getDisabledReason() != null)
+            sb.append("DisabledReason: ").append(getDisabledReason()).append(",");
         if (getInvitedTime() != null)
             sb.append("InvitedTime: ").append(getInvitedTime()).append(",");
         if (getUpdatedTime() != null)
-            sb.append("UpdatedTime: ").append(getUpdatedTime());
+            sb.append("UpdatedTime: ").append(getUpdatedTime()).append(",");
+        if (getPercentOfGraphUtilization() != null)
+            sb.append("PercentOfGraphUtilization: ").append(getPercentOfGraphUtilization()).append(",");
+        if (getPercentOfGraphUtilizationUpdatedTime() != null)
+            sb.append("PercentOfGraphUtilizationUpdatedTime: ").append(getPercentOfGraphUtilizationUpdatedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -702,6 +1146,10 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getDisabledReason() == null ^ this.getDisabledReason() == null)
+            return false;
+        if (other.getDisabledReason() != null && other.getDisabledReason().equals(this.getDisabledReason()) == false)
+            return false;
         if (other.getInvitedTime() == null ^ this.getInvitedTime() == null)
             return false;
         if (other.getInvitedTime() != null && other.getInvitedTime().equals(this.getInvitedTime()) == false)
@@ -709,6 +1157,15 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         if (other.getUpdatedTime() == null ^ this.getUpdatedTime() == null)
             return false;
         if (other.getUpdatedTime() != null && other.getUpdatedTime().equals(this.getUpdatedTime()) == false)
+            return false;
+        if (other.getPercentOfGraphUtilization() == null ^ this.getPercentOfGraphUtilization() == null)
+            return false;
+        if (other.getPercentOfGraphUtilization() != null && other.getPercentOfGraphUtilization().equals(this.getPercentOfGraphUtilization()) == false)
+            return false;
+        if (other.getPercentOfGraphUtilizationUpdatedTime() == null ^ this.getPercentOfGraphUtilizationUpdatedTime() == null)
+            return false;
+        if (other.getPercentOfGraphUtilizationUpdatedTime() != null
+                && other.getPercentOfGraphUtilizationUpdatedTime().equals(this.getPercentOfGraphUtilizationUpdatedTime()) == false)
             return false;
         return true;
     }
@@ -723,8 +1180,11 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getGraphArn() == null) ? 0 : getGraphArn().hashCode());
         hashCode = prime * hashCode + ((getMasterId() == null) ? 0 : getMasterId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDisabledReason() == null) ? 0 : getDisabledReason().hashCode());
         hashCode = prime * hashCode + ((getInvitedTime() == null) ? 0 : getInvitedTime().hashCode());
         hashCode = prime * hashCode + ((getUpdatedTime() == null) ? 0 : getUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getPercentOfGraphUtilization() == null) ? 0 : getPercentOfGraphUtilization().hashCode());
+        hashCode = prime * hashCode + ((getPercentOfGraphUtilizationUpdatedTime() == null) ? 0 : getPercentOfGraphUtilizationUpdatedTime().hashCode());
         return hashCode;
     }
 

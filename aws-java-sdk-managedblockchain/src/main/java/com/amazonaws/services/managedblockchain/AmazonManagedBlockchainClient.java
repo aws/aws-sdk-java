@@ -1291,6 +1291,136 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Updates a member configuration with new parameters.
+     * </p>
+     * 
+     * @param updateMemberRequest
+     * @return Result of the UpdateMember operation returned by the service.
+     * @throws InvalidRequestException
+     *         The action or operation requested is invalid. Verify that the action is typed correctly.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     * @throws ThrottlingException
+     *         The request or operation could not be performed because a service is throttling requests. The most common
+     *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
+     *         exceeded. Request a limit increase or delete unused resources if possible.
+     * @throws InternalServiceErrorException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonManagedBlockchain.UpdateMember
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateMemberResult updateMember(UpdateMemberRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMember(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMemberResult executeUpdateMember(UpdateMemberRequest updateMemberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMemberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMemberRequest> request = null;
+        Response<UpdateMemberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMemberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMember");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMemberResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMemberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a node configuration with new parameters.
+     * </p>
+     * 
+     * @param updateNodeRequest
+     * @return Result of the UpdateNode operation returned by the service.
+     * @throws InvalidRequestException
+     *         The action or operation requested is invalid. Verify that the action is typed correctly.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     * @throws ThrottlingException
+     *         The request or operation could not be performed because a service is throttling requests. The most common
+     *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
+     *         exceeded. Request a limit increase or delete unused resources if possible.
+     * @throws InternalServiceErrorException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonManagedBlockchain.UpdateNode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateNodeResult updateNode(UpdateNodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNode(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNodeResult executeUpdateNode(UpdateNodeRequest updateNodeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNodeRequest> request = null;
+        Response<UpdateNodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNodeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateNodeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by
      * <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.
      * </p>

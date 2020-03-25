@@ -37,10 +37,16 @@ public class MemberDetailMarshaller {
             .marshallLocationName("MasterId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> DISABLEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledReason").build();
     private static final MarshallingInfo<java.util.Date> INVITEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Double> PERCENTOFGRAPHUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilization").build();
+    private static final MarshallingInfo<java.util.Date> PERCENTOFGRAPHUTILIZATIONUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilizationUpdatedTime").timestampFormat("unixTimestamp").build();
 
     private static final MemberDetailMarshaller instance = new MemberDetailMarshaller();
 
@@ -63,8 +69,11 @@ public class MemberDetailMarshaller {
             protocolMarshaller.marshall(memberDetail.getGraphArn(), GRAPHARN_BINDING);
             protocolMarshaller.marshall(memberDetail.getMasterId(), MASTERID_BINDING);
             protocolMarshaller.marshall(memberDetail.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(memberDetail.getDisabledReason(), DISABLEDREASON_BINDING);
             protocolMarshaller.marshall(memberDetail.getInvitedTime(), INVITEDTIME_BINDING);
             protocolMarshaller.marshall(memberDetail.getUpdatedTime(), UPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(memberDetail.getPercentOfGraphUtilization(), PERCENTOFGRAPHUTILIZATION_BINDING);
+            protocolMarshaller.marshall(memberDetail.getPercentOfGraphUtilizationUpdatedTime(), PERCENTOFGRAPHUTILIZATIONUPDATEDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

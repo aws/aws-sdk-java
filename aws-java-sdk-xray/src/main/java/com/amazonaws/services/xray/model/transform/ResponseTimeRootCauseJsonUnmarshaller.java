@@ -53,6 +53,10 @@ public class ResponseTimeRootCauseJsonUnmarshaller implements Unmarshaller<Respo
                     responseTimeRootCause.setServices(new ListUnmarshaller<ResponseTimeRootCauseService>(ResponseTimeRootCauseServiceJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ClientImpacting", targetDepth)) {
+                    context.nextToken();
+                    responseTimeRootCause.setClientImpacting(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

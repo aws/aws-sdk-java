@@ -64,6 +64,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodeFrameworkAttributes frameworkAttributes;
+    /** <p/> */
+    private NodeLogPublishingConfiguration logPublishingConfiguration;
     /**
      * <p>
      * The status of the node.
@@ -318,6 +320,38 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p/>
+     * 
+     * @param logPublishingConfiguration
+     */
+
+    public void setLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
+        this.logPublishingConfiguration = logPublishingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public NodeLogPublishingConfiguration getLogPublishingConfiguration() {
+        return this.logPublishingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param logPublishingConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
+        setLogPublishingConfiguration(logPublishingConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
      * The status of the node.
      * </p>
@@ -440,6 +474,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getFrameworkAttributes() != null)
             sb.append("FrameworkAttributes: ").append(getFrameworkAttributes()).append(",");
+        if (getLogPublishingConfiguration() != null)
+            sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationDate() != null)
@@ -482,6 +518,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFrameworkAttributes() != null && other.getFrameworkAttributes().equals(this.getFrameworkAttributes()) == false)
             return false;
+        if (other.getLogPublishingConfiguration() == null ^ this.getLogPublishingConfiguration() == null)
+            return false;
+        if (other.getLogPublishingConfiguration() != null && other.getLogPublishingConfiguration().equals(this.getLogPublishingConfiguration()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -504,6 +544,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getFrameworkAttributes() == null) ? 0 : getFrameworkAttributes().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;

@@ -30,6 +30,8 @@ public class FaultRootCauseMarshaller {
 
     private static final MarshallingInfo<List> SERVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Services").build();
+    private static final MarshallingInfo<Boolean> CLIENTIMPACTING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientImpacting").build();
 
     private static final FaultRootCauseMarshaller instance = new FaultRootCauseMarshaller();
 
@@ -48,6 +50,7 @@ public class FaultRootCauseMarshaller {
 
         try {
             protocolMarshaller.marshall(faultRootCause.getServices(), SERVICES_BINDING);
+            protocolMarshaller.marshall(faultRootCause.getClientImpacting(), CLIENTIMPACTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

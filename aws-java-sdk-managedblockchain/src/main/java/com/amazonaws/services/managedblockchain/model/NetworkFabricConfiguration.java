@@ -31,7 +31,7 @@ public class NetworkFabricConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     * href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * </p>
      */
     private String edition;
@@ -39,12 +39,12 @@ public class NetworkFabricConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     * href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * </p>
      * 
      * @param edition
      *        The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     *        href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     *        href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * @see Edition
      */
 
@@ -55,11 +55,11 @@ public class NetworkFabricConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     * href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * </p>
      * 
      * @return The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     *         href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     *         href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * @see Edition
      */
 
@@ -70,12 +70,12 @@ public class NetworkFabricConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     * href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * </p>
      * 
      * @param edition
      *        The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     *        href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     *        href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Edition
      */
@@ -88,12 +88,12 @@ public class NetworkFabricConfiguration implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     * href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * </p>
      * 
      * @param edition
      *        The edition of Amazon Managed Blockchain that the network uses. For more information, see <a
-     *        href="https://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
+     *        href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed Blockchain Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Edition
      */

@@ -82,7 +82,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      */
@@ -266,7 +266,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
@@ -307,7 +307,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        </ul>
      *        <p>
      *        <code>GetSavingsPlansUtilization</code> uses the same <a
-     *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
      *        dimension.
      */
@@ -355,7 +355,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
@@ -395,7 +395,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *         </ul>
      *         <p>
      *         <code>GetSavingsPlansUtilization</code> uses the same <a
-     *         href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
      *         dimension.
      */
@@ -443,7 +443,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      * <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among each dimension.
      * </p>
      * 
@@ -484,7 +484,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      *        </ul>
      *        <p>
      *        <code>GetSavingsPlansUtilization</code> uses the same <a
-     *        href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
      *        dimension.
      * @return Returns a reference to this object so that method calls can be chained together.

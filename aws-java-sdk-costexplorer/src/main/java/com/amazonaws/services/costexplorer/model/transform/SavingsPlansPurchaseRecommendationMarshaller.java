@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SavingsPlansPurchaseRecommendationMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountScope").build();
     private static final MarshallingInfo<String> SAVINGSPLANSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SavingsPlansType").build();
     private static final MarshallingInfo<String> TERMINYEARS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class SavingsPlansPurchaseRecommendationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(savingsPlansPurchaseRecommendation.getAccountScope(), ACCOUNTSCOPE_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendation.getSavingsPlansType(), SAVINGSPLANSTYPE_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendation.getTermInYears(), TERMINYEARS_BINDING);
             protocolMarshaller.marshall(savingsPlansPurchaseRecommendation.getPaymentOption(), PAYMENTOPTION_BINDING);

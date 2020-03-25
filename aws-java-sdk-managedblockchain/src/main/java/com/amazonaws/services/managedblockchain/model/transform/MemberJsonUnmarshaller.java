@@ -68,6 +68,10 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
                     context.nextToken();
                     member.setFrameworkAttributes(MemberFrameworkAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LogPublishingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    member.setLogPublishingConfiguration(MemberLogPublishingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     member.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

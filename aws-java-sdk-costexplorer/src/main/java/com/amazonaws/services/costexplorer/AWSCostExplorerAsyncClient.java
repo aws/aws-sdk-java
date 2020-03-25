@@ -45,7 +45,7 @@ import java.util.concurrent.ExecutorService;
  * </ul>
  * <p>
  * For information about costs associated with the Cost Explorer API, see <a
- * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
+ * href="http://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
  * </p>
  */
 @ThreadSafe

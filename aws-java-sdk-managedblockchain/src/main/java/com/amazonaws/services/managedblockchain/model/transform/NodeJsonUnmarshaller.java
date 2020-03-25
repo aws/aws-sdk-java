@@ -72,6 +72,10 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
                     context.nextToken();
                     node.setFrameworkAttributes(NodeFrameworkAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LogPublishingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    node.setLogPublishingConfiguration(NodeLogPublishingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     node.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

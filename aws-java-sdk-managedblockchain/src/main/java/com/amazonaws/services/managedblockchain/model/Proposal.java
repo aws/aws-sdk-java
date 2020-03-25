@@ -97,7 +97,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was
-     * approved could not be completed because of an error.
+     * approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only
+     * one ProposalAction fails and other actions are successful.
      * </p>
      * </li>
      * </ul>
@@ -411,7 +412,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was
-     * approved could not be completed because of an error.
+     * approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only
+     * one ProposalAction fails and other actions are successful.
      * </p>
      * </li>
      * </ul>
@@ -447,7 +449,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that
-     *        was approved could not be completed because of an error.
+     *        was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     *        if only one ProposalAction fails and other actions are successful.
      *        </p>
      *        </li>
      * @see ProposalStatus
@@ -490,7 +493,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was
-     * approved could not be completed because of an error.
+     * approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only
+     * one ProposalAction fails and other actions are successful.
      * </p>
      * </li>
      * </ul>
@@ -525,7 +529,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that
-     *         was approved could not be completed because of an error.
+     *         was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs
+     *         even if only one ProposalAction fails and other actions are successful.
      *         </p>
      *         </li>
      * @see ProposalStatus
@@ -568,7 +573,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was
-     * approved could not be completed because of an error.
+     * approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only
+     * one ProposalAction fails and other actions are successful.
      * </p>
      * </li>
      * </ul>
@@ -604,7 +610,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that
-     *        was approved could not be completed because of an error.
+     *        was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     *        if only one ProposalAction fails and other actions are successful.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -649,7 +656,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was
-     * approved could not be completed because of an error.
+     * approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even if only
+     * one ProposalAction fails and other actions are successful.
      * </p>
      * </li>
      * </ul>
@@ -685,7 +693,8 @@ public class Proposal implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that
-     *        was approved could not be completed because of an error.
+     *        was approved could not be completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     *        if only one ProposalAction fails and other actions are successful.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

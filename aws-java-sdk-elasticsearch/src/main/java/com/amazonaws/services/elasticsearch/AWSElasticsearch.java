@@ -135,6 +135,33 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Associates a package with an Amazon ES domain.
+     * </p>
+     * 
+     * @param associatePackageRequest
+     *        Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.
+     * @return Result of the AssociatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @sample AWSElasticsearch.AssociatePackage
+     */
+    AssociatePackageResult associatePackage(AssociatePackageRequest associatePackageRequest);
+
+    /**
+     * <p>
      * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
      * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
      * state.
@@ -192,6 +219,36 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Create a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param createPackageRequest
+     *        Container for request parameters to <code> <a>CreatePackage</a> </code> operation.
+     * @return Result of the CreatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws InvalidTypeException
+     *         An exception for trying to create or access sub-resource that is either invalid or not supported. Gives
+     *         http status code of 409.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.CreatePackage
+     */
+    CreatePackageResult createPackage(CreatePackageRequest createPackageRequest);
+
+    /**
+     * <p>
      * Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot
      * be recovered.
      * </p>
@@ -235,6 +292,33 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.DeleteElasticsearchServiceRole
      */
     DeleteElasticsearchServiceRoleResult deleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest);
+
+    /**
+     * <p>
+     * Delete the package.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     *        Container for request parameters to <code> <a>DeletePackage</a> </code> operation.
+     * @return Result of the DeletePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @sample AWSElasticsearch.DeletePackage
+     */
+    DeletePackageResult deletePackage(DeletePackageRequest deletePackageRequest);
 
     /**
      * <p>
@@ -333,6 +417,31 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results,
+     * and pagination.
+     * </p>
+     * 
+     * @param describePackagesRequest
+     *        Container for request parameters to <code> <a>DescribePackage</a> </code> operation.
+     * @return Result of the DescribePackages operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DescribePackages
+     */
+    DescribePackagesResult describePackages(DescribePackagesRequest describePackagesRequest);
+
+    /**
+     * <p>
      * Lists available reserved Elasticsearch instance offerings.
      * </p>
      * 
@@ -376,6 +485,33 @@ public interface AWSElasticsearch {
      */
     DescribeReservedElasticsearchInstancesResult describeReservedElasticsearchInstances(
             DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest);
+
+    /**
+     * <p>
+     * Dissociates a package from the Amazon ES domain.
+     * </p>
+     * 
+     * @param dissociatePackageRequest
+     *        Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.
+     * @return Result of the DissociatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @sample AWSElasticsearch.DissociatePackage
+     */
+    DissociatePackageResult dissociatePackage(DissociatePackageRequest dissociatePackageRequest);
 
     /**
      * <p>
@@ -468,6 +604,30 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Lists all Amazon ES domains associated with the package.
+     * </p>
+     * 
+     * @param listDomainsForPackageRequest
+     *        Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation.
+     * @return Result of the ListDomainsForPackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListDomainsForPackage
+     */
+    ListDomainsForPackageResult listDomainsForPackage(ListDomainsForPackageRequest listDomainsForPackageRequest);
+
+    /**
+     * <p>
      * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
      * </p>
      * 
@@ -515,6 +675,30 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.ListElasticsearchVersions
      */
     ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all packages associated with the Amazon ES domain.
+     * </p>
+     * 
+     * @param listPackagesForDomainRequest
+     *        Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.
+     * @return Result of the ListPackagesForDomain operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListPackagesForDomain
+     */
+    ListPackagesForDomainResult listPackagesForDomain(ListPackagesForDomainRequest listPackagesForDomainRequest);
 
     /**
      * <p>

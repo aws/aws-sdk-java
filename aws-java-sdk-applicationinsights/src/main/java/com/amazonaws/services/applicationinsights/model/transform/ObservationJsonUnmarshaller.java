@@ -100,6 +100,90 @@ public class ObservationJsonUnmarshaller implements Unmarshaller<Observation, Js
                     context.nextToken();
                     observation.setValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchEventId", targetDepth)) {
+                    context.nextToken();
+                    observation.setCloudWatchEventId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchEventSource", targetDepth)) {
+                    context.nextToken();
+                    observation.setCloudWatchEventSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchEventDetailType", targetDepth)) {
+                    context.nextToken();
+                    observation.setCloudWatchEventDetailType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HealthEventArn", targetDepth)) {
+                    context.nextToken();
+                    observation.setHealthEventArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HealthService", targetDepth)) {
+                    context.nextToken();
+                    observation.setHealthService(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HealthEventTypeCode", targetDepth)) {
+                    context.nextToken();
+                    observation.setHealthEventTypeCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HealthEventTypeCategory", targetDepth)) {
+                    context.nextToken();
+                    observation.setHealthEventTypeCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HealthEventDescription", targetDepth)) {
+                    context.nextToken();
+                    observation.setHealthEventDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CodeDeployDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    observation.setCodeDeployDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CodeDeployDeploymentGroup", targetDepth)) {
+                    context.nextToken();
+                    observation.setCodeDeployDeploymentGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CodeDeployState", targetDepth)) {
+                    context.nextToken();
+                    observation.setCodeDeployState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CodeDeployApplication", targetDepth)) {
+                    context.nextToken();
+                    observation.setCodeDeployApplication(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CodeDeployInstanceGroupId", targetDepth)) {
+                    context.nextToken();
+                    observation.setCodeDeployInstanceGroupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Ec2State", targetDepth)) {
+                    context.nextToken();
+                    observation.setEc2State(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayFaultPercent", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayFaultPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayThrottlePercent", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayThrottlePercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayErrorPercent", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayErrorPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayRequestCount", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayRequestCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayRequestAverageLatency", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayRequestAverageLatency(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayNodeName", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayNodeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("XRayNodeType", targetDepth)) {
+                    context.nextToken();
+                    observation.setXRayNodeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

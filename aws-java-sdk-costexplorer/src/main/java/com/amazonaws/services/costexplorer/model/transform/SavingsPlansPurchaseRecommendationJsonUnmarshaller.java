@@ -48,6 +48,10 @@ public class SavingsPlansPurchaseRecommendationJsonUnmarshaller implements Unmar
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountScope", targetDepth)) {
+                    context.nextToken();
+                    savingsPlansPurchaseRecommendation.setAccountScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SavingsPlansType", targetDepth)) {
                     context.nextToken();
                     savingsPlansPurchaseRecommendation.setSavingsPlansType(context.getUnmarshaller(String.class).unmarshall(context));

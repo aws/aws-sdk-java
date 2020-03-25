@@ -33,12 +33,16 @@ public class GetSavingsPlansPurchaseRecommendationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TermInYears").build();
     private static final MarshallingInfo<String> PAYMENTOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PaymentOption").build();
+    private static final MarshallingInfo<String> ACCOUNTSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountScope").build();
     private static final MarshallingInfo<String> NEXTPAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextPageToken").build();
     private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageSize").build();
     private static final MarshallingInfo<String> LOOKBACKPERIODINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LookbackPeriodInDays").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
 
     private static final GetSavingsPlansPurchaseRecommendationRequestMarshaller instance = new GetSavingsPlansPurchaseRecommendationRequestMarshaller();
 
@@ -59,9 +63,11 @@ public class GetSavingsPlansPurchaseRecommendationRequestMarshaller {
             protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getSavingsPlansType(), SAVINGSPLANSTYPE_BINDING);
             protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getTermInYears(), TERMINYEARS_BINDING);
             protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getPaymentOption(), PAYMENTOPTION_BINDING);
+            protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getAccountScope(), ACCOUNTSCOPE_BINDING);
             protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
             protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getPageSize(), PAGESIZE_BINDING);
             protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getLookbackPeriodInDays(), LOOKBACKPERIODINDAYS_BINDING);
+            protocolMarshaller.marshall(getSavingsPlansPurchaseRecommendationRequest.getFilter(), FILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

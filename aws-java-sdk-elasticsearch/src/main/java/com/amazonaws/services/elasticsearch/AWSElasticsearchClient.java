@@ -101,6 +101,12 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticsearch.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticsearch.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -385,6 +391,73 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Associates a package with an Amazon ES domain.
+     * </p>
+     * 
+     * @param associatePackageRequest
+     *        Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.
+     * @return Result of the AssociatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @sample AWSElasticsearch.AssociatePackage
+     */
+    @Override
+    public AssociatePackageResult associatePackage(AssociatePackageRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociatePackage(request);
+    }
+
+    @SdkInternalApi
+    final AssociatePackageResult executeAssociatePackage(AssociatePackageRequest associatePackageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associatePackageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociatePackageRequest> request = null;
+        Response<AssociatePackageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociatePackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associatePackageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePackage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociatePackageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociatePackageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
      * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
      * state.
@@ -526,6 +599,76 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Create a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param createPackageRequest
+     *        Container for request parameters to <code> <a>CreatePackage</a> </code> operation.
+     * @return Result of the CreatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws InvalidTypeException
+     *         An exception for trying to create or access sub-resource that is either invalid or not supported. Gives
+     *         http status code of 409.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.CreatePackage
+     */
+    @Override
+    public CreatePackageResult createPackage(CreatePackageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePackage(request);
+    }
+
+    @SdkInternalApi
+    final CreatePackageResult executeCreatePackage(CreatePackageRequest createPackageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPackageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePackageRequest> request = null;
+        Response<CreatePackageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPackageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePackageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePackageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot
      * be recovered.
      * </p>
@@ -644,6 +787,73 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<DeleteElasticsearchServiceRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteElasticsearchServiceRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete the package.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     *        Container for request parameters to <code> <a>DeletePackage</a> </code> operation.
+     * @return Result of the DeletePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @sample AWSElasticsearch.DeletePackage
+     */
+    @Override
+    public DeletePackageResult deletePackage(DeletePackageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePackage(request);
+    }
+
+    @SdkInternalApi
+    final DeletePackageResult executeDeletePackage(DeletePackageRequest deletePackageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePackageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePackageRequest> request = null;
+        Response<DeletePackageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePackageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePackageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePackageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -920,6 +1130,71 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results,
+     * and pagination.
+     * </p>
+     * 
+     * @param describePackagesRequest
+     *        Container for request parameters to <code> <a>DescribePackage</a> </code> operation.
+     * @return Result of the DescribePackages operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DescribePackages
+     */
+    @Override
+    public DescribePackagesResult describePackages(DescribePackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePackages(request);
+    }
+
+    @SdkInternalApi
+    final DescribePackagesResult executeDescribePackages(DescribePackagesRequest describePackagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePackagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePackagesRequest> request = null;
+        Response<DescribePackagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePackagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePackagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePackagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists available reserved Elasticsearch instance offerings.
      * </p>
      * 
@@ -1039,6 +1314,73 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedElasticsearchInstancesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeReservedElasticsearchInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Dissociates a package from the Amazon ES domain.
+     * </p>
+     * 
+     * @param dissociatePackageRequest
+     *        Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.
+     * @return Result of the DissociatePackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @sample AWSElasticsearch.DissociatePackage
+     */
+    @Override
+    public DissociatePackageResult dissociatePackage(DissociatePackageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDissociatePackage(request);
+    }
+
+    @SdkInternalApi
+    final DissociatePackageResult executeDissociatePackage(DissociatePackageRequest dissociatePackageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(dissociatePackageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DissociatePackageRequest> request = null;
+        Response<DissociatePackageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DissociatePackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(dissociatePackageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DissociatePackage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DissociatePackageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DissociatePackageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1302,6 +1644,71 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Lists all Amazon ES domains associated with the package.
+     * </p>
+     * 
+     * @param listDomainsForPackageRequest
+     *        Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation.
+     * @return Result of the ListDomainsForPackage operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListDomainsForPackage
+     */
+    @Override
+    public ListDomainsForPackageResult listDomainsForPackage(ListDomainsForPackageRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainsForPackage(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainsForPackageResult executeListDomainsForPackage(ListDomainsForPackageRequest listDomainsForPackageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDomainsForPackageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDomainsForPackageRequest> request = null;
+        Response<ListDomainsForPackageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDomainsForPackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsForPackageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainsForPackage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainsForPackageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListDomainsForPackageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
      * </p>
      * 
@@ -1424,6 +1831,71 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<ListElasticsearchVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListElasticsearchVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all packages associated with the Amazon ES domain.
+     * </p>
+     * 
+     * @param listPackagesForDomainRequest
+     *        Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.
+     * @return Result of the ListPackagesForDomain operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws AccessDeniedException
+     *         An error occurred because user does not have permissions to access the resource. Returns HTTP status code
+     *         403.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListPackagesForDomain
+     */
+    @Override
+    public ListPackagesForDomainResult listPackagesForDomain(ListPackagesForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPackagesForDomain(request);
+    }
+
+    @SdkInternalApi
+    final ListPackagesForDomainResult executeListPackagesForDomain(ListPackagesForDomainRequest listPackagesForDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPackagesForDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPackagesForDomainRequest> request = null;
+        Response<ListPackagesForDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPackagesForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPackagesForDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elasticsearch Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagesForDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPackagesForDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListPackagesForDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

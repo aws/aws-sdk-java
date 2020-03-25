@@ -85,6 +85,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Associates a package with an Amazon ES domain.
+     * </p>
+     * 
+     * @param associatePackageRequest
+     *        Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.
+     * @return A Java Future containing the result of the AssociatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsync.AssociatePackage
+     */
+    java.util.concurrent.Future<AssociatePackageResult> associatePackageAsync(AssociatePackageRequest associatePackageRequest);
+
+    /**
+     * <p>
+     * Associates a package with an Amazon ES domain.
+     * </p>
+     * 
+     * @param associatePackageRequest
+     *        Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.AssociatePackage
+     */
+    java.util.concurrent.Future<AssociatePackageResult> associatePackageAsync(AssociatePackageRequest associatePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociatePackageRequest, AssociatePackageResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
      * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
      * state.
@@ -156,6 +185,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<CreateElasticsearchDomainResult> createElasticsearchDomainAsync(
             CreateElasticsearchDomainRequest createElasticsearchDomainRequest,
             com.amazonaws.handlers.AsyncHandler<CreateElasticsearchDomainRequest, CreateElasticsearchDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param createPackageRequest
+     *        Container for request parameters to <code> <a>CreatePackage</a> </code> operation.
+     * @return A Java Future containing the result of the CreatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsync.CreatePackage
+     */
+    java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest createPackageRequest);
+
+    /**
+     * <p>
+     * Create a package for use with Amazon ES domains.
+     * </p>
+     * 
+     * @param createPackageRequest
+     *        Container for request parameters to <code> <a>CreatePackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.CreatePackage
+     */
+    java.util.concurrent.Future<CreatePackageResult> createPackageAsync(CreatePackageRequest createPackageRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageRequest, CreatePackageResult> asyncHandler);
 
     /**
      * <p>
@@ -232,6 +290,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<DeleteElasticsearchServiceRoleResult> deleteElasticsearchServiceRoleAsync(
             DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteElasticsearchServiceRoleRequest, DeleteElasticsearchServiceRoleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the package.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     *        Container for request parameters to <code> <a>DeletePackage</a> </code> operation.
+     * @return A Java Future containing the result of the DeletePackage operation returned by the service.
+     * @sample AWSElasticsearchAsync.DeletePackage
+     */
+    java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest);
+
+    /**
+     * <p>
+     * Delete the package.
+     * </p>
+     * 
+     * @param deletePackageRequest
+     *        Container for request parameters to <code> <a>DeletePackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePackage operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DeletePackage
+     */
+    java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler);
 
     /**
      * <p>
@@ -377,6 +464,37 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results,
+     * and pagination.
+     * </p>
+     * 
+     * @param describePackagesRequest
+     *        Container for request parameters to <code> <a>DescribePackage</a> </code> operation.
+     * @return A Java Future containing the result of the DescribePackages operation returned by the service.
+     * @sample AWSElasticsearchAsync.DescribePackages
+     */
+    java.util.concurrent.Future<DescribePackagesResult> describePackagesAsync(DescribePackagesRequest describePackagesRequest);
+
+    /**
+     * <p>
+     * Describes all packages available to Amazon ES. Includes options for filtering, limiting the number of results,
+     * and pagination.
+     * </p>
+     * 
+     * @param describePackagesRequest
+     *        Container for request parameters to <code> <a>DescribePackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePackages operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribePackages
+     */
+    java.util.concurrent.Future<DescribePackagesResult> describePackagesAsync(DescribePackagesRequest describePackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePackagesRequest, DescribePackagesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists available reserved Elasticsearch instance offerings.
      * </p>
      * 
@@ -440,6 +558,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<DescribeReservedElasticsearchInstancesResult> describeReservedElasticsearchInstancesAsync(
             DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeReservedElasticsearchInstancesRequest, DescribeReservedElasticsearchInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Dissociates a package from the Amazon ES domain.
+     * </p>
+     * 
+     * @param dissociatePackageRequest
+     *        Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.
+     * @return A Java Future containing the result of the DissociatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsync.DissociatePackage
+     */
+    java.util.concurrent.Future<DissociatePackageResult> dissociatePackageAsync(DissociatePackageRequest dissociatePackageRequest);
+
+    /**
+     * <p>
+     * Dissociates a package from the Amazon ES domain.
+     * </p>
+     * 
+     * @param dissociatePackageRequest
+     *        Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DissociatePackage operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DissociatePackage
+     */
+    java.util.concurrent.Future<DissociatePackageResult> dissociatePackageAsync(DissociatePackageRequest dissociatePackageRequest,
+            com.amazonaws.handlers.AsyncHandler<DissociatePackageRequest, DissociatePackageResult> asyncHandler);
 
     /**
      * <p>
@@ -563,6 +710,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Lists all Amazon ES domains associated with the package.
+     * </p>
+     * 
+     * @param listDomainsForPackageRequest
+     *        Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation.
+     * @return A Java Future containing the result of the ListDomainsForPackage operation returned by the service.
+     * @sample AWSElasticsearchAsync.ListDomainsForPackage
+     */
+    java.util.concurrent.Future<ListDomainsForPackageResult> listDomainsForPackageAsync(ListDomainsForPackageRequest listDomainsForPackageRequest);
+
+    /**
+     * <p>
+     * Lists all Amazon ES domains associated with the package.
+     * </p>
+     * 
+     * @param listDomainsForPackageRequest
+     *        Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDomainsForPackage operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.ListDomainsForPackage
+     */
+    java.util.concurrent.Future<ListDomainsForPackageResult> listDomainsForPackageAsync(ListDomainsForPackageRequest listDomainsForPackageRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDomainsForPackageRequest, ListDomainsForPackageResult> asyncHandler);
+
+    /**
+     * <p>
      * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
      * </p>
      * 
@@ -640,6 +816,35 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<ListElasticsearchVersionsResult> listElasticsearchVersionsAsync(
             ListElasticsearchVersionsRequest listElasticsearchVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListElasticsearchVersionsRequest, ListElasticsearchVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all packages associated with the Amazon ES domain.
+     * </p>
+     * 
+     * @param listPackagesForDomainRequest
+     *        Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.
+     * @return A Java Future containing the result of the ListPackagesForDomain operation returned by the service.
+     * @sample AWSElasticsearchAsync.ListPackagesForDomain
+     */
+    java.util.concurrent.Future<ListPackagesForDomainResult> listPackagesForDomainAsync(ListPackagesForDomainRequest listPackagesForDomainRequest);
+
+    /**
+     * <p>
+     * Lists all packages associated with the Amazon ES domain.
+     * </p>
+     * 
+     * @param listPackagesForDomainRequest
+     *        Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPackagesForDomain operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.ListPackagesForDomain
+     */
+    java.util.concurrent.Future<ListPackagesForDomainResult> listPackagesForDomainAsync(ListPackagesForDomainRequest listPackagesForDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPackagesForDomainRequest, ListPackagesForDomainResult> asyncHandler);
 
     /**
      * <p>
