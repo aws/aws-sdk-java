@@ -42,6 +42,8 @@ public class FileSystemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureDetails").build();
     private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageCapacity").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
     private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VpcId").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class FileSystemMarshaller {
             protocolMarshaller.marshall(fileSystem.getLifecycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(fileSystem.getFailureDetails(), FAILUREDETAILS_BINDING);
             protocolMarshaller.marshall(fileSystem.getStorageCapacity(), STORAGECAPACITY_BINDING);
+            protocolMarshaller.marshall(fileSystem.getStorageType(), STORAGETYPE_BINDING);
             protocolMarshaller.marshall(fileSystem.getVpcId(), VPCID_BINDING);
             protocolMarshaller.marshall(fileSystem.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(fileSystem.getNetworkInterfaceIds(), NETWORKINTERFACEIDS_BINDING);

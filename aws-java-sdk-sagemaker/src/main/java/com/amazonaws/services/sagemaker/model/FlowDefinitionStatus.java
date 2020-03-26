@@ -23,8 +23,7 @@ public enum FlowDefinitionStatus {
     Initializing("Initializing"),
     Active("Active"),
     Failed("Failed"),
-    Deleting("Deleting"),
-    Deleted("Deleted");
+    Deleting("Deleting");
 
     private String value;
 

@@ -31,6 +31,8 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String flowDefinitionName;
+
+    private HumanLoopRequestSource humanLoopRequestSource;
     /**
      * <p>
      * An object containing information about the events that trigger a human workflow.
@@ -101,6 +103,32 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreateFlowDefinitionRequest withFlowDefinitionName(String flowDefinitionName) {
         setFlowDefinitionName(flowDefinitionName);
+        return this;
+    }
+
+    /**
+     * @param humanLoopRequestSource
+     */
+
+    public void setHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
+        this.humanLoopRequestSource = humanLoopRequestSource;
+    }
+
+    /**
+     * @return
+     */
+
+    public HumanLoopRequestSource getHumanLoopRequestSource() {
+        return this.humanLoopRequestSource;
+    }
+
+    /**
+     * @param humanLoopRequestSource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowDefinitionRequest withHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
+        setHumanLoopRequestSource(humanLoopRequestSource);
         return this;
     }
 
@@ -362,6 +390,8 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getFlowDefinitionName() != null)
             sb.append("FlowDefinitionName: ").append(getFlowDefinitionName()).append(",");
+        if (getHumanLoopRequestSource() != null)
+            sb.append("HumanLoopRequestSource: ").append(getHumanLoopRequestSource()).append(",");
         if (getHumanLoopActivationConfig() != null)
             sb.append("HumanLoopActivationConfig: ").append(getHumanLoopActivationConfig()).append(",");
         if (getHumanLoopConfig() != null)
@@ -389,6 +419,10 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getFlowDefinitionName() == null ^ this.getFlowDefinitionName() == null)
             return false;
         if (other.getFlowDefinitionName() != null && other.getFlowDefinitionName().equals(this.getFlowDefinitionName()) == false)
+            return false;
+        if (other.getHumanLoopRequestSource() == null ^ this.getHumanLoopRequestSource() == null)
+            return false;
+        if (other.getHumanLoopRequestSource() != null && other.getHumanLoopRequestSource().equals(this.getHumanLoopRequestSource()) == false)
             return false;
         if (other.getHumanLoopActivationConfig() == null ^ this.getHumanLoopActivationConfig() == null)
             return false;
@@ -419,6 +453,7 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFlowDefinitionName() == null) ? 0 : getFlowDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getHumanLoopRequestSource() == null) ? 0 : getHumanLoopRequestSource().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopActivationConfig() == null) ? 0 : getHumanLoopActivationConfig().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopConfig() == null) ? 0 : getHumanLoopConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());

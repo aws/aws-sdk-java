@@ -27,8 +27,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the endpoint configuration. You specify this name in a <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      * </p>
      */
     private String endpointConfigName;
@@ -109,13 +108,11 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the endpoint configuration. You specify this name in a <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      * </p>
      * 
      * @param endpointConfigName
-     *        The name of the endpoint configuration. You specify this name in a <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     *        The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      */
 
     public void setEndpointConfigName(String endpointConfigName) {
@@ -124,13 +121,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the endpoint configuration. You specify this name in a <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      * </p>
      * 
-     * @return The name of the endpoint configuration. You specify this name in a <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-     *         request.
+     * @return The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      */
 
     public String getEndpointConfigName() {
@@ -139,13 +133,11 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the endpoint configuration. You specify this name in a <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     * The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      * </p>
      * 
      * @param endpointConfigName
-     *        The name of the endpoint configuration. You specify this name in a <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> request.
+     *        The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

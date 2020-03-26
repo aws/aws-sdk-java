@@ -30,18 +30,31 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 location of the data.
+     * The Amazon S3 location of the input data.
      * </p>
+     * <note>
+     * <p>
+     * The input data must be in CSV format and contain at least 1000 rows.
+     * </p>
+     * </note>
      */
     private AutoMLS3DataSource s3DataSource;
 
     /**
      * <p>
-     * The Amazon S3 location of the data.
+     * The Amazon S3 location of the input data.
      * </p>
+     * <note>
+     * <p>
+     * The input data must be in CSV format and contain at least 1000 rows.
+     * </p>
+     * </note>
      * 
      * @param s3DataSource
-     *        The Amazon S3 location of the data.
+     *        The Amazon S3 location of the input data.</p> <note>
+     *        <p>
+     *        The input data must be in CSV format and contain at least 1000 rows.
+     *        </p>
      */
 
     public void setS3DataSource(AutoMLS3DataSource s3DataSource) {
@@ -50,10 +63,18 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 location of the data.
+     * The Amazon S3 location of the input data.
      * </p>
+     * <note>
+     * <p>
+     * The input data must be in CSV format and contain at least 1000 rows.
+     * </p>
+     * </note>
      * 
-     * @return The Amazon S3 location of the data.
+     * @return The Amazon S3 location of the input data.</p> <note>
+     *         <p>
+     *         The input data must be in CSV format and contain at least 1000 rows.
+     *         </p>
      */
 
     public AutoMLS3DataSource getS3DataSource() {
@@ -62,11 +83,19 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 location of the data.
+     * The Amazon S3 location of the input data.
      * </p>
+     * <note>
+     * <p>
+     * The input data must be in CSV format and contain at least 1000 rows.
+     * </p>
+     * </note>
      * 
      * @param s3DataSource
-     *        The Amazon S3 location of the data.
+     *        The Amazon S3 location of the input data.</p> <note>
+     *        <p>
+     *        The input data must be in CSV format and contain at least 1000 rows.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

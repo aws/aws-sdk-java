@@ -33,6 +33,8 @@ public class StandardMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Boolean> ENABLEDBYDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledByDefault").build();
 
     private static final StandardMarshaller instance = new StandardMarshaller();
 
@@ -53,6 +55,7 @@ public class StandardMarshaller {
             protocolMarshaller.marshall(standard.getStandardsArn(), STANDARDSARN_BINDING);
             protocolMarshaller.marshall(standard.getName(), NAME_BINDING);
             protocolMarshaller.marshall(standard.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(standard.getEnabledByDefault(), ENABLEDBYDEFAULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

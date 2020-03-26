@@ -27,8 +27,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HumanLoopActivationConfigMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> HUMANLOOPREQUESTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanLoopRequestSource").build();
     private static final MarshallingInfo<StructuredPojo> HUMANLOOPACTIVATIONCONDITIONSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanLoopActivationConditionsConfig").build();
 
@@ -48,7 +46,6 @@ public class HumanLoopActivationConfigMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(humanLoopActivationConfig.getHumanLoopRequestSource(), HUMANLOOPREQUESTSOURCE_BINDING);
             protocolMarshaller.marshall(humanLoopActivationConfig.getHumanLoopActivationConditionsConfig(), HUMANLOOPACTIVATIONCONDITIONSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

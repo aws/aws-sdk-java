@@ -28,7 +28,8 @@ public enum Operator {
     LessThanOrEqualTo("LessThanOrEqualTo"),
     Contains("Contains"),
     Exists("Exists"),
-    NotExists("NotExists");
+    NotExists("NotExists"),
+    In("In");
 
     private String value;
 

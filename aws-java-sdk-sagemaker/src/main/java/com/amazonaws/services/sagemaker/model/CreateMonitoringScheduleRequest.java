@@ -40,7 +40,7 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
-     * href=" https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      */
@@ -129,12 +129,12 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
-     * href=" https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return (Optional) An array of key-value pairs. For more information, see <a
-     *         href=" https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     *         href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -145,13 +145,13 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
-     * href=" https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a href=
-     *        " https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     *        " https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -167,7 +167,7 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
-     * href=" https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
@@ -178,7 +178,7 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a href=
-     *        " https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     *        " https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -196,13 +196,13 @@ public class CreateMonitoringScheduleRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) An array of key-value pairs. For more information, see <a
-     * href=" https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     * href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      * >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        (Optional) An array of key-value pairs. For more information, see <a href=
-     *        " https://docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
+     *        " https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL"
      *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

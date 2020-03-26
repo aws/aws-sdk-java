@@ -41,6 +41,7 @@ public enum TargetDevice {
     Sbe_c("sbe_c"),
     Qcs605("qcs605"),
     Qcs603("qcs603"),
+    Sitara_am57x("sitara_am57x"),
     Amba_cv22("amba_cv22");
 
     private String value;

@@ -34,7 +34,10 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The
-     * default path is the file system root directory.
+     * default path is the file system root directory. The paths you provide need to be relative to the mount point of
+     * the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
+     * file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.
      * </p>
      */
     private java.util.List<String> paths;
@@ -44,7 +47,9 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport
      * provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the
-     * <code>Scope</code> parameter.
+     * <code>Scope</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     * Completion Reports</a>.
      * </p>
      */
     private CompletionReport report;
@@ -115,11 +120,17 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The
-     * default path is the file system root directory.
+     * default path is the file system root directory. The paths you provide need to be relative to the mount point of
+     * the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
+     * file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.
      * </p>
      * 
      * @return (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is
-     *         processed. The default path is the file system root directory.
+     *         processed. The default path is the file system root directory. The paths you provide need to be relative
+     *         to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
+     *         <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path
+     *         to provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.
      */
 
     public java.util.List<String> getPaths() {
@@ -129,12 +140,18 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The
-     * default path is the file system root directory.
+     * default path is the file system root directory. The paths you provide need to be relative to the mount point of
+     * the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
+     * file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.
      * </p>
      * 
      * @param paths
      *        (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is
-     *        processed. The default path is the file system root directory.
+     *        processed. The default path is the file system root directory. The paths you provide need to be relative
+     *        to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
+     *        <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to
+     *        provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.
      */
 
     public void setPaths(java.util.Collection<String> paths) {
@@ -149,7 +166,10 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The
-     * default path is the file system root directory.
+     * default path is the file system root directory. The paths you provide need to be relative to the mount point of
+     * the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
+     * file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +179,10 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param paths
      *        (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is
-     *        processed. The default path is the file system root directory.
+     *        processed. The default path is the file system root directory. The paths you provide need to be relative
+     *        to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
+     *        <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to
+     *        provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,12 +199,18 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is processed. The
-     * default path is the file system root directory.
+     * default path is the file system root directory. The paths you provide need to be relative to the mount point of
+     * the file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code> is a directory or
+     * file on the file system you want to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.
      * </p>
      * 
      * @param paths
      *        (Optional) The path or paths on the Amazon FSx file system to use when the data repository task is
-     *        processed. The default path is the file system root directory.
+     *        processed. The default path is the file system root directory. The paths you provide need to be relative
+     *        to the mount point of the file system. If the mount point is <code>/mnt/fsx</code> and
+     *        <code>/mnt/fsx/path1</code> is a directory or file on the file system you want to export, then the path to
+     *        provide is <code>path1</code>. If a path that you provide isn't valid, the task fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,13 +249,17 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport
      * provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the
-     * <code>Scope</code> parameter.
+     * <code>Scope</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     * Completion Reports</a>.
      * </p>
      * 
      * @param report
      *        Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A
      *        CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria
-     *        specified by the <code>Scope</code> parameter.
+     *        specified by the <code>Scope</code> parameter. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     *        Completion Reports</a>.
      */
 
     public void setReport(CompletionReport report) {
@@ -237,12 +270,16 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport
      * provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the
-     * <code>Scope</code> parameter.
+     * <code>Scope</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     * Completion Reports</a>.
      * </p>
      * 
      * @return Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A
      *         CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria
-     *         specified by the <code>Scope</code> parameter.
+     *         specified by the <code>Scope</code> parameter. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     *         Completion Reports</a>.
      */
 
     public CompletionReport getReport() {
@@ -253,13 +290,17 @@ public class CreateDataRepositoryTaskRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A CompletionReport
      * provides a detailed report on the files that Amazon FSx processed that meet the criteria specified by the
-     * <code>Scope</code> parameter.
+     * <code>Scope</code> parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     * Completion Reports</a>.
      * </p>
      * 
      * @param report
      *        Defines whether or not Amazon FSx provides a CompletionReport once the task has completed. A
      *        CompletionReport provides a detailed report on the files that Amazon FSx processed that meet the criteria
-     *        specified by the <code>Scope</code> parameter.
+     *        specified by the <code>Scope</code> parameter. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working with Task
+     *        Completion Reports</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

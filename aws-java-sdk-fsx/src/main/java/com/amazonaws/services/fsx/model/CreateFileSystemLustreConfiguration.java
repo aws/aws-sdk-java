@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Lustre configuration for the file system being created. This value is required if <code>FileSystemType</code> is
- * set to <code>LUSTRE</code>.
+ * The Lustre configuration for the file system being created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration"
@@ -102,11 +101,11 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
     private String deploymentType;
     /**
      * <p>
-     * (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput
-     * for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle
-     * system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning
-     * 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput. You pay for the amount of
-     * throughput that you provision. (Default = 200 MB/s/TiB)
+     * Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput for
+     * each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system
+     * storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning 50
+     * MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput. You pay for the amount of
+     * throughput that you provision.
      * </p>
      * <p>
      * Valid values are 50, 100, 200.
@@ -621,22 +620,22 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput
-     * for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle
-     * system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning
-     * 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput. You pay for the amount of
-     * throughput that you provision. (Default = 200 MB/s/TiB)
+     * Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput for
+     * each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system
+     * storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning 50
+     * MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput. You pay for the amount of
+     * throughput that you provision.
      * </p>
      * <p>
      * Valid values are 50, 100, 200.
      * </p>
      * 
      * @param perUnitStorageThroughput
-     *        (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
+     *        Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
      *        throughput for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by
      *        multiplying ﬁle system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB
-     *        ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput.
-     *        You pay for the amount of throughput that you provision. (Default = 200 MB/s/TiB) </p>
+     *        ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput.
+     *        You pay for the amount of throughput that you provision. </p>
      *        <p>
      *        Valid values are 50, 100, 200.
      */
@@ -647,21 +646,21 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput
-     * for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle
-     * system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning
-     * 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput. You pay for the amount of
-     * throughput that you provision. (Default = 200 MB/s/TiB)
+     * Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput for
+     * each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system
+     * storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning 50
+     * MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput. You pay for the amount of
+     * throughput that you provision.
      * </p>
      * <p>
      * Valid values are 50, 100, 200.
      * </p>
      * 
-     * @return (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
+     * @return Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
      *         throughput for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by
      *         multiplying ﬁle system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB
-     *         ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system
-     *         throughput. You pay for the amount of throughput that you provision. (Default = 200 MB/s/TiB) </p>
+     *         ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system
+     *         throughput. You pay for the amount of throughput that you provision. </p>
      *         <p>
      *         Valid values are 50, 100, 200.
      */
@@ -672,22 +671,22 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput
-     * for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle
-     * system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning
-     * 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput. You pay for the amount of
-     * throughput that you provision. (Default = 200 MB/s/TiB)
+     * Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write throughput for
+     * each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system
+     * storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle system, provisioning 50
+     * MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput. You pay for the amount of
+     * throughput that you provision.
      * </p>
      * <p>
      * Valid values are 50, 100, 200.
      * </p>
      * 
      * @param perUnitStorageThroughput
-     *        (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
+     *        Required for the <code>PERSISTENT_1</code> deployment type, describes the amount of read and write
      *        throughput for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by
      *        multiplying ﬁle system storage capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB
-     *        ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of ﬁle system throughput.
-     *        You pay for the amount of throughput that you provision. (Default = 200 MB/s/TiB) </p>
+     *        ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput.
+     *        You pay for the amount of throughput that you provision. </p>
      *        <p>
      *        Valid values are 50, 100, 200.
      * @return Returns a reference to this object so that method calls can be chained together.

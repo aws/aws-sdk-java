@@ -47,6 +47,8 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.Date creationTime;
+
+    private HumanLoopRequestSource humanLoopRequestSource;
     /**
      * <p>
      * An object containing information about what triggers a human review workflow.
@@ -251,6 +253,32 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
 
     public DescribeFlowDefinitionResult withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * @param humanLoopRequestSource
+     */
+
+    public void setHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
+        this.humanLoopRequestSource = humanLoopRequestSource;
+    }
+
+    /**
+     * @return
+     */
+
+    public HumanLoopRequestSource getHumanLoopRequestSource() {
+        return this.humanLoopRequestSource;
+    }
+
+    /**
+     * @param humanLoopRequestSource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowDefinitionResult withHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
+        setHumanLoopRequestSource(humanLoopRequestSource);
         return this;
     }
 
@@ -475,6 +503,8 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
             sb.append("FlowDefinitionStatus: ").append(getFlowDefinitionStatus()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getHumanLoopRequestSource() != null)
+            sb.append("HumanLoopRequestSource: ").append(getHumanLoopRequestSource()).append(",");
         if (getHumanLoopActivationConfig() != null)
             sb.append("HumanLoopActivationConfig: ").append(getHumanLoopActivationConfig()).append(",");
         if (getHumanLoopConfig() != null)
@@ -515,6 +545,10 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getHumanLoopRequestSource() == null ^ this.getHumanLoopRequestSource() == null)
+            return false;
+        if (other.getHumanLoopRequestSource() != null && other.getHumanLoopRequestSource().equals(this.getHumanLoopRequestSource()) == false)
+            return false;
         if (other.getHumanLoopActivationConfig() == null ^ this.getHumanLoopActivationConfig() == null)
             return false;
         if (other.getHumanLoopActivationConfig() != null && other.getHumanLoopActivationConfig().equals(this.getHumanLoopActivationConfig()) == false)
@@ -547,6 +581,7 @@ public class DescribeFlowDefinitionResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getFlowDefinitionName() == null) ? 0 : getFlowDefinitionName().hashCode());
         hashCode = prime * hashCode + ((getFlowDefinitionStatus() == null) ? 0 : getFlowDefinitionStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getHumanLoopRequestSource() == null) ? 0 : getHumanLoopRequestSource().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopActivationConfig() == null) ? 0 : getHumanLoopActivationConfig().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopConfig() == null) ? 0 : getHumanLoopConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());

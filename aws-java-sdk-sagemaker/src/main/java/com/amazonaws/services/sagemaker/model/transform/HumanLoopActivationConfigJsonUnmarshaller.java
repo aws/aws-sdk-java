@@ -48,10 +48,6 @@ public class HumanLoopActivationConfigJsonUnmarshaller implements Unmarshaller<H
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("HumanLoopRequestSource", targetDepth)) {
-                    context.nextToken();
-                    humanLoopActivationConfig.setHumanLoopRequestSource(HumanLoopRequestSourceJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("HumanLoopActivationConditionsConfig", targetDepth)) {
                     context.nextToken();
                     humanLoopActivationConfig.setHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfigJsonUnmarshaller.getInstance()

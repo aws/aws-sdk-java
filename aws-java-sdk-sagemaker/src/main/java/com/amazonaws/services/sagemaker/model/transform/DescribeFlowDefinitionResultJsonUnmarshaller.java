@@ -64,6 +64,10 @@ public class DescribeFlowDefinitionResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeFlowDefinitionResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("HumanLoopRequestSource", targetDepth)) {
+                    context.nextToken();
+                    describeFlowDefinitionResult.setHumanLoopRequestSource(HumanLoopRequestSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("HumanLoopActivationConfig", targetDepth)) {
                     context.nextToken();
                     describeFlowDefinitionResult.setHumanLoopActivationConfig(HumanLoopActivationConfigJsonUnmarshaller.getInstance().unmarshall(context));

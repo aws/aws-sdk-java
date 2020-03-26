@@ -159,8 +159,8 @@ public interface AmazonFSx {
      * repository tasks, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
      * Tasks</a>. To learn more about linking a data repository to your file system, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step 1: Create Your Amazon
-     * FSx for Lustre File System</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting the
+     * Export Prefix</a>.
      * </p>
      * 
      * @param createDataRepositoryTaskRequest

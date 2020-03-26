@@ -22,12 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Specifies a production variant property type for an Endpoint.
  * </p>
  * <p>
- * If you are updating an endpoint with the <a href=
- * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
- * >RetainAllVariantProperties</a> option set to <code>true</code>, the <code>VariantProperty</code> objects listed in
- * <a href=
- * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-ExcludeRetainedVariantProperties"
- * >ExcludeRetainedVariantProperties</a> override the existing variant properties of the endpoint.
+ * If you are updating an endpoint with the <a>UpdateEndpointInput$RetainAllVariantProperties</a> option set to
+ * <code>true</code>, the <code>VariantProperty</code> objects listed in
+ * <a>UpdateEndpointInput$ExcludeRetainedVariantProperties</a> override the existing variant properties of the endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/VariantProperty" target="_top">AWS API
@@ -43,20 +40,14 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     * >InitialInstanceCount</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     * <a>ProductionVariant$InitialInstanceCount</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     * >InitialVariantWeight</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
@@ -75,20 +66,14 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     * >InitialInstanceCount</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     * <a>ProductionVariant$InitialInstanceCount</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     * >InitialVariantWeight</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
@@ -103,20 +88,16 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     *        >InitialInstanceCount</a> values in the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *        >ProductionVariants</a>.
+     *        <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     *        <a>ProductionVariant$InitialInstanceCount</a> values in the
+     *        <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     *        >InitialVariantWeight</a> values in the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *        >ProductionVariants</a>.
+     *        <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     *        <a>ProductionVariant$InitialVariantWeight</a> values in the
+     *        <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -138,20 +119,14 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     * >InitialInstanceCount</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     * <a>ProductionVariant$InitialInstanceCount</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     * >InitialVariantWeight</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
@@ -165,20 +140,16 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     *         >InitialInstanceCount</a> values in the <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *         >ProductionVariants</a>.
+     *         <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     *         <a>ProductionVariant$InitialInstanceCount</a> values in the
+     *         <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     *         >InitialVariantWeight</a> values in the <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *         >ProductionVariants</a>.
+     *         <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     *         <a>ProductionVariant$InitialVariantWeight</a> values in the
+     *         <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -200,20 +171,14 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     * >InitialInstanceCount</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     * <a>ProductionVariant$InitialInstanceCount</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     * >InitialVariantWeight</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
@@ -228,20 +193,16 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     *        >InitialInstanceCount</a> values in the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *        >ProductionVariants</a>.
+     *        <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     *        <a>ProductionVariant$InitialInstanceCount</a> values in the
+     *        <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     *        >InitialVariantWeight</a> values in the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *        >ProductionVariants</a>.
+     *        <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     *        <a>ProductionVariant$InitialVariantWeight</a> values in the
+     *        <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -265,20 +226,14 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     * >InitialInstanceCount</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     * <a>ProductionVariant$InitialInstanceCount</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     * >InitialVariantWeight</a> values in the <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     * >ProductionVariants</a>.
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the <a>CreateEndpointConfigInput$ProductionVariants</a>.
      * </p>
      * </li>
      * <li>
@@ -293,20 +248,16 @@ public class VariantProperty implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount"
-     *        >InitialInstanceCount</a> values in the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *        >ProductionVariants</a>.
+     *        <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts using the
+     *        <a>ProductionVariant$InitialInstanceCount</a> values in the
+     *        <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DesiredWeight</code>: Overrides the existing variant weights using the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight"
-     *        >InitialVariantWeight</a> values in the <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants"
-     *        >ProductionVariants</a>.
+     *        <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     *        <a>ProductionVariant$InitialVariantWeight</a> values in the
+     *        <a>CreateEndpointConfigInput$ProductionVariants</a>.
      *        </p>
      *        </li>
      *        <li>

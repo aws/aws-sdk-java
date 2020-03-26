@@ -1,3 +1,16 @@
+# __1.11.753__ __2020-03-26__
+## __AWS SecurityHub__
+  - ### Features
+    - Security Hub has now made it easier to opt out of default standards when you enable Security Hub. We added a new Boolean parameter to EnableSecurityHub called EnableDefaultStandards. If that parameter is true, Security Hub's default standards are enabled. A new Boolean parameter for standards, EnabledByDefault, indicates whether a standard is a default standard. Today, the only default standard is CIS AWS Foundations Benchmark v1.2. Additional default standards will be added in the future.To learn more, visit our documentation on the EnableSecurityHub API action.
+
+## __Amazon FSx__
+  - ### Features
+    - This release includes two changes: a new lower-cost, storage type called HDD (Hard Disk Drive), and a new generation of the Single-AZ deployment type called Single AZ 2. The HDD storage type can be selected on Multi AZ 1 and Single AZ 2 deployment types.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release updates Amazon Augmented AI CreateFlowDefinition API and DescribeFlowDefinition response.
+
 # __1.11.752__ __2020-03-25__
 ## __AWS Cost Explorer Service__
   - ### Features

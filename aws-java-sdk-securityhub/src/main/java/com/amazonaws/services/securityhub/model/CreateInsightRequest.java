@@ -40,7 +40,9 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
     private AwsSecurityFindingFilters filters;
     /**
      * <p>
-     * The attribute used as the aggregator to group related findings for the insight.
+     * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that
+     * the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.
      * </p>
      */
     private String groupByAttribute;
@@ -133,11 +135,15 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The attribute used as the aggregator to group related findings for the insight.
+     * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that
+     * the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute used as the aggregator to group related findings for the insight.
+     *        The attribute used to group the findings for the insight. The grouping attribute identifies the type of
+     *        item that the insight applies to. For example, if an insight is grouped by resource identifier, then the
+     *        insight produces a list of resource identifiers.
      */
 
     public void setGroupByAttribute(String groupByAttribute) {
@@ -146,10 +152,14 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The attribute used as the aggregator to group related findings for the insight.
+     * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that
+     * the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.
      * </p>
      * 
-     * @return The attribute used as the aggregator to group related findings for the insight.
+     * @return The attribute used to group the findings for the insight. The grouping attribute identifies the type of
+     *         item that the insight applies to. For example, if an insight is grouped by resource identifier, then the
+     *         insight produces a list of resource identifiers.
      */
 
     public String getGroupByAttribute() {
@@ -158,11 +168,15 @@ public class CreateInsightRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The attribute used as the aggregator to group related findings for the insight.
+     * The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that
+     * the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute used as the aggregator to group related findings for the insight.
+     *        The attribute used to group the findings for the insight. The grouping attribute identifies the type of
+     *        item that the insight applies to. For example, if an insight is grouped by resource identifier, then the
+     *        insight produces a list of resource identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

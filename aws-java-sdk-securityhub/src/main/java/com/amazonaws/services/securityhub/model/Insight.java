@@ -49,8 +49,9 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
     private AwsSecurityFindingFilters filters;
     /**
      * <p>
-     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
-     * purposes of viewing and managing multiple related findings under a single operand.
+     * The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies
+     * the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then
+     * the insight produces a list of resource identifiers.
      * </p>
      */
     private String groupByAttribute;
@@ -183,13 +184,15 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
-     * purposes of viewing and managing multiple related findings under a single operand.
+     * The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies
+     * the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then
+     * the insight produces a list of resource identifiers.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator
-     *        for the purposes of viewing and managing multiple related findings under a single operand.
+     *        The grouping attribute for the insight's findings. Indicates how to group the matching findings, and
+     *        identifies the type of item that the insight applies to. For example, if an insight is grouped by resource
+     *        identifier, then the insight produces a list of resource identifiers.
      */
 
     public void setGroupByAttribute(String groupByAttribute) {
@@ -198,12 +201,14 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
-     * purposes of viewing and managing multiple related findings under a single operand.
+     * The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies
+     * the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then
+     * the insight produces a list of resource identifiers.
      * </p>
      * 
-     * @return The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator
-     *         for the purposes of viewing and managing multiple related findings under a single operand.
+     * @return The grouping attribute for the insight's findings. Indicates how to group the matching findings, and
+     *         identifies the type of item that the insight applies to. For example, if an insight is grouped by
+     *         resource identifier, then the insight produces a list of resource identifiers.
      */
 
     public String getGroupByAttribute() {
@@ -212,13 +217,15 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator for the
-     * purposes of viewing and managing multiple related findings under a single operand.
+     * The grouping attribute for the insight's findings. Indicates how to group the matching findings, and identifies
+     * the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then
+     * the insight produces a list of resource identifiers.
      * </p>
      * 
      * @param groupByAttribute
-     *        The attribute that the insight's findings are grouped by. This attribute is used as a findings aggregator
-     *        for the purposes of viewing and managing multiple related findings under a single operand.
+     *        The grouping attribute for the insight's findings. Indicates how to group the matching findings, and
+     *        identifies the type of item that the insight applies to. For example, if an insight is grouped by resource
+     *        identifier, then the insight produces a list of resource identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines under what conditions SageMaker creates a human loop. Used within .
+ * Defines under what conditions SageMaker creates a human loop. Used within . See for the required format of activation
+ * conditions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HumanLoopActivationConditionsConfig"
@@ -31,7 +32,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
     /**
      * <p>
      * JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created
-     * against the configured work team. The set of conditions is different for Rekognition and Textract.
+     * against the configured work team. The set of conditions is different for Rekognition and Textract. For more
+     * information about how to structure the JSON, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema
+     * for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.
      * </p>
      */
     private String humanLoopActivationConditions;
@@ -39,7 +43,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
     /**
      * <p>
      * JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created
-     * against the configured work team. The set of conditions is different for Rekognition and Textract.
+     * against the configured work team. The set of conditions is different for Rekognition and Textract. For more
+     * information about how to structure the JSON, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema
+     * for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -53,6 +60,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
      * @param humanLoopActivationConditions
      *        JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are
      *        created against the configured work team. The set of conditions is different for Rekognition and Textract.
+     *        For more information about how to structure the JSON, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
+     *        Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker
+     *        Developer Guide</i>.
      */
 
     public void setHumanLoopActivationConditions(String humanLoopActivationConditions) {
@@ -62,7 +73,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
     /**
      * <p>
      * JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created
-     * against the configured work team. The set of conditions is different for Rekognition and Textract.
+     * against the configured work team. The set of conditions is different for Rekognition and Textract. For more
+     * information about how to structure the JSON, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema
+     * for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.
      * </p>
      * <p>
      * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -71,7 +85,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
      * 
      * @return JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are
      *         created against the configured work team. The set of conditions is different for Rekognition and
-     *         Textract.
+     *         Textract. For more information about how to structure the JSON, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html"
+     *         >JSON Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker
+     *         Developer Guide</i>.
      */
 
     public String getHumanLoopActivationConditions() {
@@ -81,7 +98,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
     /**
      * <p>
      * JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are created
-     * against the configured work team. The set of conditions is different for Rekognition and Textract.
+     * against the configured work team. The set of conditions is different for Rekognition and Textract. For more
+     * information about how to structure the JSON, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON Schema
+     * for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker Developer Guide</i>.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -95,6 +115,10 @@ public class HumanLoopActivationConditionsConfig implements Serializable, Clonea
      * @param humanLoopActivationConditions
      *        JSON expressing use-case specific conditions declaratively. If any condition is matched, atomic tasks are
      *        created against the configured work team. The set of conditions is different for Rekognition and Textract.
+     *        For more information about how to structure the JSON, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-human-fallback-conditions-json-schema.html">JSON
+     *        Schema for Human Loop Activation Conditions in Amazon Augmented AI</a> in the <i>Amazon SageMaker
+     *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

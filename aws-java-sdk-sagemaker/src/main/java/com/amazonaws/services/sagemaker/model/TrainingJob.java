@@ -339,7 +339,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
      * </p>
      */
     private Boolean enableManagedSpotTraining;
@@ -2796,12 +2798,16 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
      * </p>
      * 
      * @param enableManagedSpotTraining
      *        When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     *        on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     *        on-demand instances. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     *        Training</a>.
      */
 
     public void setEnableManagedSpotTraining(Boolean enableManagedSpotTraining) {
@@ -2811,11 +2817,15 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
      * </p>
      * 
      * @return When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     *         on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     *         on-demand instances. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     *         Training</a>.
      */
 
     public Boolean getEnableManagedSpotTraining() {
@@ -2825,12 +2835,16 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
      * </p>
      * 
      * @param enableManagedSpotTraining
      *        When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     *        on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     *        on-demand instances. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     *        Training</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2842,11 +2856,15 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
      * </p>
      * 
      * @return When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
-     *         on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     *         on-demand instances. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     *         Training</a>.
      */
 
     public Boolean isEnableManagedSpotTraining() {

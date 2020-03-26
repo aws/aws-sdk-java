@@ -389,6 +389,17 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Creates an AutoPilot job.
      * </p>
+     * <p>
+     * After you run an AutoPilot job, you can find the best performing model by calling , and then deploy that model by
+     * following the steps described in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step 6.1: Deploy the Model to Amazon
+     * SageMaker Hosting Services</a>.
+     * </p>
+     * <p>
+     * For information about how to use AutoPilot, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use AutoPilot to
+     * Automate Model Development</a>.
+     * </p>
      * 
      * @param createAutoMLJobRequest
      * @return Result of the CreateAutoMLJob operation returned by the service.
@@ -668,9 +679,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Creates an endpoint using the endpoint configuration specified in the request. Amazon SageMaker uses the endpoint
-     * to provision resources and deploy models. You create the endpoint configuration with the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-     * API.
+     * to provision resources and deploy models. You create the endpoint configuration with the
+     * <a>CreateEndpointConfig</a> API.
      * </p>
      * <p>
      * Use this API to deploy models using Amazon SageMaker hosting services.
@@ -697,8 +707,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it
      * creates the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can then process incoming
-     * requests for inferences. To check the status of an endpoint, use the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
+     * requests for inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a> API.
      * </p>
      * <p>
      * If any of the models hosted at this endpoint get model data from an Amazon S3 location, Amazon SageMaker uses AWS
@@ -764,8 +773,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy models. In the
      * configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the
-     * resources that you want Amazon SageMaker to provision. Then you call the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.
+     * resources that you want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a> API.
      * </p>
      * <note>
      * <p>
@@ -1669,8 +1677,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <note>
      * <p>
-     * The URL that you get from a call to is valid only for 5 minutes. If you try to use the URL after the 5-minute
-     * limit expires, you are directed to the AWS console sign-in page.
+     * The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5 minutes. If you
+     * try to use the URL after the 5-minute limit expires, you are directed to the AWS console sign-in page.
      * </p>
      * </note>
      * 
@@ -2734,9 +2742,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon
-     * SageMaker when you called the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API. It does not
-     * delete model artifacts, inference code, or the IAM role that you specified when creating the model.
+     * SageMaker when you called the <a>CreateModel</a> API. It does not delete model artifacts, inference code, or the
+     * IAM role that you specified when creating the model.
      * </p>
      * 
      * @param deleteModelRequest
@@ -5797,8 +5804,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists models created with the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API.
+     * Lists models created with the <a>CreateModel</a> API.
      * </p>
      * 
      * @param listModelsRequest
@@ -7520,8 +7526,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating
-     * the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
+     * the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the
+     * <a>DescribeEndpoint</a> API.
      * </p>
      * <note>
      * <p>
@@ -7587,8 +7593,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant
      * associated with an existing endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to
      * <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the
-     * status of an endpoint, use the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
+     * status of an endpoint, use the <a>DescribeEndpoint</a> API.
      * </p>
      * 
      * @param updateEndpointWeightsAndCapacitiesRequest

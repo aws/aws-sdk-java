@@ -37,6 +37,8 @@ public class CreateFileSystemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemType").build();
     private static final MarshallingInfo<Integer> STORAGECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageCapacity").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -69,6 +71,7 @@ public class CreateFileSystemRequestMarshaller {
             protocolMarshaller.marshall(createFileSystemRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getFileSystemType(), FILESYSTEMTYPE_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getStorageCapacity(), STORAGECAPACITY_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getStorageType(), STORAGETYPE_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getTags(), TAGS_BINDING);

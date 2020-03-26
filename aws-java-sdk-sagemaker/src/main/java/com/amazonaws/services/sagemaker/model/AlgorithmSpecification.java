@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the training algorithm to use in a <a
- * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.
+ * Specifies the training algorithm to use in a <a>CreateTrainingJob</a> request.
  * </p>
  * <p>
  * For more information about algorithms provided by Amazon SageMaker, see <a

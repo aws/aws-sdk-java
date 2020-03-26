@@ -49,13 +49,10 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean retainAllVariantProperties;
     /**
      * <p>
-     * When you are updating endpoint resources with <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     * >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     * <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to override
-     * with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     * When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value
+     * is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type
+     * <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify
+     * a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * </p>
      */
     private java.util.List<VariantProperty> excludeRetainedVariantProperties;
@@ -226,22 +223,17 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When you are updating endpoint resources with <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     * >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     * <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to override
-     * with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     * When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value
+     * is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type
+     * <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify
+     * a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * </p>
      * 
-     * @return When you are updating endpoint resources with <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     *         >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     *         <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to
-     *         override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     *         <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     * @return When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>,
+     *         whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list
+     *         of type <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If
+     *         you don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are
+     *         overridden.
      */
 
     public java.util.List<VariantProperty> getExcludeRetainedVariantProperties() {
@@ -250,23 +242,17 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When you are updating endpoint resources with <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     * >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     * <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to override
-     * with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     * When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value
+     * is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type
+     * <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify
+     * a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * </p>
      * 
      * @param excludeRetainedVariantProperties
-     *        When you are updating endpoint resources with <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     *        >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     *        <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to
-     *        override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     *        <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     *        When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose
+     *        value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of
+     *        type <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you
+     *        don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      */
 
     public void setExcludeRetainedVariantProperties(java.util.Collection<VariantProperty> excludeRetainedVariantProperties) {
@@ -280,13 +266,10 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When you are updating endpoint resources with <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     * >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     * <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to override
-     * with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     * When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value
+     * is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type
+     * <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify
+     * a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -295,13 +278,10 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param excludeRetainedVariantProperties
-     *        When you are updating endpoint resources with <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     *        >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     *        <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to
-     *        override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     *        <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     *        When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose
+     *        value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of
+     *        type <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you
+     *        don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,23 +297,17 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When you are updating endpoint resources with <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     * >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     * <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to override
-     * with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     * <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     * When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value
+     * is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type
+     * <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you don't specify
+     * a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * </p>
      * 
      * @param excludeRetainedVariantProperties
-     *        When you are updating endpoint resources with <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties"
-     *        >RetainAllVariantProperties</a>, whose value is set to <code>true</code>,
-     *        <code>ExcludeRetainedVariantProperties</code> specifies the list of type <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_VariantProperty.html">VariantProperty</a> to
-     *        override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for
-     *        <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
+     *        When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose
+     *        value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of
+     *        type <a>VariantProperty</a> to override with the values provided by <code>EndpointConfig</code>. If you
+     *        don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

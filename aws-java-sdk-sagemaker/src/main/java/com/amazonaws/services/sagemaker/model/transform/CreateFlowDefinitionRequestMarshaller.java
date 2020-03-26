@@ -30,6 +30,8 @@ public class CreateFlowDefinitionRequestMarshaller {
 
     private static final MarshallingInfo<String> FLOWDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlowDefinitionName").build();
+    private static final MarshallingInfo<StructuredPojo> HUMANLOOPREQUESTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanLoopRequestSource").build();
     private static final MarshallingInfo<StructuredPojo> HUMANLOOPACTIVATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanLoopActivationConfig").build();
     private static final MarshallingInfo<StructuredPojo> HUMANLOOPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,6 +60,7 @@ public class CreateFlowDefinitionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createFlowDefinitionRequest.getFlowDefinitionName(), FLOWDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(createFlowDefinitionRequest.getHumanLoopRequestSource(), HUMANLOOPREQUESTSOURCE_BINDING);
             protocolMarshaller.marshall(createFlowDefinitionRequest.getHumanLoopActivationConfig(), HUMANLOOPACTIVATIONCONFIG_BINDING);
             protocolMarshaller.marshall(createFlowDefinitionRequest.getHumanLoopConfig(), HUMANLOOPCONFIG_BINDING);
             protocolMarshaller.marshall(createFlowDefinitionRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);

@@ -31,6 +31,14 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not
+     * provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the
+     * automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     * </p>
+     */
+    private Boolean enableDefaultStandards;
 
     /**
      * <p>
@@ -101,6 +109,76 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not
+     * provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the
+     * automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     * </p>
+     * 
+     * @param enableDefaultStandards
+     *        Whether to enable the security standards that Security Hub has designated as automatically enabled. If you
+     *        do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
+     *        enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     */
+
+    public void setEnableDefaultStandards(Boolean enableDefaultStandards) {
+        this.enableDefaultStandards = enableDefaultStandards;
+    }
+
+    /**
+     * <p>
+     * Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not
+     * provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the
+     * automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     * </p>
+     * 
+     * @return Whether to enable the security standards that Security Hub has designated as automatically enabled. If
+     *         you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To
+     *         not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to
+     *         <code>false</code>.
+     */
+
+    public Boolean getEnableDefaultStandards() {
+        return this.enableDefaultStandards;
+    }
+
+    /**
+     * <p>
+     * Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not
+     * provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the
+     * automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     * </p>
+     * 
+     * @param enableDefaultStandards
+     *        Whether to enable the security standards that Security Hub has designated as automatically enabled. If you
+     *        do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
+     *        enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableSecurityHubRequest withEnableDefaultStandards(Boolean enableDefaultStandards) {
+        setEnableDefaultStandards(enableDefaultStandards);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not
+     * provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the
+     * automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.
+     * </p>
+     * 
+     * @return Whether to enable the security standards that Security Hub has designated as automatically enabled. If
+     *         you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To
+     *         not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to
+     *         <code>false</code>.
+     */
+
+    public Boolean isEnableDefaultStandards() {
+        return this.enableDefaultStandards;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +191,9 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEnableDefaultStandards() != null)
+            sb.append("EnableDefaultStandards: ").append(getEnableDefaultStandards());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +212,10 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEnableDefaultStandards() == null ^ this.getEnableDefaultStandards() == null)
+            return false;
+        if (other.getEnableDefaultStandards() != null && other.getEnableDefaultStandards().equals(this.getEnableDefaultStandards()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +225,7 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableDefaultStandards() == null) ? 0 : getEnableDefaultStandards().hashCode());
         return hashCode;
     }
 

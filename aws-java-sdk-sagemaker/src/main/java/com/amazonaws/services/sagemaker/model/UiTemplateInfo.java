@@ -36,7 +36,7 @@ public class UiTemplateInfo implements Serializable, Cloneable, StructuredPojo {
     private String url;
     /**
      * <p>
-     * The SHA 256 hash that you used to create the request signature.
+     * The SHA-256 digest of the contents of the template.
      * </p>
      */
     private String contentSha256;
@@ -83,11 +83,11 @@ public class UiTemplateInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SHA 256 hash that you used to create the request signature.
+     * The SHA-256 digest of the contents of the template.
      * </p>
      * 
      * @param contentSha256
-     *        The SHA 256 hash that you used to create the request signature.
+     *        The SHA-256 digest of the contents of the template.
      */
 
     public void setContentSha256(String contentSha256) {
@@ -96,10 +96,10 @@ public class UiTemplateInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SHA 256 hash that you used to create the request signature.
+     * The SHA-256 digest of the contents of the template.
      * </p>
      * 
-     * @return The SHA 256 hash that you used to create the request signature.
+     * @return The SHA-256 digest of the contents of the template.
      */
 
     public String getContentSha256() {
@@ -108,11 +108,11 @@ public class UiTemplateInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SHA 256 hash that you used to create the request signature.
+     * The SHA-256 digest of the contents of the template.
      * </p>
      * 
      * @param contentSha256
-     *        The SHA 256 hash that you used to create the request signature.
+     *        The SHA-256 digest of the contents of the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

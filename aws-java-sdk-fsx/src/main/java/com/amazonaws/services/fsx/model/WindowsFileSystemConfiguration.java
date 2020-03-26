@@ -44,15 +44,27 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ redundancy to
-     * tolerate temporary Availability Zone (AZ) unavailability.
+     * tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy, only
+     * supports SSD storage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is configured
+     * for single AZ redundancy and supports SSD and HDD storage.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ
+     * File Systems</a>.
+     * </p>
      */
     private String deploymentType;
     /**
@@ -61,7 +73,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * system using Amazon FSx Remote PowerShell.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the file
+     * system.
      * </p>
      * <p>
      * This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -75,7 +88,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * traffic from this subnet except in the event of a failover to the secondary file server.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
+     * <code>SubnetIDs</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      * </p>
      */
     private String preferredSubnetId;
@@ -85,12 +101,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not joined
-     * to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>
-     * deployment types. This IP address is temporarily unavailable when the file system is undergoing maintenance. For
-     * Linux and Windows SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For
-     * more information and instruction on mapping and mounting file shares, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html"
-     * >https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     * to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IP address is
+     * temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows SMB clients that
+     * are joined to an Active Directory, use the file system's DNSName instead. For more information on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File Shares</a>.
      * </p>
      */
     private String preferredFileServerIp;
@@ -214,15 +229,27 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ redundancy to
-     * tolerate temporary Availability Zone (AZ) unavailability.
+     * tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy, only
+     * supports SSD storage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is configured
+     * for single AZ redundancy and supports SSD and HDD storage.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ
+     * File Systems</a>.
+     * </p>
      * 
      * @param deploymentType
      *        Specifies the file system deployment type, valid values are the following:</p>
@@ -230,14 +257,26 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ
-     *        redundancy to tolerate temporary Availability Zone (AZ) unavailability.
+     *        redundancy to tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     *        <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy,
+     *        only supports SSD storage.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is
+     *        configured for single AZ redundancy and supports SSD and HDD storage.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and
+     *        Multi-AZ File Systems</a>.
      * @see WindowsDeploymentType
      */
 
@@ -253,29 +292,53 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ redundancy to
-     * tolerate temporary Availability Zone (AZ) unavailability.
+     * tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy, only
+     * supports SSD storage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is configured
+     * for single AZ redundancy and supports SSD and HDD storage.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ
+     * File Systems</a>.
+     * </p>
      * 
      * @return Specifies the file system deployment type, valid values are the following:</p>
      *         <ul>
      *         <li>
      *         <p>
      *         <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ
-     *         redundancy to tolerate temporary Availability Zone (AZ) unavailability.
+     *         redundancy to tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     *         <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy,
+     *         only supports SSD storage.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is
+     *         configured for single AZ redundancy and supports SSD and HDD storage.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and
+     *         Multi-AZ File Systems</a>.
      * @see WindowsDeploymentType
      */
 
@@ -291,15 +354,27 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ redundancy to
-     * tolerate temporary Availability Zone (AZ) unavailability.
+     * tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy, only
+     * supports SSD storage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is configured
+     * for single AZ redundancy and supports SSD and HDD storage.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ
+     * File Systems</a>.
+     * </p>
      * 
      * @param deploymentType
      *        Specifies the file system deployment type, valid values are the following:</p>
@@ -307,14 +382,26 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ
-     *        redundancy to tolerate temporary Availability Zone (AZ) unavailability.
+     *        redundancy to tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     *        <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy,
+     *        only supports SSD storage.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is
+     *        configured for single AZ redundancy and supports SSD and HDD storage.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and
+     *        Multi-AZ File Systems</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WindowsDeploymentType
      */
@@ -332,15 +419,27 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ redundancy to
-     * tolerate temporary Availability Zone (AZ) unavailability.
+     * tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy, only
+     * supports SSD storage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is configured
+     * for single AZ redundancy and supports SSD and HDD storage.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and Multi-AZ
+     * File Systems</a>.
+     * </p>
      * 
      * @param deploymentType
      *        Specifies the file system deployment type, valid values are the following:</p>
@@ -348,14 +447,26 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured for Multi-AZ
-     *        redundancy to tolerate temporary Availability Zone (AZ) unavailability.
+     *        redundancy to tolerate temporary Availability Zone (AZ) unavailability, and supports SSD and HDD storage.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy.
+     *        <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for single AZ redundancy,
+     *        only supports SSD storage.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file system that is
+     *        configured for single AZ redundancy and supports SSD and HDD storage.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">Single-AZ and
+     *        Multi-AZ File Systems</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WindowsDeploymentType
      */
@@ -371,7 +482,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * system using Amazon FSx Remote PowerShell.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the file
+     * system.
      * </p>
      * <p>
      * This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -381,7 +493,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative tasks on
      *        the file system using Amazon FSx Remote PowerShell.</p>
      *        <p>
-     *        For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the
+     *        file system.
      *        </p>
      *        <p>
      *        This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -397,7 +510,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * system using Amazon FSx Remote PowerShell.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the file
+     * system.
      * </p>
      * <p>
      * This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -406,7 +520,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * @return For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative tasks on
      *         the file system using Amazon FSx Remote PowerShell.</p>
      *         <p>
-     *         For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     *         For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the
+     *         file system.
      *         </p>
      *         <p>
      *         This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -422,7 +537,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * system using Amazon FSx Remote PowerShell.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the file
+     * system.
      * </p>
      * <p>
      * This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -432,7 +548,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative tasks on
      *        the file system using Amazon FSx Remote PowerShell.</p>
      *        <p>
-     *        For <code>SINGLE_AZ_1</code> deployment types, this is the DNS name of the file system.
+     *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is the DNS name of the
+     *        file system.
      *        </p>
      *        <p>
      *        This endpoint is temporarily unavailable when the file system is undergoing maintenance.
@@ -451,7 +568,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * traffic from this subnet except in the event of a failover to the secondary file server.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
+     * <code>SubnetIDs</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      * </p>
      * 
      * @param preferredSubnetId
@@ -459,7 +579,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        server is located. Must be one of the two subnet IDs specified in <code>SubnetIds</code> property. Amazon
      *        FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p>
      *        <p>
-     *        For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that
+     *        for <code>SubnetIDs</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     *        >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      */
 
     public void setPreferredSubnetId(String preferredSubnetId) {
@@ -473,14 +596,20 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * traffic from this subnet except in the event of a failover to the secondary file server.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
+     * <code>SubnetIDs</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      * </p>
      * 
      * @return For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file
      *         server is located. Must be one of the two subnet IDs specified in <code>SubnetIds</code> property. Amazon
      *         FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p>
      *         <p>
-     *         For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     *         For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as
+     *         that for <code>SubnetIDs</code>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     *         >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      */
 
     public String getPreferredSubnetId() {
@@ -494,7 +623,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * traffic from this subnet except in the event of a failover to the secondary file server.
      * </p>
      * <p>
-     * For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
+     * <code>SubnetIDs</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      * </p>
      * 
      * @param preferredSubnetId
@@ -502,7 +634,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        server is located. Must be one of the two subnet IDs specified in <code>SubnetIds</code> property. Amazon
      *        FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p>
      *        <p>
-     *        For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that for <code>SubnetIDs</code>.
+     *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that
+     *        for <code>SubnetIDs</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
+     *        >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,12 +652,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not joined
-     * to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>
-     * deployment types. This IP address is temporarily unavailable when the file system is undergoing maintenance. For
-     * Linux and Windows SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For
-     * more information and instruction on mapping and mounting file shares, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html"
-     * >https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     * to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IP address is
+     * temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows SMB clients that
+     * are joined to an Active Directory, use the file system's DNSName instead. For more information on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File Shares</a>.
      * </p>
      * 
      * @param preferredFileServerIp
@@ -530,13 +664,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        server.</p>
      *        <p>
      *        Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not
-     *        joined to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
-     *        <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily unavailable when the file system
-     *        is undergoing maintenance. For Linux and Windows SMB clients that are joined to an Active Directory, use
-     *        the file system's DNSName instead. For more information and instruction on mapping and mounting file
-     *        shares, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https:
-     *        //docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     *        joined to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IP
+     *        address is temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows
+     *        SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For more
+     *        information on mapping and mounting file shares, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File
+     *        Shares</a>.
      */
 
     public void setPreferredFileServerIp(String preferredFileServerIp) {
@@ -549,25 +682,23 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not joined
-     * to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>
-     * deployment types. This IP address is temporarily unavailable when the file system is undergoing maintenance. For
-     * Linux and Windows SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For
-     * more information and instruction on mapping and mounting file shares, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html"
-     * >https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     * to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IP address is
+     * temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows SMB clients that
+     * are joined to an Active Directory, use the file system's DNSName instead. For more information on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File Shares</a>.
      * </p>
      * 
      * @return For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary, or preferred, file
      *         server.</p>
      *         <p>
      *         Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are
-     *         not joined to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
-     *         <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily unavailable when the file system
-     *         is undergoing maintenance. For Linux and Windows SMB clients that are joined to an Active Directory, use
-     *         the file system's DNSName instead. For more information and instruction on mapping and mounting file
-     *         shares, see <a
-     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https
-     *         ://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     *         not joined to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This
+     *         IP address is temporarily unavailable when the file system is undergoing maintenance. For Linux and
+     *         Windows SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For
+     *         more information on mapping and mounting file shares, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File
+     *         Shares</a>.
      */
 
     public String getPreferredFileServerIp() {
@@ -580,12 +711,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not joined
-     * to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>
-     * deployment types. This IP address is temporarily unavailable when the file system is undergoing maintenance. For
-     * Linux and Windows SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For
-     * more information and instruction on mapping and mounting file shares, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html"
-     * >https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     * to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IP address is
+     * temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows SMB clients that
+     * are joined to an Active Directory, use the file system's DNSName instead. For more information on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File Shares</a>.
      * </p>
      * 
      * @param preferredFileServerIp
@@ -593,13 +723,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        server.</p>
      *        <p>
      *        Use this IP address when mounting the file system on Linux SMB clients or Windows SMB clients that are not
-     *        joined to a Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
-     *        <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily unavailable when the file system
-     *        is undergoing maintenance. For Linux and Windows SMB clients that are joined to an Active Directory, use
-     *        the file system's DNSName instead. For more information and instruction on mapping and mounting file
-     *        shares, see <a
-     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https:
-     *        //docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.
+     *        joined to a Microsoft Active Directory. Applicable for all Windows file system deployment types. This IP
+     *        address is temporarily unavailable when the file system is undergoing maintenance. For Linux and Windows
+     *        SMB clients that are joined to an Active Directory, use the file system's DNSName instead. For more
+     *        information on mapping and mounting file shares, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">Accessing File
+     *        Shares</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

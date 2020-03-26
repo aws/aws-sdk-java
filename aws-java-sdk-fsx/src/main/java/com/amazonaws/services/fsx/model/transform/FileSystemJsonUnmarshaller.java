@@ -76,6 +76,10 @@ public class FileSystemJsonUnmarshaller implements Unmarshaller<FileSystem, Json
                     context.nextToken();
                     fileSystem.setStorageCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("StorageType", targetDepth)) {
+                    context.nextToken();
+                    fileSystem.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
                     fileSystem.setVpcId(context.getUnmarshaller(String.class).unmarshall(context));

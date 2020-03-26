@@ -102,14 +102,29 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private Integer storageCapacity;
     /**
      * <p>
+     * The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     * <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system
+     * uses hard disk drive storage.
+     * </p>
+     */
+    private String storageType;
+    /**
+     * <p>
      * The ID of the primary VPC for the file system.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
-     * is launched in the Availability Zone associated with this subnet.
+     * Specifies the IDs of the subnets that the file system is accessible from. For Windows <code>MULTI_AZ_1</code>
+     * file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby
+     * file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All
+     * other file systems have only one subnet ID.
+     * </p>
+     * <p>
+     * For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the
+     * endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -741,6 +756,81 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     * <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system
+     * uses hard disk drive storage.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     *        <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file
+     *        system uses hard disk drive storage.
+     * @see StorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     * <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system
+     * uses hard disk drive storage.
+     * </p>
+     * 
+     * @return The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     *         <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file
+     *         system uses hard disk drive storage.
+     * @see StorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     * <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system
+     * uses hard disk drive storage.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     *        <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file
+     *        system uses hard disk drive storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public FileSystem withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     * <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system
+     * uses hard disk drive storage.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type of the file system. Valid values are <code>SSD</code> and <code>HDD</code>. If set to
+     *        <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file
+     *        system uses hard disk drive storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public FileSystem withStorageType(StorageType storageType) {
+        this.storageType = storageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the primary VPC for the file system.
      * </p>
      * 
@@ -781,12 +871,25 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
-     * is launched in the Availability Zone associated with this subnet.
+     * Specifies the IDs of the subnets that the file system is accessible from. For Windows <code>MULTI_AZ_1</code>
+     * file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby
+     * file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All
+     * other file systems have only one subnet ID.
+     * </p>
+     * <p>
+     * For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the
+     * endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.
      * </p>
      * 
-     * @return The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
-     *         system is launched in the Availability Zone associated with this subnet.
+     * @return Specifies the IDs of the subnets that the file system is accessible from. For Windows
+     *         <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file
+     *         server and one for the standby file server. The preferred file server subnet identified in the
+     *         <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+     *         <p>
+     *         For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains
+     *         the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the
+     *         file system is available in the <code>PreferredSubnetID</code>.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -795,13 +898,26 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
-     * is launched in the Availability Zone associated with this subnet.
+     * Specifies the IDs of the subnets that the file system is accessible from. For Windows <code>MULTI_AZ_1</code>
+     * file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby
+     * file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All
+     * other file systems have only one subnet ID.
+     * </p>
+     * <p>
+     * For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the
+     * endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.
      * </p>
      * 
      * @param subnetIds
-     *        The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
-     *        system is launched in the Availability Zone associated with this subnet.
+     *        Specifies the IDs of the subnets that the file system is accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file
+     *        server and one for the standby file server. The preferred file server subnet identified in the
+     *        <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+     *        <p>
+     *        For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains
+     *        the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the
+     *        file system is available in the <code>PreferredSubnetID</code>.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -815,8 +931,15 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
-     * is launched in the Availability Zone associated with this subnet.
+     * Specifies the IDs of the subnets that the file system is accessible from. For Windows <code>MULTI_AZ_1</code>
+     * file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby
+     * file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All
+     * other file systems have only one subnet ID.
+     * </p>
+     * <p>
+     * For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the
+     * endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -825,8 +948,14 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnetIds
-     *        The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
-     *        system is launched in the Availability Zone associated with this subnet.
+     *        Specifies the IDs of the subnets that the file system is accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file
+     *        server and one for the standby file server. The preferred file server subnet identified in the
+     *        <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+     *        <p>
+     *        For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains
+     *        the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the
+     *        file system is available in the <code>PreferredSubnetID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,13 +971,26 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file system
-     * is launched in the Availability Zone associated with this subnet.
+     * Specifies the IDs of the subnets that the file system is accessible from. For Windows <code>MULTI_AZ_1</code>
+     * file system deployment type, there are two subnet IDs, one for the preferred file server and one for the standby
+     * file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code> property. All
+     * other file systems have only one subnet ID.
+     * </p>
+     * <p>
+     * For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains the
+     * endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.
      * </p>
      * 
      * @param subnetIds
-     *        The ID of the subnet to contain the endpoint for the file system. One and only one is supported. The file
-     *        system is launched in the Availability Zone associated with this subnet.
+     *        Specifies the IDs of the subnets that the file system is accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment type, there are two subnet IDs, one for the preferred file
+     *        server and one for the standby file server. The preferred file server subnet identified in the
+     *        <code>PreferredSubnetID</code> property. All other file systems have only one subnet ID.</p>
+     *        <p>
+     *        For Lustre file systems, and Single-AZ Windows file systems, this is the ID of the subnet that contains
+     *        the endpoint for the file system. For <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the
+     *        file system is available in the <code>PreferredSubnetID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1311,6 +1453,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
             sb.append("FailureDetails: ").append(getFailureDetails()).append(",");
         if (getStorageCapacity() != null)
             sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetIds() != null)
@@ -1371,6 +1515,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
@@ -1422,6 +1570,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());

@@ -38,16 +38,22 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     private String clientRequestToken;
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one
-     * subnet. The file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
      * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups apply to all network interfaces. This value isn't returned in later describe
-     * requests.
+     * access. These security groups apply to all network interfaces. This value isn't returned in later
+     * DescribeFileSystem requests.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -64,6 +70,37 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private CreateFileSystemWindowsConfiguration windowsConfiguration;
+    /**
+     * <p>
+     * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value is <code>SSD</code>.
+     * </p>
+     * <note>
+     * <p>
+     * HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage
+     * capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a
+     * backup of a file system that used SSD storage only if the original SSD file system had a storage capacity of at
+     * least 2000 GiB.
+     * </p>
+     * </note>
+     */
+    private String storageType;
 
     /**
      * @param backupId
@@ -142,12 +179,23 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one
-     * subnet. The file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * 
-     * @return A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify
-     *         only one subnet. The file server is also launched in that subnet's Availability Zone.
+     * @return Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *         <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *         preferred file server and one for the standby file server. You specify one of these subnets as the
+     *         preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *         <p>
+     *         For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file
+     *         systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -156,13 +204,24 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one
-     * subnet. The file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * 
      * @param subnetIds
-     *        A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify
-     *        only one subnet. The file server is also launched in that subnet's Availability Zone.
+     *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *        preferred file server and one for the standby file server. You specify one of these subnets as the
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        <p>
+     *        For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file
+     *        systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -176,8 +235,14 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one
-     * subnet. The file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,8 +251,13 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param subnetIds
-     *        A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify
-     *        only one subnet. The file server is also launched in that subnet's Availability Zone.
+     *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *        preferred file server and one for the standby file server. You specify one of these subnets as the
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        <p>
+     *        For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file
+     *        systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,13 +273,24 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify only one
-     * subnet. The file server is also launched in that subnet's Availability Zone.
+     * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
+     * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * </p>
+     * <p>
+     * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file systems,
+     * provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * </p>
      * 
      * @param subnetIds
-     *        A list of IDs for the subnets that the file system will be accessible from. Currently, you can specify
-     *        only one subnet. The file server is also launched in that subnet's Availability Zone.
+     *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
+     *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
+     *        preferred file server and one for the standby file server. You specify one of these subnets as the
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        <p>
+     *        For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types and Lustre file
+     *        systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,13 +302,13 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups apply to all network interfaces. This value isn't returned in later describe
-     * requests.
+     * access. These security groups apply to all network interfaces. This value isn't returned in later
+     * DescribeFileSystem requests.
      * </p>
      * 
      * @return A list of IDs for the security groups that apply to the specified network interfaces created for file
      *         system access. These security groups apply to all network interfaces. This value isn't returned in later
-     *         describe requests.
+     *         DescribeFileSystem requests.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -237,14 +318,14 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups apply to all network interfaces. This value isn't returned in later describe
-     * requests.
+     * access. These security groups apply to all network interfaces. This value isn't returned in later
+     * DescribeFileSystem requests.
      * </p>
      * 
      * @param securityGroupIds
      *        A list of IDs for the security groups that apply to the specified network interfaces created for file
      *        system access. These security groups apply to all network interfaces. This value isn't returned in later
-     *        describe requests.
+     *        DescribeFileSystem requests.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -259,8 +340,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups apply to all network interfaces. This value isn't returned in later describe
-     * requests.
+     * access. These security groups apply to all network interfaces. This value isn't returned in later
+     * DescribeFileSystem requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -271,7 +352,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * @param securityGroupIds
      *        A list of IDs for the security groups that apply to the specified network interfaces created for file
      *        system access. These security groups apply to all network interfaces. This value isn't returned in later
-     *        describe requests.
+     *        DescribeFileSystem requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,14 +369,14 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A list of IDs for the security groups that apply to the specified network interfaces created for file system
-     * access. These security groups apply to all network interfaces. This value isn't returned in later describe
-     * requests.
+     * access. These security groups apply to all network interfaces. This value isn't returned in later
+     * DescribeFileSystem requests.
      * </p>
      * 
      * @param securityGroupIds
      *        A list of IDs for the security groups that apply to the specified network interfaces created for file
      *        system access. These security groups apply to all network interfaces. This value isn't returned in later
-     *        describe requests.
+     *        DescribeFileSystem requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,6 +504,261 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value is <code>SSD</code>.
+     * </p>
+     * <note>
+     * <p>
+     * HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage
+     * capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a
+     * backup of a file system that used SSD storage only if the original SSD file system had a storage capacity of at
+     * least 2000 GiB.
+     * </p>
+     * </note>
+     * 
+     * @param storageType
+     *        Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     *        <code>SSD</code> and <code>HDD</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     *        <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default value is <code>SSD</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's
+     *        storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD
+     *        storage from a backup of a file system that used SSD storage only if the original SSD file system had a
+     *        storage capacity of at least 2000 GiB.
+     *        </p>
+     * @see StorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value is <code>SSD</code>.
+     * </p>
+     * <note>
+     * <p>
+     * HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage
+     * capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a
+     * backup of a file system that used SSD storage only if the original SSD file system had a storage capacity of at
+     * least 2000 GiB.
+     * </p>
+     * </note>
+     * 
+     * @return Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     *         <code>SSD</code> and <code>HDD</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     *         <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default value is <code>SSD</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's
+     *         storage capacity is tied to the file system that was backed up. You can create a file system that uses
+     *         HDD storage from a backup of a file system that used SSD storage only if the original SSD file system had
+     *         a storage capacity of at least 2000 GiB.
+     *         </p>
+     * @see StorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value is <code>SSD</code>.
+     * </p>
+     * <note>
+     * <p>
+     * HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage
+     * capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a
+     * backup of a file system that used SSD storage only if the original SSD file system had a storage capacity of at
+     * least 2000 GiB.
+     * </p>
+     * </note>
+     * 
+     * @param storageType
+     *        Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     *        <code>SSD</code> and <code>HDD</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     *        <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default value is <code>SSD</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's
+     *        storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD
+     *        storage from a backup of a file system that used SSD storage only if the original SSD file system had a
+     *        storage capacity of at least 2000 GiB.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public CreateFileSystemFromBackupRequest withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     * <code>SSD</code> and <code>HDD</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value is <code>SSD</code>.
+     * </p>
+     * <note>
+     * <p>
+     * HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage
+     * capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a
+     * backup of a file system that used SSD storage only if the original SSD file system had a storage capacity of at
+     * least 2000 GiB.
+     * </p>
+     * </note>
+     * 
+     * @param storageType
+     *        Sets the storage type for the Windows file system you're creating from a backup. Valid values are
+     *        <code>SSD</code> and <code>HDD</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     *        <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default value is <code>SSD</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's
+     *        storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD
+     *        storage from a backup of a file system that used SSD storage only if the original SSD file system had a
+     *        storage capacity of at least 2000 GiB.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public CreateFileSystemFromBackupRequest withStorageType(StorageType storageType) {
+        this.storageType = storageType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -445,7 +781,9 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getWindowsConfiguration() != null)
-            sb.append("WindowsConfiguration: ").append(getWindowsConfiguration());
+            sb.append("WindowsConfiguration: ").append(getWindowsConfiguration()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +822,10 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getWindowsConfiguration() != null && other.getWindowsConfiguration().equals(this.getWindowsConfiguration()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -498,6 +840,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

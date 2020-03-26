@@ -46,6 +46,17 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is
+     * enabled by default, the check box for that standard is selected by default.
+     * </p>
+     * <p>
+     * When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by
+     * default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     * </p>
+     */
+    private Boolean enabledByDefault;
 
     /**
      * <p>
@@ -168,6 +179,94 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is
+     * enabled by default, the check box for that standard is selected by default.
+     * </p>
+     * <p>
+     * When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by
+     * default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     * </p>
+     * 
+     * @param enabledByDefault
+     *        Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard
+     *        is enabled by default, the check box for that standard is selected by default.</p>
+     *        <p>
+     *        When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is
+     *        enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     */
+
+    public void setEnabledByDefault(Boolean enabledByDefault) {
+        this.enabledByDefault = enabledByDefault;
+    }
+
+    /**
+     * <p>
+     * Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is
+     * enabled by default, the check box for that standard is selected by default.
+     * </p>
+     * <p>
+     * When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by
+     * default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard
+     *         is enabled by default, the check box for that standard is selected by default.</p>
+     *         <p>
+     *         When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is
+     *         enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     */
+
+    public Boolean getEnabledByDefault() {
+        return this.enabledByDefault;
+    }
+
+    /**
+     * <p>
+     * Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is
+     * enabled by default, the check box for that standard is selected by default.
+     * </p>
+     * <p>
+     * When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by
+     * default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     * </p>
+     * 
+     * @param enabledByDefault
+     *        Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard
+     *        is enabled by default, the check box for that standard is selected by default.</p>
+     *        <p>
+     *        When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is
+     *        enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Standard withEnabledByDefault(Boolean enabledByDefault) {
+        setEnabledByDefault(enabledByDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is
+     * enabled by default, the check box for that standard is selected by default.
+     * </p>
+     * <p>
+     * When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by
+     * default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard
+     *         is enabled by default, the check box for that standard is selected by default.</p>
+     *         <p>
+     *         When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is
+     *         enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.
+     */
+
+    public Boolean isEnabledByDefault() {
+        return this.enabledByDefault;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +283,9 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEnabledByDefault() != null)
+            sb.append("EnabledByDefault: ").append(getEnabledByDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +312,10 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEnabledByDefault() == null ^ this.getEnabledByDefault() == null)
+            return false;
+        if (other.getEnabledByDefault() != null && other.getEnabledByDefault().equals(this.getEnabledByDefault()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +327,7 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStandardsArn() == null) ? 0 : getStandardsArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEnabledByDefault() == null) ? 0 : getEnabledByDefault().hashCode());
         return hashCode;
     }
 

@@ -33,7 +33,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     private String autoMLJobName;
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * </p>
      */
     private java.util.List<AutoMLChannel> inputDataConfig;
@@ -125,10 +125,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * </p>
      * 
-     * @return Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * @return Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      */
 
     public java.util.List<AutoMLChannel> getInputDataConfig() {
@@ -137,11 +137,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * </p>
      * 
      * @param inputDataConfig
-     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      */
 
     public void setInputDataConfig(java.util.Collection<AutoMLChannel> inputDataConfig) {
@@ -155,7 +155,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +164,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param inputDataConfig
-     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +180,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * </p>
      * 
      * @param inputDataConfig
-     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

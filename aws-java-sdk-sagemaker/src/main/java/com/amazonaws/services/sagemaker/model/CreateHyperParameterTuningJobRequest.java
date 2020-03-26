@@ -37,7 +37,9 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy, the
      * objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.
      * </p>
      */
     private HyperParameterTuningJobConfig hyperParameterTuningJobConfig;
@@ -143,13 +145,17 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy, the
      * objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @param hyperParameterTuningJobConfig
      *        The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search
      *        strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and
-     *        resource limits for the tuning job. For more information, see <a>automatic-model-tuning</a>
+     *        resource limits for the tuning job. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     *        Hyperparameter Tuning Works</a>.
      */
 
     public void setHyperParameterTuningJobConfig(HyperParameterTuningJobConfig hyperParameterTuningJobConfig) {
@@ -160,12 +166,16 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy, the
      * objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @return The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search
      *         strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and
-     *         resource limits for the tuning job. For more information, see <a>automatic-model-tuning</a>
+     *         resource limits for the tuning job. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     *         Hyperparameter Tuning Works</a>.
      */
 
     public HyperParameterTuningJobConfig getHyperParameterTuningJobConfig() {
@@ -176,13 +186,17 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy, the
      * objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.
      * </p>
      * 
      * @param hyperParameterTuningJobConfig
      *        The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search
      *        strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and
-     *        resource limits for the tuning job. For more information, see <a>automatic-model-tuning</a>
+     *        resource limits for the tuning job. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     *        Hyperparameter Tuning Works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,56 +31,10 @@ public class HumanLoopActivationConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Container for configuring the source of human task requests.
-     * </p>
-     */
-    private HumanLoopRequestSource humanLoopRequestSource;
-    /**
-     * <p>
      * Container structure for defining under what conditions SageMaker creates a human loop.
      * </p>
      */
     private HumanLoopActivationConditionsConfig humanLoopActivationConditionsConfig;
-
-    /**
-     * <p>
-     * Container for configuring the source of human task requests.
-     * </p>
-     * 
-     * @param humanLoopRequestSource
-     *        Container for configuring the source of human task requests.
-     */
-
-    public void setHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
-        this.humanLoopRequestSource = humanLoopRequestSource;
-    }
-
-    /**
-     * <p>
-     * Container for configuring the source of human task requests.
-     * </p>
-     * 
-     * @return Container for configuring the source of human task requests.
-     */
-
-    public HumanLoopRequestSource getHumanLoopRequestSource() {
-        return this.humanLoopRequestSource;
-    }
-
-    /**
-     * <p>
-     * Container for configuring the source of human task requests.
-     * </p>
-     * 
-     * @param humanLoopRequestSource
-     *        Container for configuring the source of human task requests.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HumanLoopActivationConfig withHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
-        setHumanLoopRequestSource(humanLoopRequestSource);
-        return this;
-    }
 
     /**
      * <p>
@@ -134,8 +88,6 @@ public class HumanLoopActivationConfig implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHumanLoopRequestSource() != null)
-            sb.append("HumanLoopRequestSource: ").append(getHumanLoopRequestSource()).append(",");
         if (getHumanLoopActivationConditionsConfig() != null)
             sb.append("HumanLoopActivationConditionsConfig: ").append(getHumanLoopActivationConditionsConfig());
         sb.append("}");
@@ -152,10 +104,6 @@ public class HumanLoopActivationConfig implements Serializable, Cloneable, Struc
         if (obj instanceof HumanLoopActivationConfig == false)
             return false;
         HumanLoopActivationConfig other = (HumanLoopActivationConfig) obj;
-        if (other.getHumanLoopRequestSource() == null ^ this.getHumanLoopRequestSource() == null)
-            return false;
-        if (other.getHumanLoopRequestSource() != null && other.getHumanLoopRequestSource().equals(this.getHumanLoopRequestSource()) == false)
-            return false;
         if (other.getHumanLoopActivationConditionsConfig() == null ^ this.getHumanLoopActivationConditionsConfig() == null)
             return false;
         if (other.getHumanLoopActivationConditionsConfig() != null
@@ -169,7 +117,6 @@ public class HumanLoopActivationConfig implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getHumanLoopRequestSource() == null) ? 0 : getHumanLoopRequestSource().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopActivationConditionsConfig() == null) ? 0 : getHumanLoopActivationConditionsConfig().hashCode());
         return hashCode;
     }

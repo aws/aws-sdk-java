@@ -43,6 +43,8 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> WINDOWSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WindowsConfiguration").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
 
     private static final CreateFileSystemFromBackupRequestMarshaller instance = new CreateFileSystemFromBackupRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getWindowsConfiguration(), WINDOWSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createFileSystemFromBackupRequest.getStorageType(), STORAGETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
