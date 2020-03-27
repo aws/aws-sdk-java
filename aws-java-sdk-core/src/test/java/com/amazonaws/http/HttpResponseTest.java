@@ -51,4 +51,14 @@ public class HttpResponseTest {
         response.addHeader(FOO_HEADER_MIXED_CASE, mixedContent);
         Assert.assertEquals(response.getHeader(FOO_HEADER_LOWER_CASE), mixedContent);
     }
+
+    @Test
+    public void testPutHeader_multipleValues_allReturnedInGetAllHeaders() {
+        HttpResponse response = new HttpResponse(null, null);
+        response.addHeader("foo", "a");
+        response.addHeader("foo", "b");
+        response.addHeader("foo", "c");
+
+        Assert.assertArrayEquals(response.getAllHeaders().get("foo").toArray(), new String[] {"a", "b", "c"});
+    }
 }

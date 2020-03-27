@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about an IP address range that is provisioned for use with your AWS resources through bring your own IP
- * addresses (BYOIP).
+ * address (BYOIP).
  * </p>
  * <p>
  * The following describes each BYOIP <code>State</code> that your IP address range can be in.
@@ -113,6 +113,13 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
+     * your own IP address (BYOIP).
+     * </p>
+     */
+    private java.util.List<ByoipCidrEvent> events;
 
     /**
      * <p>
@@ -214,6 +221,84 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
+     * your own IP address (BYOIP).
+     * </p>
+     * 
+     * @return A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
+     *         bring your own IP address (BYOIP).
+     */
+
+    public java.util.List<ByoipCidrEvent> getEvents() {
+        return events;
+    }
+
+    /**
+     * <p>
+     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
+     * your own IP address (BYOIP).
+     * </p>
+     * 
+     * @param events
+     *        A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
+     *        bring your own IP address (BYOIP).
+     */
+
+    public void setEvents(java.util.Collection<ByoipCidrEvent> events) {
+        if (events == null) {
+            this.events = null;
+            return;
+        }
+
+        this.events = new java.util.ArrayList<ByoipCidrEvent>(events);
+    }
+
+    /**
+     * <p>
+     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
+     * your own IP address (BYOIP).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param events
+     *        A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
+     *        bring your own IP address (BYOIP).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ByoipCidr withEvents(ByoipCidrEvent... events) {
+        if (this.events == null) {
+            setEvents(new java.util.ArrayList<ByoipCidrEvent>(events.length));
+        }
+        for (ByoipCidrEvent ele : events) {
+            this.events.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A history of status changes for an IP address range that that you bring to AWS Global Accelerator through bring
+     * your own IP address (BYOIP).
+     * </p>
+     * 
+     * @param events
+     *        A history of status changes for an IP address range that that you bring to AWS Global Accelerator through
+     *        bring your own IP address (BYOIP).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ByoipCidr withEvents(java.util.Collection<ByoipCidrEvent> events) {
+        setEvents(events);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -228,7 +313,9 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
         if (getCidr() != null)
             sb.append("Cidr: ").append(getCidr()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getEvents() != null)
+            sb.append("Events: ").append(getEvents());
         sb.append("}");
         return sb.toString();
     }
@@ -251,6 +338,10 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getEvents() == null ^ this.getEvents() == null)
+            return false;
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
+            return false;
         return true;
     }
 
@@ -261,6 +352,7 @@ public class ByoipCidr implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCidr() == null) ? 0 : getCidr().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         return hashCode;
     }
 

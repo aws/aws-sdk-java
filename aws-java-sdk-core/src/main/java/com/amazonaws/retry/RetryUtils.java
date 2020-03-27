@@ -38,7 +38,6 @@ public class RetryUtils {
         THROTTLING_ERROR_CODES.add("BandwidthLimitExceeded");
         THROTTLING_ERROR_CODES.add("RequestThrottled");
         THROTTLING_ERROR_CODES.add("RequestThrottledException");
-        THROTTLING_ERROR_CODES.add("LimitExceededException");
         THROTTLING_ERROR_CODES.add("EC2ThrottledException");
         THROTTLING_ERROR_CODES.add("PriorRequestNotComplete");
 

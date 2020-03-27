@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.globalaccelerator.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ByoipCidrMarshaller {
             .marshallLocationName("Cidr").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<List> EVENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Events").build();
 
     private static final ByoipCidrMarshaller instance = new ByoipCidrMarshaller();
 
@@ -50,6 +53,7 @@ public class ByoipCidrMarshaller {
         try {
             protocolMarshaller.marshall(byoipCidr.getCidr(), CIDR_BINDING);
             protocolMarshaller.marshall(byoipCidr.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(byoipCidr.getEvents(), EVENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

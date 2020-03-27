@@ -56,6 +56,10 @@ public class ByoipCidrJsonUnmarshaller implements Unmarshaller<ByoipCidr, JsonUn
                     context.nextToken();
                     byoipCidr.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Events", targetDepth)) {
+                    context.nextToken();
+                    byoipCidr.setEvents(new ListUnmarshaller<ByoipCidrEvent>(ByoipCidrEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

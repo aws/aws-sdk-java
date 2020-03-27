@@ -42,7 +42,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     private String title;
     /**
      * <p>
-     * The contents of the document as a base-64 encoded string.
+     * The contents of the document.
+     * </p>
+     * <p>
+     * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
+     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
+     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      */
     private java.nio.ByteBuffer blob;
@@ -150,7 +155,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of the document as a base-64 encoded string.
+     * The contents of the document.
+     * </p>
+     * <p>
+     * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
+     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
+     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -164,7 +174,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param blob
-     *        The contents of the document as a base-64 encoded string.
+     *        The contents of the document. </p>
+     *        <p>
+     *        Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     *        encode the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are
+     *        calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before
+     *        sending.
      */
 
     public void setBlob(java.nio.ByteBuffer blob) {
@@ -173,7 +188,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of the document as a base-64 encoded string.
+     * The contents of the document.
+     * </p>
+     * <p>
+     * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
+     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
+     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -183,7 +203,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The contents of the document as a base-64 encoded string.
+     * @return The contents of the document. </p>
+     *         <p>
+     *         Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     *         encode the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are
+     *         calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before
+     *         sending.
      */
 
     public java.nio.ByteBuffer getBlob() {
@@ -192,7 +217,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The contents of the document as a base-64 encoded string.
+     * The contents of the document.
+     * </p>
+     * <p>
+     * Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to encode
+     * the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are calling the
+     * Amazon Kendra endpoint directly using REST, you must base64 encode the contents before sending.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -206,7 +236,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param blob
-     *        The contents of the document as a base-64 encoded string.
+     *        The contents of the document. </p>
+     *        <p>
+     *        Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     *        encode the document file bytes if you're using an AWS SDK to call Amazon Kendra operations. If you are
+     *        calling the Amazon Kendra endpoint directly using REST, you must base64 encode the contents before
+     *        sending.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

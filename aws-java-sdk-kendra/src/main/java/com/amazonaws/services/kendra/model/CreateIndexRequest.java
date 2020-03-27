@@ -52,6 +52,13 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * A token that you provide to identify the request to create an index. Multiple calls to the
+     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -232,6 +239,52 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A token that you provide to identify the request to create an index. Multiple calls to the
+     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create an index. Multiple calls to the
+     *        <code>CreateIndex</code> operation with the same client token will create only one index.”
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create an index. Multiple calls to the
+     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * </p>
+     * 
+     * @return A token that you provide to identify the request to create an index. Multiple calls to the
+     *         <code>CreateIndex</code> operation with the same client token will create only one index.”
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create an index. Multiple calls to the
+     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create an index. Multiple calls to the
+     *        <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +303,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getServerSideEncryptionConfiguration() != null)
             sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +337,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +353,7 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

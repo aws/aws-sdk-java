@@ -1,4 +1,21 @@
+# __1.11.754__ __2020-03-27__
+## __AWS Global Accelerator__
+  - ### Features
+    - This update adds an event history to the ListByoipCidr API call. This enables you to see the changes that you've made for an IP address range that you bring to AWS Global Accelerator through bring your own IP address (BYOIP).
+
+## __AWS Service Catalog__
+  - ### Features
+    - Added "LocalRoleName" as an acceptable Parameter for Launch type in CreateConstraint and UpdateConstraint APIs
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - The Amazon Kendra Microsoft SharePoint data source now supports include and exclude regular expressions and change log features. Include and exclude regular expressions enable you to  provide a list of regular expressions to match the display URL of SharePoint documents to either include or exclude documents respectively. When you enable the changelog feature it enables Amazon Kendra to use the SharePoint change log to determine which documents to update in the index.
+
 # __1.11.753__ __2020-03-26__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Remove `LimitExceededException` as many services don't treat it as a throttling exception.
+
 ## __AWS SecurityHub__
   - ### Features
     - Security Hub has now made it easier to opt out of default standards when you enable Security Hub. We added a new Boolean parameter to EnableSecurityHub called EnableDefaultStandards. If that parameter is true, Security Hub's default standards are enabled. A new Boolean parameter for standards, EnabledByDefault, indicates whether a standard is a default standard. Today, the only default standard is CIS AWS Foundations Benchmark v1.2. Additional default standards will be added in the future.To learn more, visit our documentation on the EnableSecurityHub API action.

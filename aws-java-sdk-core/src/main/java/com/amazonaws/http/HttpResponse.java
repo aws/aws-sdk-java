@@ -17,6 +17,8 @@ package com.amazonaws.http;
 import com.amazonaws.Request;
 import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.protocol.HttpContext;
 
@@ -38,6 +40,7 @@ public class HttpResponse {
     private int statusCode;
     private InputStream content;
     private Map<String, String> headers = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
+    private Map<String, List<String>> allHeaders = new TreeMap<String, List<String>>(String.CASE_INSENSITIVE_ORDER);
     private HttpContext context;
 
     /**
@@ -80,6 +83,7 @@ public class HttpResponse {
     /**
      * Returns the HTTP headers returned with this response.
      *
+     * @deprecated See {@link #getAllHeaders()}
      * @return The set of HTTP headers returned with this HTTP response.
      */
     public Map<String, String> getHeaders() {
@@ -87,10 +91,32 @@ public class HttpResponse {
     }
 
     /**
+     * Returns all of the HTTP headers returned with this response. Unlike
+     * {@link #getHeaders()}, this returns all values returned with the
+     * same field-name, rather than the last seen value.
+     *
+     * @return All the headers for a response.
+     */
+    public Map<String, List<String>> getAllHeaders() {
+        return allHeaders;
+    }
+
+    /**
+     * Returns all the values for a given header name.
+     *
+     * @param header The header name.
+     * @return The values for the given header.
+     */
+    public List<String> getHeaderValues(String header) {
+        return allHeaders.get(header);
+    }
+
+    /**
      * Looks up a header by name and returns its value. Does case insensitive comparison.
      *
      * @param headerName Name of header to get value for.
      * @return The header value of the given header. Null if header is not present.
+     * @deprecated See {@link #getHeaderValues(String)}
      */
     public String getHeader(String headerName) {
         return headers.get(headerName);
@@ -106,6 +132,15 @@ public class HttpResponse {
      */
     public void addHeader(String name, String value) {
         headers.put(name, value);
+
+        List<String> values = allHeaders.get(name);
+
+        if (values == null) {
+            values = new ArrayList<String>();
+            allHeaders.put(name, values);
+        }
+
+        values.add(value);
     }
 
     /**

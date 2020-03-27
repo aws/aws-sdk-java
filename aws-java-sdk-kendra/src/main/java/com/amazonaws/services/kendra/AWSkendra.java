@@ -165,6 +165,7 @@ public interface AWSkendra {
      * @throws ServiceQuotaExceededException
      * @throws ThrottlingException
      * @throws AccessDeniedException
+     * @throws ConflictException
      * @throws InternalServerException
      * @sample AWSkendra.CreateIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex" target="_top">AWS API

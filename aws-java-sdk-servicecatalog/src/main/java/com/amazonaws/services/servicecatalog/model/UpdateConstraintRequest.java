@@ -68,11 +68,31 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <dt>LAUNCH</dt>
      * <dd>
      * <p>
+     * You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.
+     * </p>
+     * <p>
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
      * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      * </p>
+     * <p>
+     * Specify the <code>LocalRoleName</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     * </p>
+     * <p>
+     * If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role
+     * with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the
+     * administrator can create fewer resources per shared account.
+     * </p>
+     * <note>
+     * <p>
+     * The given role name must exist in the account used to create the launch constraint and the account of the user
+     * who launches a product with this launch constraint.
+     * </p>
+     * </note>
      * <p>
      * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      * </p>
@@ -359,11 +379,31 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <dt>LAUNCH</dt>
      * <dd>
      * <p>
+     * You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.
+     * </p>
+     * <p>
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
      * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      * </p>
+     * <p>
+     * Specify the <code>LocalRoleName</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     * </p>
+     * <p>
+     * If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role
+     * with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the
+     * administrator can create fewer resources per shared account.
+     * </p>
+     * <note>
+     * <p>
+     * The given role name must exist in the account used to create the launch constraint and the account of the user
+     * who launches a product with this launch constraint.
+     * </p>
+     * </note>
      * <p>
      * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      * </p>
@@ -427,11 +467,32 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <dt>LAUNCH</dt>
      *        <dd>
      *        <p>
+     *        You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't
+     *        use both.
+     *        </p>
+     *        <p>
      *        Specify the <code>RoleArn</code> property as follows:
      *        </p>
      *        <p>
      *        <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      *        </p>
+     *        <p>
+     *        Specify the <code>LocalRoleName</code> property as follows:
+     *        </p>
+     *        <p>
+     *        <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     *        </p>
+     *        <p>
+     *        If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the
+     *        IAM role with that name in the account will be used. This allows launch-role constraints to be
+     *        account-agnostic so the administrator can create fewer resources per shared account.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The given role name must exist in the account used to create the launch constraint and the account of the
+     *        user who launches a product with this launch constraint.
+     *        </p>
+     *        </note>
      *        <p>
      *        You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      *        </p>
@@ -501,11 +562,31 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <dt>LAUNCH</dt>
      * <dd>
      * <p>
+     * You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.
+     * </p>
+     * <p>
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
      * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      * </p>
+     * <p>
+     * Specify the <code>LocalRoleName</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     * </p>
+     * <p>
+     * If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role
+     * with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the
+     * administrator can create fewer resources per shared account.
+     * </p>
+     * <note>
+     * <p>
+     * The given role name must exist in the account used to create the launch constraint and the account of the user
+     * who launches a product with this launch constraint.
+     * </p>
+     * </note>
      * <p>
      * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      * </p>
@@ -568,11 +649,32 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *         <dt>LAUNCH</dt>
      *         <dd>
      *         <p>
+     *         You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't
+     *         use both.
+     *         </p>
+     *         <p>
      *         Specify the <code>RoleArn</code> property as follows:
      *         </p>
      *         <p>
      *         <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      *         </p>
+     *         <p>
+     *         Specify the <code>LocalRoleName</code> property as follows:
+     *         </p>
+     *         <p>
+     *         <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     *         </p>
+     *         <p>
+     *         If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the
+     *         IAM role with that name in the account will be used. This allows launch-role constraints to be
+     *         account-agnostic so the administrator can create fewer resources per shared account.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The given role name must exist in the account used to create the launch constraint and the account of the
+     *         user who launches a product with this launch constraint.
+     *         </p>
+     *         </note>
      *         <p>
      *         You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      *         </p>
@@ -642,11 +744,31 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      * <dt>LAUNCH</dt>
      * <dd>
      * <p>
+     * You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.
+     * </p>
+     * <p>
      * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
      * <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      * </p>
+     * <p>
+     * Specify the <code>LocalRoleName</code> property as follows:
+     * </p>
+     * <p>
+     * <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     * </p>
+     * <p>
+     * If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role
+     * with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the
+     * administrator can create fewer resources per shared account.
+     * </p>
+     * <note>
+     * <p>
+     * The given role name must exist in the account used to create the launch constraint and the account of the user
+     * who launches a product with this launch constraint.
+     * </p>
+     * </note>
      * <p>
      * You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      * </p>
@@ -710,11 +832,32 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
      *        <dt>LAUNCH</dt>
      *        <dd>
      *        <p>
+     *        You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't
+     *        use both.
+     *        </p>
+     *        <p>
      *        Specify the <code>RoleArn</code> property as follows:
      *        </p>
      *        <p>
      *        <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code>
      *        </p>
+     *        <p>
+     *        Specify the <code>LocalRoleName</code> property as follows:
+     *        </p>
+     *        <p>
+     *        <code>{"LocalRoleName": "SCBasicLaunchRole"}</code>
+     *        </p>
+     *        <p>
+     *        If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the
+     *        IAM role with that name in the account will be used. This allows launch-role constraints to be
+     *        account-agnostic so the administrator can create fewer resources per shared account.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The given role name must exist in the account used to create the launch constraint and the account of the
+     *        user who launches a product with this launch constraint.
+     *        </p>
+     *        </note>
      *        <p>
      *        You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.
      *        </p>

@@ -64,6 +64,18 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                     context.nextToken();
                     sharePointConfiguration.setCrawlAttachments(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("UseChangeLog", targetDepth)) {
+                    context.nextToken();
+                    sharePointConfiguration.setUseChangeLog(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("InclusionPatterns", targetDepth)) {
+                    context.nextToken();
+                    sharePointConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("ExclusionPatterns", targetDepth)) {
+                    context.nextToken();
+                    sharePointConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
                     context.nextToken();
                     sharePointConfiguration.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

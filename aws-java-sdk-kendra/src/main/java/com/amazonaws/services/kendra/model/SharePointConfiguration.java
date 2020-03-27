@@ -58,6 +58,36 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private Boolean crawlAttachments;
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need to be
+     * updated in the index. Depending on the size of the SharePoint change log, it may take longer for Amazon Kendra to
+     * use the change log than it takes it to determine the changed documents using the Amazon Kendra document crawler.
+     * </p>
+     */
+    private Boolean useChangeLog;
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an inclusion pattern and an
+     * exclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     */
+    private java.util.List<String> inclusionPatterns;
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     */
+    private java.util.List<String> exclusionPatterns;
 
     private DataSourceVpcConfiguration vpcConfiguration;
     /**
@@ -336,6 +366,290 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need to be
+     * updated in the index. Depending on the size of the SharePoint change log, it may take longer for Amazon Kendra to
+     * use the change log than it takes it to determine the changed documents using the Amazon Kendra document crawler.
+     * </p>
+     * 
+     * @param useChangeLog
+     *        Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need
+     *        to be updated in the index. Depending on the size of the SharePoint change log, it may take longer for
+     *        Amazon Kendra to use the change log than it takes it to determine the changed documents using the Amazon
+     *        Kendra document crawler.
+     */
+
+    public void setUseChangeLog(Boolean useChangeLog) {
+        this.useChangeLog = useChangeLog;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need to be
+     * updated in the index. Depending on the size of the SharePoint change log, it may take longer for Amazon Kendra to
+     * use the change log than it takes it to determine the changed documents using the Amazon Kendra document crawler.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need
+     *         to be updated in the index. Depending on the size of the SharePoint change log, it may take longer for
+     *         Amazon Kendra to use the change log than it takes it to determine the changed documents using the Amazon
+     *         Kendra document crawler.
+     */
+
+    public Boolean getUseChangeLog() {
+        return this.useChangeLog;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need to be
+     * updated in the index. Depending on the size of the SharePoint change log, it may take longer for Amazon Kendra to
+     * use the change log than it takes it to determine the changed documents using the Amazon Kendra document crawler.
+     * </p>
+     * 
+     * @param useChangeLog
+     *        Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need
+     *        to be updated in the index. Depending on the size of the SharePoint change log, it may take longer for
+     *        Amazon Kendra to use the change log than it takes it to determine the changed documents using the Amazon
+     *        Kendra document crawler.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withUseChangeLog(Boolean useChangeLog) {
+        setUseChangeLog(useChangeLog);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need to be
+     * updated in the index. Depending on the size of the SharePoint change log, it may take longer for Amazon Kendra to
+     * use the change log than it takes it to determine the changed documents using the Amazon Kendra document crawler.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> to use the Microsoft SharePoint change log to determine the documents that need
+     *         to be updated in the index. Depending on the size of the SharePoint change log, it may take longer for
+     *         Amazon Kendra to use the change log than it takes it to determine the changed documents using the Amazon
+     *         Kendra document crawler.
+     */
+
+    public Boolean isUseChangeLog() {
+        return this.useChangeLog;
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an inclusion pattern and an
+     * exclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * 
+     * @return A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *         Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *         inclusion pattern and an exclusion pattern, the document is not included in the index.</p>
+     *         <p>
+     *         The regex is applied to the display URL of the SharePoint document.
+     */
+
+    public java.util.List<String> getInclusionPatterns() {
+        return inclusionPatterns;
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an inclusion pattern and an
+     * exclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * 
+     * @param inclusionPatterns
+     *        A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *        Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *        inclusion pattern and an exclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the display URL of the SharePoint document.
+     */
+
+    public void setInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
+        if (inclusionPatterns == null) {
+            this.inclusionPatterns = null;
+            return;
+        }
+
+        this.inclusionPatterns = new java.util.ArrayList<String>(inclusionPatterns);
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an inclusion pattern and an
+     * exclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInclusionPatterns(java.util.Collection)} or {@link #withInclusionPatterns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param inclusionPatterns
+     *        A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *        Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *        inclusion pattern and an exclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the display URL of the SharePoint document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withInclusionPatterns(String... inclusionPatterns) {
+        if (this.inclusionPatterns == null) {
+            setInclusionPatterns(new java.util.ArrayList<String>(inclusionPatterns.length));
+        }
+        for (String ele : inclusionPatterns) {
+            this.inclusionPatterns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an inclusion pattern and an
+     * exclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * 
+     * @param inclusionPatterns
+     *        A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *        Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *        inclusion pattern and an exclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the display URL of the SharePoint document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
+        setInclusionPatterns(inclusionPatterns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * 
+     * @return A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *         Documents that don't match the patterns are included in the index. If a document matches both an
+     *         exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
+     *         <p>
+     *         The regex is applied to the display URL of the SharePoint document.
+     */
+
+    public java.util.List<String> getExclusionPatterns() {
+        return exclusionPatterns;
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * 
+     * @param exclusionPatterns
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
+     *        pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the display URL of the SharePoint document.
+     */
+
+    public void setExclusionPatterns(java.util.Collection<String> exclusionPatterns) {
+        if (exclusionPatterns == null) {
+            this.exclusionPatterns = null;
+            return;
+        }
+
+        this.exclusionPatterns = new java.util.ArrayList<String>(exclusionPatterns);
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExclusionPatterns(java.util.Collection)} or {@link #withExclusionPatterns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param exclusionPatterns
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
+     *        pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the display URL of the SharePoint document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withExclusionPatterns(String... exclusionPatterns) {
+        if (this.exclusionPatterns == null) {
+            setExclusionPatterns(new java.util.ArrayList<String>(exclusionPatterns.length));
+        }
+        for (String ele : exclusionPatterns) {
+            this.exclusionPatterns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the display URL of the SharePoint document.
+     * </p>
+     * 
+     * @param exclusionPatterns
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
+     *        pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the display URL of the SharePoint document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withExclusionPatterns(java.util.Collection<String> exclusionPatterns) {
+        setExclusionPatterns(exclusionPatterns);
+        return this;
+    }
+
+    /**
      * @param vpcConfiguration
      */
 
@@ -515,6 +829,12 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             sb.append("SecretArn: ").append(getSecretArn()).append(",");
         if (getCrawlAttachments() != null)
             sb.append("CrawlAttachments: ").append(getCrawlAttachments()).append(",");
+        if (getUseChangeLog() != null)
+            sb.append("UseChangeLog: ").append(getUseChangeLog()).append(",");
+        if (getInclusionPatterns() != null)
+            sb.append("InclusionPatterns: ").append(getInclusionPatterns()).append(",");
+        if (getExclusionPatterns() != null)
+            sb.append("ExclusionPatterns: ").append(getExclusionPatterns()).append(",");
         if (getVpcConfiguration() != null)
             sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getFieldMappings() != null)
@@ -551,6 +871,18 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getCrawlAttachments() != null && other.getCrawlAttachments().equals(this.getCrawlAttachments()) == false)
             return false;
+        if (other.getUseChangeLog() == null ^ this.getUseChangeLog() == null)
+            return false;
+        if (other.getUseChangeLog() != null && other.getUseChangeLog().equals(this.getUseChangeLog()) == false)
+            return false;
+        if (other.getInclusionPatterns() == null ^ this.getInclusionPatterns() == null)
+            return false;
+        if (other.getInclusionPatterns() != null && other.getInclusionPatterns().equals(this.getInclusionPatterns()) == false)
+            return false;
+        if (other.getExclusionPatterns() == null ^ this.getExclusionPatterns() == null)
+            return false;
+        if (other.getExclusionPatterns() != null && other.getExclusionPatterns().equals(this.getExclusionPatterns()) == false)
+            return false;
         if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
             return false;
         if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
@@ -575,6 +907,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getUrls() == null) ? 0 : getUrls().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getCrawlAttachments() == null) ? 0 : getCrawlAttachments().hashCode());
+        hashCode = prime * hashCode + ((getUseChangeLog() == null) ? 0 : getUseChangeLog().hashCode());
+        hashCode = prime * hashCode + ((getInclusionPatterns() == null) ? 0 : getInclusionPatterns().hashCode());
+        hashCode = prime * hashCode + ((getExclusionPatterns() == null) ? 0 : getExclusionPatterns().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFieldMappings() == null) ? 0 : getFieldMappings().hashCode());
         hashCode = prime * hashCode + ((getDocumentTitleFieldName() == null) ? 0 : getDocumentTitleFieldName().hashCode());

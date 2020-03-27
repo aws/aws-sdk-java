@@ -21,6 +21,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provides filtering the query results based on document attributes.
  * </p>
+ * <p>
+ * When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use a total of 3 layers.
+ * For example, you can use:
+ * </p>
+ * <ol>
+ * <li>
+ * <p>
+ * <code>&lt;AndAllFilters&gt;</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> &lt;OrAllFilters&gt;</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> &lt;EqualTo&gt;</code>
+ * </p>
+ * </li>
+ * </ol>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AttributeFilter" target="_top">AWS API
  *      Documentation</a>

@@ -962,7 +962,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Describe an endpoint group.
+     * Describe an endpoint group. To see an AWS CLI example of describing an endpoint group, scroll down to
+     * <b>Example</b>.
      * </p>
      * 
      * @param describeEndpointGroupRequest
@@ -1142,7 +1143,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Lists the IP address ranges that were specified in calls to <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+     * including the current state and a history of state changes.
      * </p>
      * <p>
      * To see an AWS CLI example of listing BYOIP CIDR addresses, scroll down to <b>Example</b>.

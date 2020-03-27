@@ -61,8 +61,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html"> Viewing
-     * Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve Client
+     * IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      */
     private Boolean clientIPPreservationEnabled;
@@ -218,8 +218,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html"> Viewing
-     * Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve Client
+     * IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param clientIPPreservationEnabled
@@ -232,9 +232,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     *        Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve
+     *        Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public void setClientIPPreservationEnabled(Boolean clientIPPreservationEnabled) {
@@ -252,8 +251,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html"> Viewing
-     * Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve Client
+     * IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @return Indicates whether client IP address preservation is enabled for an Application Load Balancer endpoint.
@@ -264,10 +263,9 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *         the accelerator.
      *         </p>
      *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     *         Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve
+     *         Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public Boolean getClientIPPreservationEnabled() {
@@ -285,8 +283,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html"> Viewing
-     * Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve Client
+     * IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param clientIPPreservationEnabled
@@ -299,9 +297,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     *        Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve
+     *        Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,8 +318,8 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html"> Viewing
-     * Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve Client
+     * IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @return Indicates whether client IP address preservation is enabled for an Application Load Balancer endpoint.
@@ -333,10 +330,9 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *         the accelerator.
      *         </p>
      *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     *         Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html"> Preserve
+     *         Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public Boolean isClientIPPreservationEnabled() {

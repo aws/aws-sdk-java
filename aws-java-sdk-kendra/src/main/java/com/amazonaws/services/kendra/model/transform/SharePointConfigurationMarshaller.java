@@ -36,6 +36,12 @@ public class SharePointConfigurationMarshaller {
             .marshallLocationName("SecretArn").build();
     private static final MarshallingInfo<Boolean> CRAWLATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CrawlAttachments").build();
+    private static final MarshallingInfo<Boolean> USECHANGELOG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseChangeLog").build();
+    private static final MarshallingInfo<List> INCLUSIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InclusionPatterns").build();
+    private static final MarshallingInfo<List> EXCLUSIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusionPatterns").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfiguration").build();
     private static final MarshallingInfo<List> FIELDMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +69,9 @@ public class SharePointConfigurationMarshaller {
             protocolMarshaller.marshall(sharePointConfiguration.getUrls(), URLS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getCrawlAttachments(), CRAWLATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getUseChangeLog(), USECHANGELOG_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getInclusionPatterns(), INCLUSIONPATTERNS_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getExclusionPatterns(), EXCLUSIONPATTERNS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
