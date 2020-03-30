@@ -365,6 +365,7 @@
         "createdAt",
         "isPublic",
         "resourceArn",
+        "resourceOwnerAccount",
         "resourceType",
         "updatedAt"
       ],
@@ -393,6 +394,10 @@
           "shape":"ResourceArn",
           "documentation":"<p>The ARN of the resource that was analyzed.</p>"
         },
+        "resourceOwnerAccount":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID that owns the resource.</p>"
+        },
         "resourceType":{
           "shape":"ResourceType",
           "documentation":"<p>The type of the resource that was analyzed.</p>"
@@ -416,12 +421,17 @@
       "type":"structure",
       "required":[
         "resourceArn",
+        "resourceOwnerAccount",
         "resourceType"
       ],
       "members":{
         "resourceArn":{
           "shape":"ResourceArn",
           "documentation":"<p>The ARN of the analyzed resource.</p>"
+        },
+        "resourceOwnerAccount":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID that owns the resource.</p>"
         },
         "resourceType":{
           "shape":"ResourceType",
@@ -438,12 +448,22 @@
       "type":"string",
       "pattern":"^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$"
     },
+    "AnalyzerStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "CREATING",
+        "DISABLED",
+        "FAILED"
+      ]
+    },
     "AnalyzerSummary":{
       "type":"structure",
       "required":[
         "arn",
         "createdAt",
         "name",
+        "status",
         "type"
       ],
       "members":{
@@ -466,6 +486,14 @@
         "name":{
           "shape":"Name",
           "documentation":"<p>The name of the analyzer.</p>"
+        },
+        "status":{
+          "shape":"AnalyzerStatus",
+          "documentation":"<p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>"
+        },
+        "statusReason":{
+          "shape":"StatusReason",
+          "documentation":"<p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.</p>"
         },
         "tags":{
           "shape":"TagsMap",
@@ -702,6 +730,7 @@
         "condition",
         "createdAt",
         "id",
+        "resourceOwnerAccount",
         "resourceType",
         "status",
         "updatedAt"
@@ -742,6 +771,10 @@
         "resource":{
           "shape":"String",
           "documentation":"<p>The resource that an external principal has access to.</p>"
+        },
+        "resourceOwnerAccount":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID that owns the resource.</p>"
         },
         "resourceType":{
           "shape":"ResourceType",
@@ -785,6 +818,7 @@
         "condition",
         "createdAt",
         "id",
+        "resourceOwnerAccount",
         "resourceType",
         "status",
         "updatedAt"
@@ -825,6 +859,10 @@
         "resource":{
           "shape":"String",
           "documentation":"<p>The resource that the external principal has access to.</p>"
+        },
+        "resourceOwnerAccount":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID that owns the resource.</p>"
         },
         "resourceType":{
           "shape":"ResourceType",
@@ -1206,6 +1244,15 @@
       "key":{"shape":"String"},
       "value":{"shape":"String"}
     },
+    "ReasonCode":{
+      "type":"string",
+      "enum":[
+        "AWS_SERVICE_ACCESS_DISABLED",
+        "DELEGATED_ADMINISTRATOR_DEREGISTERED",
+        "ORGANIZATION_DELETED",
+        "SERVICE_LINKED_ROLE_CREATION_FAILED"
+      ]
+    },
     "ResourceArn":{
       "type":"string",
       "pattern":"arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$"
@@ -1307,6 +1354,17 @@
       },
       "documentation":"<p>Starts a scan of the policies applied to the specified resource.</p>"
     },
+    "StatusReason":{
+      "type":"structure",
+      "required":["code"],
+      "members":{
+        "code":{
+          "shape":"ReasonCode",
+          "documentation":"<p>The reason code for the current status of the analyzer.</p>"
+        }
+      },
+      "documentation":"<p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.</p>"
+    },
     "String":{"type":"string"},
     "TagKeys":{
       "type":"list",
@@ -1369,7 +1427,10 @@
     "Token":{"type":"string"},
     "Type":{
       "type":"string",
-      "enum":["ACCOUNT"]
+      "enum":[
+        "ACCOUNT",
+        "ORGANIZATION"
+      ]
     },
     "UntagResourceRequest":{
       "type":"structure",

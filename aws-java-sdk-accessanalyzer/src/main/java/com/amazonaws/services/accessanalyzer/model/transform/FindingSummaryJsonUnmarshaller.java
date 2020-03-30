@@ -86,6 +86,10 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                     context.nextToken();
                     findingSummary.setResource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resourceOwnerAccount", targetDepth)) {
+                    context.nextToken();
+                    findingSummary.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     findingSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));

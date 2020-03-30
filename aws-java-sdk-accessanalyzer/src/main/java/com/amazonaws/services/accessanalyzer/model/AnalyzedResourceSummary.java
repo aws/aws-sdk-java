@@ -36,6 +36,12 @@ public class AnalyzedResourceSummary implements Serializable, Cloneable, Structu
     private String resourceArn;
     /**
      * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     */
+    private String resourceOwnerAccount;
+    /**
+     * <p>
      * The type of resource that was analyzed.
      * </p>
      */
@@ -78,6 +84,46 @@ public class AnalyzedResourceSummary implements Serializable, Cloneable, Structu
 
     public AnalyzedResourceSummary withResourceArn(String resourceArn) {
         setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The AWS account ID that owns the resource.
+     */
+
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the resource.
+     */
+
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The AWS account ID that owns the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResourceSummary withResourceOwnerAccount(String resourceOwnerAccount) {
+        setResourceOwnerAccount(resourceOwnerAccount);
         return this;
     }
 
@@ -154,6 +200,8 @@ public class AnalyzedResourceSummary implements Serializable, Cloneable, Structu
         sb.append("{");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
@@ -174,6 +222,10 @@ public class AnalyzedResourceSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
+            return false;
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
@@ -187,6 +239,7 @@ public class AnalyzedResourceSummary implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }

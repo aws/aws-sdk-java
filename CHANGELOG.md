@@ -1,3 +1,8 @@
+# __1.11.755__ __2020-03-30__
+## __Access Analyzer__
+  - ### Features
+    - This release adds support for the creation and management of IAM Access Analyzer analyzers with type organization. An analyzer with type organization continuously monitors all supported resources within the AWS organization and reports findings when they allow access from outside the organization.
+
 # __1.11.754__ __2020-03-27__
 ## __AWS Global Accelerator__
   - ### Features

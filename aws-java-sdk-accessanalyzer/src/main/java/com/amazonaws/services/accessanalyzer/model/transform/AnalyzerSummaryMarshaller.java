@@ -39,6 +39,10 @@ public class AnalyzerSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResourceAnalyzedAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<StructuredPojo> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +69,8 @@ public class AnalyzerSummaryMarshaller {
             protocolMarshaller.marshall(analyzerSummary.getLastResourceAnalyzed(), LASTRESOURCEANALYZED_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getLastResourceAnalyzedAt(), LASTRESOURCEANALYZEDAT_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(analyzerSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(analyzerSummary.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(analyzerSummary.getType(), TYPE_BINDING);
         } catch (Exception e) {

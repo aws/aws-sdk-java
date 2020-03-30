@@ -60,6 +60,25 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     private String name;
     /**
      * <p>
+     * The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     * generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access
+     * for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new findings. The status
+     * is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer
+     * creation has failed.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
+     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked roles required in the member
+     * accounts of the AWS organization.
+     * </p>
+     */
+    private StatusReason statusReason;
+    /**
+     * <p>
      * The tags added to the analyzer.
      * </p>
      */
@@ -273,6 +292,155 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     * generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access
+     * for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new findings. The status
+     * is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer
+     * creation has failed.
+     * </p>
+     * 
+     * @param status
+     *        The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     *        generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted
+     *        access for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new
+     *        findings. The status is <code>Creating</code> when the analyzer creation is in progress and
+     *        <code>Failed</code> when the analyzer creation has failed.
+     * @see AnalyzerStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     * generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access
+     * for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new findings. The status
+     * is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer
+     * creation has failed.
+     * </p>
+     * 
+     * @return The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     *         generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing
+     *         trusted access for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new
+     *         findings. The status is <code>Creating</code> when the analyzer creation is in progress and
+     *         <code>Failed</code> when the analyzer creation has failed.
+     * @see AnalyzerStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     * generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access
+     * for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new findings. The status
+     * is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer
+     * creation has failed.
+     * </p>
+     * 
+     * @param status
+     *        The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     *        generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted
+     *        access for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new
+     *        findings. The status is <code>Creating</code> when the analyzer creation is in progress and
+     *        <code>Failed</code> when the analyzer creation has failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalyzerStatus
+     */
+
+    public AnalyzerSummary withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     * generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access
+     * for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new findings. The status
+     * is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer
+     * creation has failed.
+     * </p>
+     * 
+     * @param status
+     *        The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and
+     *        generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted
+     *        access for IAM Access Analyzer from AWS Organizations, causes the analyzer to stop generating new
+     *        findings. The status is <code>Creating</code> when the analyzer creation is in progress and
+     *        <code>Failed</code> when the analyzer creation has failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalyzerStatus
+     */
+
+    public AnalyzerSummary withStatus(AnalyzerStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
+     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked roles required in the member
+     * accounts of the AWS organization.
+     * </p>
+     * 
+     * @param statusReason
+     *        The <code>statusReason</code> provides more details about the current status of the analyzer. For example,
+     *        if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with
+     *        organization as the type, this failure can be due to an issue with creating the service-linked roles
+     *        required in the member accounts of the AWS organization.
+     */
+
+    public void setStatusReason(StatusReason statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
+     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked roles required in the member
+     * accounts of the AWS organization.
+     * </p>
+     * 
+     * @return The <code>statusReason</code> provides more details about the current status of the analyzer. For
+     *         example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an
+     *         analyzer with organization as the type, this failure can be due to an issue with creating the
+     *         service-linked roles required in the member accounts of the AWS organization.
+     */
+
+    public StatusReason getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
+     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked roles required in the member
+     * accounts of the AWS organization.
+     * </p>
+     * 
+     * @param statusReason
+     *        The <code>statusReason</code> provides more details about the current status of the analyzer. For example,
+     *        if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with
+     *        organization as the type, this failure can be due to an issue with creating the service-linked roles
+     *        required in the member accounts of the AWS organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzerSummary withStatusReason(StatusReason statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags added to the analyzer.
      * </p>
      * 
@@ -420,6 +588,10 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
             sb.append("LastResourceAnalyzedAt: ").append(getLastResourceAnalyzedAt()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
@@ -458,6 +630,14 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -479,6 +659,8 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getLastResourceAnalyzed() == null) ? 0 : getLastResourceAnalyzed().hashCode());
         hashCode = prime * hashCode + ((getLastResourceAnalyzedAt() == null) ? 0 : getLastResourceAnalyzedAt().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

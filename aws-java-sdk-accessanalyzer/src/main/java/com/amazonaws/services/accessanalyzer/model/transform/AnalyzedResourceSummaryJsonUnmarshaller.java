@@ -52,6 +52,10 @@ public class AnalyzedResourceSummaryJsonUnmarshaller implements Unmarshaller<Ana
                     context.nextToken();
                     analyzedResourceSummary.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resourceOwnerAccount", targetDepth)) {
+                    context.nextToken();
+                    analyzedResourceSummary.setResourceOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     analyzedResourceSummary.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -29,6 +29,8 @@ public class AnalyzedResourceSummaryMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
+    private static final MarshallingInfo<String> RESOURCEOWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
 
@@ -49,6 +51,7 @@ public class AnalyzedResourceSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(analyzedResourceSummary.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(analyzedResourceSummary.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(analyzedResourceSummary.getResourceType(), RESOURCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

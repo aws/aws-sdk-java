@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Type {
 
-    ACCOUNT("ACCOUNT");
+    ACCOUNT("ACCOUNT"),
+    ORGANIZATION("ORGANIZATION");
 
     private String value;
 

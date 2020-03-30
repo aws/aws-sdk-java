@@ -66,6 +66,12 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
     private String resourceArn;
     /**
      * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     */
+    private String resourceOwnerAccount;
+    /**
+     * <p>
      * The type of the resource that was analyzed.
      * </p>
      */
@@ -377,6 +383,46 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The AWS account ID that owns the resource.
+     */
+
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the resource.
+     */
+
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The AWS account ID that owns the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzedResource withResourceOwnerAccount(String resourceOwnerAccount) {
+        setResourceOwnerAccount(resourceOwnerAccount);
+        return this;
+    }
+
+    /**
+     * <p>
      * The type of the resource that was analyzed.
      * </p>
      * 
@@ -627,6 +673,8 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
             sb.append("IsPublic: ").append(getIsPublic()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getSharedVia() != null)
@@ -673,6 +721,10 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
+            return false;
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
@@ -703,6 +755,7 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getSharedVia() == null) ? 0 : getSharedVia().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

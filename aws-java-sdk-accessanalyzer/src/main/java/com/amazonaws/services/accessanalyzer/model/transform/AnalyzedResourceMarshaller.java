@@ -40,6 +40,8 @@ public class AnalyzedResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isPublic").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
+    private static final MarshallingInfo<String> RESOURCEOWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<List> SHAREDVIA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class AnalyzedResourceMarshaller {
             protocolMarshaller.marshall(analyzedResource.getError(), ERROR_BINDING);
             protocolMarshaller.marshall(analyzedResource.getIsPublic(), ISPUBLIC_BINDING);
             protocolMarshaller.marshall(analyzedResource.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(analyzedResource.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(analyzedResource.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(analyzedResource.getSharedVia(), SHAREDVIA_BINDING);
             protocolMarshaller.marshall(analyzedResource.getStatus(), STATUS_BINDING);

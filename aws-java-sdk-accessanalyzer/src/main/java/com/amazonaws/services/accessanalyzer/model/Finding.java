@@ -84,6 +84,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String resource;
     /**
      * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     */
+    private String resourceOwnerAccount;
+    /**
+     * <p>
      * The type of the resource reported in the finding.
      * </p>
      */
@@ -561,6 +567,46 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The AWS account ID that owns the resource.
+     */
+
+    public void setResourceOwnerAccount(String resourceOwnerAccount) {
+        this.resourceOwnerAccount = resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the resource.
+     */
+
+    public String getResourceOwnerAccount() {
+        return this.resourceOwnerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerAccount
+     *        The AWS account ID that owns the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withResourceOwnerAccount(String resourceOwnerAccount) {
+        setResourceOwnerAccount(resourceOwnerAccount);
+        return this;
+    }
+
+    /**
+     * <p>
      * The type of the resource reported in the finding.
      * </p>
      * 
@@ -747,6 +793,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             sb.append("Principal: ").append(getPrincipal()).append(",");
         if (getResource() != null)
             sb.append("Resource: ").append(getResource()).append(",");
+        if (getResourceOwnerAccount() != null)
+            sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getStatus() != null)
@@ -803,6 +851,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
             return false;
+        if (other.getResourceOwnerAccount() == null ^ this.getResourceOwnerAccount() == null)
+            return false;
+        if (other.getResourceOwnerAccount() != null && other.getResourceOwnerAccount().equals(this.getResourceOwnerAccount()) == false)
+            return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
@@ -832,6 +884,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIsPublic() == null) ? 0 : getIsPublic().hashCode());
         hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
