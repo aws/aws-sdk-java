@@ -19,9 +19,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Amazon Detective is currently in preview.
- * </p>
- * <p>
  * A member account that was included in a request but for which the request could not be processed.
  * </p>
  * 

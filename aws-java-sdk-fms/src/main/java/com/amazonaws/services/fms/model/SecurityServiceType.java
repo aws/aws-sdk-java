@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum SecurityServiceType {
 
     WAF("WAF"),
+    WAFV2("WAFV2"),
     SHIELD_ADVANCED("SHIELD_ADVANCED"),
     SECURITY_GROUPS_COMMON("SECURITY_GROUPS_COMMON"),
     SECURITY_GROUPS_CONTENT_AUDIT("SECURITY_GROUPS_CONTENT_AUDIT"),

@@ -38,7 +38,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      * </p>
      */
     private String name;
@@ -59,17 +59,58 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private Statement statement;
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web
-     * ACL level can override the rule action setting.
+     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * level can override the rule action setting.
      * </p>
+     * <p>
+     * This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule
+     * group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not
+     * both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use this rule action setting and not the rule override
+     * action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use the override action setting and not this action setting.
+     * </p>
+     * </li>
+     * </ul>
      */
     private RuleAction action;
     /**
      * <p>
-     * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which
-     * case the rule action is in effect, or count action, in which case, if the rule matches a web request, it only
-     * counts the match.
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
      */
     private OverrideAction overrideAction;
     /**
@@ -81,11 +122,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     *        The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      */
 
     public void setName(String name) {
@@ -94,10 +135,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      * </p>
      * 
-     * @return A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * @return The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      */
 
     public String getName() {
@@ -106,11 +147,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     *        The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,13 +263,55 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web
-     * ACL level can override the rule action setting.
+     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * level can override the rule action setting.
      * </p>
+     * <p>
+     * This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule
+     * group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not
+     * both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use this rule action setting and not the rule override
+     * action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use the override action setting and not this action setting.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the
-     *        web ACL level can override the rule action setting.
+     *        The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the
+     *        web ACL level can override the rule action setting. </p>
+     *        <p>
+     *        This is used only for rules whose statements do not reference a rule group. Rule statements that reference
+     *        a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     *        </p>
+     *        <p>
+     *        You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting,
+     *        but not both:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the rule statement does not reference a rule group, use this rule action setting and not the rule
+     *        override action setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the rule statement references a rule group, use the override action setting and not this action
+     *        setting.
+     *        </p>
+     *        </li>
      */
 
     public void setAction(RuleAction action) {
@@ -237,12 +320,55 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web
-     * ACL level can override the rule action setting.
+     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * level can override the rule action setting.
      * </p>
+     * <p>
+     * This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule
+     * group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not
+     * both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use this rule action setting and not the rule override
+     * action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use the override action setting and not this action setting.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at
-     *         the web ACL level can override the rule action setting.
+     * @return The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the
+     *         web ACL level can override the rule action setting. </p>
+     *         <p>
+     *         This is used only for rules whose statements do not reference a rule group. Rule statements that
+     *         reference a rule group include <code>RuleGroupReferenceStatement</code> and
+     *         <code>ManagedRuleGroupStatement</code>.
+     *         </p>
+     *         <p>
+     *         You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting,
+     *         but not both:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the rule statement does not reference a rule group, use this rule action setting and not the rule
+     *         override action setting.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the rule statement references a rule group, use the override action setting and not this action
+     *         setting.
+     *         </p>
+     *         </li>
      */
 
     public RuleAction getAction() {
@@ -251,13 +377,55 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web
-     * ACL level can override the rule action setting.
+     * The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the web ACL
+     * level can override the rule action setting.
      * </p>
+     * <p>
+     * This is used only for rules whose statements do not reference a rule group. Rule statements that reference a rule
+     * group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     * </p>
+     * <p>
+     * You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but not
+     * both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use this rule action setting and not the rule override
+     * action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use the override action setting and not this action setting.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the
-     *        web ACL level can override the rule action setting.
+     *        The action that AWS WAF should take on a web request when it matches the rule statement. Settings at the
+     *        web ACL level can override the rule action setting. </p>
+     *        <p>
+     *        This is used only for rules whose statements do not reference a rule group. Rule statements that reference
+     *        a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     *        </p>
+     *        <p>
+     *        You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code> setting,
+     *        but not both:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the rule statement does not reference a rule group, use this rule action setting and not the rule
+     *        override action setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the rule statement references a rule group, use the override action setting and not this action
+     *        setting.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,15 +436,55 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which
-     * case the rule action is in effect, or count action, in which case, if the rule matches a web request, it only
-     * counts the match.
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param overrideAction
-     *        The action to use to override the rule's <code>Action</code> setting. You can use no override action, in
-     *        which case the rule action is in effect, or count action, in which case, if the rule matches a web
-     *        request, it only counts the match.
+     *        The override action to apply to the rules in a rule group. Used only for rule statements that reference a
+     *        rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+     *        <p>
+     *        Set the override action to none to leave the rule actions in effect. Set it to count to only count
+     *        matches, regardless of the rule action settings.
+     *        </p>
+     *        <p>
+     *        In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     *        <code>Action</code> setting, but not both:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the rule statement references a rule group, use this override action setting and not the action
+     *        setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the rule statement does not reference a rule group, use the rule action setting and not this rule
+     *        override action setting.
+     *        </p>
+     *        </li>
      */
 
     public void setOverrideAction(OverrideAction overrideAction) {
@@ -285,14 +493,55 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which
-     * case the rule action is in effect, or count action, in which case, if the rule matches a web request, it only
-     * counts the match.
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The action to use to override the rule's <code>Action</code> setting. You can use no override action, in
-     *         which case the rule action is in effect, or count action, in which case, if the rule matches a web
-     *         request, it only counts the match.
+     * @return The override action to apply to the rules in a rule group. Used only for rule statements that reference a
+     *         rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+     *         </p>
+     *         <p>
+     *         Set the override action to none to leave the rule actions in effect. Set it to count to only count
+     *         matches, regardless of the rule action settings.
+     *         </p>
+     *         <p>
+     *         In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     *         <code>Action</code> setting, but not both:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the rule statement references a rule group, use this override action setting and not the action
+     *         setting.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the rule statement does not reference a rule group, use the rule action setting and not this rule
+     *         override action setting.
+     *         </p>
+     *         </li>
      */
 
     public OverrideAction getOverrideAction() {
@@ -301,15 +550,55 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which
-     * case the rule action is in effect, or count action, in which case, if the rule matches a web request, it only
-     * counts the match.
+     * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule
+     * group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
      * </p>
+     * <p>
+     * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings.
+     * </p>
+     * <p>
+     * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the rule statement references a rule group, use this override action setting and not the action setting.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the rule statement does not reference a rule group, use the rule action setting and not this rule override
+     * action setting.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param overrideAction
-     *        The action to use to override the rule's <code>Action</code> setting. You can use no override action, in
-     *        which case the rule action is in effect, or count action, in which case, if the rule matches a web
-     *        request, it only counts the match.
+     *        The override action to apply to the rules in a rule group. Used only for rule statements that reference a
+     *        rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. </p>
+     *        <p>
+     *        Set the override action to none to leave the rule actions in effect. Set it to count to only count
+     *        matches, regardless of the rule action settings.
+     *        </p>
+     *        <p>
+     *        In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule
+     *        <code>Action</code> setting, but not both:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the rule statement references a rule group, use this override action setting and not the action
+     *        setting.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the rule statement does not reference a rule group, use the rule action setting and not this rule
+     *        override action setting.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

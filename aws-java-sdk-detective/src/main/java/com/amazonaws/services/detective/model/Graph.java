@@ -19,9 +19,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Amazon Detective is currently in preview.
- * </p>
- * <p>
  * A behavior graph in Detective.
  * </p>
  * 

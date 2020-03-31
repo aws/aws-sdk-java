@@ -36,7 +36,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String clientToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The ARN of the file gateway on which you want to create a file share.
      * </p>
      */
     private String gatewayARN;
@@ -152,6 +152,12 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> invalidUserList;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     */
+    private String auditDestinationARN;
+    /**
+     * <p>
      * The authentication method that users use to access the file share.
      * </p>
      * <p>
@@ -219,11 +225,11 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The ARN of the file gateway on which you want to create a file share.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     *        The ARN of the file gateway on which you want to create a file share.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -232,10 +238,10 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The ARN of the file gateway on which you want to create a file share.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * @return The ARN of the file gateway on which you want to create a file share.
      */
 
     public String getGatewayARN() {
@@ -244,11 +250,11 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     * The ARN of the file gateway on which you want to create a file share.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.
+     *        The ARN of the file gateway on which you want to create a file share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1185,6 +1191,46 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     * 
+     * @param auditDestinationARN
+     *        The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     */
+
+    public void setAuditDestinationARN(String auditDestinationARN) {
+        this.auditDestinationARN = auditDestinationARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     */
+
+    public String getAuditDestinationARN() {
+        return this.auditDestinationARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     * 
+     * @param auditDestinationARN
+     *        The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSMBFileShareRequest withAuditDestinationARN(String auditDestinationARN) {
+        setAuditDestinationARN(auditDestinationARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * The authentication method that users use to access the file share.
      * </p>
      * <p>
@@ -1411,6 +1457,8 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("ValidUserList: ").append(getValidUserList()).append(",");
         if (getInvalidUserList() != null)
             sb.append("InvalidUserList: ").append(getInvalidUserList()).append(",");
+        if (getAuditDestinationARN() != null)
+            sb.append("AuditDestinationARN: ").append(getAuditDestinationARN()).append(",");
         if (getAuthentication() != null)
             sb.append("Authentication: ").append(getAuthentication()).append(",");
         if (getTags() != null)
@@ -1489,6 +1537,10 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getInvalidUserList() != null && other.getInvalidUserList().equals(this.getInvalidUserList()) == false)
             return false;
+        if (other.getAuditDestinationARN() == null ^ this.getAuditDestinationARN() == null)
+            return false;
+        if (other.getAuditDestinationARN() != null && other.getAuditDestinationARN().equals(this.getAuditDestinationARN()) == false)
+            return false;
         if (other.getAuthentication() == null ^ this.getAuthentication() == null)
             return false;
         if (other.getAuthentication() != null && other.getAuthentication().equals(this.getAuthentication()) == false)
@@ -1520,6 +1572,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getAdminUserList() == null) ? 0 : getAdminUserList().hashCode());
         hashCode = prime * hashCode + ((getValidUserList() == null) ? 0 : getValidUserList().hashCode());
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
+        hashCode = prime * hashCode + ((getAuditDestinationARN() == null) ? 0 : getAuditDestinationARN().hashCode());
         hashCode = prime * hashCode + ((getAuthentication() == null) ? 0 : getAuthentication().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

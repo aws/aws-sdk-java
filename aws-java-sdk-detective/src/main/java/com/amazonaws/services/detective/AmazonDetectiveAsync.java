@@ -25,12 +25,6 @@ import com.amazonaws.services.detective.model.*;
  * {@link com.amazonaws.services.detective.AbstractAmazonDetectiveAsync} instead.
  * </p>
  * <p>
- * <important>
- * <p>
- * Amazon Detective is currently in preview. The Detective API can only be used by accounts that are admitted into the
- * preview.
- * </p>
- * </important>
  * <p>
  * Detective uses machine learning and purpose-built visualizations to help you analyze and investigate security issues
  * across your Amazon Web Services (AWS) workloads. Detective automatically extracts time-based events such as login
@@ -106,9 +100,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be
      * called by an invited member account.
      * </p>
@@ -128,9 +119,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest acceptInvitationRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Accepts an invitation for the member account to contribute data to a behavior graph. This operation can only be
      * called by an invited member account.
@@ -156,9 +144,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
             com.amazonaws.handlers.AsyncHandler<AcceptInvitationRequest, AcceptInvitationResult> asyncHandler);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Creates a new behavior graph for the calling account, and sets that account as the master account. This operation
      * is called by the account that is enabling Detective.
@@ -191,9 +176,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<CreateGraphResult> createGraphAsync(CreateGraphRequest createGraphRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Creates a new behavior graph for the calling account, and sets that account as the master account. This operation
      * is called by the account that is enabling Detective.
@@ -232,9 +214,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Sends a request to invite the specified AWS accounts to be member accounts in the behavior graph. This operation
      * can only be called by the master account for a behavior graph.
      * </p>
@@ -272,9 +251,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<CreateMembersResult> createMembersAsync(CreateMembersRequest createMembersRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Sends a request to invite the specified AWS accounts to be member accounts in the behavior graph. This operation
      * can only be called by the master account for a behavior graph.
@@ -319,9 +295,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Disables the specified behavior graph and queues it to be deleted. This operation removes the graph from each
      * member account's list of behavior graphs.
      * </p>
@@ -338,9 +311,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<DeleteGraphResult> deleteGraphAsync(DeleteGraphRequest deleteGraphRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Disables the specified behavior graph and queues it to be deleted. This operation removes the graph from each
      * member account's list of behavior graphs.
@@ -364,9 +334,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Deletes one or more member accounts from the master account behavior graph. This operation can only be called by
      * a Detective master account. That account cannot use <code>DeleteMembers</code> to delete their own account from
      * the behavior graph. To disable a behavior graph, the master account uses the <code>DeleteGraph</code> API method.
@@ -381,9 +348,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<DeleteMembersResult> deleteMembersAsync(DeleteMembersRequest deleteMembersRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Deletes one or more member accounts from the master account behavior graph. This operation can only be called by
      * a Detective master account. That account cannot use <code>DeleteMembers</code> to delete their own account from
@@ -405,9 +369,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Removes the member account from the specified behavior graph. This operation can only be called by a member
      * account that has the <code>ENABLED</code> status.
      * </p>
@@ -421,9 +382,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<DisassociateMembershipResult> disassociateMembershipAsync(DisassociateMembershipRequest disassociateMembershipRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Removes the member account from the specified behavior graph. This operation can only be called by a member
      * account that has the <code>ENABLED</code> status.
@@ -444,9 +402,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Returns the membership details for specified member accounts for a behavior graph.
      * </p>
      * 
@@ -459,9 +414,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<GetMembersResult> getMembersAsync(GetMembersRequest getMembersRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Returns the membership details for specified member accounts for a behavior graph.
      * </p>
@@ -481,9 +433,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Returns the list of behavior graphs that the calling account is a master of. This operation can only be called by
      * a master account.
      * </p>
@@ -501,9 +450,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<ListGraphsResult> listGraphsAsync(ListGraphsRequest listGraphsRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Returns the list of behavior graphs that the calling account is a master of. This operation can only be called by
      * a master account.
@@ -528,9 +474,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can
      * only be called by a member account.
      * </p>
@@ -551,9 +494,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<ListInvitationsResult> listInvitationsAsync(ListInvitationsRequest listInvitationsRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can
      * only be called by a member account.
@@ -581,9 +521,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Retrieves the list of member accounts for a behavior graph. Does not return member accounts that were removed
      * from the behavior graph.
      * </p>
@@ -597,9 +534,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest listMembersRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Retrieves the list of member accounts for a behavior graph. Does not return member accounts that were removed
      * from the behavior graph.
@@ -620,9 +554,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
-     * <p>
      * Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by a
      * member account that has the <code>INVITED</code> status.
      * </p>
@@ -636,9 +567,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
     java.util.concurrent.Future<RejectInvitationResult> rejectInvitationAsync(RejectInvitationRequest rejectInvitationRequest);
 
     /**
-     * <p>
-     * Amazon Detective is currently in preview.
-     * </p>
      * <p>
      * Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by a
      * member account that has the <code>INVITED</code> status.

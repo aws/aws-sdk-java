@@ -19,9 +19,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Amazon Detective is currently in preview.
- * </p>
- * <p>
  * Details about a member account that was invited to contribute to a behavior graph.
  * </p>
  * 
@@ -86,9 +83,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented
      * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
-     * account is blocked.
+     * account is not enabled.
      * </p>
      * </li>
      * </ul>
@@ -100,7 +97,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
-     * blocked.
+     * not enabled.
      * </p>
      * <p>
      * The reason can have one of the following values:
@@ -108,14 +105,14 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the
      * behavior graph to be too high.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
-     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
+     * account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      * </p>
      * </li>
      * </ul>
@@ -347,9 +344,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented
      * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
-     * account is blocked.
+     * account is not enabled.
      * </p>
      * </li>
      * </ul>
@@ -387,9 +384,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
-     *        blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
-     *        the member account is blocked.
+     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is
+     *        prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason
+     *        why the member account is not enabled.
      *        </p>
      *        </li>
      *        </ul>
@@ -433,9 +430,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented
      * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
-     * account is blocked.
+     * account is not enabled.
      * </p>
      * </li>
      * </ul>
@@ -472,9 +469,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
-     *         blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
-     *         the member account is blocked.
+     *         <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is
+     *         prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason
+     *         why the member account is not enabled.
      *         </p>
      *         </li>
      *         </ul>
@@ -519,9 +516,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented
      * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
-     * account is blocked.
+     * account is not enabled.
      * </p>
      * </li>
      * </ul>
@@ -559,9 +556,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
-     *        blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
-     *        the member account is blocked.
+     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is
+     *        prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason
+     *        why the member account is not enabled.
      *        </p>
      *        </li>
      *        </ul>
@@ -607,9 +604,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is blocked
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is prevented
      * from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member
-     * account is blocked.
+     * account is not enabled.
      * </p>
      * </li>
      * </ul>
@@ -647,9 +644,9 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation, but is
-     *        blocked from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why
-     *        the member account is blocked.
+     *        <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted the invitation but is
+     *        prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason
+     *        why the member account is not enabled.
      *        </p>
      *        </li>
      *        </ul>
@@ -667,7 +664,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
-     * blocked.
+     * not enabled.
      * </p>
      * <p>
      * The reason can have one of the following values:
@@ -675,34 +672,34 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the
      * behavior graph to be too high.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
-     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
+     * account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      * </p>
      * </li>
      * </ul>
      * 
      * @param disabledReason
      *        For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
-     *        account is blocked.</p>
+     *        account is not enabled.</p>
      *        <p>
      *        The reason can have one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
-     *        behavior graph to be too high.
+     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for
+     *        the behavior graph to be too high.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
      *        account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      *        </p>
      *        </li>
@@ -716,7 +713,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
-     * blocked.
+     * not enabled.
      * </p>
      * <p>
      * The reason can have one of the following values:
@@ -724,33 +721,33 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the
      * behavior graph to be too high.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
-     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
+     * account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      * </p>
      * </li>
      * </ul>
      * 
      * @return For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
-     *         account is blocked.</p>
+     *         account is not enabled.</p>
      *         <p>
      *         The reason can have one of the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
-     *         behavior graph to be too high.
+     *         <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for
+     *         the behavior graph to be too high.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *         <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
      *         account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      *         </p>
      *         </li>
@@ -764,7 +761,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
-     * blocked.
+     * not enabled.
      * </p>
      * <p>
      * The reason can have one of the following values:
@@ -772,34 +769,34 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the
      * behavior graph to be too high.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
-     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
+     * account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      * </p>
      * </li>
      * </ul>
      * 
      * @param disabledReason
      *        For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
-     *        account is blocked.</p>
+     *        account is not enabled.</p>
      *        <p>
      *        The reason can have one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
-     *        behavior graph to be too high.
+     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for
+     *        the behavior graph to be too high.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
      *        account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      *        </p>
      *        </li>
@@ -815,7 +812,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is
-     * blocked.
+     * not enabled.
      * </p>
      * <p>
      * The reason can have one of the following values:
@@ -823,34 +820,34 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
+     * <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the
      * behavior graph to be too high.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member account.
-     * This is usually because the member account is not enrolled in Amazon GuardDuty.
+     * <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
+     * account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      * </p>
      * </li>
      * </ul>
      * 
      * @param disabledReason
      *        For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member
-     *        account is blocked.</p>
+     *        account is not enabled.</p>
      *        <p>
      *        The reason can have one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data rate for the
-     *        behavior graph to be too high.
+     *        <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for
+     *        the behavior graph to be too high.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data rate for the member
+     *        <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member
      *        account. This is usually because the member account is not enrolled in Amazon GuardDuty.
      *        </p>
      *        </li>

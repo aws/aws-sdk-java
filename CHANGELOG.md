@@ -1,3 +1,56 @@
+# __1.11.756__ __2020-03-31__
+## __AWS Elemental MediaStore__
+  - ### Features
+    - This release adds support for CloudWatch Metrics. You can now set a policy on your container to dictate which metrics MediaStore sends to CloudWatch.
+
+## __AWS Glue__
+  - ### Features
+    - Add two enums for MongoDB connection: Added "CONNECTION_URL" to "ConnectionPropertyKey" and added "MONGODB" to "ConnectionType"
+
+## __AWS Lambda__
+  - ### Features
+    - AWS Lambda now supports .NET Core 3.1
+
+## __AWS OpsWorks CM__
+  - ### Features
+    - Documentation updates for OpsWorks-CM CreateServer values.
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for AWS Organizations
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Adding audit logging support for SMB File Shares
+
+## __AWS WAFV2__
+  - ### Features
+    - Added support for AWS Firewall Manager for WAFv2 and PermissionPolicy APIs for WAFv2.
+
+## __Amazon AppConfig__
+  - ### Features
+    - This release adds an event log to deployments. In the case of a deployment rollback, the event log details the rollback reason.
+
+## __Amazon Detective__
+  - ### Features
+    - Removing the notes that Detective is in preview, in preparation for the Detective GA release.
+
+## __Amazon Elastic  Inference__
+  - ### Features
+    - This release includes improvements for the Amazon Elastic Inference service.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release of the Amazon Pinpoint API introduces MMS support for SMS messages.
+
+## __Amazon Rekognition__
+  - ### Features
+    - This release adds DeleteProject and DeleteProjectVersion APIs to Amazon Rekognition Custom Labels.
+
+## __Firewall Management Service__
+  - ### Features
+    - This release contains FMS wafv2 support.
+
 # __1.11.755__ __2020-03-30__
 ## __Access Analyzer__
   - ### Features

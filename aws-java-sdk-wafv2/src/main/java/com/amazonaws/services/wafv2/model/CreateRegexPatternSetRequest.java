@@ -27,7 +27,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly name of the set. You cannot change the name after you create the set.
+     * The name of the set. You cannot change the name after you create the set.
      * </p>
      */
     private String name;
@@ -42,7 +42,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -55,7 +55,8 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     private String scope;
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      */
     private String description;
@@ -74,11 +75,11 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly name of the set. You cannot change the name after you create the set.
+     * The name of the set. You cannot change the name after you create the set.
      * </p>
      * 
      * @param name
-     *        A friendly name of the set. You cannot change the name after you create the set.
+     *        The name of the set. You cannot change the name after you create the set.
      */
 
     public void setName(String name) {
@@ -87,10 +88,10 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly name of the set. You cannot change the name after you create the set.
+     * The name of the set. You cannot change the name after you create the set.
      * </p>
      * 
-     * @return A friendly name of the set. You cannot change the name after you create the set.
+     * @return The name of the set. You cannot change the name after you create the set.
      */
 
     public String getName() {
@@ -99,11 +100,11 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly name of the set. You cannot change the name after you create the set.
+     * The name of the set. You cannot change the name after you create the set.
      * </p>
      * 
      * @param name
-     *        A friendly name of the set. You cannot change the name after you create the set.
+     *        The name of the set. You cannot change the name after you create the set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +124,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -142,7 +143,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -169,7 +170,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -187,7 +188,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         CLI - Specify the region when you use the CloudFront scope:
+     *         CLI - Specify the Region when you use the CloudFront scope:
      *         <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *         </p>
      *         </li>
@@ -214,7 +215,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -233,7 +234,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -262,7 +263,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -281,7 +282,7 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -301,11 +302,13 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the set. You cannot change the description of a set after you create it.
+     *        A description of the set that helps with identification. You cannot change the description of a set after
+     *        you create it.
      */
 
     public void setDescription(String description) {
@@ -314,10 +317,12 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      * 
-     * @return A friendly description of the set. You cannot change the description of a set after you create it.
+     * @return A description of the set that helps with identification. You cannot change the description of a set after
+     *         you create it.
      */
 
     public String getDescription() {
@@ -326,11 +331,13 @@ public class CreateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the set. You cannot change the description of a set after you create it.
+     *        A description of the set that helps with identification. You cannot change the description of a set after
+     *        you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

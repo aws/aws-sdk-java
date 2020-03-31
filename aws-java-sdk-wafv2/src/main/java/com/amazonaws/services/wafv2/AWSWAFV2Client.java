@@ -81,7 +81,7 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
  * </p>
  * <p>
- * You can make API calls using the endpoints listed in <a
+ * You can make calls using the endpoints listed in <a
  * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS Service Endpoints for AWS WAF</a>.
  * </p>
  * <ul>
@@ -114,8 +114,8 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * </li>
  * <li>
  * <p>
- * You can define a Web ACL or rule group with a single API call, and update it with a single call. You define all rule
- * specifications in JSON format, and pass them to your rule group or Web ACL API calls.
+ * You can define a Web ACL or rule group with a single call, and update it with a single call. You define all rule
+ * specifications in JSON format, and pass them to your rule group or Web ACL calls.
  * </p>
  * </li>
  * <li>
@@ -161,11 +161,17 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                             new JsonErrorShapeMetadata().withErrorCode("WAFServiceLinkedRoleErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFServiceLinkedRoleErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidPermissionPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.wafv2.model.transform.WAFInvalidPermissionPolicyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFInternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFDuplicateItemException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFDuplicateItemExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.wafv2.model.transform.WAFInvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFInvalidParameterExceptionUnmarshaller.getInstance()))
@@ -248,8 +254,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * an Application Load Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of the <a>WebACL</a> to the
-     * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
+     * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a
+     * Web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+     * (ARN) of the Web ACL. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
      * </p>
@@ -288,6 +295,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.AssociateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -503,6 +512,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.CreateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -608,6 +619,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.CreateRegexPatternSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet" target="_top">AWS
      *      API Documentation</a>
@@ -722,6 +735,10 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     * @throws WAFNonexistentItemException
+     *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.CreateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -842,6 +859,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -878,6 +897,101 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateWebACLResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWebACLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes all rule groups that are managed by AWS Firewall Manager for the specified web ACL.
+     * </p>
+     * <p>
+     * You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+     * </p>
+     * 
+     * @param deleteFirewallManagerRuleGroupsRequest
+     * @return Result of the DeleteFirewallManagerRuleGroups operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         Your request is valid, but AWS WAF couldn’t perform the operation because of a system problem. Retry your
+     *         request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentItemException
+     *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFOptimisticLockException
+     *         AWS WAF couldn’t save your changes because you tried to update or delete a resource that has changed
+     *         since you last retrieved it. Get the resource again, make any changes you need to make to the new copy,
+     *         and retry your operation.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
+     * @sample AWSWAFV2.DeleteFirewallManagerRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFirewallManagerRuleGroupsResult deleteFirewallManagerRuleGroups(DeleteFirewallManagerRuleGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFirewallManagerRuleGroups(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFirewallManagerRuleGroupsResult executeDeleteFirewallManagerRuleGroups(
+            DeleteFirewallManagerRuleGroupsRequest deleteFirewallManagerRuleGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFirewallManagerRuleGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFirewallManagerRuleGroupsRequest> request = null;
+        Response<DeleteFirewallManagerRuleGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFirewallManagerRuleGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFirewallManagerRuleGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFirewallManagerRuleGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFirewallManagerRuleGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFirewallManagerRuleGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -943,6 +1057,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -1012,6 +1128,33 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         AWS WAF couldn’t save your changes because you tried to update or delete a resource that has changed
      *         since you last retrieved it. Get the resource again, make any changes you need to make to the new copy,
      *         and retry your operation.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteLoggingConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1050,6 +1193,93 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes an IAM policy from the specified rule group.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @return Result of the DeletePermissionPolicy operation returned by the service.
+     * @throws WAFNonexistentItemException
+     *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInternalErrorException
+     *         Your request is valid, but AWS WAF couldn’t perform the operation because of a system problem. Retry your
+     *         request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFV2.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePermissionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeletePermissionPolicyResult executeDeletePermissionPolicy(DeletePermissionPolicyRequest deletePermissionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePermissionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePermissionPolicyRequest> request = null;
+        Response<DeletePermissionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePermissionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePermissionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePermissionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1115,6 +1345,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteRegexPatternSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet" target="_top">AWS
      *      API Documentation</a>
@@ -1217,6 +1449,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1274,6 +1508,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * <p>
      * Deletes the specified <a>WebACL</a>.
      * </p>
+     * <p>
+     * You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+     * </p>
      * 
      * @param deleteWebACLRequest
      * @return Result of the DeleteWebACL operation returned by the service.
@@ -1318,6 +1555,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DeleteWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -1411,6 +1650,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         resource, and try again.
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DescribeManagedRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup" target="_top">AWS
      *      API Documentation</a>
@@ -1472,10 +1713,10 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL ARN in the CloudFront API call
-     * <code>UpdateDistribution</code>. For information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
-     * >UpdateDistribution</a>.
+     * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate
+     * a Web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information,
+     * see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
+     * UpdateDistribution</a>.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -1510,6 +1751,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.DisassociateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -1600,6 +1843,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -1665,6 +1910,33 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         request.
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetLoggingConfiguration" target="_top">AWS
      *      API Documentation</a>
@@ -1703,6 +1975,92 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
             HttpResponseHandler<AmazonWebServiceResponse<GetLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the IAM policy that is attached to the specified rule group.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @return Result of the GetPermissionPolicy operation returned by the service.
+     * @throws WAFNonexistentItemException
+     *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInternalErrorException
+     *         Your request is valid, but AWS WAF couldn’t perform the operation because of a system problem. Retry your
+     *         request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFV2.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPermissionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetPermissionPolicyResult executeGetPermissionPolicy(GetPermissionPolicyRequest getPermissionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPermissionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPermissionPolicyRequest> request = null;
+        Response<GetPermissionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPermissionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPermissionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPermissionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1759,6 +2117,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetRateBasedStatementManagedKeys
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys"
      *      target="_top">AWS API Documentation</a>
@@ -1852,6 +2212,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetRegexPatternSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRegexPatternSet" target="_top">AWS API
      *      Documentation</a>
@@ -1942,6 +2304,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -2130,6 +2494,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -2222,6 +2588,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.GetWebACLForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetWebACLForResource" target="_top">AWS API
      *      Documentation</a>
@@ -2311,6 +2679,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListAvailableManagedRuleGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups"
      *      target="_top">AWS API Documentation</a>
@@ -2401,6 +2771,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListIPSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListIPSets" target="_top">AWS API
      *      Documentation</a>
@@ -2489,6 +2861,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListLoggingConfigurations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListLoggingConfigurations"
      *      target="_top">AWS API Documentation</a>
@@ -2579,6 +2953,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListRegexPatternSets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRegexPatternSets" target="_top">AWS API
      *      Documentation</a>
@@ -2671,6 +3047,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListResourcesForWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListResourcesForWebACL" target="_top">AWS
      *      API Documentation</a>
@@ -2760,6 +3138,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListRuleGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListRuleGroups" target="_top">AWS API
      *      Documentation</a>
@@ -2854,6 +3234,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -2942,6 +3324,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.ListWebACLs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListWebACLs" target="_top">AWS API
      *      Documentation</a>
@@ -3009,7 +3393,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * Create an Amazon Kinesis Data Firehose.
      * </p>
      * <p>
-     * Create the data firehose with a PUT source and in the region that you are operating. If you are capturing logs
+     * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
      * <note>
@@ -3074,6 +3458,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         cannot be associated.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.PutLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutLoggingConfiguration" target="_top">AWS
      *      API Documentation</a>
@@ -3112,6 +3498,150 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
             HttpResponseHandler<AmazonWebServiceResponse<PutLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * <p>
+     * This action is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putPermissionPolicyRequest
+     * @return Result of the PutPermissionPolicy operation returned by the service.
+     * @throws WAFNonexistentItemException
+     *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
+     * @throws WAFInternalErrorException
+     *         Your request is valid, but AWS WAF couldn’t perform the operation because of a system problem. Retry your
+     *         request.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
+     *         available at <a>DefaultAction</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a Web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFInvalidPermissionPolicyException
+     *         The operation failed because the specified policy isn't in the proper format. </p>
+     *         <p>
+     *         The policy specifications must conform to the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy must include specifications for <code>Effect</code>, <code>Action</code>, and
+     *         <code>Principal</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Effect</code> must specify <code>Allow</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
+     *         <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra actions or wildcard actions in
+     *         the policy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy must not include a <code>Resource</code> parameter.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.
+     * @sample AWSWAFV2.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutPermissionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutPermissionPolicyResult executePutPermissionPolicy(PutPermissionPolicyRequest putPermissionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putPermissionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPermissionPolicyRequest> request = null;
+        Response<PutPermissionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermissionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutPermissionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutPermissionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3177,6 +3707,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3273,6 +3805,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3375,6 +3909,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see
      *         <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateIPSet" target="_top">AWS API
      *      Documentation</a>
@@ -3477,6 +4013,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see
      *         <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateRegexPatternSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRegexPatternSet" target="_top">AWS
      *      API Documentation</a>
@@ -3589,6 +4127,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -3705,6 +4245,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL" target="_top">AWS API
      *      Documentation</a>

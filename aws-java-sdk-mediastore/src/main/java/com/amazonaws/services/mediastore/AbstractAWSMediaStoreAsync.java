@@ -93,6 +93,19 @@ public class AbstractAWSMediaStoreAsync extends AbstractAWSMediaStore implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMetricPolicyResult> deleteMetricPolicyAsync(DeleteMetricPolicyRequest request) {
+
+        return deleteMetricPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricPolicyResult> deleteMetricPolicyAsync(DeleteMetricPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricPolicyRequest, DeleteMetricPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeContainerResult> describeContainerAsync(DescribeContainerRequest request) {
 
         return describeContainerAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAWSMediaStoreAsync extends AbstractAWSMediaStore implements
     @Override
     public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricPolicyResult> getMetricPolicyAsync(GetMetricPolicyRequest request) {
+
+        return getMetricPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricPolicyResult> getMetricPolicyAsync(GetMetricPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMetricPolicyRequest, GetMetricPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,6 +231,19 @@ public class AbstractAWSMediaStoreAsync extends AbstractAWSMediaStore implements
     @Override
     public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetricPolicyResult> putMetricPolicyAsync(PutMetricPolicyRequest request) {
+
+        return putMetricPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetricPolicyResult> putMetricPolicyAsync(PutMetricPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutMetricPolicyRequest, PutMetricPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

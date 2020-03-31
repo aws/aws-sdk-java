@@ -200,6 +200,39 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
 
     /**
      * <p>
+     * Deletes the metric policy that is associated with the specified container. If there is no metric policy
+     * associated with the container, MediaStore doesn't send metrics to CloudWatch.
+     * </p>
+     * 
+     * @param deleteMetricPolicyRequest
+     * @return A Java Future containing the result of the DeleteMetricPolicy operation returned by the service.
+     * @sample AWSMediaStoreAsync.DeleteMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMetricPolicyResult> deleteMetricPolicyAsync(DeleteMetricPolicyRequest deleteMetricPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the metric policy that is associated with the specified container. If there is no metric policy
+     * associated with the container, MediaStore doesn't send metrics to CloudWatch.
+     * </p>
+     * 
+     * @param deleteMetricPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMetricPolicy operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.DeleteMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMetricPolicyResult> deleteMetricPolicyAsync(DeleteMetricPolicyRequest deleteMetricPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricPolicyRequest, DeleteMetricPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a
      * container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint
      * does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single
@@ -341,6 +374,37 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      */
     java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the metric policy for the specified container.
+     * </p>
+     * 
+     * @param getMetricPolicyRequest
+     * @return A Java Future containing the result of the GetMetricPolicy operation returned by the service.
+     * @sample AWSMediaStoreAsync.GetMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricPolicyResult> getMetricPolicyAsync(GetMetricPolicyRequest getMetricPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the metric policy for the specified container.
+     * </p>
+     * 
+     * @param getMetricPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetricPolicy operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.GetMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricPolicyResult> getMetricPolicyAsync(GetMetricPolicyRequest getMetricPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetricPolicyRequest, GetMetricPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -570,6 +634,39 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      */
     java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest putLifecyclePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send
+     * metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.
+     * </p>
+     * 
+     * @param putMetricPolicyRequest
+     * @return A Java Future containing the result of the PutMetricPolicy operation returned by the service.
+     * @sample AWSMediaStoreAsync.PutMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutMetricPolicyResult> putMetricPolicyAsync(PutMetricPolicyRequest putMetricPolicyRequest);
+
+    /**
+     * <p>
+     * The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send
+     * metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.
+     * </p>
+     * 
+     * @param putMetricPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMetricPolicy operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.PutMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutMetricPolicyResult> putMetricPolicyAsync(PutMetricPolicyRequest putMetricPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutMetricPolicyRequest, PutMetricPolicyResult> asyncHandler);
 
     /**
      * <p>

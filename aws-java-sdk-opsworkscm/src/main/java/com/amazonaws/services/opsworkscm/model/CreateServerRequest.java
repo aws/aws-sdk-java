@@ -34,21 +34,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Boolean associatePublicIpAddress;
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS
-     * service that points the custom domain to the endpoint that is generated when the server is created (the value of
-     * the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code>
-     * value if the server is using a custom domain. If you specify a custom domain, you must also specify values for
-     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is
+     * generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the
+     * server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify
+     * a custom domain, you must also specify values for <code>CustomCertificate</code> and
+     * <code>CustomPrivateKey</code>.
      * </p>
      */
     private String customDomain;
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a single,
-     * self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:
+     * A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain.
+     * If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:
      * </p>
      * <ul>
      * <li>
@@ -84,10 +83,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String customCertificate;
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by using
-     * HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify
-     * a custom private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.
+     * A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      * </p>
      */
     private String customPrivateKey;
@@ -115,7 +113,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      */
     private String engineVersion;
@@ -209,9 +207,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
@@ -236,7 +234,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -300,13 +299,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
@@ -391,21 +390,21 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS
-     * service that points the custom domain to the endpoint that is generated when the server is created (the value of
-     * the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code>
-     * value if the server is using a custom domain. If you specify a custom domain, you must also specify values for
-     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is
+     * generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the
+     * server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify
+     * a custom domain, you must also specify values for <code>CustomCertificate</code> and
+     * <code>CustomPrivateKey</code>.
      * </p>
      * 
      * @param customDomain
-     *        Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     *        <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred
-     *        DNS service that points the custom domain to the endpoint that is generated when the server is created
-     *        (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated
-     *        <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you
-     *        must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+     *        An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the
+     *        server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the
+     *        endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute).
+     *        You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a
+     *        custom domain. If you specify a custom domain, you must also specify values for
+     *        <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
      */
 
     public void setCustomDomain(String customDomain) {
@@ -414,21 +413,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS
-     * service that points the custom domain to the endpoint that is generated when the server is created (the value of
-     * the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code>
-     * value if the server is using a custom domain. If you specify a custom domain, you must also specify values for
-     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is
+     * generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the
+     * server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify
+     * a custom domain, you must also specify values for <code>CustomCertificate</code> and
+     * <code>CustomPrivateKey</code>.
      * </p>
      * 
-     * @return Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     *         <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your
-     *         preferred DNS service that points the custom domain to the endpoint that is generated when the server is
-     *         created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the
-     *         generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom
-     *         domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>
-     *         .
+     * @return An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the
+     *         server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the
+     *         endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute).
+     *         You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a
+     *         custom domain. If you specify a custom domain, you must also specify values for
+     *         <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
      */
 
     public String getCustomDomain() {
@@ -437,21 +435,21 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS
-     * service that points the custom domain to the endpoint that is generated when the server is created (the value of
-     * the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code>
-     * value if the server is using a custom domain. If you specify a custom domain, you must also specify values for
-     * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+     * An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is
+     * generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the
+     * server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify
+     * a custom domain, you must also specify values for <code>CustomCertificate</code> and
+     * <code>CustomPrivateKey</code>.
      * </p>
      * 
      * @param customDomain
-     *        Supported on servers running Chef Automate 2. An optional public endpoint of a server, such as
-     *        <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred
-     *        DNS service that points the custom domain to the endpoint that is generated when the server is created
-     *        (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated
-     *        <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you
-     *        must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
+     *        An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the
+     *        server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the
+     *        endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute).
+     *        You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a
+     *        custom domain. If you specify a custom domain, you must also specify values for
+     *        <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,10 +460,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a single,
-     * self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:
+     * A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain.
+     * If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:
      * </p>
      * <ul>
      * <li>
@@ -499,10 +496,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param customCertificate
-     *        Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a
-     *        single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must
-     *        also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are
-     *        requirements for the <code>CustomCertificate</code> value:</p>
+     *        A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate
+     *        chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and
+     *        <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code>
+     *        value:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -540,10 +537,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a single,
-     * self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:
+     * A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain.
+     * If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:
      * </p>
      * <ul>
      * <li>
@@ -576,10 +572,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * 
-     * @return Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a
-     *         single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must
-     *         also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are
-     *         requirements for the <code>CustomCertificate</code> value:</p>
+     * @return A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a
+     *         certificate chain. If you specify a custom certificate, you must also specify values for
+     *         <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the
+     *         <code>CustomCertificate</code> value:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -617,10 +613,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a single,
-     * self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:
+     * A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain.
+     * If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:
      * </p>
      * <ul>
      * <li>
@@ -654,10 +649,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param customCertificate
-     *        Supported on servers running Chef Automate 2. A PEM-formatted HTTPS certificate. The value can be be a
-     *        single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must
-     *        also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are
-     *        requirements for the <code>CustomCertificate</code> value:</p>
+     *        A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate
+     *        chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and
+     *        <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code>
+     *        value:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -697,17 +692,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by using
-     * HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify
-     * a custom private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.
+     * A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      * </p>
      * 
      * @param customPrivateKey
-     *        Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by
-     *        using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If
-     *        you specify a custom private key, you must also specify values for <code>CustomDomain</code> and
-     *        <code>CustomCertificate</code>.
+     *        A private key in PEM format for connecting to the server by using HTTPS. The private key must not be
+     *        encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you
+     *        must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      */
 
     public void setCustomPrivateKey(String customPrivateKey) {
@@ -716,16 +709,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by using
-     * HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify
-     * a custom private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.
+     * A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      * </p>
      * 
-     * @return Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by
-     *         using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
-     *         If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and
-     *         <code>CustomCertificate</code>.
+     * @return A private key in PEM format for connecting to the server by using HTTPS. The private key must not be
+     *         encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you
+     *         must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      */
 
     public String getCustomPrivateKey() {
@@ -734,17 +725,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by using
-     * HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify
-     * a custom private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.
+     * A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      * </p>
      * 
      * @param customPrivateKey
-     *        Supported on servers running Chef Automate 2. A private key in PEM format for connecting to the server by
-     *        using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If
-     *        you specify a custom private key, you must also specify values for <code>CustomDomain</code> and
-     *        <code>CustomCertificate</code>.
+     *        A private key in PEM format for connecting to the server by using HTTPS. The private key must not be
+     *        encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you
+     *        must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -908,12 +897,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *        EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -923,11 +912,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      * 
      * @return The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *         EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *         EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      */
 
     public String getEngineVersion() {
@@ -937,12 +926,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *        EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1617,9 +1606,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
@@ -1627,9 +1616,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param preferredMaintenanceWindow
      *        The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the
-     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified
-     *        time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-     *        Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code>
+     *        must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     *        default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     *        <code>TimeWindowDefinition</code> for more information. </p>
      *        <p>
      *        <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00
      *        a.m.)
@@ -1642,18 +1632,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
      * </p>
      * 
      * @return The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the
-     *         instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified
-     *         time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-     *         Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+     *         instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code>
+     *         must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     *         default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     *         <code>TimeWindowDefinition</code> for more information. </p>
      *         <p>
      *         <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00
      *         a.m.)
@@ -1666,9 +1657,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
@@ -1676,9 +1667,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param preferredMaintenanceWindow
      *        The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the
-     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified
-     *        time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-     *        Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code>
+     *        must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     *        default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     *        <code>TimeWindowDefinition</code> for more information. </p>
      *        <p>
      *        <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00
      *        a.m.)
@@ -1708,7 +1700,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1734,8 +1727,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        The specified time is in coordinated universal time (UTC). The default value is a random, daily start
-     *        time.
+     *        <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time
+     *        (UTC). The default value is a random, daily start time.
      *        </p>
      *        <p>
      *        <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1767,7 +1760,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1792,8 +1786,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         The specified time is in coordinated universal time (UTC). The default value is a random, daily start
-     *         time.
+     *         <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time
+     *         (UTC). The default value is a random, daily start time.
      *         </p>
      *         <p>
      *         <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1825,7 +1819,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1851,8 +1846,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        The specified time is in coordinated universal time (UTC). The default value is a random, daily start
-     *        time.
+     *        <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time
+     *        (UTC). The default value is a random, daily start time.
      *        </p>
      *        <p>
      *        <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -2227,13 +2222,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
@@ -2259,13 +2254,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
-     *         or the following special characters: <code>+ - = . _ : /</code>
+     *         or the following special characters: <code>+ - = . _ : / @</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
-     *         the following special characters: <code>+ - = . _ : /</code>
+     *         the following special characters: <code>+ - = . _ : / @</code>
      *         </p>
      *         </li>
      *         <li>
@@ -2298,13 +2293,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
@@ -2331,13 +2326,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
-     *        or the following special characters: <code>+ - = . _ : /</code>
+     *        or the following special characters: <code>+ - = . _ : / @</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
-     *        the following special characters: <code>+ - = . _ : /</code>
+     *        the following special characters: <code>+ - = . _ : / @</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2375,13 +2370,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
@@ -2413,13 +2408,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
-     *        or the following special characters: <code>+ - = . _ : /</code>
+     *        or the following special characters: <code>+ - = . _ : / @</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
-     *        the following special characters: <code>+ - = . _ : /</code>
+     *        the following special characters: <code>+ - = . _ : / @</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2459,13 +2454,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code>
+     * following special characters: <code>+ - = . _ : / @</code>
      * </p>
      * </li>
      * <li>
@@ -2492,13 +2487,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
-     *        or the following special characters: <code>+ - = . _ : /</code>
+     *        or the following special characters: <code>+ - = . _ : / @</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
-     *        the following special characters: <code>+ - = . _ : /</code>
+     *        the following special characters: <code>+ - = . _ : / @</code>
      *        </p>
      *        </li>
      *        <li>

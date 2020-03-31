@@ -68,8 +68,8 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      */
     private java.util.List<TextTransformation> textTransformations;
@@ -218,14 +218,15 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *         effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *         performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *         lowest priority setting, before inspecting the content for a match.
+     *         performs all transformations on the content of the request component identified by
+     *         <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *         match.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -236,15 +237,16 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *        lowest priority setting, before inspecting the content for a match.
+     *        performs all transformations on the content of the request component identified by
+     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *        match.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -260,8 +262,8 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -272,8 +274,9 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *        lowest priority setting, before inspecting the content for a match.
+     *        performs all transformations on the content of the request component identified by
+     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *        match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,15 +294,16 @@ public class SizeConstraintStatement implements Serializable, Cloneable, Structu
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *        lowest priority setting, before inspecting the content for a match.
+     *        performs all transformations on the content of the request component identified by
+     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *        match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

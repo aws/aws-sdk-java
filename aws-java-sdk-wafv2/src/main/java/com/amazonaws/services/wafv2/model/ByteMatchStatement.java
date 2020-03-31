@@ -44,7 +44,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
-     * Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      * </p>
      * <ul>
      * <li>
@@ -94,8 +94,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      */
     private java.util.List<TextTransformation> textTransformations;
@@ -162,7 +162,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
-     * Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      * </p>
      * <ul>
      * <li>
@@ -215,7 +215,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that
      *        you designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
      *        <p>
-     *        Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     *        Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -265,7 +265,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
-     * Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      * </p>
      * <ul>
      * <li>
@@ -315,7 +315,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         that you designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50
      *         bytes.</p>
      *         <p>
-     *         Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     *         Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      *         </p>
      *         <ul>
      *         <li>
@@ -365,7 +365,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.
      * </p>
      * <p>
-     * Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     * Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      * </p>
      * <ul>
      * <li>
@@ -418,7 +418,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        A string value that you want AWS WAF to search for. AWS WAF searches only in the part of web requests that
      *        you designate for inspection in <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p>
      *        <p>
-     *        Valid values depend on the areas that you specify for inspection in <code>FieldToMatch</code>:
+     *        Valid values depend on the component that you specify for inspection in <code>FieldToMatch</code>:
      *        </p>
      *        <ul>
      *        <li>
@@ -509,14 +509,15 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *         effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *         performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *         lowest priority setting, before inspecting the content for a match.
+     *         performs all transformations on the content of the request component identified by
+     *         <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *         match.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -527,15 +528,16 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *        lowest priority setting, before inspecting the content for a match.
+     *        performs all transformations on the content of the request component identified by
+     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *        match.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -551,8 +553,8 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -563,8 +565,9 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *        lowest priority setting, before inspecting the content for a match.
+     *        performs all transformations on the content of the request component identified by
+     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *        match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,15 +585,16 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
      * bypass detection. If you specify one or more transformations in a rule statement, AWS WAF performs all
-     * transformations on the content identified by <code>FieldToMatch</code>, starting from the lowest priority
-     * setting, before inspecting the content for a match.
+     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
+     * the lowest priority setting, before inspecting the content for a match.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
      *        effort to bypass detection. If you specify one or more transformations in a rule statement, AWS WAF
-     *        performs all transformations on the content identified by <code>FieldToMatch</code>, starting from the
-     *        lowest priority setting, before inspecting the content for a match.
+     *        performs all transformations on the content of the request component identified by
+     *        <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a
+     *        match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

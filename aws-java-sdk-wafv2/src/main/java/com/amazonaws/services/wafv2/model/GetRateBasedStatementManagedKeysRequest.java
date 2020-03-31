@@ -36,7 +36,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -49,7 +49,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
     private String scope;
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      */
     private String webACLName;
@@ -78,7 +78,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -97,7 +97,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -124,7 +124,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -142,7 +142,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      *         <ul>
      *         <li>
      *         <p>
-     *         CLI - Specify the region when you use the CloudFront scope:
+     *         CLI - Specify the Region when you use the CloudFront scope:
      *         <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *         </p>
      *         </li>
@@ -169,7 +169,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -188,7 +188,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -217,7 +217,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -236,7 +236,7 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -256,11 +256,11 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
      * @param webACLName
-     *        A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      */
 
     public void setWebACLName(String webACLName) {
@@ -269,10 +269,10 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
-     * @return A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      */
 
     public String getWebACLName() {
@@ -281,11 +281,11 @@ public class GetRateBasedStatementManagedKeysRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
      * @param webACLName
-     *        A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

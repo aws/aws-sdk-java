@@ -37,7 +37,7 @@ public interface AmazonElasticInference {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "api.elastic-inference";
+    String ENDPOINT_PREFIX = "elastic-inference";
 
     /**
      * Returns all tags of an Elastic Inference Accelerator.

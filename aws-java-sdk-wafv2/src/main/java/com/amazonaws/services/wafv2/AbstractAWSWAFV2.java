@@ -58,12 +58,22 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
     }
 
     @Override
+    public DeleteFirewallManagerRuleGroupsResult deleteFirewallManagerRuleGroups(DeleteFirewallManagerRuleGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +109,11 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
 
     @Override
     public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +189,11 @@ public class AbstractAWSWAFV2 implements AWSWAFV2 {
 
     @Override
     public PutLoggingConfigurationResult putLoggingConfiguration(PutLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

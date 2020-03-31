@@ -110,6 +110,12 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
     private String state;
     /**
      * <p>
+     * A list containing all events related to a deployment. The most recent events are displayed first.
+     * </p>
+     */
+    private java.util.List<DeploymentEvent> eventLog;
+    /**
+     * <p>
      * The percentage of targets for which the deployment is available.
      * </p>
      */
@@ -733,6 +739,76 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * A list containing all events related to a deployment. The most recent events are displayed first.
+     * </p>
+     * 
+     * @return A list containing all events related to a deployment. The most recent events are displayed first.
+     */
+
+    public java.util.List<DeploymentEvent> getEventLog() {
+        return eventLog;
+    }
+
+    /**
+     * <p>
+     * A list containing all events related to a deployment. The most recent events are displayed first.
+     * </p>
+     * 
+     * @param eventLog
+     *        A list containing all events related to a deployment. The most recent events are displayed first.
+     */
+
+    public void setEventLog(java.util.Collection<DeploymentEvent> eventLog) {
+        if (eventLog == null) {
+            this.eventLog = null;
+            return;
+        }
+
+        this.eventLog = new java.util.ArrayList<DeploymentEvent>(eventLog);
+    }
+
+    /**
+     * <p>
+     * A list containing all events related to a deployment. The most recent events are displayed first.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventLog(java.util.Collection)} or {@link #withEventLog(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param eventLog
+     *        A list containing all events related to a deployment. The most recent events are displayed first.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withEventLog(DeploymentEvent... eventLog) {
+        if (this.eventLog == null) {
+            setEventLog(new java.util.ArrayList<DeploymentEvent>(eventLog.length));
+        }
+        for (DeploymentEvent ele : eventLog) {
+            this.eventLog.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list containing all events related to a deployment. The most recent events are displayed first.
+     * </p>
+     * 
+     * @param eventLog
+     *        A list containing all events related to a deployment. The most recent events are displayed first.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withEventLog(java.util.Collection<DeploymentEvent> eventLog) {
+        setEventLog(eventLog);
+        return this;
+    }
+
+    /**
+     * <p>
      * The percentage of targets for which the deployment is available.
      * </p>
      * 
@@ -891,6 +967,8 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("FinalBakeTimeInMinutes: ").append(getFinalBakeTimeInMinutes()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getEventLog() != null)
+            sb.append("EventLog: ").append(getEventLog()).append(",");
         if (getPercentageComplete() != null)
             sb.append("PercentageComplete: ").append(getPercentageComplete()).append(",");
         if (getStartedAt() != null)
@@ -967,6 +1045,10 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getEventLog() == null ^ this.getEventLog() == null)
+            return false;
+        if (other.getEventLog() != null && other.getEventLog().equals(this.getEventLog()) == false)
+            return false;
         if (other.getPercentageComplete() == null ^ this.getPercentageComplete() == null)
             return false;
         if (other.getPercentageComplete() != null && other.getPercentageComplete().equals(this.getPercentageComplete()) == false)
@@ -1001,6 +1083,7 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getGrowthFactor() == null) ? 0 : getGrowthFactor().hashCode());
         hashCode = prime * hashCode + ((getFinalBakeTimeInMinutes() == null) ? 0 : getFinalBakeTimeInMinutes().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getEventLog() == null) ? 0 : getEventLog().hashCode());
         hashCode = prime * hashCode + ((getPercentageComplete() == null) ? 0 : getPercentageComplete().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getCompletedAt() == null) ? 0 : getCompletedAt().hashCode());

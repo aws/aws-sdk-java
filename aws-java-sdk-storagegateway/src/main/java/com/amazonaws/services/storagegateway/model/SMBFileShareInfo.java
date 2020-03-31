@@ -128,6 +128,12 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> invalidUserList;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     */
+    private String auditDestinationARN;
 
     private String authentication;
     /**
@@ -1101,6 +1107,46 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     * 
+     * @param auditDestinationARN
+     *        The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     */
+
+    public void setAuditDestinationARN(String auditDestinationARN) {
+        this.auditDestinationARN = auditDestinationARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     */
+
+    public String getAuditDestinationARN() {
+        return this.auditDestinationARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * </p>
+     * 
+     * @param auditDestinationARN
+     *        The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMBFileShareInfo withAuditDestinationARN(String auditDestinationARN) {
+        setAuditDestinationARN(auditDestinationARN);
+        return this;
+    }
+
+    /**
      * @param authentication
      */
 
@@ -1263,6 +1309,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
             sb.append("ValidUserList: ").append(getValidUserList()).append(",");
         if (getInvalidUserList() != null)
             sb.append("InvalidUserList: ").append(getInvalidUserList()).append(",");
+        if (getAuditDestinationARN() != null)
+            sb.append("AuditDestinationARN: ").append(getAuditDestinationARN()).append(",");
         if (getAuthentication() != null)
             sb.append("Authentication: ").append(getAuthentication()).append(",");
         if (getTags() != null)
@@ -1353,6 +1401,10 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getInvalidUserList() != null && other.getInvalidUserList().equals(this.getInvalidUserList()) == false)
             return false;
+        if (other.getAuditDestinationARN() == null ^ this.getAuditDestinationARN() == null)
+            return false;
+        if (other.getAuditDestinationARN() != null && other.getAuditDestinationARN().equals(this.getAuditDestinationARN()) == false)
+            return false;
         if (other.getAuthentication() == null ^ this.getAuthentication() == null)
             return false;
         if (other.getAuthentication() != null && other.getAuthentication().equals(this.getAuthentication()) == false)
@@ -1387,6 +1439,7 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getAdminUserList() == null) ? 0 : getAdminUserList().hashCode());
         hashCode = prime * hashCode + ((getValidUserList() == null) ? 0 : getValidUserList().hashCode());
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
+        hashCode = prime * hashCode + ((getAuditDestinationARN() == null) ? 0 : getAuditDestinationARN().hashCode());
         hashCode = prime * hashCode + ((getAuthentication() == null) ? 0 : getAuthentication().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

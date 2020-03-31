@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ConnectionType {
 
     JDBC("JDBC"),
-    SFTP("SFTP");
+    SFTP("SFTP"),
+    MONGODB("MONGODB");
 
     private String value;
 

@@ -463,6 +463,84 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
+     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     * @return A Java Future containing the result of the DeleteProject operation returned by the service.
+     * @sample AmazonRekognitionAsync.DeleteProject
+     */
+    java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest deleteProjectRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
+     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProject operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DeleteProject
+     */
+    java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest deleteProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a version of a model.
+     * </p>
+     * <p>
+     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
+     * </p>
+     * 
+     * @param deleteProjectVersionRequest
+     * @return A Java Future containing the result of the DeleteProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsync.DeleteProjectVersion
+     */
+    java.util.concurrent.Future<DeleteProjectVersionResult> deleteProjectVersionAsync(DeleteProjectVersionRequest deleteProjectVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a version of a model.
+     * </p>
+     * <p>
+     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
+     * </p>
+     * 
+     * @param deleteProjectVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DeleteProjectVersion
+     */
+    java.util.concurrent.Future<DeleteProjectVersionResult> deleteProjectVersionAsync(DeleteProjectVersionRequest deleteProjectVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProjectVersionRequest, DeleteProjectVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you
      * create the stream processor with <a>CreateStreamProcessor</a>. You might not be able to use the same name for a
      * stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.

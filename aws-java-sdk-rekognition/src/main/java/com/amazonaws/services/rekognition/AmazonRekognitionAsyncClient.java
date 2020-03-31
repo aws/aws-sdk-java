@@ -476,6 +476,72 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request) {
+
+        return deleteProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(final DeleteProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
+        final DeleteProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProjectResult>() {
+            @Override
+            public DeleteProjectResult call() throws Exception {
+                DeleteProjectResult result = null;
+
+                try {
+                    result = executeDeleteProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProjectVersionResult> deleteProjectVersionAsync(DeleteProjectVersionRequest request) {
+
+        return deleteProjectVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProjectVersionResult> deleteProjectVersionAsync(final DeleteProjectVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProjectVersionRequest, DeleteProjectVersionResult> asyncHandler) {
+        final DeleteProjectVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProjectVersionResult>() {
+            @Override
+            public DeleteProjectVersionResult call() throws Exception {
+                DeleteProjectVersionResult result = null;
+
+                try {
+                    result = executeDeleteProjectVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStreamProcessorResult> deleteStreamProcessorAsync(DeleteStreamProcessorRequest request) {
 
         return deleteStreamProcessorAsync(request, null);

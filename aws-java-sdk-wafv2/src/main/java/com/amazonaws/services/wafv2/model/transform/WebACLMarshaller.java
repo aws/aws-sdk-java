@@ -44,6 +44,12 @@ public class WebACLMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
     private static final MarshallingInfo<Long> CAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Capacity").build();
+    private static final MarshallingInfo<List> PREPROCESSFIREWALLMANAGERRULEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreProcessFirewallManagerRuleGroups").build();
+    private static final MarshallingInfo<List> POSTPROCESSFIREWALLMANAGERRULEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostProcessFirewallManagerRuleGroups").build();
+    private static final MarshallingInfo<Boolean> MANAGEDBYFIREWALLMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedByFirewallManager").build();
 
     private static final WebACLMarshaller instance = new WebACLMarshaller();
 
@@ -69,6 +75,9 @@ public class WebACLMarshaller {
             protocolMarshaller.marshall(webACL.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(webACL.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
             protocolMarshaller.marshall(webACL.getCapacity(), CAPACITY_BINDING);
+            protocolMarshaller.marshall(webACL.getPreProcessFirewallManagerRuleGroups(), PREPROCESSFIREWALLMANAGERRULEGROUPS_BINDING);
+            protocolMarshaller.marshall(webACL.getPostProcessFirewallManagerRuleGroups(), POSTPROCESSFIREWALLMANAGERRULEGROUPS_BINDING);
+            protocolMarshaller.marshall(webACL.getManagedByFirewallManager(), MANAGEDBYFIREWALLMANAGER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

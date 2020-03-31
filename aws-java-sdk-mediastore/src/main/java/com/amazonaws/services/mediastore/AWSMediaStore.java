@@ -150,6 +150,28 @@ public interface AWSMediaStore {
 
     /**
      * <p>
+     * Deletes the metric policy that is associated with the specified container. If there is no metric policy
+     * associated with the container, MediaStore doesn't send metrics to CloudWatch.
+     * </p>
+     * 
+     * @param deleteMetricPolicyRequest
+     * @return Result of the DeleteMetricPolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.DeleteMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteMetricPolicyResult deleteMetricPolicy(DeleteMetricPolicyRequest deleteMetricPolicyRequest);
+
+    /**
+     * <p>
      * Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a
      * container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint
      * does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single
@@ -237,6 +259,27 @@ public interface AWSMediaStore {
      *      API Documentation</a>
      */
     GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Returns the metric policy for the specified container.
+     * </p>
+     * 
+     * @param getMetricPolicyRequest
+     * @return Result of the GetMetricPolicy operation returned by the service.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.GetMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMetricPolicyResult getMetricPolicy(GetMetricPolicyRequest getMetricPolicyRequest);
 
     /**
      * <p>
@@ -365,6 +408,26 @@ public interface AWSMediaStore {
      *      API Documentation</a>
      */
     PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send
+     * metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.
+     * </p>
+     * 
+     * @param putMetricPolicyRequest
+     * @return Result of the PutMetricPolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.PutMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutMetricPolicyResult putMetricPolicy(PutMetricPolicyRequest putMetricPolicyRequest);
 
     /**
      * <p>

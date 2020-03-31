@@ -45,10 +45,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
+     * Example: <code>WAFV2</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>WAF</code>
      * </p>
      * <p>
-     * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
      * </li>
      * <li>
@@ -176,10 +184,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
+     * Example: <code>WAFV2</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>WAF</code>
      * </p>
      * <p>
-     * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
      * </li>
      * <li>
@@ -220,10 +236,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
+     *        Example: <code>WAFV2</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Example: <code>WAF</code>
      *        </p>
      *        <p>
-     *        <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     *        <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      *        </p>
      *        </li>
      *        <li>
@@ -270,10 +294,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
+     * Example: <code>WAFV2</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>WAF</code>
      * </p>
      * <p>
-     * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
      * </li>
      * <li>
@@ -313,10 +345,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *         <ul>
      *         <li>
      *         <p>
+     *         Example: <code>WAFV2</code>
+     *         </p>
+     *         <p>
+     *         <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Example: <code>WAF</code>
      *         </p>
      *         <p>
-     *         <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     *         <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      *         </p>
      *         </li>
      *         <li>
@@ -363,10 +403,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * <ul>
      * <li>
      * <p>
+     * Example: <code>WAFV2</code>
+     * </p>
+     * <p>
+     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Example: <code>WAF</code>
      * </p>
      * <p>
-     * <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      * </p>
      * </li>
      * <li>
@@ -407,10 +455,18 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        <ul>
      *        <li>
      *        <p>
+     *        Example: <code>WAFV2</code>
+     *        </p>
+     *        <p>
+     *        <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Example: <code>WAF</code>
      *        </p>
      *        <p>
-     *        <code>ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
+     *        <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
      *        </p>
      *        </li>
      *        <li>

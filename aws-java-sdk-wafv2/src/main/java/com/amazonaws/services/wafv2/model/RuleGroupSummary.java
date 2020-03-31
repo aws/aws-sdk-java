@@ -39,7 +39,7 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      */
     private String name;
@@ -52,7 +52,8 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
     private String id;
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      */
     private String description;
@@ -76,11 +77,11 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      * 
      * @param name
-     *        A friendly name of the data type instance. You cannot change the name after you create the instance.
+     *        The name of the data type instance. You cannot change the name after you create the instance.
      */
 
     public void setName(String name) {
@@ -89,10 +90,10 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      * 
-     * @return A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * @return The name of the data type instance. You cannot change the name after you create the instance.
      */
 
     public String getName() {
@@ -101,11 +102,11 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      * 
      * @param name
-     *        A friendly name of the data type instance. You cannot change the name after you create the instance.
+     *        The name of the data type instance. You cannot change the name after you create the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,12 +163,13 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the rule group. You cannot change the description of a rule group after you
-     *        create it.
+     *        A description of the rule group that helps with identification. You cannot change the description of a
+     *        rule group after you create it.
      */
 
     public void setDescription(String description) {
@@ -176,11 +178,12 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      * 
-     * @return A friendly description of the rule group. You cannot change the description of a rule group after you
-     *         create it.
+     * @return A description of the rule group that helps with identification. You cannot change the description of a
+     *         rule group after you create it.
      */
 
     public String getDescription() {
@@ -189,12 +192,13 @@ public class RuleGroupSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the rule group. You cannot change the description of a rule group after you
-     *        create it.
+     *        A description of the rule group that helps with identification. You cannot change the description of a
+     *        rule group after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

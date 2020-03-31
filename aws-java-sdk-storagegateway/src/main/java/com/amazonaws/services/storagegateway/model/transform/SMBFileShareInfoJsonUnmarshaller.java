@@ -120,6 +120,10 @@ public class SMBFileShareInfoJsonUnmarshaller implements Unmarshaller<SMBFileSha
                     context.nextToken();
                     sMBFileShareInfo.setInvalidUserList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("AuditDestinationARN", targetDepth)) {
+                    context.nextToken();
+                    sMBFileShareInfo.setAuditDestinationARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Authentication", targetDepth)) {
                     context.nextToken();
                     sMBFileShareInfo.setAuthentication(context.getUnmarshaller(String.class).unmarshall(context));

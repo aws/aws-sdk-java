@@ -56,7 +56,7 @@
     "defaultEndpointWithoutHttpProtocol" : "api.elastic-inference.us-east-1.amazonaws.com",
     "defaultRegion" : null,
     "documentation" : "Elastic Inference public APIs.",
-    "endpointPrefix" : "api.elastic-inference",
+    "endpointPrefix" : "elastic-inference",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
     "jsonProtocol" : true,

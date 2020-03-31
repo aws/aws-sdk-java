@@ -19,9 +19,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Amazon Detective is currently in preview.
- * </p>
- * <p>
  * An AWS account that is the master of or a member of a behavior graph.
  * </p>
  * 

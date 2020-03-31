@@ -403,6 +403,68 @@ public interface AmazonRekognition {
 
     /**
      * <p>
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
+     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     * @return Result of the DeleteProject operation returned by the service.
+     * @throws ResourceInUseException
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DeleteProject
+     */
+    DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
+
+    /**
+     * <p>
+     * Deletes a version of a model.
+     * </p>
+     * <p>
+     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
+     * </p>
+     * 
+     * @param deleteProjectVersionRequest
+     * @return Result of the DeleteProjectVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DeleteProjectVersion
+     */
+    DeleteProjectVersionResult deleteProjectVersion(DeleteProjectVersionRequest deleteProjectVersionRequest);
+
+    /**
+     * <p>
      * Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you
      * create the stream processor with <a>CreateStreamProcessor</a>. You might not be able to use the same name for a
      * stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.

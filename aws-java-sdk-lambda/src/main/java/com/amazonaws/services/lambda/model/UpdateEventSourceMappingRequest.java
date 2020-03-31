@@ -97,7 +97,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer batchSize;
     /**
      * <p>
-     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
@@ -577,11 +577,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -590,10 +590,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      * </p>
      * 
-     * @return The maximum amount of time to gather records before invoking the function, in seconds.
+     * @return (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -602,11 +602,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

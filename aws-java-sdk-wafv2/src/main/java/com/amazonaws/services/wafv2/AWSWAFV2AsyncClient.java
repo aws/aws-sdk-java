@@ -56,7 +56,7 @@ import java.util.concurrent.ExecutorService;
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
  * </p>
  * <p>
- * You can make API calls using the endpoints listed in <a
+ * You can make calls using the endpoints listed in <a
  * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS Service Endpoints for AWS WAF</a>.
  * </p>
  * <ul>
@@ -89,8 +89,8 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
- * You can define a Web ACL or rule group with a single API call, and update it with a single call. You define all rule
- * specifications in JSON format, and pass them to your rule group or Web ACL API calls.
+ * You can define a Web ACL or rule group with a single call, and update it with a single call. You define all rule
+ * specifications in JSON format, and pass them to your rule group or Web ACL calls.
  * </p>
  * </li>
  * <li>
@@ -332,6 +332,41 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFirewallManagerRuleGroupsResult> deleteFirewallManagerRuleGroupsAsync(
+            DeleteFirewallManagerRuleGroupsRequest request) {
+
+        return deleteFirewallManagerRuleGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFirewallManagerRuleGroupsResult> deleteFirewallManagerRuleGroupsAsync(
+            final DeleteFirewallManagerRuleGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFirewallManagerRuleGroupsRequest, DeleteFirewallManagerRuleGroupsResult> asyncHandler) {
+        final DeleteFirewallManagerRuleGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFirewallManagerRuleGroupsResult>() {
+            @Override
+            public DeleteFirewallManagerRuleGroupsResult call() throws Exception {
+                DeleteFirewallManagerRuleGroupsResult result = null;
+
+                try {
+                    result = executeDeleteFirewallManagerRuleGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest request) {
 
         return deleteIPSetAsync(request, null);
@@ -382,6 +417,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
 
                 try {
                     result = executeDeleteLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request) {
+
+        return deletePermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(final DeletePermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler) {
+        final DeletePermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePermissionPolicyResult>() {
+            @Override
+            public DeletePermissionPolicyResult call() throws Exception {
+                DeletePermissionPolicyResult result = null;
+
+                try {
+                    result = executeDeletePermissionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -613,6 +681,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
 
                 try {
                     result = executeGetLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request) {
+
+        return getPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(final GetPermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler) {
+        final GetPermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPermissionPolicyResult>() {
+            @Override
+            public GetPermissionPolicyResult call() throws Exception {
+                GetPermissionPolicyResult result = null;
+
+                try {
+                    result = executeGetPermissionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1111,6 +1212,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
 
                 try {
                     result = executePutLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request) {
+
+        return putPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(final PutPermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler) {
+        final PutPermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPermissionPolicyResult>() {
+            @Override
+            public PutPermissionPolicyResult call() throws Exception {
+                PutPermissionPolicyResult result = null;
+
+                try {
+                    result = executePutPermissionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

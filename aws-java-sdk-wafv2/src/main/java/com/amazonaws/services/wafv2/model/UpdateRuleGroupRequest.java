@@ -27,7 +27,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     * The name of the rule group. You cannot change the name of a rule group after you create it.
      * </p>
      */
     private String name;
@@ -42,7 +42,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -62,7 +62,8 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     private String id;
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      */
     private String description;
@@ -94,11 +95,11 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     * The name of the rule group. You cannot change the name of a rule group after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     *        The name of the rule group. You cannot change the name of a rule group after you create it.
      */
 
     public void setName(String name) {
@@ -107,10 +108,10 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     * The name of the rule group. You cannot change the name of a rule group after you create it.
      * </p>
      * 
-     * @return A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     * @return The name of the rule group. You cannot change the name of a rule group after you create it.
      */
 
     public String getName() {
@@ -119,11 +120,11 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     * The name of the rule group. You cannot change the name of a rule group after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+     *        The name of the rule group. You cannot change the name of a rule group after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,7 +144,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -162,7 +163,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -189,7 +190,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -207,7 +208,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         CLI - Specify the region when you use the CloudFront scope:
+     *         CLI - Specify the Region when you use the CloudFront scope:
      *         <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *         </p>
      *         </li>
@@ -234,7 +235,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -253,7 +254,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -282,7 +283,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -301,7 +302,7 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -367,12 +368,13 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the rule group. You cannot change the description of a rule group after you
-     *        create it.
+     *        A description of the rule group that helps with identification. You cannot change the description of a
+     *        rule group after you create it.
      */
 
     public void setDescription(String description) {
@@ -381,11 +383,12 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      * 
-     * @return A friendly description of the rule group. You cannot change the description of a rule group after you
-     *         create it.
+     * @return A description of the rule group that helps with identification. You cannot change the description of a
+     *         rule group after you create it.
      */
 
     public String getDescription() {
@@ -394,12 +397,13 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+     * A description of the rule group that helps with identification. You cannot change the description of a rule group
+     * after you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the rule group. You cannot change the description of a rule group after you
-     *        create it.
+     *        A description of the rule group that helps with identification. You cannot change the description of a
+     *        rule group after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

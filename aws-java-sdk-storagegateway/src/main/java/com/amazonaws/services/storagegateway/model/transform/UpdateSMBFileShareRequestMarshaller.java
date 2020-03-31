@@ -52,6 +52,8 @@ public class UpdateSMBFileShareRequestMarshaller {
             .marshallLocationName("ValidUserList").build();
     private static final MarshallingInfo<List> INVALIDUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvalidUserList").build();
+    private static final MarshallingInfo<String> AUDITDESTINATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditDestinationARN").build();
 
     private static final UpdateSMBFileShareRequestMarshaller instance = new UpdateSMBFileShareRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class UpdateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(updateSMBFileShareRequest.getAdminUserList(), ADMINUSERLIST_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getValidUserList(), VALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(updateSMBFileShareRequest.getInvalidUserList(), INVALIDUSERLIST_BINDING);
+            protocolMarshaller.marshall(updateSMBFileShareRequest.getAuditDestinationARN(), AUDITDESTINATIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

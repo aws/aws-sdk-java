@@ -18,17 +18,31 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
  * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+ * The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group,
+ * like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
  * </p>
- * </note>
  * <p>
- * The action to use to override the rule's <code>Action</code> setting. You can use no override action, in which case
- * the rule action is in effect, or count, in which case, if the rule matches a web request, it only counts the match.
+ * Set the override action to none to leave the rule actions in effect. Set it to count to only count matches,
+ * regardless of the rule action settings.
  * </p>
+ * <p>
+ * In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code>
+ * setting, but not both:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * If the rule statement references a rule group, use this override action setting and not the action setting.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If the rule statement does not reference a rule group, use the rule action setting and not this rule override action
+ * setting.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/OverrideAction" target="_top">AWS API
  *      Documentation</a>

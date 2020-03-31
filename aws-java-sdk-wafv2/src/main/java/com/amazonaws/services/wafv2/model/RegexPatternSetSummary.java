@@ -39,7 +39,7 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      */
     private String name;
@@ -52,7 +52,8 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
     private String id;
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      */
     private String description;
@@ -76,11 +77,11 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      * 
      * @param name
-     *        A friendly name of the data type instance. You cannot change the name after you create the instance.
+     *        The name of the data type instance. You cannot change the name after you create the instance.
      */
 
     public void setName(String name) {
@@ -89,10 +90,10 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      * 
-     * @return A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * @return The name of the data type instance. You cannot change the name after you create the instance.
      */
 
     public String getName() {
@@ -101,11 +102,11 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly name of the data type instance. You cannot change the name after you create the instance.
+     * The name of the data type instance. You cannot change the name after you create the instance.
      * </p>
      * 
      * @param name
-     *        A friendly name of the data type instance. You cannot change the name after you create the instance.
+     *        The name of the data type instance. You cannot change the name after you create the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +163,13 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the set. You cannot change the description of a set after you create it.
+     *        A description of the set that helps with identification. You cannot change the description of a set after
+     *        you create it.
      */
 
     public void setDescription(String description) {
@@ -175,10 +178,12 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      * 
-     * @return A friendly description of the set. You cannot change the description of a set after you create it.
+     * @return A description of the set that helps with identification. You cannot change the description of a set after
+     *         you create it.
      */
 
     public String getDescription() {
@@ -187,11 +192,13 @@ public class RegexPatternSetSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A friendly description of the set. You cannot change the description of a set after you create it.
+     * A description of the set that helps with identification. You cannot change the description of a set after you
+     * create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the set. You cannot change the description of a set after you create it.
+     *        A description of the set that helps with identification. You cannot change the description of a set after
+     *        you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

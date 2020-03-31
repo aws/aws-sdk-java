@@ -41,7 +41,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      */
     private String name;
@@ -66,7 +66,8 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     private DefaultAction defaultAction;
     /**
      * <p>
-     * A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create it.
+     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
+     * you create it.
      * </p>
      */
     private String description;
@@ -97,14 +98,47 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long capacity;
+    /**
+     * <p>
+     * The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized after these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     */
+    private java.util.List<FirewallManagerRuleGroup> preProcessFirewallManagerRuleGroups;
+    /**
+     * <p>
+     * The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized before these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     */
+    private java.util.List<FirewallManagerRuleGroup> postProcessFirewallManagerRuleGroups;
+    /**
+     * <p>
+     * Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager can
+     * delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     * </p>
+     */
+    private Boolean managedByFirewallManager;
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -113,10 +147,10 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
-     * @return A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      */
 
     public String getName() {
@@ -125,11 +159,11 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +300,13 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create it.
+     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
+     * you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create it.
+     *        A description of the Web ACL that helps with identification. You cannot change the description of a Web
+     *        ACL after you create it.
      */
 
     public void setDescription(String description) {
@@ -279,11 +315,12 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create it.
+     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
+     * you create it.
      * </p>
      * 
-     * @return A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create
-     *         it.
+     * @return A description of the Web ACL that helps with identification. You cannot change the description of a Web
+     *         ACL after you create it.
      */
 
     public String getDescription() {
@@ -292,11 +329,13 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create it.
+     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
+     * you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the Web ACL. You cannot change the description of a Web ACL after you create it.
+     *        A description of the Web ACL that helps with identification. You cannot change the description of a Web
+     *        ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,6 +550,312 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized after these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * 
+     * @return The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *         WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *         you define for the web ACL are prioritized after these. </p>
+     *         <p>
+     *         In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *         run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *         prioritizes the rule groups, to determine their relative processing order.
+     */
+
+    public java.util.List<FirewallManagerRuleGroup> getPreProcessFirewallManagerRuleGroups() {
+        return preProcessFirewallManagerRuleGroups;
+    }
+
+    /**
+     * <p>
+     * The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized after these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * 
+     * @param preProcessFirewallManagerRuleGroups
+     *        The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *        WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *        you define for the web ACL are prioritized after these. </p>
+     *        <p>
+     *        In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *        run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *        prioritizes the rule groups, to determine their relative processing order.
+     */
+
+    public void setPreProcessFirewallManagerRuleGroups(java.util.Collection<FirewallManagerRuleGroup> preProcessFirewallManagerRuleGroups) {
+        if (preProcessFirewallManagerRuleGroups == null) {
+            this.preProcessFirewallManagerRuleGroups = null;
+            return;
+        }
+
+        this.preProcessFirewallManagerRuleGroups = new java.util.ArrayList<FirewallManagerRuleGroup>(preProcessFirewallManagerRuleGroups);
+    }
+
+    /**
+     * <p>
+     * The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized after these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPreProcessFirewallManagerRuleGroups(java.util.Collection)} or
+     * {@link #withPreProcessFirewallManagerRuleGroups(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param preProcessFirewallManagerRuleGroups
+     *        The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *        WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *        you define for the web ACL are prioritized after these. </p>
+     *        <p>
+     *        In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *        run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *        prioritizes the rule groups, to determine their relative processing order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withPreProcessFirewallManagerRuleGroups(FirewallManagerRuleGroup... preProcessFirewallManagerRuleGroups) {
+        if (this.preProcessFirewallManagerRuleGroups == null) {
+            setPreProcessFirewallManagerRuleGroups(new java.util.ArrayList<FirewallManagerRuleGroup>(preProcessFirewallManagerRuleGroups.length));
+        }
+        for (FirewallManagerRuleGroup ele : preProcessFirewallManagerRuleGroups) {
+            this.preProcessFirewallManagerRuleGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized after these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * 
+     * @param preProcessFirewallManagerRuleGroups
+     *        The first set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *        WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *        you define for the web ACL are prioritized after these. </p>
+     *        <p>
+     *        In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *        run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *        prioritizes the rule groups, to determine their relative processing order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withPreProcessFirewallManagerRuleGroups(java.util.Collection<FirewallManagerRuleGroup> preProcessFirewallManagerRuleGroups) {
+        setPreProcessFirewallManagerRuleGroups(preProcessFirewallManagerRuleGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized before these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * 
+     * @return The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *         WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *         you define for the web ACL are prioritized before these. </p>
+     *         <p>
+     *         In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *         run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *         prioritizes the rule groups, to determine their relative processing order.
+     */
+
+    public java.util.List<FirewallManagerRuleGroup> getPostProcessFirewallManagerRuleGroups() {
+        return postProcessFirewallManagerRuleGroups;
+    }
+
+    /**
+     * <p>
+     * The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized before these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * 
+     * @param postProcessFirewallManagerRuleGroups
+     *        The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *        WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *        you define for the web ACL are prioritized before these. </p>
+     *        <p>
+     *        In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *        run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *        prioritizes the rule groups, to determine their relative processing order.
+     */
+
+    public void setPostProcessFirewallManagerRuleGroups(java.util.Collection<FirewallManagerRuleGroup> postProcessFirewallManagerRuleGroups) {
+        if (postProcessFirewallManagerRuleGroups == null) {
+            this.postProcessFirewallManagerRuleGroups = null;
+            return;
+        }
+
+        this.postProcessFirewallManagerRuleGroups = new java.util.ArrayList<FirewallManagerRuleGroup>(postProcessFirewallManagerRuleGroups);
+    }
+
+    /**
+     * <p>
+     * The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized before these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPostProcessFirewallManagerRuleGroups(java.util.Collection)} or
+     * {@link #withPostProcessFirewallManagerRuleGroups(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param postProcessFirewallManagerRuleGroups
+     *        The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *        WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *        you define for the web ACL are prioritized before these. </p>
+     *        <p>
+     *        In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *        run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *        prioritizes the rule groups, to determine their relative processing order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withPostProcessFirewallManagerRuleGroups(FirewallManagerRuleGroup... postProcessFirewallManagerRuleGroups) {
+        if (this.postProcessFirewallManagerRuleGroups == null) {
+            setPostProcessFirewallManagerRuleGroups(new java.util.ArrayList<FirewallManagerRuleGroup>(postProcessFirewallManagerRuleGroups.length));
+        }
+        for (FirewallManagerRuleGroup ele : postProcessFirewallManagerRuleGroups) {
+            this.postProcessFirewallManagerRuleGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager WAF
+     * policy and contains only rule group references. You can't alter these. Any rules and rule groups that you define
+     * for the web ACL are prioritized before these.
+     * </p>
+     * <p>
+     * In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to run
+     * first in the web ACL and a set of rule groups to run last. Within each set, the administrator prioritizes the
+     * rule groups, to determine their relative processing order.
+     * </p>
+     * 
+     * @param postProcessFirewallManagerRuleGroups
+     *        The last set of rules for AWS WAF to process in the web ACL. This is defined in an AWS Firewall Manager
+     *        WAF policy and contains only rule group references. You can't alter these. Any rules and rule groups that
+     *        you define for the web ACL are prioritized before these. </p>
+     *        <p>
+     *        In the Firewall Manager WAF policy, the Firewall Manager administrator can define a set of rule groups to
+     *        run first in the web ACL and a set of rule groups to run last. Within each set, the administrator
+     *        prioritizes the rule groups, to determine their relative processing order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withPostProcessFirewallManagerRuleGroups(java.util.Collection<FirewallManagerRuleGroup> postProcessFirewallManagerRuleGroups) {
+        setPostProcessFirewallManagerRuleGroups(postProcessFirewallManagerRuleGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager can
+     * delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     * </p>
+     * 
+     * @param managedByFirewallManager
+     *        Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager
+     *        can delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     */
+
+    public void setManagedByFirewallManager(Boolean managedByFirewallManager) {
+        this.managedByFirewallManager = managedByFirewallManager;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager can
+     * delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     * </p>
+     * 
+     * @return Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall
+     *         Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     */
+
+    public Boolean getManagedByFirewallManager() {
+        return this.managedByFirewallManager;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager can
+     * delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     * </p>
+     * 
+     * @param managedByFirewallManager
+     *        Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager
+     *        can delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withManagedByFirewallManager(Boolean managedByFirewallManager) {
+        setManagedByFirewallManager(managedByFirewallManager);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall Manager can
+     * delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     * </p>
+     * 
+     * @return Indicates whether this web ACL is managed by AWS Firewall Manager. If true, then only AWS Firewall
+     *         Manager can delete the web ACL or any Firewall Manager rule groups in the web ACL.
+     */
+
+    public Boolean isManagedByFirewallManager() {
+        return this.managedByFirewallManager;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -537,7 +882,13 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         if (getVisibilityConfig() != null)
             sb.append("VisibilityConfig: ").append(getVisibilityConfig()).append(",");
         if (getCapacity() != null)
-            sb.append("Capacity: ").append(getCapacity());
+            sb.append("Capacity: ").append(getCapacity()).append(",");
+        if (getPreProcessFirewallManagerRuleGroups() != null)
+            sb.append("PreProcessFirewallManagerRuleGroups: ").append(getPreProcessFirewallManagerRuleGroups()).append(",");
+        if (getPostProcessFirewallManagerRuleGroups() != null)
+            sb.append("PostProcessFirewallManagerRuleGroups: ").append(getPostProcessFirewallManagerRuleGroups()).append(",");
+        if (getManagedByFirewallManager() != null)
+            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager());
         sb.append("}");
         return sb.toString();
     }
@@ -584,6 +935,20 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCapacity() != null && other.getCapacity().equals(this.getCapacity()) == false)
             return false;
+        if (other.getPreProcessFirewallManagerRuleGroups() == null ^ this.getPreProcessFirewallManagerRuleGroups() == null)
+            return false;
+        if (other.getPreProcessFirewallManagerRuleGroups() != null
+                && other.getPreProcessFirewallManagerRuleGroups().equals(this.getPreProcessFirewallManagerRuleGroups()) == false)
+            return false;
+        if (other.getPostProcessFirewallManagerRuleGroups() == null ^ this.getPostProcessFirewallManagerRuleGroups() == null)
+            return false;
+        if (other.getPostProcessFirewallManagerRuleGroups() != null
+                && other.getPostProcessFirewallManagerRuleGroups().equals(this.getPostProcessFirewallManagerRuleGroups()) == false)
+            return false;
+        if (other.getManagedByFirewallManager() == null ^ this.getManagedByFirewallManager() == null)
+            return false;
+        if (other.getManagedByFirewallManager() != null && other.getManagedByFirewallManager().equals(this.getManagedByFirewallManager()) == false)
+            return false;
         return true;
     }
 
@@ -600,6 +965,9 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
         hashCode = prime * hashCode + ((getCapacity() == null) ? 0 : getCapacity().hashCode());
+        hashCode = prime * hashCode + ((getPreProcessFirewallManagerRuleGroups() == null) ? 0 : getPreProcessFirewallManagerRuleGroups().hashCode());
+        hashCode = prime * hashCode + ((getPostProcessFirewallManagerRuleGroups() == null) ? 0 : getPostProcessFirewallManagerRuleGroups().hashCode());
+        hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
         return hashCode;
     }
 

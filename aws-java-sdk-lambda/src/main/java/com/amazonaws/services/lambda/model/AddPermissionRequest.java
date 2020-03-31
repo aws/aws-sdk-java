@@ -84,10 +84,9 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sourceArn;
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
-     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
-     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
+     * ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
+     * by its owner and recreated by another account.
      * </p>
      */
     private String sourceAccount;
@@ -473,18 +472,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
-     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
-     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
+     * ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
+     * by its owner and recreated by another account.
      * </p>
      * 
      * @param sourceAccount
-     *        For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code>
-     *        to grant permission to resources that are owned by another account (for example, all of an account's
-     *        Amazon S3 buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by
-     *        the specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by
-     *        another account.
+     *        For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code>
+     *        to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to
+     *        be deleted by its owner and recreated by another account.
      */
 
     public void setSourceAccount(String sourceAccount) {
@@ -493,17 +489,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
-     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
-     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
+     * ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
+     * by its owner and recreated by another account.
      * </p>
      * 
-     * @return For AWS services, the ID of the account that owns the resource. Use this instead of
-     *         <code>SourceArn</code> to grant permission to resources that are owned by another account (for example,
-     *         all of an account's Amazon S3 buckets). Or use it together with <code>SourceArn</code> to ensure that the
-     *         resource is owned by the specified account. For example, an Amazon S3 bucket could be deleted by its
-     *         owner and recreated by another account.
+     * @return For Amazon S3, the ID of the account that owns the resource. Use this together with
+     *         <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for
+     *         an Amazon S3 bucket to be deleted by its owner and recreated by another account.
      */
 
     public String getSourceAccount() {
@@ -512,18 +505,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
-     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
-     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     * For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
+     * ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
+     * by its owner and recreated by another account.
      * </p>
      * 
      * @param sourceAccount
-     *        For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code>
-     *        to grant permission to resources that are owned by another account (for example, all of an account's
-     *        Amazon S3 buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by
-     *        the specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by
-     *        another account.
+     *        For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code>
+     *        to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to
+     *        be deleted by its owner and recreated by another account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

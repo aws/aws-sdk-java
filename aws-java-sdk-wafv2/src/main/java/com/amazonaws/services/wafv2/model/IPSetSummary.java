@@ -39,7 +39,7 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      */
     private String name;
@@ -52,7 +52,8 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
+     * you create it.
      * </p>
      */
     private String description;
@@ -76,11 +77,11 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     *        The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      */
 
     public void setName(String name) {
@@ -89,10 +90,10 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      * 
-     * @return A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * @return The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      */
 
     public String getName() {
@@ -101,11 +102,11 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     *        The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +163,13 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
+     * you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     *        A description of the IP set that helps with identification. You cannot change the description of an IP set
+     *        after you create it.
      */
 
     public void setDescription(String description) {
@@ -175,10 +178,12 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
+     * you create it.
      * </p>
      * 
-     * @return A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     * @return A description of the IP set that helps with identification. You cannot change the description of an IP
+     *         set after you create it.
      */
 
     public String getDescription() {
@@ -187,11 +192,13 @@ public class IPSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
+     * you create it.
      * </p>
      * 
      * @param description
-     *        A friendly description of the IP set. You cannot change the description of an IP set after you create it.
+     *        A description of the IP set that helps with identification. You cannot change the description of an IP set
+     *        after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -58,6 +58,8 @@ public class CreateSMBFileShareRequestMarshaller {
             .marshallLocationName("ValidUserList").build();
     private static final MarshallingInfo<List> INVALIDUSERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvalidUserList").build();
+    private static final MarshallingInfo<String> AUDITDESTINATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditDestinationARN").build();
     private static final MarshallingInfo<String> AUTHENTICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -94,6 +96,7 @@ public class CreateSMBFileShareRequestMarshaller {
             protocolMarshaller.marshall(createSMBFileShareRequest.getAdminUserList(), ADMINUSERLIST_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getValidUserList(), VALIDUSERLIST_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getInvalidUserList(), INVALIDUSERLIST_BINDING);
+            protocolMarshaller.marshall(createSMBFileShareRequest.getAuditDestinationARN(), AUDITDESTINATIONARN_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getAuthentication(), AUTHENTICATION_BINDING);
             protocolMarshaller.marshall(createSMBFileShareRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

@@ -80,35 +80,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidImageFormatException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.InvalidImageFormatExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.InvalidS3ObjectExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("VideoTooLargeException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.VideoTooLargeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -119,14 +98,35 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ImageTooLargeException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.rekognition.model.transform.ImageTooLargeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidImageFormatException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.InvalidImageFormatExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.InvalidS3ObjectExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("VideoTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.VideoTooLargeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ImageTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.ImageTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
@@ -910,6 +910,148 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFacesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
+     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
+     * </p>
+     * 
+     * @param deleteProjectRequest
+     * @return Result of the DeleteProject operation returned by the service.
+     * @throws ResourceInUseException
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DeleteProject
+     */
+    @Override
+    public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProject(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProjectResult executeDeleteProject(DeleteProjectRequest deleteProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProjectRequest> request = null;
+        Response<DeleteProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProjectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a version of a model.
+     * </p>
+     * <p>
+     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
+     * </p>
+     * 
+     * @param deleteProjectVersionRequest
+     * @return Result of the DeleteProjectVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DeleteProjectVersion
+     */
+    @Override
+    public DeleteProjectVersionResult deleteProjectVersion(DeleteProjectVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProjectVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProjectVersionResult executeDeleteProjectVersion(DeleteProjectVersionRequest deleteProjectVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProjectVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProjectVersionRequest> request = null;
+        Response<DeleteProjectVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProjectVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProjectVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProjectVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProjectVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -27,7 +27,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      */
     private String name;
@@ -42,7 +42,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -74,11 +74,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     *        The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      */
 
     public void setName(String name) {
@@ -87,10 +87,10 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      * 
-     * @return A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * @return The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      */
 
     public String getName() {
@@ -99,11 +99,11 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     * The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
+     *        The name of the IP set. You cannot change the name of an <code>IPSet</code> after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +123,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -142,7 +142,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -169,7 +169,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -187,7 +187,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         CLI - Specify the region when you use the CloudFront scope:
+     *         CLI - Specify the Region when you use the CloudFront scope:
      *         <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *         </p>
      *         </li>
@@ -214,7 +214,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -233,7 +233,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -262,7 +262,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -281,7 +281,7 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>

@@ -74,6 +74,16 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProjectVersionResult deleteProjectVersion(DeleteProjectVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteStreamProcessorResult deleteStreamProcessor(DeleteStreamProcessorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

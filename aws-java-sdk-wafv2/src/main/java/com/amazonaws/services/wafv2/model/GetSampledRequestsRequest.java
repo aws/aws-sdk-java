@@ -49,7 +49,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -174,7 +174,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -193,7 +193,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -220,7 +220,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -238,7 +238,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         CLI - Specify the region when you use the CloudFront scope:
+     *         CLI - Specify the Region when you use the CloudFront scope:
      *         <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *         </p>
      *         </li>
@@ -265,7 +265,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -284,7 +284,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -313,7 +313,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -332,7 +332,7 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>

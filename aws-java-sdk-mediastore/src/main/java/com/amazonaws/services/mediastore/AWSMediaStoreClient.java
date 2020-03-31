@@ -78,17 +78,17 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.mediastore.model.transform.ContainerNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContainerInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediastore.model.transform.ContainerInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.mediastore.model.transform.PolicyNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CorsPolicyNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediastore.model.transform.CorsPolicyNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.ContainerNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.PolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediastore.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
@@ -453,6 +453,68 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
     /**
      * <p>
+     * Deletes the metric policy that is associated with the specified container. If there is no metric policy
+     * associated with the container, MediaStore doesn't send metrics to CloudWatch.
+     * </p>
+     * 
+     * @param deleteMetricPolicyRequest
+     * @return Result of the DeleteMetricPolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.DeleteMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteMetricPolicyResult deleteMetricPolicy(DeleteMetricPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMetricPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMetricPolicyResult executeDeleteMetricPolicy(DeleteMetricPolicyRequest deleteMetricPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMetricPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMetricPolicyRequest> request = null;
+        Response<DeleteMetricPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMetricPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMetricPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMetricPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMetricPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMetricPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a
      * container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint
      * does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single
@@ -691,6 +753,67 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the metric policy for the specified container.
+     * </p>
+     * 
+     * @param getMetricPolicyRequest
+     * @return Result of the GetMetricPolicy operation returned by the service.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.GetMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMetricPolicyResult getMetricPolicy(GetMetricPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricPolicyResult executeGetMetricPolicy(GetMetricPolicyRequest getMetricPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricPolicyRequest> request = null;
+        Response<GetMetricPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetricPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetricPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMetricPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1019,6 +1142,66 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<PutLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send
+     * metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.
+     * </p>
+     * 
+     * @param putMetricPolicyRequest
+     * @return Result of the PutMetricPolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.PutMetricPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutMetricPolicyResult putMetricPolicy(PutMetricPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutMetricPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutMetricPolicyResult executePutMetricPolicy(PutMetricPolicyRequest putMetricPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putMetricPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutMetricPolicyRequest> request = null;
+        Response<PutMetricPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutMetricPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMetricPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutMetricPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutMetricPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -457,10 +457,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * <p>
      * To grant permission to another account, specify the account ID as the <code>Principal</code>. For AWS services,
      * the principal is a domain-style identifier defined by the service, like <code>s3.amazonaws.com</code> or
-     * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN or owning account of the
-     * associated resource as the <code>SourceArn</code> or <code>SourceAccount</code>. If you grant permission to a
-     * service principal without specifying the source, other accounts could potentially configure resources in their
-     * account to invoke your Lambda function.
+     * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN of the associated resource as the
+     * <code>SourceArn</code>. If you grant permission to a service principal without specifying the source, other
+     * accounts could potentially configure resources in their account to invoke your Lambda function.
      * </p>
      * <p>
      * This action adds a statement to a resource-based permissions policy for the function. For more information about

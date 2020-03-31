@@ -27,7 +27,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      */
     private String name;
@@ -42,7 +42,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -63,11 +63,11 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      */
 
     public void setName(String name) {
@@ -76,10 +76,10 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
-     * @return A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * @return The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      */
 
     public String getName() {
@@ -88,11 +88,11 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     * The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * </p>
      * 
      * @param name
-     *        A friendly name of the Web ACL. You cannot change the name of a Web ACL after you create it.
+     *        The name of the Web ACL. You cannot change the name of a Web ACL after you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +112,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -131,7 +131,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -158,7 +158,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -176,7 +176,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         CLI - Specify the region when you use the CloudFront scope:
+     *         CLI - Specify the Region when you use the CloudFront scope:
      *         <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *         </p>
      *         </li>
@@ -203,7 +203,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -222,7 +222,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>
@@ -251,7 +251,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * CLI - Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
+     * CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      * </p>
      * </li>
      * <li>
@@ -270,7 +270,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        CLI - Specify the region when you use the CloudFront scope:
+     *        CLI - Specify the Region when you use the CloudFront scope:
      *        <code>--scope=CLOUDFRONT --region=us-east-1</code>.
      *        </p>
      *        </li>

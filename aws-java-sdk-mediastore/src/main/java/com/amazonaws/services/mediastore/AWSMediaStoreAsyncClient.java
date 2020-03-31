@@ -228,6 +228,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMetricPolicyResult> deleteMetricPolicyAsync(DeleteMetricPolicyRequest request) {
+
+        return deleteMetricPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricPolicyResult> deleteMetricPolicyAsync(final DeleteMetricPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMetricPolicyRequest, DeleteMetricPolicyResult> asyncHandler) {
+        final DeleteMetricPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMetricPolicyResult>() {
+            @Override
+            public DeleteMetricPolicyResult call() throws Exception {
+                DeleteMetricPolicyResult result = null;
+
+                try {
+                    result = executeDeleteMetricPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeContainerResult> describeContainerAsync(DescribeContainerRequest request) {
 
         return describeContainerAsync(request, null);
@@ -344,6 +377,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
 
                 try {
                     result = executeGetLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricPolicyResult> getMetricPolicyAsync(GetMetricPolicyRequest request) {
+
+        return getMetricPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricPolicyResult> getMetricPolicyAsync(final GetMetricPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetricPolicyRequest, GetMetricPolicyResult> asyncHandler) {
+        final GetMetricPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetricPolicyResult>() {
+            @Override
+            public GetMetricPolicyResult call() throws Exception {
+                GetMetricPolicyResult result = null;
+
+                try {
+                    result = executeGetMetricPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -509,6 +575,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
 
                 try {
                     result = executePutLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetricPolicyResult> putMetricPolicyAsync(PutMetricPolicyRequest request) {
+
+        return putMetricPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetricPolicyResult> putMetricPolicyAsync(final PutMetricPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutMetricPolicyRequest, PutMetricPolicyResult> asyncHandler) {
+        final PutMetricPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutMetricPolicyResult>() {
+            @Override
+            public PutMetricPolicyResult call() throws Exception {
+                PutMetricPolicyResult result = null;
+
+                try {
+                    result = executePutMetricPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

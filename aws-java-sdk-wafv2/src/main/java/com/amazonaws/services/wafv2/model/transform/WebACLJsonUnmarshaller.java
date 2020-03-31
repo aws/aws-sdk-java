@@ -80,6 +80,20 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                     context.nextToken();
                     webACL.setCapacity(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("PreProcessFirewallManagerRuleGroups", targetDepth)) {
+                    context.nextToken();
+                    webACL.setPreProcessFirewallManagerRuleGroups(new ListUnmarshaller<FirewallManagerRuleGroup>(FirewallManagerRuleGroupJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("PostProcessFirewallManagerRuleGroups", targetDepth)) {
+                    context.nextToken();
+                    webACL.setPostProcessFirewallManagerRuleGroups(new ListUnmarshaller<FirewallManagerRuleGroup>(FirewallManagerRuleGroupJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ManagedByFirewallManager", targetDepth)) {
+                    context.nextToken();
+                    webACL.setManagedByFirewallManager(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

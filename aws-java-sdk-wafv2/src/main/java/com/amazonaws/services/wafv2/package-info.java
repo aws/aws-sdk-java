@@ -43,7 +43,7 @@
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
  * </p>
  * <p>
- * You can make API calls using the endpoints listed in <a
+ * You can make calls using the endpoints listed in <a
  * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS Service Endpoints for AWS WAF</a>.
  * </p>
  * <ul>
@@ -76,8 +76,8 @@
  * </li>
  * <li>
  * <p>
- * You can define a Web ACL or rule group with a single API call, and update it with a single call. You define all rule
- * specifications in JSON format, and pass them to your rule group or Web ACL API calls.
+ * You can define a Web ACL or rule group with a single call, and update it with a single call. You define all rule
+ * specifications in JSON format, and pass them to your rule group or Web ACL calls.
  * </p>
  * </li>
  * <li>

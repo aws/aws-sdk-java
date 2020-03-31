@@ -105,6 +105,21 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFirewallManagerRuleGroupsResult> deleteFirewallManagerRuleGroupsAsync(
+            DeleteFirewallManagerRuleGroupsRequest request) {
+
+        return deleteFirewallManagerRuleGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFirewallManagerRuleGroupsResult> deleteFirewallManagerRuleGroupsAsync(
+            DeleteFirewallManagerRuleGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFirewallManagerRuleGroupsRequest, DeleteFirewallManagerRuleGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest request) {
 
         return deleteIPSetAsync(request, null);
@@ -126,6 +141,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     @Override
     public java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request) {
+
+        return deletePermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -217,6 +245,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     @Override
     public java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request) {
+
+        return getPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -414,6 +455,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     @Override
     public java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<PutLoggingConfigurationRequest, PutLoggingConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request) {
+
+        return putPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -56,7 +56,7 @@ import com.amazonaws.services.wafv2.model.*;
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
  * </p>
  * <p>
- * You can make API calls using the endpoints listed in <a
+ * You can make calls using the endpoints listed in <a
  * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS Service Endpoints for AWS WAF</a>.
  * </p>
  * <ul>
@@ -89,8 +89,8 @@ import com.amazonaws.services.wafv2.model.*;
  * </li>
  * <li>
  * <p>
- * You can define a Web ACL or rule group with a single API call, and update it with a single call. You define all rule
- * specifications in JSON format, and pass them to your rule group or Web ACL API calls.
+ * You can define a Web ACL or rule group with a single call, and update it with a single call. You define all rule
+ * specifications in JSON format, and pass them to your rule group or Web ACL calls.
  * </p>
  * </li>
  * <li>
@@ -117,8 +117,9 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * an Application Load Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of the <a>WebACL</a> to the
-     * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
+     * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a
+     * Web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+     * (ARN) of the Web ACL. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
      * </p>
@@ -144,8 +145,9 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * an Application Load Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of the <a>WebACL</a> to the
-     * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
+     * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a
+     * Web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+     * (ARN) of the Web ACL. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
      * </p>
@@ -439,6 +441,47 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
             com.amazonaws.handlers.AsyncHandler<CreateWebACLRequest, CreateWebACLResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes all rule groups that are managed by AWS Firewall Manager for the specified web ACL.
+     * </p>
+     * <p>
+     * You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+     * </p>
+     * 
+     * @param deleteFirewallManagerRuleGroupsRequest
+     * @return A Java Future containing the result of the DeleteFirewallManagerRuleGroups operation returned by the
+     *         service.
+     * @sample AWSWAFV2Async.DeleteFirewallManagerRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallManagerRuleGroupsResult> deleteFirewallManagerRuleGroupsAsync(
+            DeleteFirewallManagerRuleGroupsRequest deleteFirewallManagerRuleGroupsRequest);
+
+    /**
+     * <p>
+     * Deletes all rule groups that are managed by AWS Firewall Manager for the specified web ACL.
+     * </p>
+     * <p>
+     * You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+     * </p>
+     * 
+     * @param deleteFirewallManagerRuleGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFirewallManagerRuleGroups operation returned by the
+     *         service.
+     * @sample AWSWAFV2AsyncHandler.DeleteFirewallManagerRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallManagerRuleGroupsResult> deleteFirewallManagerRuleGroupsAsync(
+            DeleteFirewallManagerRuleGroupsRequest deleteFirewallManagerRuleGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFirewallManagerRuleGroupsRequest, DeleteFirewallManagerRuleGroupsResult> asyncHandler);
+
+    /**
      * <note>
      * <p>
      * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
@@ -529,6 +572,43 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
             DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes an IAM policy from the specified rule group.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @return A Java Future containing the result of the DeletePermissionPolicy operation returned by the service.
+     * @sample AWSWAFV2Async.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest deletePermissionPolicyRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an IAM policy from the specified rule group.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePermissionPolicy operation returned by the service.
+     * @sample AWSWAFV2AsyncHandler.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest deletePermissionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler);
 
     /**
      * <note>
@@ -631,6 +711,9 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Deletes the specified <a>WebACL</a>.
      * </p>
+     * <p>
+     * You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+     * </p>
      * 
      * @param deleteWebACLRequest
      * @return A Java Future containing the result of the DeleteWebACL operation returned by the service.
@@ -650,6 +733,9 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </note>
      * <p>
      * Deletes the specified <a>WebACL</a>.
+     * </p>
+     * <p>
+     * You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
      * </p>
      * 
      * @param deleteWebACLRequest
@@ -723,10 +809,10 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL ARN in the CloudFront API call
-     * <code>UpdateDistribution</code>. For information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
-     * >UpdateDistribution</a>.
+     * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate
+     * a Web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information,
+     * see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
+     * UpdateDistribution</a>.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -750,10 +836,10 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL ARN in the CloudFront API call
-     * <code>UpdateDistribution</code>. For information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
-     * >UpdateDistribution</a>.
+     * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate
+     * a Web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information,
+     * see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">
+     * UpdateDistribution</a>.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -858,6 +944,43 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      */
     java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the IAM policy that is attached to the specified rule group.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @return A Java Future containing the result of the GetPermissionPolicy operation returned by the service.
+     * @sample AWSWAFV2Async.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest getPermissionPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the IAM policy that is attached to the specified rule group.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPermissionPolicy operation returned by the service.
+     * @sample AWSWAFV2AsyncHandler.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest getPermissionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler);
 
     /**
      * <note>
@@ -1546,7 +1669,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Create an Amazon Kinesis Data Firehose.
      * </p>
      * <p>
-     * Create the data firehose with a PUT source and in the region that you are operating. If you are capturing logs
+     * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
      * <note>
@@ -1596,7 +1719,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Create an Amazon Kinesis Data Firehose.
      * </p>
      * <p>
-     * Create the data firehose with a PUT source and in the region that you are operating. If you are capturing logs
+     * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
      * </p>
      * <note>
@@ -1629,6 +1752,83 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      */
     java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutLoggingConfigurationRequest, PutLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * <p>
+     * This action is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putPermissionPolicyRequest
+     * @return A Java Future containing the result of the PutPermissionPolicy operation returned by the service.
+     * @sample AWSWAFV2Async.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest putPermissionPolicyRequest);
+
+    /**
+     * <p>
+     * Attaches an IAM policy to the specified resource. Use this to share a rule group across accounts.
+     * </p>
+     * <p>
+     * You must be the owner of the rule group to perform this operation.
+     * </p>
+     * <p>
+     * This action is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putPermissionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutPermissionPolicy operation returned by the service.
+     * @sample AWSWAFV2AsyncHandler.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest putPermissionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler);
 
     /**
      * <note>
