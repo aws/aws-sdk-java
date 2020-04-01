@@ -127,6 +127,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AddFlowVpcInterfacesResult> addFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request) {
+
+        return addFlowVpcInterfacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddFlowVpcInterfacesResult> addFlowVpcInterfacesAsync(final AddFlowVpcInterfacesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddFlowVpcInterfacesRequest, AddFlowVpcInterfacesResult> asyncHandler) {
+        final AddFlowVpcInterfacesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddFlowVpcInterfacesResult>() {
+            @Override
+            public AddFlowVpcInterfacesResult call() throws Exception {
+                AddFlowVpcInterfacesResult result = null;
+
+                try {
+                    result = executeAddFlowVpcInterfaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFlowResult> createFlowAsync(CreateFlowRequest request) {
 
         return createFlowAsync(request, null);
@@ -408,6 +441,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executeRemoveFlowSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFlowVpcInterfaceResult> removeFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request) {
+
+        return removeFlowVpcInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFlowVpcInterfaceResult> removeFlowVpcInterfaceAsync(final RemoveFlowVpcInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveFlowVpcInterfaceRequest, RemoveFlowVpcInterfaceResult> asyncHandler) {
+        final RemoveFlowVpcInterfaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveFlowVpcInterfaceResult>() {
+            @Override
+            public RemoveFlowVpcInterfaceResult call() throws Exception {
+                RemoveFlowVpcInterfaceResult result = null;
+
+                try {
+                    result = executeRemoveFlowVpcInterface(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

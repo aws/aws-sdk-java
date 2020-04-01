@@ -84,6 +84,10 @@ public class SourceJsonUnmarshaller implements Unmarshaller<Source, JsonUnmarsha
                     context.nextToken();
                     source.setTransport(TransportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("vpcInterfaceName", targetDepth)) {
+                    context.nextToken();
+                    source.setVpcInterfaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("whitelistCidr", targetDepth)) {
                     context.nextToken();
                     source.setWhitelistCidr(context.getUnmarshaller(String.class).unmarshall(context));

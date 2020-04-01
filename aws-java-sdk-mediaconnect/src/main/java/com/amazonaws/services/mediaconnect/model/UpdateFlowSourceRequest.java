@@ -52,6 +52,8 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String sourceArn;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
+    /** The name of the VPC Interface to configure this Source with. */
+    private String vpcInterfaceName;
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -428,6 +430,40 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The name of the VPC Interface to configure this Source with.
+     * 
+     * @param vpcInterfaceName
+     *        The name of the VPC Interface to configure this Source with.
+     */
+
+    public void setVpcInterfaceName(String vpcInterfaceName) {
+        this.vpcInterfaceName = vpcInterfaceName;
+    }
+
+    /**
+     * The name of the VPC Interface to configure this Source with.
+     * 
+     * @return The name of the VPC Interface to configure this Source with.
+     */
+
+    public String getVpcInterfaceName() {
+        return this.vpcInterfaceName;
+    }
+
+    /**
+     * The name of the VPC Interface to configure this Source with.
+     * 
+     * @param vpcInterfaceName
+     *        The name of the VPC Interface to configure this Source with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withVpcInterfaceName(String vpcInterfaceName) {
+        setVpcInterfaceName(vpcInterfaceName);
+        return this;
+    }
+
+    /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * 
@@ -499,6 +535,8 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getStreamId() != null)
             sb.append("StreamId: ").append(getStreamId()).append(",");
+        if (getVpcInterfaceName() != null)
+            sb.append("VpcInterfaceName: ").append(getVpcInterfaceName()).append(",");
         if (getWhitelistCidr() != null)
             sb.append("WhitelistCidr: ").append(getWhitelistCidr());
         sb.append("}");
@@ -555,6 +593,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getStreamId() != null && other.getStreamId().equals(this.getStreamId()) == false)
             return false;
+        if (other.getVpcInterfaceName() == null ^ this.getVpcInterfaceName() == null)
+            return false;
+        if (other.getVpcInterfaceName() != null && other.getVpcInterfaceName().equals(this.getVpcInterfaceName()) == false)
+            return false;
         if (other.getWhitelistCidr() == null ^ this.getWhitelistCidr() == null)
             return false;
         if (other.getWhitelistCidr() != null && other.getWhitelistCidr().equals(this.getWhitelistCidr()) == false)
@@ -577,6 +619,7 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());
+        hashCode = prime * hashCode + ((getVpcInterfaceName() == null) ? 0 : getVpcInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getWhitelistCidr() == null) ? 0 : getWhitelistCidr().hashCode());
         return hashCode;
     }

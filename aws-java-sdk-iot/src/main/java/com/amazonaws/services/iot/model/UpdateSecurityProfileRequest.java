@@ -49,8 +49,20 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
+     * <p>
+     * <b>Note:</b> This API field is deprecated. Please use
+     * <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * </p>
      */
+    @Deprecated
     private java.util.List<String> additionalMetricsToRetain;
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's behaviors, but it is also retained for any metric specified here.
+     * </p>
+     */
+    private java.util.List<MetricToRetain> additionalMetricsToRetainV2;
     /**
      * <p>
      * If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are
@@ -304,11 +316,18 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
+     * <p>
+     * <b>Note:</b> This API field is deprecated. Please use
+     * <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * </p>
      * 
      * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *         <p>
+     *         <b>Note:</b> This API field is deprecated. Please use
+     *         <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
      */
-
+    @Deprecated
     public java.util.List<String> getAdditionalMetricsToRetain() {
         return additionalMetricsToRetain;
     }
@@ -318,12 +337,19 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
+     * <p>
+     * <b>Note:</b> This API field is deprecated. Please use
+     * <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * </p>
      * 
      * @param additionalMetricsToRetain
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <p>
+     *        <b>Note:</b> This API field is deprecated. Please use
+     *        <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
      */
-
+    @Deprecated
     public void setAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
         if (additionalMetricsToRetain == null) {
             this.additionalMetricsToRetain = null;
@@ -339,6 +365,10 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
      * <p>
+     * <b>Note:</b> This API field is deprecated. Please use
+     * <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalMetricsToRetain(java.util.Collection)} or
      * {@link #withAdditionalMetricsToRetain(java.util.Collection)} if you want to override the existing values.
@@ -346,10 +376,13 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * 
      * @param additionalMetricsToRetain
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <p>
+     *        <b>Note:</b> This API field is deprecated. Please use
+     *        <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateSecurityProfileRequest withAdditionalMetricsToRetain(String... additionalMetricsToRetain) {
         if (this.additionalMetricsToRetain == null) {
             setAdditionalMetricsToRetain(new java.util.ArrayList<String>(additionalMetricsToRetain.length));
@@ -365,15 +398,100 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
      * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
      * </p>
+     * <p>
+     * <b>Note:</b> This API field is deprecated. Please use
+     * <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * </p>
      * 
      * @param additionalMetricsToRetain
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <p>
+     *        <b>Note:</b> This API field is deprecated. Please use
+     *        <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public UpdateSecurityProfileRequest withAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
+        setAdditionalMetricsToRetain(additionalMetricsToRetain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's behaviors, but it is also retained for any metric specified here.
+     * </p>
+     * 
+     * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
+     *         the profile's behaviors, but it is also retained for any metric specified here.
+     */
+
+    public java.util.List<MetricToRetain> getAdditionalMetricsToRetainV2() {
+        return additionalMetricsToRetainV2;
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's behaviors, but it is also retained for any metric specified here.
+     * </p>
+     * 
+     * @param additionalMetricsToRetainV2
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's behaviors, but it is also retained for any metric specified here.
+     */
+
+    public void setAdditionalMetricsToRetainV2(java.util.Collection<MetricToRetain> additionalMetricsToRetainV2) {
+        if (additionalMetricsToRetainV2 == null) {
+            this.additionalMetricsToRetainV2 = null;
+            return;
+        }
+
+        this.additionalMetricsToRetainV2 = new java.util.ArrayList<MetricToRetain>(additionalMetricsToRetainV2);
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's behaviors, but it is also retained for any metric specified here.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalMetricsToRetainV2(java.util.Collection)} or
+     * {@link #withAdditionalMetricsToRetainV2(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalMetricsToRetainV2
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's behaviors, but it is also retained for any metric specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSecurityProfileRequest withAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
-        setAdditionalMetricsToRetain(additionalMetricsToRetain);
+    public UpdateSecurityProfileRequest withAdditionalMetricsToRetainV2(MetricToRetain... additionalMetricsToRetainV2) {
+        if (this.additionalMetricsToRetainV2 == null) {
+            setAdditionalMetricsToRetainV2(new java.util.ArrayList<MetricToRetain>(additionalMetricsToRetainV2.length));
+        }
+        for (MetricToRetain ele : additionalMetricsToRetainV2) {
+            this.additionalMetricsToRetainV2.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's behaviors, but it is also retained for any metric specified here.
+     * </p>
+     * 
+     * @param additionalMetricsToRetainV2
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's behaviors, but it is also retained for any metric specified here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withAdditionalMetricsToRetainV2(java.util.Collection<MetricToRetain> additionalMetricsToRetainV2) {
+        setAdditionalMetricsToRetainV2(additionalMetricsToRetainV2);
         return this;
     }
 
@@ -631,6 +749,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             sb.append("AlertTargets: ").append(getAlertTargets()).append(",");
         if (getAdditionalMetricsToRetain() != null)
             sb.append("AdditionalMetricsToRetain: ").append(getAdditionalMetricsToRetain()).append(",");
+        if (getAdditionalMetricsToRetainV2() != null)
+            sb.append("AdditionalMetricsToRetainV2: ").append(getAdditionalMetricsToRetainV2()).append(",");
         if (getDeleteBehaviors() != null)
             sb.append("DeleteBehaviors: ").append(getDeleteBehaviors()).append(",");
         if (getDeleteAlertTargets() != null)
@@ -673,6 +793,10 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAdditionalMetricsToRetain() != null && other.getAdditionalMetricsToRetain().equals(this.getAdditionalMetricsToRetain()) == false)
             return false;
+        if (other.getAdditionalMetricsToRetainV2() == null ^ this.getAdditionalMetricsToRetainV2() == null)
+            return false;
+        if (other.getAdditionalMetricsToRetainV2() != null && other.getAdditionalMetricsToRetainV2().equals(this.getAdditionalMetricsToRetainV2()) == false)
+            return false;
         if (other.getDeleteBehaviors() == null ^ this.getDeleteBehaviors() == null)
             return false;
         if (other.getDeleteBehaviors() != null && other.getDeleteBehaviors().equals(this.getDeleteBehaviors()) == false)
@@ -703,6 +827,7 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getBehaviors() == null) ? 0 : getBehaviors().hashCode());
         hashCode = prime * hashCode + ((getAlertTargets() == null) ? 0 : getAlertTargets().hashCode());
         hashCode = prime * hashCode + ((getAdditionalMetricsToRetain() == null) ? 0 : getAdditionalMetricsToRetain().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalMetricsToRetainV2() == null) ? 0 : getAdditionalMetricsToRetainV2().hashCode());
         hashCode = prime * hashCode + ((getDeleteBehaviors() == null) ? 0 : getDeleteBehaviors().hashCode());
         hashCode = prime * hashCode + ((getDeleteAlertTargets() == null) ? 0 : getDeleteAlertTargets().hashCode());
         hashCode = prime * hashCode + ((getDeleteAdditionalMetricsToRetain() == null) ? 0 : getDeleteAdditionalMetricsToRetain().hashCode());

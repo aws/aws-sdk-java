@@ -84,6 +84,10 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
                     context.nextToken();
                     setSourceRequest.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("vpcInterfaceName", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setVpcInterfaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("whitelistCidr", targetDepth)) {
                     context.nextToken();
                     setSourceRequest.setWhitelistCidr(context.getUnmarshaller(String.class).unmarshall(context));

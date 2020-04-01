@@ -92,6 +92,10 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
                     context.nextToken();
                     flow.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("vpcInterfaces", targetDepth)) {
+                    context.nextToken();
+                    flow.setVpcInterfaces(new ListUnmarshaller<VpcInterface>(VpcInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

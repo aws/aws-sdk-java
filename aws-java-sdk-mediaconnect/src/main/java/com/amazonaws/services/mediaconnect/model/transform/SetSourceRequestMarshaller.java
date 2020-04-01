@@ -45,6 +45,8 @@ public class SetSourceRequestMarshaller {
             .marshallLocationName("protocol").build();
     private static final MarshallingInfo<String> STREAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("streamId").build();
+    private static final MarshallingInfo<String> VPCINTERFACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcInterfaceName").build();
     private static final MarshallingInfo<String> WHITELISTCIDR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("whitelistCidr").build();
 
@@ -73,6 +75,7 @@ public class SetSourceRequestMarshaller {
             protocolMarshaller.marshall(setSourceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getStreamId(), STREAMID_BINDING);
+            protocolMarshaller.marshall(setSourceRequest.getVpcInterfaceName(), VPCINTERFACENAME_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getWhitelistCidr(), WHITELISTCIDR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

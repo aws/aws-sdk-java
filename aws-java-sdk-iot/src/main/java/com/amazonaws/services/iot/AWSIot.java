@@ -35,6 +35,15 @@ import com.amazonaws.services.iot.model.*;
  * authenticate devices.
  * </p>
  * <p>
+ * The service endpoints that expose this API are listed in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">AWS IoT Core Endpoints and Quotas</a>. You must
+ * use the endpoint for the region that has the resources you want to access.
+ * </p>
+ * <p>
+ * The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+ * Signature Version 4</a> to sign the request is: <i>execute-api</i>.
+ * </p>
+ * <p>
  * For more information about how AWS IoT works, see the <a
  * href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.
  * </p>
@@ -597,6 +606,29 @@ public interface AWSIot {
      * @sample AWSIot.CreateCertificateFromCsr
      */
     CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest createCertificateFromCsrRequest);
+
+    /**
+     * <p>
+     * Create a dimension that you can use to limit the scope of a metric used in a security profile for AWS IoT Device
+     * Defender. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     * 
+     * @param createDimensionRequest
+     * @return Result of the CreateDimension operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.CreateDimension
+     */
+    CreateDimensionResult createDimension(CreateDimensionRequest createDimensionRequest);
 
     /**
      * <p>
@@ -1242,6 +1274,23 @@ public interface AWSIot {
      * @sample AWSIot.DeleteCertificate
      */
     DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
+     * Removes the specified dimension from your AWS account.
+     * </p>
+     * 
+     * @param deleteDimensionRequest
+     * @return Result of the DeleteDimension operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.DeleteDimension
+     */
+    DeleteDimensionResult deleteDimension(DeleteDimensionRequest deleteDimensionRequest);
 
     /**
      * <p>
@@ -1960,6 +2009,25 @@ public interface AWSIot {
      * @sample AWSIot.DescribeDefaultAuthorizer
      */
     DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest);
+
+    /**
+     * <p>
+     * Provides details about a dimension that is defined in your AWS account.
+     * </p>
+     * 
+     * @param describeDimensionRequest
+     * @return Result of the DescribeDimension operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.DescribeDimension
+     */
+    DescribeDimensionResult describeDimension(DescribeDimensionRequest describeDimensionRequest);
 
     /**
      * <p>
@@ -3024,6 +3092,23 @@ public interface AWSIot {
 
     /**
      * <p>
+     * List the set of dimensions that are defined for your AWS account.
+     * </p>
+     * 
+     * @param listDimensionsRequest
+     * @return Result of the ListDimensions operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.ListDimensions
+     */
+    ListDimensionsResult listDimensions(ListDimensionsRequest listDimensionsRequest);
+
+    /**
+     * <p>
      * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
      * name.
      * </p>
@@ -3409,6 +3494,8 @@ public interface AWSIot {
      *         The rate exceeds the limit.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
      * @sample AWSIot.ListSecurityProfiles
      */
     ListSecurityProfilesResult listSecurityProfiles(ListSecurityProfilesRequest listSecurityProfilesRequest);
@@ -4438,6 +4525,26 @@ public interface AWSIot {
      * @sample AWSIot.UpdateCertificate
      */
     UpdateCertificateResult updateCertificate(UpdateCertificateRequest updateCertificateRequest);
+
+    /**
+     * <p>
+     * Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can
+     * delete it and re-create it).
+     * </p>
+     * 
+     * @param updateDimensionRequest
+     * @return Result of the UpdateDimension operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.UpdateDimension
+     */
+    UpdateDimensionResult updateDimension(UpdateDimensionRequest updateDimensionRequest);
 
     /**
      * <p>

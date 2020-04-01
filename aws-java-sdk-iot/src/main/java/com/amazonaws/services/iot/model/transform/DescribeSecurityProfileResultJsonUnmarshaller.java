@@ -74,6 +74,11 @@ public class DescribeSecurityProfileResultJsonUnmarshaller implements Unmarshall
                     describeSecurityProfileResult.setAdditionalMetricsToRetain(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("additionalMetricsToRetainV2", targetDepth)) {
+                    context.nextToken();
+                    describeSecurityProfileResult.setAdditionalMetricsToRetainV2(new ListUnmarshaller<MetricToRetain>(MetricToRetainJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
                     describeSecurityProfileResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));

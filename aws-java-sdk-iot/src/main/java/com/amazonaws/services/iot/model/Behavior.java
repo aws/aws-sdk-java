@@ -39,6 +39,13 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
     private String metric;
     /**
      * <p>
+     * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
+     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     */
+    private MetricDimension metricDimension;
+    /**
+     * <p>
      * The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
      * </p>
      */
@@ -126,6 +133,55 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
+     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     * 
+     * @param metricDimension
+     *        The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you
+     *        can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the
+     *        dimension.
+     */
+
+    public void setMetricDimension(MetricDimension metricDimension) {
+        this.metricDimension = metricDimension;
+    }
+
+    /**
+     * <p>
+     * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
+     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     * 
+     * @return The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension,
+     *         you can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in
+     *         the dimension.
+     */
+
+    public MetricDimension getMetricDimension() {
+        return this.metricDimension;
+    }
+
+    /**
+     * <p>
+     * The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can
+     * narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     * 
+     * @param metricDimension
+     *        The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you
+     *        can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the
+     *        dimension.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Behavior withMetricDimension(MetricDimension metricDimension) {
+        setMetricDimension(metricDimension);
+        return this;
+    }
+
+    /**
+     * <p>
      * The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
      * </p>
      * 
@@ -180,6 +236,8 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getMetric() != null)
             sb.append("Metric: ").append(getMetric()).append(",");
+        if (getMetricDimension() != null)
+            sb.append("MetricDimension: ").append(getMetricDimension()).append(",");
         if (getCriteria() != null)
             sb.append("Criteria: ").append(getCriteria());
         sb.append("}");
@@ -204,6 +262,10 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetric() != null && other.getMetric().equals(this.getMetric()) == false)
             return false;
+        if (other.getMetricDimension() == null ^ this.getMetricDimension() == null)
+            return false;
+        if (other.getMetricDimension() != null && other.getMetricDimension().equals(this.getMetricDimension()) == false)
+            return false;
         if (other.getCriteria() == null ^ this.getCriteria() == null)
             return false;
         if (other.getCriteria() != null && other.getCriteria().equals(this.getCriteria()) == false)
@@ -218,6 +280,7 @@ public class Behavior implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getMetric() == null) ? 0 : getMetric().hashCode());
+        hashCode = prime * hashCode + ((getMetricDimension() == null) ? 0 : getMetricDimension().hashCode());
         hashCode = prime * hashCode + ((getCriteria() == null) ? 0 : getCriteria().hashCode());
         return hashCode;
     }

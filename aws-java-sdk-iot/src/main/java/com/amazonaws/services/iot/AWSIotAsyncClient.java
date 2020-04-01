@@ -39,6 +39,15 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * authenticate devices.
  * </p>
  * <p>
+ * The service endpoints that expose this API are listed in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">AWS IoT Core Endpoints and Quotas</a>. You must
+ * use the endpoint for the region that has the resources you want to access.
+ * </p>
+ * <p>
+ * The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+ * Signature Version 4</a> to sign the request is: <i>execute-api</i>.
+ * </p>
+ * <p>
  * For more information about how AWS IoT works, see the <a
  * href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.
  * </p>
@@ -840,6 +849,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeCreateCertificateFromCsr(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(CreateDimensionRequest request) {
+
+        return createDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(final CreateDimensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDimensionRequest, CreateDimensionResult> asyncHandler) {
+        final CreateDimensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDimensionResult>() {
+            @Override
+            public CreateDimensionResult call() throws Exception {
+                CreateDimensionResult result = null;
+
+                try {
+                    result = executeCreateDimension(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1669,6 +1711,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDeleteCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(DeleteDimensionRequest request) {
+
+        return deleteDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(final DeleteDimensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDimensionRequest, DeleteDimensionResult> asyncHandler) {
+        final DeleteDimensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDimensionResult>() {
+            @Override
+            public DeleteDimensionResult call() throws Exception {
+                DeleteDimensionResult result = null;
+
+                try {
+                    result = executeDeleteDimension(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2698,6 +2773,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDescribeDefaultAuthorizer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(DescribeDimensionRequest request) {
+
+        return describeDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(final DescribeDimensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDimensionRequest, DescribeDimensionResult> asyncHandler) {
+        final DescribeDimensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDimensionResult>() {
+            @Override
+            public DescribeDimensionResult call() throws Exception {
+                DescribeDimensionResult result = null;
+
+                try {
+                    result = executeDescribeDimension(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4291,6 +4399,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListCertificatesByCA(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(ListDimensionsRequest request) {
+
+        return listDimensionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(final ListDimensionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDimensionsRequest, ListDimensionsResult> asyncHandler) {
+        final ListDimensionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDimensionsResult>() {
+            @Override
+            public ListDimensionsResult call() throws Exception {
+                ListDimensionsResult result = null;
+
+                try {
+                    result = executeListDimensions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6384,6 +6525,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeUpdateCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(UpdateDimensionRequest request) {
+
+        return updateDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(final UpdateDimensionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDimensionRequest, UpdateDimensionResult> asyncHandler) {
+        final UpdateDimensionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDimensionResult>() {
+            @Override
+            public UpdateDimensionResult call() throws Exception {
+                UpdateDimensionResult result = null;
+
+                try {
+                    result = executeUpdateDimension(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -94,7 +94,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private CloudwatchAlarmAction cloudwatchAlarm;
     /**
      * <p>
-     * Send data to CloudWatch logs.
+     * Send data to CloudWatch Logs.
      * </p>
      */
     private CloudwatchLogsAction cloudwatchLogs;
@@ -589,11 +589,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Send data to CloudWatch logs.
+     * Send data to CloudWatch Logs.
      * </p>
      * 
      * @param cloudwatchLogs
-     *        Send data to CloudWatch logs.
+     *        Send data to CloudWatch Logs.
      */
 
     public void setCloudwatchLogs(CloudwatchLogsAction cloudwatchLogs) {
@@ -602,10 +602,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Send data to CloudWatch logs.
+     * Send data to CloudWatch Logs.
      * </p>
      * 
-     * @return Send data to CloudWatch logs.
+     * @return Send data to CloudWatch Logs.
      */
 
     public CloudwatchLogsAction getCloudwatchLogs() {
@@ -614,11 +614,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Send data to CloudWatch logs.
+     * Send data to CloudWatch Logs.
      * </p>
      * 
      * @param cloudwatchLogs
-     *        Send data to CloudWatch logs.
+     *        Send data to CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

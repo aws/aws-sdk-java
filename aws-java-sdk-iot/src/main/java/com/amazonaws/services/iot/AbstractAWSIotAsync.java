@@ -265,6 +265,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(CreateDimensionRequest request) {
+
+        return createDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(CreateDimensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDimensionRequest, CreateDimensionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainConfigurationResult> createDomainConfigurationAsync(CreateDomainConfigurationRequest request) {
 
         return createDomainConfigurationAsync(request, null);
@@ -589,6 +602,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(DeleteDimensionRequest request) {
+
+        return deleteDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(DeleteDimensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDimensionRequest, DeleteDimensionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -998,6 +1024,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DescribeDefaultAuthorizerResult> describeDefaultAuthorizerAsync(DescribeDefaultAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDefaultAuthorizerRequest, DescribeDefaultAuthorizerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(DescribeDimensionRequest request) {
+
+        return describeDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(DescribeDimensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDimensionRequest, DescribeDimensionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1630,6 +1669,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(ListCertificatesByCARequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(ListDimensionsRequest request) {
+
+        return listDimensionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(ListDimensionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDimensionsRequest, ListDimensionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2461,6 +2513,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(UpdateDimensionRequest request) {
+
+        return updateDimensionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(UpdateDimensionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDimensionRequest, UpdateDimensionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

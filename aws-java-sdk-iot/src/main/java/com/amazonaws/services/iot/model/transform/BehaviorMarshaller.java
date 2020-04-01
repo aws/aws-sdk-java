@@ -31,6 +31,8 @@ public class BehaviorMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> METRIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("metric").build();
+    private static final MarshallingInfo<StructuredPojo> METRICDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricDimension").build();
     private static final MarshallingInfo<StructuredPojo> CRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("criteria").build();
 
@@ -52,6 +54,7 @@ public class BehaviorMarshaller {
         try {
             protocolMarshaller.marshall(behavior.getName(), NAME_BINDING);
             protocolMarshaller.marshall(behavior.getMetric(), METRIC_BINDING);
+            protocolMarshaller.marshall(behavior.getMetricDimension(), METRICDIMENSION_BINDING);
             protocolMarshaller.marshall(behavior.getCriteria(), CRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -56,6 +56,10 @@ public class BehaviorJsonUnmarshaller implements Unmarshaller<Behavior, JsonUnma
                     context.nextToken();
                     behavior.setMetric(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("metricDimension", targetDepth)) {
+                    context.nextToken();
+                    behavior.setMetricDimension(MetricDimensionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("criteria", targetDepth)) {
                     context.nextToken();
                     behavior.setCriteria(BehaviorCriteriaJsonUnmarshaller.getInstance().unmarshall(context));

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an action that sends data to CloudWatch logs.
+ * Describes an action that sends data to CloudWatch Logs.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

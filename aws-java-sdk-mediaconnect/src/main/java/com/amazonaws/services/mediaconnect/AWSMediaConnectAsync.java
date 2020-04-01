@@ -89,6 +89,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<AddFlowSourcesRequest, AddFlowSourcesResult> asyncHandler);
 
     /**
+     * Adds VPC interfaces to flow
+     * 
+     * @param addFlowVpcInterfacesRequest
+     *        A request to add VPC interfaces to the flow.
+     * @return A Java Future containing the result of the AddFlowVpcInterfaces operation returned by the service.
+     * @sample AWSMediaConnectAsync.AddFlowVpcInterfaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddFlowVpcInterfacesResult> addFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest addFlowVpcInterfacesRequest);
+
+    /**
+     * Adds VPC interfaces to flow
+     * 
+     * @param addFlowVpcInterfacesRequest
+     *        A request to add VPC interfaces to the flow.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddFlowVpcInterfaces operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.AddFlowVpcInterfaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddFlowVpcInterfacesResult> addFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest addFlowVpcInterfacesRequest,
+            com.amazonaws.handlers.AsyncHandler<AddFlowVpcInterfacesRequest, AddFlowVpcInterfacesResult> asyncHandler);
+
+    /**
      * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
@@ -348,6 +377,37 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<RemoveFlowSourceResult> removeFlowSourceAsync(RemoveFlowSourceRequest removeFlowSourceRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveFlowSourceRequest, RemoveFlowSourceResult> asyncHandler);
+
+    /**
+     * Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not
+     * have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must
+     * first delete or update the Source or Output to no longer reference the VPC interface.
+     * 
+     * @param removeFlowVpcInterfaceRequest
+     * @return A Java Future containing the result of the RemoveFlowVpcInterface operation returned by the service.
+     * @sample AWSMediaConnectAsync.RemoveFlowVpcInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveFlowVpcInterfaceResult> removeFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest removeFlowVpcInterfaceRequest);
+
+    /**
+     * Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not
+     * have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must
+     * first delete or update the Source or Output to no longer reference the VPC interface.
+     * 
+     * @param removeFlowVpcInterfaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveFlowVpcInterface operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.RemoveFlowVpcInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveFlowVpcInterfaceResult> removeFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest removeFlowVpcInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveFlowVpcInterfaceRequest, RemoveFlowVpcInterfaceResult> asyncHandler);
 
     /**
      * Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the

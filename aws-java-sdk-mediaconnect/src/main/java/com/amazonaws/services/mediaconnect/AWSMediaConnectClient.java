@@ -282,6 +282,70 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
+     * Adds VPC interfaces to flow
+     * 
+     * @param addFlowVpcInterfacesRequest
+     *        A request to add VPC interfaces to the flow.
+     * @return Result of the AddFlowVpcInterfaces operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.AddFlowVpcInterfaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddFlowVpcInterfacesResult addFlowVpcInterfaces(AddFlowVpcInterfacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddFlowVpcInterfaces(request);
+    }
+
+    @SdkInternalApi
+    final AddFlowVpcInterfacesResult executeAddFlowVpcInterfaces(AddFlowVpcInterfacesRequest addFlowVpcInterfacesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addFlowVpcInterfacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddFlowVpcInterfacesRequest> request = null;
+        Response<AddFlowVpcInterfacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddFlowVpcInterfacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addFlowVpcInterfacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddFlowVpcInterfaces");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddFlowVpcInterfacesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddFlowVpcInterfacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
@@ -838,6 +902,72 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveFlowSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveFlowSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not
+     * have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must
+     * first delete or update the Source or Output to no longer reference the VPC interface.
+     * 
+     * @param removeFlowVpcInterfaceRequest
+     * @return Result of the RemoveFlowVpcInterface operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.RemoveFlowVpcInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveFlowVpcInterfaceResult removeFlowVpcInterface(RemoveFlowVpcInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveFlowVpcInterface(request);
+    }
+
+    @SdkInternalApi
+    final RemoveFlowVpcInterfaceResult executeRemoveFlowVpcInterface(RemoveFlowVpcInterfaceRequest removeFlowVpcInterfaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeFlowVpcInterfaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveFlowVpcInterfaceRequest> request = null;
+        Response<RemoveFlowVpcInterfaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveFlowVpcInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeFlowVpcInterfaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFlowVpcInterface");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveFlowVpcInterfaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveFlowVpcInterfaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -91,6 +91,30 @@ public interface AWSMediaConnect {
     AddFlowSourcesResult addFlowSources(AddFlowSourcesRequest addFlowSourcesRequest);
 
     /**
+     * Adds VPC interfaces to flow
+     * 
+     * @param addFlowVpcInterfacesRequest
+     *        A request to add VPC interfaces to the flow.
+     * @return Result of the AddFlowVpcInterfaces operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.AddFlowVpcInterfaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddFlowVpcInterfacesResult addFlowVpcInterfaces(AddFlowVpcInterfacesRequest addFlowVpcInterfacesRequest);
+
+    /**
      * Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50)
      * and entitlements (up to 50).
      * 
@@ -295,6 +319,31 @@ public interface AWSMediaConnect {
      *      API Documentation</a>
      */
     RemoveFlowSourceResult removeFlowSource(RemoveFlowSourceRequest removeFlowSourceRequest);
+
+    /**
+     * Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not
+     * have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must
+     * first delete or update the Source or Output to no longer reference the VPC interface.
+     * 
+     * @param removeFlowVpcInterfaceRequest
+     * @return Result of the RemoveFlowVpcInterface operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.RemoveFlowVpcInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveFlowVpcInterfaceResult removeFlowVpcInterface(RemoveFlowVpcInterfaceRequest removeFlowVpcInterfaceRequest);
 
     /**
      * Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the

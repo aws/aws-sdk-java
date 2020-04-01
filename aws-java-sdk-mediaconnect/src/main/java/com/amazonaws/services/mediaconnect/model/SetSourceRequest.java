@@ -50,6 +50,8 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
     private String protocol;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
+    /** The name of the VPC interface to use for this source. */
+    private String vpcInterfaceName;
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -392,6 +394,40 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * The name of the VPC interface to use for this source.
+     * 
+     * @param vpcInterfaceName
+     *        The name of the VPC interface to use for this source.
+     */
+
+    public void setVpcInterfaceName(String vpcInterfaceName) {
+        this.vpcInterfaceName = vpcInterfaceName;
+    }
+
+    /**
+     * The name of the VPC interface to use for this source.
+     * 
+     * @return The name of the VPC interface to use for this source.
+     */
+
+    public String getVpcInterfaceName() {
+        return this.vpcInterfaceName;
+    }
+
+    /**
+     * The name of the VPC interface to use for this source.
+     * 
+     * @param vpcInterfaceName
+     *        The name of the VPC interface to use for this source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetSourceRequest withVpcInterfaceName(String vpcInterfaceName) {
+        setVpcInterfaceName(vpcInterfaceName);
+        return this;
+    }
+
+    /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * 
@@ -461,6 +497,8 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
             sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getStreamId() != null)
             sb.append("StreamId: ").append(getStreamId()).append(",");
+        if (getVpcInterfaceName() != null)
+            sb.append("VpcInterfaceName: ").append(getVpcInterfaceName()).append(",");
         if (getWhitelistCidr() != null)
             sb.append("WhitelistCidr: ").append(getWhitelistCidr());
         sb.append("}");
@@ -513,6 +551,10 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStreamId() != null && other.getStreamId().equals(this.getStreamId()) == false)
             return false;
+        if (other.getVpcInterfaceName() == null ^ this.getVpcInterfaceName() == null)
+            return false;
+        if (other.getVpcInterfaceName() != null && other.getVpcInterfaceName().equals(this.getVpcInterfaceName()) == false)
+            return false;
         if (other.getWhitelistCidr() == null ^ this.getWhitelistCidr() == null)
             return false;
         if (other.getWhitelistCidr() != null && other.getWhitelistCidr().equals(this.getWhitelistCidr()) == false)
@@ -534,6 +576,7 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());
+        hashCode = prime * hashCode + ((getVpcInterfaceName() == null) ? 0 : getVpcInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getWhitelistCidr() == null) ? 0 : getWhitelistCidr().hashCode());
         return hashCode;
     }

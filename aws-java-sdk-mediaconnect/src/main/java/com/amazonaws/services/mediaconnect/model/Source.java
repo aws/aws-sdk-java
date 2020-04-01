@@ -50,6 +50,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     private String sourceArn;
     /** Attributes related to the transport stream that are used in the source. */
     private Transport transport;
+    /** The name of the VPC Interface this Source is configured with. */
+    private String vpcInterfaceName;
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -378,6 +380,40 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The name of the VPC Interface this Source is configured with.
+     * 
+     * @param vpcInterfaceName
+     *        The name of the VPC Interface this Source is configured with.
+     */
+
+    public void setVpcInterfaceName(String vpcInterfaceName) {
+        this.vpcInterfaceName = vpcInterfaceName;
+    }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     * 
+     * @return The name of the VPC Interface this Source is configured with.
+     */
+
+    public String getVpcInterfaceName() {
+        return this.vpcInterfaceName;
+    }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     * 
+     * @param vpcInterfaceName
+     *        The name of the VPC Interface this Source is configured with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Source withVpcInterfaceName(String vpcInterfaceName) {
+        setVpcInterfaceName(vpcInterfaceName);
+        return this;
+    }
+
+    /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      * 
@@ -447,6 +483,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
             sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getTransport() != null)
             sb.append("Transport: ").append(getTransport()).append(",");
+        if (getVpcInterfaceName() != null)
+            sb.append("VpcInterfaceName: ").append(getVpcInterfaceName()).append(",");
         if (getWhitelistCidr() != null)
             sb.append("WhitelistCidr: ").append(getWhitelistCidr());
         sb.append("}");
@@ -500,6 +538,10 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTransport() != null && other.getTransport().equals(this.getTransport()) == false)
             return false;
+        if (other.getVpcInterfaceName() == null ^ this.getVpcInterfaceName() == null)
+            return false;
+        if (other.getVpcInterfaceName() != null && other.getVpcInterfaceName().equals(this.getVpcInterfaceName()) == false)
+            return false;
         if (other.getWhitelistCidr() == null ^ this.getWhitelistCidr() == null)
             return false;
         if (other.getWhitelistCidr() != null && other.getWhitelistCidr().equals(this.getWhitelistCidr()) == false)
@@ -521,6 +563,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getTransport() == null) ? 0 : getTransport().hashCode());
+        hashCode = prime * hashCode + ((getVpcInterfaceName() == null) ? 0 : getVpcInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getWhitelistCidr() == null) ? 0 : getWhitelistCidr().hashCode());
         return hashCode;
     }

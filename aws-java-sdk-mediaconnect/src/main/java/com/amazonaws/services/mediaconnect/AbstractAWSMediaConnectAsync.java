@@ -54,6 +54,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<AddFlowVpcInterfacesResult> addFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request) {
+
+        return addFlowVpcInterfacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddFlowVpcInterfacesResult> addFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddFlowVpcInterfacesRequest, AddFlowVpcInterfacesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFlowResult> createFlowAsync(CreateFlowRequest request) {
 
         return createFlowAsync(request, null);
@@ -166,6 +179,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<RemoveFlowSourceResult> removeFlowSourceAsync(RemoveFlowSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveFlowSourceRequest, RemoveFlowSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFlowVpcInterfaceResult> removeFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request) {
+
+        return removeFlowVpcInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFlowVpcInterfaceResult> removeFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveFlowVpcInterfaceRequest, RemoveFlowVpcInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

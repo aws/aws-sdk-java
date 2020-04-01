@@ -44,6 +44,8 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private FailoverConfig sourceFailoverConfig;
 
     private java.util.List<SetSourceRequest> sources;
+    /** The VPC interfaces you want on the flow. */
+    private java.util.List<VpcInterfaceRequest> vpcInterfaces;
 
     /**
      * The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones
@@ -348,6 +350,68 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * The VPC interfaces you want on the flow.
+     * 
+     * @return The VPC interfaces you want on the flow.
+     */
+
+    public java.util.List<VpcInterfaceRequest> getVpcInterfaces() {
+        return vpcInterfaces;
+    }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     * 
+     * @param vpcInterfaces
+     *        The VPC interfaces you want on the flow.
+     */
+
+    public void setVpcInterfaces(java.util.Collection<VpcInterfaceRequest> vpcInterfaces) {
+        if (vpcInterfaces == null) {
+            this.vpcInterfaces = null;
+            return;
+        }
+
+        this.vpcInterfaces = new java.util.ArrayList<VpcInterfaceRequest>(vpcInterfaces);
+    }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcInterfaces(java.util.Collection)} or {@link #withVpcInterfaces(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param vpcInterfaces
+     *        The VPC interfaces you want on the flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withVpcInterfaces(VpcInterfaceRequest... vpcInterfaces) {
+        if (this.vpcInterfaces == null) {
+            setVpcInterfaces(new java.util.ArrayList<VpcInterfaceRequest>(vpcInterfaces.length));
+        }
+        for (VpcInterfaceRequest ele : vpcInterfaces) {
+            this.vpcInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     * 
+     * @param vpcInterfaces
+     *        The VPC interfaces you want on the flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withVpcInterfaces(java.util.Collection<VpcInterfaceRequest> vpcInterfaces) {
+        setVpcInterfaces(vpcInterfaces);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -372,7 +436,9 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getSourceFailoverConfig() != null)
             sb.append("SourceFailoverConfig: ").append(getSourceFailoverConfig()).append(",");
         if (getSources() != null)
-            sb.append("Sources: ").append(getSources());
+            sb.append("Sources: ").append(getSources()).append(",");
+        if (getVpcInterfaces() != null)
+            sb.append("VpcInterfaces: ").append(getVpcInterfaces());
         sb.append("}");
         return sb.toString();
     }
@@ -415,6 +481,10 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
             return false;
+        if (other.getVpcInterfaces() == null ^ this.getVpcInterfaces() == null)
+            return false;
+        if (other.getVpcInterfaces() != null && other.getVpcInterfaces().equals(this.getVpcInterfaces()) == false)
+            return false;
         return true;
     }
 
@@ -430,6 +500,7 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getSourceFailoverConfig() == null) ? 0 : getSourceFailoverConfig().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
+        hashCode = prime * hashCode + ((getVpcInterfaces() == null) ? 0 : getVpcInterfaces().hashCode());
         return hashCode;
     }
 

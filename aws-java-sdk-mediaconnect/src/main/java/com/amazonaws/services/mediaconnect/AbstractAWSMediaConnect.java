@@ -38,6 +38,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public AddFlowVpcInterfacesResult addFlowVpcInterfaces(AddFlowVpcInterfacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateFlowResult createFlow(CreateFlowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public RemoveFlowSourceResult removeFlowSource(RemoveFlowSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveFlowVpcInterfaceResult removeFlowVpcInterface(RemoveFlowVpcInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

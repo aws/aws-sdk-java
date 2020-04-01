@@ -34,6 +34,15 @@ import com.amazonaws.services.iot.model.*;
  * authenticate devices.
  * </p>
  * <p>
+ * The service endpoints that expose this API are listed in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">AWS IoT Core Endpoints and Quotas</a>. You must
+ * use the endpoint for the region that has the resources you want to access.
+ * </p>
+ * <p>
+ * The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+ * Signature Version 4</a> to sign the request is: <i>execute-api</i>.
+ * </p>
+ * <p>
  * For more information about how AWS IoT works, see the <a
  * href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.
  * </p>
@@ -727,6 +736,37 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateCertificateFromCsrResult> createCertificateFromCsrAsync(CreateCertificateFromCsrRequest createCertificateFromCsrRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCertificateFromCsrRequest, CreateCertificateFromCsrResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a dimension that you can use to limit the scope of a metric used in a security profile for AWS IoT Device
+     * Defender. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     * 
+     * @param createDimensionRequest
+     * @return A Java Future containing the result of the CreateDimension operation returned by the service.
+     * @sample AWSIotAsync.CreateDimension
+     */
+    java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(CreateDimensionRequest createDimensionRequest);
+
+    /**
+     * <p>
+     * Create a dimension that you can use to limit the scope of a metric used in a security profile for AWS IoT Device
+     * Defender. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.
+     * </p>
+     * 
+     * @param createDimensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDimension operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateDimension
+     */
+    java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(CreateDimensionRequest createDimensionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDimensionRequest, CreateDimensionResult> asyncHandler);
 
     /**
      * <p>
@@ -1528,6 +1568,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified dimension from your AWS account.
+     * </p>
+     * 
+     * @param deleteDimensionRequest
+     * @return A Java Future containing the result of the DeleteDimension operation returned by the service.
+     * @sample AWSIotAsync.DeleteDimension
+     */
+    java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(DeleteDimensionRequest deleteDimensionRequest);
+
+    /**
+     * <p>
+     * Removes the specified dimension from your AWS account.
+     * </p>
+     * 
+     * @param deleteDimensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDimension operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteDimension
+     */
+    java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(DeleteDimensionRequest deleteDimensionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDimensionRequest, DeleteDimensionResult> asyncHandler);
 
     /**
      * <p>
@@ -2471,6 +2538,33 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<DescribeDefaultAuthorizerResult> describeDefaultAuthorizerAsync(
             DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDefaultAuthorizerRequest, DescribeDefaultAuthorizerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides details about a dimension that is defined in your AWS account.
+     * </p>
+     * 
+     * @param describeDimensionRequest
+     * @return A Java Future containing the result of the DescribeDimension operation returned by the service.
+     * @sample AWSIotAsync.DescribeDimension
+     */
+    java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(DescribeDimensionRequest describeDimensionRequest);
+
+    /**
+     * <p>
+     * Provides details about a dimension that is defined in your AWS account.
+     * </p>
+     * 
+     * @param describeDimensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDimension operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeDimension
+     */
+    java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(DescribeDimensionRequest describeDimensionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDimensionRequest, DescribeDimensionResult> asyncHandler);
 
     /**
      * <p>
@@ -3893,6 +3987,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(ListCertificatesByCARequest listCertificatesByCARequest,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the set of dimensions that are defined for your AWS account.
+     * </p>
+     * 
+     * @param listDimensionsRequest
+     * @return A Java Future containing the result of the ListDimensions operation returned by the service.
+     * @sample AWSIotAsync.ListDimensions
+     */
+    java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(ListDimensionsRequest listDimensionsRequest);
+
+    /**
+     * <p>
+     * List the set of dimensions that are defined for your AWS account.
+     * </p>
+     * 
+     * @param listDimensionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDimensions operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListDimensions
+     */
+    java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(ListDimensionsRequest listDimensionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDimensionsRequest, ListDimensionsResult> asyncHandler);
 
     /**
      * <p>
@@ -5820,6 +5941,35 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest updateCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can
+     * delete it and re-create it).
+     * </p>
+     * 
+     * @param updateDimensionRequest
+     * @return A Java Future containing the result of the UpdateDimension operation returned by the service.
+     * @sample AWSIotAsync.UpdateDimension
+     */
+    java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(UpdateDimensionRequest updateDimensionRequest);
+
+    /**
+     * <p>
+     * Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can
+     * delete it and re-create it).
+     * </p>
+     * 
+     * @param updateDimensionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDimension operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateDimension
+     */
+    java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(UpdateDimensionRequest updateDimensionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDimensionRequest, UpdateDimensionResult> asyncHandler);
 
     /**
      * <p>

@@ -129,6 +129,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateDimensionResult createDimension(CreateDimensionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDomainConfigurationResult createDomainConfiguration(CreateDomainConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -250,6 +255,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDimensionResult deleteDimension(DeleteDimensionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -405,6 +415,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDimensionResult describeDimension(DescribeDimensionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -646,6 +661,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListCertificatesByCAResult listCertificatesByCA(ListCertificatesByCARequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDimensionsResult listDimensions(ListDimensionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -963,6 +983,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateCertificateResult updateCertificate(UpdateCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDimensionResult updateDimension(UpdateDimensionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
