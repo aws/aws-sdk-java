@@ -38,7 +38,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     private String placementId;
     /**
      * <p>
-     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     * Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      * </p>
      */
     private String gameSessionQueueName;
@@ -141,11 +141,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     * Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      * </p>
      * 
      * @param gameSessionQueueName
-     *        Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     *        Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      */
 
     public void setGameSessionQueueName(String gameSessionQueueName) {
@@ -154,10 +154,10 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     * Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      * </p>
      * 
-     * @return Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     * @return Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      */
 
     public String getGameSessionQueueName() {
@@ -166,11 +166,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     * Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      * </p>
      * 
      * @param gameSessionQueueName
-     *        Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
+     *        Name of the queue to use to place the new game session. You can use either the queue name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

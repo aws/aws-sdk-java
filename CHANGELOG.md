@@ -1,3 +1,24 @@
+# __1.11.758__ __2020-04-02__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports Automatic Input Failover. This feature provides resiliency upstream of the channel, before ingest starts.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - Amazon CloudWatch Contributor Insights adds support for tags and tagging on resource creation. 
+
+## __Amazon GameLift__
+  - ### Features
+    - Public preview of GameLift FleetIQ as a standalone feature. GameLift FleetIQ makes it possible to use low-cost Spot instances by limiting the chance of interruptions affecting game sessions. FleetIQ is a feature of the managed GameLift service, and can now be used with game hosting in EC2 Auto Scaling groups that you manage in your own account.
+
+## __Amazon Redshift__
+  - ### Features
+    - Documentation updates for redshift
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for RDS: creating read replicas is now supported for SQL Server DB instances
+
 # __1.11.757__ __2020-04-01__
 ## __AWS IoT__
   - ### Features

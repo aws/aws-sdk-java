@@ -768,7 +768,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -831,7 +831,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -843,7 +843,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -855,7 +855,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -867,7 +867,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -876,8 +876,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -886,7 +886,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -1146,12 +1146,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
-     * For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
-     * <p/>
      */
     private String domain;
     /**
@@ -6269,7 +6268,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -6297,7 +6296,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be set to 0 if the DB instance is a source to Read Replicas
+     *        Can't be set to 0 if the DB instance is a source to read replicas
      *        </p>
      *        </li>
      */
@@ -6331,7 +6330,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -6358,7 +6357,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be set to 0 if the DB instance is a source to Read Replicas
+     *         Can't be set to 0 if the DB instance is a source to read replicas
      *         </p>
      *         </li>
      */
@@ -6392,7 +6391,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -6420,7 +6419,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be set to 0 if the DB instance is a source to Read Replicas
+     *        Can't be set to 0 if the DB instance is a source to read replicas
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -6719,7 +6718,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6731,7 +6730,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6743,7 +6742,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6755,7 +6754,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -6764,8 +6763,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -6774,7 +6773,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6789,7 +6788,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -6801,7 +6800,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -6813,7 +6812,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>5432</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -6825,7 +6824,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1521</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>SQL Server</b>
@@ -6834,8 +6833,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1433</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     *        <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *        Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     *        <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -6844,7 +6843,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -6865,7 +6864,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6877,7 +6876,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6889,7 +6888,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6901,7 +6900,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -6910,8 +6909,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -6920,7 +6919,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -6934,7 +6933,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>3306</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         Type: Integer
@@ -6946,7 +6945,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>3306</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         Type: Integer
@@ -6958,7 +6957,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>5432</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         Type: Integer
@@ -6970,7 +6969,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>1521</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         <b>SQL Server</b>
@@ -6979,7 +6978,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>1433</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *         Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     *         <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
@@ -6988,7 +6988,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>3306</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         Type: Integer
@@ -7009,7 +7009,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -7021,7 +7021,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -7033,7 +7033,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -7045,7 +7045,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -7054,8 +7054,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -7064,7 +7064,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -7079,7 +7079,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -7091,7 +7091,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -7103,7 +7103,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>5432</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -7115,7 +7115,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1521</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>SQL Server</b>
@@ -7124,8 +7124,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1433</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     *        <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *        Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     *        <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -7134,7 +7134,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -8818,17 +8818,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
-     * For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
-     * <p/>
      * 
      * @param domain
      *        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *        Oracle DB instances can be created in an Active Directory Domain.
-     *        </p>
+     *        Oracle DB instances can be created in an Active Directory Domain.</p>
      *        <p>
      *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
      *        that connect to the DB instance. For more information, see <a
@@ -8837,11 +8835,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Guide</i>.
      *        </p>
      *        <p>
-     *        For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      *        the DB instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
      *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *        </p>
      */
 
     public void setDomain(String domain) {
@@ -8861,16 +8858,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
-     * For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
-     * <p/>
      * 
      * @return The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *         Oracle DB instances can be created in an Active Directory Domain.
-     *         </p>
+     *         Oracle DB instances can be created in an Active Directory Domain.</p>
      *         <p>
      *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
      *         that connect to the DB instance. For more information, see <a
@@ -8879,11 +8874,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Guide</i>.
      *         </p>
      *         <p>
-     *         For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      *         the DB instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
      *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *         </p>
      */
 
     public String getDomain() {
@@ -8903,17 +8897,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
-     * For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
+     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
      * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
-     * <p/>
      * 
      * @param domain
      *        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *        Oracle DB instances can be created in an Active Directory Domain.
-     *        </p>
+     *        Oracle DB instances can be created in an Active Directory Domain.</p>
      *        <p>
      *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
      *        that connect to the DB instance. For more information, see <a
@@ -8922,11 +8914,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Guide</i>.
      *        </p>
      *        <p>
-     *        For Oracle DB instance, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      *        the DB instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
      *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

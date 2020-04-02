@@ -30,7 +30,9 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN value.
+     * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
+     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
+     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
      * </p>
      */
     private java.util.List<String> fleetIds;
@@ -52,11 +54,15 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN value.
+     * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
+     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
+     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
      * </p>
      * 
-     * @return A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN
-     *         value.
+     * @return A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
+     *         value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
+     *         identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
+     *         fleet are returned.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -65,12 +71,16 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN value.
+     * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
+     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
+     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN
-     *        value.
+     *        A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
+     *        value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
+     *        identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
+     *        fleet are returned.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -84,7 +94,9 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN value.
+     * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
+     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
+     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -93,8 +105,10 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN
-     *        value.
+     *        A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
+     *        value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
+     *        identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
+     *        fleet are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,12 +124,16 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN value.
+     * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
+     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
+     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for a fleet(s) to retrieve attributes for. You can use either the fleet ID or ARN
-     *        value.
+     *        A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
+     *        value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
+     *        identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
+     *        fleet are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -98,7 +98,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private Boolean supportsLogExportsToCloudwatchLogs;
     /**
      * <p>
-     * Indicates whether the database engine version supports Read Replicas.
+     * Indicates whether the database engine version supports read replicas.
      * </p>
      */
     private Boolean supportsReadReplica;
@@ -106,6 +106,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
@@ -744,11 +751,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports Read Replicas.
+     * Indicates whether the database engine version supports read replicas.
      * </p>
      * 
      * @param supportsReadReplica
-     *        Indicates whether the database engine version supports Read Replicas.
+     *        Indicates whether the database engine version supports read replicas.
      */
 
     public void setSupportsReadReplica(Boolean supportsReadReplica) {
@@ -757,10 +764,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports Read Replicas.
+     * Indicates whether the database engine version supports read replicas.
      * </p>
      * 
-     * @return Indicates whether the database engine version supports Read Replicas.
+     * @return Indicates whether the database engine version supports read replicas.
      */
 
     public Boolean getSupportsReadReplica() {
@@ -769,11 +776,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports Read Replicas.
+     * Indicates whether the database engine version supports read replicas.
      * </p>
      * 
      * @param supportsReadReplica
-     *        Indicates whether the database engine version supports Read Replicas.
+     *        Indicates whether the database engine version supports read replicas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -784,10 +791,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports Read Replicas.
+     * Indicates whether the database engine version supports read replicas.
      * </p>
      * 
-     * @return Indicates whether the database engine version supports Read Replicas.
+     * @return Indicates whether the database engine version supports read replicas.
      */
 
     public Boolean isSupportsReadReplica() {
@@ -798,8 +805,20 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * 
-     * @return A list of the supported DB engine modes.
+     * @return A list of the supported DB engine modes.</p> <note>
+     *         <p>
+     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *         <code>provisioned</code> engine mode.
+     *         </p>
      */
 
     public java.util.List<String> getSupportedEngineModes() {
@@ -813,9 +832,21 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.
+     *        A list of the supported DB engine modes.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
      */
 
     public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
@@ -831,6 +862,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
@@ -838,7 +876,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.
+     *        A list of the supported DB engine modes.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -856,9 +899,21 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.
+     *        A list of the supported DB engine modes.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

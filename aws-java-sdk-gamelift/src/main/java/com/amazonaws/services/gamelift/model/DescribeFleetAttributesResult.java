@@ -28,7 +28,8 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of objects containing attribute metadata for each requested fleet ID.
+     * A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned
+     * only for fleets that currently exist.
      * </p>
      */
     private java.util.List<FleetAttributes> fleetAttributes;
@@ -42,10 +43,12 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of objects containing attribute metadata for each requested fleet ID.
+     * A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned
+     * only for fleets that currently exist.
      * </p>
      * 
-     * @return A collection of objects containing attribute metadata for each requested fleet ID.
+     * @return A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are
+     *         returned only for fleets that currently exist.
      */
 
     public java.util.List<FleetAttributes> getFleetAttributes() {
@@ -54,11 +57,13 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of objects containing attribute metadata for each requested fleet ID.
+     * A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned
+     * only for fleets that currently exist.
      * </p>
      * 
      * @param fleetAttributes
-     *        A collection of objects containing attribute metadata for each requested fleet ID.
+     *        A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are
+     *        returned only for fleets that currently exist.
      */
 
     public void setFleetAttributes(java.util.Collection<FleetAttributes> fleetAttributes) {
@@ -72,7 +77,8 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of objects containing attribute metadata for each requested fleet ID.
+     * A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned
+     * only for fleets that currently exist.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +87,8 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param fleetAttributes
-     *        A collection of objects containing attribute metadata for each requested fleet ID.
+     *        A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are
+     *        returned only for fleets that currently exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +104,13 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of objects containing attribute metadata for each requested fleet ID.
+     * A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned
+     * only for fleets that currently exist.
      * </p>
      * 
      * @param fleetAttributes
-     *        A collection of objects containing attribute metadata for each requested fleet ID.
+     *        A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are
+     *        returned only for fleets that currently exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

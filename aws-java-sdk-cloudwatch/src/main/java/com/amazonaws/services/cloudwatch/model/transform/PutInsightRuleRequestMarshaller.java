@@ -52,6 +52,23 @@ public class PutInsightRuleRequestMarshaller implements Marshaller<Request<PutIn
             request.addParameter("RuleDefinition", StringUtils.fromString(putInsightRuleRequest.getRuleDefinition()));
         }
 
+        if (!putInsightRuleRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) putInsightRuleRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) putInsightRuleRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -48,6 +48,10 @@ public class InputAttachmentJsonUnmarshaller implements Unmarshaller<InputAttach
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("automaticInputFailoverSettings", targetDepth)) {
+                    context.nextToken();
+                    inputAttachment.setAutomaticInputFailoverSettings(AutomaticInputFailoverSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputAttachmentName", targetDepth)) {
                     context.nextToken();
                     inputAttachment.setInputAttachmentName(context.getUnmarshaller(String.class).unmarshall(context));

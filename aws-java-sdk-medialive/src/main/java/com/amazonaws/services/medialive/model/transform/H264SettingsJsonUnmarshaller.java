@@ -88,6 +88,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setFlickerAq(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("forceFieldPictures", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setForceFieldPictures(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("framerateControl", targetDepth)) {
                     context.nextToken();
                     h264Settings.setFramerateControl(context.getUnmarshaller(String.class).unmarshall(context));

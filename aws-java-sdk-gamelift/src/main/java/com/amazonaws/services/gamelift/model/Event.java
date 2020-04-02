@@ -51,7 +51,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event messaging
+     * FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging
      * includes the fleet ID.
      * </p>
      * </li>
@@ -311,7 +311,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event messaging
+     * FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging
      * includes the fleet ID.
      * </p>
      * </li>
@@ -467,7 +467,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event
+     *        FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event
      *        messaging includes the fleet ID.
      *        </p>
      *        </li>
@@ -632,7 +632,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event messaging
+     * FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging
      * includes the fleet ID.
      * </p>
      * </li>
@@ -787,7 +787,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event
+     *         FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event
      *         messaging includes the fleet ID.
      *         </p>
      *         </li>
@@ -952,7 +952,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event messaging
+     * FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging
      * includes the fleet ID.
      * </p>
      * </li>
@@ -1108,7 +1108,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event
+     *        FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event
      *        messaging includes the fleet ID.
      *        </p>
      *        </li>
@@ -1275,7 +1275,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event messaging
+     * FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging
      * includes the fleet ID.
      * </p>
      * </li>
@@ -1431,7 +1431,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event
+     *        FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event
      *        messaging includes the fleet ID.
      *        </p>
      *        </li>
@@ -1596,7 +1596,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event messaging
+     * FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event messaging
      * includes the fleet ID.
      * </p>
      * </li>
@@ -1752,7 +1752,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_CREATED -- A fleet record was successfully created with a status of <code>NEW</code>. Event
+     *        FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>. Event
      *        messaging includes the fleet ID.
      *        </p>
      *        </li>

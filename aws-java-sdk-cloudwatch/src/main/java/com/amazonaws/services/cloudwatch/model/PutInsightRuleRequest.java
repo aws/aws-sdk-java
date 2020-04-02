@@ -45,6 +45,26 @@ public class PutInsightRuleRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String ruleDefinition;
+    /**
+     * <p>
+     * A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags
+     * with a rule.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only the resources that have certain tag values.
+     * </p>
+     * <p>
+     * To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -179,6 +199,192 @@ public class PutInsightRuleRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags
+     * with a rule.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only the resources that have certain tag values.
+     * </p>
+     * <p>
+     * To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+     * </p>
+     * 
+     * @return A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as
+     *         50 tags with a rule.</p>
+     *         <p>
+     *         Tags can help you organize and categorize your resources. You can also use them to scope user
+     *         permissions, by granting a user permission to access or change only the resources that have certain tag
+     *         values.
+     *         </p>
+     *         <p>
+     *         To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code>
+     *         permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     *         </p>
+     *         <p>
+     *         If you are using this operation to update an existing Contributor Insights rule, any tags you specify in
+     *         this parameter are ignored. To change the tags of an existing rule, use <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *         >TagResource</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags
+     * with a rule.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only the resources that have certain tag values.
+     * </p>
+     * <p>
+     * To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50
+     *        tags with a rule.</p>
+     *        <p>
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        by granting a user permission to access or change only the resources that have certain tag values.
+     *        </p>
+     *        <p>
+     *        To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission
+     *        in addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     *        </p>
+     *        <p>
+     *        If you are using this operation to update an existing Contributor Insights rule, any tags you specify in
+     *        this parameter are ignored. To change the tags of an existing rule, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags
+     * with a rule.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only the resources that have certain tag values.
+     * </p>
+     * <p>
+     * To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50
+     *        tags with a rule.</p>
+     *        <p>
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        by granting a user permission to access or change only the resources that have certain tag values.
+     *        </p>
+     *        <p>
+     *        To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission
+     *        in addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     *        </p>
+     *        <p>
+     *        If you are using this operation to update an existing Contributor Insights rule, any tags you specify in
+     *        this parameter are ignored. To change the tags of an existing rule, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutInsightRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags
+     * with a rule.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * granting a user permission to access or change only the resources that have certain tag values.
+     * </p>
+     * <p>
+     * To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     * </p>
+     * <p>
+     * If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50
+     *        tags with a rule.</p>
+     *        <p>
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        by granting a user permission to access or change only the resources that have certain tag values.
+     *        </p>
+     *        <p>
+     *        To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission
+     *        in addition to the <code>cloudwatch:PutInsightRule</code> permission.
+     *        </p>
+     *        <p>
+     *        If you are using this operation to update an existing Contributor Insights rule, any tags you specify in
+     *        this parameter are ignored. To change the tags of an existing rule, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html"
+     *        >TagResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutInsightRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -195,7 +401,9 @@ public class PutInsightRuleRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRuleState() != null)
             sb.append("RuleState: ").append(getRuleState()).append(",");
         if (getRuleDefinition() != null)
-            sb.append("RuleDefinition: ").append(getRuleDefinition());
+            sb.append("RuleDefinition: ").append(getRuleDefinition()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +430,10 @@ public class PutInsightRuleRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRuleDefinition() != null && other.getRuleDefinition().equals(this.getRuleDefinition()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +445,7 @@ public class PutInsightRuleRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getRuleName() == null) ? 0 : getRuleName().hashCode());
         hashCode = prime * hashCode + ((getRuleState() == null) ? 0 : getRuleState().hashCode());
         hashCode = prime * hashCode + ((getRuleDefinition() == null) ? 0 : getRuleDefinition().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

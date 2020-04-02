@@ -36,8 +36,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceARN;
     /**
      * <p>
-     * A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     * structured as key-value pairs.
+     * A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one
+     * tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * </p>
      */
     private java.util.List<String> tagKeys;
@@ -105,12 +105,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     * structured as key-value pairs.
+     * A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one
+     * tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * </p>
      * 
-     * @return A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     *         structured as key-value pairs.
+     * @return A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have
+     *         only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -119,13 +119,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     * structured as key-value pairs.
+     * A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one
+     * tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * </p>
      * 
      * @param tagKeys
-     *        A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     *        structured as key-value pairs.
+     *        A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have
+     *        only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -139,8 +139,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     * structured as key-value pairs.
+     * A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one
+     * tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -149,8 +149,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     *        structured as key-value pairs.
+     *        A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have
+     *        only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,13 +166,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     * structured as key-value pairs.
+     * A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one
+     * tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * </p>
      * 
      * @param tagKeys
-     *        A list of one or more tags to remove from the specified GameLift resource. Tags are developer-defined and
-     *        structured as key-value pairs.
+     *        A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have
+     *        only one tag with a specific tag key, so specifying the tag key identifies which tag to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

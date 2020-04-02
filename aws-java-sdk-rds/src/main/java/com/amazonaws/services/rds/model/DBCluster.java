@@ -183,13 +183,13 @@ public class DBCluster implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      * </p>
      */
     private String replicationSourceIdentifier;
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     * Contains one or more identifiers of the read replicas associated with this DB cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaIdentifiers;
@@ -309,6 +309,14 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
+     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * </p>
+     * </note>
      */
     private String engineMode;
 
@@ -1496,11 +1504,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      * </p>
      * 
      * @param replicationSourceIdentifier
-     *        Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     *        Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      */
 
     public void setReplicationSourceIdentifier(String replicationSourceIdentifier) {
@@ -1509,10 +1517,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      * </p>
      * 
-     * @return Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * @return Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      */
 
     public String getReplicationSourceIdentifier() {
@@ -1521,11 +1529,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     * Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      * </p>
      * 
      * @param replicationSourceIdentifier
-     *        Contains the identifier of the source DB cluster if this DB cluster is a Read Replica.
+     *        Contains the identifier of the source DB cluster if this DB cluster is a read replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1536,10 +1544,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     * Contains one or more identifiers of the read replicas associated with this DB cluster.
      * </p>
      * 
-     * @return Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     * @return Contains one or more identifiers of the read replicas associated with this DB cluster.
      */
 
     public java.util.List<String> getReadReplicaIdentifiers() {
@@ -1551,11 +1559,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     * Contains one or more identifiers of the read replicas associated with this DB cluster.
      * </p>
      * 
      * @param readReplicaIdentifiers
-     *        Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     *        Contains one or more identifiers of the read replicas associated with this DB cluster.
      */
 
     public void setReadReplicaIdentifiers(java.util.Collection<String> readReplicaIdentifiers) {
@@ -1569,7 +1577,7 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     * Contains one or more identifiers of the read replicas associated with this DB cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1578,7 +1586,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaIdentifiers
-     *        Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     *        Contains one or more identifiers of the read replicas associated with this DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1594,11 +1602,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     * Contains one or more identifiers of the read replicas associated with this DB cluster.
      * </p>
      * 
      * @param readReplicaIdentifiers
-     *        Contains one or more identifiers of the Read Replicas associated with this DB cluster.
+     *        Contains one or more identifiers of the read replicas associated with this DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2510,10 +2518,25 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
+     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * </p>
+     * </note>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
+     *        <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
+     *        <code>DescribeDBClusters</code>.
+     *        </p>
      */
 
     public void setEngineMode(String engineMode) {
@@ -2525,9 +2548,24 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
+     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * </p>
+     * </note>
      * 
      * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *         <p>
+     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *         <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
+     *         <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
+     *         <code>DescribeDBClusters</code>.
+     *         </p>
      */
 
     public String getEngineMode() {
@@ -2539,10 +2577,25 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
+     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * </p>
+     * </note>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
+     *        <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
+     *        <code>DescribeDBClusters</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

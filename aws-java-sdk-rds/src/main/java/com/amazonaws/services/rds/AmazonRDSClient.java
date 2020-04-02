@@ -1464,7 +1464,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Creates a new Amazon Aurora DB cluster.
      * </p>
      * <p>
-     * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of
+     * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a read replica of
      * another DB cluster or Amazon RDS MySQL DB instance. For cross-region replication where the DB cluster identified
      * by <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the <code>PreSignedUrl</code>
      * parameter.
@@ -1890,19 +1890,18 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
-     * Replica for a DB instance running MySQL, MariaDB, Oracle, or PostgreSQL. For more information, see <a
+     * Creates a new DB instance that acts as a read replica for an existing source DB instance. You can create a read
+     * replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with Read Replicas</a>
      * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
-     * Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code> action to create a DB
-     * instance for an Aurora DB cluster.
+     * Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code> action to create a DB instance
+     * for an Aurora DB cluster.
      * </p>
      * <p>
-     * All Read Replica DB instances are created with backups disabled. All other DB instance attributes (including DB
-     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified
-     * following.
+     * All read replica DB instances are created with backups disabled. All other DB instance attributes (including DB
+     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified.
      * </p>
      * <important>
      * <p>
@@ -2907,7 +2906,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <ul>
      * <li>
      * <p>
-     * The DB cluster is a Read Replica of another Amazon Aurora DB cluster.
+     * The DB cluster is a read replica of another Amazon Aurora DB cluster.
      * </p>
      * </li>
      * <li>
@@ -2918,7 +2917,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </ul>
      * <p>
      * To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code> API action to
-     * promote the DB cluster so it's no longer a Read Replica. After the promotion completes, then call the
+     * promote the DB cluster so it's no longer a read replica. After the promotion completes, then call the
      * <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.
      * </p>
      * 
@@ -5947,7 +5946,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB
+     * Returns a list of the source AWS Regions where the current AWS Region can create a read replica or copy a DB
      * snapshot from. This API action supports pagination.
      * </p>
      * 
@@ -7120,7 +7119,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
+     * Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted or unencrypted, but not
+     * shared or public.
      * </p>
      * <p>
      * Amazon RDS supports upgrading DB snapshots for MySQL, Oracle, and PostgreSQL.
@@ -7503,17 +7503,17 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Promotes a Read Replica DB instance to a standalone DB instance.
+     * Promotes a read replica DB instance to a standalone DB instance.
      * </p>
      * <note>
      * <ul>
      * <li>
      * <p>
      * Backup duration is a function of the amount of changes to the database since the previous backup. If you plan to
-     * promote a Read Replica to a standalone instance, we recommend that you enable backups and complete at least one
-     * backup prior to promotion. In addition, a Read Replica cannot be promoted to a standalone instance when it is in
-     * the <code>backing-up</code> status. If you have enabled backups on your Read Replica, configure the automated
-     * backup window so that daily backups do not interfere with Read Replica promotion.
+     * promote a read replica to a standalone instance, we recommend that you enable backups and complete at least one
+     * backup prior to promotion. In addition, a read replica cannot be promoted to a standalone instance when it is in
+     * the <code>backing-up</code> status. If you have enabled backups on your read replica, configure the automated
+     * backup window so that daily backups do not interfere with read replica promotion.
      * </p>
      * </li>
      * <li>
@@ -7577,7 +7577,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Promotes a Read Replica DB cluster to a standalone DB cluster.
+     * Promotes a read replica DB cluster to a standalone DB cluster.
      * </p>
      * <note>
      * <p>
@@ -8385,27 +8385,26 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This action only applies to Aurora DB
+     * clusters.
      * </p>
      * <p>
-     * If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default
-     * configuration and default security group.
+     * The target DB cluster is created from the source snapshot with a default configuration. If you don't specify a
+     * security group, the new DB cluster is associated with the default security group.
      * </p>
+     * <note>
      * <p>
-     * If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point
-     * with the same configuration as the original source DB cluster. If you don't specify a security group, the new DB
-     * cluster is associated with the default security group.
+     * This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the
+     * <code>CreateDBInstance</code> action to create DB instances for the restored DB cluster, specifying the
+     * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after
+     * the <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB cluster is available.
      * </p>
+     * </note>
      * <p>
      * For more information on Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
-     * <note>
-     * <p>
-     * This action only applies to Aurora DB clusters.
-     * </p>
-     * </note>
      * 
      * @param restoreDBClusterFromSnapshotRequest
      * @return Result of the RestoreDBClusterFromSnapshot operation returned by the service.

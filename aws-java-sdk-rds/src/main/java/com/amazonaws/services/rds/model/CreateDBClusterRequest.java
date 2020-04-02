@@ -296,8 +296,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
-     * Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read
+     * replica.
      * </p>
      */
     private String replicationSourceIdentifier;
@@ -344,8 +344,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
      * AWS Region.
      * </p>
      */
@@ -373,7 +373,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      * </p>
      * </li>
      * <li>
@@ -448,6 +448,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -533,8 +540,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      * the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
     private String domain;
@@ -2260,13 +2267,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
-     * Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read
+     * replica.
      * </p>
      * 
      * @param replicationSourceIdentifier
      *        The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a
-     *        Read Replica.
+     *        read replica.
      */
 
     public void setReplicationSourceIdentifier(String replicationSourceIdentifier) {
@@ -2275,12 +2282,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
-     * Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read
+     * replica.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a
-     *         Read Replica.
+     *         read replica.
      */
 
     public String getReplicationSourceIdentifier() {
@@ -2289,13 +2296,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read
-     * Replica.
+     * The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read
+     * replica.
      * </p>
      * 
      * @param replicationSourceIdentifier
      *        The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a
-     *        Read Replica.
+     *        read replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2460,8 +2467,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
      * AWS Region.
      * </p>
      * 
@@ -2494,9 +2501,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        encryption key for each AWS Region.
      *        </p>
      *        <p>
-     *        If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
+     *        If you create a read replica of an encrypted DB cluster in another AWS Region, you must set
      *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the Read Replica in that AWS Region.
+     *        encrypt the read replica in that AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2534,8 +2541,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
      * AWS Region.
      * </p>
      * 
@@ -2567,9 +2574,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         encryption key for each AWS Region.
      *         </p>
      *         <p>
-     *         If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
+     *         If you create a read replica of an encrypted DB cluster in another AWS Region, you must set
      *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *         encrypt the Read Replica in that AWS Region.
+     *         encrypt the read replica in that AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -2607,8 +2614,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
      * AWS Region.
      * </p>
      * 
@@ -2641,9 +2648,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        encryption key for each AWS Region.
      *        </p>
      *        <p>
-     *        If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
+     *        If you create a read replica of an encrypted DB cluster in another AWS Region, you must set
      *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the Read Replica in that AWS Region.
+     *        encrypt the read replica in that AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2675,7 +2682,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      * </p>
      * </li>
      * <li>
@@ -2727,7 +2734,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     *        <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      *        </p>
      *        </li>
      *        <li>
@@ -2783,7 +2790,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      * </p>
      * </li>
      * <li>
@@ -2834,7 +2841,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     *         <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      *         </p>
      *         </li>
      *         <li>
@@ -2890,7 +2897,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      * </p>
      * </li>
      * <li>
@@ -2942,7 +2949,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
+     *        <code>DestinationRegion</code> - The name of the AWS Region that Aurora read replica will be created in.
      *        </p>
      *        </li>
      *        <li>
@@ -3290,6 +3297,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -3327,7 +3341,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
+     *        </note>
      *        <p>
      *        Limitations and requirements apply to some DB engine modes. For more information, see the following
      *        sections in the <i>Amazon Aurora User Guide</i>:
@@ -3372,6 +3392,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -3408,7 +3435,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *         <p>
+     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *         <code>provisioned</code> engine mode.
+     *         </p>
+     *         </note>
      *         <p>
      *         Limitations and requirements apply to some DB engine modes. For more information, see the following
      *         sections in the <i>Amazon Aurora User Guide</i>:
@@ -3453,6 +3486,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -3490,7 +3530,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
+     *        </note>
      *        <p>
      *        Limitations and requirements apply to some DB engine modes. For more information, see the following
      *        sections in the <i>Amazon Aurora User Guide</i>:
@@ -3874,8 +3920,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      * the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param domain
@@ -3883,8 +3929,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      *        connect to the DB cluster. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     *        Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *        Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -3898,16 +3944,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      * the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @return The Active Directory directory ID to create the DB cluster in.</p>
      *         <p>
      *         For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      *         connect to the DB cluster. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     *         Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *         Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public String getDomain() {
@@ -3921,8 +3967,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
      * the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param domain
@@ -3930,8 +3976,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      *        connect to the DB cluster. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
-     *        Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *        Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,7 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A collection of build records that match the request.
+     * A collection of build resources that match the request.
      * </p>
      */
     private java.util.List<Build> builds;
@@ -42,10 +42,10 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A collection of build records that match the request.
+     * A collection of build resources that match the request.
      * </p>
      * 
-     * @return A collection of build records that match the request.
+     * @return A collection of build resources that match the request.
      */
 
     public java.util.List<Build> getBuilds() {
@@ -54,11 +54,11 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A collection of build records that match the request.
+     * A collection of build resources that match the request.
      * </p>
      * 
      * @param builds
-     *        A collection of build records that match the request.
+     *        A collection of build resources that match the request.
      */
 
     public void setBuilds(java.util.Collection<Build> builds) {
@@ -72,7 +72,7 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A collection of build records that match the request.
+     * A collection of build resources that match the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param builds
-     *        A collection of build records that match the request.
+     *        A collection of build resources that match the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A collection of build records that match the request.
+     * A collection of build resources that match the request.
      * </p>
      * 
      * @param builds
-     *        A collection of build records that match the request.
+     *        A collection of build resources that match the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

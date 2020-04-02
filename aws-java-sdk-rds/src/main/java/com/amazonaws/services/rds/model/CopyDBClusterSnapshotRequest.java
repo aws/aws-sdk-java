@@ -126,7 +126,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same AWS Region.
      * </p>
      * <p>
-     * The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that can be
+     * The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be
      * executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed
      * URL request must contain the following parameter values:
      * </p>
@@ -746,7 +746,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same AWS Region.
      * </p>
      * <p>
-     * The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that can be
+     * The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be
      * executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed
      * URL request must contain the following parameter values:
      * </p>
@@ -797,7 +797,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        another AWS Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster
      *        snapshot in the same AWS Region.</p>
      *        <p>
-     *        The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that can
+     *        The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can
      *        be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The
      *        pre-signed URL request must contain the following parameter values:
      *        </p>
@@ -854,7 +854,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same AWS Region.
      * </p>
      * <p>
-     * The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that can be
+     * The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be
      * executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed
      * URL request must contain the following parameter values:
      * </p>
@@ -904,9 +904,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         another AWS Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster
      *         snapshot in the same AWS Region.</p>
      *         <p>
-     *         The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that
-     *         can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
-     *         The pre-signed URL request must contain the following parameter values:
+     *         The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can
+     *         be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The
+     *         pre-signed URL request must contain the following parameter values:
      *         </p>
      *         <ul>
      *         <li>
@@ -961,7 +961,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <code>PreSignedUrl</code> when you are copying an encrypted DB cluster snapshot in the same AWS Region.
      * </p>
      * <p>
-     * The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that can be
+     * The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can be
      * executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The pre-signed
      * URL request must contain the following parameter values:
      * </p>
@@ -1012,7 +1012,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        another AWS Region. Don't specify <code>PreSignedUrl</code> when you are copying an encrypted DB cluster
      *        snapshot in the same AWS Region.</p>
      *        <p>
-     *        The pre-signed URL must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action that can
+     *        The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that can
      *        be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied. The
      *        pre-signed URL request must contain the following parameter values:
      *        </p>

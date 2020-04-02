@@ -45,9 +45,9 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
-     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
-     * bucket. The S3 bucket and your new build must be in the same Region.
+     * files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name and key. The
+     * location must also specify a role ARN that you set up to allow Amazon GameLift to access your S3 bucket. The S3
+     * bucket and your new build must be in the same Region.
      * </p>
      */
     private S3Location storageLocation;
@@ -167,16 +167,16 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
-     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
-     * bucket. The S3 bucket and your new build must be in the same Region.
+     * files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name and key. The
+     * location must also specify a role ARN that you set up to allow Amazon GameLift to access your S3 bucket. The S3
+     * bucket and your new build must be in the same Region.
      * </p>
      * 
      * @param storageLocation
      *        Information indicating where your game build files are stored. Use this parameter only when creating a
-     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
-     *        S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift
-     *        to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
+     *        build with files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name
+     *        and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your
+     *        S3 bucket. The S3 bucket and your new build must be in the same Region.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -186,15 +186,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
-     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
-     * bucket. The S3 bucket and your new build must be in the same Region.
+     * files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name and key. The
+     * location must also specify a role ARN that you set up to allow Amazon GameLift to access your S3 bucket. The S3
+     * bucket and your new build must be in the same Region.
      * </p>
      * 
      * @return Information indicating where your game build files are stored. Use this parameter only when creating a
-     *         build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
-     *         S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon
-     *         GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
+     *         build with files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name
+     *         and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access
+     *         your S3 bucket. The S3 bucket and your new build must be in the same Region.
      */
 
     public S3Location getStorageLocation() {
@@ -204,16 +204,16 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
-     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
-     * bucket. The S3 bucket and your new build must be in the same Region.
+     * files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name and key. The
+     * location must also specify a role ARN that you set up to allow Amazon GameLift to access your S3 bucket. The S3
+     * bucket and your new build must be in the same Region.
      * </p>
      * 
      * @param storageLocation
      *        Information indicating where your game build files are stored. Use this parameter only when creating a
-     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
-     *        S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift
-     *        to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
+     *        build with files stored in an S3 bucket that you own. The storage location must specify an S3 bucket name
+     *        and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your
+     *        S3 bucket. The S3 bucket and your new build must be in the same Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

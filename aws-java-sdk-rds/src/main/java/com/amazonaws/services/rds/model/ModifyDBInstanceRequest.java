@@ -256,17 +256,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     * Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     * Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -409,7 +409,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -483,7 +483,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -580,7 +580,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>MariaDB</b>
@@ -589,7 +589,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -598,7 +598,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -610,7 +610,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -619,8 +619,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -629,7 +629,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      */
     private Integer dBPortNumber;
@@ -2215,17 +2215,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     * Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     * Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -2260,17 +2260,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     *        Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     *        Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be set to 0 if the DB instance is a source to Read Replicas
+     *        Can't be set to 0 if the DB instance is a source to read replicas
      *        </p>
      *        </li>
      */
@@ -2311,17 +2311,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     * Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     * Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -2355,17 +2355,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     *         Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     *         Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be set to 0 if the DB instance is a source to Read Replicas
+     *         Can't be set to 0 if the DB instance is a source to read replicas
      *         </p>
      *         </li>
      */
@@ -2406,17 +2406,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     * Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     * Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas
+     * Can't be set to 0 if the DB instance is a source to read replicas
      * </p>
      * </li>
      * </ul>
@@ -2451,17 +2451,17 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can be specified for a MySQL Read Replica only if the source is running MySQL 5.6 or later
+     *        Can be specified for a MySQL read replica only if the source is running MySQL 5.6 or later
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can be specified for a PostgreSQL Read Replica only if the source is running PostgreSQL 9.3.5
+     *        Can be specified for a PostgreSQL read replica only if the source is running PostgreSQL 9.3.5
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be set to 0 if the DB instance is a source to Read Replicas
+     *        Can't be set to 0 if the DB instance is a source to read replicas
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3274,7 +3274,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -3303,7 +3303,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        migration, the DB instance is available for use, but might experience performance degradation. While the
      *        migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can
      *        take place for the instance, including modifying the instance, rebooting the instance, deleting the
-     *        instance, creating a Read Replica for the instance, and creating a DB snapshot of the instance.
+     *        instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
      *        </p>
      *        <p>
      *        Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10% greater
@@ -3336,7 +3336,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -3364,7 +3364,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         During the migration, the DB instance is available for use, but might experience performance degradation.
      *         While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS
      *         operations can take place for the instance, including modifying the instance, rebooting the instance,
-     *         deleting the instance, creating a Read Replica for the instance, and creating a DB snapshot of the
+     *         deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the
      *         instance.
      *         </p>
      *         <p>
@@ -3398,7 +3398,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -3427,7 +3427,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        migration, the DB instance is available for use, but might experience performance degradation. While the
      *        migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can
      *        take place for the instance, including modifying the instance, rebooting the instance, deleting the
-     *        instance, creating a Read Replica for the instance, and creating a DB snapshot of the instance.
+     *        instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
      *        </p>
      *        <p>
      *        Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value supplied must be at least 10% greater
@@ -3741,7 +3741,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -3766,7 +3766,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        migration, the DB instance is available for use, but might experience performance degradation. While the
      *        migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can
      *        take place for the instance, including modifying the instance, rebooting the instance, deleting the
-     *        instance, creating a Read Replica for the instance, and creating a DB snapshot of the instance.
+     *        instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
      *        </p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
@@ -3795,7 +3795,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -3819,7 +3819,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         During the migration, the DB instance is available for use, but might experience performance degradation.
      *         While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS
      *         operations can take place for the instance, including modifying the instance, rebooting the instance,
-     *         deleting the instance, creating a Read Replica for the instance, and creating a DB snapshot of the
+     *         deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the
      *         instance.
      *         </p>
      *         <p>
@@ -3849,7 +3849,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * hours, but the process can take up to several days in some cases. During the migration, the DB instance is
      * available for use, but might experience performance degradation. While the migration takes place, nightly backups
      * for the instance are suspended. No other Amazon RDS operations can take place for the instance, including
-     * modifying the instance, rebooting the instance, deleting the instance, creating a Read Replica for the instance,
+     * modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance,
      * and creating a DB snapshot of the instance.
      * </p>
      * <p>
@@ -3874,7 +3874,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        migration, the DB instance is available for use, but might experience performance degradation. While the
      *        migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can
      *        take place for the instance, including modifying the instance, rebooting the instance, deleting the
-     *        instance, creating a Read Replica for the instance, and creating a DB snapshot of the instance.
+     *        instance, creating a read replica for the instance, and creating a DB snapshot of the instance.
      *        </p>
      *        <p>
      *        Valid values: <code>standard | gp2 | io1</code>
@@ -4356,7 +4356,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>MariaDB</b>
@@ -4365,7 +4365,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -4374,7 +4374,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -4386,7 +4386,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -4395,8 +4395,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -4405,7 +4405,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * 
      * @param dBPortNumber
@@ -4425,7 +4425,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>MariaDB</b>
@@ -4434,7 +4434,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -4443,7 +4443,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>5432</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -4455,7 +4455,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1521</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>SQL Server</b>
@@ -4464,8 +4464,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1433</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     *        <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *        Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     *        <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -4474,7 +4474,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      */
 
     public void setDBPortNumber(Integer dBPortNumber) {
@@ -4500,7 +4500,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>MariaDB</b>
@@ -4509,7 +4509,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -4518,7 +4518,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -4530,7 +4530,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -4539,8 +4539,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -4549,7 +4549,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * 
      * @return The port number on which the database accepts connections.</p>
@@ -4568,7 +4568,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>3306</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         <b>MariaDB</b>
@@ -4577,7 +4577,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>3306</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         <b>PostgreSQL</b>
@@ -4586,7 +4586,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>5432</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         Type: Integer
@@ -4598,7 +4598,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>1521</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      *         </p>
      *         <p>
      *         <b>SQL Server</b>
@@ -4607,7 +4607,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>1433</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *         Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     *         <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
@@ -4616,7 +4617,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: <code>3306</code>
      *         </p>
      *         <p>
-     *         Valid Values: <code>1150-65535</code>
+     *         Valid values: <code>1150-65535</code>
      */
 
     public Integer getDBPortNumber() {
@@ -4642,7 +4643,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>MariaDB</b>
@@ -4651,7 +4652,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>PostgreSQL</b>
@@ -4660,7 +4661,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>5432</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * Type: Integer
@@ -4672,7 +4673,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1521</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * <p>
      * <b>SQL Server</b>
@@ -4681,8 +4682,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>1433</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     * <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     * Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     * <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -4691,7 +4692,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>3306</code>
      * </p>
      * <p>
-     * Valid Values: <code>1150-65535</code>
+     * Valid values: <code>1150-65535</code>
      * </p>
      * 
      * @param dBPortNumber
@@ -4711,7 +4712,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>MariaDB</b>
@@ -4720,7 +4721,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>PostgreSQL</b>
@@ -4729,7 +4730,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>5432</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        Type: Integer
@@ -4741,7 +4742,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1521</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      *        </p>
      *        <p>
      *        <b>SQL Server</b>
@@ -4750,8 +4751,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>1433</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>, <code>47001</code>,
-     *        <code>49152</code>, and <code>49152</code> through <code>49156</code>.
+     *        Valid values: <code>1150-65535</code> except <code>1234</code>, <code>1434</code>, <code>3260</code>,
+     *        <code>3343</code>, <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -4760,7 +4761,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: <code>3306</code>
      *        </p>
      *        <p>
-     *        Valid Values: <code>1150-65535</code>
+     *        Valid values: <code>1150-65535</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

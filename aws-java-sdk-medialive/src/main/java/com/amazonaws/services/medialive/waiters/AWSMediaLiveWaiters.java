@@ -128,7 +128,7 @@ public class AWSMediaLiveWaiters {
                 .withSdkFunction(new DescribeChannelFunction(client))
                 .withAcceptors(new ChannelStopped.IsIDLEMatcher(), new ChannelStopped.IsSTOPPINGMatcher(),
                         new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(28), new FixedDelayStrategy(5)))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }
 
@@ -143,7 +143,7 @@ public class AWSMediaLiveWaiters {
                 .withSdkFunction(new DescribeChannelFunction(client))
                 .withAcceptors(new ChannelDeleted.IsDELETEDMatcher(), new ChannelDeleted.IsDELETINGMatcher(),
                         new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(84), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }
 

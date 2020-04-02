@@ -53,7 +53,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify skip when deleting a Read Replica.
+     * Specify skip when deleting a read replica.
      * </p>
      * <note>
      * <p>
@@ -94,7 +94,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be specified when deleting a Read Replica.
+     * Can't be specified when deleting a read replica.
      * </p>
      * </li>
      * </ul>
@@ -244,7 +244,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify skip when deleting a Read Replica.
+     * Specify skip when deleting a read replica.
      * </p>
      * <note>
      * <p>
@@ -262,7 +262,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        'incompatible-network', it can only be deleted when skip is specified.
      *        </p>
      *        <p>
-     *        Specify skip when deleting a Read Replica.
+     *        Specify skip when deleting a read replica.
      *        </p>
      *        <note>
      *        <p>
@@ -285,7 +285,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify skip when deleting a Read Replica.
+     * Specify skip when deleting a read replica.
      * </p>
      * <note>
      * <p>
@@ -302,7 +302,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         'incompatible-network', it can only be deleted when skip is specified.
      *         </p>
      *         <p>
-     *         Specify skip when deleting a Read Replica.
+     *         Specify skip when deleting a read replica.
      *         </p>
      *         <note>
      *         <p>
@@ -325,7 +325,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify skip when deleting a Read Replica.
+     * Specify skip when deleting a read replica.
      * </p>
      * <note>
      * <p>
@@ -343,7 +343,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        'incompatible-network', it can only be deleted when skip is specified.
      *        </p>
      *        <p>
-     *        Specify skip when deleting a Read Replica.
+     *        Specify skip when deleting a read replica.
      *        </p>
      *        <note>
      *        <p>
@@ -368,7 +368,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 'incompatible-network', it can only be deleted when skip is specified.
      * </p>
      * <p>
-     * Specify skip when deleting a Read Replica.
+     * Specify skip when deleting a read replica.
      * </p>
      * <note>
      * <p>
@@ -385,7 +385,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         'incompatible-network', it can only be deleted when skip is specified.
      *         </p>
      *         <p>
-     *         Specify skip when deleting a Read Replica.
+     *         Specify skip when deleting a read replica.
      *         </p>
      *         <note>
      *         <p>
@@ -429,7 +429,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be specified when deleting a Read Replica.
+     * Can't be specified when deleting a read replica.
      * </p>
      * </li>
      * </ul>
@@ -463,7 +463,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be specified when deleting a Read Replica.
+     *        Can't be specified when deleting a read replica.
      *        </p>
      *        </li>
      */
@@ -504,7 +504,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be specified when deleting a Read Replica.
+     * Can't be specified when deleting a read replica.
      * </p>
      * </li>
      * </ul>
@@ -537,7 +537,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be specified when deleting a Read Replica.
+     *         Can't be specified when deleting a read replica.
      *         </p>
      *         </li>
      */
@@ -578,7 +578,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Can't be specified when deleting a Read Replica.
+     * Can't be specified when deleting a read replica.
      * </p>
      * </li>
      * </ul>
@@ -612,7 +612,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be specified when deleting a Read Replica.
+     *        Can't be specified when deleting a read replica.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
