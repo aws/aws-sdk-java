@@ -58,6 +58,14 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     /** If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames. */
     private String flickerAq;
     /**
+     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
+     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
+     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
+     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
+     * appropriate for the content.
+     */
+    private String forceFieldPictures;
+    /**
      * This field indicates how the output video frame rate is specified. If "specified" is selected then the output
      * video frame rate is determined by framerateNumerator and framerateDenominator, else if "initializeFromSource" is
      * selected then the output video frame rate will be set equal to the input video frame rate of the first input.
@@ -660,6 +668,89 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
 
     public H264Settings withFlickerAq(H264FlickerAq flickerAq) {
         this.flickerAq = flickerAq.toString();
+        return this;
+    }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
+     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
+     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
+     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
+     * appropriate for the content.
+     * 
+     * @param forceFieldPictures
+     *        This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
+     *        or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
+     *        code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
+     *        sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
+     *        depending on what is most appropriate for the content.
+     * @see H264ForceFieldPictures
+     */
+
+    public void setForceFieldPictures(String forceFieldPictures) {
+        this.forceFieldPictures = forceFieldPictures;
+    }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
+     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
+     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
+     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
+     * appropriate for the content.
+     * 
+     * @return This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
+     *         or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
+     *         code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
+     *         sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
+     *         depending on what is most appropriate for the content.
+     * @see H264ForceFieldPictures
+     */
+
+    public String getForceFieldPictures() {
+        return this.forceFieldPictures;
+    }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
+     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
+     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
+     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
+     * appropriate for the content.
+     * 
+     * @param forceFieldPictures
+     *        This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
+     *        or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
+     *        code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
+     *        sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
+     *        depending on what is most appropriate for the content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264ForceFieldPictures
+     */
+
+    public H264Settings withForceFieldPictures(String forceFieldPictures) {
+        setForceFieldPictures(forceFieldPictures);
+        return this;
+    }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
+     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
+     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
+     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
+     * appropriate for the content.
+     * 
+     * @param forceFieldPictures
+     *        This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
+     *        or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
+     *        code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
+     *        sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
+     *        depending on what is most appropriate for the content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264ForceFieldPictures
+     */
+
+    public H264Settings withForceFieldPictures(H264ForceFieldPictures forceFieldPictures) {
+        this.forceFieldPictures = forceFieldPictures.toString();
         return this;
     }
 
@@ -2217,6 +2308,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("FixedAfd: ").append(getFixedAfd()).append(",");
         if (getFlickerAq() != null)
             sb.append("FlickerAq: ").append(getFlickerAq()).append(",");
+        if (getForceFieldPictures() != null)
+            sb.append("ForceFieldPictures: ").append(getForceFieldPictures()).append(",");
         if (getFramerateControl() != null)
             sb.append("FramerateControl: ").append(getFramerateControl()).append(",");
         if (getFramerateDenominator() != null)
@@ -2326,6 +2419,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getFlickerAq() == null ^ this.getFlickerAq() == null)
             return false;
         if (other.getFlickerAq() != null && other.getFlickerAq().equals(this.getFlickerAq()) == false)
+            return false;
+        if (other.getForceFieldPictures() == null ^ this.getForceFieldPictures() == null)
+            return false;
+        if (other.getForceFieldPictures() != null && other.getForceFieldPictures().equals(this.getForceFieldPictures()) == false)
             return false;
         if (other.getFramerateControl() == null ^ this.getFramerateControl() == null)
             return false;
@@ -2457,6 +2554,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEntropyEncoding() == null) ? 0 : getEntropyEncoding().hashCode());
         hashCode = prime * hashCode + ((getFixedAfd() == null) ? 0 : getFixedAfd().hashCode());
         hashCode = prime * hashCode + ((getFlickerAq() == null) ? 0 : getFlickerAq().hashCode());
+        hashCode = prime * hashCode + ((getForceFieldPictures() == null) ? 0 : getForceFieldPictures().hashCode());
         hashCode = prime * hashCode + ((getFramerateControl() == null) ? 0 : getFramerateControl().hashCode());
         hashCode = prime * hashCode + ((getFramerateDenominator() == null) ? 0 : getFramerateDenominator().hashCode());
         hashCode = prime * hashCode + ((getFramerateNumerator() == null) ? 0 : getFramerateNumerator().hashCode());

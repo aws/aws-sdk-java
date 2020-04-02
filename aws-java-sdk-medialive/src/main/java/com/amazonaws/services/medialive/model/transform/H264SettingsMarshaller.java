@@ -47,6 +47,8 @@ public class H264SettingsMarshaller {
             .marshallLocationName("fixedAfd").build();
     private static final MarshallingInfo<String> FLICKERAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("flickerAq").build();
+    private static final MarshallingInfo<String> FORCEFIELDPICTURES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceFieldPictures").build();
     private static final MarshallingInfo<String> FRAMERATECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerateControl").build();
     private static final MarshallingInfo<Integer> FRAMERATEDENOMINATOR_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -130,6 +132,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getEntropyEncoding(), ENTROPYENCODING_BINDING);
             protocolMarshaller.marshall(h264Settings.getFixedAfd(), FIXEDAFD_BINDING);
             protocolMarshaller.marshall(h264Settings.getFlickerAq(), FLICKERAQ_BINDING);
+            protocolMarshaller.marshall(h264Settings.getForceFieldPictures(), FORCEFIELDPICTURES_BINDING);
             protocolMarshaller.marshall(h264Settings.getFramerateControl(), FRAMERATECONTROL_BINDING);
             protocolMarshaller.marshall(h264Settings.getFramerateDenominator(), FRAMERATEDENOMINATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getFramerateNumerator(), FRAMERATENUMERATOR_BINDING);

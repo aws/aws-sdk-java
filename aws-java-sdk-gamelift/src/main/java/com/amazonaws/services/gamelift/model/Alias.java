@@ -76,7 +76,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In a GameLift alias ARN,
+     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift alias ARN,
      * the resource ID matches the alias ID value.
      * </p>
      */
@@ -192,15 +192,15 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In a GameLift alias ARN,
+     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift alias ARN,
      * the resource ID matches the alias ID value.
      * </p>
      * 
      * @param aliasArn
      *        Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In
-     *        a GameLift alias ARN, the resource ID matches the alias ID value.
+     *        assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     *        GameLift alias ARN, the resource ID matches the alias ID value.
      */
 
     public void setAliasArn(String aliasArn) {
@@ -211,13 +211,13 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In a GameLift alias ARN,
+     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift alias ARN,
      * the resource ID matches the alias ID value.
      * </p>
      * 
      * @return Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In
+     *         assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In
      *         a GameLift alias ARN, the resource ID matches the alias ID value.
      */
 
@@ -229,15 +229,15 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In a GameLift alias ARN,
+     * GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift alias ARN,
      * the resource ID matches the alias ID value.
      * </p>
      * 
      * @param aliasArn
      *        Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions.. In
-     *        a GameLift alias ARN, the resource ID matches the alias ID value.
+     *        assigned to a GameLift alias resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     *        GameLift alias ARN, the resource ID matches the alias ID value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

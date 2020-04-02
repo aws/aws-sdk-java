@@ -1672,7 +1672,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a snapshot schedule with the rate of every 12 hours.
+     * Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup
+     * schedule.
      * </p>
      * 
      * @param createSnapshotScheduleRequest
@@ -5890,6 +5891,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * <li>
      * <p>
      * ds2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ra3.4xlarge
      * </p>
      * </li>
      * <li>

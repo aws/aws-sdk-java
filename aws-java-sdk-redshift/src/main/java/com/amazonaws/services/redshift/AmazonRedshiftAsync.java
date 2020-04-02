@@ -819,7 +819,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Creates a snapshot schedule with the rate of every 12 hours.
+     * Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup
+     * schedule.
      * </p>
      * 
      * @param createSnapshotScheduleRequest
@@ -832,7 +833,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
-     * Creates a snapshot schedule with the rate of every 12 hours.
+     * Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup
+     * schedule.
      * </p>
      * 
      * @param createSnapshotScheduleRequest
@@ -3813,6 +3815,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </li>
      * <li>
      * <p>
+     * ra3.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * ra3.16xlarge
      * </p>
      * </li>
@@ -3866,6 +3873,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <li>
      * <p>
      * ds2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ra3.4xlarge
      * </p>
      * </li>
      * <li>

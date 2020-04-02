@@ -36,7 +36,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing Read Replica DB instance.
+     * Must match the identifier of an existing read replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -64,7 +64,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas.
+     * Can't be set to 0 if the DB instance is a source to read replicas.
      * </p>
      * </li>
      * </ul>
@@ -119,7 +119,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing Read Replica DB instance.
+     * Must match the identifier of an existing read replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -135,7 +135,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the identifier of an existing Read Replica DB instance.
+     *        Must match the identifier of an existing read replica DB instance.
      *        </p>
      *        </li>
      *        </ul>
@@ -157,7 +157,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing Read Replica DB instance.
+     * Must match the identifier of an existing read replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -172,7 +172,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         Must match the identifier of an existing Read Replica DB instance.
+     *         Must match the identifier of an existing read replica DB instance.
      *         </p>
      *         </li>
      *         </ul>
@@ -194,7 +194,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing Read Replica DB instance.
+     * Must match the identifier of an existing read replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -210,7 +210,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the identifier of an existing Read Replica DB instance.
+     *        Must match the identifier of an existing read replica DB instance.
      *        </p>
      *        </li>
      *        </ul>
@@ -243,7 +243,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas.
+     * Can't be set to 0 if the DB instance is a source to read replicas.
      * </p>
      * </li>
      * </ul>
@@ -265,7 +265,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be set to 0 if the DB instance is a source to Read Replicas.
+     *        Can't be set to 0 if the DB instance is a source to read replicas.
      *        </p>
      *        </li>
      */
@@ -293,7 +293,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas.
+     * Can't be set to 0 if the DB instance is a source to read replicas.
      * </p>
      * </li>
      * </ul>
@@ -314,7 +314,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be set to 0 if the DB instance is a source to Read Replicas.
+     *         Can't be set to 0 if the DB instance is a source to read replicas.
      *         </p>
      *         </li>
      */
@@ -342,7 +342,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can't be set to 0 if the DB instance is a source to Read Replicas.
+     * Can't be set to 0 if the DB instance is a source to read replicas.
      * </p>
      * </li>
      * </ul>
@@ -364,7 +364,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be set to 0 if the DB instance is a source to Read Replicas.
+     *        Can't be set to 0 if the DB instance is a source to read replicas.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

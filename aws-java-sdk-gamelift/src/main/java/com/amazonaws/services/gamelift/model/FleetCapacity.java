@@ -51,20 +51,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Manage fleet actions:
+ * <a>StartFleetActions</a> or <a>StopFleetActions</a>
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>StartFleetActions</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StopFleetActions</a>
- * </p>
- * </li>
- * </ul>
  * </li>
  * </ul>
  * 

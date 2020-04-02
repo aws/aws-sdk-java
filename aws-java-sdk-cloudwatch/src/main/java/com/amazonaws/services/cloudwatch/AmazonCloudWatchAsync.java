@@ -1239,7 +1239,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Displays the tags associated with a CloudWatch resource. Alarms support tagging.
+     * Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor Insights rules support
+     * tagging.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1252,7 +1253,8 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
-     * Displays the tags associated with a CloudWatch resource. Alarms support tagging.
+     * Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor Insights rules support
+     * tagging.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1900,7 +1902,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     /**
      * <p>
      * Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently, the only CloudWatch
-     * resources that can be tagged are alarms.
+     * resources that can be tagged are alarms and Contributor Insights rules.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
@@ -1916,7 +1918,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * tag.
      * </p>
      * <p>
-     * You can associate as many as 50 tags with a resource.
+     * You can associate as many as 50 tags with a CloudWatch resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1930,7 +1932,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
     /**
      * <p>
      * Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently, the only CloudWatch
-     * resources that can be tagged are alarms.
+     * resources that can be tagged are alarms and Contributor Insights rules.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
@@ -1946,7 +1948,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * tag.
      * </p>
      * <p>
-     * You can associate as many as 50 tags with a resource.
+     * You can associate as many as 50 tags with a CloudWatch resource.
      * </p>
      * 
      * @param tagResourceRequest

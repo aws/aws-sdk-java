@@ -27,9 +27,20 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch resource that you're removing tags from.
+     * </p>
+     * <p>
+     * The ARN format of an alarm is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a Contributor Insights rule is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * </p>
+     * <p>
+     * For more information on ARN format, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String resourceARN;
@@ -42,16 +53,36 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch resource that you're removing tags from.
+     * </p>
+     * <p>
+     * The ARN format of an alarm is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a Contributor Insights rule is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * </p>
+     * <p>
+     * For more information on ARN format, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format, see
-     *        <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">
-     *        Example ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the CloudWatch resource that you're removing tags from.</p>
+     *        <p>
+     *        The ARN format of an alarm is
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     *        </p>
+     *        <p>
+     *        The ARN format of a Contributor Insights rule is
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *        </p>
+     *        <p>
+     *        For more information on ARN format, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     *        > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -60,15 +91,35 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch resource that you're removing tags from.
+     * </p>
+     * <p>
+     * The ARN format of an alarm is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a Contributor Insights rule is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * </p>
+     * <p>
+     * For more information on ARN format, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format,
-     *         see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch"
-     *         >Example ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The ARN of the CloudWatch resource that you're removing tags from.</p>
+     *         <p>
+     *         The ARN format of an alarm is
+     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     *         </p>
+     *         <p>
+     *         The ARN format of a Contributor Insights rule is
+     *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *         </p>
+     *         <p>
+     *         For more information on ARN format, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     *         > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getResourceARN() {
@@ -77,16 +128,36 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">Example
-     * ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     * The ARN of the CloudWatch resource that you're removing tags from.
+     * </p>
+     * <p>
+     * The ARN format of an alarm is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     * </p>
+     * <p>
+     * The ARN format of a Contributor Insights rule is
+     * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     * </p>
+     * <p>
+     * For more information on ARN format, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the CloudWatch resource that you're removing tags from. For more information on ARN format, see
-     *        <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-cloudwatch">
-     *        Example ARNs</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The ARN of the CloudWatch resource that you're removing tags from.</p>
+     *        <p>
+     *        The ARN format of an alarm is
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code>
+     *        </p>
+     *        <p>
+     *        The ARN format of a Contributor Insights rule is
+     *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
+     *        </p>
+     *        <p>
+     *        For more information on ARN format, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
+     *        > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -67,7 +67,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private Boolean multiAZCapable;
     /**
      * <p>
-     * Indicates whether a DB instance can have a Read Replica.
+     * Indicates whether a DB instance can have a read replica.
      * </p>
      */
     private Boolean readReplicaCapable;
@@ -159,6 +159,13 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
@@ -461,11 +468,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a DB instance can have a Read Replica.
+     * Indicates whether a DB instance can have a read replica.
      * </p>
      * 
      * @param readReplicaCapable
-     *        Indicates whether a DB instance can have a Read Replica.
+     *        Indicates whether a DB instance can have a read replica.
      */
 
     public void setReadReplicaCapable(Boolean readReplicaCapable) {
@@ -474,10 +481,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a DB instance can have a Read Replica.
+     * Indicates whether a DB instance can have a read replica.
      * </p>
      * 
-     * @return Indicates whether a DB instance can have a Read Replica.
+     * @return Indicates whether a DB instance can have a read replica.
      */
 
     public Boolean getReadReplicaCapable() {
@@ -486,11 +493,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a DB instance can have a Read Replica.
+     * Indicates whether a DB instance can have a read replica.
      * </p>
      * 
      * @param readReplicaCapable
-     *        Indicates whether a DB instance can have a Read Replica.
+     *        Indicates whether a DB instance can have a read replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,10 +508,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a DB instance can have a Read Replica.
+     * Indicates whether a DB instance can have a read replica.
      * </p>
      * 
-     * @return Indicates whether a DB instance can have a Read Replica.
+     * @return Indicates whether a DB instance can have a read replica.
      */
 
     public Boolean isReadReplicaCapable() {
@@ -1180,8 +1187,20 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * 
-     * @return A list of the supported DB engine modes.
+     * @return A list of the supported DB engine modes.</p> <note>
+     *         <p>
+     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *         <code>provisioned</code> engine mode.
+     *         </p>
      */
 
     public java.util.List<String> getSupportedEngineModes() {
@@ -1195,9 +1214,21 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.
+     *        A list of the supported DB engine modes.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
      */
 
     public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
@@ -1213,6 +1244,13 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
@@ -1220,7 +1258,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.
+     *        A list of the supported DB engine modes.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1238,9 +1281,21 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
+     * <note>
+     * <p>
+     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
+     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
+     * mode.
+     * </p>
+     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.
+     *        A list of the supported DB engine modes.</p> <note>
+     *        <p>
+     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
+     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
+     *        <code>provisioned</code> engine mode.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

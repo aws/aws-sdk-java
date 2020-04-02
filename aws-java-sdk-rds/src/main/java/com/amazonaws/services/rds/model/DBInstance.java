@@ -51,6 +51,11 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies the current state of this database.
      * </p>
+     * <p>
+     * For information about DB instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     private String dBInstanceStatus;
     /**
@@ -184,26 +189,26 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      */
     private String readReplicaSourceDBInstanceIdentifier;
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     * Contains one or more identifiers of the read replicas associated with this DB instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBInstanceIdentifiers;
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
-     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
-     * Read Replicas.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
+     * replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora read replica is shown. This output does not contain information about cross region Aurora
+     * read replicas.
      * </p>
      * <note>
      * <p>
-     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * Currently, each RDS DB instance can have only one Aurora read replica.
      * </p>
      * </note>
      */
@@ -248,7 +253,7 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     * The status of a read replica. If the instance isn't a read replica, this is blank.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceStatusInfo> statusInfos;
@@ -582,9 +587,18 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies the current state of this database.
      * </p>
+     * <p>
+     * For information about DB instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param dBInstanceStatus
-     *        Specifies the current state of this database.
+     *        Specifies the current state of this database.</p>
+     *        <p>
+     *        For information about DB instance statuses, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     *        Status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setDBInstanceStatus(String dBInstanceStatus) {
@@ -595,8 +609,17 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies the current state of this database.
      * </p>
+     * <p>
+     * For information about DB instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
-     * @return Specifies the current state of this database.
+     * @return Specifies the current state of this database.</p>
+     *         <p>
+     *         For information about DB instance statuses, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     *         Status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getDBInstanceStatus() {
@@ -607,9 +630,18 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies the current state of this database.
      * </p>
+     * <p>
+     * For information about DB instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param dBInstanceStatus
-     *        Specifies the current state of this database.
+     *        Specifies the current state of this database.</p>
+     *        <p>
+     *        For information about DB instance statuses, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
+     *        Status</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1591,11 +1623,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      * 
      * @param readReplicaSourceDBInstanceIdentifier
-     *        Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     *        Contains the identifier of the source DB instance if this DB instance is a read replica.
      */
 
     public void setReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
@@ -1604,10 +1636,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      * 
-     * @return Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     * @return Contains the identifier of the source DB instance if this DB instance is a read replica.
      */
 
     public String getReadReplicaSourceDBInstanceIdentifier() {
@@ -1616,11 +1648,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     * Contains the identifier of the source DB instance if this DB instance is a read replica.
      * </p>
      * 
      * @param readReplicaSourceDBInstanceIdentifier
-     *        Contains the identifier of the source DB instance if this DB instance is a Read Replica.
+     *        Contains the identifier of the source DB instance if this DB instance is a read replica.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1631,10 +1663,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     * Contains one or more identifiers of the read replicas associated with this DB instance.
      * </p>
      * 
-     * @return Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     * @return Contains one or more identifiers of the read replicas associated with this DB instance.
      */
 
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
@@ -1646,11 +1678,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     * Contains one or more identifiers of the read replicas associated with this DB instance.
      * </p>
      * 
      * @param readReplicaDBInstanceIdentifiers
-     *        Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     *        Contains one or more identifiers of the read replicas associated with this DB instance.
      */
 
     public void setReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
@@ -1664,7 +1696,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     * Contains one or more identifiers of the read replicas associated with this DB instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1673,7 +1705,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaDBInstanceIdentifiers
-     *        Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     *        Contains one or more identifiers of the read replicas associated with this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1689,11 +1721,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     * Contains one or more identifiers of the read replicas associated with this DB instance.
      * </p>
      * 
      * @param readReplicaDBInstanceIdentifiers
-     *        Contains one or more identifiers of the Read Replicas associated with this DB instance.
+     *        Contains one or more identifiers of the read replicas associated with this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1704,23 +1736,23 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
-     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
-     * Read Replicas.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
+     * replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora read replica is shown. This output does not contain information about cross region Aurora
+     * read replicas.
      * </p>
      * <note>
      * <p>
-     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * Currently, each RDS DB instance can have only one Aurora read replica.
      * </p>
      * </note>
      * 
      * @return Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *         Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
-     *         MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *         cross region Aurora Read Replicas.</p> <note>
+     *         read replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora
+     *         MySQL DB cluster for the Aurora read replica is shown. This output does not contain information about
+     *         cross region Aurora read replicas.</p> <note>
      *         <p>
-     *         Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *         Currently, each RDS DB instance can have only one Aurora read replica.
      *         </p>
      */
 
@@ -1733,24 +1765,24 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
-     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
-     * Read Replicas.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
+     * replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora read replica is shown. This output does not contain information about cross region Aurora
+     * read replicas.
      * </p>
      * <note>
      * <p>
-     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * Currently, each RDS DB instance can have only one Aurora read replica.
      * </p>
      * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
      *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
-     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *        cross region Aurora Read Replicas.</p> <note>
+     *        read replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora read replica is shown. This output does not contain information about
+     *        cross region Aurora read replicas.</p> <note>
      *        <p>
-     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        Currently, each RDS DB instance can have only one Aurora read replica.
      *        </p>
      */
 
@@ -1765,14 +1797,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
-     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
-     * Read Replicas.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
+     * replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora read replica is shown. This output does not contain information about cross region Aurora
+     * read replicas.
      * </p>
      * <note>
      * <p>
-     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * Currently, each RDS DB instance can have only one Aurora read replica.
      * </p>
      * </note>
      * <p>
@@ -1783,11 +1815,11 @@ public class DBInstance implements Serializable, Cloneable {
      * 
      * @param readReplicaDBClusterIdentifiers
      *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
-     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *        cross region Aurora Read Replicas.</p> <note>
+     *        read replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora read replica is shown. This output does not contain information about
+     *        cross region Aurora read replicas.</p> <note>
      *        <p>
-     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        Currently, each RDS DB instance can have only one Aurora read replica.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1804,24 +1836,24 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
-     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
-     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
-     * Read Replicas.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a read
+     * replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora read replica is shown. This output does not contain information about cross region Aurora
+     * read replicas.
      * </p>
      * <note>
      * <p>
-     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * Currently, each RDS DB instance can have only one Aurora read replica.
      * </p>
      * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
      *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
-     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
-     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
-     *        cross region Aurora Read Replicas.</p> <note>
+     *        read replica. For example, when you create an Aurora read replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora read replica is shown. This output does not contain information about
+     *        cross region Aurora read replicas.</p> <note>
      *        <p>
-     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        Currently, each RDS DB instance can have only one Aurora read replica.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2135,10 +2167,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     * The status of a read replica. If the instance isn't a read replica, this is blank.
      * </p>
      * 
-     * @return The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     * @return The status of a read replica. If the instance isn't a read replica, this is blank.
      */
 
     public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
@@ -2150,11 +2182,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     * The status of a read replica. If the instance isn't a read replica, this is blank.
      * </p>
      * 
      * @param statusInfos
-     *        The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     *        The status of a read replica. If the instance isn't a read replica, this is blank.
      */
 
     public void setStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
@@ -2168,7 +2200,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     * The status of a read replica. If the instance isn't a read replica, this is blank.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2177,7 +2209,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param statusInfos
-     *        The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     *        The status of a read replica. If the instance isn't a read replica, this is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2193,11 +2225,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     * The status of a read replica. If the instance isn't a read replica, this is blank.
      * </p>
      * 
      * @param statusInfos
-     *        The status of a Read Replica. If the instance isn't a Read Replica, this is blank.
+     *        The status of a read replica. If the instance isn't a read replica, this is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
