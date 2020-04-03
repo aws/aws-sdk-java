@@ -1,3 +1,12 @@
+# __1.11.759__ __2020-04-03__
+## __AWS RoboMaker__
+  - ### Features
+    - Added support for limiting simulation unit usage, giving more predictable control over simulation cost
+
+## __Amazon Personalize Runtime__
+  - ### Features
+    - Amazon Personalize: Add new response field "score" to each item returned by GetRecommendations and GetPersonalizedRanking (HRNN-based recipes only)
+
 # __1.11.758__ __2020-04-02__
 ## __AWS Elemental MediaLive__
   - ### Features

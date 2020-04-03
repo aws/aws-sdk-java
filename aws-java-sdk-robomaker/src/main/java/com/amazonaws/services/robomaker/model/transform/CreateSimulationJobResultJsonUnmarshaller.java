@@ -119,6 +119,10 @@ public class CreateSimulationJobResultJsonUnmarshaller implements Unmarshaller<C
                     context.nextToken();
                     createSimulationJobResult.setVpcConfig(VPCConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("compute", targetDepth)) {
+                    context.nextToken();
+                    createSimulationJobResult.setCompute(ComputeResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

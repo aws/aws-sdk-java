@@ -37,6 +37,13 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String itemId;
+    /**
+     * <p>
+     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
+     * logic, see <a>how-scores-work</a>.
+     * </p>
+     */
+    private Double score;
 
     /**
      * <p>
@@ -79,6 +86,52 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
+     * logic, see <a>how-scores-work</a>.
+     * </p>
+     * 
+     * @param score
+     *        A numeric representation of the model's certainty in the item's suitability. For more information on
+     *        scoring logic, see <a>how-scores-work</a>.
+     */
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    /**
+     * <p>
+     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
+     * logic, see <a>how-scores-work</a>.
+     * </p>
+     * 
+     * @return A numeric representation of the model's certainty in the item's suitability. For more information on
+     *         scoring logic, see <a>how-scores-work</a>.
+     */
+
+    public Double getScore() {
+        return this.score;
+    }
+
+    /**
+     * <p>
+     * A numeric representation of the model's certainty in the item's suitability. For more information on scoring
+     * logic, see <a>how-scores-work</a>.
+     * </p>
+     * 
+     * @param score
+     *        A numeric representation of the model's certainty in the item's suitability. For more information on
+     *        scoring logic, see <a>how-scores-work</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PredictedItem withScore(Double score) {
+        setScore(score);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -91,7 +144,9 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItemId() != null)
-            sb.append("ItemId: ").append(getItemId());
+            sb.append("ItemId: ").append(getItemId()).append(",");
+        if (getScore() != null)
+            sb.append("Score: ").append(getScore());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +165,10 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getItemId() != null && other.getItemId().equals(this.getItemId()) == false)
             return false;
+        if (other.getScore() == null ^ this.getScore() == null)
+            return false;
+        if (other.getScore() != null && other.getScore().equals(this.getScore()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +178,7 @@ public class PredictedItem implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getItemId() == null) ? 0 : getItemId().hashCode());
+        hashCode = prime * hashCode + ((getScore() == null) ? 0 : getScore().hashCode());
         return hashCode;
     }
 

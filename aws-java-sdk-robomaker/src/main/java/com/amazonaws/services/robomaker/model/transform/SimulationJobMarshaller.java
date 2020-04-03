@@ -69,6 +69,8 @@ public class SimulationJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKINTERFACE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterface").build();
+    private static final MarshallingInfo<StructuredPojo> COMPUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("compute").build();
 
     private static final SimulationJobMarshaller instance = new SimulationJobMarshaller();
 
@@ -106,6 +108,7 @@ public class SimulationJobMarshaller {
             protocolMarshaller.marshall(simulationJob.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(simulationJob.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(simulationJob.getNetworkInterface(), NETWORKINTERFACE_BINDING);
+            protocolMarshaller.marshall(simulationJob.getCompute(), COMPUTE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

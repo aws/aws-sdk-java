@@ -54,6 +54,8 @@ public class CreateSimulationJobRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> COMPUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("compute").build();
 
     private static final CreateSimulationJobRequestMarshaller instance = new CreateSimulationJobRequestMarshaller();
 
@@ -82,6 +84,7 @@ public class CreateSimulationJobRequestMarshaller {
             protocolMarshaller.marshall(createSimulationJobRequest.getDataSources(), DATASOURCES_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createSimulationJobRequest.getCompute(), COMPUTE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -98,6 +98,12 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
     private VPCConfig vpcConfig;
     /**
      * <p>
+     * Compute information for the simulation job
+     * </p>
+     */
+    private Compute compute;
+    /**
+     * <p>
      * A map that contains tag keys and tag values that are attached to the simulation job request.
      * </p>
      */
@@ -738,6 +744,46 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * Compute information for the simulation job
+     * </p>
+     * 
+     * @param compute
+     *        Compute information for the simulation job
+     */
+
+    public void setCompute(Compute compute) {
+        this.compute = compute;
+    }
+
+    /**
+     * <p>
+     * Compute information for the simulation job
+     * </p>
+     * 
+     * @return Compute information for the simulation job
+     */
+
+    public Compute getCompute() {
+        return this.compute;
+    }
+
+    /**
+     * <p>
+     * Compute information for the simulation job
+     * </p>
+     * 
+     * @param compute
+     *        Compute information for the simulation job
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationJobRequest withCompute(Compute compute) {
+        setCompute(compute);
+        return this;
+    }
+
+    /**
+     * <p>
      * A map that contains tag keys and tag values that are attached to the simulation job request.
      * </p>
      * 
@@ -836,6 +882,8 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
             sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getCompute() != null)
+            sb.append("Compute: ").append(getCompute()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -892,6 +940,10 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getCompute() == null ^ this.getCompute() == null)
+            return false;
+        if (other.getCompute() != null && other.getCompute().equals(this.getCompute()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -914,6 +966,7 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getSimulationApplications() == null) ? 0 : getSimulationApplications().hashCode());
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getCompute() == null) ? 0 : getCompute().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

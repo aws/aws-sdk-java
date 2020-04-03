@@ -59,7 +59,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      * information that might be relevant when getting a user's recommendations, such as the user's current location or
-     * device type. For more information, see Contextual Metadata.
+     * device type.
      * </p>
      */
     private java.util.Map<String, String> context;
@@ -258,12 +258,12 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      * information that might be relevant when getting a user's recommendations, such as the user's current location or
-     * device type. For more information, see Contextual Metadata.
+     * device type.
      * </p>
      * 
      * @return The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      *         information that might be relevant when getting a user's recommendations, such as the user's current
-     *         location or device type. For more information, see Contextual Metadata.
+     *         location or device type.
      */
 
     public java.util.Map<String, String> getContext() {
@@ -274,13 +274,13 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      * information that might be relevant when getting a user's recommendations, such as the user's current location or
-     * device type. For more information, see Contextual Metadata.
+     * device type.
      * </p>
      * 
      * @param context
      *        The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      *        information that might be relevant when getting a user's recommendations, such as the user's current
-     *        location or device type. For more information, see Contextual Metadata.
+     *        location or device type.
      */
 
     public void setContext(java.util.Map<String, String> context) {
@@ -291,13 +291,13 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      * information that might be relevant when getting a user's recommendations, such as the user's current location or
-     * device type. For more information, see Contextual Metadata.
+     * device type.
      * </p>
      * 
      * @param context
      *        The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
      *        information that might be relevant when getting a user's recommendations, such as the user's current
-     *        location or device type. For more information, see Contextual Metadata.
+     *        location or device type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -116,6 +116,12 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private VPCConfig vpcConfig;
+    /**
+     * <p>
+     * Compute information for the simulation job.
+     * </p>
+     */
+    private Compute compute;
 
     /**
      * <p>
@@ -873,6 +879,46 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Compute information for the simulation job.
+     * </p>
+     * 
+     * @param compute
+     *        Compute information for the simulation job.
+     */
+
+    public void setCompute(Compute compute) {
+        this.compute = compute;
+    }
+
+    /**
+     * <p>
+     * Compute information for the simulation job.
+     * </p>
+     * 
+     * @return Compute information for the simulation job.
+     */
+
+    public Compute getCompute() {
+        return this.compute;
+    }
+
+    /**
+     * <p>
+     * Compute information for the simulation job.
+     * </p>
+     * 
+     * @param compute
+     *        Compute information for the simulation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobRequest withCompute(Compute compute) {
+        setCompute(compute);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -905,7 +951,9 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getCompute() != null)
+            sb.append("Compute: ").append(getCompute());
         sb.append("}");
         return sb.toString();
     }
@@ -964,6 +1012,10 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getCompute() == null ^ this.getCompute() == null)
+            return false;
+        if (other.getCompute() != null && other.getCompute().equals(this.getCompute()) == false)
+            return false;
         return true;
     }
 
@@ -983,6 +1035,7 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getCompute() == null) ? 0 : getCompute().hashCode());
         return hashCode;
     }
 

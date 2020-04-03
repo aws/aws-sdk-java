@@ -163,6 +163,12 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkInterface networkInterface;
+    /**
+     * <p>
+     * Compute information for the simulation job
+     * </p>
+     */
+    private ComputeResponse compute;
 
     /**
      * <p>
@@ -1254,6 +1260,46 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Compute information for the simulation job
+     * </p>
+     * 
+     * @param compute
+     *        Compute information for the simulation job
+     */
+
+    public void setCompute(ComputeResponse compute) {
+        this.compute = compute;
+    }
+
+    /**
+     * <p>
+     * Compute information for the simulation job
+     * </p>
+     * 
+     * @return Compute information for the simulation job
+     */
+
+    public ComputeResponse getCompute() {
+        return this.compute;
+    }
+
+    /**
+     * <p>
+     * Compute information for the simulation job
+     * </p>
+     * 
+     * @param compute
+     *        Compute information for the simulation job
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationJob withCompute(ComputeResponse compute) {
+        setCompute(compute);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1304,7 +1350,9 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getNetworkInterface() != null)
-            sb.append("NetworkInterface: ").append(getNetworkInterface());
+            sb.append("NetworkInterface: ").append(getNetworkInterface()).append(",");
+        if (getCompute() != null)
+            sb.append("Compute: ").append(getCompute());
         sb.append("}");
         return sb.toString();
     }
@@ -1399,6 +1447,10 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkInterface() != null && other.getNetworkInterface().equals(this.getNetworkInterface()) == false)
             return false;
+        if (other.getCompute() == null ^ this.getCompute() == null)
+            return false;
+        if (other.getCompute() != null && other.getCompute().equals(this.getCompute()) == false)
+            return false;
         return true;
     }
 
@@ -1427,6 +1479,7 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterface() == null) ? 0 : getNetworkInterface().hashCode());
+        hashCode = prime * hashCode + ((getCompute() == null) ? 0 : getCompute().hashCode());
         return hashCode;
     }
 

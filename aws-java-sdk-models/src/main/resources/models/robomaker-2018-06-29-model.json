@@ -783,6 +783,26 @@
       "min":1,
       "pattern":"[a-zA-Z0-9_.\\-]*"
     },
+    "Compute":{
+      "type":"structure",
+      "members":{
+        "simulationUnitLimit":{
+          "shape":"SimulationUnit",
+          "documentation":"<p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximim value provided. </p>"
+        }
+      },
+      "documentation":"<p>Compute information for the simulation job.</p>"
+    },
+    "ComputeResponse":{
+      "type":"structure",
+      "members":{
+        "simulationUnitLimit":{
+          "shape":"SimulationUnit",
+          "documentation":"<p>The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume up to the maximim value provided. </p>"
+        }
+      },
+      "documentation":"<p>Compute information for the simulation job</p>"
+    },
     "ConcurrentDeploymentException":{
       "type":"structure",
       "members":{
@@ -1250,6 +1270,10 @@
         "vpcConfig":{
           "shape":"VPCConfig",
           "documentation":"<p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>"
+        },
+        "compute":{
+          "shape":"Compute",
+          "documentation":"<p>Compute information for the simulation job.</p>"
         }
       }
     },
@@ -1328,6 +1352,10 @@
         "vpcConfig":{
           "shape":"VPCConfigResponse",
           "documentation":"<p>Information about the vpc configuration.</p>"
+        },
+        "compute":{
+          "shape":"ComputeResponse",
+          "documentation":"<p>Compute information for the simulation job.</p>"
         }
       }
     },
@@ -2075,6 +2103,10 @@
         "networkInterface":{
           "shape":"NetworkInterface",
           "documentation":"<p>The network interface information for the simulation job.</p>"
+        },
+        "compute":{
+          "shape":"ComputeResponse",
+          "documentation":"<p>Compute information for the simulation job.</p>"
         }
       }
     },
@@ -3191,6 +3223,10 @@
         "networkInterface":{
           "shape":"NetworkInterface",
           "documentation":"<p>Information about a network interface.</p>"
+        },
+        "compute":{
+          "shape":"ComputeResponse",
+          "documentation":"<p>Compute information for the simulation job</p>"
         }
       },
       "documentation":"<p>Information about a simulation job.</p>"
@@ -3318,6 +3354,10 @@
           "documentation":"<p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note> <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p> </note>"
         },
         "vpcConfig":{"shape":"VPCConfig"},
+        "compute":{
+          "shape":"Compute",
+          "documentation":"<p>Compute information for the simulation job</p>"
+        },
         "tags":{
           "shape":"TagMap",
           "documentation":"<p>A map that contains tag keys and tag values that are attached to the simulation job request.</p>"
@@ -3412,6 +3452,11 @@
       "pattern":"7|9|Kinetic|Melodic|Dashing"
     },
     "SimulationTimeMillis":{"type":"long"},
+    "SimulationUnit":{
+      "type":"integer",
+      "max":15,
+      "min":1
+    },
     "Source":{
       "type":"structure",
       "members":{

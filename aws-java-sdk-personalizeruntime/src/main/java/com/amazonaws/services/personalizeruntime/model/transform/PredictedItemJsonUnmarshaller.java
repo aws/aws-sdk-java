@@ -52,6 +52,10 @@ public class PredictedItemJsonUnmarshaller implements Unmarshaller<PredictedItem
                     context.nextToken();
                     predictedItem.setItemId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("score", targetDepth)) {
+                    context.nextToken();
+                    predictedItem.setScore(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

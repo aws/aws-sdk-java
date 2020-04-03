@@ -92,6 +92,10 @@ public class SimulationJobRequestJsonUnmarshaller implements Unmarshaller<Simula
                     context.nextToken();
                     simulationJobRequest.setVpcConfig(VPCConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("compute", targetDepth)) {
+                    context.nextToken();
+                    simulationJobRequest.setCompute(ComputeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     simulationJobRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

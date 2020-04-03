@@ -131,6 +131,10 @@ public class DescribeSimulationJobResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeSimulationJobResult.setNetworkInterface(NetworkInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("compute", targetDepth)) {
+                    context.nextToken();
+                    describeSimulationJobResult.setCompute(ComputeResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

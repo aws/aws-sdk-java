@@ -88,7 +88,7 @@
         },
         "context":{
           "shape":"Context",
-          "documentation":"<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. For more information, see Contextual Metadata.</p>"
+          "documentation":"<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>"
         }
       }
     },
@@ -123,7 +123,7 @@
         },
         "context":{
           "shape":"Context",
-          "documentation":"<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type. For more information, see Contextual Metadata.</p>"
+          "documentation":"<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>"
         }
       }
     },
@@ -167,6 +167,10 @@
         "itemId":{
           "shape":"ItemID",
           "documentation":"<p>The recommended item ID.</p>"
+        },
+        "score":{
+          "shape":"Score",
+          "documentation":"<p>A numeric representation of the model's certainty in the item's suitability. For more information on scoring logic, see <a>how-scores-work</a>.</p>"
         }
       },
       "documentation":"<p>An object that identifies an item.</p> <p>The and APIs return a list of <code>PredictedItem</code>s.</p>"
@@ -180,6 +184,7 @@
       "error":{"httpStatusCode":404},
       "exception":true
     },
+    "Score":{"type":"double"},
     "UserID":{
       "type":"string",
       "max":256
