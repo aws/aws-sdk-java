@@ -30,23 +30,19 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application.
-     * </p>
-     * <p>
-     * Constraint: This name must be unique within your account. If the specified name already exists, the action
-     * returns an <code>InvalidParameterValue</code> error.
+     * The name of the application. Must be unique within your account.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * Describes the application.
+     * Your description of the application.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * Specifies an application resource lifecycle configuration to prevent your application from accumulating too many
      * versions.
      * </p>
      */
@@ -74,10 +70,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application.</p>
-     *        <p>
-     *        Constraint: This name must be unique within your account. If the specified name already exists, the action
-     *        returns an <code>InvalidParameterValue</code> error.
+     *        The name of the application. Must be unique within your account.
      */
     public CreateApplicationRequest(String applicationName) {
         setApplicationName(applicationName);
@@ -85,18 +78,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application.
-     * </p>
-     * <p>
-     * Constraint: This name must be unique within your account. If the specified name already exists, the action
-     * returns an <code>InvalidParameterValue</code> error.
+     * The name of the application. Must be unique within your account.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application.</p>
-     *        <p>
-     *        Constraint: This name must be unique within your account. If the specified name already exists, the action
-     *        returns an <code>InvalidParameterValue</code> error.
+     *        The name of the application. Must be unique within your account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -105,17 +91,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application.
-     * </p>
-     * <p>
-     * Constraint: This name must be unique within your account. If the specified name already exists, the action
-     * returns an <code>InvalidParameterValue</code> error.
+     * The name of the application. Must be unique within your account.
      * </p>
      * 
-     * @return The name of the application.</p>
-     *         <p>
-     *         Constraint: This name must be unique within your account. If the specified name already exists, the
-     *         action returns an <code>InvalidParameterValue</code> error.
+     * @return The name of the application. Must be unique within your account.
      */
 
     public String getApplicationName() {
@@ -124,18 +103,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application.
-     * </p>
-     * <p>
-     * Constraint: This name must be unique within your account. If the specified name already exists, the action
-     * returns an <code>InvalidParameterValue</code> error.
+     * The name of the application. Must be unique within your account.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application.</p>
-     *        <p>
-     *        Constraint: This name must be unique within your account. If the specified name already exists, the action
-     *        returns an <code>InvalidParameterValue</code> error.
+     *        The name of the application. Must be unique within your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +118,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Describes the application.
+     * Your description of the application.
      * </p>
      * 
      * @param description
-     *        Describes the application.
+     *        Your description of the application.
      */
 
     public void setDescription(String description) {
@@ -159,10 +131,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Describes the application.
+     * Your description of the application.
      * </p>
      * 
-     * @return Describes the application.
+     * @return Your description of the application.
      */
 
     public String getDescription() {
@@ -171,11 +143,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Describes the application.
+     * Your description of the application.
      * </p>
      * 
      * @param description
-     *        Describes the application.
+     *        Your description of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,13 +158,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * Specifies an application resource lifecycle configuration to prevent your application from accumulating too many
      * versions.
      * </p>
      * 
      * @param resourceLifecycleConfig
-     *        Specify an application resource lifecycle configuration to prevent your application from accumulating too
-     *        many versions.
+     *        Specifies an application resource lifecycle configuration to prevent your application from accumulating
+     *        too many versions.
      */
 
     public void setResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
@@ -201,12 +173,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * Specifies an application resource lifecycle configuration to prevent your application from accumulating too many
      * versions.
      * </p>
      * 
-     * @return Specify an application resource lifecycle configuration to prevent your application from accumulating too
-     *         many versions.
+     * @return Specifies an application resource lifecycle configuration to prevent your application from accumulating
+     *         too many versions.
      */
 
     public ApplicationResourceLifecycleConfig getResourceLifecycleConfig() {
@@ -215,13 +187,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specify an application resource lifecycle configuration to prevent your application from accumulating too many
+     * Specifies an application resource lifecycle configuration to prevent your application from accumulating too many
      * versions.
      * </p>
      * 
      * @param resourceLifecycleConfig
-     *        Specify an application resource lifecycle configuration to prevent your application from accumulating too
-     *        many versions.
+     *        Specifies an application resource lifecycle configuration to prevent your application from accumulating
+     *        too many versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

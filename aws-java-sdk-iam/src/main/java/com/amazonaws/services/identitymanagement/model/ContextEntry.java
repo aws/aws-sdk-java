@@ -22,8 +22,7 @@ import javax.annotation.Generated;
  * evaluating the <code>Condition</code> elements of the input policies.
  * </p>
  * <p>
- * This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and
- * <code> <a>SimulatePrincipalPolicy</a> </code>.
+ * This data type is used as an input parameter to <a>SimulateCustomPolicy</a> and <a>SimulatePrincipalPolicy</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ContextEntry" target="_top">AWS API

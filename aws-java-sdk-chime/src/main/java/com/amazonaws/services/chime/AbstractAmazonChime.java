@@ -109,6 +109,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public CreateProxySessionResult createProxySession(CreateProxySessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRoomResult createRoom(CreateRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public DeleteProxySessionResult deleteProxySession(DeleteProxySessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRoomResult deleteRoom(DeleteRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -180,6 +190,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public DeleteVoiceConnectorOriginationResult deleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVoiceConnectorProxyResult deleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -271,6 +286,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetProxySessionResult getProxySession(GetProxySessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRoomResult getRoom(GetRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -302,6 +322,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public GetVoiceConnectorOriginationResult getVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVoiceConnectorProxyResult getVoiceConnectorProxy(GetVoiceConnectorProxyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -356,6 +381,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public ListProxySessionsResult listProxySessions(ListProxySessionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRoomMembershipsResult listRoomMemberships(ListRoomMembershipsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -402,6 +432,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public PutVoiceConnectorOriginationResult putVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutVoiceConnectorProxyResult putVoiceConnectorProxy(PutVoiceConnectorProxyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -467,6 +502,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public UpdatePhoneNumberSettingsResult updatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProxySessionResult updateProxySession(UpdateProxySessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -65,7 +65,8 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String environmentName;
     /**
      * <p>
-     * The ARN of the version of the custom platform.
+     * The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this custom platform version.
      * </p>
      */
     private String platformArn;
@@ -342,11 +343,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the version of the custom platform.
+     * The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this custom platform version.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the version of the custom platform.
+     *        The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned
+     *        descriptions to those associated with this custom platform version.
      */
 
     public void setPlatformArn(String platformArn) {
@@ -355,10 +358,12 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the version of the custom platform.
+     * The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this custom platform version.
      * </p>
      * 
-     * @return The ARN of the version of the custom platform.
+     * @return The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned
+     *         descriptions to those associated with this custom platform version.
      */
 
     public String getPlatformArn() {
@@ -367,11 +372,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the version of the custom platform.
+     * The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this custom platform version.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the version of the custom platform.
+     *        The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned
+     *        descriptions to those associated with this custom platform version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

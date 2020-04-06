@@ -17,13 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Specify criteria to restrict the results when listing custom platforms.
+ * Describes criteria to restrict the results when listing platform versions.
  * </p>
  * <p>
- * The filter is evaluated as the expression:
- * </p>
- * <p>
- * <code>Type</code> <code>Operator</code> <code>Values[i]</code>
+ * The filter is evaluated as follows: <code>Type Operator Values[1]</code>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/PlatformFilter" target="_top">AWS
@@ -34,11 +31,13 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The custom platform attribute to which the filter values are applied.
+     * The platform version attribute to which the filter values are applied.
      * </p>
      * <p>
-     * Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     * <code>PlatformOwner</code>
+     * Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     * <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     * <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     * <code>OperatingSystemName</code>
      * </p>
      */
     private String type;
@@ -47,33 +46,64 @@ public class PlatformFilter implements Serializable, Cloneable {
      * The operator to apply to the <code>Type</code> with each of the <code>Values</code>.
      * </p>
      * <p>
-     * Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
-     * <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code> (greater than
-     * or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     * Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> |
+     * <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
      * </p>
      */
     private String operator;
     /**
      * <p>
-     * The list of values applied to the custom platform attribute.
+     * The list of values applied to the filtering platform version attribute. Only one value is supported for all
+     * current operators.
      * </p>
+     * <p>
+     * The following list shows valid filter values for some filter attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     * <code>Deleting</code> | <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformLifecycleState</code>: <code>recommended</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     * <code>WorkerDaemon/SQSD</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * The custom platform attribute to which the filter values are applied.
+     * The platform version attribute to which the filter values are applied.
      * </p>
      * <p>
-     * Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     * <code>PlatformOwner</code>
+     * Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     * <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     * <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     * <code>OperatingSystemName</code>
      * </p>
      * 
      * @param type
-     *        The custom platform attribute to which the filter values are applied.</p>
+     *        The platform version attribute to which the filter values are applied.</p>
      *        <p>
-     *        Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     *        <code>PlatformOwner</code>
+     *        Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     *        <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     *        <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     *        <code>OperatingSystemName</code>
      */
 
     public void setType(String type) {
@@ -82,17 +112,21 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The custom platform attribute to which the filter values are applied.
+     * The platform version attribute to which the filter values are applied.
      * </p>
      * <p>
-     * Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     * <code>PlatformOwner</code>
+     * Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     * <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     * <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     * <code>OperatingSystemName</code>
      * </p>
      * 
-     * @return The custom platform attribute to which the filter values are applied.</p>
+     * @return The platform version attribute to which the filter values are applied.</p>
      *         <p>
-     *         Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     *         <code>PlatformOwner</code>
+     *         Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     *         <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     *         <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     *         <code>OperatingSystemName</code>
      */
 
     public String getType() {
@@ -101,18 +135,22 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The custom platform attribute to which the filter values are applied.
+     * The platform version attribute to which the filter values are applied.
      * </p>
      * <p>
-     * Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     * <code>PlatformOwner</code>
+     * Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     * <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     * <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     * <code>OperatingSystemName</code>
      * </p>
      * 
      * @param type
-     *        The custom platform attribute to which the filter values are applied.</p>
+     *        The platform version attribute to which the filter values are applied.</p>
      *        <p>
-     *        Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
-     *        <code>PlatformOwner</code>
+     *        Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> |
+     *        <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
+     *        <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> |
+     *        <code>OperatingSystemName</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,17 +164,16 @@ public class PlatformFilter implements Serializable, Cloneable {
      * The operator to apply to the <code>Type</code> with each of the <code>Values</code>.
      * </p>
      * <p>
-     * Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
-     * <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code> (greater than
-     * or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     * Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> |
+     * <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
      * </p>
      * 
      * @param operator
      *        The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
      *        <p>
-     *        Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
-     *        <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code>
-     *        (greater than or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     *        Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> |
+     *        <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> |
+     *        <code>ends_with</code>
      */
 
     public void setOperator(String operator) {
@@ -148,16 +185,15 @@ public class PlatformFilter implements Serializable, Cloneable {
      * The operator to apply to the <code>Type</code> with each of the <code>Values</code>.
      * </p>
      * <p>
-     * Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
-     * <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code> (greater than
-     * or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     * Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> |
+     * <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
      * </p>
      * 
      * @return The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
      *         <p>
-     *         Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than)
-     *         | <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code>
-     *         (greater than or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     *         Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> |
+     *         <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> |
+     *         <code>ends_with</code>
      */
 
     public String getOperator() {
@@ -169,17 +205,16 @@ public class PlatformFilter implements Serializable, Cloneable {
      * The operator to apply to the <code>Type</code> with each of the <code>Values</code>.
      * </p>
      * <p>
-     * Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
-     * <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code> (greater than
-     * or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     * Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> |
+     * <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
      * </p>
      * 
      * @param operator
      *        The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
      *        <p>
-     *        Valid Values: <code>=</code> (equal to) | <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
-     *        <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) | <code>&gt;=</code>
-     *        (greater than or equal to) | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
+     *        Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> |
+     *        <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> |
+     *        <code>ends_with</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,10 +225,65 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of values applied to the custom platform attribute.
+     * The list of values applied to the filtering platform version attribute. Only one value is supported for all
+     * current operators.
      * </p>
+     * <p>
+     * The following list shows valid filter values for some filter attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     * <code>Deleting</code> | <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformLifecycleState</code>: <code>recommended</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     * <code>WorkerDaemon/SQSD</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The list of values applied to the custom platform attribute.
+     * @return The list of values applied to the filtering platform version attribute. Only one value is supported for
+     *         all current operators.</p>
+     *         <p>
+     *         The following list shows valid filter values for some filter attributes.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     *         <code>Deleting</code> | <code>Deleted</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PlatformLifecycleState</code>: <code>recommended</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     *         <code>WorkerDaemon/SQSD</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -205,11 +295,66 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of values applied to the custom platform attribute.
+     * The list of values applied to the filtering platform version attribute. Only one value is supported for all
+     * current operators.
      * </p>
+     * <p>
+     * The following list shows valid filter values for some filter attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     * <code>Deleting</code> | <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformLifecycleState</code>: <code>recommended</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     * <code>WorkerDaemon/SQSD</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        The list of values applied to the custom platform attribute.
+     *        The list of values applied to the filtering platform version attribute. Only one value is supported for
+     *        all current operators.</p>
+     *        <p>
+     *        The following list shows valid filter values for some filter attributes.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     *        <code>Deleting</code> | <code>Deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformLifecycleState</code>: <code>recommended</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     *        <code>WorkerDaemon/SQSD</code>
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -223,8 +368,36 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of values applied to the custom platform attribute.
+     * The list of values applied to the filtering platform version attribute. Only one value is supported for all
+     * current operators.
      * </p>
+     * <p>
+     * The following list shows valid filter values for some filter attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     * <code>Deleting</code> | <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformLifecycleState</code>: <code>recommended</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     * <code>WorkerDaemon/SQSD</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -232,7 +405,34 @@ public class PlatformFilter implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        The list of values applied to the custom platform attribute.
+     *        The list of values applied to the filtering platform version attribute. Only one value is supported for
+     *        all current operators.</p>
+     *        <p>
+     *        The following list shows valid filter values for some filter attributes.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     *        <code>Deleting</code> | <code>Deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformLifecycleState</code>: <code>recommended</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     *        <code>WorkerDaemon/SQSD</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +448,66 @@ public class PlatformFilter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of values applied to the custom platform attribute.
+     * The list of values applied to the filtering platform version attribute. Only one value is supported for all
+     * current operators.
      * </p>
+     * <p>
+     * The following list shows valid filter values for some filter attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     * <code>Deleting</code> | <code>Deleted</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformLifecycleState</code>: <code>recommended</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     * <code>WorkerDaemon/SQSD</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        The list of values applied to the custom platform attribute.
+     *        The list of values applied to the filtering platform version attribute. Only one value is supported for
+     *        all current operators.</p>
+     *        <p>
+     *        The following list shows valid filter values for some filter attributes.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> |
+     *        <code>Deleting</code> | <code>Deleted</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformLifecycleState</code>: <code>recommended</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
+     *        <code>WorkerDaemon/SQSD</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

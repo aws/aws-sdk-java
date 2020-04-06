@@ -218,6 +218,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public ListPlatformBranchesResult listPlatformBranches(ListPlatformBranchesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPlatformVersionsResult listPlatformVersions(ListPlatformVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -34,9 +34,9 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If there are
-     * more filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code>
-     * parameter in the request set to the value of the <code>NextToken</code> field in the response.
+     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
+     * the request set to the value of the <code>NextToken</code> field in the response.
      * </p>
      */
     private java.util.List<VocabularyFilterInfo> vocabularyFilters;
@@ -101,13 +101,13 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If there are
-     * more filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code>
-     * parameter in the request set to the value of the <code>NextToken</code> field in the response.
+     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
+     * the request set to the value of the <code>NextToken</code> field in the response.
      * </p>
      * 
-     * @return The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If
-     *         there are more filters, call the <code>ListVocabularyFilters</code> operation again with the
+     * @return The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
+     *         are more filters, call the <code>ListVocabularyFilters</code> operation again with the
      *         <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
      *         the response.
      */
@@ -118,14 +118,14 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If there are
-     * more filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code>
-     * parameter in the request set to the value of the <code>NextToken</code> field in the response.
+     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
+     * the request set to the value of the <code>NextToken</code> field in the response.
      * </p>
      * 
      * @param vocabularyFilters
-     *        The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If
-     *        there are more filters, call the <code>ListVocabularyFilters</code> operation again with the
+     *        The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
+     *        are more filters, call the <code>ListVocabularyFilters</code> operation again with the
      *        <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
      *        the response.
      */
@@ -141,9 +141,9 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If there are
-     * more filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code>
-     * parameter in the request set to the value of the <code>NextToken</code> field in the response.
+     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
+     * the request set to the value of the <code>NextToken</code> field in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,8 +152,8 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param vocabularyFilters
-     *        The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If
-     *        there are more filters, call the <code>ListVocabularyFilters</code> operation again with the
+     *        The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
+     *        are more filters, call the <code>ListVocabularyFilters</code> operation again with the
      *        <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
      *        the response.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -171,14 +171,14 @@ public class ListVocabularyFiltersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If there are
-     * more filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code>
-     * parameter in the request set to the value of the <code>NextToken</code> field in the response.
+     * The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+     * filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter in
+     * the request set to the value of the <code>NextToken</code> field in the response.
      * </p>
      * 
      * @param vocabularyFilters
-     *        The list of vocabulary filters. It will contain at most <code>MaxResults</code> number of filters. If
-     *        there are more filters, call the <code>ListVocabularyFilters</code> operation again with the
+     *        The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there
+     *        are more filters, call the <code>ListVocabularyFilters</code> operation again with the
      *        <code>NextToken</code> parameter in the request set to the value of the <code>NextToken</code> field in
      *        the response.
      * @return Returns a reference to this object so that method calls can be chained together.

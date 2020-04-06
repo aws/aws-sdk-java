@@ -50,8 +50,8 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this
-     * number, multiple speakers will be identified as a single speaker. If you specify the
-     * <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
+     * number, multiple speakers are identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
+     * field, you must set the <code>ShowSpeakerLabels</code> field to true.
      * </p>
      */
     private Integer maxSpeakerLabels;
@@ -249,13 +249,13 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this
-     * number, multiple speakers will be identified as a single speaker. If you specify the
-     * <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
+     * number, multiple speakers are identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
+     * field, you must set the <code>ShowSpeakerLabels</code> field to true.
      * </p>
      * 
      * @param maxSpeakerLabels
      *        The maximum number of speakers to identify in the input audio. If there are more speakers in the audio
-     *        than this number, multiple speakers will be identified as a single speaker. If you specify the
+     *        than this number, multiple speakers are identified as a single speaker. If you specify the
      *        <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
      */
 
@@ -266,12 +266,12 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this
-     * number, multiple speakers will be identified as a single speaker. If you specify the
-     * <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
+     * number, multiple speakers are identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
+     * field, you must set the <code>ShowSpeakerLabels</code> field to true.
      * </p>
      * 
      * @return The maximum number of speakers to identify in the input audio. If there are more speakers in the audio
-     *         than this number, multiple speakers will be identified as a single speaker. If you specify the
+     *         than this number, multiple speakers are identified as a single speaker. If you specify the
      *         <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
      */
 
@@ -282,13 +282,13 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of speakers to identify in the input audio. If there are more speakers in the audio than this
-     * number, multiple speakers will be identified as a single speaker. If you specify the
-     * <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
+     * number, multiple speakers are identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
+     * field, you must set the <code>ShowSpeakerLabels</code> field to true.
      * </p>
      * 
      * @param maxSpeakerLabels
      *        The maximum number of speakers to identify in the input audio. If there are more speakers in the audio
-     *        than this number, multiple speakers will be identified as a single speaker. If you specify the
+     *        than this number, multiple speakers are identified as a single speaker. If you specify the
      *        <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

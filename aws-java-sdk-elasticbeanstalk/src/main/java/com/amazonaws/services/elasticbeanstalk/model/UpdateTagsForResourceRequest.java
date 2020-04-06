@@ -30,7 +30,7 @@ public class UpdateTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the resouce to be updated.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      */
     private String resourceArn;
@@ -58,13 +58,13 @@ public class UpdateTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the resouce to be updated.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the resouce to be updated.</p>
      *        <p>
-     *        Must be the ARN of an Elastic Beanstalk environment.
+     *        Must be the ARN of an Elastic Beanstalk resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -76,12 +76,12 @@ public class UpdateTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the resouce to be updated.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resouce to be updated.</p>
      *         <p>
-     *         Must be the ARN of an Elastic Beanstalk environment.
+     *         Must be the ARN of an Elastic Beanstalk resource.
      */
 
     public String getResourceArn() {
@@ -93,13 +93,13 @@ public class UpdateTagsForResourceRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the resouce to be updated.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the resouce to be updated.</p>
      *        <p>
-     *        Must be the ARN of an Elastic Beanstalk environment.
+     *        Must be the ARN of an Elastic Beanstalk resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

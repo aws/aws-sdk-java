@@ -337,6 +337,25 @@
       ],
       "documentation":"<p>Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.</p>"
     },
+    "CreateProxySession":{
+      "name":"CreateProxySession",
+      "http":{
+        "method":"POST",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/proxy-sessions",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateProxySessionRequest"},
+      "output":{"shape":"CreateProxySessionResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
+    },
     "CreateRoom":{
       "name":"CreateRoom",
       "http":{
@@ -539,6 +558,24 @@
       ],
       "documentation":"<p>Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any users or Amazon Chime Voice Connectors before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.</p>"
     },
+    "DeleteProxySession":{
+      "name":"DeleteProxySession",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteProxySessionRequest"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
+    },
     "DeleteRoom":{
       "name":"DeleteRoom",
       "http":{
@@ -635,6 +672,24 @@
         {"shape":"ServiceFailureException"}
       ],
       "documentation":"<p>Deletes the origination settings for the specified Amazon Chime Voice Connector.</p>"
+    },
+    "DeleteVoiceConnectorProxy":{
+      "name":"DeleteVoiceConnectorProxy",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/programmable-numbers/proxy",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteVoiceConnectorProxyRequest"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
     },
     "DeleteVoiceConnectorStreamingConfiguration":{
       "name":"DeleteVoiceConnectorStreamingConfiguration",
@@ -966,6 +1021,25 @@
       ],
       "documentation":"<p>Retrieves the phone number settings for the administrator's AWS account, such as the default outbound calling name.</p>"
     },
+    "GetProxySession":{
+      "name":"GetProxySession",
+      "http":{
+        "method":"GET",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetProxySessionRequest"},
+      "output":{"shape":"GetProxySessionResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
+    },
     "GetRoom":{
       "name":"GetRoom",
       "http":{
@@ -1105,6 +1179,25 @@
         {"shape":"ServiceFailureException"}
       ],
       "documentation":"<p>Retrieves origination setting details for the specified Amazon Chime Voice Connector.</p>"
+    },
+    "GetVoiceConnectorProxy":{
+      "name":"GetVoiceConnectorProxy",
+      "http":{
+        "method":"GET",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/programmable-numbers/proxy",
+        "responseCode":200
+      },
+      "input":{"shape":"GetVoiceConnectorProxyRequest"},
+      "output":{"shape":"GetVoiceConnectorProxyResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
     },
     "GetVoiceConnectorStreamingConfiguration":{
       "name":"GetVoiceConnectorStreamingConfiguration",
@@ -1300,6 +1393,25 @@
         {"shape":"ServiceFailureException"}
       ],
       "documentation":"<p>Lists the phone numbers for the specified Amazon Chime account, Amazon Chime user, Amazon Chime Voice Connector, or Amazon Chime Voice Connector group.</p>"
+    },
+    "ListProxySessions":{
+      "name":"ListProxySessions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/proxy-sessions",
+        "responseCode":200
+      },
+      "input":{"shape":"ListProxySessionsRequest"},
+      "output":{"shape":"ListProxySessionsResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
     },
     "ListRoomMemberships":{
       "name":"ListRoomMemberships",
@@ -1498,6 +1610,25 @@
         {"shape":"ServiceFailureException"}
       ],
       "documentation":"<p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>"
+    },
+    "PutVoiceConnectorProxy":{
+      "name":"PutVoiceConnectorProxy",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/programmable-numbers/proxy"
+      },
+      "input":{"shape":"PutVoiceConnectorProxyRequest"},
+      "output":{"shape":"PutVoiceConnectorProxyResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
     },
     "PutVoiceConnectorStreamingConfiguration":{
       "name":"PutVoiceConnectorStreamingConfiguration",
@@ -1756,6 +1887,25 @@
       ],
       "documentation":"<p>Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name. You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72 hours to update.</p>"
     },
+    "UpdateProxySession":{
+      "name":"UpdateProxySession",
+      "http":{
+        "method":"POST",
+        "requestUri":"/voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}",
+        "responseCode":201
+      },
+      "input":{"shape":"UpdateProxySessionRequest"},
+      "output":{"shape":"UpdateProxySessionResponse"},
+      "errors":[
+        {"shape":"UnauthorizedClientException"},
+        {"shape":"NotFoundException"},
+        {"shape":"ForbiddenException"},
+        {"shape":"BadRequestException"},
+        {"shape":"ThrottledClientException"},
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"ServiceFailureException"}
+      ]
+    },
     "UpdateRoom":{
       "name":"UpdateRoom",
       "http":{
@@ -1977,6 +2127,10 @@
         }
       },
       "documentation":"<p>The Alexa for Business metadata associated with an Amazon Chime user, used to integrate Alexa for Business with a device.</p>"
+    },
+    "AreaCode":{
+      "type":"string",
+      "pattern":"^$|^[0-9]{3,3}$"
     },
     "Arn":{
       "type":"string",
@@ -2404,6 +2558,17 @@
       "type":"list",
       "member":{"shape":"CallingRegion"}
     },
+    "Capability":{
+      "type":"string",
+      "enum":[
+        "Voice",
+        "SMS"
+      ]
+    },
+    "CapabilityList":{
+      "type":"list",
+      "member":{"shape":"Capability"}
+    },
     "ClientRequestToken":{
       "type":"string",
       "max":64,
@@ -2420,6 +2585,16 @@
       "documentation":"<p>The request could not be processed because of conflict in the current state of the resource.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
+    },
+    "Country":{
+      "type":"string",
+      "pattern":"^$|^[A-Z]{2,2}$"
+    },
+    "CountryList":{
+      "type":"list",
+      "member":{"shape":"Country"},
+      "max":100,
+      "min":1
     },
     "CpsLimit":{
       "type":"integer",
@@ -2593,6 +2768,34 @@
           "shape":"PhoneNumberOrder",
           "documentation":"<p>The phone number order details.</p>"
         }
+      }
+    },
+    "CreateProxySessionRequest":{
+      "type":"structure",
+      "required":[
+        "ParticipantPhoneNumbers",
+        "Capabilities",
+        "VoiceConnectorId"
+      ],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        },
+        "ParticipantPhoneNumbers":{"shape":"ParticipantPhoneNumberList"},
+        "Name":{"shape":"ProxySessionNameString"},
+        "ExpiryMinutes":{"shape":"PositiveInteger"},
+        "Capabilities":{"shape":"CapabilityList"},
+        "NumberSelectionBehavior":{"shape":"NumberSelectionBehavior"},
+        "GeoMatchLevel":{"shape":"GeoMatchLevel"},
+        "GeoMatchParams":{"shape":"GeoMatchParams"}
+      }
+    },
+    "CreateProxySessionResponse":{
+      "type":"structure",
+      "members":{
+        "ProxySession":{"shape":"ProxySession"}
       }
     },
     "CreateRoomMembershipRequest":{
@@ -2855,6 +3058,25 @@
         }
       }
     },
+    "DeleteProxySessionRequest":{
+      "type":"structure",
+      "required":[
+        "VoiceConnectorId",
+        "ProxySessionId"
+      ],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        },
+        "ProxySessionId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"proxySessionId"
+        }
+      }
+    },
     "DeleteRoomMembershipRequest":{
       "type":"structure",
       "required":[
@@ -2923,6 +3145,17 @@
         "VoiceConnectorId":{
           "shape":"NonEmptyString",
           "documentation":"<p>The Amazon Chime Voice Connector ID.</p>",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        }
+      }
+    },
+    "DeleteVoiceConnectorProxyRequest":{
+      "type":"structure",
+      "required":["VoiceConnectorId"],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
           "location":"uri",
           "locationName":"voiceConnectorId"
         }
@@ -3155,6 +3388,24 @@
       "error":{"httpStatusCode":403},
       "exception":true
     },
+    "GeoMatchLevel":{
+      "type":"string",
+      "enum":[
+        "Country",
+        "AreaCode"
+      ]
+    },
+    "GeoMatchParams":{
+      "type":"structure",
+      "required":[
+        "Country",
+        "AreaCode"
+      ],
+      "members":{
+        "Country":{"shape":"Country"},
+        "AreaCode":{"shape":"AreaCode"}
+      }
+    },
     "GetAccountRequest":{
       "type":"structure",
       "required":["AccountId"],
@@ -3376,6 +3627,31 @@
         }
       }
     },
+    "GetProxySessionRequest":{
+      "type":"structure",
+      "required":[
+        "VoiceConnectorId",
+        "ProxySessionId"
+      ],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        },
+        "ProxySessionId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"proxySessionId"
+        }
+      }
+    },
+    "GetProxySessionResponse":{
+      "type":"structure",
+      "members":{
+        "ProxySession":{"shape":"ProxySession"}
+      }
+    },
     "GetRoomRequest":{
       "type":"structure",
       "required":[
@@ -3529,6 +3805,23 @@
         }
       }
     },
+    "GetVoiceConnectorProxyRequest":{
+      "type":"structure",
+      "required":["VoiceConnectorId"],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        }
+      }
+    },
+    "GetVoiceConnectorProxyResponse":{
+      "type":"structure",
+      "members":{
+        "Proxy":{"shape":"Proxy"}
+      }
+    },
     "GetVoiceConnectorRequest":{
       "type":"structure",
       "required":["VoiceConnectorId"],
@@ -3617,6 +3910,7 @@
       "type":"string",
       "pattern":"[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}"
     },
+    "Integer":{"type":"integer"},
     "Invite":{
       "type":"structure",
       "members":{
@@ -3934,6 +4228,39 @@
           "shape":"String",
           "documentation":"<p>The token to use to retrieve the next page of results.</p>"
         }
+      }
+    },
+    "ListProxySessionsRequest":{
+      "type":"structure",
+      "required":["VoiceConnectorId"],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        },
+        "Status":{
+          "shape":"ProxySessionStatus",
+          "location":"querystring",
+          "locationName":"status"
+        },
+        "NextToken":{
+          "shape":"NextTokenString",
+          "location":"querystring",
+          "locationName":"next-token"
+        },
+        "MaxResults":{
+          "shape":"ResultMax",
+          "location":"querystring",
+          "locationName":"max-results"
+        }
+      }
+    },
+    "ListProxySessionsResponse":{
+      "type":"structure",
+      "members":{
+        "ProxySessions":{"shape":"ProxySessions"},
+        "NextToken":{"shape":"NextTokenString"}
       }
     },
     "ListRoomMembershipsRequest":{
@@ -4336,8 +4663,18 @@
       "member":{"shape":"MembershipItem"},
       "max":50
     },
+    "NextTokenString":{
+      "type":"string",
+      "max":65535
+    },
     "NonEmptyString":{
       "type":"string",
+      "pattern":".*\\S.*"
+    },
+    "NonEmptyString128":{
+      "type":"string",
+      "max":128,
+      "min":1,
       "pattern":".*\\S.*"
     },
     "NonEmptyStringList":{
@@ -4356,6 +4693,13 @@
       "exception":true
     },
     "NullableBoolean":{"type":"boolean"},
+    "NumberSelectionBehavior":{
+      "type":"string",
+      "enum":[
+        "PreferSticky",
+        "AvoidSticky"
+      ]
+    },
     "OrderedPhoneNumber":{
       "type":"structure",
       "members":{
@@ -4442,6 +4786,23 @@
       "type":"integer",
       "max":100,
       "min":1
+    },
+    "Participant":{
+      "type":"structure",
+      "members":{
+        "PhoneNumber":{"shape":"E164PhoneNumber"},
+        "ProxyPhoneNumber":{"shape":"E164PhoneNumber"}
+      }
+    },
+    "ParticipantPhoneNumberList":{
+      "type":"list",
+      "member":{"shape":"E164PhoneNumber"},
+      "max":2,
+      "min":2
+    },
+    "Participants":{
+      "type":"list",
+      "member":{"shape":"Participant"}
     },
     "PhoneNumber":{
       "type":"structure",
@@ -4664,10 +5025,58 @@
       "max":65535,
       "min":0
     },
+    "PositiveInteger":{
+      "type":"integer",
+      "min":1
+    },
     "ProfileServiceMaxResults":{
       "type":"integer",
       "max":200,
       "min":1
+    },
+    "Proxy":{
+      "type":"structure",
+      "members":{
+        "DefaultSessionExpiryMinutes":{"shape":"Integer"},
+        "Disabled":{"shape":"Boolean"},
+        "FallBackPhoneNumber":{"shape":"E164PhoneNumber"},
+        "PhoneNumberCountries":{"shape":"StringList"}
+      }
+    },
+    "ProxySession":{
+      "type":"structure",
+      "members":{
+        "VoiceConnectorId":{"shape":"NonEmptyString128"},
+        "ProxySessionId":{"shape":"NonEmptyString128"},
+        "Name":{"shape":"String128"},
+        "Status":{"shape":"ProxySessionStatus"},
+        "ExpiryMinutes":{"shape":"PositiveInteger"},
+        "Capabilities":{"shape":"CapabilityList"},
+        "CreatedTimestamp":{"shape":"Iso8601Timestamp"},
+        "UpdatedTimestamp":{"shape":"Iso8601Timestamp"},
+        "EndedTimestamp":{"shape":"Iso8601Timestamp"},
+        "Participants":{"shape":"Participants"},
+        "NumberSelectionBehavior":{"shape":"NumberSelectionBehavior"},
+        "GeoMatchLevel":{"shape":"GeoMatchLevel"},
+        "GeoMatchParams":{"shape":"GeoMatchParams"}
+      }
+    },
+    "ProxySessionNameString":{
+      "type":"string",
+      "pattern":"^$|^[a-zA-Z0-9 ]{0,30}$",
+      "sensitive":true
+    },
+    "ProxySessionStatus":{
+      "type":"string",
+      "enum":[
+        "Open",
+        "InProgress",
+        "Closed"
+      ]
+    },
+    "ProxySessions":{
+      "type":"list",
+      "member":{"shape":"ProxySession"}
     },
     "PutEventsConfigurationRequest":{
       "type":"structure",
@@ -4758,6 +5167,31 @@
           "shape":"Origination",
           "documentation":"<p>The updated origination setting details.</p>"
         }
+      }
+    },
+    "PutVoiceConnectorProxyRequest":{
+      "type":"structure",
+      "required":[
+        "DefaultSessionExpiryMinutes",
+        "PhoneNumberPoolCountries",
+        "VoiceConnectorId"
+      ],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        },
+        "DefaultSessionExpiryMinutes":{"shape":"Integer"},
+        "PhoneNumberPoolCountries":{"shape":"CountryList"},
+        "FallBackPhoneNumber":{"shape":"E164PhoneNumber"},
+        "Disabled":{"shape":"Boolean"}
+      }
+    },
+    "PutVoiceConnectorProxyResponse":{
+      "type":"structure",
+      "members":{
+        "Proxy":{"shape":"Proxy"}
       }
     },
     "PutVoiceConnectorStreamingConfigurationRequest":{
@@ -5117,6 +5551,10 @@
       "documentation":"<p>The streaming configuration associated with an Amazon Chime Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.</p>"
     },
     "String":{"type":"string"},
+    "String128":{
+      "type":"string",
+      "max":128
+    },
     "StringList":{
       "type":"list",
       "member":{"shape":"String"}
@@ -5380,6 +5818,34 @@
           "shape":"CallingName",
           "documentation":"<p>The default outbound calling name for the account.</p>"
         }
+      }
+    },
+    "UpdateProxySessionRequest":{
+      "type":"structure",
+      "required":[
+        "Capabilities",
+        "VoiceConnectorId",
+        "ProxySessionId"
+      ],
+      "members":{
+        "VoiceConnectorId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"voiceConnectorId"
+        },
+        "ProxySessionId":{
+          "shape":"NonEmptyString128",
+          "location":"uri",
+          "locationName":"proxySessionId"
+        },
+        "Capabilities":{"shape":"CapabilityList"},
+        "ExpiryMinutes":{"shape":"PositiveInteger"}
+      }
+    },
+    "UpdateProxySessionResponse":{
+      "type":"structure",
+      "members":{
+        "ProxySession":{"shape":"ProxySession"}
       }
     },
     "UpdateRoomMembershipRequest":{

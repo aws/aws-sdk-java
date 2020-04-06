@@ -25,24 +25,24 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Detailed information about the platforms.
+     * Summary information about the platform versions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlatformSummary> platformSummaryList;
     /**
      * <p>
-     * The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can use it
-     * in a subsequent <code>ListPlatformVersion</code> call.
+     * In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent
+     * request to get the next response page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Detailed information about the platforms.
+     * Summary information about the platform versions.
      * </p>
      * 
-     * @return Detailed information about the platforms.
+     * @return Summary information about the platform versions.
      */
 
     public java.util.List<PlatformSummary> getPlatformSummaryList() {
@@ -54,11 +54,11 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Detailed information about the platforms.
+     * Summary information about the platform versions.
      * </p>
      * 
      * @param platformSummaryList
-     *        Detailed information about the platforms.
+     *        Summary information about the platform versions.
      */
 
     public void setPlatformSummaryList(java.util.Collection<PlatformSummary> platformSummaryList) {
@@ -72,7 +72,7 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Detailed information about the platforms.
+     * Summary information about the platform versions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param platformSummaryList
-     *        Detailed information about the platforms.
+     *        Summary information about the platform versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Detailed information about the platforms.
+     * Summary information about the platform versions.
      * </p>
      * 
      * @param platformSummaryList
-     *        Detailed information about the platforms.
+     *        Summary information about the platform versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can use it
-     * in a subsequent <code>ListPlatformVersion</code> call.
+     * In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent
+     * request to get the next response page.
      * </p>
      * 
      * @param nextToken
-     *        The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can
-     *        use it in a subsequent <code>ListPlatformVersion</code> call.
+     *        In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a
+     *        subsequent request to get the next response page.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can use it
-     * in a subsequent <code>ListPlatformVersion</code> call.
+     * In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent
+     * request to get the next response page.
      * </p>
      * 
-     * @return The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can
-     *         use it in a subsequent <code>ListPlatformVersion</code> call.
+     * @return In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a
+     *         subsequent request to get the next response page.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListPlatformVersionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can use it
-     * in a subsequent <code>ListPlatformVersion</code> call.
+     * In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent
+     * request to get the next response page.
      * </p>
      * 
      * @param nextToken
-     *        The starting index into the remaining list of platforms. if this value is not <code>null</code>, you can
-     *        use it in a subsequent <code>ListPlatformVersion</code> call.
+     *        In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a
+     *        subsequent request to get the next response page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,21 +26,27 @@ public class GenerateServiceLastAccessedDetailsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     * The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same
+     * user when used to call <code>GetServiceLastAccessedDetail</code>.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     * The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same
+     * user when used to call <code>GetServiceLastAccessedDetail</code>.
      * </p>
      * 
      * @param jobId
-     *        The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     *        <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     *        The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     *        <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     *        <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the
+     *        same user when used to call <code>GetServiceLastAccessedDetail</code>.
      */
 
     public void setJobId(String jobId) {
@@ -49,12 +55,16 @@ public class GenerateServiceLastAccessedDetailsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     * The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same
+     * user when used to call <code>GetServiceLastAccessedDetail</code>.
      * </p>
      * 
-     * @return The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     *         <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     * @return The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     *         <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     *         <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the
+     *         same user when used to call <code>GetServiceLastAccessedDetail</code>.
      */
 
     public String getJobId() {
@@ -63,13 +73,17 @@ public class GenerateServiceLastAccessedDetailsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     * The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     * <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the same
+     * user when used to call <code>GetServiceLastAccessedDetail</code>.
      * </p>
      * 
      * @param jobId
-     *        The job ID that you can use in the <a>GetServiceLastAccessedDetails</a> or
-     *        <a>GetServiceLastAccessedDetailsWithEntities</a> operations.
+     *        The <code>JobId</code> that you can use in the <a>GetServiceLastAccessedDetails</a> or
+     *        <a>GetServiceLastAccessedDetailsWithEntities</a> operations. The <code>JobId</code> returned by
+     *        <code>GenerateServiceLastAccessedDetail</code> must be used by the same role within a session, or by the
+     *        same user when used to call <code>GetServiceLastAccessedDetail</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,30 +27,36 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List only the platforms where the platform member value relates to one of the supplied values.
+     * Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     * conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlatformFilter> filters;
     /**
      * <p>
-     * The maximum number of platform values returned in one call.
+     * The maximum number of platform version values returned in one call.
      * </p>
      */
     private Integer maxRecords;
     /**
      * <p>
-     * The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a previous
-     * <code>ListPlatformVersion</code> call.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List only the platforms where the platform member value relates to one of the supplied values.
+     * Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     * conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * </p>
      * 
-     * @return List only the platforms where the platform member value relates to one of the supplied values.
+     * @return Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     *         conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      */
 
     public java.util.List<PlatformFilter> getFilters() {
@@ -62,11 +68,13 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List only the platforms where the platform member value relates to one of the supplied values.
+     * Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     * conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * </p>
      * 
      * @param filters
-     *        List only the platforms where the platform member value relates to one of the supplied values.
+     *        Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     *        conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      */
 
     public void setFilters(java.util.Collection<PlatformFilter> filters) {
@@ -80,7 +88,8 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List only the platforms where the platform member value relates to one of the supplied values.
+     * Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     * conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +98,8 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param filters
-     *        List only the platforms where the platform member value relates to one of the supplied values.
+     *        Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     *        conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +115,13 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List only the platforms where the platform member value relates to one of the supplied values.
+     * Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     * conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * </p>
      * 
      * @param filters
-     *        List only the platforms where the platform member value relates to one of the supplied values.
+     *        Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical
+     *        conjunction (AND) of the separate <code>PlatformFilter</code> terms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +132,11 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of platform values returned in one call.
+     * The maximum number of platform version values returned in one call.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of platform values returned in one call.
+     *        The maximum number of platform version values returned in one call.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -133,10 +145,10 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of platform values returned in one call.
+     * The maximum number of platform version values returned in one call.
      * </p>
      * 
-     * @return The maximum number of platform values returned in one call.
+     * @return The maximum number of platform version values returned in one call.
      */
 
     public Integer getMaxRecords() {
@@ -145,11 +157,11 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of platform values returned in one call.
+     * The maximum number of platform version values returned in one call.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of platform values returned in one call.
+     *        The maximum number of platform version values returned in one call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,13 +172,18 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a previous
-     * <code>ListPlatformVersion</code> call.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      * 
      * @param nextToken
-     *        The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a
-     *        previous <code>ListPlatformVersion</code> call.
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
      */
 
     public void setNextToken(String nextToken) {
@@ -175,12 +192,17 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a previous
-     * <code>ListPlatformVersion</code> call.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      * 
-     * @return The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a
-     *         previous <code>ListPlatformVersion</code> call.
+     * @return For a paginated request. Specify a token from a previous response page to retrieve the next response
+     *         page. All other parameter values must be identical to the ones specified in the initial request.</p>
+     *         <p>
+     *         If no <code>NextToken</code> is specified, the first page is retrieved.
      */
 
     public String getNextToken() {
@@ -189,13 +211,18 @@ public class ListPlatformVersionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a previous
-     * <code>ListPlatformVersion</code> call.
+     * For a paginated request. Specify a token from a previous response page to retrieve the next response page. All
+     * other parameter values must be identical to the ones specified in the initial request.
+     * </p>
+     * <p>
+     * If no <code>NextToken</code> is specified, the first page is retrieved.
      * </p>
      * 
      * @param nextToken
-     *        The starting index into the remaining list of platforms. Use the <code>NextToken</code> value from a
-     *        previous <code>ListPlatformVersion</code> call.
+     *        For a paginated request. Specify a token from a previous response page to retrieve the next response page.
+     *        All other parameter values must be identical to the ones specified in the initial request.</p>
+     *        <p>
+     *        If no <code>NextToken</code> is specified, the first page is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

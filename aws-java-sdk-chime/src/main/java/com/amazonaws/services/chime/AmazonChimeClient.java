@@ -1378,6 +1378,70 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     }
 
     /**
+     * @param createProxySessionRequest
+     * @return Result of the CreateProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateProxySessionResult createProxySession(CreateProxySessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProxySession(request);
+    }
+
+    @SdkInternalApi
+    final CreateProxySessionResult executeCreateProxySession(CreateProxySessionRequest createProxySessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProxySessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProxySessionRequest> request = null;
+        Response<CreateProxySessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProxySessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProxySession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProxySessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProxySessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Creates a chat room for the specified Amazon Chime Enterprise account.
      * </p>
@@ -2110,6 +2174,70 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     }
 
     /**
+     * @param deleteProxySessionRequest
+     * @return Result of the DeleteProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteProxySessionResult deleteProxySession(DeleteProxySessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProxySession(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProxySessionResult executeDeleteProxySession(DeleteProxySessionRequest deleteProxySessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProxySessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProxySessionRequest> request = null;
+        Response<DeleteProxySessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProxySessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProxySession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProxySessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProxySessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Deletes a chat room in an Amazon Chime Enterprise account.
      * </p>
@@ -2450,6 +2578,72 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVoiceConnectorOriginationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteVoiceConnectorOriginationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param deleteVoiceConnectorProxyRequest
+     * @return Result of the DeleteVoiceConnectorProxy operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVoiceConnectorProxyResult deleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVoiceConnectorProxy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVoiceConnectorProxyResult executeDeleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest deleteVoiceConnectorProxyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVoiceConnectorProxyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVoiceConnectorProxyRequest> request = null;
+        Response<DeleteVoiceConnectorProxyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVoiceConnectorProxyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVoiceConnectorProxyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorProxy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVoiceConnectorProxyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteVoiceConnectorProxyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3651,6 +3845,70 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     }
 
     /**
+     * @param getProxySessionRequest
+     * @return Result of the GetProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetProxySessionResult getProxySession(GetProxySessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProxySession(request);
+    }
+
+    @SdkInternalApi
+    final GetProxySessionResult executeGetProxySession(GetProxySessionRequest getProxySessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getProxySessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetProxySessionRequest> request = null;
+        Response<GetProxySessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProxySessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProxySession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetProxySessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetProxySessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Retrieves room details, such as the room name, for a room in an Amazon Chime Enterprise account.
      * </p>
@@ -4130,6 +4388,71 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<GetVoiceConnectorOriginationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetVoiceConnectorOriginationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getVoiceConnectorProxyRequest
+     * @return Result of the GetVoiceConnectorProxy operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetVoiceConnectorProxyResult getVoiceConnectorProxy(GetVoiceConnectorProxyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVoiceConnectorProxy(request);
+    }
+
+    @SdkInternalApi
+    final GetVoiceConnectorProxyResult executeGetVoiceConnectorProxy(GetVoiceConnectorProxyRequest getVoiceConnectorProxyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVoiceConnectorProxyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVoiceConnectorProxyRequest> request = null;
+        Response<GetVoiceConnectorProxyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVoiceConnectorProxyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVoiceConnectorProxyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorProxy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVoiceConnectorProxyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetVoiceConnectorProxyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4835,6 +5158,70 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     }
 
     /**
+     * @param listProxySessionsRequest
+     * @return Result of the ListProxySessions operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListProxySessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListProxySessionsResult listProxySessions(ListProxySessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProxySessions(request);
+    }
+
+    @SdkInternalApi
+    final ListProxySessionsResult executeListProxySessions(ListProxySessionsRequest listProxySessionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProxySessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProxySessionsRequest> request = null;
+        Response<ListProxySessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProxySessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProxySessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProxySessions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProxySessionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProxySessionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Lists the membership details for the specified room in an Amazon Chime Enterprise account, such as the members'
      * IDs, email addresses, and names.
@@ -5516,6 +5903,73 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<PutVoiceConnectorOriginationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutVoiceConnectorOriginationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param putVoiceConnectorProxyRequest
+     * @return Result of the PutVoiceConnectorProxy operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutVoiceConnectorProxyResult putVoiceConnectorProxy(PutVoiceConnectorProxyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutVoiceConnectorProxy(request);
+    }
+
+    @SdkInternalApi
+    final PutVoiceConnectorProxyResult executePutVoiceConnectorProxy(PutVoiceConnectorProxyRequest putVoiceConnectorProxyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putVoiceConnectorProxyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutVoiceConnectorProxyRequest> request = null;
+        Response<PutVoiceConnectorProxyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutVoiceConnectorProxyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putVoiceConnectorProxyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorProxy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutVoiceConnectorProxyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutVoiceConnectorProxyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6437,6 +6891,70 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePhoneNumberSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdatePhoneNumberSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param updateProxySessionRequest
+     * @return Result of the UpdateProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateProxySessionResult updateProxySession(UpdateProxySessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProxySession(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProxySessionResult executeUpdateProxySession(UpdateProxySessionRequest updateProxySessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateProxySessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProxySessionRequest> request = null;
+        Response<UpdateProxySessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProxySessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProxySession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProxySessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProxySessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -160,6 +160,20 @@ public class PlatformDescriptionStaxUnmarshaller implements Unmarshaller<Platfor
                     continue;
                 }
 
+                if (context.testExpression("PlatformLifecycleState", targetDepth)) {
+                    platformDescription.setPlatformLifecycleState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PlatformBranchName", targetDepth)) {
+                    platformDescription.setPlatformBranchName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PlatformBranchLifecycleState", targetDepth)) {
+                    platformDescription.setPlatformBranchLifecycleState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return platformDescription;

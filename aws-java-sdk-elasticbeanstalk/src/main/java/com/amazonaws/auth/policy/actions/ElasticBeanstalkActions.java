@@ -83,6 +83,8 @@ public enum ElasticBeanstalkActions implements Action {
     DescribePlatformVersion("elasticbeanstalk:DescribePlatformVersion"),
     /** Action for the ListAvailableSolutionStacks operation. */
     ListAvailableSolutionStacks("elasticbeanstalk:ListAvailableSolutionStacks"),
+    /** Action for the ListPlatformBranches operation. */
+    ListPlatformBranches("elasticbeanstalk:ListPlatformBranches"),
     /** Action for the ListPlatformVersions operation. */
     ListPlatformVersions("elasticbeanstalk:ListPlatformVersions"),
     /** Action for the ListTagsForResource operation. */

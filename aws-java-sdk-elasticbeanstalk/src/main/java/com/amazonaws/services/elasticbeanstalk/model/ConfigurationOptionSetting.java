@@ -18,8 +18,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A specification identifying an individual configuration option along with its current value. For a list of possible
- * option values, go to <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
- * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+ * namespaces and option values, see <a
+ * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS
+ * Elastic Beanstalk Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionSetting"
@@ -30,13 +31,13 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique resource name for a time-based scaling configuration option.
+     * A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      * </p>
      */
     private String resourceName;
     /**
      * <p>
-     * A unique namespace identifying the option's associated AWS resource.
+     * A unique namespace that identifies the option's associated AWS resource.
      * </p>
      */
     private String namespace;
@@ -65,7 +66,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param namespace
-     *        A unique namespace identifying the option's associated AWS resource.
+     *        A unique namespace that identifies the option's associated AWS resource.
      * @param optionName
      *        The name of the configuration option.
      * @param value
@@ -79,11 +80,11 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique resource name for a time-based scaling configuration option.
+     * A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      * </p>
      * 
      * @param resourceName
-     *        A unique resource name for a time-based scaling configuration option.
+     *        A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      */
 
     public void setResourceName(String resourceName) {
@@ -92,10 +93,10 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique resource name for a time-based scaling configuration option.
+     * A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      * </p>
      * 
-     * @return A unique resource name for a time-based scaling configuration option.
+     * @return A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      */
 
     public String getResourceName() {
@@ -104,11 +105,11 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique resource name for a time-based scaling configuration option.
+     * A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      * </p>
      * 
      * @param resourceName
-     *        A unique resource name for a time-based scaling configuration option.
+     *        A unique resource name for the option setting. Use it for a time–based scaling configuration option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +120,11 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique namespace identifying the option's associated AWS resource.
+     * A unique namespace that identifies the option's associated AWS resource.
      * </p>
      * 
      * @param namespace
-     *        A unique namespace identifying the option's associated AWS resource.
+     *        A unique namespace that identifies the option's associated AWS resource.
      */
 
     public void setNamespace(String namespace) {
@@ -132,10 +133,10 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique namespace identifying the option's associated AWS resource.
+     * A unique namespace that identifies the option's associated AWS resource.
      * </p>
      * 
-     * @return A unique namespace identifying the option's associated AWS resource.
+     * @return A unique namespace that identifies the option's associated AWS resource.
      */
 
     public String getNamespace() {
@@ -144,11 +145,11 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique namespace identifying the option's associated AWS resource.
+     * A unique namespace that identifies the option's associated AWS resource.
      * </p>
      * 
      * @param namespace
-     *        A unique namespace identifying the option's associated AWS resource.
+     *        A unique namespace that identifies the option's associated AWS resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

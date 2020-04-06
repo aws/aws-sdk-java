@@ -30,8 +30,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the application to associate with this configuration template. If no application is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk application to associate with this configuration template.
      * </p>
      */
     private String applicationName;
@@ -42,72 +41,80 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Constraint: This name must be unique per application.
      * </p>
-     * <p>
-     * Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
-     * </p>
      */
     private String templateName;
     /**
      * <p>
-     * The name of the solution stack used by this configuration. The solution stack specifies the operating system,
-     * architecture, and application server for a configuration template. It determines the set of configuration options
-     * as well as the possible and default values.
+     * The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example,
+     * <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system,
+     * runtime, and application server for a configuration template. It also determines the set of configuration options
+     * as well as the possible and default values. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in
+     * the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <p>
-     * Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     * You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.
+     * Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      * </p>
      */
     private String solutionStackName;
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      */
     private String platformArn;
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to
-     * create a new configuration.
+     * An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     * configuration values from the specified configuration template to create a new configuration.
      * </p>
      * <p>
-     * Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained from the
+     * Values specified in <code>OptionSettings</code> override any values obtained from the
      * <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     * You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      * </p>
      * <p>
-     * Constraint: If both the solution stack name parameter and the source configuration parameters are specified, the
-     * solution stack of the source configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Constraint: If both solution stack name and source configuration are specified, the solution stack of the source
+     * configuration template must match the specified solution stack name.
      * </p>
      */
     private SourceConfiguration sourceConfiguration;
     /**
      * <p>
-     * The ID of the environment used with this configuration template.
+     * The ID of an environment whose settings you want to use to create the configuration template. You must specify
+     * <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.
      * </p>
      */
     private String environmentId;
     /**
      * <p>
-     * Describes this configuration.
+     * An optional description for this configuration.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value
-     * overrides the value obtained from the solution stack or the source configuration template.
+     * Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values
+     * override the values obtained from the solution stack or the source configuration template. For a complete list of
+     * Elastic Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettings;
@@ -130,16 +137,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * (with...) methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application to associate with this configuration template. If no application is found with
-     *        this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        The name of the Elastic Beanstalk application to associate with this configuration template.
      * @param templateName
      *        The name of the configuration template.</p>
      *        <p>
      *        Constraint: This name must be unique per application.
-     *        </p>
-     *        <p>
-     *        Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error.
      */
     public CreateConfigurationTemplateRequest(String applicationName, String templateName) {
         setApplicationName(applicationName);
@@ -148,13 +150,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the application to associate with this configuration template. If no application is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk application to associate with this configuration template.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application to associate with this configuration template. If no application is found with
-     *        this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        The name of the Elastic Beanstalk application to associate with this configuration template.
      */
 
     public void setApplicationName(String applicationName) {
@@ -163,12 +163,10 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the application to associate with this configuration template. If no application is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk application to associate with this configuration template.
      * </p>
      * 
-     * @return The name of the application to associate with this configuration template. If no application is found
-     *         with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * @return The name of the Elastic Beanstalk application to associate with this configuration template.
      */
 
     public String getApplicationName() {
@@ -177,13 +175,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the application to associate with this configuration template. If no application is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk application to associate with this configuration template.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application to associate with this configuration template. If no application is found with
-     *        this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        The name of the Elastic Beanstalk application to associate with this configuration template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,19 +195,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Constraint: This name must be unique per application.
      * </p>
-     * <p>
-     * Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
-     * </p>
      * 
      * @param templateName
      *        The name of the configuration template.</p>
      *        <p>
      *        Constraint: This name must be unique per application.
-     *        </p>
-     *        <p>
-     *        Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error.
      */
 
     public void setTemplateName(String templateName) {
@@ -225,18 +213,10 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Constraint: This name must be unique per application.
      * </p>
-     * <p>
-     * Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
-     * </p>
      * 
      * @return The name of the configuration template.</p>
      *         <p>
      *         Constraint: This name must be unique per application.
-     *         </p>
-     *         <p>
-     *         Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     *         <code>InvalidParameterValue</code> error.
      */
 
     public String getTemplateName() {
@@ -250,19 +230,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * <p>
      * Constraint: This name must be unique per application.
      * </p>
-     * <p>
-     * Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error.
-     * </p>
      * 
      * @param templateName
      *        The name of the configuration template.</p>
      *        <p>
      *        Constraint: This name must be unique per application.
-     *        </p>
-     *        <p>
-     *        Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an
-     *        <code>InvalidParameterValue</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,36 +245,37 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the solution stack used by this configuration. The solution stack specifies the operating system,
-     * architecture, and application server for a configuration template. It determines the set of configuration options
-     * as well as the possible and default values.
+     * The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example,
+     * <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system,
+     * runtime, and application server for a configuration template. It also determines the set of configuration options
+     * as well as the possible and default values. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in
+     * the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <p>
-     * Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     * You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.
+     * Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      * </p>
      * 
      * @param solutionStackName
-     *        The name of the solution stack used by this configuration. The solution stack specifies the operating
-     *        system, architecture, and application server for a configuration template. It determines the set of
-     *        configuration options as well as the possible and default values.</p>
+     *        The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For
+     *        example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the
+     *        operating system, runtime, and application server for a configuration template. It also determines the set
+     *        of configuration options as well as the possible and default values. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     *        Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      *        <p>
-     *        Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     *        You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     *        <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      *        </p>
      *        <p>
-     *        A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic
-     *        Beanstalk returns an <code>InvalidParameterValue</code> error.
-     *        </p>
-     *        <p>
-     *        If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic
-     *        Beanstalk uses the same solution stack as the source configuration template.
+     *        Use the <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     *        <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      */
 
     public void setSolutionStackName(String solutionStackName) {
@@ -311,35 +284,36 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the solution stack used by this configuration. The solution stack specifies the operating system,
-     * architecture, and application server for a configuration template. It determines the set of configuration options
-     * as well as the possible and default values.
+     * The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example,
+     * <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system,
+     * runtime, and application server for a configuration template. It also determines the set of configuration options
+     * as well as the possible and default values. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in
+     * the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <p>
-     * Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     * You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.
+     * Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      * </p>
      * 
-     * @return The name of the solution stack used by this configuration. The solution stack specifies the operating
-     *         system, architecture, and application server for a configuration template. It determines the set of
-     *         configuration options as well as the possible and default values.</p>
+     * @return The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For
+     *         example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the
+     *         operating system, runtime, and application server for a configuration template. It also determines the
+     *         set of configuration options as well as the possible and default values. For more information, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     *         Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      *         <p>
-     *         Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     *         You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     *         <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      *         </p>
      *         <p>
-     *         A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic
-     *         Beanstalk returns an <code>InvalidParameterValue</code> error.
-     *         </p>
-     *         <p>
-     *         If a solution stack name is not specified and the source configuration parameter is specified, AWS
-     *         Elastic Beanstalk uses the same solution stack as the source configuration template.
+     *         Use the <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     *         <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      */
 
     public String getSolutionStackName() {
@@ -348,36 +322,37 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the solution stack used by this configuration. The solution stack specifies the operating system,
-     * architecture, and application server for a configuration template. It determines the set of configuration options
-     * as well as the possible and default values.
+     * The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example,
+     * <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system,
+     * runtime, and application server for a configuration template. It also determines the set of configuration options
+     * as well as the possible and default values. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in
+     * the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <p>
-     * Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     * You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.
+     * Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      * </p>
      * 
      * @param solutionStackName
-     *        The name of the solution stack used by this configuration. The solution stack specifies the operating
-     *        system, architecture, and application server for a configuration template. It determines the set of
-     *        configuration options as well as the possible and default values.</p>
+     *        The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For
+     *        example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the
+     *        operating system, runtime, and application server for a configuration template. It also determines the set
+     *        of configuration options as well as the possible and default values. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     *        Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      *        <p>
-     *        Use <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks.
+     *        You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+     *        <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
      *        </p>
      *        <p>
-     *        A solution stack name or a source configuration parameter must be specified, otherwise AWS Elastic
-     *        Beanstalk returns an <code>InvalidParameterValue</code> error.
-     *        </p>
-     *        <p>
-     *        If a solution stack name is not specified and the source configuration parameter is specified, AWS Elastic
-     *        Beanstalk uses the same solution stack as the source configuration template.
+     *        Use the <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     *        <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +363,23 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a>
+     *        in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     *        <p>
+     *        If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     *        </p>
      */
 
     public void setPlatformArn(String platformArn) {
@@ -401,10 +388,22 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
-     * @return The ARN of the custom platform.
+     * @return The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a>
+     *         in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     *         <p>
+     *         If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     *         </p>
      */
 
     public String getPlatformArn() {
@@ -413,11 +412,23 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a>
+     *        in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     *        <p>
+     *        If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,36 +439,36 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to
-     * create a new configuration.
+     * An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     * configuration values from the specified configuration template to create a new configuration.
      * </p>
      * <p>
-     * Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained from the
+     * Values specified in <code>OptionSettings</code> override any values obtained from the
      * <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     * You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      * </p>
      * <p>
-     * Constraint: If both the solution stack name parameter and the source configuration parameters are specified, the
-     * solution stack of the source configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Constraint: If both solution stack name and source configuration are specified, the solution stack of the source
+     * configuration template must match the specified solution stack name.
      * </p>
      * 
      * @param sourceConfiguration
-     *        If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration
-     *        template to create a new configuration.</p>
+     *        An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     *        configuration values from the specified configuration template to create a new configuration.</p>
      *        <p>
-     *        Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained
-     *        from the <code>SourceConfiguration</code>.
+     *        Values specified in <code>OptionSettings</code> override any values obtained from the
+     *        <code>SourceConfiguration</code>.
      *        </p>
      *        <p>
-     *        If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     *        You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     *        <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      *        </p>
      *        <p>
-     *        Constraint: If both the solution stack name parameter and the source configuration parameters are
-     *        specified, the solution stack of the source configuration template must match the specified solution stack
-     *        name or else AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *        Constraint: If both solution stack name and source configuration are specified, the solution stack of the
+     *        source configuration template must match the specified solution stack name.
      */
 
     public void setSourceConfiguration(SourceConfiguration sourceConfiguration) {
@@ -466,35 +477,35 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to
-     * create a new configuration.
+     * An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     * configuration values from the specified configuration template to create a new configuration.
      * </p>
      * <p>
-     * Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained from the
+     * Values specified in <code>OptionSettings</code> override any values obtained from the
      * <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     * You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      * </p>
      * <p>
-     * Constraint: If both the solution stack name parameter and the source configuration parameters are specified, the
-     * solution stack of the source configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Constraint: If both solution stack name and source configuration are specified, the solution stack of the source
+     * configuration template must match the specified solution stack name.
      * </p>
      * 
-     * @return If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration
-     *         template to create a new configuration.</p>
+     * @return An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     *         configuration values from the specified configuration template to create a new configuration.</p>
      *         <p>
-     *         Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained
-     *         from the <code>SourceConfiguration</code>.
+     *         Values specified in <code>OptionSettings</code> override any values obtained from the
+     *         <code>SourceConfiguration</code>.
      *         </p>
      *         <p>
-     *         If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     *         You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     *         <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      *         </p>
      *         <p>
-     *         Constraint: If both the solution stack name parameter and the source configuration parameters are
-     *         specified, the solution stack of the source configuration template must match the specified solution
-     *         stack name or else AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *         Constraint: If both solution stack name and source configuration are specified, the solution stack of the
+     *         source configuration template must match the specified solution stack name.
      */
 
     public SourceConfiguration getSourceConfiguration() {
@@ -503,36 +514,36 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to
-     * create a new configuration.
+     * An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     * configuration values from the specified configuration template to create a new configuration.
      * </p>
      * <p>
-     * Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained from the
+     * Values specified in <code>OptionSettings</code> override any values obtained from the
      * <code>SourceConfiguration</code>.
      * </p>
      * <p>
-     * If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     * You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      * </p>
      * <p>
-     * Constraint: If both the solution stack name parameter and the source configuration parameters are specified, the
-     * solution stack of the source configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     * Constraint: If both solution stack name and source configuration are specified, the solution stack of the source
+     * configuration template must match the specified solution stack name.
      * </p>
      * 
      * @param sourceConfiguration
-     *        If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration
-     *        template to create a new configuration.</p>
+     *        An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the
+     *        configuration values from the specified configuration template to create a new configuration.</p>
      *        <p>
-     *        Values specified in the <code>OptionSettings</code> parameter of this call overrides any values obtained
-     *        from the <code>SourceConfiguration</code>.
+     *        Values specified in <code>OptionSettings</code> override any values obtained from the
+     *        <code>SourceConfiguration</code>.
      *        </p>
      *        <p>
-     *        If no configuration template is found, returns an <code>InvalidParameterValue</code> error.
+     *        You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     *        <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
      *        </p>
      *        <p>
-     *        Constraint: If both the solution stack name parameter and the source configuration parameters are
-     *        specified, the solution stack of the source configuration template must match the specified solution stack
-     *        name or else AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+     *        Constraint: If both solution stack name and source configuration are specified, the solution stack of the
+     *        source configuration template must match the specified solution stack name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,11 +554,15 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the environment used with this configuration template.
+     * The ID of an environment whose settings you want to use to create the configuration template. You must specify
+     * <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.
      * </p>
      * 
      * @param environmentId
-     *        The ID of the environment used with this configuration template.
+     *        The ID of an environment whose settings you want to use to create the configuration template. You must
+     *        specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>,
+     *        <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -556,10 +571,14 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the environment used with this configuration template.
+     * The ID of an environment whose settings you want to use to create the configuration template. You must specify
+     * <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.
      * </p>
      * 
-     * @return The ID of the environment used with this configuration template.
+     * @return The ID of an environment whose settings you want to use to create the configuration template. You must
+     *         specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>,
+     *         <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.
      */
 
     public String getEnvironmentId() {
@@ -568,11 +587,15 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the environment used with this configuration template.
+     * The ID of an environment whose settings you want to use to create the configuration template. You must specify
+     * <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.
      * </p>
      * 
      * @param environmentId
-     *        The ID of the environment used with this configuration template.
+     *        The ID of an environment whose settings you want to use to create the configuration template. You must
+     *        specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>,
+     *        <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,11 +606,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes this configuration.
+     * An optional description for this configuration.
      * </p>
      * 
      * @param description
-     *        Describes this configuration.
+     *        An optional description for this configuration.
      */
 
     public void setDescription(String description) {
@@ -596,10 +619,10 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes this configuration.
+     * An optional description for this configuration.
      * </p>
      * 
-     * @return Describes this configuration.
+     * @return An optional description for this configuration.
      */
 
     public String getDescription() {
@@ -608,11 +631,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Describes this configuration.
+     * An optional description for this configuration.
      * </p>
      * 
      * @param description
-     *        Describes this configuration.
+     *        An optional description for this configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,12 +646,18 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value
-     * overrides the value obtained from the solution stack or the source configuration template.
+     * Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values
+     * override the values obtained from the solution stack or the source configuration template. For a complete list of
+     * Elastic Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * 
-     * @return If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The
-     *         new value overrides the value obtained from the solution stack or the source configuration template.
+     * @return Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these
+     *         values override the values obtained from the solution stack or the source configuration template. For a
+     *         complete list of Elastic Beanstalk configuration options, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in
+     *         the <i>AWS Elastic Beanstalk Developer Guide</i>.
      */
 
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
@@ -640,13 +669,19 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value
-     * overrides the value obtained from the solution stack or the source configuration template.
+     * Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values
+     * override the values obtained from the solution stack or the source configuration template. For a complete list of
+     * Elastic Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * 
      * @param optionSettings
-     *        If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The
-     *        new value overrides the value obtained from the solution stack or the source configuration template.
+     *        Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these
+     *        values override the values obtained from the solution stack or the source configuration template. For a
+     *        complete list of Elastic Beanstalk configuration options, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in
+     *        the <i>AWS Elastic Beanstalk Developer Guide</i>.
      */
 
     public void setOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
@@ -660,8 +695,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value
-     * overrides the value obtained from the solution stack or the source configuration template.
+     * Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values
+     * override the values obtained from the solution stack or the source configuration template. For a complete list of
+     * Elastic Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -670,8 +708,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param optionSettings
-     *        If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The
-     *        new value overrides the value obtained from the solution stack or the source configuration template.
+     *        Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these
+     *        values override the values obtained from the solution stack or the source configuration template. For a
+     *        complete list of Elastic Beanstalk configuration options, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in
+     *        the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,13 +728,19 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value
-     * overrides the value obtained from the solution stack or the source configuration template.
+     * Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values
+     * override the values obtained from the solution stack or the source configuration template. For a complete list of
+     * Elastic Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * 
      * @param optionSettings
-     *        If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The
-     *        new value overrides the value obtained from the solution stack or the source configuration template.
+     *        Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these
+     *        values override the values obtained from the solution stack or the source configuration template. For a
+     *        complete list of Elastic Beanstalk configuration options, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in
+     *        the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

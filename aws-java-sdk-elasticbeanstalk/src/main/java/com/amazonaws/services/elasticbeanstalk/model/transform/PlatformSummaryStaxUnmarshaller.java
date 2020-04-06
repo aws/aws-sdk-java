@@ -95,6 +95,25 @@ public class PlatformSummaryStaxUnmarshaller implements Unmarshaller<PlatformSum
                     continue;
                 }
 
+                if (context.testExpression("PlatformLifecycleState", targetDepth)) {
+                    platformSummary.setPlatformLifecycleState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PlatformVersion", targetDepth)) {
+                    platformSummary.setPlatformVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PlatformBranchName", targetDepth)) {
+                    platformSummary.setPlatformBranchName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PlatformBranchLifecycleState", targetDepth)) {
+                    platformSummary.setPlatformBranchLifecycleState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return platformSummary;

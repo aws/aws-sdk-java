@@ -31,8 +31,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed when the number
-     * of executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
+     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
      * <code>LimitExceededException</code> exception.
      * </p>
      * <p>
@@ -44,7 +44,7 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon
-     * Transcribe will assume this role to read queued media files. If you have specified an output S3 bucket for the
+     * Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket for the
      * transcription results, this role should have access to the output bucket as well.
      * </p>
      * <p>
@@ -57,8 +57,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed when the number
-     * of executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
+     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
      * <code>LimitExceededException</code> exception.
      * </p>
      * <p>
@@ -68,9 +68,9 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * 
      * @param allowDeferredExecution
      *        Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *        exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed
-     *        when the number of executing jobs falls below the concurrent execution limit. If the field is false,
-     *        Amazon Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     *        exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
+     *        the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
+     *        Transcribe returns a <code>LimitExceededException</code> exception.</p>
      *        <p>
      *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *        <code>DataAccessRoleArn</code> field.
@@ -83,8 +83,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed when the number
-     * of executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
+     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
      * <code>LimitExceededException</code> exception.
      * </p>
      * <p>
@@ -93,9 +93,9 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @return Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *         exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be
-     *         executed when the number of executing jobs falls below the concurrent execution limit. If the field is
-     *         false, Amazon Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     *         exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
+     *         the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
+     *         Transcribe returns a <code>LimitExceededException</code> exception.</p>
      *         <p>
      *         If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *         <code>DataAccessRoleArn</code> field.
@@ -108,8 +108,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed when the number
-     * of executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
+     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
      * <code>LimitExceededException</code> exception.
      * </p>
      * <p>
@@ -119,9 +119,9 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * 
      * @param allowDeferredExecution
      *        Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *        exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed
-     *        when the number of executing jobs falls below the concurrent execution limit. If the field is false,
-     *        Amazon Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     *        exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
+     *        the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
+     *        Transcribe returns a <code>LimitExceededException</code> exception.</p>
      *        <p>
      *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *        <code>DataAccessRoleArn</code> field.
@@ -136,8 +136,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is exceeded.
-     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be executed when the number
-     * of executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
+     * When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when the number of
+     * executing jobs falls below the concurrent execution limit. If the field is false, Amazon Transcribe returns a
      * <code>LimitExceededException</code> exception.
      * </p>
      * <p>
@@ -146,9 +146,9 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @return Indicates whether a job should be queued by Amazon Transcribe when the concurrent execution limit is
-     *         exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and will be
-     *         executed when the number of executing jobs falls below the concurrent execution limit. If the field is
-     *         false, Amazon Transcribe returns a <code>LimitExceededException</code> exception.</p>
+     *         exceeded. When the <code>AllowDeferredExecution</code> field is true, jobs are queued and executed when
+     *         the number of executing jobs falls below the concurrent execution limit. If the field is false, Amazon
+     *         Transcribe returns a <code>LimitExceededException</code> exception.</p>
      *         <p>
      *         If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *         <code>DataAccessRoleArn</code> field.
@@ -161,7 +161,7 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon
-     * Transcribe will assume this role to read queued media files. If you have specified an output S3 bucket for the
+     * Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket for the
      * transcription results, this role should have access to the output bucket as well.
      * </p>
      * <p>
@@ -171,8 +171,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files.
-     *        Amazon Transcribe will assume this role to read queued media files. If you have specified an output S3
-     *        bucket for the transcription results, this role should have access to the output bucket as well.</p>
+     *        Amazon Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket
+     *        for the transcription results, this role should have access to the output bucket as well.</p>
      *        <p>
      *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *        <code>DataAccessRoleArn</code> field.
@@ -185,7 +185,7 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon
-     * Transcribe will assume this role to read queued media files. If you have specified an output S3 bucket for the
+     * Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket for the
      * transcription results, this role should have access to the output bucket as well.
      * </p>
      * <p>
@@ -194,8 +194,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files.
-     *         Amazon Transcribe will assume this role to read queued media files. If you have specified an output S3
-     *         bucket for the transcription results, this role should have access to the output bucket as well.</p>
+     *         Amazon Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket
+     *         for the transcription results, this role should have access to the output bucket as well.</p>
      *         <p>
      *         If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *         <code>DataAccessRoleArn</code> field.
@@ -208,7 +208,7 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files. Amazon
-     * Transcribe will assume this role to read queued media files. If you have specified an output S3 bucket for the
+     * Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket for the
      * transcription results, this role should have access to the output bucket as well.
      * </p>
      * <p>
@@ -218,8 +218,8 @@ public class JobExecutionSettings implements Serializable, Cloneable, Structured
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains the input files.
-     *        Amazon Transcribe will assume this role to read queued media files. If you have specified an output S3
-     *        bucket for the transcription results, this role should have access to the output bucket as well.</p>
+     *        Amazon Transcribe assumes this role to read queued media files. If you have specified an output S3 bucket
+     *        for the transcription results, this role should have access to the output bucket as well.</p>
      *        <p>
      *        If you specify the <code>AllowDeferredExecution</code> field, you must specify the
      *        <code>DataAccessRoleArn</code> field.

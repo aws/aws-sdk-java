@@ -242,6 +242,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(CreateProxySessionRequest request) {
+
+        return createProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(CreateProxySessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateProxySessionRequest, CreateProxySessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest request) {
 
         return createRoomAsync(request, null);
@@ -372,6 +385,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(DeleteProxySessionRequest request) {
+
+        return deleteProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(DeleteProxySessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteProxySessionRequest, DeleteProxySessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest request) {
 
         return deleteRoomAsync(request, null);
@@ -434,6 +460,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     public java.util.concurrent.Future<DeleteVoiceConnectorOriginationResult> deleteVoiceConnectorOriginationAsync(
             DeleteVoiceConnectorOriginationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorOriginationRequest, DeleteVoiceConnectorOriginationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorProxyResult> deleteVoiceConnectorProxyAsync(DeleteVoiceConnectorProxyRequest request) {
+
+        return deleteVoiceConnectorProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorProxyResult> deleteVoiceConnectorProxyAsync(DeleteVoiceConnectorProxyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorProxyRequest, DeleteVoiceConnectorProxyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -674,6 +713,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(GetProxySessionRequest request) {
+
+        return getProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(GetProxySessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetProxySessionRequest, GetProxySessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest request) {
 
         return getRoomAsync(request, null);
@@ -762,6 +814,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<GetVoiceConnectorOriginationResult> getVoiceConnectorOriginationAsync(GetVoiceConnectorOriginationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorOriginationRequest, GetVoiceConnectorOriginationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest request) {
+
+        return getVoiceConnectorProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorProxyRequest, GetVoiceConnectorProxyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -901,6 +966,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(ListProxySessionsRequest request) {
+
+        return listProxySessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(ListProxySessionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProxySessionsRequest, ListProxySessionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRoomMembershipsResult> listRoomMembershipsAsync(ListRoomMembershipsRequest request) {
 
         return listRoomMembershipsAsync(request, null);
@@ -1030,6 +1108,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<PutVoiceConnectorOriginationResult> putVoiceConnectorOriginationAsync(PutVoiceConnectorOriginationRequest request,
             com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorOriginationRequest, PutVoiceConnectorOriginationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest request) {
+
+        return putVoiceConnectorProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorProxyRequest, PutVoiceConnectorProxyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1203,6 +1294,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<UpdatePhoneNumberSettingsResult> updatePhoneNumberSettingsAsync(UpdatePhoneNumberSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePhoneNumberSettingsRequest, UpdatePhoneNumberSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(UpdateProxySessionRequest request) {
+
+        return updateProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(UpdateProxySessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProxySessionRequest, UpdateProxySessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -629,7 +629,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that
+     * After you create an application version with a specified Amazon S3 bucket and key location, you can't change that
      * Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an
      * environment from the application version.
      * </p>
@@ -712,8 +712,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a configuration template. Templates are associated with a specific application and are used to deploy
-     * different versions of the application with the same configuration settings.
+     * Creates an AWS Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk
+     * application. You define application configuration settings in a configuration template. You can then use the
+     * configuration template to deploy different versions of the application with the same configuration settings.
      * </p>
      * <p>
      * Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always
@@ -797,7 +798,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Launches an environment for the specified application using the specified configuration.
+     * Launches an AWS Elastic Beanstalk environment for the specified application using the specified configuration.
      * </p>
      * 
      * @param createEnvironmentRequest
@@ -2039,7 +2040,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Describes the version of the platform.
+     * Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>, which provides
+     * summary information about a list of platform versions.
+     * </p>
+     * <p>
+     * For definitions of platform version and other platform-related terms, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk
+     * Platforms Glossary</a>.
      * </p>
      * 
      * @param describePlatformVersionRequest
@@ -2155,7 +2162,73 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the available platforms.
+     * Lists the platform branches available for your account in an AWS Region. Provides summary information about each
+     * platform branch.
+     * </p>
+     * <p>
+     * For definitions of platform branch and other platform-related terms, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk
+     * Platforms Glossary</a>.
+     * </p>
+     * 
+     * @param listPlatformBranchesRequest
+     * @return Result of the ListPlatformBranches operation returned by the service.
+     * @sample AWSElasticBeanstalk.ListPlatformBranches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPlatformBranchesResult listPlatformBranches(ListPlatformBranchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPlatformBranches(request);
+    }
+
+    @SdkInternalApi
+    final ListPlatformBranchesResult executeListPlatformBranches(ListPlatformBranchesRequest listPlatformBranchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPlatformBranchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPlatformBranchesRequest> request = null;
+        Response<ListPlatformBranchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPlatformBranchesRequestMarshaller().marshall(super.beforeMarshalling(listPlatformBranchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Beanstalk");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlatformBranches");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListPlatformBranchesResult> responseHandler = new StaxResponseHandler<ListPlatformBranchesResult>(
+                    new ListPlatformBranchesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the platform versions available for your account in an AWS Region. Provides summary information about each
+     * platform version. Compare to <a>DescribePlatformVersion</a>, which provides full details about a single platform
+     * version.
+     * </p>
+     * <p>
+     * For definitions of platform version and other platform-related terms, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk
+     * Platforms Glossary</a>.
      * </p>
      * 
      * @param listPlatformVersionsRequest
@@ -2212,14 +2285,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * Return the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
      * pairs.
      * </p>
      * <p>
-     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
-     * environment tagging, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
-     * Your Elastic Beanstalk Environment</a>.
+     * Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+     * Application Resources</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2964,10 +3036,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
      * </p>
      * <p>
-     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
-     * environment tagging, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
-     * Your Elastic Beanstalk Environment</a>.
+     * Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+     * Application Resources</a>.
      * </p>
      * <p>
      * If you create a custom IAM user policy to control permission to this operation, specify one of the following two

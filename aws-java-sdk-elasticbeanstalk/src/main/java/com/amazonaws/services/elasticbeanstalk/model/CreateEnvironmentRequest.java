@@ -28,26 +28,22 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application that contains the version to be deployed.
-     * </p>
-     * <p>
-     * If no application is found with this name, <code>CreateEnvironment</code> returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application that is associated with this environment.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * A unique name for the deployment environment. Used in the application URL.
+     * A unique name for the environment.
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
-     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
-     * part of the visible URL for your application.
+     * If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.
      * </p>
      */
     private String environmentName;
@@ -62,20 +58,23 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String groupName;
     /**
      * <p>
-     * Describes this environment.
+     * Your description for this environment.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME
-     * is generated automatically by appending a random alphanumeric string to the environment name.
+     * If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk
+     * environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string
+     * to the environment name.
      * </p>
      */
     private String cNAMEPrefix;
     /**
      * <p>
-     * This specifies the tier to use for creating this environment.
+     * Specifies the tier to use in creating this environment. The environment tier that you choose determines whether
+     * Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web
+     * application that handles background-processing tasks.
      * </p>
      */
     private EnvironmentTier tier;
@@ -90,37 +89,48 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the application version to deploy.
      * </p>
      * <p>
-     * If the specified application has no associated application versions, AWS Elastic Beanstalk
-     * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the container.
+     * Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      * </p>
      */
     private String versionLabel;
     /**
      * <p>
-     * The name of the configuration template to use in deployment. If no configuration template is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk configuration template to use with the environment.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      */
     private String templateName;
     /**
      * <p>
-     * This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the configuration
-     * values to the default values associated with the specified solution stack.
+     * The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified,
+     * Elastic Beanstalk sets the configuration values to the default values associated with the specified solution
+     * stack. For a list of current solution stacks, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk
+     * Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.
      * </p>
+     * <note>
      * <p>
-     * For a list of current solution stacks, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk Supported
-     * Platforms</a>.
+     * If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     * <code>TemplateName</code>.
      * </p>
+     * </note>
      */
     private String solutionStackName;
     /**
      * <p>
-     * The ARN of the platform.
+     * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      */
     private String platformArn;
     /**
@@ -151,22 +161,18 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * methods to initialize any additional object members.
      * 
      * @param applicationName
-     *        The name of the application that contains the version to be deployed.</p>
-     *        <p>
-     *        If no application is found with this name, <code>CreateEnvironment</code> returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        The name of the application that is associated with this environment.
      * @param environmentName
-     *        A unique name for the deployment environment. Used in the application URL.
-     *        </p>
+     *        A unique name for the environment.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *        hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
-     *        If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *        hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If
+     *        the specified name already exists in the region, Elastic Beanstalk returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
-     *        therefore part of the visible URL for your application.
+     *        If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the
+     *        CNAME, and therefore part of the visible URL for your application.
      */
     public CreateEnvironmentRequest(String applicationName, String environmentName) {
         setApplicationName(applicationName);
@@ -175,18 +181,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application that contains the version to be deployed.
-     * </p>
-     * <p>
-     * If no application is found with this name, <code>CreateEnvironment</code> returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application that is associated with this environment.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application that contains the version to be deployed.</p>
-     *        <p>
-     *        If no application is found with this name, <code>CreateEnvironment</code> returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        The name of the application that is associated with this environment.
      */
 
     public void setApplicationName(String applicationName) {
@@ -195,17 +194,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application that contains the version to be deployed.
-     * </p>
-     * <p>
-     * If no application is found with this name, <code>CreateEnvironment</code> returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application that is associated with this environment.
      * </p>
      * 
-     * @return The name of the application that contains the version to be deployed.</p>
-     *         <p>
-     *         If no application is found with this name, <code>CreateEnvironment</code> returns an
-     *         <code>InvalidParameterValue</code> error.
+     * @return The name of the application that is associated with this environment.
      */
 
     public String getApplicationName() {
@@ -214,18 +206,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the application that contains the version to be deployed.
-     * </p>
-     * <p>
-     * If no application is found with this name, <code>CreateEnvironment</code> returns an
-     * <code>InvalidParameterValue</code> error.
+     * The name of the application that is associated with this environment.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application that contains the version to be deployed.</p>
-     *        <p>
-     *        If no application is found with this name, <code>CreateEnvironment</code> returns an
-     *        <code>InvalidParameterValue</code> error.
+     *        The name of the application that is associated with this environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,29 +221,29 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique name for the deployment environment. Used in the application URL.
+     * A unique name for the environment.
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
-     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
-     * part of the visible URL for your application.
+     * If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.
      * </p>
      * 
      * @param environmentName
-     *        A unique name for the deployment environment. Used in the application URL.</p>
+     *        A unique name for the environment.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *        hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
-     *        If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *        hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If
+     *        the specified name already exists in the region, Elastic Beanstalk returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
-     *        therefore part of the visible URL for your application.
+     *        If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the
+     *        CNAME, and therefore part of the visible URL for your application.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -267,28 +252,28 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique name for the deployment environment. Used in the application URL.
+     * A unique name for the environment.
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
-     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
-     * part of the visible URL for your application.
+     * If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.
      * </p>
      * 
-     * @return A unique name for the deployment environment. Used in the application URL.</p>
+     * @return A unique name for the environment.</p>
      *         <p>
      *         Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *         hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
-     *         If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *         hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account.
+     *         If the specified name already exists in the region, Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      *         </p>
      *         <p>
-     *         Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
-     *         therefore part of the visible URL for your application.
+     *         If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the
+     *         CNAME, and therefore part of the visible URL for your application.
      */
 
     public String getEnvironmentName() {
@@ -297,29 +282,29 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique name for the deployment environment. Used in the application URL.
+     * A unique name for the environment.
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
-     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
-     * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
-     * part of the visible URL for your application.
+     * If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and
+     * therefore part of the visible URL for your application.
      * </p>
      * 
      * @param environmentName
-     *        A unique name for the deployment environment. Used in the application URL.</p>
+     *        A unique name for the environment.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *        hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
-     *        If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *        hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If
+     *        the specified name already exists in the region, Elastic Beanstalk returns an
      *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
-     *        Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
-     *        therefore part of the visible URL for your application.
+     *        If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the
+     *        CNAME, and therefore part of the visible URL for your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +376,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Describes this environment.
+     * Your description for this environment.
      * </p>
      * 
      * @param description
-     *        Describes this environment.
+     *        Your description for this environment.
      */
 
     public void setDescription(String description) {
@@ -404,10 +389,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Describes this environment.
+     * Your description for this environment.
      * </p>
      * 
-     * @return Describes this environment.
+     * @return Your description for this environment.
      */
 
     public String getDescription() {
@@ -416,11 +401,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Describes this environment.
+     * Your description for this environment.
      * </p>
      * 
      * @param description
-     *        Describes this environment.
+     *        Your description for this environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,13 +416,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME
-     * is generated automatically by appending a random alphanumeric string to the environment name.
+     * If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk
+     * environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string
+     * to the environment name.
      * </p>
      * 
      * @param cNAMEPrefix
-     *        If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified,
-     *        the CNAME is generated automatically by appending a random alphanumeric string to the environment name.
+     *        If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic
+     *        Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random
+     *        alphanumeric string to the environment name.
      */
 
     public void setCNAMEPrefix(String cNAMEPrefix) {
@@ -446,12 +433,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME
-     * is generated automatically by appending a random alphanumeric string to the environment name.
+     * If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk
+     * environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string
+     * to the environment name.
      * </p>
      * 
-     * @return If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified,
-     *         the CNAME is generated automatically by appending a random alphanumeric string to the environment name.
+     * @return If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic
+     *         Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random
+     *         alphanumeric string to the environment name.
      */
 
     public String getCNAMEPrefix() {
@@ -460,13 +449,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME
-     * is generated automatically by appending a random alphanumeric string to the environment name.
+     * If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk
+     * environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string
+     * to the environment name.
      * </p>
      * 
      * @param cNAMEPrefix
-     *        If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified,
-     *        the CNAME is generated automatically by appending a random alphanumeric string to the environment name.
+     *        If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic
+     *        Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random
+     *        alphanumeric string to the environment name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,11 +468,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This specifies the tier to use for creating this environment.
+     * Specifies the tier to use in creating this environment. The environment tier that you choose determines whether
+     * Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web
+     * application that handles background-processing tasks.
      * </p>
      * 
      * @param tier
-     *        This specifies the tier to use for creating this environment.
+     *        Specifies the tier to use in creating this environment. The environment tier that you choose determines
+     *        whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests
+     *        or a web application that handles background-processing tasks.
      */
 
     public void setTier(EnvironmentTier tier) {
@@ -490,10 +485,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This specifies the tier to use for creating this environment.
+     * Specifies the tier to use in creating this environment. The environment tier that you choose determines whether
+     * Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web
+     * application that handles background-processing tasks.
      * </p>
      * 
-     * @return This specifies the tier to use for creating this environment.
+     * @return Specifies the tier to use in creating this environment. The environment tier that you choose determines
+     *         whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests
+     *         or a web application that handles background-processing tasks.
      */
 
     public EnvironmentTier getTier() {
@@ -502,11 +501,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This specifies the tier to use for creating this environment.
+     * Specifies the tier to use in creating this environment. The environment tier that you choose determines whether
+     * Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web
+     * application that handles background-processing tasks.
      * </p>
      * 
      * @param tier
-     *        This specifies the tier to use for creating this environment.
+     *        Specifies the tier to use in creating this environment. The environment tier that you choose determines
+     *        whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests
+     *        or a web application that handles background-processing tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -593,22 +596,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the application version to deploy.
      * </p>
      * <p>
-     * If the specified application has no associated application versions, AWS Elastic Beanstalk
-     * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the container.
+     * Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      * </p>
      * 
      * @param versionLabel
      *        The name of the application version to deploy.</p>
      *        <p>
-     *        If the specified application has no associated application versions, AWS Elastic Beanstalk
-     *        <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     *        </p>
-     *        <p>
-     *        Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the
-     *        container.
+     *        Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      */
 
     public void setVersionLabel(String versionLabel) {
@@ -620,21 +614,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the application version to deploy.
      * </p>
      * <p>
-     * If the specified application has no associated application versions, AWS Elastic Beanstalk
-     * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the container.
+     * Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      * </p>
      * 
      * @return The name of the application version to deploy.</p>
      *         <p>
-     *         If the specified application has no associated application versions, AWS Elastic Beanstalk
-     *         <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     *         </p>
-     *         <p>
-     *         Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the
-     *         container.
+     *         Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      */
 
     public String getVersionLabel() {
@@ -646,22 +631,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the application version to deploy.
      * </p>
      * <p>
-     * If the specified application has no associated application versions, AWS Elastic Beanstalk
-     * <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     * </p>
-     * <p>
-     * Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the container.
+     * Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      * </p>
      * 
      * @param versionLabel
      *        The name of the application version to deploy.</p>
      *        <p>
-     *        If the specified application has no associated application versions, AWS Elastic Beanstalk
-     *        <code>UpdateEnvironment</code> returns an <code>InvalidParameterValue</code> error.
-     *        </p>
-     *        <p>
-     *        Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application in the
-     *        container.
+     *        Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -672,13 +648,19 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the configuration template to use in deployment. If no configuration template is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk configuration template to use with the environment.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
      * @param templateName
-     *        The name of the configuration template to use in deployment. If no configuration template is found with
-     *        this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
+     *        <p>
+     *        If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     *        </p>
      */
 
     public void setTemplateName(String templateName) {
@@ -687,12 +669,18 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the configuration template to use in deployment. If no configuration template is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk configuration template to use with the environment.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
-     * @return The name of the configuration template to use in deployment. If no configuration template is found with
-     *         this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * @return The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
+     *         <p>
+     *         If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     *         </p>
      */
 
     public String getTemplateName() {
@@ -701,13 +689,19 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the configuration template to use in deployment. If no configuration template is found with this
-     * name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * The name of the Elastic Beanstalk configuration template to use with the environment.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
      * @param templateName
-     *        The name of the configuration template to use in deployment. If no configuration template is found with
-     *        this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
+     *        <p>
+     *        If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -718,22 +712,29 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the configuration
-     * values to the default values associated with the specified solution stack.
+     * The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified,
+     * Elastic Beanstalk sets the configuration values to the default values associated with the specified solution
+     * stack. For a list of current solution stacks, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk
+     * Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.
      * </p>
+     * <note>
      * <p>
-     * For a list of current solution stacks, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk Supported
-     * Platforms</a>.
+     * If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     * <code>TemplateName</code>.
      * </p>
+     * </note>
      * 
      * @param solutionStackName
-     *        This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the
-     *        configuration values to the default values associated with the specified solution stack.</p>
+     *        The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If
+     *        specified, Elastic Beanstalk sets the configuration values to the default values associated with the
+     *        specified solution stack. For a list of current solution stacks, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
+     *        Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
      *        <p>
-     *        For a list of current solution stacks, see <a
-     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk
-     *        Supported Platforms</a>.
+     *        If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     *        <code>TemplateName</code>.
+     *        </p>
      */
 
     public void setSolutionStackName(String solutionStackName) {
@@ -742,21 +743,28 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the configuration
-     * values to the default values associated with the specified solution stack.
+     * The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified,
+     * Elastic Beanstalk sets the configuration values to the default values associated with the specified solution
+     * stack. For a list of current solution stacks, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk
+     * Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.
      * </p>
+     * <note>
      * <p>
-     * For a list of current solution stacks, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk Supported
-     * Platforms</a>.
+     * If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     * <code>TemplateName</code>.
      * </p>
+     * </note>
      * 
-     * @return This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the
-     *         configuration values to the default values associated with the specified solution stack.</p>
+     * @return The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If
+     *         specified, Elastic Beanstalk sets the configuration values to the default values associated with the
+     *         specified solution stack. For a list of current solution stacks, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
+     *         Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
      *         <p>
-     *         For a list of current solution stacks, see <a
-     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk
-     *         Supported Platforms</a>.
+     *         If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     *         <code>TemplateName</code>.
+     *         </p>
      */
 
     public String getSolutionStackName() {
@@ -765,22 +773,29 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the configuration
-     * values to the default values associated with the specified solution stack.
+     * The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified,
+     * Elastic Beanstalk sets the configuration values to the default values associated with the specified solution
+     * stack. For a list of current solution stacks, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk
+     * Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.
      * </p>
+     * <note>
      * <p>
-     * For a list of current solution stacks, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk Supported
-     * Platforms</a>.
+     * If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     * <code>TemplateName</code>.
      * </p>
+     * </note>
      * 
      * @param solutionStackName
-     *        This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the
-     *        configuration values to the default values associated with the specified solution stack.</p>
+     *        The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If
+     *        specified, Elastic Beanstalk sets the configuration values to the default values associated with the
+     *        specified solution stack. For a list of current solution stacks, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
+     *        Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
      *        <p>
-     *        For a list of current solution stacks, see <a
-     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic Beanstalk
-     *        Supported Platforms</a>.
+     *        If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or
+     *        <code>TemplateName</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,11 +806,23 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the platform.
+     * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
      * @param platformArn
-     *        The ARN of the platform.
+     *        The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information,
+     *        see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+     *        Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     *        <p>
+     *        If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     *        </p>
      */
 
     public void setPlatformArn(String platformArn) {
@@ -804,10 +831,22 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the platform.
+     * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
-     * @return The ARN of the platform.
+     * @return The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information,
+     *         see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+     *         Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     *         <p>
+     *         If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     *         </p>
      */
 
     public String getPlatformArn() {
@@ -816,11 +855,23 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the platform.
+     * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     * </p>
+     * </note>
      * 
      * @param platformArn
-     *        The ARN of the platform.
+     *        The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information,
+     *        see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+     *        Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
+     *        <p>
+     *        If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

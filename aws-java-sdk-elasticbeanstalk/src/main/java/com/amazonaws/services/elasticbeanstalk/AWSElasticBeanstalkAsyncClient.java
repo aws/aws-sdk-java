@@ -1389,6 +1389,39 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListPlatformBranchesResult> listPlatformBranchesAsync(ListPlatformBranchesRequest request) {
+
+        return listPlatformBranchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlatformBranchesResult> listPlatformBranchesAsync(final ListPlatformBranchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPlatformBranchesRequest, ListPlatformBranchesResult> asyncHandler) {
+        final ListPlatformBranchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPlatformBranchesResult>() {
+            @Override
+            public ListPlatformBranchesResult call() throws Exception {
+                ListPlatformBranchesResult result = null;
+
+                try {
+                    result = executeListPlatformBranches(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest request) {
 
         return listPlatformVersionsAsync(request, null);

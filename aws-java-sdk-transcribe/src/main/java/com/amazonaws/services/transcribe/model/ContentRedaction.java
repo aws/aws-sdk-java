@@ -21,10 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Settings for content redaction within a transcription job.
  * </p>
- * <p>
- * You can redact transcripts in US English (en-us). For more information see: <a
- * href="https://docs.aws.amazon.com/transcribe/latest/dg/content-redaction.html">Automatic Content Redaction</a>
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction" target="_top">AWS API
  *      Documentation</a>
@@ -40,16 +36,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     private String redactionType;
     /**
      * <p>
-     * Request parameter where you choose whether to output only the redacted transcript or generate an additional
-     * unredacted transcript.
+     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted transcript and
-     * related information.
+     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the unredacted
-     * transcript and related information in addition to the JSON file with the redacted transcript.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
+     * transcripts.
      * </p>
      */
     private String redactionOutput;
@@ -115,28 +109,24 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter where you choose whether to output only the redacted transcript or generate an additional
-     * unredacted transcript.
+     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted transcript and
-     * related information.
+     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the unredacted
-     * transcript and related information in addition to the JSON file with the redacted transcript.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
+     * transcripts.
      * </p>
      * 
      * @param redactionOutput
-     *        Request parameter where you choose whether to output only the redacted transcript or generate an
-     *        additional unredacted transcript.</p>
+     *        The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
      *        <p>
-     *        When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted
-     *        transcript and related information.
+     *        When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      *        </p>
      *        <p>
-     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the
-     *        unredacted transcript and related information in addition to the JSON file with the redacted transcript.
+     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
+     *        unredacted transcripts.
      * @see RedactionOutput
      */
 
@@ -146,27 +136,23 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter where you choose whether to output only the redacted transcript or generate an additional
-     * unredacted transcript.
+     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted transcript and
-     * related information.
+     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the unredacted
-     * transcript and related information in addition to the JSON file with the redacted transcript.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
+     * transcripts.
      * </p>
      * 
-     * @return Request parameter where you choose whether to output only the redacted transcript or generate an
-     *         additional unredacted transcript.</p>
+     * @return The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
      *         <p>
-     *         When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted
-     *         transcript and related information.
+     *         When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      *         </p>
      *         <p>
-     *         When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the
-     *         unredacted transcript and related information in addition to the JSON file with the redacted transcript.
+     *         When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
+     *         unredacted transcripts.
      * @see RedactionOutput
      */
 
@@ -176,28 +162,24 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter where you choose whether to output only the redacted transcript or generate an additional
-     * unredacted transcript.
+     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted transcript and
-     * related information.
+     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the unredacted
-     * transcript and related information in addition to the JSON file with the redacted transcript.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
+     * transcripts.
      * </p>
      * 
      * @param redactionOutput
-     *        Request parameter where you choose whether to output only the redacted transcript or generate an
-     *        additional unredacted transcript.</p>
+     *        The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
      *        <p>
-     *        When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted
-     *        transcript and related information.
+     *        When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      *        </p>
      *        <p>
-     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the
-     *        unredacted transcript and related information in addition to the JSON file with the redacted transcript.
+     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
+     *        unredacted transcripts.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionOutput
      */
@@ -209,28 +191,24 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Request parameter where you choose whether to output only the redacted transcript or generate an additional
-     * unredacted transcript.
+     * The output transcript file stored in either the default S3 bucket or in a bucket you specify.
      * </p>
      * <p>
-     * When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted transcript and
-     * related information.
+     * When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      * </p>
      * <p>
-     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the unredacted
-     * transcript and related information in addition to the JSON file with the redacted transcript.
+     * When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and unredacted
+     * transcripts.
      * </p>
      * 
      * @param redactionOutput
-     *        Request parameter where you choose whether to output only the redacted transcript or generate an
-     *        additional unredacted transcript.</p>
+     *        The output transcript file stored in either the default S3 bucket or in a bucket you specify.</p>
      *        <p>
-     *        When you choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the redacted
-     *        transcript and related information.
+     *        When you choose <code>redacted</code> Amazon Transcribe outputs only the redacted transcript.
      *        </p>
      *        <p>
-     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with the
-     *        unredacted transcript and related information in addition to the JSON file with the redacted transcript.
+     *        When you choose <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted and
+     *        unredacted transcripts.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionOutput
      */

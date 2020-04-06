@@ -25,18 +25,18 @@ public class DescribePlatformVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Detailed information about the version of the platform.
+     * Detailed information about the platform version.
      * </p>
      */
     private PlatformDescription platformDescription;
 
     /**
      * <p>
-     * Detailed information about the version of the platform.
+     * Detailed information about the platform version.
      * </p>
      * 
      * @param platformDescription
-     *        Detailed information about the version of the platform.
+     *        Detailed information about the platform version.
      */
 
     public void setPlatformDescription(PlatformDescription platformDescription) {
@@ -45,10 +45,10 @@ public class DescribePlatformVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Detailed information about the version of the platform.
+     * Detailed information about the platform version.
      * </p>
      * 
-     * @return Detailed information about the version of the platform.
+     * @return Detailed information about the platform version.
      */
 
     public PlatformDescription getPlatformDescription() {
@@ -57,11 +57,11 @@ public class DescribePlatformVersionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Detailed information about the version of the platform.
+     * Detailed information about the platform version.
      * </p>
      * 
      * @param platformDescription
-     *        Detailed information about the version of the platform.
+     *        Detailed information about the platform version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,7 +96,7 @@ public class ClientConfiguration {
     public static final boolean DEFAULT_USE_REAPER = true;
 
     /**
-     * The default on whether to use gzip compression.
+     * The default on whether to use gzip decompression.
      */
     public static final boolean DEFAULT_USE_GZIP = false;
 
@@ -261,7 +261,7 @@ public class ClientConfiguration {
     private boolean useReaper = DEFAULT_USE_REAPER;
 
     /**
-     * Optional whether to use gzip compression when making HTTP requests.
+     * Optional whether to use gzip decompression when receiving HTTP responses.
      */
     private boolean useGzip = DEFAULT_USE_GZIP;
 
@@ -1733,29 +1733,37 @@ public class ClientConfiguration {
     }
 
     /**
-     * Checks if gzip compression is used
+     * Checks if gzip decompression is used when receiving HTTP responses.
      *
-     * @return if gzip compression is used
+     * @return if gzip decompression is used
      */
     public boolean useGzip() {
         return useGzip;
     }
 
     /**
-     * Sets whether gzip compression should be used
+     * Sets whether gzip decompression should be used when receiving HTTP responses.
+     *
+     * <p>
+     * <b>Note</b>
+     * useGzip should only be enabled if the HTTP response is gzipped
      *
      * @param use
-     *            whether gzip compression should be used
+     *            whether gzip decompression should be used
      */
     public void setUseGzip(boolean use) {
         this.useGzip = use;
     }
 
     /**
-     * Sets whether gzip compression should be used
+     * Sets whether gzip decompression should be used when receiving HTTP responses.
+     *
+     * <p>
+     * <b>Note</b>
+     * useGzip should only be enabled if the HTTP response is gzipped
      *
      * @param use
-     *            whether gzip compression should be used
+     *            whether gzip decompression should be used
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withGzip(boolean use) {

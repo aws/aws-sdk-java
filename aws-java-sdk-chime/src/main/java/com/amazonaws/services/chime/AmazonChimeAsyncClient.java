@@ -644,6 +644,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(CreateProxySessionRequest request) {
+
+        return createProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(final CreateProxySessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProxySessionRequest, CreateProxySessionResult> asyncHandler) {
+        final CreateProxySessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProxySessionResult>() {
+            @Override
+            public CreateProxySessionResult call() throws Exception {
+                CreateProxySessionResult result = null;
+
+                try {
+                    result = executeCreateProxySession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest request) {
 
         return createRoomAsync(request, null);
@@ -974,6 +1007,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(DeleteProxySessionRequest request) {
+
+        return deleteProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(final DeleteProxySessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProxySessionRequest, DeleteProxySessionResult> asyncHandler) {
+        final DeleteProxySessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProxySessionResult>() {
+            @Override
+            public DeleteProxySessionResult call() throws Exception {
+                DeleteProxySessionResult result = null;
+
+                try {
+                    result = executeDeleteProxySession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest request) {
 
         return deleteRoomAsync(request, null);
@@ -1125,6 +1191,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDeleteVoiceConnectorOrigination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorProxyResult> deleteVoiceConnectorProxyAsync(DeleteVoiceConnectorProxyRequest request) {
+
+        return deleteVoiceConnectorProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVoiceConnectorProxyResult> deleteVoiceConnectorProxyAsync(final DeleteVoiceConnectorProxyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorProxyRequest, DeleteVoiceConnectorProxyResult> asyncHandler) {
+        final DeleteVoiceConnectorProxyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVoiceConnectorProxyResult>() {
+            @Override
+            public DeleteVoiceConnectorProxyResult call() throws Exception {
+                DeleteVoiceConnectorProxyResult result = null;
+
+                try {
+                    result = executeDeleteVoiceConnectorProxy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1716,6 +1815,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(GetProxySessionRequest request) {
+
+        return getProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(final GetProxySessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProxySessionRequest, GetProxySessionResult> asyncHandler) {
+        final GetProxySessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProxySessionResult>() {
+            @Override
+            public GetProxySessionResult call() throws Exception {
+                GetProxySessionResult result = null;
+
+                try {
+                    result = executeGetProxySession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest request) {
 
         return getRoomAsync(request, null);
@@ -1933,6 +2065,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeGetVoiceConnectorOrigination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest request) {
+
+        return getVoiceConnectorProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(final GetVoiceConnectorProxyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorProxyRequest, GetVoiceConnectorProxyResult> asyncHandler) {
+        final GetVoiceConnectorProxyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVoiceConnectorProxyResult>() {
+            @Override
+            public GetVoiceConnectorProxyResult call() throws Exception {
+                GetVoiceConnectorProxyResult result = null;
+
+                try {
+                    result = executeGetVoiceConnectorProxy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2283,6 +2448,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(ListProxySessionsRequest request) {
+
+        return listProxySessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(final ListProxySessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProxySessionsRequest, ListProxySessionsResult> asyncHandler) {
+        final ListProxySessionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProxySessionsResult>() {
+            @Override
+            public ListProxySessionsResult call() throws Exception {
+                ListProxySessionsResult result = null;
+
+                try {
+                    result = executeListProxySessions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRoomMembershipsResult> listRoomMembershipsAsync(ListRoomMembershipsRequest request) {
 
         return listRoomMembershipsAsync(request, null);
@@ -2601,6 +2799,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executePutVoiceConnectorOrigination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest request) {
+
+        return putVoiceConnectorProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(final PutVoiceConnectorProxyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorProxyRequest, PutVoiceConnectorProxyResult> asyncHandler) {
+        final PutVoiceConnectorProxyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutVoiceConnectorProxyResult>() {
+            @Override
+            public PutVoiceConnectorProxyResult call() throws Exception {
+                PutVoiceConnectorProxyResult result = null;
+
+                try {
+                    result = executePutVoiceConnectorProxy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3034,6 +3265,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeUpdatePhoneNumberSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(UpdateProxySessionRequest request) {
+
+        return updateProxySessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(final UpdateProxySessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProxySessionRequest, UpdateProxySessionResult> asyncHandler) {
+        final UpdateProxySessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProxySessionResult>() {
+            @Override
+            public UpdateProxySessionResult call() throws Exception {
+                UpdateProxySessionResult result = null;
+
+                try {
+                    result = executeUpdateProxySession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A framework supported by the custom platform.
+ * A framework supported by the platform.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/PlatformFramework" target="_top">AWS

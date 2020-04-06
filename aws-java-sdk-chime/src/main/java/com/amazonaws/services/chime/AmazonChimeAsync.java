@@ -699,6 +699,29 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<CreatePhoneNumberOrderRequest, CreatePhoneNumberOrderResult> asyncHandler);
 
     /**
+     * @param createProxySessionRequest
+     * @return A Java Future containing the result of the CreateProxySession operation returned by the service.
+     * @sample AmazonChimeAsync.CreateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(CreateProxySessionRequest createProxySessionRequest);
+
+    /**
+     * @param createProxySessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProxySession operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(CreateProxySessionRequest createProxySessionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProxySessionRequest, CreateProxySessionResult> asyncHandler);
+
+    /**
      * <p>
      * Creates a chat room for the specified Amazon Chime Enterprise account.
      * </p>
@@ -1085,6 +1108,29 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<DeletePhoneNumberRequest, DeletePhoneNumberResult> asyncHandler);
 
     /**
+     * @param deleteProxySessionRequest
+     * @return A Java Future containing the result of the DeleteProxySession operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(DeleteProxySessionRequest deleteProxySessionRequest);
+
+    /**
+     * @param deleteProxySessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProxySession operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(DeleteProxySessionRequest deleteProxySessionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProxySessionRequest, DeleteProxySessionResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes a chat room in an Amazon Chime Enterprise account.
      * </p>
@@ -1248,6 +1294,31 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<DeleteVoiceConnectorOriginationResult> deleteVoiceConnectorOriginationAsync(
             DeleteVoiceConnectorOriginationRequest deleteVoiceConnectorOriginationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorOriginationRequest, DeleteVoiceConnectorOriginationResult> asyncHandler);
+
+    /**
+     * @param deleteVoiceConnectorProxyRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnectorProxy operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorProxyResult> deleteVoiceConnectorProxyAsync(
+            DeleteVoiceConnectorProxyRequest deleteVoiceConnectorProxyRequest);
+
+    /**
+     * @param deleteVoiceConnectorProxyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnectorProxy operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorProxyResult> deleteVoiceConnectorProxyAsync(
+            DeleteVoiceConnectorProxyRequest deleteVoiceConnectorProxyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorProxyRequest, DeleteVoiceConnectorProxyResult> asyncHandler);
 
     /**
      * <p>
@@ -1831,6 +1902,29 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<GetPhoneNumberSettingsRequest, GetPhoneNumberSettingsResult> asyncHandler);
 
     /**
+     * @param getProxySessionRequest
+     * @return A Java Future containing the result of the GetProxySession operation returned by the service.
+     * @sample AmazonChimeAsync.GetProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(GetProxySessionRequest getProxySessionRequest);
+
+    /**
+     * @param getProxySessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProxySession operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(GetProxySessionRequest getProxySessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProxySessionRequest, GetProxySessionResult> asyncHandler);
+
+    /**
      * <p>
      * Retrieves room details, such as the room name, for a room in an Amazon Chime Enterprise account.
      * </p>
@@ -2070,6 +2164,29 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<GetVoiceConnectorOriginationResult> getVoiceConnectorOriginationAsync(
             GetVoiceConnectorOriginationRequest getVoiceConnectorOriginationRequest,
             com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorOriginationRequest, GetVoiceConnectorOriginationResult> asyncHandler);
+
+    /**
+     * @param getVoiceConnectorProxyRequest
+     * @return A Java Future containing the result of the GetVoiceConnectorProxy operation returned by the service.
+     * @sample AmazonChimeAsync.GetVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest getVoiceConnectorProxyRequest);
+
+    /**
+     * @param getVoiceConnectorProxyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnectorProxy operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest getVoiceConnectorProxyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorProxyRequest, GetVoiceConnectorProxyResult> asyncHandler);
 
     /**
      * <p>
@@ -2416,6 +2533,29 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersRequest, ListPhoneNumbersResult> asyncHandler);
 
     /**
+     * @param listProxySessionsRequest
+     * @return A Java Future containing the result of the ListProxySessions operation returned by the service.
+     * @sample AmazonChimeAsync.ListProxySessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(ListProxySessionsRequest listProxySessionsRequest);
+
+    /**
+     * @param listProxySessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProxySessions operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListProxySessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(ListProxySessionsRequest listProxySessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProxySessionsRequest, ListProxySessionsResult> asyncHandler);
+
+    /**
      * <p>
      * Lists the membership details for the specified room in an Amazon Chime Enterprise account, such as the members'
      * IDs, email addresses, and names.
@@ -2746,6 +2886,29 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<PutVoiceConnectorOriginationResult> putVoiceConnectorOriginationAsync(
             PutVoiceConnectorOriginationRequest putVoiceConnectorOriginationRequest,
             com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorOriginationRequest, PutVoiceConnectorOriginationResult> asyncHandler);
+
+    /**
+     * @param putVoiceConnectorProxyRequest
+     * @return A Java Future containing the result of the PutVoiceConnectorProxy operation returned by the service.
+     * @sample AmazonChimeAsync.PutVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest putVoiceConnectorProxyRequest);
+
+    /**
+     * @param putVoiceConnectorProxyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutVoiceConnectorProxy operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.PutVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest putVoiceConnectorProxyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorProxyRequest, PutVoiceConnectorProxyResult> asyncHandler);
 
     /**
      * <p>
@@ -3205,6 +3368,29 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<UpdatePhoneNumberSettingsResult> updatePhoneNumberSettingsAsync(
             UpdatePhoneNumberSettingsRequest updatePhoneNumberSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePhoneNumberSettingsRequest, UpdatePhoneNumberSettingsResult> asyncHandler);
+
+    /**
+     * @param updateProxySessionRequest
+     * @return A Java Future containing the result of the UpdateProxySession operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(UpdateProxySessionRequest updateProxySessionRequest);
+
+    /**
+     * @param updateProxySessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProxySession operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(UpdateProxySessionRequest updateProxySessionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProxySessionRequest, UpdateProxySessionResult> asyncHandler);
 
     /**
      * <p>

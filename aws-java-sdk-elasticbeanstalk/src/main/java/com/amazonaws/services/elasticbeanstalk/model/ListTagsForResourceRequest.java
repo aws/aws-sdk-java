@@ -30,7 +30,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      */
     private String resourceArn;
@@ -40,13 +40,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
      *        <p>
-     *        Must be the ARN of an Elastic Beanstalk environment.
+     *        Must be the ARN of an Elastic Beanstalk resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -58,12 +58,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
      *         <p>
-     *         Must be the ARN of an Elastic Beanstalk environment.
+     *         Must be the ARN of an Elastic Beanstalk resource.
      */
 
     public String getResourceArn() {
@@ -75,13 +75,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.
      * </p>
      * <p>
-     * Must be the ARN of an Elastic Beanstalk environment.
+     * Must be the ARN of an Elastic Beanstalk resource.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>
      *        <p>
-     *        Must be the ARN of an Elastic Beanstalk environment.
+     *        Must be the ARN of an Elastic Beanstalk resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

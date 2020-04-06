@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A specification for an environment configuration
+ * A specification for an environment configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SourceConfiguration"

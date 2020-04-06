@@ -38,6 +38,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public DeleteMedicalTranscriptionJobResult deleteMedicalTranscriptionJob(DeleteMedicalTranscriptionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTranscriptionJobResult deleteTranscriptionJob(DeleteTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +54,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public DeleteVocabularyFilterResult deleteVocabularyFilter(DeleteVocabularyFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMedicalTranscriptionJobResult getMedicalTranscriptionJob(GetMedicalTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +78,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public ListMedicalTranscriptionJobsResult listMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTranscriptionJobsResult listTranscriptionJobs(ListTranscriptionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +94,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public ListVocabularyFiltersResult listVocabularyFilters(ListVocabularyFiltersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMedicalTranscriptionJobResult startMedicalTranscriptionJob(StartMedicalTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

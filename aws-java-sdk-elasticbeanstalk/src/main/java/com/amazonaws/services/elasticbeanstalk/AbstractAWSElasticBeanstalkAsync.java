@@ -570,6 +570,19 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     }
 
     @Override
+    public java.util.concurrent.Future<ListPlatformBranchesResult> listPlatformBranchesAsync(ListPlatformBranchesRequest request) {
+
+        return listPlatformBranchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlatformBranchesResult> listPlatformBranchesAsync(ListPlatformBranchesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPlatformBranchesRequest, ListPlatformBranchesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest request) {
 
         return listPlatformVersionsAsync(request, null);

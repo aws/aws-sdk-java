@@ -607,6 +607,30 @@ public interface AmazonChime {
     CreatePhoneNumberOrderResult createPhoneNumberOrder(CreatePhoneNumberOrderRequest createPhoneNumberOrderRequest);
 
     /**
+     * @param createProxySessionRequest
+     * @return Result of the CreateProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateProxySessionResult createProxySession(CreateProxySessionRequest createProxySessionRequest);
+
+    /**
      * <p>
      * Creates a chat room for the specified Amazon Chime Enterprise account.
      * </p>
@@ -935,6 +959,30 @@ public interface AmazonChime {
     DeletePhoneNumberResult deletePhoneNumber(DeletePhoneNumberRequest deletePhoneNumberRequest);
 
     /**
+     * @param deleteProxySessionRequest
+     * @return Result of the DeleteProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteProxySessionResult deleteProxySession(DeleteProxySessionRequest deleteProxySessionRequest);
+
+    /**
      * <p>
      * Deletes a chat room in an Amazon Chime Enterprise account.
      * </p>
@@ -1079,6 +1127,30 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteVoiceConnectorOriginationResult deleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest deleteVoiceConnectorOriginationRequest);
+
+    /**
+     * @param deleteVoiceConnectorProxyRequest
+     * @return Result of the DeleteVoiceConnectorProxy operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVoiceConnectorProxyResult deleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest deleteVoiceConnectorProxyRequest);
 
     /**
      * <p>
@@ -1571,6 +1643,30 @@ public interface AmazonChime {
     GetPhoneNumberSettingsResult getPhoneNumberSettings(GetPhoneNumberSettingsRequest getPhoneNumberSettingsRequest);
 
     /**
+     * @param getProxySessionRequest
+     * @return Result of the GetProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetProxySessionResult getProxySession(GetProxySessionRequest getProxySessionRequest);
+
+    /**
      * <p>
      * Retrieves room details, such as the room name, for a room in an Amazon Chime Enterprise account.
      * </p>
@@ -1774,6 +1870,30 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     GetVoiceConnectorOriginationResult getVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest getVoiceConnectorOriginationRequest);
+
+    /**
+     * @param getVoiceConnectorProxyRequest
+     * @return Result of the GetVoiceConnectorProxy operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetVoiceConnectorProxyResult getVoiceConnectorProxy(GetVoiceConnectorProxyRequest getVoiceConnectorProxyRequest);
 
     /**
      * <p>
@@ -2063,6 +2183,30 @@ public interface AmazonChime {
     ListPhoneNumbersResult listPhoneNumbers(ListPhoneNumbersRequest listPhoneNumbersRequest);
 
     /**
+     * @param listProxySessionsRequest
+     * @return Result of the ListProxySessions operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListProxySessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListProxySessionsResult listProxySessions(ListProxySessionsRequest listProxySessionsRequest);
+
+    /**
      * <p>
      * Lists the membership details for the specified room in an Amazon Chime Enterprise account, such as the members'
      * IDs, email addresses, and names.
@@ -2344,6 +2488,32 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     PutVoiceConnectorOriginationResult putVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest putVoiceConnectorOriginationRequest);
+
+    /**
+     * @param putVoiceConnectorProxyRequest
+     * @return Result of the PutVoiceConnectorProxy operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutVoiceConnectorProxyResult putVoiceConnectorProxy(PutVoiceConnectorProxyRequest putVoiceConnectorProxyRequest);
 
     /**
      * <p>
@@ -2732,6 +2902,30 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePhoneNumberSettingsResult updatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest updatePhoneNumberSettingsRequest);
+
+    /**
+     * @param updateProxySessionRequest
+     * @return Result of the UpdateProxySession operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateProxySession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateProxySessionResult updateProxySession(UpdateProxySessionRequest updateProxySessionRequest);
 
     /**
      * <p>

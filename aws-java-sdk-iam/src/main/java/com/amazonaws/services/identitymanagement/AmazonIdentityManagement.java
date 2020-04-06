@@ -2009,6 +2009,10 @@ public interface AmazonIdentityManagement {
      * service that the resource could access using permissions policies. For each service, the response includes
      * information about the most recent access attempt.
      * </p>
+     * <p>
+     * The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
+     * within a session, or by the same user when used to call <code>GetServiceLastAccessedDetail</code>.
+     * </p>
      * </li>
      * <li>
      * <p>

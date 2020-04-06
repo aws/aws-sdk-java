@@ -34,7 +34,7 @@ public class UpdateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
     private String solutionStackName;
     /**
      * <p>
-     * The ARN of the platform.
+     * The ARN of the platform version.
      * </p>
      */
     private String platformArn;
@@ -154,11 +154,11 @@ public class UpdateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the platform.
+     * The ARN of the platform version.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the platform.
+     *        The ARN of the platform version.
      */
 
     public void setPlatformArn(String platformArn) {
@@ -167,10 +167,10 @@ public class UpdateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the platform.
+     * The ARN of the platform version.
      * </p>
      * 
-     * @return The ARN of the platform.
+     * @return The ARN of the platform version.
      */
 
     public String getPlatformArn() {
@@ -179,11 +179,11 @@ public class UpdateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the platform.
+     * The ARN of the platform version.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the platform.
+     *        The ARN of the platform version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
