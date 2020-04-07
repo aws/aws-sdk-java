@@ -92,6 +92,10 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
                     context.nextToken();
                     addOutputRequest.setStreamId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("vpcInterfaceAttachment", targetDepth)) {
+                    context.nextToken();
+                    addOutputRequest.setVpcInterfaceAttachment(VpcInterfaceAttachmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

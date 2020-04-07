@@ -35,7 +35,9 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
     private String format;
     /**
      * <p>
-     * The ARN of the CloudWatch Logs log group to receive access logs.
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to
+     * receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.
      * </p>
      */
     private String destinationArn;
@@ -94,11 +96,15 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the CloudWatch Logs log group to receive access logs.
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to
+     * receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.
      * </p>
      * 
      * @param destinationArn
-     *        The ARN of the CloudWatch Logs log group to receive access logs.
+     *        The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream
+     *        to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin
+     *        with <code>amazon-apigateway-</code>.
      */
 
     public void setDestinationArn(String destinationArn) {
@@ -107,10 +113,14 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the CloudWatch Logs log group to receive access logs.
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to
+     * receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.
      * </p>
      * 
-     * @return The ARN of the CloudWatch Logs log group to receive access logs.
+     * @return The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream
+     *         to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must
+     *         begin with <code>amazon-apigateway-</code>.
      */
 
     public String getDestinationArn() {
@@ -119,11 +129,15 @@ public class AccessLogSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN of the CloudWatch Logs log group to receive access logs.
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to
+     * receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.
      * </p>
      * 
      * @param destinationArn
-     *        The ARN of the CloudWatch Logs log group to receive access logs.
+     *        The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream
+     *        to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin
+     *        with <code>amazon-apigateway-</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

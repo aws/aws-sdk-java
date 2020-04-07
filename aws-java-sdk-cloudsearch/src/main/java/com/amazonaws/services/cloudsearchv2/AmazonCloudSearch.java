@@ -435,6 +435,34 @@ public interface AmazonCloudSearch {
 
     /**
      * <p>
+     * Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify
+     *        the name of the domain you want to describe. To show the active configuration and exclude any pending
+     *        changes, set the Deployed option to <code>true</code>.
+     * @return Result of the DescribeDomainEndpointOptions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         An internal error occurred while processing the request. If this problem persists, report an issue from
+     *         the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
+     * @throws LimitExceededException
+     *         The request was rejected because a resource limit has already been met.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because it attempted to reference a resource that does not exist.
+     * @throws DisabledOperationException
+     *         The request was rejected because it attempted an operation which is not enabled.
+     * @sample AmazonCloudSearch.DescribeDomainEndpointOptions
+     */
+    DescribeDomainEndpointOptionsResult describeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest describeDomainEndpointOptionsRequest);
+
+    /**
+     * <p>
      * Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all
      * domains by default. To get the number of searchable documents in a domain, use the console or submit a
      * <code>matchall</code> request to your domain's search endpoint:
@@ -661,9 +689,42 @@ public interface AmazonCloudSearch {
      *         The request was rejected because it attempted to reference a resource that does not exist.
      * @throws DisabledOperationException
      *         The request was rejected because it attempted an operation which is not enabled.
+     * @throws ValidationException
+     *         The request was rejected because it has invalid parameters.
      * @sample AmazonCloudSearch.UpdateAvailabilityOptions
      */
     UpdateAvailabilityOptionsResult updateAvailabilityOptions(UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest);
+
+    /**
+     * <p>
+     * Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies
+     *        the name of the domain you want to update and the domain endpoint options.
+     * @return Result of the UpdateDomainEndpointOptions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         An internal error occurred while processing the request. If this problem persists, report an issue from
+     *         the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
+     * @throws InvalidTypeException
+     *         The request was rejected because it specified an invalid type definition.
+     * @throws LimitExceededException
+     *         The request was rejected because a resource limit has already been met.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because it attempted to reference a resource that does not exist.
+     * @throws DisabledOperationException
+     *         The request was rejected because it attempted an operation which is not enabled.
+     * @throws ValidationException
+     *         The request was rejected because it has invalid parameters.
+     * @sample AmazonCloudSearch.UpdateDomainEndpointOptions
+     */
+    UpdateDomainEndpointOptionsResult updateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest updateDomainEndpointOptionsRequest);
 
     /**
      * <p>

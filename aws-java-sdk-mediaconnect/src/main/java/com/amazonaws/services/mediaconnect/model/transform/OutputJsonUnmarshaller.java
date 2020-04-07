@@ -88,6 +88,10 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                     context.nextToken();
                     output.setTransport(TransportJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("vpcInterfaceAttachment", targetDepth)) {
+                    context.nextToken();
+                    output.setVpcInterfaceAttachment(VpcInterfaceAttachmentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual Private Cloud (VPC).
+ * An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual Private Cloud (VPC).
  * </p>
  * <div class="remarks">
  * <p>
@@ -55,7 +55,7 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be owned
+     * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
      * by the same AWS account of the API owner.
      * </p>
      */
@@ -206,11 +206,11 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be owned
+     * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
      * by the same AWS account of the API owner.
      * </p>
      * 
-     * @return The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must
+     * @return The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
      *         be owned by the same AWS account of the API owner.
      */
 
@@ -220,13 +220,13 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be owned
+     * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
      * by the same AWS account of the API owner.
      * </p>
      * 
      * @param targetArns
-     *        The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be
-     *        owned by the same AWS account of the API owner.
+     *        The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
+     *        be owned by the same AWS account of the API owner.
      */
 
     public void setTargetArns(java.util.Collection<String> targetArns) {
@@ -240,7 +240,7 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be owned
+     * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
      * by the same AWS account of the API owner.
      * </p>
      * <p>
@@ -250,8 +250,8 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targetArns
-     *        The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be
-     *        owned by the same AWS account of the API owner.
+     *        The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
+     *        be owned by the same AWS account of the API owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,13 +267,13 @@ public class VpcLink implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be owned
+     * The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned
      * by the same AWS account of the API owner.
      * </p>
      * 
      * @param targetArns
-     *        The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers must be
-     *        owned by the same AWS account of the API owner.
+     *        The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must
+     *        be owned by the same AWS account of the API owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

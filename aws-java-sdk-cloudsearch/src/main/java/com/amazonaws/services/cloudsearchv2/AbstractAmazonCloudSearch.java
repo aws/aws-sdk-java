@@ -103,6 +103,11 @@ public class AbstractAmazonCloudSearch implements AmazonCloudSearch {
     }
 
     @Override
+    public DescribeDomainEndpointOptionsResult describeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDomainsResult describeDomains(DescribeDomainsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +159,11 @@ public class AbstractAmazonCloudSearch implements AmazonCloudSearch {
 
     @Override
     public UpdateAvailabilityOptionsResult updateAvailabilityOptions(UpdateAvailabilityOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDomainEndpointOptionsResult updateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

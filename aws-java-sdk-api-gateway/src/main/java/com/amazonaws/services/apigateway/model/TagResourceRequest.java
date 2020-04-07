@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     * [Required] The ARN of a resource that can be tagged.
      * </p>
      */
     private String resourceArn;
@@ -41,11 +41,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     * [Required] The ARN of a resource that can be tagged.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     *        [Required] The ARN of a resource that can be tagged.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -54,10 +54,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     * [Required] The ARN of a resource that can be tagged.
      * </p>
      * 
-     * @return [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     * @return [Required] The ARN of a resource that can be tagged.
      */
 
     public String getResourceArn() {
@@ -66,11 +66,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     * [Required] The ARN of a resource that can be tagged.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded.
+     *        [Required] The ARN of a resource that can be tagged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -534,6 +534,49 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
 
     /**
      * <p>
+     * Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify
+     *        the name of the domain you want to describe. To show the active configuration and exclude any pending
+     *        changes, set the Deployed option to <code>true</code>.
+     * @return A Java Future containing the result of the DescribeDomainEndpointOptions operation returned by the
+     *         service.
+     * @sample AmazonCloudSearchAsync.DescribeDomainEndpointOptions
+     */
+    java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(
+            DescribeDomainEndpointOptionsRequest describeDomainEndpointOptionsRequest);
+
+    /**
+     * <p>
+     * Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify
+     *        the name of the domain you want to describe. To show the active configuration and exclude any pending
+     *        changes, set the Deployed option to <code>true</code>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainEndpointOptions operation returned by the
+     *         service.
+     * @sample AmazonCloudSearchAsyncHandler.DescribeDomainEndpointOptions
+     */
+    java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(
+            DescribeDomainEndpointOptionsRequest describeDomainEndpointOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainEndpointOptionsRequest, DescribeDomainEndpointOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all
      * domains by default. To get the number of searchable documents in a domain, use the console or submit a
      * <code>matchall</code> request to your domain's search endpoint:
@@ -926,6 +969,45 @@ public interface AmazonCloudSearchAsync extends AmazonCloudSearch {
     java.util.concurrent.Future<UpdateAvailabilityOptionsResult> updateAvailabilityOptionsAsync(
             UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAvailabilityOptionsRequest, UpdateAvailabilityOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies
+     *        the name of the domain you want to update and the domain endpoint options.
+     * @return A Java Future containing the result of the UpdateDomainEndpointOptions operation returned by the service.
+     * @sample AmazonCloudSearchAsync.UpdateDomainEndpointOptions
+     */
+    java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(
+            UpdateDomainEndpointOptionsRequest updateDomainEndpointOptionsRequest);
+
+    /**
+     * <p>
+     * Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies
+     *        the name of the domain you want to update and the domain endpoint options.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDomainEndpointOptions operation returned by the service.
+     * @sample AmazonCloudSearchAsyncHandler.UpdateDomainEndpointOptions
+     */
+    java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(
+            UpdateDomainEndpointOptionsRequest updateDomainEndpointOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDomainEndpointOptionsRequest, UpdateDomainEndpointOptionsResult> asyncHandler);
 
     /**
      * <p>

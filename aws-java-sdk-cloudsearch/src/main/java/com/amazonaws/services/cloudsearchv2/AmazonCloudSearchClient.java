@@ -276,11 +276,12 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
     private void init() {
         exceptionUnmarshallers.add(new DisabledOperationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BaseExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTypeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ValidationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BaseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -1144,6 +1145,74 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>DescribeDomainEndpointOptions</a></code> operation. Specify
+     *        the name of the domain you want to describe. To show the active configuration and exclude any pending
+     *        changes, set the Deployed option to <code>true</code>.
+     * @return Result of the DescribeDomainEndpointOptions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         An internal error occurred while processing the request. If this problem persists, report an issue from
+     *         the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
+     * @throws LimitExceededException
+     *         The request was rejected because a resource limit has already been met.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because it attempted to reference a resource that does not exist.
+     * @throws DisabledOperationException
+     *         The request was rejected because it attempted an operation which is not enabled.
+     * @sample AmazonCloudSearch.DescribeDomainEndpointOptions
+     */
+    @Override
+    public DescribeDomainEndpointOptionsResult describeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDomainEndpointOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDomainEndpointOptionsResult executeDescribeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest describeDomainEndpointOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDomainEndpointOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDomainEndpointOptionsRequest> request = null;
+        Response<DescribeDomainEndpointOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDomainEndpointOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeDomainEndpointOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomainEndpointOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDomainEndpointOptionsResult> responseHandler = new StaxResponseHandler<DescribeDomainEndpointOptionsResult>(
+                    new DescribeDomainEndpointOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all
      * domains by default. To get the number of searchable documents in a domain, use the console or submit a
      * <code>matchall</code> request to your domain's search endpoint:
@@ -1686,6 +1755,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *         The request was rejected because it attempted to reference a resource that does not exist.
      * @throws DisabledOperationException
      *         The request was rejected because it attempted an operation which is not enabled.
+     * @throws ValidationException
+     *         The request was rejected because it has invalid parameters.
      * @sample AmazonCloudSearch.UpdateAvailabilityOptions
      */
     @Override
@@ -1720,6 +1791,77 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateAvailabilityOptionsResult> responseHandler = new StaxResponseHandler<UpdateAvailabilityOptionsResult>(
                     new UpdateAvailabilityOptionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
+     * target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateDomainEndpointOptionsRequest
+     *        Container for the parameters to the <code><a>UpdateDomainEndpointOptions</a></code> operation. Specifies
+     *        the name of the domain you want to update and the domain endpoint options.
+     * @return Result of the UpdateDomainEndpointOptions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         An internal error occurred while processing the request. If this problem persists, report an issue from
+     *         the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
+     * @throws InvalidTypeException
+     *         The request was rejected because it specified an invalid type definition.
+     * @throws LimitExceededException
+     *         The request was rejected because a resource limit has already been met.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because it attempted to reference a resource that does not exist.
+     * @throws DisabledOperationException
+     *         The request was rejected because it attempted an operation which is not enabled.
+     * @throws ValidationException
+     *         The request was rejected because it has invalid parameters.
+     * @sample AmazonCloudSearch.UpdateDomainEndpointOptions
+     */
+    @Override
+    public UpdateDomainEndpointOptionsResult updateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainEndpointOptions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainEndpointOptionsResult executeUpdateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest updateDomainEndpointOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDomainEndpointOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDomainEndpointOptionsRequest> request = null;
+        Response<UpdateDomainEndpointOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDomainEndpointOptionsRequestMarshaller().marshall(super.beforeMarshalling(updateDomainEndpointOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainEndpointOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateDomainEndpointOptionsResult> responseHandler = new StaxResponseHandler<UpdateDomainEndpointOptionsResult>(
+                    new UpdateDomainEndpointOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

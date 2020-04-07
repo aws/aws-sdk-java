@@ -41,7 +41,7 @@ public class CreateVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers
+     * [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer
      * must be owned by the same AWS account of the API owner.
      * </p>
      */
@@ -136,12 +136,12 @@ public class CreateVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers
+     * [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer
      * must be owned by the same AWS account of the API owner.
      * </p>
      * 
-     * @return [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load
-     *         balancers must be owned by the same AWS account of the API owner.
+     * @return [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load
+     *         balancer must be owned by the same AWS account of the API owner.
      */
 
     public java.util.List<String> getTargetArns() {
@@ -150,13 +150,13 @@ public class CreateVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers
+     * [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer
      * must be owned by the same AWS account of the API owner.
      * </p>
      * 
      * @param targetArns
-     *        [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load
-     *        balancers must be owned by the same AWS account of the API owner.
+     *        [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load
+     *        balancer must be owned by the same AWS account of the API owner.
      */
 
     public void setTargetArns(java.util.Collection<String> targetArns) {
@@ -170,7 +170,7 @@ public class CreateVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers
+     * [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer
      * must be owned by the same AWS account of the API owner.
      * </p>
      * <p>
@@ -180,8 +180,8 @@ public class CreateVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param targetArns
-     *        [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load
-     *        balancers must be owned by the same AWS account of the API owner.
+     *        [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load
+     *        balancer must be owned by the same AWS account of the API owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +197,13 @@ public class CreateVpcLinkRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load balancers
+     * [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer
      * must be owned by the same AWS account of the API owner.
      * </p>
      * 
      * @param targetArns
-     *        [Required] The ARNs of network load balancers of the VPC targeted by the VPC link. The network load
-     *        balancers must be owned by the same AWS account of the API owner.
+     *        [Required] The ARN of the network load balancer of the VPC targeted by the VPC link. The network load
+     *        balancer must be owned by the same AWS account of the API owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

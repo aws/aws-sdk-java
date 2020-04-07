@@ -683,6 +683,40 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request) {
+
+        return describeDomainEndpointOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(
+            final DescribeDomainEndpointOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainEndpointOptionsRequest, DescribeDomainEndpointOptionsResult> asyncHandler) {
+        final DescribeDomainEndpointOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainEndpointOptionsResult>() {
+            @Override
+            public DescribeDomainEndpointOptionsResult call() throws Exception {
+                DescribeDomainEndpointOptionsResult result = null;
+
+                try {
+                    result = executeDescribeDomainEndpointOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request) {
 
         return describeDomainsAsync(request, null);
@@ -1011,6 +1045,39 @@ public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient implem
 
                 try {
                     result = executeUpdateAvailabilityOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request) {
+
+        return updateDomainEndpointOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(final UpdateDomainEndpointOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDomainEndpointOptionsRequest, UpdateDomainEndpointOptionsResult> asyncHandler) {
+        final UpdateDomainEndpointOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDomainEndpointOptionsResult>() {
+            @Override
+            public UpdateDomainEndpointOptionsResult call() throws Exception {
+                UpdateDomainEndpointOptionsResult result = null;
+
+                try {
+                    result = executeUpdateDomainEndpointOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

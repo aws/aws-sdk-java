@@ -36,7 +36,9 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
+     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
+     * informational events.
      * </p>
      */
     private String loggingLevel;
@@ -166,13 +168,17 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
+     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
+     * informational events.
      * </p>
      * 
      * @param loggingLevel
      *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
-     *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
+     *        <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to
+     *        include all <code>ERROR</code> events as well as extra informational events.
      */
 
     public void setLoggingLevel(String loggingLevel) {
@@ -183,12 +189,16 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
+     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
+     * informational events.
      * </p>
      * 
      * @return Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *         Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
-     *         available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     *         available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
+     *         <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to
+     *         include all <code>ERROR</code> events as well as extra informational events.
      */
 
     public String getLoggingLevel() {
@@ -199,13 +209,17 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The
      * PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are
-     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     * <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level
+     * entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra
+     * informational events.
      * </p>
      * 
      * @param loggingLevel
      *        Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch
      *        Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the
-     *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.
+     *        available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose
+     *        <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to
+     *        include all <code>ERROR</code> events as well as extra informational events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

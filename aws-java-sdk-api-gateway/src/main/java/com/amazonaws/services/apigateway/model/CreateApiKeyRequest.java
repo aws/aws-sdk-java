@@ -46,7 +46,7 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created
-     * API key value.
+     * API key value. This parameter is deprecated and should not be used.
      * </p>
      */
     private Boolean generateDistinctId;
@@ -211,12 +211,12 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created
-     * API key value.
+     * API key value. This parameter is deprecated and should not be used.
      * </p>
      * 
      * @param generateDistinctId
      *        Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the
-     *        created API key value.
+     *        created API key value. This parameter is deprecated and should not be used.
      */
 
     public void setGenerateDistinctId(Boolean generateDistinctId) {
@@ -226,11 +226,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created
-     * API key value.
+     * API key value. This parameter is deprecated and should not be used.
      * </p>
      * 
      * @return Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the
-     *         created API key value.
+     *         created API key value. This parameter is deprecated and should not be used.
      */
 
     public Boolean getGenerateDistinctId() {
@@ -240,12 +240,12 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created
-     * API key value.
+     * API key value. This parameter is deprecated and should not be used.
      * </p>
      * 
      * @param generateDistinctId
      *        Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the
-     *        created API key value.
+     *        created API key value. This parameter is deprecated and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +257,11 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created
-     * API key value.
+     * API key value. This parameter is deprecated and should not be used.
      * </p>
      * 
      * @return Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the
-     *         created API key value.
+     *         created API key value. This parameter is deprecated and should not be used.
      */
 
     public Boolean isGenerateDistinctId() {

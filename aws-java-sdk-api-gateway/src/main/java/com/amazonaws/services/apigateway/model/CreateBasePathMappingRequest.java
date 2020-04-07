@@ -47,7 +47,7 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     private String restApiId;
     /**
      * <p>
-     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want callers to
+     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to
      * explicitly specify the stage name after any base path name.
      * </p>
      */
@@ -187,13 +187,13 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want callers to
+     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to
      * explicitly specify the stage name after any base path name.
      * </p>
      * 
      * @param stage
-     *        The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want
-     *        callers to explicitly specify the stage name after any base path name.
+     *        The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to
+     *        explicitly specify the stage name after any base path name.
      */
 
     public void setStage(String stage) {
@@ -202,12 +202,12 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want callers to
+     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to
      * explicitly specify the stage name after any base path name.
      * </p>
      * 
-     * @return The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want
-     *         callers to explicitly specify the stage name after any base path name.
+     * @return The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers
+     *         to explicitly specify the stage name after any base path name.
      */
 
     public String getStage() {
@@ -216,13 +216,13 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want callers to
+     * The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to
      * explicitly specify the stage name after any base path name.
      * </p>
      * 
      * @param stage
-     *        The name of the API's stage that you want to use for this mapping. Specify '(none)' if you do not want
-     *        callers to explicitly specify the stage name after any base path name.
+     *        The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to
+     *        explicitly specify the stage name after any base path name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

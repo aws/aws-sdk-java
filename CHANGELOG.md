@@ -1,3 +1,16 @@
+# __1.11.761__ __2020-04-07__
+## __AWS MediaConnect__
+  - ### Features
+    - You can now send content from your MediaConnect flow to your virtual private cloud (VPC) without going over the public internet.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Documentation updates for Amazon API Gateway.
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - API updates for CodeGuruReviewer 
+
 # __1.11.760__ __2020-04-06__
 ## __AWS Elastic Beanstalk__
   - ### Features

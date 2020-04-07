@@ -52,6 +52,8 @@ public class UpdateFlowOutputRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("smoothingLatency").build();
     private static final MarshallingInfo<String> STREAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("streamId").build();
+    private static final MarshallingInfo<StructuredPojo> VPCINTERFACEATTACHMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcInterfaceAttachment").build();
 
     private static final UpdateFlowOutputRequestMarshaller instance = new UpdateFlowOutputRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class UpdateFlowOutputRequestMarshaller {
             protocolMarshaller.marshall(updateFlowOutputRequest.getRemoteId(), REMOTEID_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getSmoothingLatency(), SMOOTHINGLATENCY_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getStreamId(), STREAMID_BINDING);
+            protocolMarshaller.marshall(updateFlowOutputRequest.getVpcInterfaceAttachment(), VPCINTERFACEATTACHMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

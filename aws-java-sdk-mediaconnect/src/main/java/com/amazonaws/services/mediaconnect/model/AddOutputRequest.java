@@ -57,6 +57,8 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     private Integer smoothingLatency;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
+    /** The name of the VPC interface attachment to use for this output. */
+    private VpcInterfaceAttachment vpcInterfaceAttachment;
 
     /**
      * The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses
@@ -502,6 +504,40 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * The name of the VPC interface attachment to use for this output.
+     * 
+     * @param vpcInterfaceAttachment
+     *        The name of the VPC interface attachment to use for this output.
+     */
+
+    public void setVpcInterfaceAttachment(VpcInterfaceAttachment vpcInterfaceAttachment) {
+        this.vpcInterfaceAttachment = vpcInterfaceAttachment;
+    }
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     * 
+     * @return The name of the VPC interface attachment to use for this output.
+     */
+
+    public VpcInterfaceAttachment getVpcInterfaceAttachment() {
+        return this.vpcInterfaceAttachment;
+    }
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     * 
+     * @param vpcInterfaceAttachment
+     *        The name of the VPC interface attachment to use for this output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOutputRequest withVpcInterfaceAttachment(VpcInterfaceAttachment vpcInterfaceAttachment) {
+        setVpcInterfaceAttachment(vpcInterfaceAttachment);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -534,7 +570,9 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
         if (getSmoothingLatency() != null)
             sb.append("SmoothingLatency: ").append(getSmoothingLatency()).append(",");
         if (getStreamId() != null)
-            sb.append("StreamId: ").append(getStreamId());
+            sb.append("StreamId: ").append(getStreamId()).append(",");
+        if (getVpcInterfaceAttachment() != null)
+            sb.append("VpcInterfaceAttachment: ").append(getVpcInterfaceAttachment());
         sb.append("}");
         return sb.toString();
     }
@@ -593,6 +631,10 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStreamId() != null && other.getStreamId().equals(this.getStreamId()) == false)
             return false;
+        if (other.getVpcInterfaceAttachment() == null ^ this.getVpcInterfaceAttachment() == null)
+            return false;
+        if (other.getVpcInterfaceAttachment() != null && other.getVpcInterfaceAttachment().equals(this.getVpcInterfaceAttachment()) == false)
+            return false;
         return true;
     }
 
@@ -612,6 +654,7 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getRemoteId() == null) ? 0 : getRemoteId().hashCode());
         hashCode = prime * hashCode + ((getSmoothingLatency() == null) ? 0 : getSmoothingLatency().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());
+        hashCode = prime * hashCode + ((getVpcInterfaceAttachment() == null) ? 0 : getVpcInterfaceAttachment().hashCode());
         return hashCode;
     }
 

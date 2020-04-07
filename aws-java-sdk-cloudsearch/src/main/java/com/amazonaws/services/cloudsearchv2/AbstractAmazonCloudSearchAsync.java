@@ -197,6 +197,19 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request) {
+
+        return describeDomainEndpointOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainEndpointOptionsRequest, DescribeDomainEndpointOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request) {
 
         return describeDomainsAsync(request, null);
@@ -355,6 +368,19 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     @Override
     public java.util.concurrent.Future<UpdateAvailabilityOptionsResult> updateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAvailabilityOptionsRequest, UpdateAvailabilityOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request) {
+
+        return updateDomainEndpointOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDomainEndpointOptionsRequest, UpdateDomainEndpointOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
