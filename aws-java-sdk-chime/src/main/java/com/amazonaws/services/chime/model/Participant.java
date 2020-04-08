@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Participant" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Participant implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The participant's phone number.
+     * </p>
+     */
     private String phoneNumber;
-
+    /**
+     * <p>
+     * The participant's proxy phone number.
+     * </p>
+     */
     private String proxyPhoneNumber;
 
     /**
+     * <p>
+     * The participant's phone number.
+     * </p>
+     * 
      * @param phoneNumber
+     *        The participant's phone number.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -38,7 +55,11 @@ public class Participant implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The participant's phone number.
+     * </p>
+     * 
+     * @return The participant's phone number.
      */
 
     public String getPhoneNumber() {
@@ -46,7 +67,12 @@ public class Participant implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The participant's phone number.
+     * </p>
+     * 
      * @param phoneNumber
+     *        The participant's phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class Participant implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The participant's proxy phone number.
+     * </p>
+     * 
      * @param proxyPhoneNumber
+     *        The participant's proxy phone number.
      */
 
     public void setProxyPhoneNumber(String proxyPhoneNumber) {
@@ -64,7 +95,11 @@ public class Participant implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The participant's proxy phone number.
+     * </p>
+     * 
+     * @return The participant's proxy phone number.
      */
 
     public String getProxyPhoneNumber() {
@@ -72,7 +107,12 @@ public class Participant implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The participant's proxy phone number.
+     * </p>
+     * 
      * @param proxyPhoneNumber
+     *        The participant's proxy phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

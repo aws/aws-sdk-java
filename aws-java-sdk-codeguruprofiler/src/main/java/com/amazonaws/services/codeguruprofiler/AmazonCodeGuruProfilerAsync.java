@@ -162,6 +162,39 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
+     * Gets the profiling group policy.
+     * </p>
+     * 
+     * @param getPolicyRequest
+     *        The structure representing the getPolicyRequest.
+     * @return A Java Future containing the result of the GetPolicy operation returned by the service.
+     * @sample AmazonCodeGuruProfilerAsync.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest);
+
+    /**
+     * <p>
+     * Gets the profiling group policy.
+     * </p>
+     * 
+     * @param getPolicyRequest
+     *        The structure representing the getPolicyRequest.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPolicy operation returned by the service.
+     * @sample AmazonCodeGuruProfilerAsyncHandler.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the aggregated profile of a profiling group for the specified time range. If the requested time range does
      * not align with the available aggregated profiles, it is expanded to attain alignment. If aggregated profiles are
      * available only for part of the period requested, the profile is returned from the earliest available to the
@@ -311,6 +344,72 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
      */
     java.util.concurrent.Future<PostAgentProfileResult> postAgentProfileAsync(PostAgentProfileRequest postAgentProfileRequest,
             com.amazonaws.handlers.AsyncHandler<PostAgentProfileRequest, PostAgentProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides permission to the principals. This overwrites the existing permissions, and is not additive.
+     * </p>
+     * 
+     * @param putPermissionRequest
+     *        The structure representing the putPermissionRequest.
+     * @return A Java Future containing the result of the PutPermission operation returned by the service.
+     * @sample AmazonCodeGuruProfilerAsync.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest putPermissionRequest);
+
+    /**
+     * <p>
+     * Provides permission to the principals. This overwrites the existing permissions, and is not additive.
+     * </p>
+     * 
+     * @param putPermissionRequest
+     *        The structure representing the putPermissionRequest.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutPermission operation returned by the service.
+     * @sample AmazonCodeGuruProfilerAsyncHandler.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest putPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes statement for the provided action group from the policy.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     *        The structure representing the removePermissionRequest.
+     * @return A Java Future containing the result of the RemovePermission operation returned by the service.
+     * @sample AmazonCodeGuruProfilerAsync.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest);
+
+    /**
+     * <p>
+     * Removes statement for the provided action group from the policy.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     *        The structure representing the removePermissionRequest.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemovePermission operation returned by the service.
+     * @sample AmazonCodeGuruProfilerAsyncHandler.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * <p>

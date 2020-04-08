@@ -3114,6 +3114,27 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event
+     * notifications for resources in the Region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * 
+     * @param deregisterInstanceEventNotificationAttributesRequest
+     * @return Result of the DeregisterInstanceEventNotificationAttributes operation returned by the service.
+     * @sample AmazonEC2.DeregisterInstanceEventNotificationAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterInstanceEventNotificationAttributesResult deregisterInstanceEventNotificationAttributes(
+            DeregisterInstanceEventNotificationAttributesRequest deregisterInstanceEventNotificationAttributesRequest);
+
+    /**
+     * <p>
      * Deregisters the specified members (network interfaces) from the transit gateway multicast group.
      * </p>
      * 
@@ -3968,6 +3989,21 @@ public interface AmazonEC2 {
      */
     DescribeInstanceCreditSpecificationsResult describeInstanceCreditSpecifications(
             DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest);
+
+    /**
+     * <p>
+     * Describes the tag keys that are registered to appear in scheduled event notifications for resources in the
+     * current Region.
+     * </p>
+     * 
+     * @param describeInstanceEventNotificationAttributesRequest
+     * @return Result of the DescribeInstanceEventNotificationAttributes operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInstanceEventNotificationAttributesResult describeInstanceEventNotificationAttributes(
+            DescribeInstanceEventNotificationAttributesRequest describeInstanceEventNotificationAttributesRequest);
 
     /**
      * <p>
@@ -4906,8 +4942,9 @@ public interface AmazonEC2 {
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
      * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
-     * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
-     * look for instances where the instance lifecycle is <code>spot</code>.
+     * contains the identifier of the instance. Alternatively, you can use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a> with a
+     * filter to look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
      * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of results
@@ -7623,6 +7660,26 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     RegisterImageResult registerImage(RegisterImageRequest registerImageRequest);
+
+    /**
+     * <p>
+     * Registers a set of tag keys to include in scheduled event notifications for your resources. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * <p>
+     * To remove tags, use .
+     * </p>
+     * 
+     * @param registerInstanceEventNotificationAttributesRequest
+     * @return Result of the RegisterInstanceEventNotificationAttributes operation returned by the service.
+     * @sample AmazonEC2.RegisterInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterInstanceEventNotificationAttributesResult registerInstanceEventNotificationAttributes(
+            RegisterInstanceEventNotificationAttributesRequest registerInstanceEventNotificationAttributesRequest);
 
     /**
      * <p>

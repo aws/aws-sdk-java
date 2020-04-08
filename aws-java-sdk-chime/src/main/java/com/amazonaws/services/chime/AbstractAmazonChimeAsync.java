@@ -901,6 +901,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListAttendeeTagsResult> listAttendeeTagsAsync(ListAttendeeTagsRequest request) {
+
+        return listAttendeeTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAttendeeTagsResult> listAttendeeTagsAsync(ListAttendeeTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAttendeeTagsRequest, ListAttendeeTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAttendeesResult> listAttendeesAsync(ListAttendeesRequest request) {
 
         return listAttendeesAsync(request, null);
@@ -922,6 +935,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMeetingTagsResult> listMeetingTagsAsync(ListMeetingTagsRequest request) {
+
+        return listMeetingTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMeetingTagsResult> listMeetingTagsAsync(ListMeetingTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMeetingTagsRequest, ListMeetingTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1000,6 +1026,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<ListRoomsResult> listRoomsAsync(ListRoomsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRoomsRequest, ListRoomsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1216,6 +1255,84 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<SearchAvailablePhoneNumbersResult> searchAvailablePhoneNumbersAsync(SearchAvailablePhoneNumbersRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchAvailablePhoneNumbersRequest, SearchAvailablePhoneNumbersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagAttendeeResult> tagAttendeeAsync(TagAttendeeRequest request) {
+
+        return tagAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagAttendeeResult> tagAttendeeAsync(TagAttendeeRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagAttendeeRequest, TagAttendeeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagMeetingResult> tagMeetingAsync(TagMeetingRequest request) {
+
+        return tagMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagMeetingResult> tagMeetingAsync(TagMeetingRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagMeetingRequest, TagMeetingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagAttendeeResult> untagAttendeeAsync(UntagAttendeeRequest request) {
+
+        return untagAttendeeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagAttendeeResult> untagAttendeeAsync(UntagAttendeeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagAttendeeRequest, UntagAttendeeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagMeetingResult> untagMeetingAsync(UntagMeetingRequest request) {
+
+        return untagMeetingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagMeetingResult> untagMeetingAsync(UntagMeetingRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagMeetingRequest, UntagMeetingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

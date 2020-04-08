@@ -397,6 +397,66 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Gets the profiling group policy.
+     * </p>
+     * 
+     * @param getPolicyRequest
+     *        The structure representing the getPolicyRequest.
+     * @return Result of the GetPolicy operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AmazonCodeGuruProfiler.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPolicyResult getPolicy(GetPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetPolicyResult executeGetPolicy(GetPolicyRequest getPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPolicyRequest> request = null;
+        Response<GetPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPolicyResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the aggregated profile of a profiling group for the specified time range. If the requested time range does
      * not align with the available aggregated profiles, it is expanded to attain alignment. If aggregated profiles are
      * available only for part of the period requested, the profile is returned from the earliest available to the
@@ -639,6 +699,136 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<PostAgentProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PostAgentProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides permission to the principals. This overwrites the existing permissions, and is not additive.
+     * </p>
+     * 
+     * @param putPermissionRequest
+     *        The structure representing the putPermissionRequest.
+     * @return Result of the PutPermission operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AmazonCodeGuruProfiler.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutPermissionResult putPermission(PutPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutPermission(request);
+    }
+
+    @SdkInternalApi
+    final PutPermissionResult executePutPermission(PutPermissionRequest putPermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPermissionRequest> request = null;
+        Response<PutPermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutPermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutPermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes statement for the provided action group from the policy.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     *        The structure representing the removePermissionRequest.
+     * @return Result of the RemovePermission operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AmazonCodeGuruProfiler.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemovePermission(request);
+    }
+
+    @SdkInternalApi
+    final RemovePermissionResult executeRemovePermission(RemovePermissionRequest removePermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemovePermissionRequest> request = null;
+        Response<RemovePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemovePermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemovePermissionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

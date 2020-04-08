@@ -9010,6 +9010,69 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event
+     * notifications for resources in the Region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * 
+     * @param deregisterInstanceEventNotificationAttributesRequest
+     * @return Result of the DeregisterInstanceEventNotificationAttributes operation returned by the service.
+     * @sample AmazonEC2.DeregisterInstanceEventNotificationAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeregisterInstanceEventNotificationAttributesResult deregisterInstanceEventNotificationAttributes(
+            DeregisterInstanceEventNotificationAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterInstanceEventNotificationAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterInstanceEventNotificationAttributesResult executeDeregisterInstanceEventNotificationAttributes(
+            DeregisterInstanceEventNotificationAttributesRequest deregisterInstanceEventNotificationAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterInstanceEventNotificationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterInstanceEventNotificationAttributesRequest> request = null;
+        Response<DeregisterInstanceEventNotificationAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterInstanceEventNotificationAttributesRequestMarshaller().marshall(super
+                        .beforeMarshalling(deregisterInstanceEventNotificationAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterInstanceEventNotificationAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeregisterInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<DeregisterInstanceEventNotificationAttributesResult>(
+                    new DeregisterInstanceEventNotificationAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deregisters the specified members (network interfaces) from the transit gateway multicast group.
      * </p>
      * 
@@ -11514,6 +11577,63 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceCreditSpecificationsResult> responseHandler = new StaxResponseHandler<DescribeInstanceCreditSpecificationsResult>(
                     new DescribeInstanceCreditSpecificationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the tag keys that are registered to appear in scheduled event notifications for resources in the
+     * current Region.
+     * </p>
+     * 
+     * @param describeInstanceEventNotificationAttributesRequest
+     * @return Result of the DescribeInstanceEventNotificationAttributes operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceEventNotificationAttributesResult describeInstanceEventNotificationAttributes(
+            DescribeInstanceEventNotificationAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceEventNotificationAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceEventNotificationAttributesResult executeDescribeInstanceEventNotificationAttributes(
+            DescribeInstanceEventNotificationAttributesRequest describeInstanceEventNotificationAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceEventNotificationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceEventNotificationAttributesRequest> request = null;
+        Response<DescribeInstanceEventNotificationAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceEventNotificationAttributesRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeInstanceEventNotificationAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceEventNotificationAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<DescribeInstanceEventNotificationAttributesResult>(
+                    new DescribeInstanceEventNotificationAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14079,8 +14199,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
      * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
-     * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
-     * look for instances where the instance lifecycle is <code>spot</code>.
+     * contains the identifier of the instance. Alternatively, you can use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a> with a
+     * filter to look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
      * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of results
@@ -21985,6 +22106,68 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<RegisterImageResult> responseHandler = new StaxResponseHandler<RegisterImageResult>(new RegisterImageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers a set of tag keys to include in scheduled event notifications for your resources. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * <p>
+     * To remove tags, use .
+     * </p>
+     * 
+     * @param registerInstanceEventNotificationAttributesRequest
+     * @return Result of the RegisterInstanceEventNotificationAttributes operation returned by the service.
+     * @sample AmazonEC2.RegisterInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RegisterInstanceEventNotificationAttributesResult registerInstanceEventNotificationAttributes(
+            RegisterInstanceEventNotificationAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterInstanceEventNotificationAttributes(request);
+    }
+
+    @SdkInternalApi
+    final RegisterInstanceEventNotificationAttributesResult executeRegisterInstanceEventNotificationAttributes(
+            RegisterInstanceEventNotificationAttributesRequest registerInstanceEventNotificationAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerInstanceEventNotificationAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterInstanceEventNotificationAttributesRequest> request = null;
+        Response<RegisterInstanceEventNotificationAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterInstanceEventNotificationAttributesRequestMarshaller().marshall(super
+                        .beforeMarshalling(registerInstanceEventNotificationAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterInstanceEventNotificationAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RegisterInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<RegisterInstanceEventNotificationAttributesResult>(
+                    new RegisterInstanceEventNotificationAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

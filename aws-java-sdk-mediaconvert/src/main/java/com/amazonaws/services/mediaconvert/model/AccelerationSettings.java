@@ -18,9 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this
- * feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User
- * Guide.
+ * Accelerated transcoding can significantly speed up jobs with long, visually complex content.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AccelerationSettings" target="_top">AWS
  *      API Documentation</a>

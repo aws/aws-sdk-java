@@ -36,6 +36,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /** An optional description you create for each job template. */
     private String description;
+    /** Optional list of hop destinations. */
+    private java.util.List<HopDestination> hopDestinations;
     /** The timestamp in epoch seconds when the Job template was last updated. */
     private java.util.Date lastUpdated;
     /** A name you create for each job template. Each name must be unique within your account. */
@@ -231,6 +233,68 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
 
     public JobTemplate withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @return Optional list of hop destinations.
+     */
+
+    public java.util.List<HopDestination> getHopDestinations() {
+        return hopDestinations;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     */
+
+    public void setHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        if (hopDestinations == null) {
+            this.hopDestinations = null;
+            return;
+        }
+
+        this.hopDestinations = new java.util.ArrayList<HopDestination>(hopDestinations);
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHopDestinations(java.util.Collection)} or {@link #withHopDestinations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplate withHopDestinations(HopDestination... hopDestinations) {
+        if (this.hopDestinations == null) {
+            setHopDestinations(new java.util.ArrayList<HopDestination>(hopDestinations.length));
+        }
+        for (HopDestination ele : hopDestinations) {
+            this.hopDestinations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplate withHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        setHopDestinations(hopDestinations);
         return this;
     }
 
@@ -564,6 +628,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getHopDestinations() != null)
+            sb.append("HopDestinations: ").append(getHopDestinations()).append(",");
         if (getLastUpdated() != null)
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getName() != null)
@@ -612,6 +678,10 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getHopDestinations() == null ^ this.getHopDestinations() == null)
+            return false;
+        if (other.getHopDestinations() != null && other.getHopDestinations().equals(this.getHopDestinations()) == false)
+            return false;
         if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
             return false;
         if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
@@ -653,6 +723,7 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHopDestinations() == null) ? 0 : getHopDestinations().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());

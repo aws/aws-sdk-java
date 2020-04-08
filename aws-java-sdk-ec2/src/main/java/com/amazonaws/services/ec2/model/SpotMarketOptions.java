@@ -34,8 +34,10 @@ public class SpotMarketOptions implements Serializable, Cloneable {
     private String maxPrice;
     /**
      * <p>
-     * The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only supported
-     * when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * The Spot Instance request type. For <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either
+     * <code>hibernate</code> or <code>stop</code>.
      * </p>
      */
     private String spotInstanceType;
@@ -104,14 +106,17 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only supported
-     * when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * The Spot Instance request type. For <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either
+     * <code>hibernate</code> or <code>stop</code>.
      * </p>
      * 
      * @param spotInstanceType
-     *        The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only
-     *        supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     *        <code>stop</code>.
+     *        The Spot Instance request type. For <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
+     *        persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to
+     *        either <code>hibernate</code> or <code>stop</code>.
      * @see SpotInstanceType
      */
 
@@ -121,13 +126,16 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only supported
-     * when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * The Spot Instance request type. For <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either
+     * <code>hibernate</code> or <code>stop</code>.
      * </p>
      * 
-     * @return The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only
-     *         supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     *         <code>stop</code>.
+     * @return The Spot Instance request type. For <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
+     *         persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to
+     *         either <code>hibernate</code> or <code>stop</code>.
      * @see SpotInstanceType
      */
 
@@ -137,14 +145,17 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only supported
-     * when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * The Spot Instance request type. For <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either
+     * <code>hibernate</code> or <code>stop</code>.
      * </p>
      * 
      * @param spotInstanceType
-     *        The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only
-     *        supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     *        <code>stop</code>.
+     *        The Spot Instance request type. For <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
+     *        persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to
+     *        either <code>hibernate</code> or <code>stop</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotInstanceType
      */
@@ -156,14 +167,17 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only supported
-     * when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+     * The Spot Instance request type. For <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to either
+     * <code>hibernate</code> or <code>stop</code>.
      * </p>
      * 
      * @param spotInstanceType
-     *        The Spot Instance request type. For <a>RunInstances</a>, persistent Spot Instance requests are only
-     *        supported when <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
-     *        <code>stop</code>.
+     *        The Spot Instance request type. For <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
+     *        persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is set to
+     *        either <code>hibernate</code> or <code>stop</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotInstanceType
      */

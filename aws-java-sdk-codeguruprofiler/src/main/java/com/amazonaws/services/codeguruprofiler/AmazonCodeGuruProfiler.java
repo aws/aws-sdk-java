@@ -134,6 +134,26 @@ public interface AmazonCodeGuruProfiler {
 
     /**
      * <p>
+     * Gets the profiling group policy.
+     * </p>
+     * 
+     * @param getPolicyRequest
+     *        The structure representing the getPolicyRequest.
+     * @return Result of the GetPolicy operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AmazonCodeGuruProfiler.GetPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest);
+
+    /**
+     * <p>
      * Gets the aggregated profile of a profiling group for the specified time range. If the requested time range does
      * not align with the available aggregated profiles, it is expanded to attain alignment. If aggregated profiles are
      * available only for part of the period requested, the profile is returned from the earliest available to the
@@ -225,6 +245,56 @@ public interface AmazonCodeGuruProfiler {
      *      target="_top">AWS API Documentation</a>
      */
     PostAgentProfileResult postAgentProfile(PostAgentProfileRequest postAgentProfileRequest);
+
+    /**
+     * <p>
+     * Provides permission to the principals. This overwrites the existing permissions, and is not additive.
+     * </p>
+     * 
+     * @param putPermissionRequest
+     *        The structure representing the putPermissionRequest.
+     * @return Result of the PutPermission operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AmazonCodeGuruProfiler.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutPermissionResult putPermission(PutPermissionRequest putPermissionRequest);
+
+    /**
+     * <p>
+     * Removes statement for the provided action group from the policy.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     *        The structure representing the removePermissionRequest.
+     * @return Result of the RemovePermission operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AmazonCodeGuruProfiler.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest);
 
     /**
      * <p>

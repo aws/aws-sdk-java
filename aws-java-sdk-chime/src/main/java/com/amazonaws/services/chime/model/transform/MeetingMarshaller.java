@@ -29,6 +29,8 @@ public class MeetingMarshaller {
 
     private static final MarshallingInfo<String> MEETINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MeetingId").build();
+    private static final MarshallingInfo<String> EXTERNALMEETINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalMeetingId").build();
     private static final MarshallingInfo<StructuredPojo> MEDIAPLACEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MediaPlacement").build();
     private static final MarshallingInfo<String> MEDIAREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class MeetingMarshaller {
 
         try {
             protocolMarshaller.marshall(meeting.getMeetingId(), MEETINGID_BINDING);
+            protocolMarshaller.marshall(meeting.getExternalMeetingId(), EXTERNALMEETINGID_BINDING);
             protocolMarshaller.marshall(meeting.getMediaPlacement(), MEDIAPLACEMENT_BINDING);
             protocolMarshaller.marshall(meeting.getMediaRegion(), MEDIAREGION_BINDING);
         } catch (Exception e) {

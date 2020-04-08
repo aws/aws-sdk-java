@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class JobTemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> HOPDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hopDestinations").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdated").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -73,6 +76,7 @@ public class JobTemplateMarshaller {
             protocolMarshaller.marshall(jobTemplate.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(jobTemplate.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(jobTemplate.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(jobTemplate.getHopDestinations(), HOPDESTINATIONS_BINDING);
             protocolMarshaller.marshall(jobTemplate.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(jobTemplate.getName(), NAME_BINDING);
             protocolMarshaller.marshall(jobTemplate.getPriority(), PRIORITY_BINDING);

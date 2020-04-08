@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The proxy session for an Amazon Chime Voice Connector.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ProxySession" target="_top">AWS API
  *      Documentation</a>
@@ -25,34 +28,93 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
-
+    /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     */
     private String proxySessionId;
-
+    /**
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The status of the proxy session.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     */
     private Integer expiryMinutes;
-
+    /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     */
     private java.util.List<String> capabilities;
-
+    /**
+     * <p>
+     * The created timestamp, in ISO 8601 format.
+     * </p>
+     */
     private java.util.Date createdTimestamp;
-
+    /**
+     * <p>
+     * The updated timestamp, in ISO 8601 format.
+     * </p>
+     */
     private java.util.Date updatedTimestamp;
-
+    /**
+     * <p>
+     * The ended timestamp, in ISO 8601 format.
+     * </p>
+     */
     private java.util.Date endedTimestamp;
-
+    /**
+     * <p>
+     * The proxy session participants.
+     * </p>
+     */
     private java.util.List<Participant> participants;
-
+    /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     */
     private String numberSelectionBehavior;
-
+    /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     */
     private String geoMatchLevel;
-
+    /**
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     */
     private GeoMatchParams geoMatchParams;
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -60,7 +122,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime voice connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -68,7 +134,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +149,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
      * @param proxySessionId
+     *        The proxy session ID.
      */
 
     public void setProxySessionId(String proxySessionId) {
@@ -86,7 +162,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
+     * @return The proxy session ID.
      */
 
     public String getProxySessionId() {
@@ -94,7 +174,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
      * @param proxySessionId
+     *        The proxy session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +189,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     * 
      * @param name
+     *        The name of the proxy session.
      */
 
     public void setName(String name) {
@@ -112,7 +202,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     * 
+     * @return The name of the proxy session.
      */
 
     public String getName() {
@@ -120,7 +214,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     * 
      * @param name
+     *        The name of the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +229,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the proxy session.
+     * </p>
+     * 
      * @param status
+     *        The status of the proxy session.
      * @see ProxySessionStatus
      */
 
@@ -139,7 +243,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the proxy session.
+     * </p>
+     * 
+     * @return The status of the proxy session.
      * @see ProxySessionStatus
      */
 
@@ -148,7 +256,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the proxy session.
+     * </p>
+     * 
      * @param status
+     *        The status of the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProxySessionStatus
      */
@@ -159,7 +272,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the proxy session.
+     * </p>
+     * 
      * @param status
+     *        The status of the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProxySessionStatus
      */
@@ -170,7 +288,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
      * @param expiryMinutes
+     *        The number of minutes allowed for the proxy session.
      */
 
     public void setExpiryMinutes(Integer expiryMinutes) {
@@ -178,7 +301,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
+     * @return The number of minutes allowed for the proxy session.
      */
 
     public Integer getExpiryMinutes() {
@@ -186,7 +313,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
      * @param expiryMinutes
+     *        The number of minutes allowed for the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,7 +328,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
+     * @return The proxy session capabilities.
      * @see Capability
      */
 
@@ -205,7 +341,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @see Capability
      */
 
@@ -220,12 +361,16 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The proxy session capabilities.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -241,7 +386,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -252,7 +402,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -271,7 +426,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The created timestamp, in ISO 8601 format.
+     * </p>
+     * 
      * @param createdTimestamp
+     *        The created timestamp, in ISO 8601 format.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -279,7 +439,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The created timestamp, in ISO 8601 format.
+     * </p>
+     * 
+     * @return The created timestamp, in ISO 8601 format.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -287,7 +451,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The created timestamp, in ISO 8601 format.
+     * </p>
+     * 
      * @param createdTimestamp
+     *        The created timestamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,7 +466,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The updated timestamp, in ISO 8601 format.
+     * </p>
+     * 
      * @param updatedTimestamp
+     *        The updated timestamp, in ISO 8601 format.
      */
 
     public void setUpdatedTimestamp(java.util.Date updatedTimestamp) {
@@ -305,7 +479,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The updated timestamp, in ISO 8601 format.
+     * </p>
+     * 
+     * @return The updated timestamp, in ISO 8601 format.
      */
 
     public java.util.Date getUpdatedTimestamp() {
@@ -313,7 +491,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The updated timestamp, in ISO 8601 format.
+     * </p>
+     * 
      * @param updatedTimestamp
+     *        The updated timestamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,7 +506,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ended timestamp, in ISO 8601 format.
+     * </p>
+     * 
      * @param endedTimestamp
+     *        The ended timestamp, in ISO 8601 format.
      */
 
     public void setEndedTimestamp(java.util.Date endedTimestamp) {
@@ -331,7 +519,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ended timestamp, in ISO 8601 format.
+     * </p>
+     * 
+     * @return The ended timestamp, in ISO 8601 format.
      */
 
     public java.util.Date getEndedTimestamp() {
@@ -339,7 +531,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ended timestamp, in ISO 8601 format.
+     * </p>
+     * 
      * @param endedTimestamp
+     *        The ended timestamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,7 +546,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session participants.
+     * </p>
+     * 
+     * @return The proxy session participants.
      */
 
     public java.util.List<Participant> getParticipants() {
@@ -357,7 +558,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session participants.
+     * </p>
+     * 
      * @param participants
+     *        The proxy session participants.
      */
 
     public void setParticipants(java.util.Collection<Participant> participants) {
@@ -371,12 +577,16 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The proxy session participants.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParticipants(java.util.Collection)} or {@link #withParticipants(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param participants
+     *        The proxy session participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,7 +601,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The proxy session participants.
+     * </p>
+     * 
      * @param participants
+     *        The proxy session participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,7 +616,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
      * @param numberSelectionBehavior
+     *        The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
      * @see NumberSelectionBehavior
      */
 
@@ -410,7 +630,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
+     * @return The preference for proxy phone number reuse, or stickiness, between the same participants across
+     *         sessions.
      * @see NumberSelectionBehavior
      */
 
@@ -419,7 +644,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
      * @param numberSelectionBehavior
+     *        The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NumberSelectionBehavior
      */
@@ -430,7 +660,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
      * @param numberSelectionBehavior
+     *        The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NumberSelectionBehavior
      */
@@ -441,7 +676,14 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
      * @param geoMatchLevel
+     *        The preference for matching the country or area code of the proxy phone number with that of the first
+     *        participant.
      * @see GeoMatchLevel
      */
 
@@ -450,7 +692,13 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
+     * @return The preference for matching the country or area code of the proxy phone number with that of the first
+     *         participant.
      * @see GeoMatchLevel
      */
 
@@ -459,7 +707,14 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
      * @param geoMatchLevel
+     *        The preference for matching the country or area code of the proxy phone number with that of the first
+     *        participant.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeoMatchLevel
      */
@@ -470,7 +725,14 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
      * @param geoMatchLevel
+     *        The preference for matching the country or area code of the proxy phone number with that of the first
+     *        participant.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeoMatchLevel
      */
@@ -481,7 +743,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     * 
      * @param geoMatchParams
+     *        The country and area code for the proxy phone number.
      */
 
     public void setGeoMatchParams(GeoMatchParams geoMatchParams) {
@@ -489,7 +756,11 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     * 
+     * @return The country and area code for the proxy phone number.
      */
 
     public GeoMatchParams getGeoMatchParams() {
@@ -497,7 +768,12 @@ public class ProxySession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     * 
      * @param geoMatchParams
+     *        The country and area code for the proxy phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

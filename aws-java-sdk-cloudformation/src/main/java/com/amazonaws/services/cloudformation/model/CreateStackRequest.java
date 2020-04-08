@@ -30,7 +30,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name that is associated with the stack. The name must be unique in the region in which you are creating the
+     * The name that is associated with the stack. The name must be unique in the Region in which you are creating the
      * stack.
      * </p>
      * <note>
@@ -292,7 +292,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      */
@@ -341,7 +341,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name that is associated with the stack. The name must be unique in the region in which you are creating the
+     * The name that is associated with the stack. The name must be unique in the Region in which you are creating the
      * stack.
      * </p>
      * <note>
@@ -352,7 +352,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param stackName
-     *        The name that is associated with the stack. The name must be unique in the region in which you are
+     *        The name that is associated with the stack. The name must be unique in the Region in which you are
      *        creating the stack.</p> <note>
      *        <p>
      *        A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an
@@ -366,7 +366,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name that is associated with the stack. The name must be unique in the region in which you are creating the
+     * The name that is associated with the stack. The name must be unique in the Region in which you are creating the
      * stack.
      * </p>
      * <note>
@@ -376,7 +376,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * 
-     * @return The name that is associated with the stack. The name must be unique in the region in which you are
+     * @return The name that is associated with the stack. The name must be unique in the Region in which you are
      *         creating the stack.</p> <note>
      *         <p>
      *         A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an
@@ -390,7 +390,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name that is associated with the stack. The name must be unique in the region in which you are creating the
+     * The name that is associated with the stack. The name must be unique in the Region in which you are creating the
      * stack.
      * </p>
      * <note>
@@ -401,7 +401,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param stackName
-     *        The name that is associated with the stack. The name must be unique in the region in which you are
+     *        The name that is associated with the stack. The name must be unique in the Region in which you are
      *        creating the stack.</p> <note>
      *        <p>
      *        A stack name can contain only alphanumeric characters (case sensitive) and hyphens. It must start with an
@@ -2724,13 +2724,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
      *        Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
-     *        located in an S3 bucket in the same region as the stack. You can specify either the
+     *        located in an S3 bucket in the same Region as the stack. You can specify either the
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
@@ -2741,12 +2741,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @return Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
-     *         located in an S3 bucket in the same region as the stack. You can specify either the
+     *         located in an S3 bucket in the same Region as the stack. You can specify either the
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
@@ -2757,13 +2757,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB) located in
-     * an S3 bucket in the same region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+     * an S3 bucket in the same Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyURL
      *        Location of a file containing the stack policy. The URL must point to a policy (maximum size: 16 KB)
-     *        located in an S3 bucket in the same region as the stack. You can specify either the
+     *        located in an S3 bucket in the same Region as the stack. You can specify either the
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

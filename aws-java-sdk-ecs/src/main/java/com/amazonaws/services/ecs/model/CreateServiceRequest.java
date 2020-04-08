@@ -275,9 +275,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
-     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
-     * Scaling policies.
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task
+     * placement strategy, or use Service Auto Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -2180,9 +2181,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
-     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
-     * Scaling policies.
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task
+     * placement strategy, or use Service Auto Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -2211,9 +2213,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When you're
-     *        using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
-     *        use Service Auto Scaling policies.
+     *        instance that meets all of the task placement constraints that you specify in your cluster. The service
+     *        scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
+     *        meet the placement constraints. When you're using this strategy, you don't need to specify a desired
+     *        number of tasks, a task placement strategy, or use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
@@ -2248,9 +2251,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
-     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
-     * Scaling policies.
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task
+     * placement strategy, or use Service Auto Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -2278,9 +2282,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <li>
      *         <p>
      *         <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *         instance that meets all of the task placement constraints that you specify in your cluster. When you're
-     *         using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
-     *         use Service Auto Scaling policies.
+     *         instance that meets all of the task placement constraints that you specify in your cluster. The service
+     *         scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
+     *         meet the placement constraints. When you're using this strategy, you don't need to specify a desired
+     *         number of tasks, a task placement strategy, or use Service Auto Scaling policies.
      *         </p>
      *         <note>
      *         <p>
@@ -2315,9 +2320,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
-     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
-     * Scaling policies.
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task
+     * placement strategy, or use Service Auto Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -2346,9 +2352,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When you're
-     *        using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
-     *        use Service Auto Scaling policies.
+     *        instance that meets all of the task placement constraints that you specify in your cluster. The service
+     *        scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
+     *        meet the placement constraints. When you're using this strategy, you don't need to specify a desired
+     *        number of tasks, a task placement strategy, or use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>
@@ -2385,9 +2392,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When you're using this
-     * strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto
-     * Scaling policies.
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task
+     * placement strategy, or use Service Auto Scaling policies.
      * </p>
      * <note>
      * <p>
@@ -2416,9 +2424,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container
-     *        instance that meets all of the task placement constraints that you specify in your cluster. When you're
-     *        using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or
-     *        use Service Auto Scaling policies.
+     *        instance that meets all of the task placement constraints that you specify in your cluster. The service
+     *        scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not
+     *        meet the placement constraints. When you're using this strategy, you don't need to specify a desired
+     *        number of tasks, a task placement strategy, or use Service Auto Scaling policies.
      *        </p>
      *        <note>
      *        <p>

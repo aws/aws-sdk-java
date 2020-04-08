@@ -56,7 +56,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
     private String stackInstanceAccount;
     /**
      * <p>
-     * The name of the region where you want to list stack instances.
+     * The name of the Region where you want to list stack instances.
      * </p>
      */
     private String stackInstanceRegion;
@@ -256,11 +256,11 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the region where you want to list stack instances.
+     * The name of the Region where you want to list stack instances.
      * </p>
      * 
      * @param stackInstanceRegion
-     *        The name of the region where you want to list stack instances.
+     *        The name of the Region where you want to list stack instances.
      */
 
     public void setStackInstanceRegion(String stackInstanceRegion) {
@@ -269,10 +269,10 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the region where you want to list stack instances.
+     * The name of the Region where you want to list stack instances.
      * </p>
      * 
-     * @return The name of the region where you want to list stack instances.
+     * @return The name of the Region where you want to list stack instances.
      */
 
     public String getStackInstanceRegion() {
@@ -281,11 +281,11 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the region where you want to list stack instances.
+     * The name of the Region where you want to list stack instances.
      * </p>
      * 
      * @param stackInstanceRegion
-     *        The name of the region where you want to list stack instances.
+     *        The name of the Region where you want to list stack instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

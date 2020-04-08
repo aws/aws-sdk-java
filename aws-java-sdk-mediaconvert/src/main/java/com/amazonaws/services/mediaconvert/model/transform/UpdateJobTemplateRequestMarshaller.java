@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class UpdateJobTemplateRequestMarshaller {
             .marshallLocationName("category").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> HOPDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hopDestinations").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -63,6 +66,7 @@ public class UpdateJobTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateJobTemplateRequest.getAccelerationSettings(), ACCELERATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateJobTemplateRequest.getHopDestinations(), HOPDESTINATIONS_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getQueue(), QUEUE_BINDING);

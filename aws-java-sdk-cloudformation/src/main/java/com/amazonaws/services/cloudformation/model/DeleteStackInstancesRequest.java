@@ -33,7 +33,8 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
     private String stackSetName;
     /**
      * <p>
-     * [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.
+     * [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack instances
+     * for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
@@ -51,7 +52,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
     private DeploymentTargets deploymentTargets;
     /**
      * <p>
-     * The regions where you want to delete stack set instances.
+     * The Regions where you want to delete stack set instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
@@ -134,13 +135,15 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.
+     * [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack instances
+     * for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
-     * @return [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.</p>
+     * @return [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack
+     *         instances for.</p>
      *         <p>
      *         You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      */
@@ -154,14 +157,16 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.
+     * [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack instances
+     * for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.</p>
+     *        [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack
+     *        instances for.</p>
      *        <p>
      *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      */
@@ -177,7 +182,8 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.
+     * [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack instances
+     * for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
@@ -189,7 +195,8 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.</p>
+     *        [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack
+     *        instances for.</p>
      *        <p>
      *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -207,14 +214,16 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.
+     * [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack instances
+     * for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.</p>
+     *        [<code>Self-managed</code> permissions] The names of the AWS accounts that you want to delete stack
+     *        instances for.</p>
      *        <p>
      *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -285,10 +294,10 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The regions where you want to delete stack set instances.
+     * The Regions where you want to delete stack set instances.
      * </p>
      * 
-     * @return The regions where you want to delete stack set instances.
+     * @return The Regions where you want to delete stack set instances.
      */
 
     public java.util.List<String> getRegions() {
@@ -300,11 +309,11 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The regions where you want to delete stack set instances.
+     * The Regions where you want to delete stack set instances.
      * </p>
      * 
      * @param regions
-     *        The regions where you want to delete stack set instances.
+     *        The Regions where you want to delete stack set instances.
      */
 
     public void setRegions(java.util.Collection<String> regions) {
@@ -318,7 +327,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The regions where you want to delete stack set instances.
+     * The Regions where you want to delete stack set instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -327,7 +336,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param regions
-     *        The regions where you want to delete stack set instances.
+     *        The Regions where you want to delete stack set instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,11 +352,11 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The regions where you want to delete stack set instances.
+     * The Regions where you want to delete stack set instances.
      * </p>
      * 
      * @param regions
-     *        The regions where you want to delete stack set instances.
+     *        The Regions where you want to delete stack set instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

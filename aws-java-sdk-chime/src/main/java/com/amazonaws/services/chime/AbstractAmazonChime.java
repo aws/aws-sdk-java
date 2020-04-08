@@ -356,12 +356,22 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public ListAttendeeTagsResult listAttendeeTags(ListAttendeeTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAttendeesResult listAttendees(ListAttendeesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListBotsResult listBots(ListBotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMeetingTagsResult listMeetingTags(ListMeetingTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -392,6 +402,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public ListRoomsResult listRooms(ListRoomsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -472,6 +487,36 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public SearchAvailablePhoneNumbersResult searchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagAttendeeResult tagAttendee(TagAttendeeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagMeetingResult tagMeeting(TagMeetingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagAttendeeResult untagAttendee(UntagAttendeeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagMeetingResult untagMeeting(UntagMeetingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -23,12 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The proxy session details.
+     * </p>
+     */
     private java.util.List<ProxySession> proxySessions;
-
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The proxy session details.
+     * </p>
+     * 
+     * @return The proxy session details.
      */
 
     public java.util.List<ProxySession> getProxySessions() {
@@ -36,7 +49,12 @@ public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The proxy session details.
+     * </p>
+     * 
      * @param proxySessions
+     *        The proxy session details.
      */
 
     public void setProxySessions(java.util.Collection<ProxySession> proxySessions) {
@@ -50,12 +68,16 @@ public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The proxy session details.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProxySessions(java.util.Collection)} or {@link #withProxySessions(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param proxySessions
+     *        The proxy session details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +92,12 @@ public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The proxy session details.
+     * </p>
+     * 
      * @param proxySessions
+     *        The proxy session details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +107,12 @@ public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +120,11 @@ public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * @return
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -96,7 +132,12 @@ public class ListProxySessionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

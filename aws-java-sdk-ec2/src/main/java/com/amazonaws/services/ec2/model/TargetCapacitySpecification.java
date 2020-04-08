@@ -27,7 +27,8 @@ import javax.annotation.Generated;
  * On-Demand Instances and Spot Instances in your request, EC2 Fleet will launch instances until it reaches the maximum
  * amount that you're willing to pay. When the maximum amount you're willing to pay is reached, the fleet stops
  * launching instances even if it hasn’t met the target capacity. The <code>MaxTotalPrice</code> parameters are located
- * in and
+ * in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html">OnDemandOptions</a> and
+ * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecification" target="_top">AWS

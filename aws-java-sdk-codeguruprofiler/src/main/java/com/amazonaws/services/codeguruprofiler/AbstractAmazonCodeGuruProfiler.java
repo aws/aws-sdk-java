@@ -48,6 +48,11 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public GetPolicyResult getPolicy(GetPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetProfileResult getProfile(GetProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,16 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
 
     @Override
     public PostAgentProfileResult postAgentProfile(PostAgentProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPermissionResult putPermission(PutPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

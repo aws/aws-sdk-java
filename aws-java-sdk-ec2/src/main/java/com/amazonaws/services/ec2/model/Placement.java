@@ -35,17 +35,19 @@ public class Placement implements Serializable, Cloneable {
      * for the Region.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private String affinity;
@@ -61,28 +63,31 @@ public class Placement implements Serializable, Cloneable {
      * <code>partition</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private Integer partitionNumber;
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private String hostId;
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private String tenancy;
@@ -91,7 +96,8 @@ public class Placement implements Serializable, Cloneable {
      * Reserved for future use.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private String spreadDomain;
@@ -101,7 +107,8 @@ public class Placement implements Serializable, Cloneable {
      * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      */
     private String hostResourceGroupArn;
@@ -124,7 +131,8 @@ public class Placement implements Serializable, Cloneable {
      *        criteria for the Region.
      *        </p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
     public Placement(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -139,7 +147,8 @@ public class Placement implements Serializable, Cloneable {
      * for the Region.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param availabilityZone
@@ -149,7 +158,8 @@ public class Placement implements Serializable, Cloneable {
      *        criteria for the Region.
      *        </p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -165,7 +175,8 @@ public class Placement implements Serializable, Cloneable {
      * for the Region.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @return The Availability Zone of the instance.</p>
@@ -174,7 +185,8 @@ public class Placement implements Serializable, Cloneable {
      *         criteria for the Region.
      *         </p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public String getAvailabilityZone() {
@@ -190,7 +202,8 @@ public class Placement implements Serializable, Cloneable {
      * for the Region.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param availabilityZone
@@ -200,7 +213,8 @@ public class Placement implements Serializable, Cloneable {
      *        criteria for the Region.
      *        </p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,18 +225,21 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.</p>
+     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public void setAffinity(String affinity) {
@@ -231,17 +248,20 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
-     * @return The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     *         <a>ImportInstance</a> command.</p>
+     * @return The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *         command.</p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public String getAffinity() {
@@ -250,18 +270,21 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.</p>
+     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,14 +339,16 @@ public class Placement implements Serializable, Cloneable {
      * <code>partition</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param partitionNumber
      *        The number of the partition the instance is in. Valid only if the placement group strategy is set to
      *        <code>partition</code>.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public void setPartitionNumber(Integer partitionNumber) {
@@ -336,13 +361,15 @@ public class Placement implements Serializable, Cloneable {
      * <code>partition</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @return The number of the partition the instance is in. Valid only if the placement group strategy is set to
      *         <code>partition</code>.</p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public Integer getPartitionNumber() {
@@ -355,14 +382,16 @@ public class Placement implements Serializable, Cloneable {
      * <code>partition</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param partitionNumber
      *        The number of the partition the instance is in. Valid only if the placement group strategy is set to
      *        <code>partition</code>.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,18 +402,21 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.</p>
+     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public void setHostId(String hostId) {
@@ -393,17 +425,20 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
-     * @return The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     *         <a>ImportInstance</a> command.</p>
+     * @return The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *         command.</p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public String getHostId() {
@@ -412,18 +447,21 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param hostId
-     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.</p>
+     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,19 +473,23 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.</p>
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @see Tenancy
      */
 
@@ -458,18 +500,22 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @return The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *         <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *         the <a>ImportInstance</a> command.</p>
+     *         the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *         command.</p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @see Tenancy
      */
 
@@ -480,19 +526,23 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.</p>
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
@@ -505,19 +555,23 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.</p>
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @see Tenancy
      */
 
@@ -528,19 +582,23 @@ public class Placement implements Serializable, Cloneable {
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
-     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the
-     * <a>ImportInstance</a> command.
+     * <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a> command.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param tenancy
      *        The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
      *        <code>dedicated</code> runs on single-tenant hardware. The <code>host</code> tenancy is not supported for
-     *        the <a>ImportInstance</a> command.</p>
+     *        the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+     *        command.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Tenancy
      */
@@ -555,13 +613,15 @@ public class Placement implements Serializable, Cloneable {
      * Reserved for future use.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param spreadDomain
      *        Reserved for future use.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public void setSpreadDomain(String spreadDomain) {
@@ -573,12 +633,14 @@ public class Placement implements Serializable, Cloneable {
      * Reserved for future use.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @return Reserved for future use.</p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public String getSpreadDomain() {
@@ -590,13 +652,15 @@ public class Placement implements Serializable, Cloneable {
      * Reserved for future use.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param spreadDomain
      *        Reserved for future use.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -611,14 +675,16 @@ public class Placement implements Serializable, Cloneable {
      * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param hostResourceGroupArn
      *        The ARN of the host resource group in which to launch the instances. If you specify a host resource group
      *        ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public void setHostResourceGroupArn(String hostResourceGroupArn) {
@@ -631,13 +697,15 @@ public class Placement implements Serializable, Cloneable {
      * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @return The ARN of the host resource group in which to launch the instances. If you specify a host resource group
      *         ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
      *         <p>
-     *         This parameter is not supported by .
+     *         This parameter is not supported by <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      */
 
     public String getHostResourceGroupArn() {
@@ -650,14 +718,16 @@ public class Placement implements Serializable, Cloneable {
      * omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
      * </p>
      * <p>
-     * This parameter is not supported by .
+     * This parameter is not supported by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * </p>
      * 
      * @param hostResourceGroupArn
      *        The ARN of the host resource group in which to launch the instances. If you specify a host resource group
      *        ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
      *        <p>
-     *        This parameter is not supported by .
+     *        This parameter is not supported by <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

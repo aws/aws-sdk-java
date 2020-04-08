@@ -31,6 +31,12 @@ public class EFSVolumeConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSystemId").build();
     private static final MarshallingInfo<String> ROOTDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rootDirectory").build();
+    private static final MarshallingInfo<String> TRANSITENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transitEncryption").build();
+    private static final MarshallingInfo<Integer> TRANSITENCRYPTIONPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transitEncryptionPort").build();
+    private static final MarshallingInfo<StructuredPojo> AUTHORIZATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizationConfig").build();
 
     private static final EFSVolumeConfigurationMarshaller instance = new EFSVolumeConfigurationMarshaller();
 
@@ -50,6 +56,9 @@ public class EFSVolumeConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(eFSVolumeConfiguration.getFileSystemId(), FILESYSTEMID_BINDING);
             protocolMarshaller.marshall(eFSVolumeConfiguration.getRootDirectory(), ROOTDIRECTORY_BINDING);
+            protocolMarshaller.marshall(eFSVolumeConfiguration.getTransitEncryption(), TRANSITENCRYPTION_BINDING);
+            protocolMarshaller.marshall(eFSVolumeConfiguration.getTransitEncryptionPort(), TRANSITENCRYPTIONPORT_BINDING);
+            protocolMarshaller.marshall(eFSVolumeConfiguration.getAuthorizationConfig(), AUTHORIZATIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

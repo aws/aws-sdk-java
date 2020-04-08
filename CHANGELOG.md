@@ -1,3 +1,32 @@
+# __1.11.762__ __2020-04-08__
+## __AWS CloudFormation__
+  - ### Features
+    - The OrganizationalUnitIds parameter on StackSet and the OrganizationalUnitId parameter on StackInstance, StackInstanceSummary, and StackSetOperationResultSummary are now reserved for internal use. No data is returned for this parameter.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK adds support for queue hopping. Jobs can now hop from their original queue to a specified alternate queue, based on the maximum wait time that you specify in the job settings.
+
+## __AWS Migration Hub Config__
+  - ### Features
+    - Adding ThrottlingException
+
+## __Amazon Chime__
+  - ### Features
+    - feature: Chime: This release introduces the ability to tag Amazon Chime SDK meeting resources.  You can use tags to organize and identify your resources for cost allocation. 
+
+## __Amazon CodeGuru Profiler__
+  - ### Features
+    - CodeGuruProfiler adds support for resource based authorization to submit profile data.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release provides native support for specifying Amazon EFS file systems as volumes in your Amazon ECS task definitions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release provides the ability to include tags in EC2 event notifications. 
+
 # __1.11.761__ __2020-04-07__
 ## __AWS MediaConnect__
   - ### Features

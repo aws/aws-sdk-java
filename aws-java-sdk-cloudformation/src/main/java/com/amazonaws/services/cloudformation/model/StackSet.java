@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS
- * accounts and across regions by using a single CloudFormation template. In the stack set, you specify the template to
+ * accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to
  * use, as well as any parameters and capabilities that the template requires.
  * </p>
  * 
@@ -150,8 +150,7 @@ public class StackSet implements Serializable, Cloneable {
     private String permissionModel;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
-     * stacks in your stack set have been deployed.
+     * Reserved for internal use. No data returned.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
@@ -1206,12 +1205,10 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
-     * stacks in your stack set have been deployed.
+     * Reserved for internal use. No data returned.
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
-     *         which stacks in your stack set have been deployed.
+     * @return Reserved for internal use. No data returned.
      */
 
     public java.util.List<String> getOrganizationalUnitIds() {
@@ -1223,13 +1220,11 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
-     * stacks in your stack set have been deployed.
+     * Reserved for internal use. No data returned.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
-     *        which stacks in your stack set have been deployed.
+     *        Reserved for internal use. No data returned.
      */
 
     public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
@@ -1243,8 +1238,7 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
-     * stacks in your stack set have been deployed.
+     * Reserved for internal use. No data returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1253,8 +1247,7 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      * 
      * @param organizationalUnitIds
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
-     *        which stacks in your stack set have been deployed.
+     *        Reserved for internal use. No data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1270,13 +1263,11 @@ public class StackSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
-     * stacks in your stack set have been deployed.
+     * Reserved for internal use. No data returned.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
-     *        which stacks in your stack set have been deployed.
+     *        Reserved for internal use. No data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Chime Voice Connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
 
     /**
+     * <p>
+     * The Amazon Chime Voice Connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime Voice Connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -36,7 +46,11 @@ public class DeleteVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime Voice Connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime Voice Connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -44,7 +58,12 @@ public class DeleteVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The Amazon Chime Voice Connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime Voice Connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

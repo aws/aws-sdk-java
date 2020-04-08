@@ -68,6 +68,10 @@ public class JobTemplateJsonUnmarshaller implements Unmarshaller<JobTemplate, Js
                     context.nextToken();
                     jobTemplate.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hopDestinations", targetDepth)) {
+                    context.nextToken();
+                    jobTemplate.setHopDestinations(new ListUnmarshaller<HopDestination>(HopDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
                     jobTemplate.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

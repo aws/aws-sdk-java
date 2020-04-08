@@ -347,8 +347,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String operationId;
     /**
      * <p>
-     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
-     * you must also specify the regions in which to update stack set instances.
+     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     * specify accounts, you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -358,15 +358,15 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accounts;
     /**
      * <p>
-     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * The Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts
      * in which to update stack set instances.
      * </p>
      * <p>
@@ -377,8 +377,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      */
@@ -3060,8 +3060,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
-     * you must also specify the regions in which to update stack set instances.
+     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     * specify accounts, you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3071,13 +3071,13 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * 
-     * @return [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
-     *         accounts, you must also specify the regions in which to update stack set instances.</p>
+     * @return [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If
+     *         you specify accounts, you must also specify the Regions in which to update stack set instances.</p>
      *         <p>
      *         To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *         <code>Accounts</code> or <code>Regions</code> properties.
@@ -3086,9 +3086,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *         <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *         CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *         stack instances in the specified accounts and regions. If the stack set update does not include changes
+     *         stack instances in the specified accounts and Regions. If the stack set update does not include changes
      *         to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts
-     *         and regions, while leaving all other stack instances with their existing stack instance status.
+     *         and Regions, while leaving all other stack instances with their existing stack instance status.
      */
 
     public java.util.List<String> getAccounts() {
@@ -3100,8 +3100,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
-     * you must also specify the regions in which to update stack set instances.
+     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     * specify accounts, you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3111,14 +3111,14 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
-     *        accounts, you must also specify the regions in which to update stack set instances.</p>
+     *        [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     *        specify accounts, you must also specify the Regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -3127,9 +3127,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        stack instances in the specified accounts and Regions. If the stack set update does not include changes to
      *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
-     *        regions, while leaving all other stack instances with their existing stack instance status.
+     *        Regions, while leaving all other stack instances with their existing stack instance status.
      */
 
     public void setAccounts(java.util.Collection<String> accounts) {
@@ -3143,8 +3143,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
-     * you must also specify the regions in which to update stack set instances.
+     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     * specify accounts, you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3154,8 +3154,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * <p>
@@ -3165,8 +3165,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
-     *        accounts, you must also specify the regions in which to update stack set instances.</p>
+     *        [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     *        specify accounts, you must also specify the Regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -3175,9 +3175,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        stack instances in the specified accounts and Regions. If the stack set update does not include changes to
      *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
-     *        regions, while leaving all other stack instances with their existing stack instance status.
+     *        Regions, while leaving all other stack instances with their existing stack instance status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3193,8 +3193,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
-     * you must also specify the regions in which to update stack set instances.
+     * [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     * specify accounts, you must also specify the Regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -3204,14 +3204,14 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
-     *        accounts, you must also specify the regions in which to update stack set instances.</p>
+     *        [<code>Self-managed</code> permissions] The accounts in which to update associated stack instances. If you
+     *        specify accounts, you must also specify the Regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -3220,9 +3220,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        stack instances in the specified accounts and Regions. If the stack set update does not include changes to
      *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
-     *        regions, while leaving all other stack instances with their existing stack instance status.
+     *        Regions, while leaving all other stack instances with their existing stack instance status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3233,7 +3233,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * The Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts
      * in which to update stack set instances.
      * </p>
      * <p>
@@ -3244,12 +3244,12 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * 
-     * @return The regions in which to update associated stack instances. If you specify regions, you must also specify
+     * @return The Regions in which to update associated stack instances. If you specify Regions, you must also specify
      *         accounts in which to update stack set instances.</p>
      *         <p>
      *         To update <i>all</i> the stack instances associated with this stack set, do not specify the
@@ -3259,9 +3259,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *         <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *         CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *         stack instances in the specified accounts and regions. If the stack set update does not include changes
+     *         stack instances in the specified accounts and Regions. If the stack set update does not include changes
      *         to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts
-     *         and regions, while leaving all other stack instances with their existing stack instance status.
+     *         and Regions, while leaving all other stack instances with their existing stack instance status.
      */
 
     public java.util.List<String> getRegions() {
@@ -3273,7 +3273,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * The Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts
      * in which to update stack set instances.
      * </p>
      * <p>
@@ -3284,13 +3284,13 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * 
      * @param regions
-     *        The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *        The Regions in which to update associated stack instances. If you specify Regions, you must also specify
      *        accounts in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
@@ -3300,9 +3300,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        stack instances in the specified accounts and Regions. If the stack set update does not include changes to
      *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
-     *        regions, while leaving all other stack instances with their existing stack instance status.
+     *        Regions, while leaving all other stack instances with their existing stack instance status.
      */
 
     public void setRegions(java.util.Collection<String> regions) {
@@ -3316,7 +3316,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * The Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts
      * in which to update stack set instances.
      * </p>
      * <p>
@@ -3327,8 +3327,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * <p>
@@ -3338,7 +3338,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param regions
-     *        The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *        The Regions in which to update associated stack instances. If you specify Regions, you must also specify
      *        accounts in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
@@ -3348,9 +3348,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        stack instances in the specified accounts and Regions. If the stack set update does not include changes to
      *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
-     *        regions, while leaving all other stack instances with their existing stack instance status.
+     *        Regions, while leaving all other stack instances with their existing stack instance status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3366,7 +3366,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * The Regions in which to update associated stack instances. If you specify Regions, you must also specify accounts
      * in which to update stack set instances.
      * </p>
      * <p>
@@ -3377,13 +3377,13 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
      * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
-     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
-     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * specified accounts and Regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
      * stack instances with their existing stack instance status.
      * </p>
      * 
      * @param regions
-     *        The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *        The Regions in which to update associated stack instances. If you specify Regions, you must also specify
      *        accounts in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
@@ -3393,9 +3393,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
      *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
      *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
-     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        stack instances in the specified accounts and Regions. If the stack set update does not include changes to
      *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
-     *        regions, while leaving all other stack instances with their existing stack instance status.
+     *        Regions, while leaving all other stack instances with their existing stack instance status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

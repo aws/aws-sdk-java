@@ -195,9 +195,10 @@ public interface AmazonECSAsync extends AmazonECS {
      * <li>
      * <p>
      * <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy, you
-     * don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
-     * For more information, see <a
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When using this strategy, you don't need to specify a desired number of tasks, a task placement
+     * strategy, or use Service Auto Scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
      * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -323,9 +324,10 @@ public interface AmazonECSAsync extends AmazonECS {
      * <li>
      * <p>
      * <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active container instance
-     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy, you
-     * don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
-     * For more information, see <a
+     * that meets all of the task placement constraints that you specify in your cluster. The service scheduler also
+     * evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement
+     * constraints. When using this strategy, you don't need to specify a desired number of tasks, a task placement
+     * strategy, or use Service Auto Scaling policies. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
      * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -2514,25 +2516,35 @@ public interface AmazonECSAsync extends AmazonECS {
             com.amazonaws.handlers.AsyncHandler<UpdateContainerInstancesStateRequest, UpdateContainerInstancesStateResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * Updating the task placement strategies and constraints on an Amazon ECS service remains in preview and is a Beta
+     * Service as defined by and subject to the Beta Service Participation Service Terms located at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
+     * Terms apply to your participation in this preview.
+     * </p>
+     * </important>
      * <p>
      * Modifies the parameters of a service.
      * </p>
      * <p>
      * For services using the rolling update (<code>ECS</code>) deployment controller, the desired count, deployment
-     * configuration, network configuration, or task definition used can be updated.
+     * configuration, network configuration, task placement constraints and strategies, or task definition used can be
+     * updated.
      * </p>
      * <p>
      * For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count,
-     * deployment configuration, and health check grace period can be updated using this API. If the network
-     * configuration, platform version, or task definition need to be updated, a new AWS CodeDeploy deployment should be
-     * created. For more information, see <a
+     * deployment configuration, task placement constraints and strategies, and health check grace period can be updated
+     * using this API. If the network configuration, platform version, or task definition need to be updated, a new AWS
+     * CodeDeploy deployment should be created. For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
      * in the <i>AWS CodeDeploy API Reference</i>.
      * </p>
      * <p>
-     * For services using an external deployment controller, you can update only the desired count and health check
-     * grace period using this API. If the launch type, load balancer, network configuration, platform version, or task
-     * definition need to be updated, you should create a new task set. For more information, see <a>CreateTaskSet</a>.
+     * For services using an external deployment controller, you can update only the desired count, task placement
+     * constraints and strategies, and health check grace period using this API. If the launch type, load balancer,
+     * network configuration, platform version, or task definition need to be updated, you should create a new task set.
+     * For more information, see <a>CreateTaskSet</a>.
      * </p>
      * <p>
      * You can add to or subtract from the number of instantiations of a task definition in a service by specifying the
@@ -2644,25 +2656,35 @@ public interface AmazonECSAsync extends AmazonECS {
     java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest);
 
     /**
+     * <important>
+     * <p>
+     * Updating the task placement strategies and constraints on an Amazon ECS service remains in preview and is a Beta
+     * Service as defined by and subject to the Beta Service Participation Service Terms located at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
+     * Terms apply to your participation in this preview.
+     * </p>
+     * </important>
      * <p>
      * Modifies the parameters of a service.
      * </p>
      * <p>
      * For services using the rolling update (<code>ECS</code>) deployment controller, the desired count, deployment
-     * configuration, network configuration, or task definition used can be updated.
+     * configuration, network configuration, task placement constraints and strategies, or task definition used can be
+     * updated.
      * </p>
      * <p>
      * For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count,
-     * deployment configuration, and health check grace period can be updated using this API. If the network
-     * configuration, platform version, or task definition need to be updated, a new AWS CodeDeploy deployment should be
-     * created. For more information, see <a
+     * deployment configuration, task placement constraints and strategies, and health check grace period can be updated
+     * using this API. If the network configuration, platform version, or task definition need to be updated, a new AWS
+     * CodeDeploy deployment should be created. For more information, see <a
      * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
      * in the <i>AWS CodeDeploy API Reference</i>.
      * </p>
      * <p>
-     * For services using an external deployment controller, you can update only the desired count and health check
-     * grace period using this API. If the launch type, load balancer, network configuration, platform version, or task
-     * definition need to be updated, you should create a new task set. For more information, see <a>CreateTaskSet</a>.
+     * For services using an external deployment controller, you can update only the desired count, task placement
+     * constraints and strategies, and health check grace period using this API. If the launch type, load balancer,
+     * network configuration, platform version, or task definition need to be updated, you should create a new task set.
+     * For more information, see <a>CreateTaskSet</a>.
      * </p>
      * <p>
      * You can add to or subtract from the number of instantiations of a task definition in a service by specifying the

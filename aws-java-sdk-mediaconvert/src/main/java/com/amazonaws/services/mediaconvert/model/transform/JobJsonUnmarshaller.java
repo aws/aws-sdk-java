@@ -80,6 +80,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("hopDestinations", targetDepth)) {
+                    context.nextToken();
+                    job.setHopDestinations(new ListUnmarshaller<HopDestination>(HopDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     job.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 if (context.testExpression("queue", targetDepth)) {
                     context.nextToken();
                     job.setQueue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queueTransitions", targetDepth)) {
+                    context.nextToken();
+                    job.setQueueTransitions(new ListUnmarshaller<QueueTransition>(QueueTransitionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("retryCount", targetDepth)) {
                     context.nextToken();

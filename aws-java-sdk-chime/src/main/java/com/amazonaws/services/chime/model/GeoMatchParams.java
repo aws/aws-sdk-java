@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The country and area code for a proxy phone number in a proxy phone session.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GeoMatchParams" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GeoMatchParams implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The country.
+     * </p>
+     */
     private String country;
-
+    /**
+     * <p>
+     * The area code.
+     * </p>
+     */
     private String areaCode;
 
     /**
+     * <p>
+     * The country.
+     * </p>
+     * 
      * @param country
+     *        The country.
      */
 
     public void setCountry(String country) {
@@ -38,7 +55,11 @@ public class GeoMatchParams implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The country.
+     * </p>
+     * 
+     * @return The country.
      */
 
     public String getCountry() {
@@ -46,7 +67,12 @@ public class GeoMatchParams implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The country.
+     * </p>
+     * 
      * @param country
+     *        The country.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class GeoMatchParams implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The area code.
+     * </p>
+     * 
      * @param areaCode
+     *        The area code.
      */
 
     public void setAreaCode(String areaCode) {
@@ -64,7 +95,11 @@ public class GeoMatchParams implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The area code.
+     * </p>
+     * 
+     * @return The area code.
      */
 
     public String getAreaCode() {
@@ -72,7 +107,12 @@ public class GeoMatchParams implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The area code.
+     * </p>
+     * 
      * @param areaCode
+     *        The area code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

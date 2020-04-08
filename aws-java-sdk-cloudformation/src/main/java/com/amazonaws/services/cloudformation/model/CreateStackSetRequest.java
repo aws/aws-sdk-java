@@ -27,7 +27,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name to associate with the stack set. The name must be unique in the region where you create your stack set.
+     * The name to associate with the stack set. The name must be unique in the Region where you create your stack set.
      * </p>
      * <note>
      * <p>
@@ -256,10 +256,6 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
      * <code>SERVICE_MANAGED</code>.
      * </p>
-     * <p>
-     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
-     * .
-     * </p>
      */
     private AutoDeployment autoDeployment;
     /**
@@ -277,7 +273,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name to associate with the stack set. The name must be unique in the region where you create your stack set.
+     * The name to associate with the stack set. The name must be unique in the Region where you create your stack set.
      * </p>
      * <note>
      * <p>
@@ -287,7 +283,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      * 
      * @param stackSetName
-     *        The name to associate with the stack set. The name must be unique in the region where you create your
+     *        The name to associate with the stack set. The name must be unique in the Region where you create your
      *        stack set.</p> <note>
      *        <p>
      *        A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an
@@ -301,7 +297,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name to associate with the stack set. The name must be unique in the region where you create your stack set.
+     * The name to associate with the stack set. The name must be unique in the Region where you create your stack set.
      * </p>
      * <note>
      * <p>
@@ -310,7 +306,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * </note>
      * 
-     * @return The name to associate with the stack set. The name must be unique in the region where you create your
+     * @return The name to associate with the stack set. The name must be unique in the Region where you create your
      *         stack set.</p> <note>
      *         <p>
      *         A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an
@@ -324,7 +320,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name to associate with the stack set. The name must be unique in the region where you create your stack set.
+     * The name to associate with the stack set. The name must be unique in the Region where you create your stack set.
      * </p>
      * <note>
      * <p>
@@ -334,7 +330,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      * 
      * @param stackSetName
-     *        The name to associate with the stack set. The name must be unique in the region where you create your
+     *        The name to associate with the stack set. The name must be unique in the Region where you create your
      *        stack set.</p> <note>
      *        <p>
      *        A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an
@@ -2300,18 +2296,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
      * <code>SERVICE_MANAGED</code>.
      * </p>
-     * <p>
-     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
-     * .
-     * </p>
      * 
      * @param autoDeployment
      *        Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the
      *        target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
-     *        <code>SERVICE_MANAGED</code>.</p>
-     *        <p>
-     *        If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
-     *        <code>Regions</code>.
+     *        <code>SERVICE_MANAGED</code>.
      */
 
     public void setAutoDeployment(AutoDeployment autoDeployment) {
@@ -2324,17 +2313,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
      * <code>SERVICE_MANAGED</code>.
      * </p>
-     * <p>
-     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
-     * .
-     * </p>
      * 
      * @return Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the
      *         target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
-     *         <code>SERVICE_MANAGED</code>.</p>
-     *         <p>
-     *         If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
-     *         <code>Regions</code>.
+     *         <code>SERVICE_MANAGED</code>.
      */
 
     public AutoDeployment getAutoDeployment() {
@@ -2347,18 +2329,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
      * <code>SERVICE_MANAGED</code>.
      * </p>
-     * <p>
-     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
-     * .
-     * </p>
      * 
      * @param autoDeployment
      *        Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the
      *        target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is
-     *        <code>SERVICE_MANAGED</code>.</p>
-     *        <p>
-     *        If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
-     *        <code>Regions</code>.
+     *        <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
-
+    /**
+     * <p>
+     * The default number of minutes allowed for proxy sessions.
+     * </p>
+     */
     private Integer defaultSessionExpiryMinutes;
-
+    /**
+     * <p>
+     * The countries for proxy phone numbers to be selected from.
+     * </p>
+     */
     private java.util.List<String> phoneNumberPoolCountries;
-
+    /**
+     * <p>
+     * The phone number to route calls to after a proxy session expires.
+     * </p>
+     */
     private String fallBackPhoneNumber;
-
+    /**
+     * <p>
+     * When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
+     * </p>
+     */
     private Boolean disabled;
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -44,7 +70,11 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime voice connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -52,7 +82,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +97,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The default number of minutes allowed for proxy sessions.
+     * </p>
+     * 
      * @param defaultSessionExpiryMinutes
+     *        The default number of minutes allowed for proxy sessions.
      */
 
     public void setDefaultSessionExpiryMinutes(Integer defaultSessionExpiryMinutes) {
@@ -70,7 +110,11 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The default number of minutes allowed for proxy sessions.
+     * </p>
+     * 
+     * @return The default number of minutes allowed for proxy sessions.
      */
 
     public Integer getDefaultSessionExpiryMinutes() {
@@ -78,7 +122,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The default number of minutes allowed for proxy sessions.
+     * </p>
+     * 
      * @param defaultSessionExpiryMinutes
+     *        The default number of minutes allowed for proxy sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +137,11 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The countries for proxy phone numbers to be selected from.
+     * </p>
+     * 
+     * @return The countries for proxy phone numbers to be selected from.
      */
 
     public java.util.List<String> getPhoneNumberPoolCountries() {
@@ -96,7 +149,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The countries for proxy phone numbers to be selected from.
+     * </p>
+     * 
      * @param phoneNumberPoolCountries
+     *        The countries for proxy phone numbers to be selected from.
      */
 
     public void setPhoneNumberPoolCountries(java.util.Collection<String> phoneNumberPoolCountries) {
@@ -110,12 +168,16 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The countries for proxy phone numbers to be selected from.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPhoneNumberPoolCountries(java.util.Collection)} or
      * {@link #withPhoneNumberPoolCountries(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param phoneNumberPoolCountries
+     *        The countries for proxy phone numbers to be selected from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +192,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The countries for proxy phone numbers to be selected from.
+     * </p>
+     * 
      * @param phoneNumberPoolCountries
+     *        The countries for proxy phone numbers to be selected from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +207,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The phone number to route calls to after a proxy session expires.
+     * </p>
+     * 
      * @param fallBackPhoneNumber
+     *        The phone number to route calls to after a proxy session expires.
      */
 
     public void setFallBackPhoneNumber(String fallBackPhoneNumber) {
@@ -148,7 +220,11 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The phone number to route calls to after a proxy session expires.
+     * </p>
+     * 
+     * @return The phone number to route calls to after a proxy session expires.
      */
 
     public String getFallBackPhoneNumber() {
@@ -156,7 +232,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The phone number to route calls to after a proxy session expires.
+     * </p>
+     * 
      * @param fallBackPhoneNumber
+     *        The phone number to route calls to after a proxy session expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +247,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param disabled
+     *        When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
      */
 
     public void setDisabled(Boolean disabled) {
@@ -174,7 +260,11 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @return When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
      */
 
     public Boolean getDisabled() {
@@ -182,7 +272,12 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param disabled
+     *        When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,7 +287,11 @@ public class PutVoiceConnectorProxyRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @return When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.
      */
 
     public Boolean isDisabled() {

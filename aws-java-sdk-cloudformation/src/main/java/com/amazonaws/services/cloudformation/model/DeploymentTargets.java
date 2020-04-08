@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys.
+ * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does
+ * not deploy stack instances to the organization master account, even if the master account is in your organization or
+ * in an OU in your organization.
  * </p>
  * <p>
  * For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create
@@ -38,7 +40,7 @@ public class DeploymentTargets implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> accounts;
     /**
      * <p>
-     * The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
@@ -118,10 +120,10 @@ public class DeploymentTargets implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * </p>
      * 
-     * @return The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     * @return The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      */
 
     public java.util.List<String> getOrganizationalUnitIds() {
@@ -133,11 +135,11 @@ public class DeploymentTargets implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     *        The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      */
 
     public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
@@ -151,7 +153,7 @@ public class DeploymentTargets implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -160,7 +162,7 @@ public class DeploymentTargets implements Serializable, Cloneable {
      * </p>
      * 
      * @param organizationalUnitIds
-     *        The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     *        The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +178,11 @@ public class DeploymentTargets implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * </p>
      * 
      * @param organizationalUnitIds
-     *        The organization root ID or organizational unit (OUs) IDs to which StackSets deploys.
+     *        The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

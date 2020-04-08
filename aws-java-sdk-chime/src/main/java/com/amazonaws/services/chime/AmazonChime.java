@@ -607,6 +607,11 @@ public interface AmazonChime {
     CreatePhoneNumberOrderResult createPhoneNumberOrder(CreatePhoneNumberOrderRequest createPhoneNumberOrderRequest);
 
     /**
+     * <p>
+     * Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone
+     * numbers.
+     * </p>
+     * 
      * @param createProxySessionRequest
      * @return Result of the CreateProxySession operation returned by the service.
      * @throws UnauthorizedClientException
@@ -959,6 +964,10 @@ public interface AmazonChime {
     DeletePhoneNumberResult deletePhoneNumber(DeletePhoneNumberRequest deletePhoneNumberRequest);
 
     /**
+     * <p>
+     * Deletes the specified proxy session from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param deleteProxySessionRequest
      * @return Result of the DeleteProxySession operation returned by the service.
      * @throws UnauthorizedClientException
@@ -1129,6 +1138,10 @@ public interface AmazonChime {
     DeleteVoiceConnectorOriginationResult deleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest deleteVoiceConnectorOriginationRequest);
 
     /**
+     * <p>
+     * Deletes the proxy configuration from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param deleteVoiceConnectorProxyRequest
      * @return Result of the DeleteVoiceConnectorProxy operation returned by the service.
      * @throws UnauthorizedClientException
@@ -1643,6 +1656,10 @@ public interface AmazonChime {
     GetPhoneNumberSettingsResult getPhoneNumberSettings(GetPhoneNumberSettingsRequest getPhoneNumberSettingsRequest);
 
     /**
+     * <p>
+     * Gets the specified proxy session details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param getProxySessionRequest
      * @return Result of the GetProxySession operation returned by the service.
      * @throws UnauthorizedClientException
@@ -1872,6 +1889,10 @@ public interface AmazonChime {
     GetVoiceConnectorOriginationResult getVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest getVoiceConnectorOriginationRequest);
 
     /**
+     * <p>
+     * Gets the proxy configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param getVoiceConnectorProxyRequest
      * @return Result of the GetVoiceConnectorProxy operation returned by the service.
      * @throws UnauthorizedClientException
@@ -2045,6 +2066,34 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Lists the tags applied to an Amazon Chime SDK attendee resource.
+     * </p>
+     * 
+     * @param listAttendeeTagsRequest
+     * @return Result of the ListAttendeeTags operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAttendeeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAttendeeTagsResult listAttendeeTags(ListAttendeeTagsRequest listAttendeeTagsRequest);
+
+    /**
+     * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
@@ -2100,6 +2149,34 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     ListBotsResult listBots(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param listMeetingTagsRequest
+     * @return Result of the ListMeetingTags operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListMeetingTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListMeetingTagsResult listMeetingTags(ListMeetingTagsRequest listMeetingTagsRequest);
 
     /**
      * <p>
@@ -2183,6 +2260,10 @@ public interface AmazonChime {
     ListPhoneNumbersResult listPhoneNumbers(ListPhoneNumbersRequest listPhoneNumbersRequest);
 
     /**
+     * <p>
+     * Lists the proxy sessions for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param listProxySessionsRequest
      * @return Result of the ListProxySessions operation returned by the service.
      * @throws UnauthorizedClientException
@@ -2263,6 +2344,32 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     ListRoomsResult listRooms(ListRoomsRequest listRoomsRequest);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -2490,6 +2597,10 @@ public interface AmazonChime {
     PutVoiceConnectorOriginationResult putVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest putVoiceConnectorOriginationRequest);
 
     /**
+     * <p>
+     * Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param putVoiceConnectorProxyRequest
      * @return Result of the PutVoiceConnectorProxy operation returned by the service.
      * @throws UnauthorizedClientException
@@ -2722,6 +2833,174 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK attendee.
+     * </p>
+     * 
+     * @param tagAttendeeRequest
+     * @return Result of the TagAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.TagAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagAttendeeResult tagAttendee(TagAttendeeRequest tagAttendeeRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param tagMeetingRequest
+     * @return Result of the TagMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.TagMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagMeetingResult tagMeeting(TagMeetingRequest tagMeetingRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK attendee.
+     * </p>
+     * 
+     * @param untagAttendeeRequest
+     * @return Result of the UntagAttendee operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UntagAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagAttendeeResult untagAttendee(UntagAttendeeRequest untagAttendeeRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param untagMeetingRequest
+     * @return Result of the UntagMeeting operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UntagMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagMeetingResult untagMeeting(UntagMeetingRequest untagMeetingRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates account details for the specified Amazon Chime account. Currently, only account name updates are
      * supported for this action.
      * </p>
@@ -2904,6 +3183,10 @@ public interface AmazonChime {
     UpdatePhoneNumberSettingsResult updatePhoneNumberSettings(UpdatePhoneNumberSettingsRequest updatePhoneNumberSettingsRequest);
 
     /**
+     * <p>
+     * Updates the specified proxy session details, such as voice or SMS capabilities.
+     * </p>
+     * 
      * @param updateProxySessionRequest
      * @return Result of the UpdateProxySession operation returned by the service.
      * @throws UnauthorizedClientException

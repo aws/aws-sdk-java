@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or DESCENDING
+ * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING
  * order. Default varies by resource.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

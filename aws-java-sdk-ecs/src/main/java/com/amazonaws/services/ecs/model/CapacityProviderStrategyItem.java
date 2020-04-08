@@ -30,7 +30,7 @@ public class CapacityProviderStrategyItem implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     * The short name of the capacity provider.
      * </p>
      */
     private String capacityProvider;
@@ -58,11 +58,11 @@ public class CapacityProviderStrategyItem implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     * The short name of the capacity provider.
      * </p>
      * 
      * @param capacityProvider
-     *        The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     *        The short name of the capacity provider.
      */
 
     public void setCapacityProvider(String capacityProvider) {
@@ -71,10 +71,10 @@ public class CapacityProviderStrategyItem implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     * The short name of the capacity provider.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     * @return The short name of the capacity provider.
      */
 
     public String getCapacityProvider() {
@@ -83,11 +83,11 @@ public class CapacityProviderStrategyItem implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     * The short name of the capacity provider.
      * </p>
      * 
      * @param capacityProvider
-     *        The short name or full Amazon Resource Name (ARN) of the capacity provider.
+     *        The short name of the capacity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

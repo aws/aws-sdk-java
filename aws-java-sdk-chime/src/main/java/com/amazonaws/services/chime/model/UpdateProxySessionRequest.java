@@ -25,16 +25,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
-
+    /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     */
     private String proxySessionId;
-
+    /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     */
     private java.util.List<String> capabilities;
-
+    /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     */
     private Integer expiryMinutes;
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -42,7 +64,11 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime voice connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -50,7 +76,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +91,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
      * @param proxySessionId
+     *        The proxy session ID.
      */
 
     public void setProxySessionId(String proxySessionId) {
@@ -68,7 +104,11 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
+     * @return The proxy session ID.
      */
 
     public String getProxySessionId() {
@@ -76,7 +116,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
      * @param proxySessionId
+     *        The proxy session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +131,11 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
+     * @return The proxy session capabilities.
      * @see Capability
      */
 
@@ -95,7 +144,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @see Capability
      */
 
@@ -110,12 +164,16 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The proxy session capabilities.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -131,7 +189,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -142,7 +205,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -161,7 +229,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
      * @param expiryMinutes
+     *        The number of minutes allowed for the proxy session.
      */
 
     public void setExpiryMinutes(Integer expiryMinutes) {
@@ -169,7 +242,11 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
+     * @return The number of minutes allowed for the proxy session.
      */
 
     public Integer getExpiryMinutes() {
@@ -177,7 +254,12 @@ public class UpdateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
      * @param expiryMinutes
+     *        The number of minutes allowed for the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

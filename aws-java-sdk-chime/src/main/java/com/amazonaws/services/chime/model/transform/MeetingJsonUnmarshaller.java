@@ -52,6 +52,10 @@ public class MeetingJsonUnmarshaller implements Unmarshaller<Meeting, JsonUnmars
                     context.nextToken();
                     meeting.setMeetingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalMeetingId", targetDepth)) {
+                    context.nextToken();
+                    meeting.setExternalMeetingId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MediaPlacement", targetDepth)) {
                     context.nextToken();
                     meeting.setMediaPlacement(MediaPlacementJsonUnmarshaller.getInstance().unmarshall(context));

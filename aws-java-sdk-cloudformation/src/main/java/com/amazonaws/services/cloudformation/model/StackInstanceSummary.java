@@ -34,13 +34,13 @@ public class StackInstanceSummary implements Serializable, Cloneable {
     private String stackSetId;
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the AWS Region that the stack instance is associated with.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      */
     private String account;
@@ -97,8 +97,7 @@ public class StackInstanceSummary implements Serializable, Cloneable {
     private String statusReason;
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
-     * instance is associated with.
+     * Reserved for internal use. No data returned.
      * </p>
      */
     private String organizationalUnitId;
@@ -184,11 +183,11 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the AWS Region that the stack instance is associated with.
      * </p>
      * 
      * @param region
-     *        The name of the AWS region that the stack instance is associated with.
+     *        The name of the AWS Region that the stack instance is associated with.
      */
 
     public void setRegion(String region) {
@@ -197,10 +196,10 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the AWS Region that the stack instance is associated with.
      * </p>
      * 
-     * @return The name of the AWS region that the stack instance is associated with.
+     * @return The name of the AWS Region that the stack instance is associated with.
      */
 
     public String getRegion() {
@@ -209,11 +208,11 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS region that the stack instance is associated with.
+     * The name of the AWS Region that the stack instance is associated with.
      * </p>
      * 
      * @param region
-     *        The name of the AWS region that the stack instance is associated with.
+     *        The name of the AWS Region that the stack instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +223,12 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     *        [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
+     *        with.
      */
 
     public void setAccount(String account) {
@@ -237,10 +237,11 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
-     * @return [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     * @return [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
+     *         with.
      */
 
     public String getAccount() {
@@ -249,11 +250,12 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
+     *        [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
+     *        with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -743,13 +745,11 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
-     * instance is associated with.
+     * Reserved for internal use. No data returned.
      * </p>
      * 
      * @param organizationalUnitId
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that
-     *        the stack instance is associated with.
+     *        Reserved for internal use. No data returned.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -758,12 +758,10 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
-     * instance is associated with.
+     * Reserved for internal use. No data returned.
      * </p>
      * 
-     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that
-     *         the stack instance is associated with.
+     * @return Reserved for internal use. No data returned.
      */
 
     public String getOrganizationalUnitId() {
@@ -772,13 +770,11 @@ public class StackInstanceSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
-     * instance is associated with.
+     * Reserved for internal use. No data returned.
      * </p>
      * 
      * @param organizationalUnitId
-     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that
-     *        the stack instance is associated with.
+     *        Reserved for internal use. No data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

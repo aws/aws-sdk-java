@@ -26,8 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
-     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs
+     * that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
      * MediaConvert User Guide.
      */
     private AccelerationSettings accelerationSettings;
@@ -38,14 +38,23 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * appear on the billing report unsorted.
      */
     private String billingTagsSource;
-    /** Idempotency token for CreateJob operation. */
+    /** Optional. Idempotency token for CreateJob operation. */
     private String clientRequestToken;
-    /** When you create a job, you can either specify a job template or specify the transcoding settings individually */
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to.
+     * Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For
+     * more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    private java.util.List<HopDestination> hopDestinations;
+    /**
+     * Optional. When you create a job, you can either specify a job template or specify the transcoding settings
+     * individually.
+     */
     private String jobTemplate;
     /**
-     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
-     * highest value first. When more than one job has the same priority, the service begins processing the job that you
-     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job
+     * with the highest value first. When more than one job has the same priority, the service begins processing the job
+     * that you submitted first. If you don't specify a priority, the service uses the default value 0.
      */
     private Integer priority;
     /**
@@ -62,34 +71,37 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /** JobSettings contains all the transcode settings for a job. */
     private JobSettings settings;
     /**
-     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
-     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
-     * with one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     * need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what
+     * you will see with one RTS in a reserved queue. This setting is disabled by default.
      */
     private String simulateReservedQueue;
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
-     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
-     * processing your job to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     * interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     * service begins processing your job to the time it completes the transcode or encounters an error.
      */
     private String statusUpdateInterval;
-    /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+    /**
+     * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
+     * a key.
+     */
     private java.util.Map<String, String> tags;
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value
-     * pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
+     * key/value pairs.
      */
     private java.util.Map<String, String> userMetadata;
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
-     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs
+     * that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
      * MediaConvert User Guide.
      * 
      * @param accelerationSettings
-     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
-     *        use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
-     *        MediaConvert User Guide.
+     *        Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+     *        Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the
+     *        AWS Elemental MediaConvert User Guide.
      */
 
     public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
@@ -97,13 +109,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
-     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs
+     * that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
      * MediaConvert User Guide.
      * 
-     * @return Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
-     *         use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
-     *         MediaConvert User Guide.
+     * @return Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+     *         Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the
+     *         AWS Elemental MediaConvert User Guide.
      */
 
     public AccelerationSettings getAccelerationSettings() {
@@ -111,14 +123,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use
-     * this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
+     * Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs
+     * that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
      * MediaConvert User Guide.
      * 
      * @param accelerationSettings
-     *        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that
-     *        use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental
-     *        MediaConvert User Guide.
+     *        Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content.
+     *        Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the
+     *        AWS Elemental MediaConvert User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,10 +215,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      * 
      * @param clientRequestToken
-     *        Idempotency token for CreateJob operation.
+     *        Optional. Idempotency token for CreateJob operation.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -214,9 +226,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      * 
-     * @return Idempotency token for CreateJob operation.
+     * @return Optional. Idempotency token for CreateJob operation.
      */
 
     public String getClientRequestToken() {
@@ -224,10 +236,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      * 
      * @param clientRequestToken
-     *        Idempotency token for CreateJob operation.
+     *        Optional. Idempotency token for CreateJob operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +249,90 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * When you create a job, you can either specify a job template or specify the transcoding settings individually
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to.
+     * Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For
+     * more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     * 
+     * @return Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your
+     *         job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue
+     *         before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+
+    public java.util.List<HopDestination> getHopDestinations() {
+        return hopDestinations;
+    }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to.
+     * Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For
+     * more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     * 
+     * @param hopDestinations
+     *        Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your
+     *        job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue
+     *        before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+
+    public void setHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        if (hopDestinations == null) {
+            this.hopDestinations = null;
+            return;
+        }
+
+        this.hopDestinations = new java.util.ArrayList<HopDestination>(hopDestinations);
+    }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to.
+     * Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For
+     * more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHopDestinations(java.util.Collection)} or {@link #withHopDestinations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param hopDestinations
+     *        Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your
+     *        job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue
+     *        before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withHopDestinations(HopDestination... hopDestinations) {
+        if (this.hopDestinations == null) {
+            setHopDestinations(new java.util.ArrayList<HopDestination>(hopDestinations.length));
+        }
+        for (HopDestination ele : hopDestinations) {
+            this.hopDestinations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to.
+     * Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For
+     * more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     * 
+     * @param hopDestinations
+     *        Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your
+     *        job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue
+     *        before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        setHopDestinations(hopDestinations);
+        return this;
+    }
+
+    /**
+     * Optional. When you create a job, you can either specify a job template or specify the transcoding settings
+     * individually.
      * 
      * @param jobTemplate
-     *        When you create a job, you can either specify a job template or specify the transcoding settings
-     *        individually
+     *        Optional. When you create a job, you can either specify a job template or specify the transcoding settings
+     *        individually.
      */
 
     public void setJobTemplate(String jobTemplate) {
@@ -249,10 +340,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * When you create a job, you can either specify a job template or specify the transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or specify the transcoding settings
+     * individually.
      * 
-     * @return When you create a job, you can either specify a job template or specify the transcoding settings
-     *         individually
+     * @return Optional. When you create a job, you can either specify a job template or specify the transcoding
+     *         settings individually.
      */
 
     public String getJobTemplate() {
@@ -260,11 +352,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * When you create a job, you can either specify a job template or specify the transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or specify the transcoding settings
+     * individually.
      * 
      * @param jobTemplate
-     *        When you create a job, you can either specify a job template or specify the transcoding settings
-     *        individually
+     *        Optional. When you create a job, you can either specify a job template or specify the transcoding settings
+     *        individually.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,14 +367,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
-     * highest value first. When more than one job has the same priority, the service begins processing the job that you
-     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job
+     * with the highest value first. When more than one job has the same priority, the service begins processing the job
+     * that you submitted first. If you don't specify a priority, the service uses the default value 0.
      * 
      * @param priority
-     *        Specify the relative priority for this job. In any given queue, the service begins processing the job with
-     *        the highest value first. When more than one job has the same priority, the service begins processing the
-     *        job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+     *        Optional. Specify the relative priority for this job. In any given queue, the service begins processing
+     *        the job with the highest value first. When more than one job has the same priority, the service begins
+     *        processing the job that you submitted first. If you don't specify a priority, the service uses the default
+     *        value 0.
      */
 
     public void setPriority(Integer priority) {
@@ -289,13 +383,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
-     * highest value first. When more than one job has the same priority, the service begins processing the job that you
-     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job
+     * with the highest value first. When more than one job has the same priority, the service begins processing the job
+     * that you submitted first. If you don't specify a priority, the service uses the default value 0.
      * 
-     * @return Specify the relative priority for this job. In any given queue, the service begins processing the job
-     *         with the highest value first. When more than one job has the same priority, the service begins processing
-     *         the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+     * @return Optional. Specify the relative priority for this job. In any given queue, the service begins processing
+     *         the job with the highest value first. When more than one job has the same priority, the service begins
+     *         processing the job that you submitted first. If you don't specify a priority, the service uses the
+     *         default value 0.
      */
 
     public Integer getPriority() {
@@ -303,14 +398,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service begins processing the job with the
-     * highest value first. When more than one job has the same priority, the service begins processing the job that you
-     * submitted first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job
+     * with the highest value first. When more than one job has the same priority, the service begins processing the job
+     * that you submitted first. If you don't specify a priority, the service uses the default value 0.
      * 
      * @param priority
-     *        Specify the relative priority for this job. In any given queue, the service begins processing the job with
-     *        the highest value first. When more than one job has the same priority, the service begins processing the
-     *        job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+     *        Optional. Specify the relative priority for this job. In any given queue, the service begins processing
+     *        the job with the highest value first. When more than one job has the same priority, the service begins
+     *        processing the job that you submitted first. If you don't specify a priority, the service uses the default
+     *        value 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,14 +536,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
-     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
-     * with one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     * need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what
+     * you will see with one RTS in a reserved queue. This setting is disabled by default.
      * 
      * @param simulateReservedQueue
-     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
-     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
-     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     *        Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots
+     *        (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar
+     *        performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
      * @see SimulateReservedQueue
      */
 
@@ -456,13 +552,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
-     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
-     * with one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     * need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what
+     * you will see with one RTS in a reserved queue. This setting is disabled by default.
      * 
-     * @return Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
-     *         need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance
-     *         to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @return Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots
+     *         (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar
+     *         performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
      * @see SimulateReservedQueue
      */
 
@@ -471,14 +567,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
-     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
-     * with one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     * need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what
+     * you will see with one RTS in a reserved queue. This setting is disabled by default.
      * 
      * @param simulateReservedQueue
-     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
-     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
-     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     *        Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots
+     *        (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar
+     *        performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SimulateReservedQueue
      */
@@ -489,14 +585,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
-     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
-     * with one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     * need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what
+     * you will see with one RTS in a reserved queue. This setting is disabled by default.
      * 
      * @param simulateReservedQueue
-     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
-     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
-     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     *        Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots
+     *        (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar
+     *        performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SimulateReservedQueue
      */
@@ -507,14 +603,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
-     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
-     * processing your job to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     * interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     * service begins processing your job to the time it completes the transcode or encounters an error.
      * 
      * @param statusUpdateInterval
-     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
-     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
-     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     *        Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     *        interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time
+     *        the service begins processing your job to the time it completes the transcode or encounters an error.
      * @see StatusUpdateInterval
      */
 
@@ -523,13 +619,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
-     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
-     * processing your job to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     * interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     * service begins processing your job to the time it completes the transcode or encounters an error.
      * 
-     * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
-     *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
-     *         service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     *         interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time
+     *         the service begins processing your job to the time it completes the transcode or encounters an error.
      * @see StatusUpdateInterval
      */
 
@@ -538,14 +634,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
-     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
-     * processing your job to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     * interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     * service begins processing your job to the time it completes the transcode or encounters an error.
      * 
      * @param statusUpdateInterval
-     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
-     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
-     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     *        Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     *        interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time
+     *        the service begins processing your job to the time it completes the transcode or encounters an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusUpdateInterval
      */
@@ -556,14 +652,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
-     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
-     * processing your job to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     * interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     * service begins processing your job to the time it completes the transcode or encounters an error.
      * 
      * @param statusUpdateInterval
-     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
-     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
-     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     *        Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the
+     *        interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time
+     *        the service begins processing your job to the time it completes the transcode or encounters an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusUpdateInterval
      */
@@ -574,10 +670,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
+     * a key.
      * 
-     * @return The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
-     *         key.
+     * @return Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or
+     *         with only a key.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -585,11 +682,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
+     * a key.
      * 
      * @param tags
-     *        The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
-     *        key.
+     *        Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or
+     *        with only a key.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -597,11 +695,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only
+     * a key.
      * 
      * @param tags
-     *        The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
-     *        key.
+     *        Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or
+     *        with only a key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -639,11 +738,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value
-     * pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
+     * key/value pairs.
      * 
-     * @return User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     *         key/value pairs.
+     * @return Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata
+     *         in key/value pairs.
      */
 
     public java.util.Map<String, String> getUserMetadata() {
@@ -651,12 +750,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value
-     * pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
+     * key/value pairs.
      * 
      * @param userMetadata
-     *        User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     *        key/value pairs.
+     *        Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata
+     *        in key/value pairs.
      */
 
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
@@ -664,12 +763,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value
-     * pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
+     * key/value pairs.
      * 
      * @param userMetadata
-     *        User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in
-     *        key/value pairs.
+     *        Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata
+     *        in key/value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -724,6 +823,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("BillingTagsSource: ").append(getBillingTagsSource()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getHopDestinations() != null)
+            sb.append("HopDestinations: ").append(getHopDestinations()).append(",");
         if (getJobTemplate() != null)
             sb.append("JobTemplate: ").append(getJobTemplate()).append(",");
         if (getPriority() != null)
@@ -767,6 +868,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
+        if (other.getHopDestinations() == null ^ this.getHopDestinations() == null)
+            return false;
+        if (other.getHopDestinations() != null && other.getHopDestinations().equals(this.getHopDestinations()) == false)
             return false;
         if (other.getJobTemplate() == null ^ this.getJobTemplate() == null)
             return false;
@@ -815,6 +920,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
         hashCode = prime * hashCode + ((getBillingTagsSource() == null) ? 0 : getBillingTagsSource().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getHopDestinations() == null) ? 0 : getHopDestinations().hashCode());
         hashCode = prime * hashCode + ((getJobTemplate() == null) ? 0 : getJobTemplate().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());

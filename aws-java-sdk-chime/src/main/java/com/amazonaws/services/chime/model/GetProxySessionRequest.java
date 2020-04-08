@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetProxySessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
-
+    /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     */
     private String proxySessionId;
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -38,7 +52,11 @@ public class GetProxySessionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime voice connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -46,7 +64,12 @@ public class GetProxySessionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class GetProxySessionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
      * @param proxySessionId
+     *        The proxy session ID.
      */
 
     public void setProxySessionId(String proxySessionId) {
@@ -64,7 +92,11 @@ public class GetProxySessionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
+     * @return The proxy session ID.
      */
 
     public String getProxySessionId() {
@@ -72,7 +104,12 @@ public class GetProxySessionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The proxy session ID.
+     * </p>
+     * 
      * @param proxySessionId
+     *        The proxy session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

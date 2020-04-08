@@ -729,8 +729,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private LogConfiguration logConfiguration;
     /**
      * <p>
-     * The health check command and associated configuration parameters for the container. This parameter maps to
-     * <code>HealthCheck</code> in the <a
+     * The container health check command and associated configuration parameters for the container. This parameter maps
+     * to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code>
      * parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
@@ -6080,16 +6080,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The health check command and associated configuration parameters for the container. This parameter maps to
-     * <code>HealthCheck</code> in the <a
+     * The container health check command and associated configuration parameters for the container. This parameter maps
+     * to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code>
      * parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
      * @param healthCheck
-     *        The health check command and associated configuration parameters for the container. This parameter maps to
-     *        <code>HealthCheck</code> in the <a
+     *        The container health check command and associated configuration parameters for the container. This
+     *        parameter maps to <code>HealthCheck</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -6102,15 +6102,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The health check command and associated configuration parameters for the container. This parameter maps to
-     * <code>HealthCheck</code> in the <a
+     * The container health check command and associated configuration parameters for the container. This parameter maps
+     * to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code>
      * parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
-     * @return The health check command and associated configuration parameters for the container. This parameter maps
-     *         to <code>HealthCheck</code> in the <a
+     * @return The container health check command and associated configuration parameters for the container. This
+     *         parameter maps to <code>HealthCheck</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -6123,16 +6123,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The health check command and associated configuration parameters for the container. This parameter maps to
-     * <code>HealthCheck</code> in the <a
+     * The container health check command and associated configuration parameters for the container. This parameter maps
+     * to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code>
      * parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
      * @param healthCheck
-     *        The health check command and associated configuration parameters for the container. This parameter maps to
-     *        <code>HealthCheck</code> in the <a
+     *        The container health check command and associated configuration parameters for the container. This
+     *        parameter maps to <code>HealthCheck</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker

@@ -43,10 +43,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
-     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
-     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
-     * appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any
+     * billing report that you set up.
      */
     private String billingTagsSource;
     /** The time, in Unix epoch format in seconds, when the job got created. */
@@ -57,6 +55,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Integer errorCode;
     /** Error message of Job */
     private String errorMessage;
+    /** Optional list of hop destinations. */
+    private java.util.List<HopDestination> hopDestinations;
     /** A portion of the job's ARN, unique within your AWS Elemental MediaConvert resources */
     private String id;
     /**
@@ -77,11 +77,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     /** Relative priority on the job. */
     private Integer priority;
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
-     * the default queue. For more about queues, see the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
+     * default queue. For more about queues, see the User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     private String queue;
+    /** The job's queue hopping history. */
+    private java.util.List<QueueTransition> queueTransitions;
     /** The number of times that the service automatically attempted to process your job after encountering an error. */
     private Integer retryCount;
     /**
@@ -293,16 +295,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
-     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
-     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
-     * appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any
+     * billing report that you set up.
      * 
      * @param billingTagsSource
-     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
-     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
-     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
-     *        field, your job outputs will appear on the billing report unsorted.
+     *        The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs
+     *        on any billing report that you set up.
      * @see BillingTagsSource
      */
 
@@ -311,15 +309,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
-     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
-     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
-     * appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any
+     * billing report that you set up.
      * 
-     * @return Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
-     *         MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
-     *         associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
-     *         field, your job outputs will appear on the billing report unsorted.
+     * @return The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs
+     *         on any billing report that you set up.
      * @see BillingTagsSource
      */
 
@@ -328,16 +322,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
-     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
-     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
-     * appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any
+     * billing report that you set up.
      * 
      * @param billingTagsSource
-     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
-     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
-     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
-     *        field, your job outputs will appear on the billing report unsorted.
+     *        The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs
+     *        on any billing report that you set up.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingTagsSource
      */
@@ -348,16 +338,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert
-     * costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will
-     * appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will
-     * appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any
+     * billing report that you set up.
      * 
      * @param billingTagsSource
-     *        Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental
-     *        MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an
-     *        associated tag will appear in your billing report unsorted. If you don't choose a valid value for this
-     *        field, your job outputs will appear on the billing report unsorted.
+     *        The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs
+     *        on any billing report that you set up.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingTagsSource
      */
@@ -517,6 +503,68 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
+        return this;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @return Optional list of hop destinations.
+     */
+
+    public java.util.List<HopDestination> getHopDestinations() {
+        return hopDestinations;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     */
+
+    public void setHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        if (hopDestinations == null) {
+            this.hopDestinations = null;
+            return;
+        }
+
+        this.hopDestinations = new java.util.ArrayList<HopDestination>(hopDestinations);
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHopDestinations(java.util.Collection)} or {@link #withHopDestinations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withHopDestinations(HopDestination... hopDestinations) {
+        if (this.hopDestinations == null) {
+            setHopDestinations(new java.util.ArrayList<HopDestination>(hopDestinations.length));
+        }
+        for (HopDestination ele : hopDestinations) {
+            this.hopDestinations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        setHopDestinations(hopDestinations);
         return this;
     }
 
@@ -783,13 +831,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
-     * the default queue. For more about queues, see the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
+     * default queue. For more about queues, see the User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * 
      * @param queue
-     *        Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will
-     *        go to the default queue. For more about queues, see the User Guide topic at
+     *        When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
+     *        default queue. For more about queues, see the User Guide topic at
      *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
 
@@ -798,12 +846,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
-     * the default queue. For more about queues, see the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
+     * default queue. For more about queues, see the User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * 
-     * @return Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job
-     *         will go to the default queue. For more about queues, see the User Guide topic at
+     * @return When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
+     *         the default queue. For more about queues, see the User Guide topic at
      *         http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
 
@@ -812,19 +860,81 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
-     * the default queue. For more about queues, see the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
+     * default queue. For more about queues, see the User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * 
      * @param queue
-     *        Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will
-     *        go to the default queue. For more about queues, see the User Guide topic at
+     *        When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
+     *        default queue. For more about queues, see the User Guide topic at
      *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Job withQueue(String queue) {
         setQueue(queue);
+        return this;
+    }
+
+    /**
+     * The job's queue hopping history.
+     * 
+     * @return The job's queue hopping history.
+     */
+
+    public java.util.List<QueueTransition> getQueueTransitions() {
+        return queueTransitions;
+    }
+
+    /**
+     * The job's queue hopping history.
+     * 
+     * @param queueTransitions
+     *        The job's queue hopping history.
+     */
+
+    public void setQueueTransitions(java.util.Collection<QueueTransition> queueTransitions) {
+        if (queueTransitions == null) {
+            this.queueTransitions = null;
+            return;
+        }
+
+        this.queueTransitions = new java.util.ArrayList<QueueTransition>(queueTransitions);
+    }
+
+    /**
+     * The job's queue hopping history.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueueTransitions(java.util.Collection)} or {@link #withQueueTransitions(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param queueTransitions
+     *        The job's queue hopping history.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withQueueTransitions(QueueTransition... queueTransitions) {
+        if (this.queueTransitions == null) {
+            setQueueTransitions(new java.util.ArrayList<QueueTransition>(queueTransitions.length));
+        }
+        for (QueueTransition ele : queueTransitions) {
+            this.queueTransitions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The job's queue hopping history.
+     * 
+     * @param queueTransitions
+     *        The job's queue hopping history.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withQueueTransitions(java.util.Collection<QueueTransition> queueTransitions) {
+        setQueueTransitions(queueTransitions);
         return this;
     }
 
@@ -1257,6 +1367,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getHopDestinations() != null)
+            sb.append("HopDestinations: ").append(getHopDestinations()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getJobPercentComplete() != null)
@@ -1271,6 +1383,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
+        if (getQueueTransitions() != null)
+            sb.append("QueueTransitions: ").append(getQueueTransitions()).append(",");
         if (getRetryCount() != null)
             sb.append("RetryCount: ").append(getRetryCount()).append(",");
         if (getRole() != null)
@@ -1333,6 +1447,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getHopDestinations() == null ^ this.getHopDestinations() == null)
+            return false;
+        if (other.getHopDestinations() != null && other.getHopDestinations().equals(this.getHopDestinations()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -1360,6 +1478,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getQueue() == null ^ this.getQueue() == null)
             return false;
         if (other.getQueue() != null && other.getQueue().equals(this.getQueue()) == false)
+            return false;
+        if (other.getQueueTransitions() == null ^ this.getQueueTransitions() == null)
+            return false;
+        if (other.getQueueTransitions() != null && other.getQueueTransitions().equals(this.getQueueTransitions()) == false)
             return false;
         if (other.getRetryCount() == null ^ this.getRetryCount() == null)
             return false;
@@ -1409,6 +1531,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCurrentPhase() == null) ? 0 : getCurrentPhase().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getHopDestinations() == null) ? 0 : getHopDestinations().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getJobPercentComplete() == null) ? 0 : getJobPercentComplete().hashCode());
         hashCode = prime * hashCode + ((getJobTemplate() == null) ? 0 : getJobTemplate().hashCode());
@@ -1416,6 +1539,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOutputGroupDetails() == null) ? 0 : getOutputGroupDetails().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
+        hashCode = prime * hashCode + ((getQueueTransitions() == null) ? 0 : getQueueTransitions().hashCode());
         hashCode = prime * hashCode + ((getRetryCount() == null) ? 0 : getRetryCount().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());

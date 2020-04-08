@@ -33,6 +33,12 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientRequestToken;
     /**
      * <p>
+     * The external meeting ID.
+     * </p>
+     */
+    private String externalMeetingId;
+    /**
+     * <p>
      * Reserved.
      * </p>
      */
@@ -47,6 +53,12 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String mediaRegion;
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
     /**
      * <p>
      * The configuration for resource targets to receive notifications when meeting and attendee events occur.
@@ -91,6 +103,46 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateMeetingRequest withClientRequestToken(String clientRequestToken) {
         setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external meeting ID.
+     * </p>
+     * 
+     * @param externalMeetingId
+     *        The external meeting ID.
+     */
+
+    public void setExternalMeetingId(String externalMeetingId) {
+        this.externalMeetingId = externalMeetingId;
+    }
+
+    /**
+     * <p>
+     * The external meeting ID.
+     * </p>
+     * 
+     * @return The external meeting ID.
+     */
+
+    public String getExternalMeetingId() {
+        return this.externalMeetingId;
+    }
+
+    /**
+     * <p>
+     * The external meeting ID.
+     * </p>
+     * 
+     * @param externalMeetingId
+     *        The external meeting ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeetingRequest withExternalMeetingId(String externalMeetingId) {
+        setExternalMeetingId(externalMeetingId);
         return this;
     }
 
@@ -200,6 +252,76 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The tag key-value pairs.
+     * </p>
+     * 
+     * @return The tag key-value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key-value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key-value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeetingRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key-value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMeetingRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for resource targets to receive notifications when meeting and attendee events occur.
      * </p>
      * 
@@ -252,10 +374,14 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***").append(",");
+        if (getExternalMeetingId() != null)
+            sb.append("ExternalMeetingId: ").append("***Sensitive Data Redacted***").append(",");
         if (getMeetingHostId() != null)
             sb.append("MeetingHostId: ").append("***Sensitive Data Redacted***").append(",");
         if (getMediaRegion() != null)
             sb.append("MediaRegion: ").append(getMediaRegion()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getNotificationsConfiguration() != null)
             sb.append("NotificationsConfiguration: ").append(getNotificationsConfiguration());
         sb.append("}");
@@ -276,6 +402,10 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getExternalMeetingId() == null ^ this.getExternalMeetingId() == null)
+            return false;
+        if (other.getExternalMeetingId() != null && other.getExternalMeetingId().equals(this.getExternalMeetingId()) == false)
+            return false;
         if (other.getMeetingHostId() == null ^ this.getMeetingHostId() == null)
             return false;
         if (other.getMeetingHostId() != null && other.getMeetingHostId().equals(this.getMeetingHostId()) == false)
@@ -283,6 +413,10 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getMediaRegion() == null ^ this.getMediaRegion() == null)
             return false;
         if (other.getMediaRegion() != null && other.getMediaRegion().equals(this.getMediaRegion()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getNotificationsConfiguration() == null ^ this.getNotificationsConfiguration() == null)
             return false;
@@ -297,8 +431,10 @@ public class CreateMeetingRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getExternalMeetingId() == null) ? 0 : getExternalMeetingId().hashCode());
         hashCode = prime * hashCode + ((getMeetingHostId() == null) ? 0 : getMeetingHostId().hashCode());
         hashCode = prime * hashCode + ((getMediaRegion() == null) ? 0 : getMediaRegion().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNotificationsConfiguration() == null) ? 0 : getNotificationsConfiguration().hashCode());
         return hashCode;
     }

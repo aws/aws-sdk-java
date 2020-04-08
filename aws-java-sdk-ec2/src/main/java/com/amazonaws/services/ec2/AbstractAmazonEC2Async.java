@@ -2071,6 +2071,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterInstanceEventNotificationAttributesResult> deregisterInstanceEventNotificationAttributesAsync(
+            DeregisterInstanceEventNotificationAttributesRequest request) {
+
+        return deregisterInstanceEventNotificationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterInstanceEventNotificationAttributesResult> deregisterInstanceEventNotificationAttributesAsync(
+            DeregisterInstanceEventNotificationAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterInstanceEventNotificationAttributesRequest, DeregisterInstanceEventNotificationAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterTransitGatewayMulticastGroupMembersResult> deregisterTransitGatewayMulticastGroupMembersAsync(
             DeregisterTransitGatewayMulticastGroupMembersRequest request) {
 
@@ -2973,6 +2988,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     public java.util.concurrent.Future<DescribeInstanceCreditSpecificationsResult> describeInstanceCreditSpecificationsAsync(
             DescribeInstanceCreditSpecificationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceCreditSpecificationsRequest, DescribeInstanceCreditSpecificationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceEventNotificationAttributesResult> describeInstanceEventNotificationAttributesAsync(
+            DescribeInstanceEventNotificationAttributesRequest request) {
+
+        return describeInstanceEventNotificationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceEventNotificationAttributesResult> describeInstanceEventNotificationAttributesAsync(
+            DescribeInstanceEventNotificationAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceEventNotificationAttributesRequest, DescribeInstanceEventNotificationAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -6081,6 +6111,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<RegisterImageResult> registerImageAsync(RegisterImageRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterImageRequest, RegisterImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterInstanceEventNotificationAttributesResult> registerInstanceEventNotificationAttributesAsync(
+            RegisterInstanceEventNotificationAttributesRequest request) {
+
+        return registerInstanceEventNotificationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterInstanceEventNotificationAttributesResult> registerInstanceEventNotificationAttributesAsync(
+            RegisterInstanceEventNotificationAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterInstanceEventNotificationAttributesRequest, RegisterInstanceEventNotificationAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

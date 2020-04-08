@@ -598,8 +598,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Creates stack instances for the specified accounts, within the specified regions. A stack instance refers to a
-     * stack in a specific account and region. You must specify at least one value for either <code>Accounts</code> or
+     * Creates stack instances for the specified accounts, within the specified Regions. A stack instance refers to a
+     * stack in a specific account and Region. You must specify at least one value for either <code>Accounts</code> or
      * <code>DeploymentTargets</code>, and you must specify at least one value for <code>Regions</code>.
      * </p>
      * 
@@ -849,7 +849,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Deletes stack instances for the specified accounts, in the specified regions.
+     * Deletes stack instances for the specified accounts, in the specified Regions.
      * </p>
      * 
      * @param deleteStackInstancesRequest
@@ -1284,7 +1284,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns the stack instance that's associated with the specified stack set, AWS account, and region.
+     * Returns the stack instance that's associated with the specified stack set, AWS account, and Region.
      * </p>
      * <p>
      * For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.
@@ -2477,7 +2477,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Lists all exported output values in the account and region in which you call this action. Use this action to see
+     * Lists all exported output values in the account and Region in which you call this action. Use this action to see
      * the exported output values that you can import into other stacks. To import values, use the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
      * <code>Fn::ImportValue</code> </a> function.
@@ -2597,7 +2597,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Returns summary information about stack instances that are associated with the specified stack set. You can
-     * filter for stack instances that are associated with a specific AWS account name or region.
+     * filter for stack instances that are associated with a specific AWS account name or Region.
      * </p>
      * 
      * @param listStackInstancesRequest
@@ -3191,6 +3191,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
+     * You can have a maximum of 50 resource type versions registered at a time. This maximum is per account and per
+     * region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
+     * deregister specific resource type versions if necessary.
+     * </p>
+     * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
      * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
      * </p>
@@ -3541,11 +3546,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Updates the parameter values for stack instances for the specified accounts, within the specified regions. A
-     * stack instance refers to a stack in a specific account and region.
+     * Updates the parameter values for stack instances for the specified accounts, within the specified Regions. A
+     * stack instance refers to a stack in a specific account and Region.
      * </p>
      * <p>
-     * You can only update stack instances in regions and accounts where they already exist; to create additional stack
+     * You can only update stack instances in Regions and accounts where they already exist; to create additional stack
      * instances, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html"
      * >CreateStackInstances</a>.
@@ -3629,7 +3634,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Updates the stack set, and associated stack instances in the specified accounts and regions.
+     * Updates the stack set, and associated stack instances in the specified accounts and Regions.
      * </p>
      * <p>
      * Even if the stack set operation created by updating the stack set fails (completely or partially, below or above

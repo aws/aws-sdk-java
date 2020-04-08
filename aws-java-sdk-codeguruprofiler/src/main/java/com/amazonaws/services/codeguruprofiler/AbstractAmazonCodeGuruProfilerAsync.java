@@ -80,6 +80,19 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     }
 
     @Override
+    public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request) {
+
+        return getPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest request) {
 
         return getProfileAsync(request, null);
@@ -127,6 +140,32 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     @Override
     public java.util.concurrent.Future<PostAgentProfileResult> postAgentProfileAsync(PostAgentProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<PostAgentProfileRequest, PostAgentProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request) {
+
+        return putPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
+
+        return removePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

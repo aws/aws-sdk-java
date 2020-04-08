@@ -699,6 +699,11 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<CreatePhoneNumberOrderRequest, CreatePhoneNumberOrderResult> asyncHandler);
 
     /**
+     * <p>
+     * Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone
+     * numbers.
+     * </p>
+     * 
      * @param createProxySessionRequest
      * @return A Java Future containing the result of the CreateProxySession operation returned by the service.
      * @sample AmazonChimeAsync.CreateProxySession
@@ -708,6 +713,11 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<CreateProxySessionResult> createProxySessionAsync(CreateProxySessionRequest createProxySessionRequest);
 
     /**
+     * <p>
+     * Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone
+     * numbers.
+     * </p>
+     * 
      * @param createProxySessionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -1108,6 +1118,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<DeletePhoneNumberRequest, DeletePhoneNumberResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes the specified proxy session from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param deleteProxySessionRequest
      * @return A Java Future containing the result of the DeleteProxySession operation returned by the service.
      * @sample AmazonChimeAsync.DeleteProxySession
@@ -1117,6 +1131,10 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<DeleteProxySessionResult> deleteProxySessionAsync(DeleteProxySessionRequest deleteProxySessionRequest);
 
     /**
+     * <p>
+     * Deletes the specified proxy session from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param deleteProxySessionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -1296,6 +1314,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorOriginationRequest, DeleteVoiceConnectorOriginationResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes the proxy configuration from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param deleteVoiceConnectorProxyRequest
      * @return A Java Future containing the result of the DeleteVoiceConnectorProxy operation returned by the service.
      * @sample AmazonChimeAsync.DeleteVoiceConnectorProxy
@@ -1306,6 +1328,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             DeleteVoiceConnectorProxyRequest deleteVoiceConnectorProxyRequest);
 
     /**
+     * <p>
+     * Deletes the proxy configuration from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param deleteVoiceConnectorProxyRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -1902,6 +1928,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<GetPhoneNumberSettingsRequest, GetPhoneNumberSettingsResult> asyncHandler);
 
     /**
+     * <p>
+     * Gets the specified proxy session details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param getProxySessionRequest
      * @return A Java Future containing the result of the GetProxySession operation returned by the service.
      * @sample AmazonChimeAsync.GetProxySession
@@ -1911,6 +1941,10 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<GetProxySessionResult> getProxySessionAsync(GetProxySessionRequest getProxySessionRequest);
 
     /**
+     * <p>
+     * Gets the specified proxy session details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param getProxySessionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -2166,6 +2200,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorOriginationRequest, GetVoiceConnectorOriginationResult> asyncHandler);
 
     /**
+     * <p>
+     * Gets the proxy configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param getVoiceConnectorProxyRequest
      * @return A Java Future containing the result of the GetVoiceConnectorProxy operation returned by the service.
      * @sample AmazonChimeAsync.GetVoiceConnectorProxy
@@ -2175,6 +2213,10 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<GetVoiceConnectorProxyResult> getVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest getVoiceConnectorProxyRequest);
 
     /**
+     * <p>
+     * Gets the proxy configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param getVoiceConnectorProxyRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -2369,6 +2411,37 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Lists the tags applied to an Amazon Chime SDK attendee resource.
+     * </p>
+     * 
+     * @param listAttendeeTagsRequest
+     * @return A Java Future containing the result of the ListAttendeeTags operation returned by the service.
+     * @sample AmazonChimeAsync.ListAttendeeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttendeeTagsResult> listAttendeeTagsAsync(ListAttendeeTagsRequest listAttendeeTagsRequest);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK attendee resource.
+     * </p>
+     * 
+     * @param listAttendeeTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAttendeeTags operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListAttendeeTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAttendeeTagsResult> listAttendeeTagsAsync(ListAttendeeTagsRequest listAttendeeTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAttendeeTagsRequest, ListAttendeeTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
@@ -2432,6 +2505,37 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param listMeetingTagsRequest
+     * @return A Java Future containing the result of the ListMeetingTags operation returned by the service.
+     * @sample AmazonChimeAsync.ListMeetingTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMeetingTagsResult> listMeetingTagsAsync(ListMeetingTagsRequest listMeetingTagsRequest);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param listMeetingTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMeetingTags operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListMeetingTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMeetingTagsResult> listMeetingTagsAsync(ListMeetingTagsRequest listMeetingTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMeetingTagsRequest, ListMeetingTagsResult> asyncHandler);
 
     /**
      * <p>
@@ -2533,6 +2637,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersRequest, ListPhoneNumbersResult> asyncHandler);
 
     /**
+     * <p>
+     * Lists the proxy sessions for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param listProxySessionsRequest
      * @return A Java Future containing the result of the ListProxySessions operation returned by the service.
      * @sample AmazonChimeAsync.ListProxySessions
@@ -2542,6 +2650,10 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<ListProxySessionsResult> listProxySessionsAsync(ListProxySessionsRequest listProxySessionsRequest);
 
     /**
+     * <p>
+     * Lists the proxy sessions for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param listProxySessionsRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -2620,6 +2732,37 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListRoomsResult> listRoomsAsync(ListRoomsRequest listRoomsRequest,
             com.amazonaws.handlers.AsyncHandler<ListRoomsRequest, ListRoomsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonChimeAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -2888,6 +3031,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorOriginationRequest, PutVoiceConnectorOriginationResult> asyncHandler);
 
     /**
+     * <p>
+     * Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param putVoiceConnectorProxyRequest
      * @return A Java Future containing the result of the PutVoiceConnectorProxy operation returned by the service.
      * @sample AmazonChimeAsync.PutVoiceConnectorProxy
@@ -2897,6 +3044,10 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<PutVoiceConnectorProxyResult> putVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest putVoiceConnectorProxyRequest);
 
     /**
+     * <p>
+     * Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
      * @param putVoiceConnectorProxyRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -3149,6 +3300,192 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK attendee.
+     * </p>
+     * 
+     * @param tagAttendeeRequest
+     * @return A Java Future containing the result of the TagAttendee operation returned by the service.
+     * @sample AmazonChimeAsync.TagAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagAttendeeResult> tagAttendeeAsync(TagAttendeeRequest tagAttendeeRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK attendee.
+     * </p>
+     * 
+     * @param tagAttendeeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagAttendee operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.TagAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagAttendeeResult> tagAttendeeAsync(TagAttendeeRequest tagAttendeeRequest,
+            com.amazonaws.handlers.AsyncHandler<TagAttendeeRequest, TagAttendeeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param tagMeetingRequest
+     * @return A Java Future containing the result of the TagMeeting operation returned by the service.
+     * @sample AmazonChimeAsync.TagMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagMeetingResult> tagMeetingAsync(TagMeetingRequest tagMeetingRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param tagMeetingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagMeeting operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.TagMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagMeetingResult> tagMeetingAsync(TagMeetingRequest tagMeetingRequest,
+            com.amazonaws.handlers.AsyncHandler<TagMeetingRequest, TagMeetingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonChimeAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK attendee.
+     * </p>
+     * 
+     * @param untagAttendeeRequest
+     * @return A Java Future containing the result of the UntagAttendee operation returned by the service.
+     * @sample AmazonChimeAsync.UntagAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagAttendeeResult> untagAttendeeAsync(UntagAttendeeRequest untagAttendeeRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK attendee.
+     * </p>
+     * 
+     * @param untagAttendeeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagAttendee operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UntagAttendee
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagAttendeeResult> untagAttendeeAsync(UntagAttendeeRequest untagAttendeeRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagAttendeeRequest, UntagAttendeeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param untagMeetingRequest
+     * @return A Java Future containing the result of the UntagMeeting operation returned by the service.
+     * @sample AmazonChimeAsync.UntagMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagMeetingResult> untagMeetingAsync(UntagMeetingRequest untagMeetingRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK meeting.
+     * </p>
+     * 
+     * @param untagMeetingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagMeeting operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UntagMeeting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagMeetingResult> untagMeetingAsync(UntagMeetingRequest untagMeetingRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagMeetingRequest, UntagMeetingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonChimeAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates account details for the specified Amazon Chime account. Currently, only account name updates are
      * supported for this action.
      * </p>
@@ -3370,6 +3707,10 @@ public interface AmazonChimeAsync extends AmazonChime {
             com.amazonaws.handlers.AsyncHandler<UpdatePhoneNumberSettingsRequest, UpdatePhoneNumberSettingsResult> asyncHandler);
 
     /**
+     * <p>
+     * Updates the specified proxy session details, such as voice or SMS capabilities.
+     * </p>
+     * 
      * @param updateProxySessionRequest
      * @return A Java Future containing the result of the UpdateProxySession operation returned by the service.
      * @sample AmazonChimeAsync.UpdateProxySession
@@ -3379,6 +3720,10 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<UpdateProxySessionResult> updateProxySessionAsync(UpdateProxySessionRequest updateProxySessionRequest);
 
     /**
+     * <p>
+     * Updates the specified proxy session details, such as voice or SMS capabilities.
+     * </p>
+     * 
      * @param updateProxySessionRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an

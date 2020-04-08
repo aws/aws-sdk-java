@@ -5189,6 +5189,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterInstanceEventNotificationAttributesResult> deregisterInstanceEventNotificationAttributesAsync(
+            DeregisterInstanceEventNotificationAttributesRequest request) {
+
+        return deregisterInstanceEventNotificationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterInstanceEventNotificationAttributesResult> deregisterInstanceEventNotificationAttributesAsync(
+            final DeregisterInstanceEventNotificationAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterInstanceEventNotificationAttributesRequest, DeregisterInstanceEventNotificationAttributesResult> asyncHandler) {
+        final DeregisterInstanceEventNotificationAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterInstanceEventNotificationAttributesResult>() {
+            @Override
+            public DeregisterInstanceEventNotificationAttributesResult call() throws Exception {
+                DeregisterInstanceEventNotificationAttributesResult result = null;
+
+                try {
+                    result = executeDeregisterInstanceEventNotificationAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterTransitGatewayMulticastGroupMembersResult> deregisterTransitGatewayMulticastGroupMembersAsync(
             DeregisterTransitGatewayMulticastGroupMembersRequest request) {
 
@@ -6920,6 +6955,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribeInstanceCreditSpecifications(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceEventNotificationAttributesResult> describeInstanceEventNotificationAttributesAsync(
+            DescribeInstanceEventNotificationAttributesRequest request) {
+
+        return describeInstanceEventNotificationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceEventNotificationAttributesResult> describeInstanceEventNotificationAttributesAsync(
+            final DescribeInstanceEventNotificationAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInstanceEventNotificationAttributesRequest, DescribeInstanceEventNotificationAttributesResult> asyncHandler) {
+        final DescribeInstanceEventNotificationAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInstanceEventNotificationAttributesResult>() {
+            @Override
+            public DescribeInstanceEventNotificationAttributesResult call() throws Exception {
+                DescribeInstanceEventNotificationAttributesResult result = null;
+
+                try {
+                    result = executeDescribeInstanceEventNotificationAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -13459,6 +13529,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeRegisterImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterInstanceEventNotificationAttributesResult> registerInstanceEventNotificationAttributesAsync(
+            RegisterInstanceEventNotificationAttributesRequest request) {
+
+        return registerInstanceEventNotificationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterInstanceEventNotificationAttributesResult> registerInstanceEventNotificationAttributesAsync(
+            final RegisterInstanceEventNotificationAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterInstanceEventNotificationAttributesRequest, RegisterInstanceEventNotificationAttributesResult> asyncHandler) {
+        final RegisterInstanceEventNotificationAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterInstanceEventNotificationAttributesResult>() {
+            @Override
+            public RegisterInstanceEventNotificationAttributesResult call() throws Exception {
+                RegisterInstanceEventNotificationAttributesResult result = null;
+
+                try {
+                    result = executeRegisterInstanceEventNotificationAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

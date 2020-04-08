@@ -33,8 +33,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
     private String stackSetName;
     /**
      * <p>
-     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
-     * specified region(s) for.
+     * [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create stack
+     * instances in the specified Region(s) for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
@@ -53,7 +53,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
     private DeploymentTargets deploymentTargets;
     /**
      * <p>
-     * The names of one or more regions where you want to create stack instances using the specified AWS account(s).
+     * The names of one or more Regions where you want to create stack instances using the specified AWS account(s).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regions;
@@ -62,7 +62,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * A list of stack set parameters whose values you want to override in the selected stack instances.
      * </p>
      * <p>
-     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and Regions.
      * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
      * stack instance operations:
      * </p>
@@ -181,15 +181,15 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
-     * specified region(s) for.
+     * [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create stack
+     * instances in the specified Region(s) for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
-     * @return [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
-     *         in the specified region(s) for.</p>
+     * @return [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create
+     *         stack instances in the specified Region(s) for.</p>
      *         <p>
      *         You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      */
@@ -203,16 +203,16 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
-     * specified region(s) for.
+     * [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create stack
+     * instances in the specified Region(s) for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
-     *        in the specified region(s) for.</p>
+     *        [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create
+     *        stack instances in the specified Region(s) for.</p>
      *        <p>
      *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      */
@@ -228,8 +228,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
-     * specified region(s) for.
+     * [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create stack
+     * instances in the specified Region(s) for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
@@ -241,8 +241,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
-     *        in the specified region(s) for.</p>
+     *        [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create
+     *        stack instances in the specified Region(s) for.</p>
      *        <p>
      *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -260,16 +260,16 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
-     * specified region(s) for.
+     * [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create stack
+     * instances in the specified Region(s) for.
      * </p>
      * <p>
      * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
      * @param accounts
-     *        [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
-     *        in the specified region(s) for.</p>
+     *        [<code>Self-managed</code> permissions] The names of one or more AWS accounts that you want to create
+     *        stack instances in the specified Region(s) for.</p>
      *        <p>
      *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -343,10 +343,10 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more regions where you want to create stack instances using the specified AWS account(s).
+     * The names of one or more Regions where you want to create stack instances using the specified AWS account(s).
      * </p>
      * 
-     * @return The names of one or more regions where you want to create stack instances using the specified AWS
+     * @return The names of one or more Regions where you want to create stack instances using the specified AWS
      *         account(s).
      */
 
@@ -359,11 +359,11 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more regions where you want to create stack instances using the specified AWS account(s).
+     * The names of one or more Regions where you want to create stack instances using the specified AWS account(s).
      * </p>
      * 
      * @param regions
-     *        The names of one or more regions where you want to create stack instances using the specified AWS
+     *        The names of one or more Regions where you want to create stack instances using the specified AWS
      *        account(s).
      */
 
@@ -378,7 +378,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more regions where you want to create stack instances using the specified AWS account(s).
+     * The names of one or more Regions where you want to create stack instances using the specified AWS account(s).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -387,7 +387,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param regions
-     *        The names of one or more regions where you want to create stack instances using the specified AWS
+     *        The names of one or more Regions where you want to create stack instances using the specified AWS
      *        account(s).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -404,11 +404,11 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more regions where you want to create stack instances using the specified AWS account(s).
+     * The names of one or more Regions where you want to create stack instances using the specified AWS account(s).
      * </p>
      * 
      * @param regions
-     *        The names of one or more regions where you want to create stack instances using the specified AWS
+     *        The names of one or more Regions where you want to create stack instances using the specified AWS
      *        account(s).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -423,7 +423,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * A list of stack set parameters whose values you want to override in the selected stack instances.
      * </p>
      * <p>
-     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and Regions.
      * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
      * stack instance operations:
      * </p>
@@ -477,7 +477,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * @return A list of stack set parameters whose values you want to override in the selected stack instances.</p>
      *         <p>
      *         Any overridden parameter values will be applied to all stack instances in the specified accounts and
-     *         regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *         Regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
      *         values during stack instance operations:
      *         </p>
      *         <ul>
@@ -539,7 +539,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * A list of stack set parameters whose values you want to override in the selected stack instances.
      * </p>
      * <p>
-     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and Regions.
      * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
      * stack instance operations:
      * </p>
@@ -594,7 +594,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        A list of stack set parameters whose values you want to override in the selected stack instances.</p>
      *        <p>
      *        Any overridden parameter values will be applied to all stack instances in the specified accounts and
-     *        regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *        Regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
      *        values during stack instance operations:
      *        </p>
      *        <ul>
@@ -658,7 +658,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * A list of stack set parameters whose values you want to override in the selected stack instances.
      * </p>
      * <p>
-     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and Regions.
      * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
      * stack instance operations:
      * </p>
@@ -718,7 +718,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        A list of stack set parameters whose values you want to override in the selected stack instances.</p>
      *        <p>
      *        Any overridden parameter values will be applied to all stack instances in the specified accounts and
-     *        regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *        Regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
      *        values during stack instance operations:
      *        </p>
      *        <ul>
@@ -784,7 +784,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * A list of stack set parameters whose values you want to override in the selected stack instances.
      * </p>
      * <p>
-     * Any overridden parameter values will be applied to all stack instances in the specified accounts and regions.
+     * Any overridden parameter values will be applied to all stack instances in the specified accounts and Regions.
      * When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter values during
      * stack instance operations:
      * </p>
@@ -839,7 +839,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        A list of stack set parameters whose values you want to override in the selected stack instances.</p>
      *        <p>
      *        Any overridden parameter values will be applied to all stack instances in the specified accounts and
-     *        regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
+     *        Regions. When specifying parameters and their values, be aware of how AWS CloudFormation sets parameter
      *        values during stack instance operations:
      *        </p>
      *        <ul>

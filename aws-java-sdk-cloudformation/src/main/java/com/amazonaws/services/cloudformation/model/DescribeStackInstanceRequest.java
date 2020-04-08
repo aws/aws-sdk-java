@@ -39,7 +39,7 @@ public class DescribeStackInstanceRequest extends com.amazonaws.AmazonWebService
     private String stackInstanceAccount;
     /**
      * <p>
-     * The name of a region that's associated with this stack instance.
+     * The name of a Region that's associated with this stack instance.
      * </p>
      */
     private String stackInstanceRegion;
@@ -126,11 +126,11 @@ public class DescribeStackInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of a region that's associated with this stack instance.
+     * The name of a Region that's associated with this stack instance.
      * </p>
      * 
      * @param stackInstanceRegion
-     *        The name of a region that's associated with this stack instance.
+     *        The name of a Region that's associated with this stack instance.
      */
 
     public void setStackInstanceRegion(String stackInstanceRegion) {
@@ -139,10 +139,10 @@ public class DescribeStackInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of a region that's associated with this stack instance.
+     * The name of a Region that's associated with this stack instance.
      * </p>
      * 
-     * @return The name of a region that's associated with this stack instance.
+     * @return The name of a Region that's associated with this stack instance.
      */
 
     public String getStackInstanceRegion() {
@@ -151,11 +151,11 @@ public class DescribeStackInstanceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of a region that's associated with this stack instance.
+     * The name of a Region that's associated with this stack instance.
      * </p>
      * 
      * @param stackInstanceRegion
-     *        The name of a region that's associated with this stack instance.
+     *        The name of a Region that's associated with this stack instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

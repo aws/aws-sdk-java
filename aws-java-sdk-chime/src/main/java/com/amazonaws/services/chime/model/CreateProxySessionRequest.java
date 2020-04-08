@@ -25,24 +25,63 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
-
+    /**
+     * <p>
+     * The participant phone numbers.
+     * </p>
+     */
     private java.util.List<String> participantPhoneNumbers;
-
+    /**
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     */
     private Integer expiryMinutes;
-
+    /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     */
     private java.util.List<String> capabilities;
-
+    /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     */
     private String numberSelectionBehavior;
-
+    /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     */
     private String geoMatchLevel;
-
+    /**
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     */
     private GeoMatchParams geoMatchParams;
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -50,7 +89,11 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime voice connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -58,7 +101,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +116,11 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The participant phone numbers.
+     * </p>
+     * 
+     * @return The participant phone numbers.
      */
 
     public java.util.List<String> getParticipantPhoneNumbers() {
@@ -76,7 +128,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The participant phone numbers.
+     * </p>
+     * 
      * @param participantPhoneNumbers
+     *        The participant phone numbers.
      */
 
     public void setParticipantPhoneNumbers(java.util.Collection<String> participantPhoneNumbers) {
@@ -90,12 +147,16 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The participant phone numbers.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParticipantPhoneNumbers(java.util.Collection)} or
      * {@link #withParticipantPhoneNumbers(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param participantPhoneNumbers
+     *        The participant phone numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +171,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The participant phone numbers.
+     * </p>
+     * 
      * @param participantPhoneNumbers
+     *        The participant phone numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +186,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     * 
      * @param name
+     *        The name of the proxy session.
      */
 
     public void setName(String name) {
@@ -128,7 +199,11 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     * 
+     * @return The name of the proxy session.
      */
 
     public String getName() {
@@ -136,7 +211,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the proxy session.
+     * </p>
+     * 
      * @param name
+     *        The name of the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,7 +226,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
      * @param expiryMinutes
+     *        The number of minutes allowed for the proxy session.
      */
 
     public void setExpiryMinutes(Integer expiryMinutes) {
@@ -154,7 +239,11 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
+     * @return The number of minutes allowed for the proxy session.
      */
 
     public Integer getExpiryMinutes() {
@@ -162,7 +251,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The number of minutes allowed for the proxy session.
+     * </p>
+     * 
      * @param expiryMinutes
+     *        The number of minutes allowed for the proxy session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,7 +266,11 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
+     * @return The proxy session capabilities.
      * @see Capability
      */
 
@@ -181,7 +279,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @see Capability
      */
 
@@ -196,12 +299,16 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The proxy session capabilities.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -217,7 +324,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -228,7 +340,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The proxy session capabilities.
+     * </p>
+     * 
      * @param capabilities
+     *        The proxy session capabilities.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -247,7 +364,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
      * @param numberSelectionBehavior
+     *        The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
      * @see NumberSelectionBehavior
      */
 
@@ -256,7 +378,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
+     * @return The preference for proxy phone number reuse, or stickiness, between the same participants across
+     *         sessions.
      * @see NumberSelectionBehavior
      */
 
@@ -265,7 +392,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
      * @param numberSelectionBehavior
+     *        The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NumberSelectionBehavior
      */
@@ -276,7 +408,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
+     * </p>
+     * 
      * @param numberSelectionBehavior
+     *        The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NumberSelectionBehavior
      */
@@ -287,7 +424,14 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
      * @param geoMatchLevel
+     *        The preference for matching the country or area code of the proxy phone number with that of the first
+     *        participant.
      * @see GeoMatchLevel
      */
 
@@ -296,7 +440,13 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
+     * @return The preference for matching the country or area code of the proxy phone number with that of the first
+     *         participant.
      * @see GeoMatchLevel
      */
 
@@ -305,7 +455,14 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
      * @param geoMatchLevel
+     *        The preference for matching the country or area code of the proxy phone number with that of the first
+     *        participant.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeoMatchLevel
      */
@@ -316,7 +473,14 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The preference for matching the country or area code of the proxy phone number with that of the first
+     * participant.
+     * </p>
+     * 
      * @param geoMatchLevel
+     *        The preference for matching the country or area code of the proxy phone number with that of the first
+     *        participant.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeoMatchLevel
      */
@@ -327,7 +491,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     * 
      * @param geoMatchParams
+     *        The country and area code for the proxy phone number.
      */
 
     public void setGeoMatchParams(GeoMatchParams geoMatchParams) {
@@ -335,7 +504,11 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     * 
+     * @return The country and area code for the proxy phone number.
      */
 
     public GeoMatchParams getGeoMatchParams() {
@@ -343,7 +516,12 @@ public class CreateProxySessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The country and area code for the proxy phone number.
+     * </p>
+     * 
      * @param geoMatchParams
+     *        The country and area code for the proxy phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

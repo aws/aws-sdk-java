@@ -785,6 +785,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DeregisterInstanceEventNotificationAttributesResult deregisterInstanceEventNotificationAttributes(
+            DeregisterInstanceEventNotificationAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterTransitGatewayMulticastGroupMembersResult deregisterTransitGatewayMulticastGroupMembers(
             DeregisterTransitGatewayMulticastGroupMembersRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -1068,6 +1074,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeInstanceCreditSpecificationsResult describeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInstanceEventNotificationAttributesResult describeInstanceEventNotificationAttributes(
+            DescribeInstanceEventNotificationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2099,6 +2111,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RegisterImageResult registerImage(RegisterImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterInstanceEventNotificationAttributesResult registerInstanceEventNotificationAttributes(
+            RegisterInstanceEventNotificationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

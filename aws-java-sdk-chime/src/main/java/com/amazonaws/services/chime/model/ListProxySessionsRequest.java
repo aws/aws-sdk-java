@@ -25,16 +25,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     */
     private String voiceConnectorId;
-
+    /**
+     * <p>
+     * The proxy session status.
+     * </p>
+     */
     private String status;
-
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The maximum number of results to return in a single call.
+     * </p>
+     */
     private Integer maxResults;
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      */
 
     public void setVoiceConnectorId(String voiceConnectorId) {
@@ -42,7 +64,11 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
+     * @return The Amazon Chime voice connector ID.
      */
 
     public String getVoiceConnectorId() {
@@ -50,7 +76,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The Amazon Chime voice connector ID.
+     * </p>
+     * 
      * @param voiceConnectorId
+     *        The Amazon Chime voice connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +91,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The proxy session status.
+     * </p>
+     * 
      * @param status
+     *        The proxy session status.
      * @see ProxySessionStatus
      */
 
@@ -69,7 +105,11 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy session status.
+     * </p>
+     * 
+     * @return The proxy session status.
      * @see ProxySessionStatus
      */
 
@@ -78,7 +118,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The proxy session status.
+     * </p>
+     * 
      * @param status
+     *        The proxy session status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProxySessionStatus
      */
@@ -89,7 +134,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The proxy session status.
+     * </p>
+     * 
      * @param status
+     *        The proxy session status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProxySessionStatus
      */
@@ -100,7 +150,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -108,7 +163,11 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -116,7 +175,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token to use to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +190,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The maximum number of results to return in a single call.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -134,7 +203,11 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of results to return in a single call.
+     * </p>
+     * 
+     * @return The maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -142,7 +215,12 @@ public class ListProxySessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The maximum number of results to return in a single call.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

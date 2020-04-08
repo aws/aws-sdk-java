@@ -35,8 +35,8 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /** Use this string, provided with the response to a previous request, to request the next batch of queues. */
     private String nextToken;
     /**
-     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
-     * DESCENDING order. Default varies by resource.
+     * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING
+     * order. Default varies by resource.
      */
     private String order;
 
@@ -168,11 +168,11 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
-     * DESCENDING order. Default varies by resource.
+     * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING
+     * order. Default varies by resource.
      * 
      * @param order
-     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or
      *        DESCENDING order. Default varies by resource.
      * @see Order
      */
@@ -182,10 +182,10 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
-     * DESCENDING order. Default varies by resource.
+     * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING
+     * order. Default varies by resource.
      * 
-     * @return When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * @return Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or
      *         DESCENDING order. Default varies by resource.
      * @see Order
      */
@@ -195,11 +195,11 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
-     * DESCENDING order. Default varies by resource.
+     * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING
+     * order. Default varies by resource.
      * 
      * @param order
-     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or
      *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
@@ -211,11 +211,11 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
-     * DESCENDING order. Default varies by resource.
+     * Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING
+     * order. Default varies by resource.
      * 
      * @param order
-     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or
      *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order

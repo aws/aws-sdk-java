@@ -35,6 +35,8 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String category;
     /** The new description for the job template, if you are changing it. */
     private String description;
+    /** Optional list of hop destinations. */
+    private java.util.List<HopDestination> hopDestinations;
     /** The name of the job template you are modifying */
     private String name;
     /**
@@ -168,6 +170,68 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdateJobTemplateRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @return Optional list of hop destinations.
+     */
+
+    public java.util.List<HopDestination> getHopDestinations() {
+        return hopDestinations;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     */
+
+    public void setHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        if (hopDestinations == null) {
+            this.hopDestinations = null;
+            return;
+        }
+
+        this.hopDestinations = new java.util.ArrayList<HopDestination>(hopDestinations);
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHopDestinations(java.util.Collection)} or {@link #withHopDestinations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobTemplateRequest withHopDestinations(HopDestination... hopDestinations) {
+        if (this.hopDestinations == null) {
+            setHopDestinations(new java.util.ArrayList<HopDestination>(hopDestinations.length));
+        }
+        for (HopDestination ele : hopDestinations) {
+            this.hopDestinations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Optional list of hop destinations.
+     * 
+     * @param hopDestinations
+     *        Optional list of hop destinations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobTemplateRequest withHopDestinations(java.util.Collection<HopDestination> hopDestinations) {
+        setHopDestinations(hopDestinations);
         return this;
     }
 
@@ -410,6 +474,8 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Category: ").append(getCategory()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getHopDestinations() != null)
+            sb.append("HopDestinations: ").append(getHopDestinations()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPriority() != null)
@@ -446,6 +512,10 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getHopDestinations() == null ^ this.getHopDestinations() == null)
+            return false;
+        if (other.getHopDestinations() != null && other.getHopDestinations().equals(this.getHopDestinations()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -477,6 +547,7 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHopDestinations() == null) ? 0 : getHopDestinations().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());

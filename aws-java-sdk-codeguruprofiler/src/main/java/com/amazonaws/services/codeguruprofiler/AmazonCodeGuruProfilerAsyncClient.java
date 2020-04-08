@@ -195,6 +195,39 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request) {
+
+        return getPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(final GetPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler) {
+        final GetPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPolicyResult>() {
+            @Override
+            public GetPolicyResult call() throws Exception {
+                GetPolicyResult result = null;
+
+                try {
+                    result = executeGetPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest request) {
 
         return getProfileAsync(request, null);
@@ -311,6 +344,72 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
 
                 try {
                     result = executePostAgentProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request) {
+
+        return putPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(final PutPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler) {
+        final PutPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPermissionResult>() {
+            @Override
+            public PutPermissionResult call() throws Exception {
+                PutPermissionResult result = null;
+
+                try {
+                    result = executePutPermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
+
+        return removePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(final RemovePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
+        final RemovePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemovePermissionResult>() {
+            @Override
+            public RemovePermissionResult call() throws Exception {
+                RemovePermissionResult result = null;
+
+                try {
+                    result = executeRemovePermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

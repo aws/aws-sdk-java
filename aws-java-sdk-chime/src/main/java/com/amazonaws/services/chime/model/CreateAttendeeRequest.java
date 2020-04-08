@@ -37,6 +37,12 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String externalUserId;
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -120,6 +126,76 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * 
+     * @return The tag key-value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key-value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key-value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAttendeeRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag key-value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        The tag key-value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAttendeeRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,7 +210,9 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMeetingId() != null)
             sb.append("MeetingId: ").append(getMeetingId()).append(",");
         if (getExternalUserId() != null)
-            sb.append("ExternalUserId: ").append("***Sensitive Data Redacted***");
+            sb.append("ExternalUserId: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +235,10 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getExternalUserId() != null && other.getExternalUserId().equals(this.getExternalUserId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +249,7 @@ public class CreateAttendeeRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getMeetingId() == null) ? 0 : getMeetingId().hashCode());
         hashCode = prime * hashCode + ((getExternalUserId() == null) ? 0 : getExternalUserId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -26,7 +26,7 @@ public class ListStackSetOperationResultsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified
-     * operation results, for accounts and regions that are included in the operation.
+     * operation results, for accounts and Regions that are included in the operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StackSetOperationResultSummary> summaries;
@@ -43,11 +43,11 @@ public class ListStackSetOperationResultsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified
-     * operation results, for accounts and regions that are included in the operation.
+     * operation results, for accounts and Regions that are included in the operation.
      * </p>
      * 
      * @return A list of <code>StackSetOperationResultSummary</code> structures that contain information about the
-     *         specified operation results, for accounts and regions that are included in the operation.
+     *         specified operation results, for accounts and Regions that are included in the operation.
      */
 
     public java.util.List<StackSetOperationResultSummary> getSummaries() {
@@ -60,12 +60,12 @@ public class ListStackSetOperationResultsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified
-     * operation results, for accounts and regions that are included in the operation.
+     * operation results, for accounts and Regions that are included in the operation.
      * </p>
      * 
      * @param summaries
      *        A list of <code>StackSetOperationResultSummary</code> structures that contain information about the
-     *        specified operation results, for accounts and regions that are included in the operation.
+     *        specified operation results, for accounts and Regions that are included in the operation.
      */
 
     public void setSummaries(java.util.Collection<StackSetOperationResultSummary> summaries) {
@@ -80,7 +80,7 @@ public class ListStackSetOperationResultsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified
-     * operation results, for accounts and regions that are included in the operation.
+     * operation results, for accounts and Regions that are included in the operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +90,7 @@ public class ListStackSetOperationResultsResult extends com.amazonaws.AmazonWebS
      * 
      * @param summaries
      *        A list of <code>StackSetOperationResultSummary</code> structures that contain information about the
-     *        specified operation results, for accounts and regions that are included in the operation.
+     *        specified operation results, for accounts and Regions that are included in the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,12 +107,12 @@ public class ListStackSetOperationResultsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A list of <code>StackSetOperationResultSummary</code> structures that contain information about the specified
-     * operation results, for accounts and regions that are included in the operation.
+     * operation results, for accounts and Regions that are included in the operation.
      * </p>
      * 
      * @param summaries
      *        A list of <code>StackSetOperationResultSummary</code> structures that contain information about the
-     *        specified operation results, for accounts and regions that are included in the operation.
+     *        specified operation results, for accounts and Regions that are included in the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

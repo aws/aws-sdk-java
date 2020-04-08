@@ -56,6 +56,18 @@ public class EFSVolumeConfigurationJsonUnmarshaller implements Unmarshaller<EFSV
                     context.nextToken();
                     eFSVolumeConfiguration.setRootDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("transitEncryption", targetDepth)) {
+                    context.nextToken();
+                    eFSVolumeConfiguration.setTransitEncryption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("transitEncryptionPort", targetDepth)) {
+                    context.nextToken();
+                    eFSVolumeConfiguration.setTransitEncryptionPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("authorizationConfig", targetDepth)) {
+                    context.nextToken();
+                    eFSVolumeConfiguration.setAuthorizationConfig(EFSAuthorizationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

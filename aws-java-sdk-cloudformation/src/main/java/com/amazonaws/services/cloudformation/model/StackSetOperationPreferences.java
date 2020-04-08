@@ -33,15 +33,15 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the regions in where you want to perform the stack operation.
+     * The order of the Regions in where you want to perform the stack operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regionOrder;
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     * operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     * operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
@@ -51,9 +51,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     private Integer failureToleranceCount;
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation stops
-     * the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops
+     * the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds <i>down</i>
@@ -103,10 +103,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the regions in where you want to perform the stack operation.
+     * The order of the Regions in where you want to perform the stack operation.
      * </p>
      * 
-     * @return The order of the regions in where you want to perform the stack operation.
+     * @return The order of the Regions in where you want to perform the stack operation.
      */
 
     public java.util.List<String> getRegionOrder() {
@@ -118,11 +118,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the regions in where you want to perform the stack operation.
+     * The order of the Regions in where you want to perform the stack operation.
      * </p>
      * 
      * @param regionOrder
-     *        The order of the regions in where you want to perform the stack operation.
+     *        The order of the Regions in where you want to perform the stack operation.
      */
 
     public void setRegionOrder(java.util.Collection<String> regionOrder) {
@@ -136,7 +136,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the regions in where you want to perform the stack operation.
+     * The order of the Regions in where you want to perform the stack operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @param regionOrder
-     *        The order of the regions in where you want to perform the stack operation.
+     *        The order of the Regions in where you want to perform the stack operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The order of the regions in where you want to perform the stack operation.
+     * The order of the Regions in where you want to perform the stack operation.
      * </p>
      * 
      * @param regionOrder
-     *        The order of the regions in where you want to perform the stack operation.
+     *        The order of the Regions in where you want to perform the stack operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,9 +176,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     * operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     * operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
@@ -186,9 +186,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @param failureToleranceCount
-     *        The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     *        operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     *        operation in any subsequent regions.</p>
+     *        The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     *        operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     *        operation in any subsequent Regions.</p>
      *        <p>
      *        Conditional: You must specify either <code>FailureToleranceCount</code> or
      *        <code>FailureTolerancePercentage</code> (but not both).
@@ -200,18 +200,18 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     * operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     * operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code> (but not both).
      * </p>
      * 
-     * @return The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     *         operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     *         operation in any subsequent regions.</p>
+     * @return The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     *         operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     *         operation in any subsequent Regions.</p>
      *         <p>
      *         Conditional: You must specify either <code>FailureToleranceCount</code> or
      *         <code>FailureTolerancePercentage</code> (but not both).
@@ -223,9 +223,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     * operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     * operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
@@ -233,9 +233,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @param failureToleranceCount
-     *        The number of accounts, per region, for which this operation can fail before AWS CloudFormation stops the
-     *        operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     *        operation in any subsequent regions.</p>
+     *        The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
+     *        operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     *        operation in any subsequent Regions.</p>
      *        <p>
      *        Conditional: You must specify either <code>FailureToleranceCount</code> or
      *        <code>FailureTolerancePercentage</code> (but not both).
@@ -249,9 +249,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation stops
-     * the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops
+     * the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds <i>down</i>
@@ -263,9 +263,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @param failureTolerancePercentage
-     *        The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation
-     *        stops the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't
-     *        attempt the operation in any subsequent regions.</p>
+     *        The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation
+     *        stops the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't
+     *        attempt the operation in any subsequent Regions.</p>
      *        <p>
      *        When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds
      *        <i>down</i> to the next whole number.
@@ -281,9 +281,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation stops
-     * the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops
+     * the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds <i>down</i>
@@ -294,9 +294,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>FailureTolerancePercentage</code>, but not both.
      * </p>
      * 
-     * @return The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation
-     *         stops the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't
-     *         attempt the operation in any subsequent regions.</p>
+     * @return The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation
+     *         stops the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't
+     *         attempt the operation in any subsequent Regions.</p>
      *         <p>
      *         When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds
      *         <i>down</i> to the next whole number.
@@ -312,9 +312,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation stops
-     * the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.
+     * The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation stops
+     * the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.
      * </p>
      * <p>
      * When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds <i>down</i>
@@ -326,9 +326,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @param failureTolerancePercentage
-     *        The percentage of accounts, per region, for which this stack operation can fail before AWS CloudFormation
-     *        stops the operation in that region. If the operation is stopped in a region, AWS CloudFormation doesn't
-     *        attempt the operation in any subsequent regions.</p>
+     *        The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation
+     *        stops the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't
+     *        attempt the operation in any subsequent Regions.</p>
      *        <p>
      *        When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds
      *        <i>down</i> to the next whole number.

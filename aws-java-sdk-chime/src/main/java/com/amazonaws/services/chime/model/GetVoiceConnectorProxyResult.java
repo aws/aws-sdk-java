@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetVoiceConnectorProxyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The proxy configuration details.
+     * </p>
+     */
     private Proxy proxy;
 
     /**
+     * <p>
+     * The proxy configuration details.
+     * </p>
+     * 
      * @param proxy
+     *        The proxy configuration details.
      */
 
     public void setProxy(Proxy proxy) {
@@ -34,7 +44,11 @@ public class GetVoiceConnectorProxyResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The proxy configuration details.
+     * </p>
+     * 
+     * @return The proxy configuration details.
      */
 
     public Proxy getProxy() {
@@ -42,7 +56,12 @@ public class GetVoiceConnectorProxyResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The proxy configuration details.
+     * </p>
+     * 
      * @param proxy
+     *        The proxy configuration details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

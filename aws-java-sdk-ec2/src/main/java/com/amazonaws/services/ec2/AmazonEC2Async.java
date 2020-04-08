@@ -6909,6 +6909,55 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event
+     * notifications for resources in the Region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * 
+     * @param deregisterInstanceEventNotificationAttributesRequest
+     * @return A Java Future containing the result of the DeregisterInstanceEventNotificationAttributes operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DeregisterInstanceEventNotificationAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterInstanceEventNotificationAttributesResult> deregisterInstanceEventNotificationAttributesAsync(
+            DeregisterInstanceEventNotificationAttributesRequest deregisterInstanceEventNotificationAttributesRequest);
+
+    /**
+     * <p>
+     * Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event
+     * notifications for resources in the Region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * 
+     * @param deregisterInstanceEventNotificationAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterInstanceEventNotificationAttributes operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeregisterInstanceEventNotificationAttributes
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterInstanceEventNotificationAttributesResult> deregisterInstanceEventNotificationAttributesAsync(
+            DeregisterInstanceEventNotificationAttributesRequest deregisterInstanceEventNotificationAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterInstanceEventNotificationAttributesRequest, DeregisterInstanceEventNotificationAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Deregisters the specified members (network interfaces) from the transit gateway multicast group.
      * </p>
      * 
@@ -8895,6 +8944,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeInstanceCreditSpecificationsResult> describeInstanceCreditSpecificationsAsync(
             DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceCreditSpecificationsRequest, DescribeInstanceCreditSpecificationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the tag keys that are registered to appear in scheduled event notifications for resources in the
+     * current Region.
+     * </p>
+     * 
+     * @param describeInstanceEventNotificationAttributesRequest
+     * @return A Java Future containing the result of the DescribeInstanceEventNotificationAttributes operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.DescribeInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceEventNotificationAttributesResult> describeInstanceEventNotificationAttributesAsync(
+            DescribeInstanceEventNotificationAttributesRequest describeInstanceEventNotificationAttributesRequest);
+
+    /**
+     * <p>
+     * Describes the tag keys that are registered to appear in scheduled event notifications for resources in the
+     * current Region.
+     * </p>
+     * 
+     * @param describeInstanceEventNotificationAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceEventNotificationAttributes operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceEventNotificationAttributesResult> describeInstanceEventNotificationAttributesAsync(
+            DescribeInstanceEventNotificationAttributesRequest describeInstanceEventNotificationAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceEventNotificationAttributesRequest, DescribeInstanceEventNotificationAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -11051,8 +11137,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
      * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
-     * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
-     * look for instances where the instance lifecycle is <code>spot</code>.
+     * contains the identifier of the instance. Alternatively, you can use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a> with a
+     * filter to look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
      * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of results
@@ -11083,8 +11170,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
      * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
-     * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
-     * look for instances where the instance lifecycle is <code>spot</code>.
+     * contains the identifier of the instance. Alternatively, you can use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a> with a
+     * filter to look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
      * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of results
@@ -17342,6 +17430,53 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<RegisterImageResult> registerImageAsync(RegisterImageRequest registerImageRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterImageRequest, RegisterImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a set of tag keys to include in scheduled event notifications for your resources. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * <p>
+     * To remove tags, use .
+     * </p>
+     * 
+     * @param registerInstanceEventNotificationAttributesRequest
+     * @return A Java Future containing the result of the RegisterInstanceEventNotificationAttributes operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.RegisterInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterInstanceEventNotificationAttributesResult> registerInstanceEventNotificationAttributesAsync(
+            RegisterInstanceEventNotificationAttributesRequest registerInstanceEventNotificationAttributesRequest);
+
+    /**
+     * <p>
+     * Registers a set of tag keys to include in scheduled event notifications for your resources. For more information,
+     * see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
+     * >Customizing Scheduled Event Notifications</a>.
+     * </p>
+     * <p>
+     * To remove tags, use .
+     * </p>
+     * 
+     * @param registerInstanceEventNotificationAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterInstanceEventNotificationAttributes operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.RegisterInstanceEventNotificationAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterInstanceEventNotificationAttributesResult> registerInstanceEventNotificationAttributesAsync(
+            RegisterInstanceEventNotificationAttributesRequest registerInstanceEventNotificationAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterInstanceEventNotificationAttributesRequest, RegisterInstanceEventNotificationAttributesResult> asyncHandler);
 
     /**
      * <p>

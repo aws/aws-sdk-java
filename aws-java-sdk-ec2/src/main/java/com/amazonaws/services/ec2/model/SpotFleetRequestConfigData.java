@@ -89,8 +89,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
-     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
-     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
+     * Instances on your behalf when you cancel its Spot Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     * >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.
      * </p>
      */
     private String iamFleetRole;
@@ -779,8 +781,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
-     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
-     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
+     * Instances on your behalf when you cancel its Spot Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     * >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @param iamFleetRole
@@ -789,8 +793,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
      *        >Spot Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
-     *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using
-     *        <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     *        >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      *        <code>TerminateInstancesWithExpiration</code>.
      */
 
@@ -804,8 +809,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
-     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
-     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
+     * Instances on your behalf when you cancel its Spot Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     * >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants the Spot
@@ -813,8 +820,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
      *         >Spot Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
-     *         terminate Spot Instances on your behalf when you cancel its Spot Fleet request using
-     *         <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     *         terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     *         >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      *         <code>TerminateInstancesWithExpiration</code>.
      */
 
@@ -828,8 +836,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can terminate Spot
-     * Instances on your behalf when you cancel its Spot Fleet request using <a>CancelSpotFleetRequests</a> or when the
-     * Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.
+     * Instances on your behalf when you cancel its Spot Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     * >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @param iamFleetRole
@@ -838,8 +848,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites"
      *        >Spot Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>. Spot Fleet can
-     *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using
-     *        <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
+     *        terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests"
+     *        >CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      *        <code>TerminateInstancesWithExpiration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
