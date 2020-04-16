@@ -47,6 +47,10 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sqs").build();
     private static final MarshallingInfo<StructuredPojo> FIREHOSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firehose").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMODB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamoDB").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMODBV2_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamoDBv2").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -74,6 +78,8 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getIotEvents(), IOTEVENTS_BINDING);
             protocolMarshaller.marshall(action.getSqs(), SQS_BINDING);
             protocolMarshaller.marshall(action.getFirehose(), FIREHOSE_BINDING);
+            protocolMarshaller.marshall(action.getDynamoDB(), DYNAMODB_BINDING);
+            protocolMarshaller.marshall(action.getDynamoDBv2(), DYNAMODBV2_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -73,6 +73,12 @@ public class DBProxyTarget implements Serializable, Cloneable {
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Information about the connection health of the RDS Proxy target.
+     * </p>
+     */
+    private TargetHealth targetHealth;
 
     /**
      * <p>
@@ -350,6 +356,46 @@ public class DBProxyTarget implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the connection health of the RDS Proxy target.
+     * </p>
+     * 
+     * @param targetHealth
+     *        Information about the connection health of the RDS Proxy target.
+     */
+
+    public void setTargetHealth(TargetHealth targetHealth) {
+        this.targetHealth = targetHealth;
+    }
+
+    /**
+     * <p>
+     * Information about the connection health of the RDS Proxy target.
+     * </p>
+     * 
+     * @return Information about the connection health of the RDS Proxy target.
+     */
+
+    public TargetHealth getTargetHealth() {
+        return this.targetHealth;
+    }
+
+    /**
+     * <p>
+     * Information about the connection health of the RDS Proxy target.
+     * </p>
+     * 
+     * @param targetHealth
+     *        Information about the connection health of the RDS Proxy target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBProxyTarget withTargetHealth(TargetHealth targetHealth) {
+        setTargetHealth(targetHealth);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -372,7 +418,9 @@ public class DBProxyTarget implements Serializable, Cloneable {
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getTargetHealth() != null)
+            sb.append("TargetHealth: ").append(getTargetHealth());
         sb.append("}");
         return sb.toString();
     }
@@ -411,6 +459,10 @@ public class DBProxyTarget implements Serializable, Cloneable {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getTargetHealth() == null ^ this.getTargetHealth() == null)
+            return false;
+        if (other.getTargetHealth() != null && other.getTargetHealth().equals(this.getTargetHealth()) == false)
+            return false;
         return true;
     }
 
@@ -425,6 +477,7 @@ public class DBProxyTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRdsResourceId() == null) ? 0 : getRdsResourceId().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getTargetHealth() == null) ? 0 : getTargetHealth().hashCode());
         return hashCode;
     }
 

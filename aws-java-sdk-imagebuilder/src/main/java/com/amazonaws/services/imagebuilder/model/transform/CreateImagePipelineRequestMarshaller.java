@@ -43,6 +43,8 @@ public class CreateImagePipelineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("distributionConfigurationArn").build();
     private static final MarshallingInfo<StructuredPojo> IMAGETESTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageTestsConfiguration").build();
+    private static final MarshallingInfo<Boolean> ENHANCEDIMAGEMETADATAENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedImageMetadataEnabled").build();
     private static final MarshallingInfo<StructuredPojo> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schedule").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class CreateImagePipelineRequestMarshaller {
             protocolMarshaller.marshall(createImagePipelineRequest.getInfrastructureConfigurationArn(), INFRASTRUCTURECONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getDistributionConfigurationArn(), DISTRIBUTIONCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getImageTestsConfiguration(), IMAGETESTSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createImagePipelineRequest.getEnhancedImageMetadataEnabled(), ENHANCEDIMAGEMETADATAENABLED_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getTags(), TAGS_BINDING);

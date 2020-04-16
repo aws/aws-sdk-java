@@ -36,10 +36,17 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
     private String queueUrl;
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
+     * this to FALSE.
      * </p>
      */
     private Boolean useBase64;
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon SQS queue.
+     * </p>
+     */
+    private Payload payload;
 
     /**
      * <p>
@@ -83,11 +90,13 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
+     * this to FALSE.
      * </p>
      * 
      * @param useBase64
-     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
+     *        set this to FALSE.
      */
 
     public void setUseBase64(Boolean useBase64) {
@@ -96,10 +105,12 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
+     * this to FALSE.
      * </p>
      * 
-     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
+     *         set this to FALSE.
      */
 
     public Boolean getUseBase64() {
@@ -108,11 +119,13 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
+     * this to FALSE.
      * </p>
      * 
      * @param useBase64
-     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     *        Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
+     *        set this to FALSE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,14 +136,56 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set
+     * this to FALSE.
      * </p>
      * 
-     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue.
+     * @return Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise,
+     *         set this to FALSE.
      */
 
     public Boolean isUseBase64() {
         return this.useBase64;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon SQS queue.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message to an Amazon SQS queue.
+     */
+
+    public void setPayload(Payload payload) {
+        this.payload = payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon SQS queue.
+     * </p>
+     * 
+     * @return You can configure the action payload when you send a message to an Amazon SQS queue.
+     */
+
+    public Payload getPayload() {
+        return this.payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon SQS queue.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message to an Amazon SQS queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SqsAction withPayload(Payload payload) {
+        setPayload(payload);
+        return this;
     }
 
     /**
@@ -148,7 +203,9 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
         if (getQueueUrl() != null)
             sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getUseBase64() != null)
-            sb.append("UseBase64: ").append(getUseBase64());
+            sb.append("UseBase64: ").append(getUseBase64()).append(",");
+        if (getPayload() != null)
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }
@@ -171,6 +228,10 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUseBase64() != null && other.getUseBase64().equals(this.getUseBase64()) == false)
             return false;
+        if (other.getPayload() == null ^ this.getPayload() == null)
+            return false;
+        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
+            return false;
         return true;
     }
 
@@ -181,6 +242,7 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode());
         hashCode = prime * hashCode + ((getUseBase64() == null) ? 0 : getUseBase64().hashCode());
+        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         return hashCode;
     }
 

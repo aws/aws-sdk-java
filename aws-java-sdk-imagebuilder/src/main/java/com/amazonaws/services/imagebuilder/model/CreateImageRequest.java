@@ -53,6 +53,14 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ImageTestsConfiguration imageTestsConfiguration;
     /**
      * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     */
+    private Boolean enhancedImageMetadataEnabled;
+    /**
+     * <p>
      * The tags of the image.
      * </p>
      */
@@ -241,6 +249,74 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     */
+
+    public void setEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        this.enhancedImageMetadataEnabled = enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean getEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        setEnhancedImageMetadataEnabled(enhancedImageMetadataEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean isEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
      * The tags of the image.
      * </p>
      * 
@@ -367,6 +443,8 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("InfrastructureConfigurationArn: ").append(getInfrastructureConfigurationArn()).append(",");
         if (getImageTestsConfiguration() != null)
             sb.append("ImageTestsConfiguration: ").append(getImageTestsConfiguration()).append(",");
+        if (getEnhancedImageMetadataEnabled() != null)
+            sb.append("EnhancedImageMetadataEnabled: ").append(getEnhancedImageMetadataEnabled()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
@@ -402,6 +480,10 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getImageTestsConfiguration() != null && other.getImageTestsConfiguration().equals(this.getImageTestsConfiguration()) == false)
             return false;
+        if (other.getEnhancedImageMetadataEnabled() == null ^ this.getEnhancedImageMetadataEnabled() == null)
+            return false;
+        if (other.getEnhancedImageMetadataEnabled() != null && other.getEnhancedImageMetadataEnabled().equals(this.getEnhancedImageMetadataEnabled()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -422,6 +504,7 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDistributionConfigurationArn() == null) ? 0 : getDistributionConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getInfrastructureConfigurationArn() == null) ? 0 : getInfrastructureConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getImageTestsConfiguration() == null) ? 0 : getImageTestsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEnhancedImageMetadataEnabled() == null) ? 0 : getEnhancedImageMetadataEnabled().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;

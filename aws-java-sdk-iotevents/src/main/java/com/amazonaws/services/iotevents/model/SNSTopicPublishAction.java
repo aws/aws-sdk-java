@@ -34,6 +34,12 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
      * </p>
      */
     private String targetArn;
+    /**
+     * <p>
+     * You can configure the action payload when you send a message as an Amazon SNS push notification.
+     * </p>
+     */
+    private Payload payload;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * You can configure the action payload when you send a message as an Amazon SNS push notification.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message as an Amazon SNS push notification.
+     */
+
+    public void setPayload(Payload payload) {
+        this.payload = payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message as an Amazon SNS push notification.
+     * </p>
+     * 
+     * @return You can configure the action payload when you send a message as an Amazon SNS push notification.
+     */
+
+    public Payload getPayload() {
+        return this.payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message as an Amazon SNS push notification.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message as an Amazon SNS push notification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SNSTopicPublishAction withPayload(Payload payload) {
+        setPayload(payload);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetArn() != null)
-            sb.append("TargetArn: ").append(getTargetArn());
+            sb.append("TargetArn: ").append(getTargetArn()).append(",");
+        if (getPayload() != null)
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
             return false;
         if (other.getTargetArn() != null && other.getTargetArn().equals(this.getTargetArn()) == false)
             return false;
+        if (other.getPayload() == null ^ this.getPayload() == null)
+            return false;
+        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class SNSTopicPublishAction implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
+        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         return hashCode;
     }
 

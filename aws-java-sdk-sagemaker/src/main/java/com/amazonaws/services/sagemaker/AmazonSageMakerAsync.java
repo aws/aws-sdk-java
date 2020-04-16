@@ -28,6 +28,23 @@ import com.amazonaws.services.sagemaker.model.*;
  * <p>
  * Provides APIs for creating and managing Amazon SageMaker resources.
  * </p>
+ * <p>
+ * Other Resources:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">Amazon SageMaker Developer
+ * Guide</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html">Amazon Augmented AI Runtime
+ * API Reference</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonSageMakerAsync extends AmazonSageMaker {
@@ -4618,8 +4635,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Finds Amazon SageMaker resources that match a search query. Matching resource objects are returned as a list of
-     * <code>SearchResult</code> objects in the response. You can sort the search results by any resource property in a
+     * Finds Amazon SageMaker resources that match a search query. Matching resources are returned as a list of
+     * <code>SearchRecord</code> objects in the response. You can sort the search results by any resource property in a
      * ascending or descending order.
      * </p>
      * <p>
@@ -4636,8 +4653,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Finds Amazon SageMaker resources that match a search query. Matching resource objects are returned as a list of
-     * <code>SearchResult</code> objects in the response. You can sort the search results by any resource property in a
+     * Finds Amazon SageMaker resources that match a search query. Matching resources are returned as a list of
+     * <code>SearchRecord</code> objects in the response. You can sort the search results by any resource property in a
      * ascending or descending order.
      * </p>
      * <p>

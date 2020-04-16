@@ -73,7 +73,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private LambdaAction lambda;
     /**
      * <p>
-     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * Sends AWS IoT Events input, which passes information about the detector model instance and the event that
      * triggered the action.
      * </p>
      */
@@ -92,6 +92,30 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FirehoseAction firehose;
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     */
+    private DynamoDBAction dynamoDB;
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
+     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     */
+    private DynamoDBv2Action dynamoDBv2;
 
     /**
      * <p>
@@ -381,12 +405,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * Sends AWS IoT Events input, which passes information about the detector model instance and the event that
      * triggered the action.
      * </p>
      * 
      * @param iotEvents
-     *        Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     *        Sends AWS IoT Events input, which passes information about the detector model instance and the event that
      *        triggered the action.
      */
 
@@ -396,12 +420,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * Sends AWS IoT Events input, which passes information about the detector model instance and the event that
      * triggered the action.
      * </p>
      * 
-     * @return Sends an AWS IoT Events input, passing in information about the detector model instance and the event
-     *         that triggered the action.
+     * @return Sends AWS IoT Events input, which passes information about the detector model instance and the event that
+     *         triggered the action.
      */
 
     public IotEventsAction getIotEvents() {
@@ -410,12 +434,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * Sends AWS IoT Events input, which passes information about the detector model instance and the event that
      * triggered the action.
      * </p>
      * 
      * @param iotEvents
-     *        Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     *        Sends AWS IoT Events input, which passes information about the detector model instance and the event that
      *        triggered the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -518,6 +542,164 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param dynamoDB
+     *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
+     *        pairs that have the information about the detector model instance and the event that triggered the action.
+     *        You can also customize the <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     *        of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html"
+     *        >Actions</a> in <i>AWS IoT Events Developer Guide</i>.
+     */
+
+    public void setDynamoDB(DynamoDBAction dynamoDB) {
+        this.dynamoDB = dynamoDB;
+    }
+
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @return Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
+     *         pairs that have the information about the detector model instance and the event that triggered the
+     *         action. You can also customize the <a
+     *         href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     *         of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html"
+     *         >Actions</a> in <i>AWS IoT Events Developer Guide</i>.
+     */
+
+    public DynamoDBAction getDynamoDB() {
+        return this.dynamoDB;
+    }
+
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param dynamoDB
+     *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
+     *        pairs that have the information about the detector model instance and the event that triggered the action.
+     *        You can also customize the <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column
+     *        of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html"
+     *        >Actions</a> in <i>AWS IoT Events Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withDynamoDB(DynamoDBAction dynamoDB) {
+        setDynamoDB(dynamoDB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
+     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param dynamoDBv2
+     *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
+     *        pairs that have the information about the detector model instance and the event that triggered the action.
+     *        You can also customize the <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     *        column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html"
+     *        >Actions</a> in <i>AWS IoT Events Developer Guide</i>.
+     */
+
+    public void setDynamoDBv2(DynamoDBv2Action dynamoDBv2) {
+        this.dynamoDBv2 = dynamoDBv2;
+    }
+
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
+     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @return Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
+     *         pairs that have the information about the detector model instance and the event that triggered the
+     *         action. You can also customize the <a
+     *         href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     *         column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html"
+     *         >Actions</a> in <i>AWS IoT Events Developer Guide</i>.
+     */
+
+    public DynamoDBv2Action getDynamoDBv2() {
+        return this.dynamoDBv2;
+    }
+
+    /**
+     * <p>
+     * Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that
+     * have the information about the detector model instance and the event that triggered the action. You can also
+     * customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A
+     * separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+     * <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param dynamoDBv2
+     *        Writes to the DynamoDB table that you created. The default action payload contains all attribute-value
+     *        pairs that have the information about the detector model instance and the event that triggered the action.
+     *        You can also customize the <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate
+     *        column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html"
+     *        >Actions</a> in <i>AWS IoT Events Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withDynamoDBv2(DynamoDBv2Action dynamoDBv2) {
+        setDynamoDBv2(dynamoDBv2);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -548,7 +730,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getSqs() != null)
             sb.append("Sqs: ").append(getSqs()).append(",");
         if (getFirehose() != null)
-            sb.append("Firehose: ").append(getFirehose());
+            sb.append("Firehose: ").append(getFirehose()).append(",");
+        if (getDynamoDB() != null)
+            sb.append("DynamoDB: ").append(getDynamoDB()).append(",");
+        if (getDynamoDBv2() != null)
+            sb.append("DynamoDBv2: ").append(getDynamoDBv2());
         sb.append("}");
         return sb.toString();
     }
@@ -603,6 +789,14 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFirehose() != null && other.getFirehose().equals(this.getFirehose()) == false)
             return false;
+        if (other.getDynamoDB() == null ^ this.getDynamoDB() == null)
+            return false;
+        if (other.getDynamoDB() != null && other.getDynamoDB().equals(this.getDynamoDB()) == false)
+            return false;
+        if (other.getDynamoDBv2() == null ^ this.getDynamoDBv2() == null)
+            return false;
+        if (other.getDynamoDBv2() != null && other.getDynamoDBv2().equals(this.getDynamoDBv2()) == false)
+            return false;
         return true;
     }
 
@@ -621,6 +815,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
         hashCode = prime * hashCode + ((getSqs() == null) ? 0 : getSqs().hashCode());
         hashCode = prime * hashCode + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDB() == null) ? 0 : getDynamoDB().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDBv2() == null) ? 0 : getDynamoDBv2().hashCode());
         return hashCode;
     }
 

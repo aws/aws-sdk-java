@@ -95,6 +95,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
      * <p>
+     * <code>InitQuery</code> is not currently supported for PostgreSQL.
+     * </p>
+     * <p>
      * Default: no initialization query
      * </p>
      */
@@ -484,6 +487,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
      * <p>
+     * <code>InitQuery</code> is not currently supported for PostgreSQL.
+     * </p>
+     * <p>
      * Default: no initialization query
      * </p>
      * 
@@ -492,6 +498,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        with <code>SET</code> statements to make sure that each connection has identical settings such as time
      *        zone and character set. For multiple statements, use semicolons as the separator. You can also include
      *        multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+     *        <p>
+     *        <code>InitQuery</code> is not currently supported for PostgreSQL.
+     *        </p>
      *        <p>
      *        Default: no initialization query
      */
@@ -508,6 +517,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
      * <p>
+     * <code>InitQuery</code> is not currently supported for PostgreSQL.
+     * </p>
+     * <p>
      * Default: no initialization query
      * </p>
      * 
@@ -515,6 +527,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *         with <code>SET</code> statements to make sure that each connection has identical settings such as time
      *         zone and character set. For multiple statements, use semicolons as the separator. You can also include
      *         multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+     *         <p>
+     *         <code>InitQuery</code> is not currently supported for PostgreSQL.
+     *         </p>
      *         <p>
      *         Default: no initialization query
      */
@@ -531,6 +546,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>.
      * </p>
      * <p>
+     * <code>InitQuery</code> is not currently supported for PostgreSQL.
+     * </p>
+     * <p>
      * Default: no initialization query
      * </p>
      * 
@@ -539,6 +557,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        with <code>SET</code> statements to make sure that each connection has identical settings such as time
      *        zone and character set. For multiple statements, use semicolons as the separator. You can also include
      *        multiple variables in a single <code>SET</code> statement, such as <code>SET x=1, y=2</code>. </p>
+     *        <p>
+     *        <code>InitQuery</code> is not currently supported for PostgreSQL.
+     *        </p>
      *        <p>
      *        Default: no initialization query
      * @return Returns a reference to this object so that method calls can be chained together.

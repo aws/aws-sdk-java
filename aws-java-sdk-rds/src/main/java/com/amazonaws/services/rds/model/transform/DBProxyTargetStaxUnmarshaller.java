@@ -72,6 +72,11 @@ public class DBProxyTargetStaxUnmarshaller implements Unmarshaller<DBProxyTarget
                     dBProxyTarget.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("TargetHealth", targetDepth)) {
+                    dBProxyTarget.setTargetHealth(TargetHealthStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBProxyTarget;

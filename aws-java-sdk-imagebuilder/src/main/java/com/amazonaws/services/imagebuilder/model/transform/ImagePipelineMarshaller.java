@@ -37,6 +37,8 @@ public class ImagePipelineMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("platform").build();
+    private static final MarshallingInfo<Boolean> ENHANCEDIMAGEMETADATAENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedImageMetadataEnabled").build();
     private static final MarshallingInfo<String> IMAGERECIPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageRecipeArn").build();
     private static final MarshallingInfo<String> INFRASTRUCTURECONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -80,6 +82,7 @@ public class ImagePipelineMarshaller {
             protocolMarshaller.marshall(imagePipeline.getName(), NAME_BINDING);
             protocolMarshaller.marshall(imagePipeline.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(imagePipeline.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(imagePipeline.getEnhancedImageMetadataEnabled(), ENHANCEDIMAGEMETADATAENABLED_BINDING);
             protocolMarshaller.marshall(imagePipeline.getImageRecipeArn(), IMAGERECIPEARN_BINDING);
             protocolMarshaller.marshall(imagePipeline.getInfrastructureConfigurationArn(), INFRASTRUCTURECONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(imagePipeline.getDistributionConfigurationArn(), DISTRIBUTIONCONFIGURATIONARN_BINDING);

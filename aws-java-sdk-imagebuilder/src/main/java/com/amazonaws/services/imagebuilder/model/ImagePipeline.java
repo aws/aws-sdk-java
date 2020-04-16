@@ -54,6 +54,14 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     */
+    private Boolean enhancedImageMetadataEnabled;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the image recipe associated with this image pipeline.
      * </p>
      */
@@ -296,6 +304,74 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
     public ImagePipeline withPlatform(Platform platform) {
         this.platform = platform.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     */
+
+    public void setEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        this.enhancedImageMetadataEnabled = enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean getEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImagePipeline withEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        setEnhancedImageMetadataEnabled(enhancedImageMetadataEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean isEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
     }
 
     /**
@@ -805,6 +881,8 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getEnhancedImageMetadataEnabled() != null)
+            sb.append("EnhancedImageMetadataEnabled: ").append(getEnhancedImageMetadataEnabled()).append(",");
         if (getImageRecipeArn() != null)
             sb.append("ImageRecipeArn: ").append(getImageRecipeArn()).append(",");
         if (getInfrastructureConfigurationArn() != null)
@@ -856,6 +934,10 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
+        if (other.getEnhancedImageMetadataEnabled() == null ^ this.getEnhancedImageMetadataEnabled() == null)
+            return false;
+        if (other.getEnhancedImageMetadataEnabled() != null && other.getEnhancedImageMetadataEnabled().equals(this.getEnhancedImageMetadataEnabled()) == false)
             return false;
         if (other.getImageRecipeArn() == null ^ this.getImageRecipeArn() == null)
             return false;
@@ -914,6 +996,7 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getEnhancedImageMetadataEnabled() == null) ? 0 : getEnhancedImageMetadataEnabled().hashCode());
         hashCode = prime * hashCode + ((getImageRecipeArn() == null) ? 0 : getImageRecipeArn().hashCode());
         hashCode = prime * hashCode + ((getInfrastructureConfigurationArn() == null) ? 0 : getInfrastructureConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfigurationArn() == null) ? 0 : getDistributionConfigurationArn().hashCode());

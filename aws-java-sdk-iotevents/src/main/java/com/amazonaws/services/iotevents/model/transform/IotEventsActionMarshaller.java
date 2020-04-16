@@ -29,6 +29,8 @@ public class IotEventsActionMarshaller {
 
     private static final MarshallingInfo<String> INPUTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputName").build();
+    private static final MarshallingInfo<StructuredPojo> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payload").build();
 
     private static final IotEventsActionMarshaller instance = new IotEventsActionMarshaller();
 
@@ -47,6 +49,7 @@ public class IotEventsActionMarshaller {
 
         try {
             protocolMarshaller.marshall(iotEventsAction.getInputName(), INPUTNAME_BINDING);
+            protocolMarshaller.marshall(iotEventsAction.getPayload(), PAYLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

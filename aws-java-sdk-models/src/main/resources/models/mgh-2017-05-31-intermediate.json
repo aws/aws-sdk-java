@@ -101,6 +101,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -164,6 +168,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -235,6 +243,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -294,6 +306,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -361,6 +377,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -422,6 +442,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -477,6 +501,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -544,6 +572,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -607,6 +639,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -674,6 +710,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -725,6 +765,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -784,6 +828,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -839,6 +887,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -902,6 +954,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -953,6 +1009,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -1024,6 +1084,10 @@
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InternalServerErrorException",
         "documentation" : "<p>Exception raised when an internal, configuration, or dependency error is encountered.</p>",
         "httpStatusCode" : null
@@ -1087,6 +1151,10 @@
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You do not have sufficient access to perform this action.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerErrorException",
@@ -17558,6 +17626,183 @@
         "documentation" : null,
         "simpleType" : "Task",
         "variableSetterType" : "Task"
+      },
+      "wrapper" : false
+    },
+    "ThrottlingException" : {
+      "c2jName" : "ThrottlingException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The request was denied due to request throttling.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "ThrottlingException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "RetryAfterSeconds",
+        "c2jShape" : "RetryAfterSeconds",
+        "deprecated" : false,
+        "documentation" : "<p>The number of seconds the caller should wait before retrying.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRetryAfterSeconds",
+        "getterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@return The number of seconds the caller should wait before retrying.*/",
+        "getterMethodName" : "getRetryAfterSeconds",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "RetryAfterSeconds",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "RetryAfterSeconds",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "RetryAfterSeconds",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.*/",
+        "setterMethodName" : "setRetryAfterSeconds",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "retryAfterSeconds",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "retryAfterSeconds",
+          "variableType" : "Integer",
+          "documentation" : "<p>The number of seconds the caller should wait before retrying.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "RetryAfterSeconds" : {
+          "c2jName" : "RetryAfterSeconds",
+          "c2jShape" : "RetryAfterSeconds",
+          "deprecated" : false,
+          "documentation" : "<p>The number of seconds the caller should wait before retrying.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRetryAfterSeconds",
+          "getterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@return The number of seconds the caller should wait before retrying.*/",
+          "getterMethodName" : "getRetryAfterSeconds",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "RetryAfterSeconds",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "RetryAfterSeconds",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "RetryAfterSeconds",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.*/",
+          "setterMethodName" : "setRetryAfterSeconds",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "retryAfterSeconds",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "retryAfterSeconds",
+            "variableType" : "Integer",
+            "documentation" : "<p>The number of seconds the caller should wait before retrying.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "Message" ],
+      "shapeName" : "ThrottlingException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ThrottlingException",
+        "variableName" : "throttlingException",
+        "variableType" : "ThrottlingException",
+        "documentation" : null,
+        "simpleType" : "ThrottlingException",
+        "variableSetterType" : "ThrottlingException"
       },
       "wrapper" : false
     },

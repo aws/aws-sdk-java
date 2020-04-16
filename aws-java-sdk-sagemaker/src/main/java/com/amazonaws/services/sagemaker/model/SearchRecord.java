@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An individual search result record that contains a single resource object.
+ * A single resource returned as part of the <a>Search</a> API response.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord" target="_top">AWS API
@@ -30,36 +30,36 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     * The properties of a training job.
      * </p>
      */
     private TrainingJob trainingJob;
     /**
      * <p>
-     * A summary of the properties of an experiment.
+     * The properties of an experiment.
      * </p>
      */
     private Experiment experiment;
     /**
      * <p>
-     * A summary of the properties of a trial.
+     * The properties of a trial.
      * </p>
      */
     private Trial trial;
     /**
      * <p>
-     * A summary of the properties of a trial component.
+     * The properties of a trial component.
      * </p>
      */
     private TrialComponent trialComponent;
 
     /**
      * <p>
-     * A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     * The properties of a training job.
      * </p>
      * 
      * @param trainingJob
-     *        A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     *        The properties of a training job.
      */
 
     public void setTrainingJob(TrainingJob trainingJob) {
@@ -68,10 +68,10 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     * The properties of a training job.
      * </p>
      * 
-     * @return A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     * @return The properties of a training job.
      */
 
     public TrainingJob getTrainingJob() {
@@ -80,11 +80,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     * The properties of a training job.
      * </p>
      * 
      * @param trainingJob
-     *        A <code>TrainingJob</code> object that is returned as part of a <code>Search</code> request.
+     *        The properties of a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of an experiment.
+     * The properties of an experiment.
      * </p>
      * 
      * @param experiment
-     *        A summary of the properties of an experiment.
+     *        The properties of an experiment.
      */
 
     public void setExperiment(Experiment experiment) {
@@ -108,10 +108,10 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of an experiment.
+     * The properties of an experiment.
      * </p>
      * 
-     * @return A summary of the properties of an experiment.
+     * @return The properties of an experiment.
      */
 
     public Experiment getExperiment() {
@@ -120,11 +120,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of an experiment.
+     * The properties of an experiment.
      * </p>
      * 
      * @param experiment
-     *        A summary of the properties of an experiment.
+     *        The properties of an experiment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of a trial.
+     * The properties of a trial.
      * </p>
      * 
      * @param trial
-     *        A summary of the properties of a trial.
+     *        The properties of a trial.
      */
 
     public void setTrial(Trial trial) {
@@ -148,10 +148,10 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of a trial.
+     * The properties of a trial.
      * </p>
      * 
-     * @return A summary of the properties of a trial.
+     * @return The properties of a trial.
      */
 
     public Trial getTrial() {
@@ -160,11 +160,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of a trial.
+     * The properties of a trial.
      * </p>
      * 
      * @param trial
-     *        A summary of the properties of a trial.
+     *        The properties of a trial.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of a trial component.
+     * The properties of a trial component.
      * </p>
      * 
      * @param trialComponent
-     *        A summary of the properties of a trial component.
+     *        The properties of a trial component.
      */
 
     public void setTrialComponent(TrialComponent trialComponent) {
@@ -188,10 +188,10 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of a trial component.
+     * The properties of a trial component.
      * </p>
      * 
-     * @return A summary of the properties of a trial component.
+     * @return The properties of a trial component.
      */
 
     public TrialComponent getTrialComponent() {
@@ -200,11 +200,11 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A summary of the properties of a trial component.
+     * The properties of a trial component.
      * </p>
      * 
      * @param trialComponent
-     *        A summary of the properties of a trial component.
+     *        The properties of a trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

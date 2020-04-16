@@ -56,6 +56,10 @@ public class TrialComponentSourceDetailJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     trialComponentSourceDetail.setTrainingJob(TrainingJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProcessingJob", targetDepth)) {
+                    context.nextToken();
+                    trialComponentSourceDetail.setProcessingJob(ProcessingJobJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

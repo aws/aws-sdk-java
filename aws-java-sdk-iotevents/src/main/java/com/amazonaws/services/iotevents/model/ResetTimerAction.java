@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information required to reset the timer. The timer is reset to the previously evaluated result of the duration.
+ * Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The
+ * duration expression isn't reevaluated when you reset the timer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ResetTimerAction" target="_top">AWS API

@@ -66,6 +66,14 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
     private ImageTestsConfiguration imageTestsConfiguration;
     /**
      * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     */
+    private Boolean enhancedImageMetadataEnabled;
+    /**
+     * <p>
      * The schedule of the image pipeline.
      * </p>
      */
@@ -349,6 +357,74 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     */
+
+    public void setEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        this.enhancedImageMetadataEnabled = enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean getEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImagePipelineRequest withEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        setEnhancedImageMetadataEnabled(enhancedImageMetadataEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean isEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
      * The schedule of the image pipeline.
      * </p>
      * 
@@ -578,6 +654,8 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("DistributionConfigurationArn: ").append(getDistributionConfigurationArn()).append(",");
         if (getImageTestsConfiguration() != null)
             sb.append("ImageTestsConfiguration: ").append(getImageTestsConfiguration()).append(",");
+        if (getEnhancedImageMetadataEnabled() != null)
+            sb.append("EnhancedImageMetadataEnabled: ").append(getEnhancedImageMetadataEnabled()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getStatus() != null)
@@ -625,6 +703,10 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getImageTestsConfiguration() != null && other.getImageTestsConfiguration().equals(this.getImageTestsConfiguration()) == false)
             return false;
+        if (other.getEnhancedImageMetadataEnabled() == null ^ this.getEnhancedImageMetadataEnabled() == null)
+            return false;
+        if (other.getEnhancedImageMetadataEnabled() != null && other.getEnhancedImageMetadataEnabled().equals(this.getEnhancedImageMetadataEnabled()) == false)
+            return false;
         if (other.getSchedule() == null ^ this.getSchedule() == null)
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
@@ -655,6 +737,7 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getInfrastructureConfigurationArn() == null) ? 0 : getInfrastructureConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfigurationArn() == null) ? 0 : getDistributionConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getImageTestsConfiguration() == null) ? 0 : getImageTestsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEnhancedImageMetadataEnabled() == null) ? 0 : getEnhancedImageMetadataEnabled().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

@@ -35,6 +35,8 @@ public class ImageVersionMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("platform").build();
+    private static final MarshallingInfo<String> OSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("osVersion").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("owner").build();
     private static final MarshallingInfo<String> DATECREATED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class ImageVersionMarshaller {
             protocolMarshaller.marshall(imageVersion.getName(), NAME_BINDING);
             protocolMarshaller.marshall(imageVersion.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(imageVersion.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(imageVersion.getOsVersion(), OSVERSION_BINDING);
             protocolMarshaller.marshall(imageVersion.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(imageVersion.getDateCreated(), DATECREATED_BINDING);
         } catch (Exception e) {

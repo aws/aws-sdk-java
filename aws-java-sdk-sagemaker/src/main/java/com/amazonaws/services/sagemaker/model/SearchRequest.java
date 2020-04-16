@@ -33,8 +33,8 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String resource;
     /**
      * <p>
-     * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
-     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must
+     * provide at least one subexpression, filter, or nested filter. The maximum number of recursive
      * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
      * <code>SearchExpression</code> object is 50.
      * </p>
@@ -56,16 +56,15 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String sortOrder;
     /**
      * <p>
-     * If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>, the
-     * <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the
-     * next <code>SearchRequest</code> to continue retrieving results for the specified <code>SearchExpression</code>
-     * and <code>Sort</code> parameters.
+     * If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response
+     * includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     * <code>SearchRequest</code> to continue retrieving results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a <code>SearchResponse</code>.
+     * The maximum number of results to return.
      * </p>
      */
     private Integer maxResults;
@@ -131,17 +130,17 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
-     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must
+     * provide at least one subexpression, filter, or nested filter. The maximum number of recursive
      * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
      * <code>SearchExpression</code> object is 50.
      * </p>
      * 
      * @param searchExpression
-     *        A Boolean conditional statement. Resource objects must satisfy this condition to be included in search
-     *        results. You must provide at least one subexpression, filter, or nested filter. The maximum number of
-     *        recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be
-     *        included in a <code>SearchExpression</code> object is 50.
+     *        A Boolean conditional statement. Resources must satisfy this condition to be included in search results.
+     *        You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     *        <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in
+     *        a <code>SearchExpression</code> object is 50.
      */
 
     public void setSearchExpression(SearchExpression searchExpression) {
@@ -150,16 +149,16 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
-     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must
+     * provide at least one subexpression, filter, or nested filter. The maximum number of recursive
      * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
      * <code>SearchExpression</code> object is 50.
      * </p>
      * 
-     * @return A Boolean conditional statement. Resource objects must satisfy this condition to be included in search
-     *         results. You must provide at least one subexpression, filter, or nested filter. The maximum number of
-     *         recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be
-     *         included in a <code>SearchExpression</code> object is 50.
+     * @return A Boolean conditional statement. Resources must satisfy this condition to be included in search results.
+     *         You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     *         <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in
+     *         a <code>SearchExpression</code> object is 50.
      */
 
     public SearchExpression getSearchExpression() {
@@ -168,17 +167,17 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
-     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must
+     * provide at least one subexpression, filter, or nested filter. The maximum number of recursive
      * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
      * <code>SearchExpression</code> object is 50.
      * </p>
      * 
      * @param searchExpression
-     *        A Boolean conditional statement. Resource objects must satisfy this condition to be included in search
-     *        results. You must provide at least one subexpression, filter, or nested filter. The maximum number of
-     *        recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be
-     *        included in a <code>SearchExpression</code> object is 50.
+     *        A Boolean conditional statement. Resources must satisfy this condition to be included in search results.
+     *        You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     *        <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in
+     *        a <code>SearchExpression</code> object is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,17 +301,15 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>, the
-     * <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the
-     * next <code>SearchRequest</code> to continue retrieving results for the specified <code>SearchExpression</code>
-     * and <code>Sort</code> parameters.
+     * If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response
+     * includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     * <code>SearchRequest</code> to continue retrieving results.
      * </p>
      * 
      * @param nextToken
-     *        If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>,
-     *        the <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be
-     *        passed to the next <code>SearchRequest</code> to continue retrieving results for the specified
-     *        <code>SearchExpression</code> and <code>Sort</code> parameters.
+     *        If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the
+     *        response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     *        <code>SearchRequest</code> to continue retrieving results.
      */
 
     public void setNextToken(String nextToken) {
@@ -321,16 +318,14 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>, the
-     * <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the
-     * next <code>SearchRequest</code> to continue retrieving results for the specified <code>SearchExpression</code>
-     * and <code>Sort</code> parameters.
+     * If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response
+     * includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     * <code>SearchRequest</code> to continue retrieving results.
      * </p>
      * 
-     * @return If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>,
-     *         the <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be
-     *         passed to the next <code>SearchRequest</code> to continue retrieving results for the specified
-     *         <code>SearchExpression</code> and <code>Sort</code> parameters.
+     * @return If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the
+     *         response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     *         <code>SearchRequest</code> to continue retrieving results.
      */
 
     public String getNextToken() {
@@ -339,17 +334,15 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>, the
-     * <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the
-     * next <code>SearchRequest</code> to continue retrieving results for the specified <code>SearchExpression</code>
-     * and <code>Sort</code> parameters.
+     * If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response
+     * includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     * <code>SearchRequest</code> to continue retrieving results.
      * </p>
      * 
      * @param nextToken
-     *        If more than <code>MaxResults</code> resource objects match the specified <code>SearchExpression</code>,
-     *        the <code>SearchResponse</code> includes a <code>NextToken</code>. The <code>NextToken</code> can be
-     *        passed to the next <code>SearchRequest</code> to continue retrieving results for the specified
-     *        <code>SearchExpression</code> and <code>Sort</code> parameters.
+     *        If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the
+     *        response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
+     *        <code>SearchRequest</code> to continue retrieving results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,11 +353,11 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The maximum number of results to return in a <code>SearchResponse</code>.
+     * The maximum number of results to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a <code>SearchResponse</code>.
+     *        The maximum number of results to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -373,10 +366,10 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The maximum number of results to return in a <code>SearchResponse</code>.
+     * The maximum number of results to return.
      * </p>
      * 
-     * @return The maximum number of results to return in a <code>SearchResponse</code>.
+     * @return The maximum number of results to return.
      */
 
     public Integer getMaxResults() {
@@ -385,11 +378,11 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The maximum number of results to return in a <code>SearchResponse</code>.
+     * The maximum number of results to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a <code>SearchResponse</code>.
+     *        The maximum number of results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

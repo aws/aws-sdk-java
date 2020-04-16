@@ -48,7 +48,8 @@ public class State implements Serializable, Cloneable, StructuredPojo {
     private OnEnterLifecycle onEnter;
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+     * <code>TRUE</code>.
      * </p>
      */
     private OnExitLifecycle onExit;
@@ -178,12 +179,13 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+     * <code>TRUE</code>.
      * </p>
      * 
      * @param onExit
      *        When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
-     *        TRUE.
+     *        <code>TRUE</code>.
      */
 
     public void setOnExit(OnExitLifecycle onExit) {
@@ -192,11 +194,12 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+     * <code>TRUE</code>.
      * </p>
      * 
      * @return When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
-     *         TRUE.
+     *         <code>TRUE</code>.
      */
 
     public OnExitLifecycle getOnExit() {
@@ -205,12 +208,13 @@ public class State implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+     * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+     * <code>TRUE</code>.
      * </p>
      * 
      * @param onExit
      *        When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
-     *        TRUE.
+     *        <code>TRUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

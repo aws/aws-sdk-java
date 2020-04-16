@@ -1,3 +1,56 @@
+# __1.11.763__ __2020-04-16__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert now allows you to specify your input captions frame rate for SCC captions sources.
+
+## __AWS Glue__
+  - ### Features
+    - This release adds support for querying GetUserDefinedFunctions API without databaseName.
+
+## __AWS IoT Events__
+  - ### Features
+    - API update that allows users to customize event action payloads, and adds support for Amazon DynamoDB actions.
+
+## __AWS Lambda__
+  - ### Features
+    - Sample code for AWS Lambda operations
+
+## __AWS MediaTailor__
+  - ### Features
+    - AWS Elemental MediaTailor SDK now allows configuration of Avail Suppression.
+
+## __AWS Migration Hub__
+  - ### Features
+    - Adding ThrottlingException
+
+## __AWS SecurityHub__
+  - ### Features
+    - Added a new BatchUpdateFindings action, which allows customers to update selected information about their findings. Security Hub customers use BatchUpdateFindings to track their investigation into a finding. BatchUpdateFindings is intended to replace the UpdateFindings action, which is deprecated.
+
+## __Amazon Augmented AI Runtime__
+  - ### Features
+    - This release updates Amazon Augmented AI ListHumanLoops and StartHumanLoop APIs.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 now supports adding AWS resource tags for placement groups and key pairs, at creation time. The CreatePlacementGroup API will now return placement group information when created successfully. The DeleteKeyPair API now supports deletion by resource ID.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - An update to the Snowball Edge Storage Optimized device has been launched. Like the previous version, it has 80 TB of capacity for data transfer. Now it has 40 vCPUs, 80 GiB, and a 1 TiB SATA SSD of memory for EC2 compatible compute. The 80 TB of capacity can also be used for EBS-like volumes for AMIs.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for Amazon RDS Proxy with PostgreSQL compatibility.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker now supports running training jobs on ml.g4dn and ml.c5n instance types. Amazon SageMaker supports in "IN" operation for Search now.
+
+## __EC2 Image Builder__
+  - ### Features
+    - This release includes support for additional OS Versions within EC2 Image Builder.
+
 # __1.11.762__ __2020-04-08__
 ## __AWS CloudFormation__
   - ### Features

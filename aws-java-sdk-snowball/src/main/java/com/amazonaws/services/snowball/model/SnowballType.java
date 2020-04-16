@@ -23,7 +23,8 @@ public enum SnowballType {
     STANDARD("STANDARD"),
     EDGE("EDGE"),
     EDGE_C("EDGE_C"),
-    EDGE_CG("EDGE_CG");
+    EDGE_CG("EDGE_CG"),
+    EDGE_S("EDGE_S");
 
     private String value;
 

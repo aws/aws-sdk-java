@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
+ * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is
+ * <code>TRUE</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/OnExitLifecycle" target="_top">AWS API
@@ -31,7 +32,7 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
-     * TRUE.
+     * <code>TRUE</code>.
      * </p>
      */
     private java.util.List<Event> events;
@@ -39,11 +40,11 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
-     * TRUE.
+     * <code>TRUE</code>.
      * </p>
      * 
      * @return Specifies the <code>actions</code> that are performed when the state is exited and the
-     *         <code>condition</code> is TRUE.
+     *         <code>condition</code> is <code>TRUE</code>.
      */
 
     public java.util.List<Event> getEvents() {
@@ -53,12 +54,12 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
-     * TRUE.
+     * <code>TRUE</code>.
      * </p>
      * 
      * @param events
      *        Specifies the <code>actions</code> that are performed when the state is exited and the
-     *        <code>condition</code> is TRUE.
+     *        <code>condition</code> is <code>TRUE</code>.
      */
 
     public void setEvents(java.util.Collection<Event> events) {
@@ -73,7 +74,7 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
-     * TRUE.
+     * <code>TRUE</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +84,7 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param events
      *        Specifies the <code>actions</code> that are performed when the state is exited and the
-     *        <code>condition</code> is TRUE.
+     *        <code>condition</code> is <code>TRUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,12 +101,12 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
-     * TRUE.
+     * <code>TRUE</code>.
      * </p>
      * 
      * @param events
      *        Specifies the <code>actions</code> that are performed when the state is exited and the
-     *        <code>condition</code> is TRUE.
+     *        <code>condition</code> is <code>TRUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

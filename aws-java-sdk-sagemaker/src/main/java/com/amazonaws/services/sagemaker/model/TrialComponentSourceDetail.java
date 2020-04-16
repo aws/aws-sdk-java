@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed information about the source of a trial component.
+ * Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or
+ * <code>TrainingJob</code> is returned.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSourceDetail"
@@ -34,8 +35,18 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private String sourceArn;
-
+    /**
+     * <p>
+     * Information about a training job that's the source of a trial component.
+     * </p>
+     */
     private TrainingJob trainingJob;
+    /**
+     * <p>
+     * Information about a processing job that's the source of a trial component.
+     * </p>
+     */
+    private ProcessingJob processingJob;
 
     /**
      * <p>
@@ -78,7 +89,12 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Information about a training job that's the source of a trial component.
+     * </p>
+     * 
      * @param trainingJob
+     *        Information about a training job that's the source of a trial component.
      */
 
     public void setTrainingJob(TrainingJob trainingJob) {
@@ -86,7 +102,11 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Information about a training job that's the source of a trial component.
+     * </p>
+     * 
+     * @return Information about a training job that's the source of a trial component.
      */
 
     public TrainingJob getTrainingJob() {
@@ -94,12 +114,57 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Information about a training job that's the source of a trial component.
+     * </p>
+     * 
      * @param trainingJob
+     *        Information about a training job that's the source of a trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TrialComponentSourceDetail withTrainingJob(TrainingJob trainingJob) {
         setTrainingJob(trainingJob);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about a processing job that's the source of a trial component.
+     * </p>
+     * 
+     * @param processingJob
+     *        Information about a processing job that's the source of a trial component.
+     */
+
+    public void setProcessingJob(ProcessingJob processingJob) {
+        this.processingJob = processingJob;
+    }
+
+    /**
+     * <p>
+     * Information about a processing job that's the source of a trial component.
+     * </p>
+     * 
+     * @return Information about a processing job that's the source of a trial component.
+     */
+
+    public ProcessingJob getProcessingJob() {
+        return this.processingJob;
+    }
+
+    /**
+     * <p>
+     * Information about a processing job that's the source of a trial component.
+     * </p>
+     * 
+     * @param processingJob
+     *        Information about a processing job that's the source of a trial component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrialComponentSourceDetail withProcessingJob(ProcessingJob processingJob) {
+        setProcessingJob(processingJob);
         return this;
     }
 
@@ -118,7 +183,9 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
         if (getSourceArn() != null)
             sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getTrainingJob() != null)
-            sb.append("TrainingJob: ").append(getTrainingJob());
+            sb.append("TrainingJob: ").append(getTrainingJob()).append(",");
+        if (getProcessingJob() != null)
+            sb.append("ProcessingJob: ").append(getProcessingJob());
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +208,10 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getTrainingJob() != null && other.getTrainingJob().equals(this.getTrainingJob()) == false)
             return false;
+        if (other.getProcessingJob() == null ^ this.getProcessingJob() == null)
+            return false;
+        if (other.getProcessingJob() != null && other.getProcessingJob().equals(this.getProcessingJob()) == false)
+            return false;
         return true;
     }
 
@@ -151,6 +222,7 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getTrainingJob() == null) ? 0 : getTrainingJob().hashCode());
+        hashCode = prime * hashCode + ((getProcessingJob() == null) ? 0 : getProcessingJob().hashCode());
         return hashCode;
     }
 

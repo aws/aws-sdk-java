@@ -47,22 +47,21 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String flowDefinitionArn;
     /**
      * <p>
-     * An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     * <code>Descending</code> order.
+     * Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
      * The total number of items to return. If the total number of available items is more than the value specified in
-     * <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.
+     * <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results.
      * </p>
      */
     private Integer maxResults;
@@ -201,13 +200,12 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     * <code>Descending</code> order.
+     * Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     *        <code>Descending</code> order.
+     *        Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+     *        <code>Descending</code>.
      * @see SortOrder
      */
 
@@ -217,12 +215,11 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     * <code>Descending</code> order.
+     * Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.
      * </p>
      * 
-     * @return An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     *         <code>Descending</code> order.
+     * @return Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+     *         <code>Descending</code>.
      * @see SortOrder
      */
 
@@ -232,13 +229,12 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     * <code>Descending</code> order.
+     * Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     *        <code>Descending</code> order.
+     *        Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+     *        <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -250,13 +246,12 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     * <code>Descending</code> order.
+     * Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
-     *        <code>Descending</code> order.
+     *        Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+     *        <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -268,11 +263,11 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to resume pagination.
+     *        A token to display the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -281,10 +276,10 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      * 
-     * @return A token to resume pagination.
+     * @return A token to display the next page of results.
      */
 
     public String getNextToken() {
@@ -293,11 +288,11 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to resume pagination.
+     *        A token to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,14 +304,14 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The total number of items to return. If the total number of available items is more than the value specified in
-     * <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.
+     * <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        The total number of items to return. If the total number of available items is more than the value
-     *        specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that
-     *        you can use to resume pagination.
+     *        specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use
+     *        this token to display the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -326,13 +321,13 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The total number of items to return. If the total number of available items is more than the value specified in
-     * <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.
+     * <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results.
      * </p>
      * 
      * @return The total number of items to return. If the total number of available items is more than the value
-     *         specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that
-     *         you can use to resume pagination.
+     *         specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can
+     *         use this token to display the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -342,14 +337,14 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The total number of items to return. If the total number of available items is more than the value specified in
-     * <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume
-     * pagination.
+     * <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to
+     * display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        The total number of items to return. If the total number of available items is more than the value
-     *        specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that
-     *        you can use to resume pagination.
+     *        specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use
+     *        this token to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

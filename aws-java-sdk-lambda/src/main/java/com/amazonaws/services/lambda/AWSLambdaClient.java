@@ -2082,7 +2082,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * connections with timeout or keep-alive settings.
      * </p>
      * <p>
-     * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
+     * This operation requires permission for the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action.
      * </p>
      * 
      * @param invokeRequest

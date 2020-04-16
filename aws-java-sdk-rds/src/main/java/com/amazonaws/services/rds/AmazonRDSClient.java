@@ -669,10 +669,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @return Result of the AddTagsToResource operation returned by the service.
      * @throws DBInstanceNotFoundException
      *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
-     * @throws DBSnapshotNotFoundException
-     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws DBSnapshotNotFoundException
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
      * @sample AmazonRDS.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -6274,6 +6280,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
      * @sample AmazonRDS.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -8104,6 +8116,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
      * @sample AmazonRDS.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>

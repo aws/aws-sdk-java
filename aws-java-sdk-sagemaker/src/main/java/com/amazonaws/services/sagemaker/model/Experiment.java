@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of the properties of an experiment as returned by the <a>Search</a> API.
+ * The properties of an experiment as returned by the <a>Search</a> API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Experiment" target="_top">AWS API

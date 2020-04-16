@@ -55,7 +55,7 @@ public class DBProxy implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora MySQL.
+     * The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      * </p>
      */
     private String engineFamily;
@@ -293,12 +293,11 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora MySQL.
+     * The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      * </p>
      * 
      * @param engineFamily
-     *        Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     *        MySQL.
+     *        The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      */
 
     public void setEngineFamily(String engineFamily) {
@@ -307,11 +306,10 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora MySQL.
+     * The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      * </p>
      * 
-     * @return Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and
-     *         Aurora MySQL.
+     * @return The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      */
 
     public String getEngineFamily() {
@@ -320,12 +318,11 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora MySQL.
+     * The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      * </p>
      * 
      * @param engineFamily
-     *        Currently, this value is always <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     *        MySQL.
+     *        The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

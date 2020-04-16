@@ -235,6 +235,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdateFindingsResult> batchUpdateFindingsAsync(BatchUpdateFindingsRequest request) {
+
+        return batchUpdateFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateFindingsResult> batchUpdateFindingsAsync(final BatchUpdateFindingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdateFindingsRequest, BatchUpdateFindingsResult> asyncHandler) {
+        final BatchUpdateFindingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdateFindingsResult>() {
+            @Override
+            public BatchUpdateFindingsResult call() throws Exception {
+                BatchUpdateFindingsResult result = null;
+
+                try {
+                    result = executeBatchUpdateFindings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateActionTargetResult> createActionTargetAsync(CreateActionTargetRequest request) {
 
         return createActionTargetAsync(request, null);

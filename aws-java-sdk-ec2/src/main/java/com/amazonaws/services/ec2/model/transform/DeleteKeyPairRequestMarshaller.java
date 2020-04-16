@@ -44,6 +44,10 @@ public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<Delete
             request.addParameter("KeyName", StringUtils.fromString(deleteKeyPairRequest.getKeyName()));
         }
 
+        if (deleteKeyPairRequest.getKeyPairId() != null) {
+            request.addParameter("KeyPairId", StringUtils.fromString(deleteKeyPairRequest.getKeyPairId()));
+        }
+
         return request;
     }
 

@@ -56,6 +56,10 @@ public class SqsActionJsonUnmarshaller implements Unmarshaller<SqsAction, JsonUn
                     context.nextToken();
                     sqsAction.setUseBase64(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("payload", targetDepth)) {
+                    context.nextToken();
+                    sqsAction.setPayload(PayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

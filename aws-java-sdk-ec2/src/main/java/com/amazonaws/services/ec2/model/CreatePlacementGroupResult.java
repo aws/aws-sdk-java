@@ -23,6 +23,34 @@ import com.amazonaws.AmazonWebServiceResult;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePlacementGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    private PlacementGroup placementGroup;
+
+    /**
+     * @param placementGroup
+     */
+
+    public void setPlacementGroup(PlacementGroup placementGroup) {
+        this.placementGroup = placementGroup;
+    }
+
+    /**
+     * @return
+     */
+
+    public PlacementGroup getPlacementGroup() {
+        return this.placementGroup;
+    }
+
+    /**
+     * @param placementGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePlacementGroupResult withPlacementGroup(PlacementGroup placementGroup) {
+        setPlacementGroup(placementGroup);
+        return this;
+    }
+
     /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
@@ -35,6 +63,8 @@ public class CreatePlacementGroupResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPlacementGroup() != null)
+            sb.append("PlacementGroup: ").append(getPlacementGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -49,6 +79,10 @@ public class CreatePlacementGroupResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreatePlacementGroupResult == false)
             return false;
         CreatePlacementGroupResult other = (CreatePlacementGroupResult) obj;
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null)
+            return false;
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false)
+            return false;
         return true;
     }
 
@@ -57,6 +91,7 @@ public class CreatePlacementGroupResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode());
         return hashCode;
     }
 

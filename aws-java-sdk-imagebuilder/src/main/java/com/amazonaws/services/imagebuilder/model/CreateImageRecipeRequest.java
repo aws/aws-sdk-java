@@ -51,7 +51,13 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<ComponentConfiguration> components;
     /**
      * <p>
-     * The parent image of the image recipe.
+     * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
+     * The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
+     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
+     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
+     * be in the same Region in which you are using Image Builder.
      * </p>
      */
     private String parentImage;
@@ -266,11 +272,23 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The parent image of the image recipe.
+     * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
+     * The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
+     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
+     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
+     * be in the same Region in which you are using Image Builder.
      * </p>
      * 
      * @param parentImage
-     *        The parent image of the image recipe.
+     *        The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI
+     *        ID. The format for the ARN follows this example:
+     *        <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     *        The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the
+     *        latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you can
+     *        use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to
+     *        the AMI, and the AMI must be in the same Region in which you are using Image Builder.
      */
 
     public void setParentImage(String parentImage) {
@@ -279,10 +297,22 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The parent image of the image recipe.
+     * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
+     * The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
+     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
+     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
+     * be in the same Region in which you are using Image Builder.
      * </p>
      * 
-     * @return The parent image of the image recipe.
+     * @return The parent image of the image recipe. The value of the string can be the ARN of the parent image or an
+     *         AMI ID. The format for the ARN follows this example:
+     *         <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     *         The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use
+     *         the latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you
+     *         can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have
+     *         access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.
      */
 
     public String getParentImage() {
@@ -291,11 +321,23 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The parent image of the image recipe.
+     * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
+     * The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
+     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
+     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
+     * be in the same Region in which you are using Image Builder.
      * </p>
      * 
      * @param parentImage
-     *        The parent image of the image recipe.
+     *        The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI
+     *        ID. The format for the ARN follows this example:
+     *        <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     *        The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the
+     *        latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you can
+     *        use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to
+     *        the AMI, and the AMI must be in the same Region in which you are using Image Builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

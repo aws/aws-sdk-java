@@ -36,7 +36,7 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
     private String humanLoopName;
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      */
     private String humanLoopStatus;
@@ -48,14 +48,14 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
     private java.util.Date creationTime;
     /**
      * <p>
-     * The reason why the human loop failed. A failure reason is returned only when the status of the human loop is
+     * The reason why the human loop failed. A failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      * </p>
      */
     private String flowDefinitionArn;
@@ -102,11 +102,11 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
      * @param humanLoopStatus
-     *        The status of the human loop. Valid values:
+     *        The status of the human loop.
      * @see HumanLoopStatus
      */
 
@@ -116,10 +116,10 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
-     * @return The status of the human loop. Valid values:
+     * @return The status of the human loop.
      * @see HumanLoopStatus
      */
 
@@ -129,11 +129,11 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
      * @param humanLoopStatus
-     *        The status of the human loop. Valid values:
+     *        The status of the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HumanLoopStatus
      */
@@ -145,11 +145,11 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
      * @param humanLoopStatus
-     *        The status of the human loop. Valid values:
+     *        The status of the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HumanLoopStatus
      */
@@ -201,13 +201,13 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The reason why the human loop failed. A failure reason is returned only when the status of the human loop is
+     * The reason why the human loop failed. A failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      * 
      * @param failureReason
-     *        The reason why the human loop failed. A failure reason is returned only when the status of the human loop
-     *        is <code>Failed</code>.
+     *        The reason why the human loop failed. A failure reason is returned when the status of the human loop is
+     *        <code>Failed</code>.
      */
 
     public void setFailureReason(String failureReason) {
@@ -216,12 +216,12 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The reason why the human loop failed. A failure reason is returned only when the status of the human loop is
+     * The reason why the human loop failed. A failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      * 
-     * @return The reason why the human loop failed. A failure reason is returned only when the status of the human loop
-     *         is <code>Failed</code>.
+     * @return The reason why the human loop failed. A failure reason is returned when the status of the human loop is
+     *         <code>Failed</code>.
      */
 
     public String getFailureReason() {
@@ -230,13 +230,13 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The reason why the human loop failed. A failure reason is returned only when the status of the human loop is
+     * The reason why the human loop failed. A failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      * 
      * @param failureReason
-     *        The reason why the human loop failed. A failure reason is returned only when the status of the human loop
-     *        is <code>Failed</code>.
+     *        The reason why the human loop failed. A failure reason is returned when the status of the human loop is
+     *        <code>Failed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +247,11 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      * </p>
      * 
      * @param flowDefinitionArn
-     *        The Amazon Resource Name (ARN) of the flow definition.
+     *        The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      */
 
     public void setFlowDefinitionArn(String flowDefinitionArn) {
@@ -260,10 +260,10 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the flow definition.
+     * @return The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      */
 
     public String getFlowDefinitionArn() {
@@ -272,11 +272,11 @@ public class HumanLoopSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      * </p>
      * 
      * @param flowDefinitionArn
-     *        The Amazon Resource Name (ARN) of the flow definition.
+     *        The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

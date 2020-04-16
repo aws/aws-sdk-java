@@ -36,6 +36,13 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
     private String adDecisionServerUrl;
     /**
      * <p>
+     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
+     * manifest, or if a viewer joins mid-break.
+     * </p>
+     */
+    private AvailSuppression availSuppression;
+    /**
+     * <p>
      * The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment
      * management.
      * </p>
@@ -150,6 +157,52 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     public PutPlaybackConfigurationRequest withAdDecisionServerUrl(String adDecisionServerUrl) {
         setAdDecisionServerUrl(adDecisionServerUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
+     * manifest, or if a viewer joins mid-break.
+     * </p>
+     * 
+     * @param availSuppression
+     *        The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
+     *        long manifest, or if a viewer joins mid-break.
+     */
+
+    public void setAvailSuppression(AvailSuppression availSuppression) {
+        this.availSuppression = availSuppression;
+    }
+
+    /**
+     * <p>
+     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
+     * manifest, or if a viewer joins mid-break.
+     * </p>
+     * 
+     * @return The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
+     *         long manifest, or if a viewer joins mid-break.
+     */
+
+    public AvailSuppression getAvailSuppression() {
+        return this.availSuppression;
+    }
+
+    /**
+     * <p>
+     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
+     * manifest, or if a viewer joins mid-break.
+     * </p>
+     * 
+     * @param availSuppression
+     *        The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
+     *        long manifest, or if a viewer joins mid-break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationRequest withAvailSuppression(AvailSuppression availSuppression) {
+        setAvailSuppression(availSuppression);
         return this;
     }
 
@@ -597,6 +650,8 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
         sb.append("{");
         if (getAdDecisionServerUrl() != null)
             sb.append("AdDecisionServerUrl: ").append(getAdDecisionServerUrl()).append(",");
+        if (getAvailSuppression() != null)
+            sb.append("AvailSuppression: ").append(getAvailSuppression()).append(",");
         if (getCdnConfiguration() != null)
             sb.append("CdnConfiguration: ").append(getCdnConfiguration()).append(",");
         if (getDashConfiguration() != null)
@@ -632,6 +687,10 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
         if (other.getAdDecisionServerUrl() == null ^ this.getAdDecisionServerUrl() == null)
             return false;
         if (other.getAdDecisionServerUrl() != null && other.getAdDecisionServerUrl().equals(this.getAdDecisionServerUrl()) == false)
+            return false;
+        if (other.getAvailSuppression() == null ^ this.getAvailSuppression() == null)
+            return false;
+        if (other.getAvailSuppression() != null && other.getAvailSuppression().equals(this.getAvailSuppression()) == false)
             return false;
         if (other.getCdnConfiguration() == null ^ this.getCdnConfiguration() == null)
             return false;
@@ -679,6 +738,7 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdDecisionServerUrl() == null) ? 0 : getAdDecisionServerUrl().hashCode());
+        hashCode = prime * hashCode + ((getAvailSuppression() == null) ? 0 : getAvailSuppression().hashCode());
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());

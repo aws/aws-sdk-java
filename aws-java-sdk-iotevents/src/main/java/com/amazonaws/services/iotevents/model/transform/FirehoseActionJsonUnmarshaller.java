@@ -56,6 +56,10 @@ public class FirehoseActionJsonUnmarshaller implements Unmarshaller<FirehoseActi
                     context.nextToken();
                     firehoseAction.setSeparator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("payload", targetDepth)) {
+                    context.nextToken();
+                    firehoseAction.setPayload(PayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

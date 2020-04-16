@@ -29,6 +29,8 @@ public class FileSourceSettingsMarshaller {
 
     private static final MarshallingInfo<String> CONVERT608TO708_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("convert608To708").build();
+    private static final MarshallingInfo<StructuredPojo> FRAMERATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("framerate").build();
     private static final MarshallingInfo<String> SOURCEFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceFile").build();
     private static final MarshallingInfo<Integer> TIMEDELTA_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -51,6 +53,7 @@ public class FileSourceSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(fileSourceSettings.getConvert608To708(), CONVERT608TO708_BINDING);
+            protocolMarshaller.marshall(fileSourceSettings.getFramerate(), FRAMERATE_BINDING);
             protocolMarshaller.marshall(fileSourceSettings.getSourceFile(), SOURCEFILE_BINDING);
             protocolMarshaller.marshall(fileSourceSettings.getTimeDelta(), TIMEDELTA_BINDING);
         } catch (Exception e) {

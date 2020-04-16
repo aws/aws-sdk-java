@@ -29,6 +29,8 @@ public class IotTopicPublishActionMarshaller {
 
     private static final MarshallingInfo<String> MQTTTOPIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("mqttTopic").build();
+    private static final MarshallingInfo<StructuredPojo> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payload").build();
 
     private static final IotTopicPublishActionMarshaller instance = new IotTopicPublishActionMarshaller();
 
@@ -47,6 +49,7 @@ public class IotTopicPublishActionMarshaller {
 
         try {
             protocolMarshaller.marshall(iotTopicPublishAction.getMqttTopic(), MQTTTOPIC_BINDING);
+            protocolMarshaller.marshall(iotTopicPublishAction.getPayload(), PAYLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

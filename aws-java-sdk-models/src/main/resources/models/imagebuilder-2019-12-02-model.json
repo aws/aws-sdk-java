@@ -664,7 +664,7 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"}
       ],
-      "documentation":"<p> Applies a policy to a component. </p>"
+      "documentation":"<p> Applies a policy to a component. We recommend that you call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html\">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared. </p>"
     },
     "PutImagePolicy":{
       "name":"PutImagePolicy",
@@ -684,7 +684,7 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"}
       ],
-      "documentation":"<p> Applies a policy to an image. </p>"
+      "documentation":"<p>Applies a policy to an image. We recommend that you call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html\">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImagePolicy</code>, you must also call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared. </p>"
     },
     "PutImageRecipePolicy":{
       "name":"PutImageRecipePolicy",
@@ -704,7 +704,7 @@
         {"shape":"ForbiddenException"},
         {"shape":"CallRateLimitExceededException"}
       ],
-      "documentation":"<p> Applies a policy to an image recipe. </p>"
+      "documentation":"<p> Applies a policy to an image recipe. We recommend that you call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html\">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>, you must also call the RAM API <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared. </p>"
     },
     "StartImagePipelineExecution":{
       "name":"StartImagePipelineExecution",
@@ -829,19 +829,19 @@
       "members":{
         "region":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The AWS Region of the EC2 AMI. </p>"
+          "documentation":"<p>The AWS Region of the EC2 AMI. </p>"
         },
         "image":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The AMI ID of the EC2 AMI. </p>"
+          "documentation":"<p>The AMI ID of the EC2 AMI. </p>"
         },
         "name":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The name of the EC2 AMI. </p>"
+          "documentation":"<p>The name of the EC2 AMI. </p>"
         },
         "description":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The description of the EC2 AMI. </p>"
+          "documentation":"<p>The description of the EC2 AMI. </p>"
         },
         "state":{"shape":"ImageState"}
       },
@@ -852,15 +852,15 @@
       "members":{
         "name":{
           "shape":"AmiNameString",
-          "documentation":"<p> The name of the distribution configuration. </p>"
+          "documentation":"<p>The name of the distribution configuration. </p>"
         },
         "description":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The description of the distribution configuration. </p>"
+          "documentation":"<p>The description of the distribution configuration. </p>"
         },
         "amiTags":{
           "shape":"TagMap",
-          "documentation":"<p> The tags to apply to AMIs distributed to this Region. </p>"
+          "documentation":"<p>The tags to apply to AMIs distributed to this Region. </p>"
         },
         "launchPermission":{
           "shape":"LaunchPermissionConfiguration",
@@ -1010,7 +1010,7 @@
       "members":{
         "componentArn":{
           "shape":"ComponentVersionArnOrBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component. </p>"
         }
       },
       "documentation":"<p> Configuration details of the component. </p>"
@@ -1282,6 +1282,10 @@
           "shape":"ImageTestsConfiguration",
           "documentation":"<p> The image test configuration of the image pipeline. </p>"
         },
+        "enhancedImageMetadataEnabled":{
+          "shape":"NullableBoolean",
+          "documentation":"<p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. </p>"
+        },
         "schedule":{
           "shape":"Schedule",
           "documentation":"<p> The schedule of the image pipeline. </p>"
@@ -1338,19 +1342,19 @@
         },
         "semanticVersion":{
           "shape":"VersionNumber",
-          "documentation":"<p> The semantic version of the image recipe. </p>"
+          "documentation":"<p>The semantic version of the image recipe. </p>"
         },
         "components":{
           "shape":"ComponentConfigurationList",
-          "documentation":"<p> The components of the image recipe. </p>"
+          "documentation":"<p>The components of the image recipe. </p>"
         },
         "parentImage":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The parent image of the image recipe. </p>"
+          "documentation":"<p>The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder. </p>"
         },
         "blockDeviceMappings":{
           "shape":"InstanceBlockDeviceMappings",
-          "documentation":"<p> The block device mappings of the image recipe. </p>"
+          "documentation":"<p>The block device mappings of the image recipe. </p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -1358,7 +1362,7 @@
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>",
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
           "idempotencyToken":true
         }
       }
@@ -1368,15 +1372,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>"
         },
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that was created by this request. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe that was created by this request. </p>"
         }
       }
     },
@@ -1403,6 +1407,10 @@
         "imageTestsConfiguration":{
           "shape":"ImageTestsConfiguration",
           "documentation":"<p> The image tests configuration of the image. </p>"
+        },
+        "enhancedImageMetadataEnabled":{
+          "shape":"NullableBoolean",
+          "documentation":"<p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. </p>"
         },
         "tags":{
           "shape":"TagMap",
@@ -1442,51 +1450,51 @@
       "members":{
         "name":{
           "shape":"ResourceName",
-          "documentation":"<p> The name of the infrastructure configuration. </p>"
+          "documentation":"<p>The name of the infrastructure configuration. </p>"
         },
         "description":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The description of the infrastructure configuration. </p>"
+          "documentation":"<p>The description of the infrastructure configuration. </p>"
         },
         "instanceTypes":{
           "shape":"InstanceTypeList",
-          "documentation":"<p> The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability. </p>"
+          "documentation":"<p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability. </p>"
         },
         "instanceProfileName":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The instance profile to associate with the instance used to customize your EC2 AMI. </p>"
+          "documentation":"<p>The instance profile to associate with the instance used to customize your EC2 AMI. </p>"
         },
         "securityGroupIds":{
           "shape":"SecurityGroupIds",
-          "documentation":"<p> The security group IDs to associate with the instance used to customize your EC2 AMI. </p>"
+          "documentation":"<p>The security group IDs to associate with the instance used to customize your EC2 AMI. </p>"
         },
         "subnetId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The subnet ID in which to place the instance used to customize your EC2 AMI. </p>"
+          "documentation":"<p>The subnet ID in which to place the instance used to customize your EC2 AMI. </p>"
         },
         "logging":{
           "shape":"Logging",
-          "documentation":"<p> The logging configuration of the infrastructure configuration. </p>"
+          "documentation":"<p>The logging configuration of the infrastructure configuration. </p>"
         },
         "keyPair":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to create your image. </p>"
+          "documentation":"<p>The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to create your image. </p>"
         },
         "terminateInstanceOnFailure":{
           "shape":"NullableBoolean",
-          "documentation":"<p> The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. </p>"
+          "documentation":"<p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. </p>"
         },
         "snsTopicArn":{
           "shape":"SnsTopicArn",
-          "documentation":"<p> The SNS topic on which to send image build events. </p>"
+          "documentation":"<p>The SNS topic on which to send image build events. </p>"
         },
         "tags":{
           "shape":"TagMap",
-          "documentation":"<p> The tags of the infrastructure configuration. </p>"
+          "documentation":"<p>The tags of the infrastructure configuration. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>",
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
           "idempotencyToken":true
         }
       }
@@ -1496,15 +1504,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>"
         },
         "infrastructureConfigurationArn":{
           "shape":"InfrastructureConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request. </p>"
         }
       }
     },
@@ -1515,7 +1523,7 @@
       "members":{
         "componentBuildVersionArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component build version to delete. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component build version to delete. </p>",
           "location":"querystring",
           "locationName":"componentBuildVersionArn"
         }
@@ -1526,11 +1534,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "componentBuildVersionArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component build version that was deleted. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component build version that was deleted. </p>"
         }
       }
     },
@@ -1540,7 +1548,7 @@
       "members":{
         "distributionConfigurationArn":{
           "shape":"DistributionConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the distribution configuration to delete. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the distribution configuration to delete. </p>",
           "location":"querystring",
           "locationName":"distributionConfigurationArn"
         }
@@ -1551,11 +1559,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "distributionConfigurationArn":{
           "shape":"DistributionConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the distribution configuration that was deleted. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted. </p>"
         }
       }
     },
@@ -1565,7 +1573,7 @@
       "members":{
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline to delete. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline to delete. </p>",
           "location":"querystring",
           "locationName":"imagePipelineArn"
         }
@@ -1576,11 +1584,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline that was deleted. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline that was deleted. </p>"
         }
       }
     },
@@ -1590,7 +1598,7 @@
       "members":{
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe to delete. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe to delete. </p>",
           "location":"querystring",
           "locationName":"imageRecipeArn"
         }
@@ -1601,11 +1609,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that was deleted. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe that was deleted. </p>"
         }
       }
     },
@@ -1615,7 +1623,7 @@
       "members":{
         "imageBuildVersionArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image to delete. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image to delete. </p>",
           "location":"querystring",
           "locationName":"imageBuildVersionArn"
         }
@@ -1626,11 +1634,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageBuildVersionArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image that was deleted. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image that was deleted. </p>"
         }
       }
     },
@@ -1640,7 +1648,7 @@
       "members":{
         "infrastructureConfigurationArn":{
           "shape":"InfrastructureConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the infrastructure configuration to delete. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete. </p>",
           "location":"querystring",
           "locationName":"infrastructureConfigurationArn"
         }
@@ -1651,11 +1659,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "infrastructureConfigurationArn":{
           "shape":"InfrastructureConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted. </p>"
         }
       }
     },
@@ -1665,15 +1673,15 @@
       "members":{
         "region":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The target Region. </p>"
+          "documentation":"<p>The target Region. </p>"
         },
         "amiDistributionConfiguration":{
           "shape":"AmiDistributionConfiguration",
-          "documentation":"<p> The specific AMI settings (for example, launch permissions, AMI tags). </p>"
+          "documentation":"<p>The specific AMI settings (for example, launch permissions, AMI tags). </p>"
         },
         "licenseConfigurationArns":{
           "shape":"ArnList",
-          "documentation":"<p> The License Manager Configuration to associate with the AMI in the specified Region.</p>"
+          "documentation":"<p>The License Manager Configuration to associate with the AMI in the specified Region.</p>"
         }
       },
       "documentation":"<p> Defines the settings for a specific Region. </p>"
@@ -1829,14 +1837,14 @@
       "members":{
         "name":{
           "shape":"FilterName",
-          "documentation":"<p> The name of the filter. Filter names are case-sensitive. </p>"
+          "documentation":"<p>The name of the filter. Filter names are case-sensitive. </p>"
         },
         "values":{
           "shape":"FilterValues",
-          "documentation":"<p> The filter values. Filter values are case-sensitive. </p>"
+          "documentation":"<p>The filter values. Filter values are case-sensitive. </p>"
         }
       },
-      "documentation":"<p> A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. </p>"
+      "documentation":"<p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. </p>"
     },
     "FilterList":{
       "type":"list",
@@ -1873,7 +1881,7 @@
       "members":{
         "componentArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component whose policy you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"componentArn"
         }
@@ -1884,11 +1892,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "policy":{
           "shape":"ResourcePolicyDocument",
-          "documentation":"<p> The component policy. </p>"
+          "documentation":"<p>The component policy. </p>"
         }
       }
     },
@@ -1898,7 +1906,7 @@
       "members":{
         "componentBuildVersionArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires \"/\\d+$\" suffix.</p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires \"/\\d+$\" suffix.</p>",
           "location":"querystring",
           "locationName":"componentBuildVersionArn"
         }
@@ -1909,11 +1917,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "component":{
           "shape":"Component",
-          "documentation":"<p> The component object associated with the specified ARN. </p>"
+          "documentation":"<p>The component object associated with the specified ARN. </p>"
         }
       }
     },
@@ -1923,7 +1931,7 @@
       "members":{
         "distributionConfigurationArn":{
           "shape":"DistributionConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"distributionConfigurationArn"
         }
@@ -1934,11 +1942,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "distributionConfiguration":{
           "shape":"DistributionConfiguration",
-          "documentation":"<p> The distribution configuration object. </p>"
+          "documentation":"<p>The distribution configuration object. </p>"
         }
       }
     },
@@ -1948,7 +1956,7 @@
       "members":{
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"imagePipelineArn"
         }
@@ -1959,11 +1967,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imagePipeline":{
           "shape":"ImagePipeline",
-          "documentation":"<p> The image pipeline object. </p>"
+          "documentation":"<p>The image pipeline object. </p>"
         }
       }
     },
@@ -1973,7 +1981,7 @@
       "members":{
         "imageArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image whose policy you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"imageArn"
         }
@@ -1984,11 +1992,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "policy":{
           "shape":"ResourcePolicyDocument",
-          "documentation":"<p> The image policy object. </p>"
+          "documentation":"<p>The image policy object. </p>"
         }
       }
     },
@@ -1998,7 +2006,7 @@
       "members":{
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"imageRecipeArn"
         }
@@ -2009,11 +2017,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "policy":{
           "shape":"ResourcePolicyDocument",
-          "documentation":"<p> The image recipe policy object. </p>"
+          "documentation":"<p>The image recipe policy object. </p>"
         }
       }
     },
@@ -2023,7 +2031,7 @@
       "members":{
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"imageRecipeArn"
         }
@@ -2034,11 +2042,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageRecipe":{
           "shape":"ImageRecipe",
-          "documentation":"<p> The image recipe object. </p>"
+          "documentation":"<p>The image recipe object. </p>"
         }
       }
     },
@@ -2048,7 +2056,7 @@
       "members":{
         "imageBuildVersionArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image that you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image that you want to retrieve. </p>",
           "location":"querystring",
           "locationName":"imageBuildVersionArn"
         }
@@ -2059,11 +2067,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "image":{
           "shape":"Image",
-          "documentation":"<p> The image object. </p>"
+          "documentation":"<p>The image object. </p>"
         }
       }
     },
@@ -2085,11 +2093,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "infrastructureConfiguration":{
           "shape":"InfrastructureConfiguration",
-          "documentation":"<p> The infrastructure configuration object. </p>"
+          "documentation":"<p>The infrastructure configuration object. </p>"
         }
       },
       "documentation":"<p>GetInfrastructureConfiguration response object. </p>"
@@ -2122,6 +2130,14 @@
           "shape":"Platform",
           "documentation":"<p>The platform of the image.</p>"
         },
+        "enhancedImageMetadataEnabled":{
+          "shape":"NullableBoolean",
+          "documentation":"<p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. </p>"
+        },
+        "osVersion":{
+          "shape":"OsVersion",
+          "documentation":"<p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019. </p>"
+        },
         "state":{
           "shape":"ImageState",
           "documentation":"<p>The state of the image.</p>"
@@ -2140,7 +2156,7 @@
         },
         "infrastructureConfiguration":{
           "shape":"InfrastructureConfiguration",
-          "documentation":"<p> The infrastructure used when creating this image.</p>"
+          "documentation":"<p>The infrastructure used when creating this image.</p>"
         },
         "distributionConfiguration":{
           "shape":"DistributionConfiguration",
@@ -2191,6 +2207,10 @@
         "platform":{
           "shape":"Platform",
           "documentation":"<p>The platform of the image pipeline.</p>"
+        },
+        "enhancedImageMetadataEnabled":{
+          "shape":"NullableBoolean",
+          "documentation":"<p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. </p>"
         },
         "imageRecipeArn":{
           "shape":"Arn",
@@ -2344,11 +2364,11 @@
       "members":{
         "status":{
           "shape":"ImageStatus",
-          "documentation":"<p> The status of the image. </p>"
+          "documentation":"<p>The status of the image. </p>"
         },
         "reason":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The reason for the image's status. </p>"
+          "documentation":"<p>The reason for the image's status. </p>"
         }
       },
       "documentation":"<p> Image state shows the image status and the reason for that status. </p>"
@@ -2387,6 +2407,10 @@
         "platform":{
           "shape":"Platform",
           "documentation":"<p>The platform of the image.</p>"
+        },
+        "osVersion":{
+          "shape":"OsVersion",
+          "documentation":"<p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019. </p>"
         },
         "state":{
           "shape":"ImageState",
@@ -2453,6 +2477,10 @@
           "shape":"Platform",
           "documentation":"<p>The platform of the image semantic version.</p>"
         },
+        "osVersion":{
+          "shape":"OsVersion",
+          "documentation":"<p> The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019. </p>"
+        },
         "owner":{
           "shape":"NonEmptyString",
           "documentation":"<p>The owner of the image semantic version.</p>"
@@ -2497,7 +2525,7 @@
         },
         "changeDescription":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component. </p>"
+          "documentation":"<p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component. </p>"
         },
         "type":{
           "shape":"ComponentType",
@@ -2505,11 +2533,11 @@
         },
         "format":{
           "shape":"ComponentFormat",
-          "documentation":"<p> The format of the resource that you want to import as a component. </p>"
+          "documentation":"<p>The format of the resource that you want to import as a component. </p>"
         },
         "platform":{
           "shape":"Platform",
-          "documentation":"<p> The platform of the component. </p>"
+          "documentation":"<p>The platform of the component. </p>"
         },
         "data":{
           "shape":"NonEmptyString",
@@ -2521,15 +2549,15 @@
         },
         "kmsKeyId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The ID of the KMS key that should be used to encrypt this component. </p>"
+          "documentation":"<p>The ID of the KMS key that should be used to encrypt this component. </p>"
         },
         "tags":{
           "shape":"TagMap",
-          "documentation":"<p> The tags of the component. </p>"
+          "documentation":"<p>The tags of the component. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token of the component. </p>",
+          "documentation":"<p>The idempotency token of the component. </p>",
           "idempotencyToken":true
         }
       }
@@ -2539,15 +2567,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>"
         },
         "componentBuildVersionArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the imported component. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the imported component. </p>"
         }
       }
     },
@@ -2746,7 +2774,7 @@
       "members":{
         "userIds":{
           "shape":"AccountList",
-          "documentation":"<p> The AWS account ID. </p>"
+          "documentation":"<p>The AWS account ID. </p>"
         },
         "userGroups":{
           "shape":"StringList",
@@ -2761,16 +2789,16 @@
       "members":{
         "componentVersionArn":{
           "shape":"ComponentVersionArn",
-          "documentation":"<p> The component version Amazon Resource Name (ARN) whose versions you want to list. </p>"
+          "documentation":"<p>The component version Amazon Resource Name (ARN) whose versions you want to list. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -2779,15 +2807,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "componentSummaryList":{
           "shape":"ComponentSummaryList",
-          "documentation":"<p> The list of component summaries for the specified semantic version. </p>"
+          "documentation":"<p>The list of component summaries for the specified semantic version. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -2796,20 +2824,20 @@
       "members":{
         "owner":{
           "shape":"Ownership",
-          "documentation":"<p> The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers. </p>"
+          "documentation":"<p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers. </p>"
         },
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -2818,15 +2846,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "componentVersionList":{
           "shape":"ComponentVersionList",
-          "documentation":"<p> The list of component semantic versions. </p>"
+          "documentation":"<p>The list of component semantic versions. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -2835,16 +2863,16 @@
       "members":{
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -2853,15 +2881,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "distributionConfigurationSummaryList":{
           "shape":"DistributionConfigurationSummaryList",
-          "documentation":"<p> The list of distributions. </p>"
+          "documentation":"<p>The list of distributions. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -2871,20 +2899,20 @@
       "members":{
         "imageVersionArn":{
           "shape":"ImageVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve. </p>"
         },
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -2893,15 +2921,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageSummaryList":{
           "shape":"ImageSummaryList",
-          "documentation":"<p> The list of image build versions. </p>"
+          "documentation":"<p>The list of image build versions. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -2911,20 +2939,20 @@
       "members":{
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline whose images you want to view. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view. </p>"
         },
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -2933,15 +2961,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageSummaryList":{
           "shape":"ImageSummaryList",
-          "documentation":"<p> The list of images built by this pipeline. </p>"
+          "documentation":"<p>The list of images built by this pipeline. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -2950,16 +2978,16 @@
       "members":{
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -2968,15 +2996,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imagePipelineList":{
           "shape":"ImagePipelineList",
-          "documentation":"<p> The list of image pipelines. </p>"
+          "documentation":"<p>The list of image pipelines. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -2985,20 +3013,20 @@
       "members":{
         "owner":{
           "shape":"Ownership",
-          "documentation":"<p> The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers. </p>"
+          "documentation":"<p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers. </p>"
         },
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -3007,15 +3035,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageRecipeSummaryList":{
           "shape":"ImageRecipeSummaryList",
-          "documentation":"<p> The list of image pipelines. </p>"
+          "documentation":"<p>The list of image pipelines. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -3024,20 +3052,20 @@
       "members":{
         "owner":{
           "shape":"Ownership",
-          "documentation":"<p> The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers. </p>"
+          "documentation":"<p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers. </p>"
         },
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -3046,15 +3074,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageVersionList":{
           "shape":"ImageVersionList",
-          "documentation":"<p> The list of image semantic versions. </p>"
+          "documentation":"<p>The list of image semantic versions. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects. </p>"
         }
       }
     },
@@ -3063,16 +3091,16 @@
       "members":{
         "filters":{
           "shape":"FilterList",
-          "documentation":"<p> The filters. </p>"
+          "documentation":"<p>The filters. </p>"
         },
         "maxResults":{
           "shape":"RestrictedInteger",
-          "documentation":"<p> The maximum items to return in a request. </p>",
+          "documentation":"<p>The maximum items to return in a request. </p>",
           "box":true
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
+          "documentation":"<p>A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>"
         }
       }
     },
@@ -3081,15 +3109,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "infrastructureConfigurationSummaryList":{
           "shape":"InfrastructureConfigurationSummaryList",
-          "documentation":"<p> The list of infrastructure configurations. </p>"
+          "documentation":"<p>The list of infrastructure configurations. </p>"
         },
         "nextToken":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>"
+          "documentation":"<p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>"
         }
       }
     },
@@ -3099,7 +3127,7 @@
       "members":{
         "resourceArn":{
           "shape":"ImageBuilderArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve. </p>",
           "location":"uri",
           "locationName":"resourceArn"
         }
@@ -3110,7 +3138,7 @@
       "members":{
         "tags":{
           "shape":"TagMap",
-          "documentation":"<p> The tags for the specified resource. </p>"
+          "documentation":"<p>The tags for the specified resource. </p>"
         }
       }
     },
@@ -3130,6 +3158,10 @@
       "min":1
     },
     "NullableBoolean":{"type":"boolean"},
+    "OsVersion":{
+      "type":"string",
+      "min":1
+    },
     "OutputResources":{
       "type":"structure",
       "members":{
@@ -3178,11 +3210,11 @@
       "members":{
         "componentArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component that this policy should be applied to. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component that this policy should be applied to. </p>"
         },
         "policy":{
           "shape":"ResourcePolicyDocument",
-          "documentation":"<p> The policy to apply. </p>"
+          "documentation":"<p>The policy to apply. </p>"
         }
       }
     },
@@ -3191,11 +3223,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "componentArn":{
           "shape":"ComponentBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the component that this policy was applied to. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the component that this policy was applied to. </p>"
         }
       }
     },
@@ -3208,11 +3240,11 @@
       "members":{
         "imageArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image that this policy should be applied to. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image that this policy should be applied to. </p>"
         },
         "policy":{
           "shape":"ResourcePolicyDocument",
-          "documentation":"<p> The policy to apply. </p>"
+          "documentation":"<p>The policy to apply. </p>"
         }
       }
     },
@@ -3221,11 +3253,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image that this policy was applied to. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image that this policy was applied to. </p>"
         }
       }
     },
@@ -3238,11 +3270,11 @@
       "members":{
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to. </p>"
         },
         "policy":{
           "shape":"ResourcePolicyDocument",
-          "documentation":"<p> The policy to apply. </p>"
+          "documentation":"<p>The policy to apply. </p>"
         }
       }
     },
@@ -3251,11 +3283,11 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that this policy was applied to. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to. </p>"
         }
       }
     },
@@ -3328,14 +3360,14 @@
       "members":{
         "scheduleExpression":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>"
+          "documentation":"<p>The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>"
         },
         "pipelineExecutionStartCondition":{
           "shape":"PipelineExecutionStartCondition",
-          "documentation":"<p> The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time.</p>"
+          "documentation":"<p>The condition configures when the pipeline should trigger a new image build. When the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current time.</p>"
         }
       },
-      "documentation":"<p> A schedule configures how often and when a pipeline will automatically create a new image. </p>"
+      "documentation":"<p>A schedule configures how often and when a pipeline will automatically create a new image. </p>"
     },
     "SecurityGroupIds":{
       "type":"list",
@@ -3372,11 +3404,11 @@
       "members":{
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>",
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
           "idempotencyToken":true
         }
       }
@@ -3386,15 +3418,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent.</p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent.</p>"
         },
         "imageBuildVersionArn":{
           "shape":"ImageBuildVersionArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image that was created by this request.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>"
         }
       }
     },
@@ -3430,13 +3462,13 @@
       "members":{
         "resourceArn":{
           "shape":"ImageBuilderArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the resource that you want to tag. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource that you want to tag. </p>",
           "location":"uri",
           "locationName":"resourceArn"
         },
         "tags":{
           "shape":"TagMap",
-          "documentation":"<p> The tags to apply to the resource. </p>"
+          "documentation":"<p>The tags to apply to the resource. </p>"
         }
       }
     },
@@ -3458,13 +3490,13 @@
       "members":{
         "resourceArn":{
           "shape":"ImageBuilderArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the resource that you want to untag. </p>",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource that you want to untag. </p>",
           "location":"uri",
           "locationName":"resourceArn"
         },
         "tagKeys":{
           "shape":"TagKeyList",
-          "documentation":"<p> The tag keys to remove from the resource. </p>",
+          "documentation":"<p>The tag keys to remove from the resource. </p>",
           "location":"querystring",
           "locationName":"tagKeys"
         }
@@ -3485,19 +3517,19 @@
       "members":{
         "distributionConfigurationArn":{
           "shape":"DistributionConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the distribution configuration that you want to update. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update. </p>"
         },
         "description":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The description of the distribution configuration. </p>"
+          "documentation":"<p>The description of the distribution configuration. </p>"
         },
         "distributions":{
           "shape":"DistributionList",
-          "documentation":"<p> The distributions of the distribution configuration. </p>"
+          "documentation":"<p>The distributions of the distribution configuration. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token of the distribution configuration. </p>",
+          "documentation":"<p>The idempotency token of the distribution configuration. </p>",
           "idempotencyToken":true
         }
       }
@@ -3507,15 +3539,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>"
         },
         "distributionConfigurationArn":{
           "shape":"DistributionConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request. </p>"
         }
       }
     },
@@ -3530,39 +3562,43 @@
       "members":{
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline that you want to update. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline that you want to update. </p>"
         },
         "description":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The description of the image pipeline. </p>"
+          "documentation":"<p>The description of the image pipeline. </p>"
         },
         "imageRecipeArn":{
           "shape":"ImageRecipeArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline. </p>"
         },
         "infrastructureConfigurationArn":{
           "shape":"InfrastructureConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline. </p>"
         },
         "distributionConfigurationArn":{
           "shape":"DistributionConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline. </p>"
         },
         "imageTestsConfiguration":{
           "shape":"ImageTestsConfiguration",
-          "documentation":"<p> The image test configuration of the image pipeline. </p>"
+          "documentation":"<p>The image test configuration of the image pipeline. </p>"
+        },
+        "enhancedImageMetadataEnabled":{
+          "shape":"NullableBoolean",
+          "documentation":"<p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default. </p>"
         },
         "schedule":{
           "shape":"Schedule",
-          "documentation":"<p> The schedule of the image pipeline. </p>"
+          "documentation":"<p>The schedule of the image pipeline. </p>"
         },
         "status":{
           "shape":"PipelineStatus",
-          "documentation":"<p> The status of the image pipeline. </p>"
+          "documentation":"<p>The status of the image pipeline. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>",
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
           "idempotencyToken":true
         }
       }
@@ -3572,15 +3608,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>"
         },
         "imagePipelineArn":{
           "shape":"ImagePipelineArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the image pipeline that was updated by this request. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request. </p>"
         }
       }
     },
@@ -3594,47 +3630,47 @@
       "members":{
         "infrastructureConfigurationArn":{
           "shape":"InfrastructureConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update. </p>"
         },
         "description":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The description of the infrastructure configuration. </p>"
+          "documentation":"<p>The description of the infrastructure configuration. </p>"
         },
         "instanceTypes":{
           "shape":"InstanceTypeList",
-          "documentation":"<p> The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability. </p>"
+          "documentation":"<p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability. </p>"
         },
         "instanceProfileName":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The instance profile to associate with the instance used to customize your EC2 AMI. </p>"
+          "documentation":"<p>The instance profile to associate with the instance used to customize your EC2 AMI. </p>"
         },
         "securityGroupIds":{
           "shape":"SecurityGroupIds",
-          "documentation":"<p> The security group IDs to associate with the instance used to customize your EC2 AMI. </p>"
+          "documentation":"<p>The security group IDs to associate with the instance used to customize your EC2 AMI. </p>"
         },
         "subnetId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The subnet ID to place the instance used to customize your EC2 AMI in. </p>"
+          "documentation":"<p>The subnet ID to place the instance used to customize your EC2 AMI in. </p>"
         },
         "logging":{
           "shape":"Logging",
-          "documentation":"<p> The logging configuration of the infrastructure configuration. </p>"
+          "documentation":"<p>The logging configuration of the infrastructure configuration. </p>"
         },
         "keyPair":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to create your image. </p>"
+          "documentation":"<p>The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to create your image. </p>"
         },
         "terminateInstanceOnFailure":{
           "shape":"NullableBoolean",
-          "documentation":"<p> The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. </p>"
+          "documentation":"<p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. </p>"
         },
         "snsTopicArn":{
           "shape":"SnsTopicArn",
-          "documentation":"<p> The SNS topic on which to send image build events. </p>"
+          "documentation":"<p>The SNS topic on which to send image build events. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>",
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>",
           "idempotencyToken":true
         }
       }
@@ -3644,15 +3680,15 @@
       "members":{
         "requestId":{
           "shape":"NonEmptyString",
-          "documentation":"<p> The request ID that uniquely identifies this request. </p>"
+          "documentation":"<p>The request ID that uniquely identifies this request. </p>"
         },
         "clientToken":{
           "shape":"ClientToken",
-          "documentation":"<p> The idempotency token used to make this request idempotent. </p>"
+          "documentation":"<p>The idempotency token used to make this request idempotent. </p>"
         },
         "infrastructureConfigurationArn":{
           "shape":"InfrastructureConfigurationArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request. </p>"
         }
       }
     },

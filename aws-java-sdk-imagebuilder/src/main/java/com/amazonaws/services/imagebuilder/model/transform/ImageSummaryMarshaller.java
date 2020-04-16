@@ -37,6 +37,8 @@ public class ImageSummaryMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("platform").build();
+    private static final MarshallingInfo<String> OSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("osVersion").build();
     private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("state").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class ImageSummaryMarshaller {
             protocolMarshaller.marshall(imageSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(imageSummary.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(imageSummary.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(imageSummary.getOsVersion(), OSVERSION_BINDING);
             protocolMarshaller.marshall(imageSummary.getState(), STATE_BINDING);
             protocolMarshaller.marshall(imageSummary.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(imageSummary.getDateCreated(), DATECREATED_BINDING);

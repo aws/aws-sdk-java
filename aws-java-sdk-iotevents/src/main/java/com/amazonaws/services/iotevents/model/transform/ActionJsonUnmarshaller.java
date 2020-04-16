@@ -88,6 +88,14 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setFirehose(FirehoseActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("dynamoDB", targetDepth)) {
+                    context.nextToken();
+                    action.setDynamoDB(DynamoDBActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dynamoDBv2", targetDepth)) {
+                    context.nextToken();
+                    action.setDynamoDBv2(DynamoDBv2ActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -49,24 +49,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      * <ul>
      * <li>
      * <p>
-     * <code>database</code> - Export all the data of the snapshot.
+     * <code>database</code> - Export all the data from a specified database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.table [table-name]</code> - Export a table of the snapshot.
+     * <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS
+     * for MySQL, RDS for MariaDB, and Aurora MySQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't valid for
-     * RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid
+     * only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't valid
-     * for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -240,24 +241,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      * <ul>
      * <li>
      * <p>
-     * <code>database</code> - Export all the data of the snapshot.
+     * <code>database</code> - Export all the data from a specified database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.table [table-name]</code> - Export a table of the snapshot.
+     * <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS
+     * for MySQL, RDS for MariaDB, and Aurora MySQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't valid for
-     * RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid
+     * only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't valid
-     * for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -266,24 +268,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>database</code> - Export all the data of the snapshot.
+     *         <code>database</code> - Export all the data from a specified database.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>database.table [table-name]</code> - Export a table of the snapshot.
+     *         <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only
+     *         for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't
-     *         valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *         <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format
+     *         is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't
-     *         valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *         <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format
+     *         is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *         </p>
      *         </li>
      */
@@ -302,24 +305,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      * <ul>
      * <li>
      * <p>
-     * <code>database</code> - Export all the data of the snapshot.
+     * <code>database</code> - Export all the data from a specified database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.table [table-name]</code> - Export a table of the snapshot.
+     * <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS
+     * for MySQL, RDS for MariaDB, and Aurora MySQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't valid for
-     * RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid
+     * only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't valid
-     * for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -329,24 +333,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>database</code> - Export all the data of the snapshot.
+     *        <code>database</code> - Export all the data from a specified database.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.table [table-name]</code> - Export a table of the snapshot.
+     *        <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only
+     *        for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't
-     *        valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *        <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     *        valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't
-     *        valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *        <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format
+     *        is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      */
@@ -367,24 +372,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      * <ul>
      * <li>
      * <p>
-     * <code>database</code> - Export all the data of the snapshot.
+     * <code>database</code> - Export all the data from a specified database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.table [table-name]</code> - Export a table of the snapshot.
+     * <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS
+     * for MySQL, RDS for MariaDB, and Aurora MySQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't valid for
-     * RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid
+     * only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't valid
-     * for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -399,24 +405,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>database</code> - Export all the data of the snapshot.
+     *        <code>database</code> - Export all the data from a specified database.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.table [table-name]</code> - Export a table of the snapshot.
+     *        <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only
+     *        for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't
-     *        valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *        <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     *        valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't
-     *        valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *        <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format
+     *        is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -439,24 +446,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      * <ul>
      * <li>
      * <p>
-     * <code>database</code> - Export all the data of the snapshot.
+     * <code>database</code> - Export all the data from a specified database.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.table [table-name]</code> - Export a table of the snapshot.
+     * <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS
+     * for MySQL, RDS for MariaDB, and Aurora MySQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't valid for
-     * RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid
+     * only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't valid
-     * for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     * <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is
+     * valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -466,24 +474,25 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>database</code> - Export all the data of the snapshot.
+     *        <code>database</code> - Export all the data from a specified database.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.table [table-name]</code> - Export a table of the snapshot.
+     *        <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only
+     *        for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.schema [schema-name]</code> - Export a database schema of the snapshot. This value isn't
-     *        valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *        <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is
+     *        valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>database.schema.table [table-name]</code> - Export a table of the database schema. This value isn't
-     *        valid for RDS for MySQL, RDS for MariaDB, or Aurora MySQL.
+     *        <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format
+     *        is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

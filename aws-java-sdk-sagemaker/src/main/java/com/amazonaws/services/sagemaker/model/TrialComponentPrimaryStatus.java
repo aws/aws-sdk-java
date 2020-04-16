@@ -22,7 +22,9 @@ public enum TrialComponentPrimaryStatus {
 
     InProgress("InProgress"),
     Completed("Completed"),
-    Failed("Failed");
+    Failed("Failed"),
+    Stopping("Stopping"),
+    Stopped("Stopped");
 
     private String value;
 

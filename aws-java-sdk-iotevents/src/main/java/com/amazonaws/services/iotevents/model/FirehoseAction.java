@@ -42,6 +42,12 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String separator;
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.
+     * </p>
+     */
+    private Payload payload;
 
     /**
      * <p>
@@ -130,6 +136,49 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery
+     *        stream.
+     */
+
+    public void setPayload(Payload payload) {
+        this.payload = payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.
+     * </p>
+     * 
+     * @return You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery
+     *         stream.
+     */
+
+    public Payload getPayload() {
+        return this.payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery stream.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery
+     *        stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FirehoseAction withPayload(Payload payload) {
+        setPayload(payload);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -144,7 +193,9 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
         if (getDeliveryStreamName() != null)
             sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getSeparator() != null)
-            sb.append("Separator: ").append(getSeparator());
+            sb.append("Separator: ").append(getSeparator()).append(",");
+        if (getPayload() != null)
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }
@@ -167,6 +218,10 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSeparator() != null && other.getSeparator().equals(this.getSeparator()) == false)
             return false;
+        if (other.getPayload() == null ^ this.getPayload() == null)
+            return false;
+        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
+            return false;
         return true;
     }
 
@@ -177,6 +232,7 @@ public class FirehoseAction implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
         hashCode = prime * hashCode + ((getSeparator() == null) ? 0 : getSeparator().hashCode());
+        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         return hashCode;
     }
 

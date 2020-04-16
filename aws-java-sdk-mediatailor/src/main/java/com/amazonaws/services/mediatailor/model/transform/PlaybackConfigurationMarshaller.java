@@ -31,6 +31,8 @@ public class PlaybackConfigurationMarshaller {
 
     private static final MarshallingInfo<String> ADDECISIONSERVERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdDecisionServerUrl").build();
+    private static final MarshallingInfo<StructuredPojo> AVAILSUPPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailSuppression").build();
     private static final MarshallingInfo<StructuredPojo> CDNCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdnConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> DASHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -73,6 +75,7 @@ public class PlaybackConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(playbackConfiguration.getAdDecisionServerUrl(), ADDECISIONSERVERURL_BINDING);
+            protocolMarshaller.marshall(playbackConfiguration.getAvailSuppression(), AVAILSUPPRESSION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getCdnConfiguration(), CDNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getHlsConfiguration(), HLSCONFIGURATION_BINDING);

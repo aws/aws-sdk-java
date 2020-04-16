@@ -64,6 +64,14 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                     context.nextToken();
                     image.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("enhancedImageMetadataEnabled", targetDepth)) {
+                    context.nextToken();
+                    image.setEnhancedImageMetadataEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("osVersion", targetDepth)) {
+                    context.nextToken();
+                    image.setOsVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
                     image.setState(ImageStateJsonUnmarshaller.getInstance().unmarshall(context));

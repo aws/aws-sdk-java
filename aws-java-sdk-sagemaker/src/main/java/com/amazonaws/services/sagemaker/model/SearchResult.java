@@ -25,7 +25,7 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * A list of <code>SearchResult</code> objects.
+     * A list of <code>SearchRecord</code> objects.
      * </p>
      */
     private java.util.List<SearchRecord> results;
@@ -39,10 +39,10 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * A list of <code>SearchResult</code> objects.
+     * A list of <code>SearchRecord</code> objects.
      * </p>
      * 
-     * @return A list of <code>SearchResult</code> objects.
+     * @return A list of <code>SearchRecord</code> objects.
      */
 
     public java.util.List<SearchRecord> getResults() {
@@ -51,11 +51,11 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * A list of <code>SearchResult</code> objects.
+     * A list of <code>SearchRecord</code> objects.
      * </p>
      * 
      * @param results
-     *        A list of <code>SearchResult</code> objects.
+     *        A list of <code>SearchRecord</code> objects.
      */
 
     public void setResults(java.util.Collection<SearchRecord> results) {
@@ -69,7 +69,7 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * A list of <code>SearchResult</code> objects.
+     * A list of <code>SearchRecord</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param results
-     *        A list of <code>SearchResult</code> objects.
+     *        A list of <code>SearchRecord</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * A list of <code>SearchResult</code> objects.
+     * A list of <code>SearchRecord</code> objects.
      * </p>
      * 
      * @param results
-     *        A list of <code>SearchResult</code> objects.
+     *        A list of <code>SearchRecord</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,6 +37,10 @@ public class ImageMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("platform").build();
+    private static final MarshallingInfo<Boolean> ENHANCEDIMAGEMETADATAENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedImageMetadataEnabled").build();
+    private static final MarshallingInfo<String> OSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("osVersion").build();
     private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("state").build();
     private static final MarshallingInfo<StructuredPojo> IMAGERECIPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -78,6 +82,8 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getName(), NAME_BINDING);
             protocolMarshaller.marshall(image.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(image.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(image.getEnhancedImageMetadataEnabled(), ENHANCEDIMAGEMETADATAENABLED_BINDING);
+            protocolMarshaller.marshall(image.getOsVersion(), OSVERSION_BINDING);
             protocolMarshaller.marshall(image.getState(), STATE_BINDING);
             protocolMarshaller.marshall(image.getImageRecipe(), IMAGERECIPE_BINDING);
             protocolMarshaller.marshall(image.getSourcePipelineName(), SOURCEPIPELINENAME_BINDING);

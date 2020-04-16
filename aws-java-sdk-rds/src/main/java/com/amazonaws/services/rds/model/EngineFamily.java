@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EngineFamily {
 
-    MYSQL("MYSQL");
+    MYSQL("MYSQL"),
+    POSTGRESQL("POSTGRESQL");
 
     private String value;
 

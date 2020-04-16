@@ -33,19 +33,20 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
     private String humanLoopName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      * </p>
      */
     private String flowDefinitionArn;
     /**
      * <p>
-     * An object containing information about the human loop.
+     * An object that contains information about the human loop.
      * </p>
      */
     private HumanLoopInput humanLoopInput;
     /**
      * <p>
-     * Attributes of the data specified by the customer.
+     * Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally
+     * identifiable information and/or free of adult content.
      * </p>
      */
     private HumanLoopDataAttributes dataAttributes;
@@ -92,11 +93,11 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      * </p>
      * 
      * @param flowDefinitionArn
-     *        The Amazon Resource Name (ARN) of the flow definition.
+     *        The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      */
 
     public void setFlowDefinitionArn(String flowDefinitionArn) {
@@ -105,10 +106,10 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the flow definition.
+     * @return The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      */
 
     public String getFlowDefinitionArn() {
@@ -117,11 +118,11 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the flow definition.
+     * The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      * </p>
      * 
      * @param flowDefinitionArn
-     *        The Amazon Resource Name (ARN) of the flow definition.
+     *        The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +133,11 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object containing information about the human loop.
+     * An object that contains information about the human loop.
      * </p>
      * 
      * @param humanLoopInput
-     *        An object containing information about the human loop.
+     *        An object that contains information about the human loop.
      */
 
     public void setHumanLoopInput(HumanLoopInput humanLoopInput) {
@@ -145,10 +146,10 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object containing information about the human loop.
+     * An object that contains information about the human loop.
      * </p>
      * 
-     * @return An object containing information about the human loop.
+     * @return An object that contains information about the human loop.
      */
 
     public HumanLoopInput getHumanLoopInput() {
@@ -157,11 +158,11 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An object containing information about the human loop.
+     * An object that contains information about the human loop.
      * </p>
      * 
      * @param humanLoopInput
-     *        An object containing information about the human loop.
+     *        An object that contains information about the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +173,13 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Attributes of the data specified by the customer.
+     * Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally
+     * identifiable information and/or free of adult content.
      * </p>
      * 
      * @param dataAttributes
-     *        Attributes of the data specified by the customer.
+     *        Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of
+     *        personally identifiable information and/or free of adult content.
      */
 
     public void setDataAttributes(HumanLoopDataAttributes dataAttributes) {
@@ -185,10 +188,12 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Attributes of the data specified by the customer.
+     * Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally
+     * identifiable information and/or free of adult content.
      * </p>
      * 
-     * @return Attributes of the data specified by the customer.
+     * @return Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of
+     *         personally identifiable information and/or free of adult content.
      */
 
     public HumanLoopDataAttributes getDataAttributes() {
@@ -197,11 +202,13 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Attributes of the data specified by the customer.
+     * Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally
+     * identifiable information and/or free of adult content.
      * </p>
      * 
      * @param dataAttributes
-     *        Attributes of the data specified by the customer.
+     *        Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of
+     *        personally identifiable information and/or free of adult content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

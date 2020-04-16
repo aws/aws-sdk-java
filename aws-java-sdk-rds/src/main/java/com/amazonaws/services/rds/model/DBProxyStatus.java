@@ -25,7 +25,10 @@ public enum DBProxyStatus {
     IncompatibleNetwork("incompatible-network"),
     InsufficientResourceLimits("insufficient-resource-limits"),
     Creating("creating"),
-    Deleting("deleting");
+    Deleting("deleting"),
+    Suspended("suspended"),
+    Suspending("suspending"),
+    Reactivating("reactivating");
 
     private String value;
 

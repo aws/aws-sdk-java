@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your request could not be processed.
+ * We couldn't process your request because of an issue with the server. Try again later.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

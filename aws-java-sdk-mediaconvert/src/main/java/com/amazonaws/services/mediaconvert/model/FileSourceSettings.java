@@ -34,6 +34,14 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
      */
     private String convert608To708;
     /**
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
+     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
+     * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
+     * 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     */
+    private CaptionSourceFramerate framerate;
+    /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
      * 'srt', 'xml', and 'smi'.
      */
@@ -109,6 +117,64 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     public FileSourceSettings withConvert608To708(FileSourceConvert608To708 convert608To708) {
         this.convert608To708 = convert608To708.toString();
+        return this;
+    }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
+     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
+     * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
+     * 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     * 
+     * @param framerate
+     *        Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
+     *        framerates between your input captions and input video, specify the framerate of the captions file.
+     *        Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and
+     *        Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for
+     *        25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     */
+
+    public void setFramerate(CaptionSourceFramerate framerate) {
+        this.framerate = framerate;
+    }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
+     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
+     * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
+     * 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     * 
+     * @return Ignore this setting unless your input captions format is SCC. To have the service compensate for
+     *         differing framerates between your input captions and input video, specify the framerate of the captions
+     *         file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and
+     *         Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1
+     *         for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     */
+
+    public CaptionSourceFramerate getFramerate() {
+        return this.framerate;
+    }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
+     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
+     * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
+     * 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     * 
+     * @param framerate
+     *        Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
+     *        framerates between your input captions and input video, specify the framerate of the captions file.
+     *        Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and
+     *        Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for
+     *        25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSourceSettings withFramerate(CaptionSourceFramerate framerate) {
+        setFramerate(framerate);
         return this;
     }
 
@@ -200,6 +266,8 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getConvert608To708() != null)
             sb.append("Convert608To708: ").append(getConvert608To708()).append(",");
+        if (getFramerate() != null)
+            sb.append("Framerate: ").append(getFramerate()).append(",");
         if (getSourceFile() != null)
             sb.append("SourceFile: ").append(getSourceFile()).append(",");
         if (getTimeDelta() != null)
@@ -222,6 +290,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getConvert608To708() != null && other.getConvert608To708().equals(this.getConvert608To708()) == false)
             return false;
+        if (other.getFramerate() == null ^ this.getFramerate() == null)
+            return false;
+        if (other.getFramerate() != null && other.getFramerate().equals(this.getFramerate()) == false)
+            return false;
         if (other.getSourceFile() == null ^ this.getSourceFile() == null)
             return false;
         if (other.getSourceFile() != null && other.getSourceFile().equals(this.getSourceFile()) == false)
@@ -239,6 +311,7 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConvert608To708() == null) ? 0 : getConvert608To708().hashCode());
+        hashCode = prime * hashCode + ((getFramerate() == null) ? 0 : getFramerate().hashCode());
         hashCode = prime * hashCode + ((getSourceFile() == null) ? 0 : getSourceFile().hashCode());
         hashCode = prime * hashCode + ((getTimeDelta() == null) ? 0 : getTimeDelta().hashCode());
         return hashCode;

@@ -31,26 +31,27 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date creationTime;
     /**
      * <p>
-     * The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     * The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * A failure code denoting a specific type of failure.
+     * A failure code that identifies the type of failure.
      * </p>
      */
     private String failureCode;
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      */
     private String humanLoopStatus;
     /**
      * <p>
-     * The name of the human loop.
+     * The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up
+     * to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      * </p>
      */
     private String humanLoopName;
@@ -68,7 +69,7 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
     private String flowDefinitionArn;
     /**
      * <p>
-     * An object containing information about the output of the human loop.
+     * An object that contains information about the output of the human loop.
      * </p>
      */
     private HumanLoopOutput humanLoopOutput;
@@ -115,12 +116,12 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     * The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      * 
      * @param failureReason
-     *        The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     *        The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      *        <code>Failed</code>.
      */
 
@@ -130,11 +131,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     * The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      * 
-     * @return The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     * @return The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      *         <code>Failed</code>.
      */
 
@@ -144,12 +145,12 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     * The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      * <code>Failed</code>.
      * </p>
      * 
      * @param failureReason
-     *        The reason why a human loop has failed. The failure reason is returned when the human loop status is
+     *        The reason why a human loop failed. The failure reason is returned when the status of the human loop is
      *        <code>Failed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -161,11 +162,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A failure code denoting a specific type of failure.
+     * A failure code that identifies the type of failure.
      * </p>
      * 
      * @param failureCode
-     *        A failure code denoting a specific type of failure.
+     *        A failure code that identifies the type of failure.
      */
 
     public void setFailureCode(String failureCode) {
@@ -174,10 +175,10 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A failure code denoting a specific type of failure.
+     * A failure code that identifies the type of failure.
      * </p>
      * 
-     * @return A failure code denoting a specific type of failure.
+     * @return A failure code that identifies the type of failure.
      */
 
     public String getFailureCode() {
@@ -186,11 +187,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A failure code denoting a specific type of failure.
+     * A failure code that identifies the type of failure.
      * </p>
      * 
      * @param failureCode
-     *        A failure code denoting a specific type of failure.
+     *        A failure code that identifies the type of failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +202,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
      * @param humanLoopStatus
-     *        The status of the human loop. Valid values:
+     *        The status of the human loop.
      * @see HumanLoopStatus
      */
 
@@ -215,10 +216,10 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
-     * @return The status of the human loop. Valid values:
+     * @return The status of the human loop.
      * @see HumanLoopStatus
      */
 
@@ -228,11 +229,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
      * @param humanLoopStatus
-     *        The status of the human loop. Valid values:
+     *        The status of the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HumanLoopStatus
      */
@@ -244,11 +245,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of the human loop. Valid values:
+     * The status of the human loop.
      * </p>
      * 
      * @param humanLoopStatus
-     *        The status of the human loop. Valid values:
+     *        The status of the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HumanLoopStatus
      */
@@ -260,11 +261,13 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the human loop.
+     * The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up
+     * to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      * </p>
      * 
      * @param humanLoopName
-     *        The name of the human loop.
+     *        The name of the human loop. The name must be lowercase, unique within the Region in your account, and can
+     *        have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      */
 
     public void setHumanLoopName(String humanLoopName) {
@@ -273,10 +276,12 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the human loop.
+     * The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up
+     * to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      * </p>
      * 
-     * @return The name of the human loop.
+     * @return The name of the human loop. The name must be lowercase, unique within the Region in your account, and can
+     *         have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      */
 
     public String getHumanLoopName() {
@@ -285,11 +290,13 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the human loop.
+     * The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up
+     * to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      * </p>
      * 
      * @param humanLoopName
-     *        The name of the human loop.
+     *        The name of the human loop. The name must be lowercase, unique within the Region in your account, and can
+     *        have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,11 +387,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about the output of the human loop.
+     * An object that contains information about the output of the human loop.
      * </p>
      * 
      * @param humanLoopOutput
-     *        An object containing information about the output of the human loop.
+     *        An object that contains information about the output of the human loop.
      */
 
     public void setHumanLoopOutput(HumanLoopOutput humanLoopOutput) {
@@ -393,10 +400,10 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about the output of the human loop.
+     * An object that contains information about the output of the human loop.
      * </p>
      * 
-     * @return An object containing information about the output of the human loop.
+     * @return An object that contains information about the output of the human loop.
      */
 
     public HumanLoopOutput getHumanLoopOutput() {
@@ -405,11 +412,11 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about the output of the human loop.
+     * An object that contains information about the output of the human loop.
      * </p>
      * 
      * @param humanLoopOutput
-     *        An object containing information about the output of the human loop.
+     *        An object that contains information about the output of the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

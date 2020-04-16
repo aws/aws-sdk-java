@@ -31,6 +31,8 @@ public class SqsActionMarshaller {
             .marshallLocationName("queueUrl").build();
     private static final MarshallingInfo<Boolean> USEBASE64_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useBase64").build();
+    private static final MarshallingInfo<StructuredPojo> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payload").build();
 
     private static final SqsActionMarshaller instance = new SqsActionMarshaller();
 
@@ -50,6 +52,7 @@ public class SqsActionMarshaller {
         try {
             protocolMarshaller.marshall(sqsAction.getQueueUrl(), QUEUEURL_BINDING);
             protocolMarshaller.marshall(sqsAction.getUseBase64(), USEBASE64_BINDING);
+            protocolMarshaller.marshall(sqsAction.getPayload(), PAYLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

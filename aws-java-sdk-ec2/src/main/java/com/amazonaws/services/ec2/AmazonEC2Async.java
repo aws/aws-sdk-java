@@ -6912,11 +6912,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event
      * notifications for resources in the Region.
      * </p>
-     * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
-     * >Customizing Scheduled Event Notifications</a>.
-     * </p>
      * 
      * @param deregisterInstanceEventNotificationAttributesRequest
      * @return A Java Future containing the result of the DeregisterInstanceEventNotificationAttributes operation
@@ -6933,11 +6928,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event
      * notifications for resources in the Region.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
-     * >Customizing Scheduled Event Notifications</a>.
      * </p>
      * 
      * @param deregisterInstanceEventNotificationAttributesRequest
@@ -17433,10 +17423,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Registers a set of tag keys to include in scheduled event notifications for your resources. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
-     * >Customizing Scheduled Event Notifications</a>.
+     * Registers a set of tag keys to include in scheduled event notifications for your resources.
      * </p>
      * <p>
      * To remove tags, use .
@@ -17454,10 +17441,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Registers a set of tag keys to include in scheduled event notifications for your resources. For more information,
-     * see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications"
-     * >Customizing Scheduled Event Notifications</a>.
+     * Registers a set of tag keys to include in scheduled event notifications for your resources.
      * </p>
      * <p>
      * To remove tags, use .

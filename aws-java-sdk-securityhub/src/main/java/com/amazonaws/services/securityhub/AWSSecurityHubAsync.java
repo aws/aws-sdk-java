@@ -206,6 +206,57 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
      * </p>
+     * <p>
+     * After a finding is created, <code>BatchImportFindings</code> cannot be used to update the following finding
+     * fields and objects, which Security Hub customers use to manage their investigation workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Note</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UserDefinedFields</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VerificationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchImportFindingsRequest
      * @return A Java Future containing the result of the BatchImportFindings operation returned by the service.
@@ -223,6 +274,57 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
      * </p>
+     * <p>
+     * After a finding is created, <code>BatchImportFindings</code> cannot be used to update the following finding
+     * fields and objects, which Security Hub customers use to manage their investigation workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Note</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UserDefinedFields</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VerificationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchImportFindingsRequest
      * @param asyncHandler
@@ -236,6 +338,153 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      */
     java.util.concurrent.Future<BatchImportFindingsResult> batchImportFindingsAsync(BatchImportFindingsRequest batchImportFindingsRequest,
             com.amazonaws.handlers.AsyncHandler<BatchImportFindingsRequest, BatchImportFindingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used by Security Hub customers to update information about their investigation into a finding. Requested by
+     * master accounts or member accounts. Master accounts can update findings for their account and their member
+     * accounts. Member accounts can update findings for their account.
+     * </p>
+     * <p>
+     * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
+     * </p>
+     * <p>
+     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Note</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UserDefinedFields</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VerificationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * </p>
+     * 
+     * @param batchUpdateFindingsRequest
+     * @return A Java Future containing the result of the BatchUpdateFindings operation returned by the service.
+     * @sample AWSSecurityHubAsync.BatchUpdateFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateFindingsResult> batchUpdateFindingsAsync(BatchUpdateFindingsRequest batchUpdateFindingsRequest);
+
+    /**
+     * <p>
+     * Used by Security Hub customers to update information about their investigation into a finding. Requested by
+     * master accounts or member accounts. Master accounts can update findings for their account and their member
+     * accounts. Member accounts can update findings for their account.
+     * </p>
+     * <p>
+     * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
+     * </p>
+     * <p>
+     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Note</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UserDefinedFields</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VerificationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * </p>
+     * 
+     * @param batchUpdateFindingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdateFindings operation returned by the service.
+     * @sample AWSSecurityHubAsyncHandler.BatchUpdateFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateFindingsResult> batchUpdateFindingsAsync(BatchUpdateFindingsRequest batchUpdateFindingsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateFindingsRequest, BatchUpdateFindingsResult> asyncHandler);
 
     /**
      * <p>
@@ -1487,6 +1736,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
+     * <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use
+     * <code>BatchUpdateFindings</code>.
+     * </p>
+     * <p>
      * Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated findings that the
      * filter attributes specify. Any member account that can view the finding also sees the update to the finding.
      * </p>
@@ -1500,6 +1753,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     java.util.concurrent.Future<UpdateFindingsResult> updateFindingsAsync(UpdateFindingsRequest updateFindingsRequest);
 
     /**
+     * <p>
+     * <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use
+     * <code>BatchUpdateFindings</code>.
+     * </p>
      * <p>
      * Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated findings that the
      * filter attributes specify. Any member account that can view the finding also sees the update to the finding.

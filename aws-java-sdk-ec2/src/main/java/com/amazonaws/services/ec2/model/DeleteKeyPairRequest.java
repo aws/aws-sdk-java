@@ -31,6 +31,12 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      */
     private String keyName;
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     */
+    private String keyPairId;
 
     /**
      * Default constructor for DeleteKeyPairRequest object. Callers should use the setter or fluent setter (with...)
@@ -91,6 +97,46 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     */
+
+    public void setKeyPairId(String keyPairId) {
+        this.keyPairId = keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @return The ID of the key pair.
+     */
+
+    public String getKeyPairId() {
+        return this.keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteKeyPairRequest withKeyPairId(String keyPairId) {
+        setKeyPairId(keyPairId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -114,7 +160,9 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName());
+            sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getKeyPairId() != null)
+            sb.append("KeyPairId: ").append(getKeyPairId());
         sb.append("}");
         return sb.toString();
     }
@@ -133,6 +181,10 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
+        if (other.getKeyPairId() == null ^ this.getKeyPairId() == null)
+            return false;
+        if (other.getKeyPairId() != null && other.getKeyPairId().equals(this.getKeyPairId()) == false)
+            return false;
         return true;
     }
 
@@ -142,6 +194,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyPairId() == null) ? 0 : getKeyPairId().hashCode());
         return hashCode;
     }
 

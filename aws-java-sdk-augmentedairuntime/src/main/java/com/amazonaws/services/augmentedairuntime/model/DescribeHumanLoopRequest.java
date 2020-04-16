@@ -27,18 +27,18 @@ public class DescribeHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique name of the human loop.
+     * The name of the human loop that you want information about.
      * </p>
      */
     private String humanLoopName;
 
     /**
      * <p>
-     * The unique name of the human loop.
+     * The name of the human loop that you want information about.
      * </p>
      * 
      * @param humanLoopName
-     *        The unique name of the human loop.
+     *        The name of the human loop that you want information about.
      */
 
     public void setHumanLoopName(String humanLoopName) {
@@ -47,10 +47,10 @@ public class DescribeHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique name of the human loop.
+     * The name of the human loop that you want information about.
      * </p>
      * 
-     * @return The unique name of the human loop.
+     * @return The name of the human loop that you want information about.
      */
 
     public String getHumanLoopName() {
@@ -59,11 +59,11 @@ public class DescribeHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique name of the human loop.
+     * The name of the human loop that you want information about.
      * </p>
      * 
      * @param humanLoopName
-     *        The unique name of the human loop.
+     *        The name of the human loop that you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

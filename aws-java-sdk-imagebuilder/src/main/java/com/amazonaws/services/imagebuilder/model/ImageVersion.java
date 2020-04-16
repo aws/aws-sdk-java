@@ -54,6 +54,13 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     */
+    private String osVersion;
+    /**
+     * <p>
      * The owner of the image semantic version.
      * </p>
      */
@@ -246,6 +253,52 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
+     *        Server 2019.
+     */
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    /**
+     * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     * 
+     * @return The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft
+     *         Windows Server 2019.
+     */
+
+    public String getOsVersion() {
+        return this.osVersion;
+    }
+
+    /**
+     * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
+     *        Server 2019.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageVersion withOsVersion(String osVersion) {
+        setOsVersion(osVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The owner of the image semantic version.
      * </p>
      * 
@@ -344,6 +397,8 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
             sb.append("Version: ").append(getVersion()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getOsVersion() != null)
+            sb.append("OsVersion: ").append(getOsVersion()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getDateCreated() != null)
@@ -378,6 +433,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
+        if (other.getOsVersion() == null ^ this.getOsVersion() == null)
+            return false;
+        if (other.getOsVersion() != null && other.getOsVersion().equals(this.getOsVersion()) == false)
+            return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
@@ -398,6 +457,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getOsVersion() == null) ? 0 : getOsVersion().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         return hashCode;

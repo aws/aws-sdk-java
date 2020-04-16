@@ -27,18 +27,18 @@ public class DeleteHumanLoopRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the human loop you want to delete.
+     * The name of the human loop that you want to delete.
      * </p>
      */
     private String humanLoopName;
 
     /**
      * <p>
-     * The name of the human loop you want to delete.
+     * The name of the human loop that you want to delete.
      * </p>
      * 
      * @param humanLoopName
-     *        The name of the human loop you want to delete.
+     *        The name of the human loop that you want to delete.
      */
 
     public void setHumanLoopName(String humanLoopName) {
@@ -47,10 +47,10 @@ public class DeleteHumanLoopRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the human loop you want to delete.
+     * The name of the human loop that you want to delete.
      * </p>
      * 
-     * @return The name of the human loop you want to delete.
+     * @return The name of the human loop that you want to delete.
      */
 
     public String getHumanLoopName() {
@@ -59,11 +59,11 @@ public class DeleteHumanLoopRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the human loop you want to delete.
+     * The name of the human loop that you want to delete.
      * </p>
      * 
      * @param humanLoopName
-     *        The name of the human loop you want to delete.
+     *        The name of the human loop that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

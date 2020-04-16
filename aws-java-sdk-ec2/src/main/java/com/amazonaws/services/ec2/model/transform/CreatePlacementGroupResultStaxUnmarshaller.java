@@ -43,6 +43,10 @@ public class CreatePlacementGroupResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("placementGroup", targetDepth)) {
+                    createPlacementGroupResult.setPlacementGroup(PlacementGroupStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createPlacementGroupResult;

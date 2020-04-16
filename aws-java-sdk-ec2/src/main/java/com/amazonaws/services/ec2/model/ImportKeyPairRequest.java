@@ -38,6 +38,12 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      */
     private String publicKeyMaterial;
+    /**
+     * <p>
+     * The tags to apply to the imported key pair.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * Default constructor for ImportKeyPairRequest object. Callers should use the setter or fluent setter (with...)
@@ -148,6 +154,79 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * <p>
+     * The tags to apply to the imported key pair.
+     * </p>
+     * 
+     * @return The tags to apply to the imported key pair.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the imported key pair.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the imported key pair.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the imported key pair.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the imported key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportKeyPairRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the imported key pair.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the imported key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportKeyPairRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -173,7 +252,9 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
         if (getKeyName() != null)
             sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getPublicKeyMaterial() != null)
-            sb.append("PublicKeyMaterial: ").append(getPublicKeyMaterial());
+            sb.append("PublicKeyMaterial: ").append(getPublicKeyMaterial()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +277,10 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getPublicKeyMaterial() != null && other.getPublicKeyMaterial().equals(this.getPublicKeyMaterial()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +291,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
 
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getPublicKeyMaterial() == null) ? 0 : getPublicKeyMaterial().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

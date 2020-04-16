@@ -25,23 +25,23 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of objects containing information about the human loops.
+     * An array of objects that contain information about the human loops.
      * </p>
      */
     private java.util.List<HumanLoopSummary> humanLoopSummaries;
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of objects containing information about the human loops.
+     * An array of objects that contain information about the human loops.
      * </p>
      * 
-     * @return An array of objects containing information about the human loops.
+     * @return An array of objects that contain information about the human loops.
      */
 
     public java.util.List<HumanLoopSummary> getHumanLoopSummaries() {
@@ -50,11 +50,11 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of objects containing information about the human loops.
+     * An array of objects that contain information about the human loops.
      * </p>
      * 
      * @param humanLoopSummaries
-     *        An array of objects containing information about the human loops.
+     *        An array of objects that contain information about the human loops.
      */
 
     public void setHumanLoopSummaries(java.util.Collection<HumanLoopSummary> humanLoopSummaries) {
@@ -68,7 +68,7 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of objects containing information about the human loops.
+     * An array of objects that contain information about the human loops.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param humanLoopSummaries
-     *        An array of objects containing information about the human loops.
+     *        An array of objects that contain information about the human loops.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of objects containing information about the human loops.
+     * An array of objects that contain information about the human loops.
      * </p>
      * 
      * @param humanLoopSummaries
-     *        An array of objects containing information about the human loops.
+     *        An array of objects that contain information about the human loops.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to resume pagination.
+     *        A token to display the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      * 
-     * @return A token to resume pagination.
+     * @return A token to display the next page of results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListHumanLoopsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A token to resume pagination.
+     * A token to display the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        A token to resume pagination.
+     *        A token to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

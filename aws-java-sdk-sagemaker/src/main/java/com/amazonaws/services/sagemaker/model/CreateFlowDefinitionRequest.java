@@ -31,7 +31,12 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String flowDefinitionName;
-
+    /**
+     * <p>
+     * Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon
+     * Textract is used as an integration source.
+     * </p>
+     */
     private HumanLoopRequestSource humanLoopRequestSource;
     /**
      * <p>
@@ -107,7 +112,14 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon
+     * Textract is used as an integration source.
+     * </p>
+     * 
      * @param humanLoopRequestSource
+     *        Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or
+     *        Amazon Textract is used as an integration source.
      */
 
     public void setHumanLoopRequestSource(HumanLoopRequestSource humanLoopRequestSource) {
@@ -115,7 +127,13 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon
+     * Textract is used as an integration source.
+     * </p>
+     * 
+     * @return Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or
+     *         Amazon Textract is used as an integration source.
      */
 
     public HumanLoopRequestSource getHumanLoopRequestSource() {
@@ -123,7 +141,14 @@ public class CreateFlowDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon
+     * Textract is used as an integration source.
+     * </p>
+     * 
      * @param humanLoopRequestSource
+     *        Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or
+     *        Amazon Textract is used as an integration source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

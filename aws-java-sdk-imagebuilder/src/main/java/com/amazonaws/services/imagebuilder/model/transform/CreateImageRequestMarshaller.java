@@ -39,6 +39,8 @@ public class CreateImageRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("infrastructureConfigurationArn").build();
     private static final MarshallingInfo<StructuredPojo> IMAGETESTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageTestsConfiguration").build();
+    private static final MarshallingInfo<Boolean> ENHANCEDIMAGEMETADATAENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedImageMetadataEnabled").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,6 +67,7 @@ public class CreateImageRequestMarshaller {
             protocolMarshaller.marshall(createImageRequest.getDistributionConfigurationArn(), DISTRIBUTIONCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImageRequest.getInfrastructureConfigurationArn(), INFRASTRUCTURECONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImageRequest.getImageTestsConfiguration(), IMAGETESTSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createImageRequest.getEnhancedImageMetadataEnabled(), ENHANCEDIMAGEMETADATAENABLED_BINDING);
             protocolMarshaller.marshall(createImageRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createImageRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {

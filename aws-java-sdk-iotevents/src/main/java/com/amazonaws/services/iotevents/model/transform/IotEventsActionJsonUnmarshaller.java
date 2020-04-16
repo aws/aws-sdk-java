@@ -52,6 +52,10 @@ public class IotEventsActionJsonUnmarshaller implements Unmarshaller<IotEventsAc
                     context.nextToken();
                     iotEventsAction.setInputName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("payload", targetDepth)) {
+                    context.nextToken();
+                    iotEventsAction.setPayload(PayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

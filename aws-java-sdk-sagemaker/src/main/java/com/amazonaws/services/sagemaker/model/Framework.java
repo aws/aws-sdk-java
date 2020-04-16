@@ -25,7 +25,8 @@ public enum Framework {
     MXNET("MXNET"),
     ONNX("ONNX"),
     PYTORCH("PYTORCH"),
-    XGBOOST("XGBOOST");
+    XGBOOST("XGBOOST"),
+    TFLITE("TFLITE");
 
     private String value;
 

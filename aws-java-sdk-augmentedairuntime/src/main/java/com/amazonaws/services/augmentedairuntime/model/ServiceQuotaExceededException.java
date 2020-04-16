@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or
- * request a service quota increase.
+ * You exceeded your service quota. Delete some resources or request an increase in your service quota.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

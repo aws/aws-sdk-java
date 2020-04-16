@@ -12,36 +12,52 @@
  */
 
 /**
+ * <important>
  * <p>
- * Amazon Augmented AI (Augmented AI) (Preview) is a service that adds human judgment to any machine learning
- * application. Human reviewers can take over when an AI application can't evaluate data with a high degree of
- * confidence.
+ * Amazon Augmented AI is in preview release and is subject to change. We do not recommend using this product in
+ * production environments.
+ * </p>
+ * </important>
+ * <p>
+ * Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI
+ * application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is
+ * called a human review workflow. To create and start a human review workflow, you need three resources: a <i>worker
+ * task template</i>, a <i>flow definition</i>, and a <i>human loop</i>.
  * </p>
  * <p>
- * From fraudulent bank transaction identification to document processing to image analysis, machine learning models can
- * be trained to make decisions as well as or better than a human. Nevertheless, some decisions require contextual
- * interpretation, such as when you need to decide whether an image is appropriate for a given audience. Content
- * moderation guidelines are nuanced and highly dependent on context, and they vary between countries. When trying to
- * apply AI in these situations, you can be forced to choose between "ML only" systems with unacceptably high error
- * rates or "human only" systems that are expensive and difficult to scale, and that slow down decision making.
+ * For information about these resources and prerequisites for using Amazon A2I, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html">Get Started with Amazon Augmented
+ * AI</a> in the Amazon SageMaker Developer Guide.
  * </p>
  * <p>
- * This API reference includes information about API actions and data types you can use to interact with Augmented AI
- * programmatically.
+ * This API reference includes information about API actions and data types that you can use to interact with Amazon A2I
+ * programmatically. Use this guide to:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * You can create a flow definition against the Augmented AI API. Provide the Amazon Resource Name (ARN) of a flow
- * definition to integrate AI service APIs, such as <code>Textract.AnalyzeDocument</code> and
- * <code>Rekognition.DetectModerationLabels</code>. These AI services, in turn, invoke the <a>StartHumanLoop</a> API,
- * which evaluates conditions under which humans will be invoked. If humans are required, Augmented AI creates a human
- * loop. Results of human work are available asynchronously in Amazon Simple Storage Service (Amazon S3). You can use
- * Amazon CloudWatch Events to detect human work results.
+ * Start a human loop with the <code>StartHumanLoop</code> operation when using Amazon A2I with a <i>custom task
+ * type</i>. To learn more about the difference between custom and built-in task types, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html">Use Task Types </a>. To learn how
+ * to start a human loop using this API, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop"
+ * >Create and Start a Human Loop for a Custom Task Type </a> in the Amazon SageMaker Developer Guide.
  * </p>
+ * </li>
+ * <li>
  * <p>
- * You can find additional Augmented AI API documentation in the following reference guides: <a
- * href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
- * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
- * href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
+ * Manage your human loops. You can list all human loops that you have created, describe individual human loops, and
+ * stop and delete human loops. To learn more, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html">Monitor and Manage Your
+ * Human Loop </a> in the Amazon SageMaker Developer Guide.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Amazon A2I integrates APIs from various AWS services to create and start human review workflows for those services.
+ * To learn how Amazon A2I uses these APIs, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html">Use APIs in Amazon A2I</a> in the
+ * Amazon SageMaker Developer Guide.
  * </p>
  */
 package com.amazonaws.services.augmentedairuntime;

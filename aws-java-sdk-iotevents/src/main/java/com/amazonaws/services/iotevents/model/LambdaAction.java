@@ -35,6 +35,12 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String functionArn;
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to a Lambda function.
+     * </p>
+     */
+    private Payload payload;
 
     /**
      * <p>
@@ -77,6 +83,46 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * You can configure the action payload when you send a message to a Lambda function.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message to a Lambda function.
+     */
+
+    public void setPayload(Payload payload) {
+        this.payload = payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to a Lambda function.
+     * </p>
+     * 
+     * @return You can configure the action payload when you send a message to a Lambda function.
+     */
+
+    public Payload getPayload() {
+        return this.payload;
+    }
+
+    /**
+     * <p>
+     * You can configure the action payload when you send a message to a Lambda function.
+     * </p>
+     * 
+     * @param payload
+     *        You can configure the action payload when you send a message to a Lambda function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaAction withPayload(Payload payload) {
+        setPayload(payload);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +135,9 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionArn() != null)
-            sb.append("FunctionArn: ").append(getFunctionArn());
+            sb.append("FunctionArn: ").append(getFunctionArn()).append(",");
+        if (getPayload() != null)
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,10 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFunctionArn() != null && other.getFunctionArn().equals(this.getFunctionArn()) == false)
             return false;
+        if (other.getPayload() == null ^ this.getPayload() == null)
+            return false;
+        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +169,7 @@ public class LambdaAction implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
+        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         return hashCode;
     }
 

@@ -95,6 +95,9 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
                                     com.amazonaws.services.migrationhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PolicyErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.migrationhub.model.transform.PolicyErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -186,6 +189,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the AssociateCreatedArtifact operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -262,6 +267,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the AssociateDiscoveredResource operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -345,6 +352,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the CreateProgressUpdateStream operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -451,6 +460,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DeleteProgressUpdateStream operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -527,6 +538,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DescribeApplicationState operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -601,6 +614,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DescribeMigrationTask operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -690,6 +705,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DisassociateCreatedArtifact operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -766,6 +783,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the DisassociateDiscoveredResource operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -847,6 +866,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the ImportMigrationTask operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -922,6 +943,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the ListApplicationStates operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1006,6 +1029,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the ListCreatedArtifacts operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1074,6 +1099,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the ListDiscoveredResources operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1162,6 +1189,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the ListMigrationTasks operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1234,6 +1263,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the ListProgressUpdateStreams operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1302,6 +1333,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the NotifyApplicationState operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1399,6 +1432,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the NotifyMigrationTaskState operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException
@@ -1500,6 +1535,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
      * @return Result of the PutResourceAttributes operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @throws InternalServerErrorException
      *         Exception raised when an internal, configuration, or dependency error is encountered.
      * @throws ServiceUnavailableException

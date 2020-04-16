@@ -29,6 +29,8 @@ public class SNSTopicPublishActionMarshaller {
 
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("targetArn").build();
+    private static final MarshallingInfo<StructuredPojo> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payload").build();
 
     private static final SNSTopicPublishActionMarshaller instance = new SNSTopicPublishActionMarshaller();
 
@@ -47,6 +49,7 @@ public class SNSTopicPublishActionMarshaller {
 
         try {
             protocolMarshaller.marshall(sNSTopicPublishAction.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(sNSTopicPublishAction.getPayload(), PAYLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

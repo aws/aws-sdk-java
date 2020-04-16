@@ -27,18 +27,18 @@ public class StopHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the human loop you want to stop.
+     * The name of the human loop that you want to stop.
      * </p>
      */
     private String humanLoopName;
 
     /**
      * <p>
-     * The name of the human loop you want to stop.
+     * The name of the human loop that you want to stop.
      * </p>
      * 
      * @param humanLoopName
-     *        The name of the human loop you want to stop.
+     *        The name of the human loop that you want to stop.
      */
 
     public void setHumanLoopName(String humanLoopName) {
@@ -47,10 +47,10 @@ public class StopHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the human loop you want to stop.
+     * The name of the human loop that you want to stop.
      * </p>
      * 
-     * @return The name of the human loop you want to stop.
+     * @return The name of the human loop that you want to stop.
      */
 
     public String getHumanLoopName() {
@@ -59,11 +59,11 @@ public class StopHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the human loop you want to stop.
+     * The name of the human loop that you want to stop.
      * </p>
      * 
      * @param humanLoopName
-     *        The name of the human loop you want to stop.
+     *        The name of the human loop that you want to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

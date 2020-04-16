@@ -78,10 +78,14 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
     private String status;
     /**
      * <p>
-     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
-     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
-     * identify the device associated with the input.
+     * The value used to identify a detector instance. When a device or system sends input, a new detector instance with
+     * a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance
+     * based on this identifying information.
+     * </p>
+     * <p>
+     * This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used
+     * for identification. To route the message to the correct detector instance, the device must send a message payload
+     * that contains the same attribute-value.
      * </p>
      */
     private String key;
@@ -433,17 +437,24 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
-     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
-     * identify the device associated with the input.
+     * The value used to identify a detector instance. When a device or system sends input, a new detector instance with
+     * a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance
+     * based on this identifying information.
+     * </p>
+     * <p>
+     * This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used
+     * for identification. To route the message to the correct detector instance, the device must send a message payload
+     * that contains the same attribute-value.
      * </p>
      * 
      * @param key
-     *        The input attribute key used to identify a device or system to create a detector (an instance of the
-     *        detector model) and then to route each input received to the appropriate detector (instance). This
-     *        parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
-     *        pair that is used to identify the device associated with the input.
+     *        The value used to identify a detector instance. When a device or system sends input, a new detector
+     *        instance with a unique key value is created. AWS IoT Events can continue to route input to its
+     *        corresponding detector instance based on this identifying information. </p>
+     *        <p>
+     *        This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that
+     *        is used for identification. To route the message to the correct detector instance, the device must send a
+     *        message payload that contains the same attribute-value.
      */
 
     public void setKey(String key) {
@@ -452,16 +463,23 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
-     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
-     * identify the device associated with the input.
+     * The value used to identify a detector instance. When a device or system sends input, a new detector instance with
+     * a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance
+     * based on this identifying information.
+     * </p>
+     * <p>
+     * This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used
+     * for identification. To route the message to the correct detector instance, the device must send a message payload
+     * that contains the same attribute-value.
      * </p>
      * 
-     * @return The input attribute key used to identify a device or system to create a detector (an instance of the
-     *         detector model) and then to route each input received to the appropriate detector (instance). This
-     *         parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
-     *         pair that is used to identify the device associated with the input.
+     * @return The value used to identify a detector instance. When a device or system sends input, a new detector
+     *         instance with a unique key value is created. AWS IoT Events can continue to route input to its
+     *         corresponding detector instance based on this identifying information. </p>
+     *         <p>
+     *         This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that
+     *         is used for identification. To route the message to the correct detector instance, the device must send a
+     *         message payload that contains the same attribute-value.
      */
 
     public String getKey() {
@@ -470,17 +488,24 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
-     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
-     * identify the device associated with the input.
+     * The value used to identify a detector instance. When a device or system sends input, a new detector instance with
+     * a unique key value is created. AWS IoT Events can continue to route input to its corresponding detector instance
+     * based on this identifying information.
+     * </p>
+     * <p>
+     * This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that is used
+     * for identification. To route the message to the correct detector instance, the device must send a message payload
+     * that contains the same attribute-value.
      * </p>
      * 
      * @param key
-     *        The input attribute key used to identify a device or system to create a detector (an instance of the
-     *        detector model) and then to route each input received to the appropriate detector (instance). This
-     *        parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
-     *        pair that is used to identify the device associated with the input.
+     *        The value used to identify a detector instance. When a device or system sends input, a new detector
+     *        instance with a unique key value is created. AWS IoT Events can continue to route input to its
+     *        corresponding detector instance based on this identifying information. </p>
+     *        <p>
+     *        This parameter uses a JSON-path expression to select the attribute-value pair in the message payload that
+     *        is used for identification. To route the message to the correct detector instance, the device must send a
+     *        message payload that contains the same attribute-value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

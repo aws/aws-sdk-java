@@ -48,6 +48,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public BatchUpdateFindingsResult batchUpdateFindings(BatchUpdateFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateActionTargetResult createActionTarget(CreateActionTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

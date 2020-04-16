@@ -54,6 +54,21 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     */
+    private Boolean enhancedImageMetadataEnabled;
+    /**
+     * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     */
+    private String osVersion;
+    /**
+     * <p>
      * The state of the image.
      * </p>
      */
@@ -289,6 +304,120 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     public Image withPlatform(Platform platform) {
         this.platform = platform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     */
+
+    public void setEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        this.enhancedImageMetadataEnabled = enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean getEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @param enhancedImageMetadataEnabled
+     *        Collects additional information about the image being created, including the operating system (OS) version
+     *        and package list. This information is used to enhance the overall experience of using EC2 Image Builder.
+     *        Enabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withEnhancedImageMetadataEnabled(Boolean enhancedImageMetadataEnabled) {
+        setEnhancedImageMetadataEnabled(enhancedImageMetadataEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Collects additional information about the image being created, including the operating system (OS) version and
+     * package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.
+     * </p>
+     * 
+     * @return Collects additional information about the image being created, including the operating system (OS)
+     *         version and package list. This information is used to enhance the overall experience of using EC2 Image
+     *         Builder. Enabled by default.
+     */
+
+    public Boolean isEnhancedImageMetadataEnabled() {
+        return this.enhancedImageMetadataEnabled;
+    }
+
+    /**
+     * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
+     *        Server 2019.
+     */
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    /**
+     * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     * 
+     * @return The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft
+     *         Windows Server 2019.
+     */
+
+    public String getOsVersion() {
+        return this.osVersion;
+    }
+
+    /**
+     * <p>
+     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
+     * 2019.
+     * </p>
+     * 
+     * @param osVersion
+     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
+     *        Server 2019.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withOsVersion(String osVersion) {
+        setOsVersion(osVersion);
         return this;
     }
 
@@ -740,6 +869,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             sb.append("Version: ").append(getVersion()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getEnhancedImageMetadataEnabled() != null)
+            sb.append("EnhancedImageMetadataEnabled: ").append(getEnhancedImageMetadataEnabled()).append(",");
+        if (getOsVersion() != null)
+            sb.append("OsVersion: ").append(getOsVersion()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getImageRecipe() != null)
@@ -789,6 +922,14 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (other.getPlatform() == null ^ this.getPlatform() == null)
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
+        if (other.getEnhancedImageMetadataEnabled() == null ^ this.getEnhancedImageMetadataEnabled() == null)
+            return false;
+        if (other.getEnhancedImageMetadataEnabled() != null && other.getEnhancedImageMetadataEnabled().equals(this.getEnhancedImageMetadataEnabled()) == false)
+            return false;
+        if (other.getOsVersion() == null ^ this.getOsVersion() == null)
+            return false;
+        if (other.getOsVersion() != null && other.getOsVersion().equals(this.getOsVersion()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -842,6 +983,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getEnhancedImageMetadataEnabled() == null) ? 0 : getEnhancedImageMetadataEnabled().hashCode());
+        hashCode = prime * hashCode + ((getOsVersion() == null) ? 0 : getOsVersion().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getImageRecipe() == null) ? 0 : getImageRecipe().hashCode());
         hashCode = prime * hashCode + ((getSourcePipelineName() == null) ? 0 : getSourcePipelineName().hashCode());

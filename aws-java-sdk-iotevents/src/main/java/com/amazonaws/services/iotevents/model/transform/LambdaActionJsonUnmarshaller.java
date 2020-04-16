@@ -52,6 +52,10 @@ public class LambdaActionJsonUnmarshaller implements Unmarshaller<LambdaAction, 
                     context.nextToken();
                     lambdaAction.setFunctionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("payload", targetDepth)) {
+                    context.nextToken();
+                    lambdaAction.setPayload(PayloadJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -35,6 +35,18 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String keyName;
+    /**
+     * <p>
+     * The ID of the resulting key pair.
+     * </p>
+     */
+    private String keyPairId;
+    /**
+     * <p>
+     * The tags applied to the imported key pair.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -117,6 +129,119 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The ID of the resulting key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the resulting key pair.
+     */
+
+    public void setKeyPairId(String keyPairId) {
+        this.keyPairId = keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the resulting key pair.
+     * </p>
+     * 
+     * @return The ID of the resulting key pair.
+     */
+
+    public String getKeyPairId() {
+        return this.keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the resulting key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the resulting key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportKeyPairResult withKeyPairId(String keyPairId) {
+        setKeyPairId(keyPairId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the imported key pair.
+     * </p>
+     * 
+     * @return The tags applied to the imported key pair.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the imported key pair.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the imported key pair.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags applied to the imported key pair.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the imported key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportKeyPairResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the imported key pair.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the imported key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportKeyPairResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +256,11 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getKeyFingerprint() != null)
             sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName());
+            sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getKeyPairId() != null)
+            sb.append("KeyPairId: ").append(getKeyPairId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +283,14 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
+        if (other.getKeyPairId() == null ^ this.getKeyPairId() == null)
+            return false;
+        if (other.getKeyPairId() != null && other.getKeyPairId().equals(this.getKeyPairId()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +301,8 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyPairId() == null) ? 0 : getKeyPairId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

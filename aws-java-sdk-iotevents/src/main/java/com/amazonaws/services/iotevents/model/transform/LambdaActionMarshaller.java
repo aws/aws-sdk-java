@@ -29,6 +29,8 @@ public class LambdaActionMarshaller {
 
     private static final MarshallingInfo<String> FUNCTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("functionArn").build();
+    private static final MarshallingInfo<StructuredPojo> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payload").build();
 
     private static final LambdaActionMarshaller instance = new LambdaActionMarshaller();
 
@@ -47,6 +49,7 @@ public class LambdaActionMarshaller {
 
         try {
             protocolMarshaller.marshall(lambdaAction.getFunctionArn(), FUNCTIONARN_BINDING);
+            protocolMarshaller.marshall(lambdaAction.getPayload(), PAYLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

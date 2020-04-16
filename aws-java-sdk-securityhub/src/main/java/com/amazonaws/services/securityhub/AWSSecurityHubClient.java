@@ -400,6 +400,57 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
      * </p>
+     * <p>
+     * After a finding is created, <code>BatchImportFindings</code> cannot be used to update the following finding
+     * fields and objects, which Security Hub customers use to manage their investigation workflow.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Note</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UserDefinedFields</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VerificationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchImportFindingsRequest
      * @return Result of the BatchImportFindings operation returned by the service.
@@ -448,6 +499,126 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchImportFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchImportFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used by Security Hub customers to update information about their investigation into a finding. Requested by
+     * master accounts or member accounts. Master accounts can update findings for their account and their member
+     * accounts. Member accounts can update findings for their account.
+     * </p>
+     * <p>
+     * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
+     * </p>
+     * <p>
+     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Note</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UserDefinedFields</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VerificationState</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Workflow</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * </p>
+     * 
+     * @param batchUpdateFindingsRequest
+     * @return Result of the BatchUpdateFindings operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error code describes the limit exceeded.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @sample AWSSecurityHub.BatchUpdateFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchUpdateFindingsResult batchUpdateFindings(BatchUpdateFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchUpdateFindings(request);
+    }
+
+    @SdkInternalApi
+    final BatchUpdateFindingsResult executeBatchUpdateFindings(BatchUpdateFindingsRequest batchUpdateFindingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchUpdateFindingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchUpdateFindingsRequest> request = null;
+        Response<BatchUpdateFindingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchUpdateFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateFindingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateFindings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchUpdateFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2684,6 +2855,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     }
 
     /**
+     * <p>
+     * <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>, use
+     * <code>BatchUpdateFindings</code>.
+     * </p>
      * <p>
      * Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated findings that the
      * filter attributes specify. Any member account that can view the finding also sees the update to the finding.

@@ -45,7 +45,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * <li>
      * <p>
      * <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code> | <code>disassociated</code>).
+     * <code>disassociating</code>).
      * </p>
      * </li>
      * </ul>
@@ -151,7 +151,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * <li>
      * <p>
      * <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code> | <code>disassociated</code>).
+     * <code>disassociating</code>).
      * </p>
      * </li>
      * </ul>
@@ -166,7 +166,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      *         <li>
      *         <p>
      *         <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     *         <code>disassociating</code> | <code>disassociated</code>).
+     *         <code>disassociating</code>).
      *         </p>
      *         </li>
      */
@@ -191,7 +191,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * <li>
      * <p>
      * <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code> | <code>disassociated</code>).
+     * <code>disassociating</code>).
      * </p>
      * </li>
      * </ul>
@@ -207,7 +207,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      *        <li>
      *        <p>
      *        <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     *        <code>disassociating</code> | <code>disassociated</code>).
+     *        <code>disassociating</code>).
      *        </p>
      *        </li>
      */
@@ -234,7 +234,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * <li>
      * <p>
      * <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code> | <code>disassociated</code>).
+     * <code>disassociating</code>).
      * </p>
      * </li>
      * </ul>
@@ -255,7 +255,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      *        <li>
      *        <p>
      *        <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     *        <code>disassociating</code> | <code>disassociated</code>).
+     *        <code>disassociating</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -284,7 +284,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      * <li>
      * <p>
      * <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code> | <code>disassociated</code>).
+     * <code>disassociating</code>).
      * </p>
      * </li>
      * </ul>
@@ -300,7 +300,7 @@ public class DescribeIamInstanceProfileAssociationsRequest extends AmazonWebServ
      *        <li>
      *        <p>
      *        <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code> |
-     *        <code>disassociating</code> | <code>disassociated</code>).
+     *        <code>disassociating</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -54,7 +54,7 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
     private String s3DataType;
     /**
      * <p>
-     * Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
      * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
      * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
      * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
@@ -69,7 +69,7 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
     private String s3DataDistributionType;
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * </p>
      */
     private String s3CompressionType;
@@ -259,14 +259,14 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
      * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
      * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
      * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
      * </p>
      * 
      * @param s3InputMode
-     *        Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
+     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
      *        SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
      *        volumes before starting your training algorithm. This is the most commonly used input mode. In
      *        <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
@@ -280,13 +280,13 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
      * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
      * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
      * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
      * </p>
      * 
-     * @return Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
+     * @return Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
      *         SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
      *         volumes before starting your training algorithm. This is the most commonly used input mode. In
      *         <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
@@ -300,14 +300,14 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
      * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
      * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
      * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
      * </p>
      * 
      * @param s3InputMode
-     *        Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
+     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
      *        SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
      *        volumes before starting your training algorithm. This is the most commonly used input mode. In
      *        <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
@@ -323,14 +323,14 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
      * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
      * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
      * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
      * </p>
      * 
      * @param s3InputMode
-     *        Wether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
+     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
      *        SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
      *        volumes before starting your training algorithm. This is the most commonly used input mode. In
      *        <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
@@ -405,11 +405,11 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * </p>
      * 
      * @param s3CompressionType
-     *        Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     *        Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * @see ProcessingS3CompressionType
      */
 
@@ -419,10 +419,10 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * </p>
      * 
-     * @return Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     * @return Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * @see ProcessingS3CompressionType
      */
 
@@ -432,11 +432,11 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * </p>
      * 
      * @param s3CompressionType
-     *        Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     *        Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3CompressionType
      */
@@ -448,11 +448,11 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * </p>
      * 
      * @param s3CompressionType
-     *        Whether to use <code>Gzip</code> compresion for Amazon S3 storage.
+     *        Whether to use <code>Gzip</code> compression for Amazon S3 storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3CompressionType
      */

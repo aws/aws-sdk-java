@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of the properties of a trial component as returned by the <a>Search</a> API.
+ * The properties of a trial component as returned by the <a>Search</a> API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponent" target="_top">AWS API
@@ -47,7 +47,11 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String trialComponentArn;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) and job type of the source of the component.
+     * </p>
+     */
     private TrialComponentSource source;
 
     private TrialComponentStatus status;
@@ -105,7 +109,7 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<TrialComponentMetricSummary> metrics;
     /**
      * <p>
-     * The source of the trial component.&gt;
+     * Details of the source of the component.
      * </p>
      */
     private TrialComponentSourceDetail sourceDetail;
@@ -250,7 +254,12 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) and job type of the source of the component.
+     * </p>
+     * 
      * @param source
+     *        The Amazon Resource Name (ARN) and job type of the source of the component.
      */
 
     public void setSource(TrialComponentSource source) {
@@ -258,7 +267,11 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) and job type of the source of the component.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) and job type of the source of the component.
      */
 
     public TrialComponentSource getSource() {
@@ -266,7 +279,12 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) and job type of the source of the component.
+     * </p>
+     * 
      * @param source
+     *        The Amazon Resource Name (ARN) and job type of the source of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -789,11 +807,11 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the trial component.&gt;
+     * Details of the source of the component.
      * </p>
      * 
      * @param sourceDetail
-     *        The source of the trial component.&gt;
+     *        Details of the source of the component.
      */
 
     public void setSourceDetail(TrialComponentSourceDetail sourceDetail) {
@@ -802,10 +820,10 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the trial component.&gt;
+     * Details of the source of the component.
      * </p>
      * 
-     * @return The source of the trial component.&gt;
+     * @return Details of the source of the component.
      */
 
     public TrialComponentSourceDetail getSourceDetail() {
@@ -814,11 +832,11 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the trial component.&gt;
+     * Details of the source of the component.
      * </p>
      * 
      * @param sourceDetail
-     *        The source of the trial component.&gt;
+     *        Details of the source of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

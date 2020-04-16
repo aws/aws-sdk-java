@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The source of the trial component.
+ * The Amazon Resource Name (ARN) and job type of the source of a trial component.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSource" target="_top">AWS API
@@ -30,7 +30,7 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source.
+     * The source ARN.
      * </p>
      */
     private String sourceArn;
@@ -43,11 +43,11 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source.
+     * The source ARN.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the source.
+     *        The source ARN.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -56,10 +56,10 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source.
+     * The source ARN.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source.
+     * @return The source ARN.
      */
 
     public String getSourceArn() {
@@ -68,11 +68,11 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source.
+     * The source ARN.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the source.
+     *        The source ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
