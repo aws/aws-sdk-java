@@ -222,7 +222,40 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Deletes the detector version.
+     * Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions
+     * associated with the detector.
+     * </p>
+     * 
+     * @param deleteDetectorRequest
+     * @return A Java Future containing the result of the DeleteDetector operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(DeleteDetectorRequest deleteDetectorRequest);
+
+    /**
+     * <p>
+     * Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions
+     * associated with the detector.
+     * </p>
+     * 
+     * @param deleteDetectorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDetector operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(DeleteDetectorRequest deleteDetectorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDetectorRequest, DeleteDetectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.
      * </p>
      * 
      * @param deleteDetectorVersionRequest
@@ -235,7 +268,7 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Deletes the detector version.
+     * Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.
      * </p>
      * 
      * @param deleteDetectorVersionRequest
@@ -281,6 +314,39 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<DeleteEventResult> deleteEventAsync(DeleteEventRequest deleteEventRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventRequest, DeleteEventResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code> or
+     * <code>INACTIVE</code> detector version.
+     * </p>
+     * 
+     * @param deleteRuleVersionRequest
+     * @return A Java Future containing the result of the DeleteRuleVersion operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteRuleVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRuleVersionResult> deleteRuleVersionAsync(DeleteRuleVersionRequest deleteRuleVersionRequest);
+
+    /**
+     * <p>
+     * Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code> or
+     * <code>INACTIVE</code> detector version.
+     * </p>
+     * 
+     * @param deleteRuleVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRuleVersion operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteRuleVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRuleVersionResult> deleteRuleVersionAsync(DeleteRuleVersionRequest deleteRuleVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleVersionRequest, DeleteRuleVersionResult> asyncHandler);
 
     /**
      * <p>

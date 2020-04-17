@@ -58,12 +58,22 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public DeleteDetectorResult deleteDetector(DeleteDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDetectorVersionResult deleteDetectorVersion(DeleteDetectorVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteEventResult deleteEvent(DeleteEventRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRuleVersionResult deleteRuleVersion(DeleteRuleVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

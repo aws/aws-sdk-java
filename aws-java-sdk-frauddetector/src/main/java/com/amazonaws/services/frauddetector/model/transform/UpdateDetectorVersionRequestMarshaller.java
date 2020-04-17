@@ -40,6 +40,8 @@ public class UpdateDetectorVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> MODELVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("modelVersions").build();
+    private static final MarshallingInfo<String> RULEEXECUTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ruleExecutionMode").build();
 
     private static final UpdateDetectorVersionRequestMarshaller instance = new UpdateDetectorVersionRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class UpdateDetectorVersionRequestMarshaller {
             protocolMarshaller.marshall(updateDetectorVersionRequest.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(updateDetectorVersionRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateDetectorVersionRequest.getModelVersions(), MODELVERSIONS_BINDING);
+            protocolMarshaller.marshall(updateDetectorVersionRequest.getRuleExecutionMode(), RULEEXECUTIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

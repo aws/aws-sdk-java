@@ -263,6 +263,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(DeleteDetectorRequest request) {
+
+        return deleteDetectorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(final DeleteDetectorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDetectorRequest, DeleteDetectorResult> asyncHandler) {
+        final DeleteDetectorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDetectorResult>() {
+            @Override
+            public DeleteDetectorResult call() throws Exception {
+                DeleteDetectorResult result = null;
+
+                try {
+                    result = executeDeleteDetector(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDetectorVersionResult> deleteDetectorVersionAsync(DeleteDetectorVersionRequest request) {
 
         return deleteDetectorVersionAsync(request, null);
@@ -313,6 +346,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeDeleteEvent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleVersionResult> deleteRuleVersionAsync(DeleteRuleVersionRequest request) {
+
+        return deleteRuleVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleVersionResult> deleteRuleVersionAsync(final DeleteRuleVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRuleVersionRequest, DeleteRuleVersionResult> asyncHandler) {
+        final DeleteRuleVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRuleVersionResult>() {
+            @Override
+            public DeleteRuleVersionResult call() throws Exception {
+                DeleteRuleVersionResult result = null;
+
+                try {
+                    result = executeDeleteRuleVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

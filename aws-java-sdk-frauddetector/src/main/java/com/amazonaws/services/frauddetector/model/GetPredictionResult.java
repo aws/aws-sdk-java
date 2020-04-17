@@ -35,6 +35,12 @@ public class GetPredictionResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.List<ModelScores> modelScores;
+    /**
+     * <p>
+     * The rule results in the prediction.
+     * </p>
+     */
+    private java.util.List<RuleResult> ruleResults;
 
     /**
      * <p>
@@ -177,6 +183,76 @@ public class GetPredictionResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The rule results in the prediction.
+     * </p>
+     * 
+     * @return The rule results in the prediction.
+     */
+
+    public java.util.List<RuleResult> getRuleResults() {
+        return ruleResults;
+    }
+
+    /**
+     * <p>
+     * The rule results in the prediction.
+     * </p>
+     * 
+     * @param ruleResults
+     *        The rule results in the prediction.
+     */
+
+    public void setRuleResults(java.util.Collection<RuleResult> ruleResults) {
+        if (ruleResults == null) {
+            this.ruleResults = null;
+            return;
+        }
+
+        this.ruleResults = new java.util.ArrayList<RuleResult>(ruleResults);
+    }
+
+    /**
+     * <p>
+     * The rule results in the prediction.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuleResults(java.util.Collection)} or {@link #withRuleResults(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ruleResults
+     *        The rule results in the prediction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPredictionResult withRuleResults(RuleResult... ruleResults) {
+        if (this.ruleResults == null) {
+            setRuleResults(new java.util.ArrayList<RuleResult>(ruleResults.length));
+        }
+        for (RuleResult ele : ruleResults) {
+            this.ruleResults.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule results in the prediction.
+     * </p>
+     * 
+     * @param ruleResults
+     *        The rule results in the prediction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPredictionResult withRuleResults(java.util.Collection<RuleResult> ruleResults) {
+        setRuleResults(ruleResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +267,9 @@ public class GetPredictionResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getOutcomes() != null)
             sb.append("Outcomes: ").append(getOutcomes()).append(",");
         if (getModelScores() != null)
-            sb.append("ModelScores: ").append(getModelScores());
+            sb.append("ModelScores: ").append(getModelScores()).append(",");
+        if (getRuleResults() != null)
+            sb.append("RuleResults: ").append(getRuleResults());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +292,10 @@ public class GetPredictionResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getModelScores() != null && other.getModelScores().equals(this.getModelScores()) == false)
             return false;
+        if (other.getRuleResults() == null ^ this.getRuleResults() == null)
+            return false;
+        if (other.getRuleResults() != null && other.getRuleResults().equals(this.getRuleResults()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +306,7 @@ public class GetPredictionResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getOutcomes() == null) ? 0 : getOutcomes().hashCode());
         hashCode = prime * hashCode + ((getModelScores() == null) ? 0 : getModelScores().hashCode());
+        hashCode = prime * hashCode + ((getRuleResults() == null) ? 0 : getRuleResults().hashCode());
         return hashCode;
     }
 

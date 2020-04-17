@@ -56,6 +56,10 @@ public class GetPredictionResultJsonUnmarshaller implements Unmarshaller<GetPred
                     context.nextToken();
                     getPredictionResult.setModelScores(new ListUnmarshaller<ModelScores>(ModelScoresJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ruleResults", targetDepth)) {
+                    context.nextToken();
+                    getPredictionResult.setRuleResults(new ListUnmarshaller<RuleResult>(RuleResultJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -77,6 +77,21 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * The execution mode of the rule in the dectector
+     * </p>
+     * <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last,
+     * stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
+     * </p>
+     * <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for
+     * all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft
+     * status.
+     * </p>
+     */
+    private String ruleExecutionMode;
 
     /**
      * <p>
@@ -548,6 +563,137 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The execution mode of the rule in the dectector
+     * </p>
+     * <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last,
+     * stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
+     * </p>
+     * <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for
+     * all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft
+     * status.
+     * </p>
+     * 
+     * @param ruleExecutionMode
+     *        The execution mode of the rule in the dectector</p>
+     *        <p>
+     *        <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to
+     *        last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that
+     *        single rule.
+     *        </p>
+     *        <p>
+     *        <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes
+     *        for all matched rules. You can define and edit the rule mode at the detector version level, when it is in
+     *        draft status.
+     * @see RuleExecutionMode
+     */
+
+    public void setRuleExecutionMode(String ruleExecutionMode) {
+        this.ruleExecutionMode = ruleExecutionMode;
+    }
+
+    /**
+     * <p>
+     * The execution mode of the rule in the dectector
+     * </p>
+     * <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last,
+     * stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
+     * </p>
+     * <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for
+     * all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft
+     * status.
+     * </p>
+     * 
+     * @return The execution mode of the rule in the dectector</p>
+     *         <p>
+     *         <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to
+     *         last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that
+     *         single rule.
+     *         </p>
+     *         <p>
+     *         <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the
+     *         outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when
+     *         it is in draft status.
+     * @see RuleExecutionMode
+     */
+
+    public String getRuleExecutionMode() {
+        return this.ruleExecutionMode;
+    }
+
+    /**
+     * <p>
+     * The execution mode of the rule in the dectector
+     * </p>
+     * <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last,
+     * stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
+     * </p>
+     * <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for
+     * all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft
+     * status.
+     * </p>
+     * 
+     * @param ruleExecutionMode
+     *        The execution mode of the rule in the dectector</p>
+     *        <p>
+     *        <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to
+     *        last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that
+     *        single rule.
+     *        </p>
+     *        <p>
+     *        <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes
+     *        for all matched rules. You can define and edit the rule mode at the detector version level, when it is in
+     *        draft status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuleExecutionMode
+     */
+
+    public GetDetectorVersionResult withRuleExecutionMode(String ruleExecutionMode) {
+        setRuleExecutionMode(ruleExecutionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The execution mode of the rule in the dectector
+     * </p>
+     * <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last,
+     * stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
+     * </p>
+     * <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for
+     * all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft
+     * status.
+     * </p>
+     * 
+     * @param ruleExecutionMode
+     *        The execution mode of the rule in the dectector</p>
+     *        <p>
+     *        <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to
+     *        last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that
+     *        single rule.
+     *        </p>
+     *        <p>
+     *        <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes
+     *        for all matched rules. You can define and edit the rule mode at the detector version level, when it is in
+     *        draft status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuleExecutionMode
+     */
+
+    public GetDetectorVersionResult withRuleExecutionMode(RuleExecutionMode ruleExecutionMode) {
+        this.ruleExecutionMode = ruleExecutionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -576,7 +722,9 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getRuleExecutionMode() != null)
+            sb.append("RuleExecutionMode: ").append(getRuleExecutionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -627,6 +775,10 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getRuleExecutionMode() == null ^ this.getRuleExecutionMode() == null)
+            return false;
+        if (other.getRuleExecutionMode() != null && other.getRuleExecutionMode().equals(this.getRuleExecutionMode()) == false)
+            return false;
         return true;
     }
 
@@ -644,6 +796,7 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getRuleExecutionMode() == null) ? 0 : getRuleExecutionMode().hashCode());
         return hashCode;
     }
 

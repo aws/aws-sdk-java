@@ -1,3 +1,12 @@
+# __1.11.764__ __2020-04-17__
+## __AWS OpsWorks CM__
+  - ### Features
+    - Documentation updates for opsworkscm
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - Added support for a new rule engine execution mode. Customers will be able to configure their detector versions to evaluate all rules and return outcomes from all 'matched' rules in the GetPrediction API response. Added support for deleting Detectors (DeleteDetector) and Rule Versions (DeleteRuleVersion).
+
 # __1.11.763__ __2020-04-16__
 ## __AWS Elemental MediaConvert__
   - ### Features

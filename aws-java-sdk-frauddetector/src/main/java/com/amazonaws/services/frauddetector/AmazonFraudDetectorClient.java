@@ -79,17 +79,20 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.frauddetector.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.frauddetector.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.frauddetector.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.frauddetector.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.frauddetector.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.frauddetector.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.frauddetector.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.frauddetector.model.AmazonFraudDetectorException.class));
 
     public static AmazonFraudDetectorClientBuilder builder() {
@@ -327,6 +330,8 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      * @return Result of the CreateModelVersion operation returned by the service.
      * @throws ValidationException
      *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
@@ -497,7 +502,90 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes the detector version.
+     * Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions
+     * associated with the detector.
+     * </p>
+     * 
+     * @param deleteDetectorRequest
+     * @return Result of the DeleteDetector operation returned by the service.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an
+     *         associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @sample AmazonFraudDetector.DeleteDetector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDetectorResult deleteDetector(DeleteDetectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDetector(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDetectorResult executeDeleteDetector(DeleteDetectorRequest deleteDetectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDetectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDetectorRequest> request = null;
+        Response<DeleteDetectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDetectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDetector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDetectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDetectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code> status.
      * </p>
      * 
      * @param deleteDetectorVersionRequest
@@ -510,6 +598,29 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an
+     *         associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
      * @sample AmazonFraudDetector.DeleteDetectorVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion"
      *      target="_top">AWS API Documentation</a>
@@ -604,6 +715,89 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteEventResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEventResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code> or
+     * <code>INACTIVE</code> detector version.
+     * </p>
+     * 
+     * @param deleteRuleVersionRequest
+     * @return Result of the DeleteRuleVersion operation returned by the service.
+     * @throws ConflictException
+     *         An exception indicating there was a conflict during a delete operation. The following delete operations
+     *         can cause a conflict exception:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code> or
+     *         <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code> or
+     *         <code>DetectorVersions</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code> status is
+     *         <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an
+     *         associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         </p>
+     *         </li>
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @sample AmazonFraudDetector.DeleteRuleVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRuleVersionResult deleteRuleVersion(DeleteRuleVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRuleVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleVersionResult executeDeleteRuleVersion(DeleteRuleVersionRequest deleteRuleVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRuleVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRuleVersionRequest> request = null;
+        Response<DeleteRuleVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRuleVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRuleVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRuleVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
