@@ -15,6 +15,7 @@
 package com.amazonaws.http;
 
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.AWSRequestMetrics;
 import java.util.Arrays;
@@ -28,12 +29,15 @@ class AwsErrorResponseHandler implements HttpResponseHandler<AmazonServiceExcept
 
     private final HttpResponseHandler<AmazonServiceException> delegate;
     private final AWSRequestMetrics awsRequestMetrics;
+    private final ClientConfiguration clientConfiguration;
 
 
     AwsErrorResponseHandler(HttpResponseHandler<AmazonServiceException> errorResponseHandler,
-                            AWSRequestMetrics awsRequestMetrics) {
+                            AWSRequestMetrics awsRequestMetrics,
+                            ClientConfiguration clientConfiguration) {
         this.delegate = errorResponseHandler;
         this.awsRequestMetrics = awsRequestMetrics;
+        this.clientConfiguration = clientConfiguration;
     }
 
     @Override
@@ -41,6 +45,7 @@ class AwsErrorResponseHandler implements HttpResponseHandler<AmazonServiceExcept
         final AmazonServiceException ase = handleAse(response);
         ase.setStatusCode(response.getStatusCode());
         ase.setServiceName(response.getRequest().getServiceName());
+        ase.setProxyHost(clientConfiguration.getProxyHost());
         awsRequestMetrics.addPropertyWith(AWSRequestMetrics.Field.AWSRequestID, ase.getRequestId())
                 .addPropertyWith(AWSRequestMetrics.Field.AWSErrorCode, ase.getErrorCode())
                 .addPropertyWith(AWSRequestMetrics.Field.StatusCode, ase.getStatusCode());

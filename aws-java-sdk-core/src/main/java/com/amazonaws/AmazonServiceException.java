@@ -109,6 +109,11 @@ public class AmazonServiceException extends SdkClientException {
     private byte[] rawResponse;
 
     /**
+     * Track proxy host if configured, in case error response came from proxy instead of AWS.
+     */
+    private String proxyHost;
+
+    /**
      * Constructs a new AmazonServiceException with the specified message.
      *
      * @param errorMessage
@@ -264,7 +269,12 @@ public class AmazonServiceException extends SdkClientException {
             + " (Service: " + getServiceName()
             + "; Status Code: " + getStatusCode()
             + "; Error Code: " + getErrorCode()
-            + "; Request ID: " + getRequestId() + ")";
+            + "; Request ID: " + getRequestId()
+            // If using a proxy host and no AWS request ID, then the error response may have come from the proxy
+            + ((getRequestId() == null && getProxyHost() != null)
+                    ? "; Proxy: " + getProxyHost()
+                    : "")
+            + ")";
     }
 
     /**
@@ -311,5 +321,24 @@ public class AmazonServiceException extends SdkClientException {
      */
     public void setHttpHeaders(Map<String, String> httpHeaders) {
         this.httpHeaders = httpHeaders;
+    }
+
+    /**
+     * Returns proxy host if configured.
+     * If using a proxy, then it's possible that the error response came from the proxy instead of AWS.
+     *
+     * @return proxy host if configured or {@code null}
+     */
+    public String getProxyHost() {
+        return proxyHost;
+    }
+
+    /**
+     * Sets proxy host.
+     *
+     * @param proxyHost the proxy host to set
+     */
+    public void setProxyHost(String proxyHost) {
+        this.proxyHost = proxyHost;
     }
 }

@@ -68,6 +68,11 @@ public class AmazonS3ExceptionBuilder {
     private String errorResponseXml;
 
     /**
+     * Track proxy host if configured, in case error response came from proxy instead of AWS.
+     */
+    private String proxyHost;
+
+    /**
      * Returns the AWS request ID that uniquely identifies the service request
      * the caller made.
      *
@@ -236,6 +241,15 @@ public class AmazonS3ExceptionBuilder {
     }
 
     /**
+     * Sets proxy host.
+     *
+     * @param proxyHost the proxy host to set
+     */
+    public void setProxyHost(String proxyHost) {
+        this.proxyHost = proxyHost;
+    }
+
+    /**
      * Creates a new AmazonS3Exception object with the values set.
      */
     public AmazonS3Exception build() {
@@ -249,6 +263,7 @@ public class AmazonS3ExceptionBuilder {
         s3Exception.setCloudFrontId(cloudFrontId);
         s3Exception.setAdditionalDetails(additionalDetails);
         s3Exception.setErrorType(errorTypeOf(statusCode));
+        s3Exception.setProxyHost(proxyHost);
         return s3Exception;
     }
 
