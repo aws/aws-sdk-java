@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.internal;
 
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
@@ -57,6 +58,12 @@ public class S3ErrorResponseHandler implements
     private enum S3ErrorTags {
         Error, Message, Code, RequestId, HostId
     };
+
+    private final ClientConfiguration clientConfiguration;
+
+    public S3ErrorResponseHandler(ClientConfiguration clientConfiguration) {
+        this.clientConfiguration = clientConfiguration;
+    }
 
     @Override
     public AmazonServiceException handle(HttpResponse httpResponse)
@@ -153,6 +160,7 @@ public class S3ErrorResponseHandler implements
                     }
                     continue;
                 case XMLStreamConstants.END_DOCUMENT:
+                    exceptionBuilder.setProxyHost(clientConfiguration.getProxyHost());
                     return exceptionBuilder.build();
                 }
             }
@@ -180,6 +188,7 @@ public class S3ErrorResponseHandler implements
                 .setErrorCode(statusCode + " " + errorResponse.getStatusText());
         exceptionBuilder.addAdditionalDetail(Headers.S3_BUCKET_REGION,
                 errorResponse.getHeaders().get(Headers.S3_BUCKET_REGION));
+        exceptionBuilder.setProxyHost(clientConfiguration.getProxyHost());
         return exceptionBuilder.build();
     }
 

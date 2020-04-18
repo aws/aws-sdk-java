@@ -421,7 +421,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected final AWSCredentialsProvider awsCredentialsProvider;
 
     /** Responsible for handling error responses from all S3 service calls. */
-    protected final S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
+    protected final S3ErrorResponseHandler errorResponseHandler;
 
     /** Shared response handler for operations with no response.  */
     private final S3XmlResponseHandler<Void> voidResponseHandler = new S3XmlResponseHandler<Void>(null);
@@ -627,6 +627,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         super(clientConfiguration, requestMetricCollector, true);
         this.awsCredentialsProvider = credentialsProvider;
         this.skipMd5CheckStrategy = skipMd5CheckStrategy;
+        this.errorResponseHandler = new S3ErrorResponseHandler(clientConfiguration);
         init();
     }
 
@@ -693,6 +694,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         this.awsCredentialsProvider = s3ClientParams.getClientParams().getCredentialsProvider();
         this.skipMd5CheckStrategy = SkipMd5CheckStrategy.INSTANCE;
         setS3ClientOptions(s3ClientParams.getS3ClientOptions());
+        this.errorResponseHandler = new S3ErrorResponseHandler(
+                s3ClientParams.getClientParams().getClientConfiguration());
         init();
     }
 
@@ -2057,6 +2060,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ase.setExtendedRequestId(hostId);
             ase.setServiceName(request.getServiceName());
             ase.setStatusCode(200);
+            ase.setProxyHost(clientConfiguration.getProxyHost());
 
             throw ase;
         }
@@ -2197,6 +2201,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ase.setExtendedRequestId(hostId);
             ase.setServiceName(request.getServiceName());
             ase.setStatusCode(200);
+            ase.setProxyHost(clientConfiguration.getProxyHost());
 
             throw ase;
         }
@@ -2284,6 +2289,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ex.setRequestId(headers.get(Headers.REQUEST_ID));
             ex.setExtendedRequestId(headers.get(Headers.EXTENDED_REQUEST_ID));
             ex.setCloudFrontId(headers.get(Headers.CLOUD_FRONT_ID));
+            ex.setProxyHost(clientConfiguration.getProxyHost());
 
             throw ex;
         }
