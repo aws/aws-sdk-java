@@ -49,7 +49,7 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
     private String totalCost;
     /**
      * <p>
-     * The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans usage
+     * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
      * in an account(or set of accounts).
      * </p>
      */
@@ -177,12 +177,12 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans usage
+     * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
      * in an account(or set of accounts).
      * </p>
      * 
      * @param coveragePercentage
-     *        The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans
+     *        The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans
      *        usage in an account(or set of accounts).
      */
 
@@ -192,12 +192,12 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans usage
+     * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
      * in an account(or set of accounts).
      * </p>
      * 
-     * @return The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans
-     *         usage in an account(or set of accounts).
+     * @return The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings
+     *         Plans usage in an account(or set of accounts).
      */
 
     public String getCoveragePercentage() {
@@ -206,12 +206,12 @@ public class SavingsPlansCoverageData implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans usage
+     * The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans usage
      * in an account(or set of accounts).
      * </p>
      * 
      * @param coveragePercentage
-     *        The percentage of your existing Savings Planscovered usage, divided by all of your eligible Savings Plans
+     *        The percentage of your existing Savings Plans covered usage, divided by all of your eligible Savings Plans
      *        usage in an account(or set of accounts).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

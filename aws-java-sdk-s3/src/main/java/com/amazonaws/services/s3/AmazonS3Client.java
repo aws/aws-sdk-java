@@ -695,7 +695,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         this.skipMd5CheckStrategy = SkipMd5CheckStrategy.INSTANCE;
         setS3ClientOptions(s3ClientParams.getS3ClientOptions());
         this.errorResponseHandler = new S3ErrorResponseHandler(
-                s3ClientParams.getClientParams().getClientConfiguration());
+            s3ClientParams.getClientParams().getClientConfiguration());
         init();
     }
 

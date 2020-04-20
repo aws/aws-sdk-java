@@ -61,13 +61,6 @@ public interface AWSCostExplorer {
     String ENDPOINT_PREFIX = "ce";
 
     /**
-     * <important>
-     * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * </important>
      * <p>
      * Creates a new Cost Category with the requested name and rules.
      * </p>
@@ -86,13 +79,6 @@ public interface AWSCostExplorer {
     CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest);
 
     /**
-     * <important>
-     * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * </important>
      * <p>
      * Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost
      * Category.
@@ -111,13 +97,6 @@ public interface AWSCostExplorer {
     DeleteCostCategoryDefinitionResult deleteCostCategoryDefinition(DeleteCostCategoryDefinitionRequest deleteCostCategoryDefinitionRequest);
 
     /**
-     * <important>
-     * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * </important>
      * <p>
      * Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's defined in the account.
      * </p>
@@ -175,7 +154,7 @@ public interface AWSCostExplorer {
      * metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
      * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
@@ -254,8 +233,9 @@ public interface AWSCostExplorer {
      * <p>
      * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
-     * reservation. An organization's master account can see the coverage of the associated member accounts. For any
-     * time period, you can filter data about reservation usage by the following dimensions:
+     * reservation. An organization's master account can see the coverage of the associated member accounts. This
+     * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
+     * reservation usage by the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -421,8 +401,9 @@ public interface AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
-     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. For any
-     * time period, you can filter data for Savings Plans usage with the following dimensions:
+     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. This
+     * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
+     * Savings Plans usage with the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -581,18 +562,13 @@ public interface AWSCostExplorer {
     GetUsageForecastResult getUsageForecast(GetUsageForecastRequest getUsageForecastRequest);
 
     /**
-     * <important>
      * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * </important>
-     * <p>
-     * Returns the name, ARN and effective dates of all Cost Categories defined in the account. You have the option to
-     * use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is
-     * no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost
-     * Category is still effective, <code>EffectiveEnd</code> is omitted in the response.
+     * Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the
+     * account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active
+     * on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are
+     * effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
+     * response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a
+     * <code>MaxResults</code> range up to 100.
      * </p>
      * 
      * @param listCostCategoryDefinitionsRequest
@@ -606,13 +582,6 @@ public interface AWSCostExplorer {
     ListCostCategoryDefinitionsResult listCostCategoryDefinitions(ListCostCategoryDefinitionsRequest listCostCategoryDefinitionsRequest);
 
     /**
-     * <important>
-     * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * </important>
      * <p>
      * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
      * month’s expenses and future expenses. This won’t change categorization for the previous months.

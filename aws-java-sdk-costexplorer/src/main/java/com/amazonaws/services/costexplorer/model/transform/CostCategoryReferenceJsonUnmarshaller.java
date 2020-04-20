@@ -64,6 +64,10 @@ public class CostCategoryReferenceJsonUnmarshaller implements Unmarshaller<CostC
                     context.nextToken();
                     costCategoryReference.setEffectiveEnd(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NumberOfRules", targetDepth)) {
+                    context.nextToken();
+                    costCategoryReference.setNumberOfRules(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

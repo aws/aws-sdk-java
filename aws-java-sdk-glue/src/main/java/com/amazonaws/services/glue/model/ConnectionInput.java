@@ -52,6 +52,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
@@ -173,6 +178,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
@@ -187,6 +197,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
      *        </p>
      *        </li>
      *        <li>
@@ -216,6 +231,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
@@ -229,6 +249,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
      *         </p>
      *         </li>
      *         <li>
@@ -258,6 +283,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
@@ -272,6 +302,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
      *        </p>
      *        </li>
      *        <li>
@@ -303,6 +338,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
@@ -317,6 +357,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
      *        </p>
      *        </li>
      *        <li>

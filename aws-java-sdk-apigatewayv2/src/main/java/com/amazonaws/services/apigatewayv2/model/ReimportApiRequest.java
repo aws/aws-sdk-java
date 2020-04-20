@@ -34,8 +34,8 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split.
      * The default value is ignore. To learn more, see <a
-     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
-     * >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the
+     * OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      * </p>
      */
     private String basepath;
@@ -47,8 +47,8 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String body;
     /**
      * <p>
-     * Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The default
-     * value is false.
+     * Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues
+     * if a warning is encountered.
      * </p>
      */
     private Boolean failOnWarnings;
@@ -97,14 +97,14 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split.
      * The default value is ignore. To learn more, see <a
-     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
-     * >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the
+     * OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      * </p>
      * 
      * @param basepath
      *        Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and
-     *        split. The default value is ignore. To learn more, see <a href=
-     *        "https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
+     *        split. The default value is ignore. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
      *        >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      */
 
@@ -116,14 +116,14 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split.
      * The default value is ignore. To learn more, see <a
-     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
-     * >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the
+     * OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      * </p>
      * 
      * @return Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and
      *         split. The default value is ignore. To learn more, see <a href=
-     *         "https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
-     *         >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
+     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     *         the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      */
 
     public String getBasepath() {
@@ -134,14 +134,14 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split.
      * The default value is ignore. To learn more, see <a
-     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
-     * >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the
+     * OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      * </p>
      * 
      * @param basepath
      *        Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and
-     *        split. The default value is ignore. To learn more, see <a href=
-     *        "https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
+     *        split. The default value is ignore. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html"
      *        >Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -193,13 +193,13 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The default
-     * value is false.
+     * Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues
+     * if a warning is encountered.
      * </p>
      * 
      * @param failOnWarnings
-     *        Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The
-     *        default value is false.
+     *        Specifies whether to rollback the API creation when a warning is encountered. By default, API creation
+     *        continues if a warning is encountered.
      */
 
     public void setFailOnWarnings(Boolean failOnWarnings) {
@@ -208,12 +208,12 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The default
-     * value is false.
+     * Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues
+     * if a warning is encountered.
      * </p>
      * 
-     * @return Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The
-     *         default value is false.
+     * @return Specifies whether to rollback the API creation when a warning is encountered. By default, API creation
+     *         continues if a warning is encountered.
      */
 
     public Boolean getFailOnWarnings() {
@@ -222,13 +222,13 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The default
-     * value is false.
+     * Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues
+     * if a warning is encountered.
      * </p>
      * 
      * @param failOnWarnings
-     *        Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The
-     *        default value is false.
+     *        Specifies whether to rollback the API creation when a warning is encountered. By default, API creation
+     *        continues if a warning is encountered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,12 +239,12 @@ public class ReimportApiRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The default
-     * value is false.
+     * Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues
+     * if a warning is encountered.
      * </p>
      * 
-     * @return Specifies whether to rollback the API creation (true) or not (false) when a warning is encountered. The
-     *         default value is false.
+     * @return Specifies whether to rollback the API creation when a warning is encountered. By default, API creation
+     *         continues if a warning is encountered.
      */
 
     public Boolean isFailOnWarnings() {

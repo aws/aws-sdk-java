@@ -591,6 +591,40 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request) {
+
+        return verifyResourcesExistForTagrisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(
+            final VerifyResourcesExistForTagrisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<VerifyResourcesExistForTagrisRequest, VerifyResourcesExistForTagrisResult> asyncHandler) {
+        final VerifyResourcesExistForTagrisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<VerifyResourcesExistForTagrisResult>() {
+            @Override
+            public VerifyResourcesExistForTagrisResult call() throws Exception {
+                VerifyResourcesExistForTagrisResult result = null;
+
+                try {
+                    result = executeVerifyResourcesExistForTagris(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

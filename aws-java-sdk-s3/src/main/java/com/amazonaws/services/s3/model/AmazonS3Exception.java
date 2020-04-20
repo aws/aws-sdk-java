@@ -176,10 +176,7 @@ public class AmazonS3Exception extends AmazonServiceException implements Seriali
                + "; Error Code: " + getErrorCode()
                + "; Request ID: " + getRequestId()
                + "; S3 Extended Request ID: " + getExtendedRequestId()
-               // If using a proxy host and no AWS request ID, then the error response may have come from the proxy
-               + ((getRequestId() == null && getProxyHost() != null)
-                       ? "; Proxy: " + getProxyHost()
-                       : "")
+               + "; Proxy: " + getProxyHost()
                + ")";
     }
 

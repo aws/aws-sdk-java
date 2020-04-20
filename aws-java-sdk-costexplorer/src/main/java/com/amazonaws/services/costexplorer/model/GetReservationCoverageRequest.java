@@ -186,6 +186,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      */
     private Expression filter;
     /**
@@ -961,6 +964,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      * 
      * @param filter
      *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -1035,6 +1041,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     *        </p>
+     *        <p>
+     *        Cost category is also supported.
      */
 
     public void setFilter(Expression filter) {
@@ -1116,6 +1125,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      * 
      * @return Filters utilization data by dimensions. You can filter by the following dimensions:</p>
      *         <ul>
@@ -1189,6 +1201,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     *         </p>
+     *         <p>
+     *         Cost category is also supported.
      */
 
     public Expression getFilter() {
@@ -1270,6 +1285,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      * 
      * @param filter
      *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -1344,6 +1362,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     *        </p>
+     *        <p>
+     *        Cost category is also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

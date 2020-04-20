@@ -84,6 +84,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
      * multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      */
     private Expression filter;
     /**
@@ -366,6 +369,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
      * multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      * 
      * @param filter
      *        Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the
@@ -397,6 +403,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
      *        dimension. If there are multiple values for a dimension, they are OR'd together.
+     *        </p>
+     *        <p>
+     *        Cost category is also supported.
      */
 
     public void setFilter(Expression filter) {
@@ -436,6 +445,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
      * multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      * 
      * @return Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the
      *         following dimensions:</p>
@@ -466,6 +478,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *         >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
      *         dimension. If there are multiple values for a dimension, they are OR'd together.
+     *         </p>
+     *         <p>
+     *         Cost category is also supported.
      */
 
     public Expression getFilter() {
@@ -505,6 +520,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      * object as the other operations, but only <code>AND</code> is supported among each dimension. If there are
      * multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * Cost category is also supported.
+     * </p>
      * 
      * @param filter
      *        Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the
@@ -536,6 +554,9 @@ public class GetSavingsPlansCoverageRequest extends com.amazonaws.AmazonWebServi
      *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
      *        >Expression</a> object as the other operations, but only <code>AND</code> is supported among each
      *        dimension. If there are multiple values for a dimension, they are OR'd together.
+     *        </p>
+     *        <p>
+     *        Cost category is also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <important>
- * <p>
- * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of Cost
- * Categories is subject to the Beta Service Participation terms of the <a
- * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
- * </p>
- * </important>
  * <p>
  * A reference to a Cost Category containing only enough information to identify the Cost Category.
  * </p>
@@ -40,7 +33,7 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier for your Cost Category Reference.
+     * The unique identifier for your Cost Category.
      * </p>
      */
     private String costCategoryArn;
@@ -58,14 +51,20 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
      * </p>
      */
     private String effectiveEnd;
+    /**
+     * <p>
+     * The number of rules associated with a specific Cost Category.
+     * </p>
+     */
+    private Integer numberOfRules;
 
     /**
      * <p>
-     * The unique identifier for your Cost Category Reference.
+     * The unique identifier for your Cost Category.
      * </p>
      * 
      * @param costCategoryArn
-     *        The unique identifier for your Cost Category Reference.
+     *        The unique identifier for your Cost Category.
      */
 
     public void setCostCategoryArn(String costCategoryArn) {
@@ -74,10 +73,10 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier for your Cost Category Reference.
+     * The unique identifier for your Cost Category.
      * </p>
      * 
-     * @return The unique identifier for your Cost Category Reference.
+     * @return The unique identifier for your Cost Category.
      */
 
     public String getCostCategoryArn() {
@@ -86,11 +85,11 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier for your Cost Category Reference.
+     * The unique identifier for your Cost Category.
      * </p>
      * 
      * @param costCategoryArn
-     *        The unique identifier for your Cost Category Reference.
+     *        The unique identifier for your Cost Category.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,6 +205,46 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The number of rules associated with a specific Cost Category.
+     * </p>
+     * 
+     * @param numberOfRules
+     *        The number of rules associated with a specific Cost Category.
+     */
+
+    public void setNumberOfRules(Integer numberOfRules) {
+        this.numberOfRules = numberOfRules;
+    }
+
+    /**
+     * <p>
+     * The number of rules associated with a specific Cost Category.
+     * </p>
+     * 
+     * @return The number of rules associated with a specific Cost Category.
+     */
+
+    public Integer getNumberOfRules() {
+        return this.numberOfRules;
+    }
+
+    /**
+     * <p>
+     * The number of rules associated with a specific Cost Category.
+     * </p>
+     * 
+     * @param numberOfRules
+     *        The number of rules associated with a specific Cost Category.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategoryReference withNumberOfRules(Integer numberOfRules) {
+        setNumberOfRules(numberOfRules);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -224,7 +263,9 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
         if (getEffectiveStart() != null)
             sb.append("EffectiveStart: ").append(getEffectiveStart()).append(",");
         if (getEffectiveEnd() != null)
-            sb.append("EffectiveEnd: ").append(getEffectiveEnd());
+            sb.append("EffectiveEnd: ").append(getEffectiveEnd()).append(",");
+        if (getNumberOfRules() != null)
+            sb.append("NumberOfRules: ").append(getNumberOfRules());
         sb.append("}");
         return sb.toString();
     }
@@ -255,6 +296,10 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
             return false;
         if (other.getEffectiveEnd() != null && other.getEffectiveEnd().equals(this.getEffectiveEnd()) == false)
             return false;
+        if (other.getNumberOfRules() == null ^ this.getNumberOfRules() == null)
+            return false;
+        if (other.getNumberOfRules() != null && other.getNumberOfRules().equals(this.getNumberOfRules()) == false)
+            return false;
         return true;
     }
 
@@ -267,6 +312,7 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getEffectiveStart() == null) ? 0 : getEffectiveStart().hashCode());
         hashCode = prime * hashCode + ((getEffectiveEnd() == null) ? 0 : getEffectiveEnd().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfRules() == null) ? 0 : getNumberOfRules().hashCode());
         return hashCode;
     }
 

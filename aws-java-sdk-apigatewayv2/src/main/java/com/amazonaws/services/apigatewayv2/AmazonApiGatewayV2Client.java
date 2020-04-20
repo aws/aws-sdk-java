@@ -1751,6 +1751,59 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
     }
 
     /**
+     * @param exportApiRequest
+     * @return Result of the ExportApi operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @sample AmazonApiGatewayV2.ExportApi
+     */
+    @Override
+    public ExportApiResult exportApi(ExportApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportApi(request);
+    }
+
+    @SdkInternalApi
+    final ExportApiResult executeExportApi(ExportApiRequest exportApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportApiRequest> request = null;
+        Response<ExportApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportApiResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(false).withHasStreamingSuccessResponse(false), new ExportApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Gets an Api resource.
      * </p>

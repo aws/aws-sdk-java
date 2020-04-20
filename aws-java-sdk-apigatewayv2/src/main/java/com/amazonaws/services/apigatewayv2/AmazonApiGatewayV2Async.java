@@ -819,6 +819,25 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
             com.amazonaws.handlers.AsyncHandler<DeleteVpcLinkRequest, DeleteVpcLinkResult> asyncHandler);
 
     /**
+     * @param exportApiRequest
+     * @return A Java Future containing the result of the ExportApi operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.ExportApi
+     */
+    java.util.concurrent.Future<ExportApiResult> exportApiAsync(ExportApiRequest exportApiRequest);
+
+    /**
+     * @param exportApiRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportApi operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.ExportApi
+     */
+    java.util.concurrent.Future<ExportApiResult> exportApiAsync(ExportApiRequest exportApiRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportApiRequest, ExportApiResult> asyncHandler);
+
+    /**
      * <p>
      * Gets an Api resource.
      * </p>

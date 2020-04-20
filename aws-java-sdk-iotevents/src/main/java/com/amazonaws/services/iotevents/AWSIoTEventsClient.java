@@ -80,8 +80,14 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagrisInvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.TagrisInvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagrisInternalServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.TagrisInternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
@@ -101,11 +107,23 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagrisAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.TagrisAccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagrisThrottledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.TagrisThrottledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagrisInvalidArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.TagrisInvalidArnExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagrisPartialResourcesExistResultsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.TagrisPartialResourcesExistResultsExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotevents.model.AWSIoTEventsException.class));
 
     public static AWSIoTEventsClientBuilder builder() {
@@ -1178,6 +1196,63 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInputResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param verifyResourcesExistForTagrisRequest
+     * @return Result of the VerifyResourcesExistForTagris operation returned by the service.
+     * @throws TagrisAccessDeniedException
+     * @throws TagrisInternalServiceException
+     * @throws TagrisInvalidArnException
+     * @throws TagrisInvalidParameterException
+     * @throws TagrisPartialResourcesExistResultsException
+     * @throws TagrisThrottledException
+     * @sample AWSIoTEvents.VerifyResourcesExistForTagris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/VerifyResourcesExistForTagris"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public VerifyResourcesExistForTagrisResult verifyResourcesExistForTagris(VerifyResourcesExistForTagrisRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyResourcesExistForTagris(request);
+    }
+
+    @SdkInternalApi
+    final VerifyResourcesExistForTagrisResult executeVerifyResourcesExistForTagris(VerifyResourcesExistForTagrisRequest verifyResourcesExistForTagrisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(verifyResourcesExistForTagrisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<VerifyResourcesExistForTagrisRequest> request = null;
+        Response<VerifyResourcesExistForTagrisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifyResourcesExistForTagrisRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(verifyResourcesExistForTagrisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyResourcesExistForTagris");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<VerifyResourcesExistForTagrisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new VerifyResourcesExistForTagrisResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

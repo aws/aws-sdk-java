@@ -99,6 +99,9 @@ public abstract class AbstractTransfer implements Transfer {
                 Future<?> f = monitor.getFuture();
                 result = f.get();
             }
+            if (state == TransferState.Failed) {
+                System.out.println("what?!");
+            }
         } catch (ExecutionException e) {
             rethrowExecutionException(e);
 

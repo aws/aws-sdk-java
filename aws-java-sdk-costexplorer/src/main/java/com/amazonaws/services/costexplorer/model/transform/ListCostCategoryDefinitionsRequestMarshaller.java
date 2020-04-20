@@ -31,6 +31,8 @@ public class ListCostCategoryDefinitionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EffectiveOn").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
     private static final ListCostCategoryDefinitionsRequestMarshaller instance = new ListCostCategoryDefinitionsRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class ListCostCategoryDefinitionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listCostCategoryDefinitionsRequest.getEffectiveOn(), EFFECTIVEON_BINDING);
             protocolMarshaller.marshall(listCostCategoryDefinitionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listCostCategoryDefinitionsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

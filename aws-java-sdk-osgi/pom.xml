@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.765-SNAPSHOT</version>
+    <version>1.11.765</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-synthetics</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-codestarconnections</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1442,6 +1448,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Synthetics</title>
+                                  <packages>com.amazonaws.services.synthetics*</packages>
+                              </group>
                               <group>
                                   <title>AWS CodeStar connections</title>
                                   <packages>com.amazonaws.services.codestarconnections*</packages>

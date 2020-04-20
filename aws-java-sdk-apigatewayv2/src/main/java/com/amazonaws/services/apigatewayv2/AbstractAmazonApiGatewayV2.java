@@ -168,6 +168,11 @@ public class AbstractAmazonApiGatewayV2 implements AmazonApiGatewayV2 {
     }
 
     @Override
+    public ExportApiResult exportApi(ExportApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetApiResult getApi(GetApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

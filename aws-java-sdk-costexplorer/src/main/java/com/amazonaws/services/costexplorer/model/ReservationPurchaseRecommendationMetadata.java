@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about this specific recommendation, such as the time stamp for when AWS made a specific recommendation.
+ * Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationMetadata"
@@ -36,7 +36,7 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
     private String recommendationId;
     /**
      * <p>
-     * The time stamp for when AWS made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      */
     private String generationTimestamp;
@@ -83,11 +83,11 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The time stamp for when AWS made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The time stamp for when AWS made this recommendation.
+     *        The timestamp for when AWS made this recommendation.
      */
 
     public void setGenerationTimestamp(String generationTimestamp) {
@@ -96,10 +96,10 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The time stamp for when AWS made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      * 
-     * @return The time stamp for when AWS made this recommendation.
+     * @return The timestamp for when AWS made this recommendation.
      */
 
     public String getGenerationTimestamp() {
@@ -108,11 +108,11 @@ public class ReservationPurchaseRecommendationMetadata implements Serializable, 
 
     /**
      * <p>
-     * The time stamp for when AWS made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The time stamp for when AWS made this recommendation.
+     *        The timestamp for when AWS made this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -105,12 +105,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
     private TagValues tags;
     /**
      * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * <p>
-     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * The filter based on <code>CostCategory</code> values.
      * </p>
      */
     private CostCategoryValues costCategories;
@@ -377,20 +372,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * <p>
-     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * The filter based on <code>CostCategory</code> values.
      * </p>
      * 
      * @param costCategories
-     *        <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your
-     *        use of Cost Categories is subject to the Beta Service Participation terms of the <a
-     *        href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i> </p>
-     *        <p>
-     *        The specific <code>CostCategory</code> used for <code>Expression</code>.
+     *        The filter based on <code>CostCategory</code> values.
      */
 
     public void setCostCategories(CostCategoryValues costCategories) {
@@ -399,19 +385,10 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * <p>
-     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * The filter based on <code>CostCategory</code> values.
      * </p>
      * 
-     * @return <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your
-     *         use of Cost Categories is subject to the Beta Service Participation terms of the <a
-     *         href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i> </p>
-     *         <p>
-     *         The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * @return The filter based on <code>CostCategory</code> values.
      */
 
     public CostCategoryValues getCostCategories() {
@@ -420,20 +397,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your use of
-     * Cost Categories is subject to the Beta Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * <p>
-     * The specific <code>CostCategory</code> used for <code>Expression</code>.
+     * The filter based on <code>CostCategory</code> values.
      * </p>
      * 
      * @param costCategories
-     *        <i> <b>Cost Category is in public beta for AWS Billing and Cost Management and is subject to change. Your
-     *        use of Cost Categories is subject to the Beta Service Participation terms of the <a
-     *        href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section 1.10).</b> </i> </p>
-     *        <p>
-     *        The specific <code>CostCategory</code> used for <code>Expression</code>.
+     *        The filter based on <code>CostCategory</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,6 +32,8 @@ public class TagValuesMarshaller {
             .marshallLocationName("Key").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Values").build();
+    private static final MarshallingInfo<List> MATCHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MatchOptions").build();
 
     private static final TagValuesMarshaller instance = new TagValuesMarshaller();
 
@@ -51,6 +53,7 @@ public class TagValuesMarshaller {
         try {
             protocolMarshaller.marshall(tagValues.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(tagValues.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(tagValues.getMatchOptions(), MATCHOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -270,10 +270,7 @@ public class AmazonServiceException extends SdkClientException {
             + "; Status Code: " + getStatusCode()
             + "; Error Code: " + getErrorCode()
             + "; Request ID: " + getRequestId()
-            // If using a proxy host and no AWS request ID, then the error response may have come from the proxy
-            + ((getRequestId() == null && getProxyHost() != null)
-                    ? "; Proxy: " + getProxyHost()
-                    : "")
+            + "; Proxy: " + getProxyHost()
             + ")";
     }
 

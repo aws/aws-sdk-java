@@ -124,8 +124,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
      * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
      * more, see <a
-     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
-     * For private integrations, all resources must be owned by the same AWS account.
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For
+     * private integrations, all resources must be owned by the same AWS account.
      * </p>
      */
     private String integrationUri;
@@ -887,8 +887,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
      * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
      * more, see <a
-     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
-     * For private integrations, all resources must be owned by the same AWS account.
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For
+     * private integrations, all resources must be owned by the same AWS account.
      * </p>
      * 
      * @param integrationUri
@@ -901,8 +901,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API
      *        Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific
      *        resources. To learn more, see <a
-     *        href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html"
-     *        >DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     *        For private integrations, all resources must be owned by the same AWS account.
      */
 
     public void setIntegrationUri(String integrationUri) {
@@ -921,8 +921,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
      * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
      * more, see <a
-     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
-     * For private integrations, all resources must be owned by the same AWS account.
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For
+     * private integrations, all resources must be owned by the same AWS account.
      * </p>
      * 
      * @return For a Lambda integration, specify the URI of a Lambda function.</p>
@@ -934,8 +934,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API
      *         Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific
      *         resources. To learn more, see <a
-     *         href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html"
-     *         >DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     *         For private integrations, all resources must be owned by the same AWS account.
      */
 
     public String getIntegrationUri() {
@@ -954,8 +954,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      * Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses
      * DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn
      * more, see <a
-     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
-     * For private integrations, all resources must be owned by the same AWS account.
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For
+     * private integrations, all resources must be owned by the same AWS account.
      * </p>
      * 
      * @param integrationUri
@@ -968,8 +968,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API
      *        Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific
      *        resources. To learn more, see <a
-     *        href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html"
-     *        >DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     *        For private integrations, all resources must be owned by the same AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

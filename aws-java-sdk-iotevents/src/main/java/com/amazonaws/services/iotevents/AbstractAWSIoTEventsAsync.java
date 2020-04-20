@@ -235,4 +235,17 @@ public class AbstractAWSIoTEventsAsync extends AbstractAWSIoTEvents implements A
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request) {
+
+        return verifyResourcesExistForTagrisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request,
+            com.amazonaws.handlers.AsyncHandler<VerifyResourcesExistForTagrisRequest, VerifyResourcesExistForTagrisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

@@ -522,6 +522,19 @@ public interface AmazonApiGatewayV2 {
     DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest deleteVpcLinkRequest);
 
     /**
+     * @param exportApiRequest
+     * @return Result of the ExportApi operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @sample AmazonApiGatewayV2.ExportApi
+     */
+    ExportApiResult exportApi(ExportApiRequest exportApiRequest);
+
+    /**
      * <p>
      * Gets an Api resource.
      * </p>

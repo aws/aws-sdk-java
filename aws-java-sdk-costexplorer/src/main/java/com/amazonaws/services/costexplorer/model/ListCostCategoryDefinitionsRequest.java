@@ -36,12 +36,14 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
-     * <p>
-     * You can use this information to retrieve the full Cost Category information using
-     * <code>DescribeCostCategory</code>.
-     * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The number of entries a paginated response contains.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -88,17 +90,10 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
-     * <p>
-     * You can use this information to retrieve the full Cost Category information using
-     * <code>DescribeCostCategory</code>.
-     * </p>
      * 
      * @param nextToken
      *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
-     *        from a previous call has more results than the maximum page size. </p>
-     *        <p>
-     *        You can use this information to retrieve the full Cost Category information using
-     *        <code>DescribeCostCategory</code>.
+     *        from a previous call has more results than the maximum page size.
      */
 
     public void setNextToken(String nextToken) {
@@ -110,16 +105,9 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
-     * <p>
-     * You can use this information to retrieve the full Cost Category information using
-     * <code>DescribeCostCategory</code>.
-     * </p>
      * 
      * @return The token to retrieve the next set of results. Amazon Web Services provides the token when the response
-     *         from a previous call has more results than the maximum page size. </p>
-     *         <p>
-     *         You can use this information to retrieve the full Cost Category information using
-     *         <code>DescribeCostCategory</code>.
+     *         from a previous call has more results than the maximum page size.
      */
 
     public String getNextToken() {
@@ -131,22 +119,55 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
      * The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a
      * previous call has more results than the maximum page size.
      * </p>
-     * <p>
-     * You can use this information to retrieve the full Cost Category information using
-     * <code>DescribeCostCategory</code>.
-     * </p>
      * 
      * @param nextToken
      *        The token to retrieve the next set of results. Amazon Web Services provides the token when the response
-     *        from a previous call has more results than the maximum page size. </p>
-     *        <p>
-     *        You can use this information to retrieve the full Cost Category information using
-     *        <code>DescribeCostCategory</code>.
+     *        from a previous call has more results than the maximum page size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListCostCategoryDefinitionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of entries a paginated response contains.
+     * </p>
+     * 
+     * @param maxResults
+     *        The number of entries a paginated response contains.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The number of entries a paginated response contains.
+     * </p>
+     * 
+     * @return The number of entries a paginated response contains.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The number of entries a paginated response contains.
+     * </p>
+     * 
+     * @param maxResults
+     *        The number of entries a paginated response contains.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCostCategoryDefinitionsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -165,7 +186,9 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
         if (getEffectiveOn() != null)
             sb.append("EffectiveOn: ").append(getEffectiveOn()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -188,6 +211,10 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +225,7 @@ public class ListCostCategoryDefinitionsRequest extends com.amazonaws.AmazonWebS
 
         hashCode = prime * hashCode + ((getEffectiveOn() == null) ? 0 : getEffectiveOn().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

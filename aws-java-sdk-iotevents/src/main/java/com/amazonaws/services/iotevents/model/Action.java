@@ -116,6 +116,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DynamoDBv2Action dynamoDBv2;
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     * SiteWise asset property.
+     * </p>
+     */
+    private IotSiteWiseAction iotSiteWise;
 
     /**
      * <p>
@@ -700,6 +707,52 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     * SiteWise asset property.
+     * </p>
+     * 
+     * @param iotSiteWise
+     *        Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     *        SiteWise asset property.
+     */
+
+    public void setIotSiteWise(IotSiteWiseAction iotSiteWise) {
+        this.iotSiteWise = iotSiteWise;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     * SiteWise asset property.
+     * </p>
+     * 
+     * @return Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     *         SiteWise asset property.
+     */
+
+    public IotSiteWiseAction getIotSiteWise() {
+        return this.iotSiteWise;
+    }
+
+    /**
+     * <p>
+     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     * SiteWise asset property.
+     * </p>
+     * 
+     * @param iotSiteWise
+     *        Sends information about the detector model instance and the event that triggered the action to an AWS IoT
+     *        SiteWise asset property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotSiteWise(IotSiteWiseAction iotSiteWise) {
+        setIotSiteWise(iotSiteWise);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -734,7 +787,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getDynamoDB() != null)
             sb.append("DynamoDB: ").append(getDynamoDB()).append(",");
         if (getDynamoDBv2() != null)
-            sb.append("DynamoDBv2: ").append(getDynamoDBv2());
+            sb.append("DynamoDBv2: ").append(getDynamoDBv2()).append(",");
+        if (getIotSiteWise() != null)
+            sb.append("IotSiteWise: ").append(getIotSiteWise());
         sb.append("}");
         return sb.toString();
     }
@@ -797,6 +852,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDynamoDBv2() != null && other.getDynamoDBv2().equals(this.getDynamoDBv2()) == false)
             return false;
+        if (other.getIotSiteWise() == null ^ this.getIotSiteWise() == null)
+            return false;
+        if (other.getIotSiteWise() != null && other.getIotSiteWise().equals(this.getIotSiteWise()) == false)
+            return false;
         return true;
     }
 
@@ -817,6 +876,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFirehose() == null) ? 0 : getFirehose().hashCode());
         hashCode = prime * hashCode + ((getDynamoDB() == null) ? 0 : getDynamoDB().hashCode());
         hashCode = prime * hashCode + ((getDynamoDBv2() == null) ? 0 : getDynamoDBv2().hashCode());
+        hashCode = prime * hashCode + ((getIotSiteWise() == null) ? 0 : getIotSiteWise().hashCode());
         return hashCode;
     }
 

@@ -158,6 +158,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of
+     * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -502,6 +508,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of
+     * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return These key-value pairs define parameters for the connection:</p>
@@ -606,6 +618,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
+     *         addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     *         bootstrap itself.
      *         </p>
      *         </li>
      */
@@ -720,6 +739,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of
+     * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -825,6 +850,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
+     *        addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     *        bootstrap itself.
      *        </p>
      *        </li>
      */
@@ -939,6 +971,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of
+     * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -1044,6 +1082,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
+     *        addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     *        bootstrap itself.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

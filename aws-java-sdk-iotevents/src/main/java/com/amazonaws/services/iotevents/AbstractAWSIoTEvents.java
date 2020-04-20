@@ -108,6 +108,11 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
     }
 
     @Override
+    public VerifyResourcesExistForTagrisResult verifyResourcesExistForTagris(VerifyResourcesExistForTagrisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -392,6 +392,19 @@ public class AbstractAmazonApiGatewayV2Async extends AbstractAmazonApiGatewayV2 
     }
 
     @Override
+    public java.util.concurrent.Future<ExportApiResult> exportApiAsync(ExportApiRequest request) {
+
+        return exportApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportApiResult> exportApiAsync(ExportApiRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportApiRequest, ExportApiResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetApiResult> getApiAsync(GetApiRequest request) {
 
         return getApiAsync(request, null);

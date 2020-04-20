@@ -62,7 +62,7 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
     private String lookbackPeriodInDays;
     /**
      * <p>
-     * Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible workloads.
+     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
      * </p>
      */
     private java.util.List<SavingsPlansPurchaseRecommendationDetail> savingsPlansPurchaseRecommendationDetails;
@@ -386,10 +386,10 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible workloads.
+     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
      * </p>
      * 
-     * @return Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible
+     * @return Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
      *         workloads.
      */
 
@@ -399,11 +399,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible workloads.
+     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
      * </p>
      * 
      * @param savingsPlansPurchaseRecommendationDetails
-     *        Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible
+     *        Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
      *        workloads.
      */
 
@@ -420,7 +420,7 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible workloads.
+     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -430,7 +430,7 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
      * </p>
      * 
      * @param savingsPlansPurchaseRecommendationDetails
-     *        Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible
+     *        Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
      *        workloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -449,11 +449,11 @@ public class SavingsPlansPurchaseRecommendation implements Serializable, Cloneab
 
     /**
      * <p>
-     * Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible workloads.
+     * Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible workloads.
      * </p>
      * 
      * @param savingsPlansPurchaseRecommendationDetails
-     *        Details for the Savings Plans we recommend you to purchase to cover existing, Savings Plans eligible
+     *        Details for the Savings Plans we recommend that you purchase to cover existing Savings Plans eligible
      *        workloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

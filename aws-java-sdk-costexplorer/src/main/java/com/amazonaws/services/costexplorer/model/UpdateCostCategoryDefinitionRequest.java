@@ -35,15 +35,9 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
     private String ruleVersion;
     /**
      * <p>
-     * <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
-     * dimensions supported is <code>LINKED_ACCOUNT</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     * </p>
-     * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The <code>Expression</code> object used to categorize costs. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule </a>.
      * </p>
      */
     private java.util.List<CostCategoryRule> rules;
@@ -130,25 +124,14 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
-     * dimensions supported is <code>LINKED_ACCOUNT</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     * </p>
-     * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The <code>Expression</code> object used to categorize costs. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule </a>.
      * </p>
      * 
-     * @return <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently
-     *         the only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
-     *         <p>
-     *         Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     *         </p>
-     *         <p>
-     *         Rules are processed in order. If there are multiple rules that match the line item, then the first rule
-     *         to match is used to determine that Cost Category value.
+     * @return The <code>Expression</code> object used to categorize costs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     *         >CostCategoryRule </a>.
      */
 
     public java.util.List<CostCategoryRule> getRules() {
@@ -157,26 +140,15 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
-     * dimensions supported is <code>LINKED_ACCOUNT</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     * </p>
-     * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The <code>Expression</code> object used to categorize costs. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule </a>.
      * </p>
      * 
      * @param rules
-     *        <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the
-     *        only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
-     *        <p>
-     *        Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     *        </p>
-     *        <p>
-     *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
-     *        match is used to determine that Cost Category value.
+     *        The <code>Expression</code> object used to categorize costs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     *        >CostCategoryRule </a>.
      */
 
     public void setRules(java.util.Collection<CostCategoryRule> rules) {
@@ -190,15 +162,9 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
-     * dimensions supported is <code>LINKED_ACCOUNT</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     * </p>
-     * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The <code>Expression</code> object used to categorize costs. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule </a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -207,14 +173,9 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param rules
-     *        <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the
-     *        only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
-     *        <p>
-     *        Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     *        </p>
-     *        <p>
-     *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
-     *        match is used to determine that Cost Category value.
+     *        The <code>Expression</code> object used to categorize costs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     *        >CostCategoryRule </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,26 +191,15 @@ public class UpdateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
-     * dimensions supported is <code>LINKED_ACCOUNT</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     * </p>
-     * <p>
-     * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
-     * is used to determine that Cost Category value.
+     * The <code>Expression</code> object used to categorize costs. For more information, see <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule </a>.
      * </p>
      * 
      * @param rules
-     *        <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the
-     *        only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
-     *        <p>
-     *        Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
-     *        </p>
-     *        <p>
-     *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
-     *        match is used to determine that Cost Category value.
+     *        The <code>Expression</code> object used to categorize costs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     *        >CostCategoryRule </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

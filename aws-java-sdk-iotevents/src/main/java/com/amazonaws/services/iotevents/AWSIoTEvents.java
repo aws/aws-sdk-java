@@ -434,6 +434,21 @@ public interface AWSIoTEvents {
     UpdateInputResult updateInput(UpdateInputRequest updateInputRequest);
 
     /**
+     * @param verifyResourcesExistForTagrisRequest
+     * @return Result of the VerifyResourcesExistForTagris operation returned by the service.
+     * @throws TagrisAccessDeniedException
+     * @throws TagrisInternalServiceException
+     * @throws TagrisInvalidArnException
+     * @throws TagrisInvalidParameterException
+     * @throws TagrisPartialResourcesExistResultsException
+     * @throws TagrisThrottledException
+     * @sample AWSIoTEvents.VerifyResourcesExistForTagris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/VerifyResourcesExistForTagris"
+     *      target="_top">AWS API Documentation</a>
+     */
+    VerifyResourcesExistForTagrisResult verifyResourcesExistForTagris(VerifyResourcesExistForTagrisRequest verifyResourcesExistForTagrisRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

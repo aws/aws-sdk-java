@@ -987,6 +987,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
     }
 
     @Override
+    public java.util.concurrent.Future<ExportApiResult> exportApiAsync(ExportApiRequest request) {
+
+        return exportApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportApiResult> exportApiAsync(final ExportApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportApiRequest, ExportApiResult> asyncHandler) {
+        final ExportApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportApiResult>() {
+            @Override
+            public ExportApiResult call() throws Exception {
+                ExportApiResult result = null;
+
+                try {
+                    result = executeExportApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetApiResult> getApiAsync(GetApiRequest request) {
 
         return getApiAsync(request, null);

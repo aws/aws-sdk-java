@@ -32,6 +32,8 @@ public class DimensionValuesMarshaller {
             .marshallLocationName("Key").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Values").build();
+    private static final MarshallingInfo<List> MATCHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MatchOptions").build();
 
     private static final DimensionValuesMarshaller instance = new DimensionValuesMarshaller();
 
@@ -51,6 +53,7 @@ public class DimensionValuesMarshaller {
         try {
             protocolMarshaller.marshall(dimensionValues.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(dimensionValues.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(dimensionValues.getMatchOptions(), MATCHOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

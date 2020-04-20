@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * How much it cost to run an instance.
+ * How much it costs to run an instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageCost" target="_top">AWS API
@@ -30,18 +30,18 @@ public class CoverageCost implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How much an On-Demand instance cost.
+     * How much an On-Demand Instance costs.
      * </p>
      */
     private String onDemandCost;
 
     /**
      * <p>
-     * How much an On-Demand instance cost.
+     * How much an On-Demand Instance costs.
      * </p>
      * 
      * @param onDemandCost
-     *        How much an On-Demand instance cost.
+     *        How much an On-Demand Instance costs.
      */
 
     public void setOnDemandCost(String onDemandCost) {
@@ -50,10 +50,10 @@ public class CoverageCost implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How much an On-Demand instance cost.
+     * How much an On-Demand Instance costs.
      * </p>
      * 
-     * @return How much an On-Demand instance cost.
+     * @return How much an On-Demand Instance costs.
      */
 
     public String getOnDemandCost() {
@@ -62,11 +62,11 @@ public class CoverageCost implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How much an On-Demand instance cost.
+     * How much an On-Demand Instance costs.
      * </p>
      * 
      * @param onDemandCost
-     *        How much an On-Demand instance cost.
+     *        How much an On-Demand Instance costs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
