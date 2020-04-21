@@ -30,54 +30,54 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection blocked information.
+     * Indicates whether EC2 blocked the network connection to your instance.
      * </p>
      */
     private Boolean blocked;
     /**
      * <p>
-     * Network connection direction.
+     * The network connection direction.
      * </p>
      */
     private String connectionDirection;
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      */
     private LocalPortDetails localPortDetails;
     /**
      * <p>
-     * Network connection protocol.
+     * The network connection protocol.
      * </p>
      */
     private String protocol;
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      */
     private LocalIpDetails localIpDetails;
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      */
     private RemoteIpDetails remoteIpDetails;
     /**
      * <p>
-     * Remote port information of the connection.
+     * The remote port information of the connection.
      * </p>
      */
     private RemotePortDetails remotePortDetails;
 
     /**
      * <p>
-     * Network connection blocked information.
+     * Indicates whether EC2 blocked the network connection to your instance.
      * </p>
      * 
      * @param blocked
-     *        Network connection blocked information.
+     *        Indicates whether EC2 blocked the network connection to your instance.
      */
 
     public void setBlocked(Boolean blocked) {
@@ -86,10 +86,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection blocked information.
+     * Indicates whether EC2 blocked the network connection to your instance.
      * </p>
      * 
-     * @return Network connection blocked information.
+     * @return Indicates whether EC2 blocked the network connection to your instance.
      */
 
     public Boolean getBlocked() {
@@ -98,11 +98,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection blocked information.
+     * Indicates whether EC2 blocked the network connection to your instance.
      * </p>
      * 
      * @param blocked
-     *        Network connection blocked information.
+     *        Indicates whether EC2 blocked the network connection to your instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +113,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection blocked information.
+     * Indicates whether EC2 blocked the network connection to your instance.
      * </p>
      * 
-     * @return Network connection blocked information.
+     * @return Indicates whether EC2 blocked the network connection to your instance.
      */
 
     public Boolean isBlocked() {
@@ -125,11 +125,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection direction.
+     * The network connection direction.
      * </p>
      * 
      * @param connectionDirection
-     *        Network connection direction.
+     *        The network connection direction.
      */
 
     public void setConnectionDirection(String connectionDirection) {
@@ -138,10 +138,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection direction.
+     * The network connection direction.
      * </p>
      * 
-     * @return Network connection direction.
+     * @return The network connection direction.
      */
 
     public String getConnectionDirection() {
@@ -150,11 +150,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection direction.
+     * The network connection direction.
      * </p>
      * 
      * @param connectionDirection
-     *        Network connection direction.
+     *        The network connection direction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +165,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      * 
      * @param localPortDetails
-     *        Local port information of the connection.
+     *        The local port information of the connection.
      */
 
     public void setLocalPortDetails(LocalPortDetails localPortDetails) {
@@ -178,10 +178,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      * 
-     * @return Local port information of the connection.
+     * @return The local port information of the connection.
      */
 
     public LocalPortDetails getLocalPortDetails() {
@@ -190,11 +190,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      * 
      * @param localPortDetails
-     *        Local port information of the connection.
+     *        The local port information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +205,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection protocol.
+     * The network connection protocol.
      * </p>
      * 
      * @param protocol
-     *        Network connection protocol.
+     *        The network connection protocol.
      */
 
     public void setProtocol(String protocol) {
@@ -218,10 +218,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection protocol.
+     * The network connection protocol.
      * </p>
      * 
-     * @return Network connection protocol.
+     * @return The network connection protocol.
      */
 
     public String getProtocol() {
@@ -230,11 +230,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Network connection protocol.
+     * The network connection protocol.
      * </p>
      * 
      * @param protocol
-     *        Network connection protocol.
+     *        The network connection protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +245,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      * 
      * @param localIpDetails
-     *        Local IP information of the connection.
+     *        The local IP information of the connection.
      */
 
     public void setLocalIpDetails(LocalIpDetails localIpDetails) {
@@ -258,10 +258,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      * 
-     * @return Local IP information of the connection.
+     * @return The local IP information of the connection.
      */
 
     public LocalIpDetails getLocalIpDetails() {
@@ -270,11 +270,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      * 
      * @param localIpDetails
-     *        Local IP information of the connection.
+     *        The local IP information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +285,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
      * @param remoteIpDetails
-     *        Remote IP information of the connection.
+     *        The remote IP information of the connection.
      */
 
     public void setRemoteIpDetails(RemoteIpDetails remoteIpDetails) {
@@ -298,10 +298,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
-     * @return Remote IP information of the connection.
+     * @return The remote IP information of the connection.
      */
 
     public RemoteIpDetails getRemoteIpDetails() {
@@ -310,11 +310,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
      * @param remoteIpDetails
-     *        Remote IP information of the connection.
+     *        The remote IP information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +325,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Remote port information of the connection.
+     * The remote port information of the connection.
      * </p>
      * 
      * @param remotePortDetails
-     *        Remote port information of the connection.
+     *        The remote port information of the connection.
      */
 
     public void setRemotePortDetails(RemotePortDetails remotePortDetails) {
@@ -338,10 +338,10 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Remote port information of the connection.
+     * The remote port information of the connection.
      * </p>
      * 
-     * @return Remote port information of the connection.
+     * @return The remote port information of the connection.
      */
 
     public RemotePortDetails getRemotePortDetails() {
@@ -350,11 +350,11 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Remote port information of the connection.
+     * The remote port information of the connection.
      * </p>
      * 
      * @param remotePortDetails
-     *        Remote port information of the connection.
+     *        The remote port information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

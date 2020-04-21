@@ -31,7 +31,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that lets you get information about all the operations that you submitted after a specified
-     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date submittedSince;
@@ -57,12 +57,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that lets you get information about all the operations that you submitted after a specified
-     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @param submittedSince
      *        An optional parameter that lets you get information about all the operations that you submitted after a
-     *        specified date and time. Specify the date and time in Coordinated Universal time (UTC).
+     *        specified date and time. Specify the date and time in Unix time format and Coordinated Universal time
+     *        (UTC).
      */
 
     public void setSubmittedSince(java.util.Date submittedSince) {
@@ -72,11 +73,12 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that lets you get information about all the operations that you submitted after a specified
-     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @return An optional parameter that lets you get information about all the operations that you submitted after a
-     *         specified date and time. Specify the date and time in Coordinated Universal time (UTC).
+     *         specified date and time. Specify the date and time in Unix time format and Coordinated Universal time
+     *         (UTC).
      */
 
     public java.util.Date getSubmittedSince() {
@@ -86,12 +88,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that lets you get information about all the operations that you submitted after a specified
-     * date and time. Specify the date and time in Coordinated Universal time (UTC).
+     * date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @param submittedSince
      *        An optional parameter that lets you get information about all the operations that you submitted after a
-     *        specified date and time. Specify the date and time in Coordinated Universal time (UTC).
+     *        specified date and time. Specify the date and time in Unix time format and Coordinated Universal time
+     *        (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

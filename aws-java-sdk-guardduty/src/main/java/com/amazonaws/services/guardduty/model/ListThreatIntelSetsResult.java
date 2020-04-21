@@ -31,7 +31,7 @@ public class ListThreatIntelSetsResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.List<String> threatIntelSetIds;
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListThreatIntelSetsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      * 
      * @param nextToken
-     *        Pagination parameter to be used on the next list operation to retrieve more items.
+     *        The pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListThreatIntelSetsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      * 
-     * @return Pagination parameter to be used on the next list operation to retrieve more items.
+     * @return The pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListThreatIntelSetsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      * 
      * @param nextToken
-     *        Pagination parameter to be used on the next list operation to retrieve more items.
+     *        The pagination parameter to be used on the next list operation to retrieve more items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

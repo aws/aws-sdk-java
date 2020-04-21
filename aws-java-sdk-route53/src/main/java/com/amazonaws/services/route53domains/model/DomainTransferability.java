@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about whether the specified domain can be transferred to Amazon Route 53.
+ * A complex type that contains information about whether the specified domain can be transferred to Route 53.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainTransferability"

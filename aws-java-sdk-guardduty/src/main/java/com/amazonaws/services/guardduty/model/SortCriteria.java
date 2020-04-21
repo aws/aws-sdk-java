@@ -30,24 +30,24 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the finding attribute (for example, accountId) by which to sort findings.
+     * Represents the finding attribute (for example, accountId) to sort findings by.
      * </p>
      */
     private String attributeName;
     /**
      * <p>
-     * Order by which the sorted findings are to be displayed.
+     * The order by which the sorted findings are to be displayed.
      * </p>
      */
     private String orderBy;
 
     /**
      * <p>
-     * Represents the finding attribute (for example, accountId) by which to sort findings.
+     * Represents the finding attribute (for example, accountId) to sort findings by.
      * </p>
      * 
      * @param attributeName
-     *        Represents the finding attribute (for example, accountId) by which to sort findings.
+     *        Represents the finding attribute (for example, accountId) to sort findings by.
      */
 
     public void setAttributeName(String attributeName) {
@@ -56,10 +56,10 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the finding attribute (for example, accountId) by which to sort findings.
+     * Represents the finding attribute (for example, accountId) to sort findings by.
      * </p>
      * 
-     * @return Represents the finding attribute (for example, accountId) by which to sort findings.
+     * @return Represents the finding attribute (for example, accountId) to sort findings by.
      */
 
     public String getAttributeName() {
@@ -68,11 +68,11 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the finding attribute (for example, accountId) by which to sort findings.
+     * Represents the finding attribute (for example, accountId) to sort findings by.
      * </p>
      * 
      * @param attributeName
-     *        Represents the finding attribute (for example, accountId) by which to sort findings.
+     *        Represents the finding attribute (for example, accountId) to sort findings by.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Order by which the sorted findings are to be displayed.
+     * The order by which the sorted findings are to be displayed.
      * </p>
      * 
      * @param orderBy
-     *        Order by which the sorted findings are to be displayed.
+     *        The order by which the sorted findings are to be displayed.
      * @see OrderBy
      */
 
@@ -97,10 +97,10 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Order by which the sorted findings are to be displayed.
+     * The order by which the sorted findings are to be displayed.
      * </p>
      * 
-     * @return Order by which the sorted findings are to be displayed.
+     * @return The order by which the sorted findings are to be displayed.
      * @see OrderBy
      */
 
@@ -110,11 +110,11 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Order by which the sorted findings are to be displayed.
+     * The order by which the sorted findings are to be displayed.
      * </p>
      * 
      * @param orderBy
-     *        Order by which the sorted findings are to be displayed.
+     *        The order by which the sorted findings are to be displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
@@ -126,11 +126,11 @@ public class SortCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Order by which the sorted findings are to be displayed.
+     * The order by which the sorted findings are to be displayed.
      * </p>
      * 
      * @param orderBy
-     *        Order by which the sorted findings are to be displayed.
+     *        The order by which the sorted findings are to be displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */

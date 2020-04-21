@@ -27,24 +27,24 @@ public class DeleteFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * The name of the filter you want to delete.
+     * The name of the filter that you want to delete.
      * </p>
      */
     private String filterName;
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the filter is associated with.
+     *        The unique ID of the detector that the filter is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class DeleteFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      * 
-     * @return The unique ID of the detector the filter is associated with.
+     * @return The unique ID of the detector that the filter is associated with.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class DeleteFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the filter is associated with.
+     *        The unique ID of the detector that the filter is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the filter you want to delete.
+     * The name of the filter that you want to delete.
      * </p>
      * 
      * @param filterName
-     *        The name of the filter you want to delete.
+     *        The name of the filter that you want to delete.
      */
 
     public void setFilterName(String filterName) {
@@ -93,10 +93,10 @@ public class DeleteFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the filter you want to delete.
+     * The name of the filter that you want to delete.
      * </p>
      * 
-     * @return The name of the filter you want to delete.
+     * @return The name of the filter that you want to delete.
      */
 
     public String getFilterName() {
@@ -105,11 +105,11 @@ public class DeleteFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the filter you want to delete.
+     * The name of the filter that you want to delete.
      * </p>
      * 
      * @param filterName
-     *        The name of the filter you want to delete.
+     *        The name of the filter that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,6 +28,36 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptDomainTransferFromAnotherAwsAccountResult> acceptDomainTransferFromAnotherAwsAccountAsync(
+            AcceptDomainTransferFromAnotherAwsAccountRequest request) {
+
+        return acceptDomainTransferFromAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptDomainTransferFromAnotherAwsAccountResult> acceptDomainTransferFromAnotherAwsAccountAsync(
+            AcceptDomainTransferFromAnotherAwsAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<AcceptDomainTransferFromAnotherAwsAccountRequest, AcceptDomainTransferFromAnotherAwsAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainTransferToAnotherAwsAccountResult> cancelDomainTransferToAnotherAwsAccountAsync(
+            CancelDomainTransferToAnotherAwsAccountRequest request) {
+
+        return cancelDomainTransferToAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainTransferToAnotherAwsAccountResult> cancelDomainTransferToAnotherAwsAccountAsync(
+            CancelDomainTransferToAnotherAwsAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelDomainTransferToAnotherAwsAccountRequest, CancelDomainTransferToAnotherAwsAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(CheckDomainAvailabilityRequest request) {
 
         return checkDomainAvailabilityAsync(request, null);
@@ -269,6 +299,21 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     }
 
     @Override
+    public java.util.concurrent.Future<RejectDomainTransferFromAnotherAwsAccountResult> rejectDomainTransferFromAnotherAwsAccountAsync(
+            RejectDomainTransferFromAnotherAwsAccountRequest request) {
+
+        return rejectDomainTransferFromAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectDomainTransferFromAnotherAwsAccountResult> rejectDomainTransferFromAnotherAwsAccountAsync(
+            RejectDomainTransferFromAnotherAwsAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<RejectDomainTransferFromAnotherAwsAccountRequest, RejectDomainTransferFromAnotherAwsAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(RenewDomainRequest request) {
 
         return renewDomainAsync(request, null);
@@ -316,6 +361,21 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     @Override
     public java.util.concurrent.Future<TransferDomainResult> transferDomainAsync(TransferDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<TransferDomainRequest, TransferDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferDomainToAnotherAwsAccountResult> transferDomainToAnotherAwsAccountAsync(
+            TransferDomainToAnotherAwsAccountRequest request) {
+
+        return transferDomainToAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferDomainToAnotherAwsAccountResult> transferDomainToAnotherAwsAccountAsync(
+            TransferDomainToAnotherAwsAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<TransferDomainToAnotherAwsAccountRequest, TransferDomainToAnotherAwsAccountResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

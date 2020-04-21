@@ -33,7 +33,7 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String detectorId;
     /**
      * <p>
-     * IDs of the findings to unarchive.
+     * The IDs of the findings to unarchive.
      * </p>
      */
     private java.util.List<String> findingIds;
@@ -80,10 +80,10 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings to unarchive.
+     * The IDs of the findings to unarchive.
      * </p>
      * 
-     * @return IDs of the findings to unarchive.
+     * @return The IDs of the findings to unarchive.
      */
 
     public java.util.List<String> getFindingIds() {
@@ -92,11 +92,11 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings to unarchive.
+     * The IDs of the findings to unarchive.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings to unarchive.
+     *        The IDs of the findings to unarchive.
      */
 
     public void setFindingIds(java.util.Collection<String> findingIds) {
@@ -110,7 +110,7 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings to unarchive.
+     * The IDs of the findings to unarchive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings to unarchive.
+     *        The IDs of the findings to unarchive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UnarchiveFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * IDs of the findings to unarchive.
+     * The IDs of the findings to unarchive.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings to unarchive.
+     *        The IDs of the findings to unarchive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

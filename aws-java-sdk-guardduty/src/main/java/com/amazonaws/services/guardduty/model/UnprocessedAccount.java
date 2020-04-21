@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the accounts that were not processed.
+ * Contains information about the accounts that weren't processed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnprocessedAccount" target="_top">AWS API
@@ -30,7 +30,7 @@ public class UnprocessedAccount implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * AWS Account ID.
+     * The AWS account ID.
      * </p>
      */
     private String accountId;
@@ -43,11 +43,11 @@ public class UnprocessedAccount implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param accountId
-     *        AWS Account ID.
+     *        The AWS account ID.
      */
 
     public void setAccountId(String accountId) {
@@ -56,10 +56,10 @@ public class UnprocessedAccount implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
-     * @return AWS Account ID.
+     * @return The AWS account ID.
      */
 
     public String getAccountId() {
@@ -68,11 +68,11 @@ public class UnprocessedAccount implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param accountId
-     *        AWS Account ID.
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

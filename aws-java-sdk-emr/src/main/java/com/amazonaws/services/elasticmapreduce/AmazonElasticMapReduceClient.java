@@ -1057,6 +1057,61 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Fetches the attached managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @param getManagedScalingPolicyRequest
+     * @return Result of the GetManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.GetManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetManagedScalingPolicyResult getManagedScalingPolicy(GetManagedScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetManagedScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetManagedScalingPolicyResult executeGetManagedScalingPolicy(GetManagedScalingPolicyRequest getManagedScalingPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getManagedScalingPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetManagedScalingPolicyRequest> request = null;
+        Response<GetManagedScalingPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetManagedScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getManagedScalingPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetManagedScalingPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetManagedScalingPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetManagedScalingPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides information about the bootstrap actions associated with a cluster.
      * </p>
      * 
@@ -1785,6 +1840,63 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the
+     * limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only
+     * applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * </p>
+     * 
+     * @param putManagedScalingPolicyRequest
+     * @return Result of the PutManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.PutManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutManagedScalingPolicyResult putManagedScalingPolicy(PutManagedScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutManagedScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutManagedScalingPolicyResult executePutManagedScalingPolicy(PutManagedScalingPolicyRequest putManagedScalingPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putManagedScalingPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutManagedScalingPolicyRequest> request = null;
+        Response<PutManagedScalingPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutManagedScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putManagedScalingPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutManagedScalingPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutManagedScalingPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutManagedScalingPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes an automatic scaling policy from a specified instance group within an EMR cluster.
      * </p>
      * 
@@ -1828,6 +1940,61 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<RemoveAutoScalingPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RemoveAutoScalingPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a managed scaling policy from a specified EMR cluster.
+     * </p>
+     * 
+     * @param removeManagedScalingPolicyRequest
+     * @return Result of the RemoveManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.RemoveManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveManagedScalingPolicyResult removeManagedScalingPolicy(RemoveManagedScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveManagedScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final RemoveManagedScalingPolicyResult executeRemoveManagedScalingPolicy(RemoveManagedScalingPolicyRequest removeManagedScalingPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeManagedScalingPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveManagedScalingPolicyRequest> request = null;
+        Response<RemoveManagedScalingPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveManagedScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeManagedScalingPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveManagedScalingPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveManagedScalingPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveManagedScalingPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

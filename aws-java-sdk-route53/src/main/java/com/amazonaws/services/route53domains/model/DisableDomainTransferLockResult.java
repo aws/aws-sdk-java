@@ -28,21 +28,24 @@ public class DisableDomainTransferLockResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     * <a>GetOperationDetail</a>.
+     * Identifier for tracking the progress of the request. To query the operation status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     * >GetOperationDetail</a>.
      * </p>
      */
     private String operationId;
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     * <a>GetOperationDetail</a>.
+     * Identifier for tracking the progress of the request. To query the operation status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     * >GetOperationDetail</a>.
      * </p>
      * 
      * @param operationId
-     *        Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     *        <a>GetOperationDetail</a>.
+     *        Identifier for tracking the progress of the request. To query the operation status, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     *        >GetOperationDetail</a>.
      */
 
     public void setOperationId(String operationId) {
@@ -51,12 +54,14 @@ public class DisableDomainTransferLockResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     * <a>GetOperationDetail</a>.
+     * Identifier for tracking the progress of the request. To query the operation status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     * >GetOperationDetail</a>.
      * </p>
      * 
-     * @return Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     *         <a>GetOperationDetail</a>.
+     * @return Identifier for tracking the progress of the request. To query the operation status, use <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     *         >GetOperationDetail</a>.
      */
 
     public String getOperationId() {
@@ -65,13 +70,15 @@ public class DisableDomainTransferLockResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     * <a>GetOperationDetail</a>.
+     * Identifier for tracking the progress of the request. To query the operation status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     * >GetOperationDetail</a>.
      * </p>
      * 
      * @param operationId
-     *        Identifier for tracking the progress of the request. To use this ID to query the operation status, use
-     *        <a>GetOperationDetail</a>.
+     *        Identifier for tracking the progress of the request. To query the operation status, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html"
+     *        >GetOperationDetail</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

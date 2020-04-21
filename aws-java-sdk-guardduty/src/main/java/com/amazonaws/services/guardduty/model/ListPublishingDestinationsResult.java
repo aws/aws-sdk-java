@@ -25,25 +25,25 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     * A <code>Destinations</code> object that includes information about each publishing destination returned.
      * </p>
      */
     private java.util.List<Destination> destinations;
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     * A <code>Destinations</code> object that includes information about each publishing destination returned.
      * </p>
      * 
-     * @return A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     * @return A <code>Destinations</code> object that includes information about each publishing destination returned.
      */
 
     public java.util.List<Destination> getDestinations() {
@@ -52,11 +52,11 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     * A <code>Destinations</code> object that includes information about each publishing destination returned.
      * </p>
      * 
      * @param destinations
-     *        A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     *        A <code>Destinations</code> object that includes information about each publishing destination returned.
      */
 
     public void setDestinations(java.util.Collection<Destination> destinations) {
@@ -70,7 +70,7 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     * A <code>Destinations</code> object that includes information about each publishing destination returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param destinations
-     *        A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     *        A <code>Destinations</code> object that includes information about each publishing destination returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     * A <code>Destinations</code> object that includes information about each publishing destination returned.
      * </p>
      * 
      * @param destinations
-     *        A <code>Destinations</code> obect that includes information about each publishing destination returned.
+     *        A <code>Destinations</code> object that includes information about each publishing destination returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,14 +110,14 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      * 
      * @param nextToken
-     *        A token to use for paginating results returned in the repsonse. Set the value of this parameter to null
-     *        for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
+     *        A token to use for paginating results that are returned in the response. Set the value of this parameter
+     *        to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
      *        returned from the previous request to continue listing results after the first page.
      */
 
@@ -127,14 +127,14 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      * 
-     * @return A token to use for paginating results returned in the repsonse. Set the value of this parameter to null
-     *         for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
-     *         returned from the previous request to continue listing results after the first page.
+     * @return A token to use for paginating results that are returned in the response. Set the value of this parameter
+     *         to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code>
+     *         value returned from the previous request to continue listing results after the first page.
      */
 
     public String getNextToken() {
@@ -143,14 +143,14 @@ public class ListPublishingDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      * 
      * @param nextToken
-     *        A token to use for paginating results returned in the repsonse. Set the value of this parameter to null
-     *        for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
+     *        A token to use for paginating results that are returned in the response. Set the value of this parameter
+     *        to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
      *        returned from the previous request to continue listing results after the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

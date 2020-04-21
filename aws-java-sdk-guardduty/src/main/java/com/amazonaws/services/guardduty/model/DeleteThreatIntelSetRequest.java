@@ -27,24 +27,24 @@ public class DeleteThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to delete.
+     * The unique ID of the threatIntelSet that you want to delete.
      * </p>
      */
     private String threatIntelSetId;
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the threatIntelSet is associated with.
+     *        The unique ID of the detector that the threatIntelSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class DeleteThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      * 
-     * @return The unique ID of the detector the threatIntelSet is associated with.
+     * @return The unique ID of the detector that the threatIntelSet is associated with.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class DeleteThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the threatIntelSet is associated with.
+     *        The unique ID of the detector that the threatIntelSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to delete.
+     * The unique ID of the threatIntelSet that you want to delete.
      * </p>
      * 
      * @param threatIntelSetId
-     *        The unique ID of the threatIntelSet you want to delete.
+     *        The unique ID of the threatIntelSet that you want to delete.
      */
 
     public void setThreatIntelSetId(String threatIntelSetId) {
@@ -93,10 +93,10 @@ public class DeleteThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to delete.
+     * The unique ID of the threatIntelSet that you want to delete.
      * </p>
      * 
-     * @return The unique ID of the threatIntelSet you want to delete.
+     * @return The unique ID of the threatIntelSet that you want to delete.
      */
 
     public String getThreatIntelSetId() {
@@ -105,11 +105,11 @@ public class DeleteThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to delete.
+     * The unique ID of the threatIntelSet that you want to delete.
      * </p>
      * 
      * @param threatIntelSetId
-     *        The unique ID of the threatIntelSet you want to delete.
+     *        The unique ID of the threatIntelSet that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

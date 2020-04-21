@@ -30,7 +30,7 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account from which the invitations was sent.
+     * The ID of the account that the invitation was sent from.
      * </p>
      */
     private String accountId;
@@ -48,18 +48,18 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
     private String relationshipStatus;
     /**
      * <p>
-     * Timestamp at which the invitation was sent.
+     * The timestamp when the invitation was sent.
      * </p>
      */
     private String invitedAt;
 
     /**
      * <p>
-     * The ID of the account from which the invitations was sent.
+     * The ID of the account that the invitation was sent from.
      * </p>
      * 
      * @param accountId
-     *        The ID of the account from which the invitations was sent.
+     *        The ID of the account that the invitation was sent from.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +68,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account from which the invitations was sent.
+     * The ID of the account that the invitation was sent from.
      * </p>
      * 
-     * @return The ID of the account from which the invitations was sent.
+     * @return The ID of the account that the invitation was sent from.
      */
 
     public String getAccountId() {
@@ -80,11 +80,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account from which the invitations was sent.
+     * The ID of the account that the invitation was sent from.
      * </p>
      * 
      * @param accountId
-     *        The ID of the account from which the invitations was sent.
+     *        The ID of the account that the invitation was sent from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp at which the invitation was sent.
+     * The timestamp when the invitation was sent.
      * </p>
      * 
      * @param invitedAt
-     *        Timestamp at which the invitation was sent.
+     *        The timestamp when the invitation was sent.
      */
 
     public void setInvitedAt(String invitedAt) {
@@ -188,10 +188,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp at which the invitation was sent.
+     * The timestamp when the invitation was sent.
      * </p>
      * 
-     * @return Timestamp at which the invitation was sent.
+     * @return The timestamp when the invitation was sent.
      */
 
     public String getInvitedAt() {
@@ -200,11 +200,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp at which the invitation was sent.
+     * The timestamp when the invitation was sent.
      * </p>
      * 
      * @param invitedAt
-     *        Timestamp at which the invitation was sent.
+     *        The timestamp when the invitation was sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

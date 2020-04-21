@@ -27,16 +27,21 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
- * VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. It uses threat intelligence feeds, such as lists of malicious
- * IPs and domains, and machine learning to identify unexpected and potentially unauthorized and malicious activity
- * within your AWS environment. This can include issues like escalations of privileges, uses of exposed credentials, or
- * communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances
- * serving malware or mining bitcoin. It also monitors AWS account access behavior for signs of compromise, such as
- * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
- * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
- * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
- * events. For more information, see <a
- * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a>.
+ * VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. It uses threat intelligence feeds (such as lists of malicious
+ * IPs and domains) and machine learning to identify unexpected, potentially unauthorized, and malicious activity within
+ * your AWS environment. This can include issues like escalations of privileges, uses of exposed credentials, or
+ * communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances that
+ * serve malware or mine bitcoin.
+ * </p>
+ * <p>
+ * GuardDuty also monitors AWS account access behavior for signs of compromise. Some examples of this are unauthorized
+ * infrastructure deployments such as EC2 instances deployed in a Region that has never been used, or unusual API calls
+ * like a password policy change to reduce password strength.
+ * </p>
+ * <p>
+ * GuardDuty informs you of the status of your AWS environment by producing security findings that you can view in the
+ * GuardDuty console or through Amazon CloudWatch events. For more information, see the <i> <a
+ * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a> </i>.
  * </p>
  */
 @ThreadSafe
@@ -634,6 +639,41 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest request) {
+
+        return describeOrganizationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            final DescribeOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigurationRequest, DescribeOrganizationConfigurationResult> asyncHandler) {
+        final DescribeOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOrganizationConfigurationResult>() {
+            @Override
+            public DescribeOrganizationConfigurationResult call() throws Exception {
+                DescribeOrganizationConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeOrganizationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(DescribePublishingDestinationRequest request) {
 
         return describePublishingDestinationAsync(request, null);
@@ -652,6 +692,41 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeDescribePublishingDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest request) {
+
+        return disableOrganizationAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            final DisableOrganizationAdminAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableOrganizationAdminAccountRequest, DisableOrganizationAdminAccountResult> asyncHandler) {
+        final DisableOrganizationAdminAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableOrganizationAdminAccountResult>() {
+            @Override
+            public DisableOrganizationAdminAccountResult call() throws Exception {
+                DisableOrganizationAdminAccountResult result = null;
+
+                try {
+                    result = executeDisableOrganizationAdminAccount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -719,6 +794,40 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeDisassociateMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request) {
+
+        return enableOrganizationAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
+            final EnableOrganizationAdminAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler) {
+        final EnableOrganizationAdminAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableOrganizationAdminAccountResult>() {
+            @Override
+            public EnableOrganizationAdminAccountResult call() throws Exception {
+                EnableOrganizationAdminAccountResult result = null;
+
+                try {
+                    result = executeEnableOrganizationAdminAccount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1263,6 +1372,40 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request) {
+
+        return listOrganizationAdminAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
+            final ListOrganizationAdminAccountsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler) {
+        final ListOrganizationAdminAccountsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOrganizationAdminAccountsResult>() {
+            @Override
+            public ListOrganizationAdminAccountsResult call() throws Exception {
+                ListOrganizationAdminAccountsResult result = null;
+
+                try {
+                    result = executeListOrganizationAdminAccounts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPublishingDestinationsResult> listPublishingDestinationsAsync(ListPublishingDestinationsRequest request) {
 
         return listPublishingDestinationsAsync(request, null);
@@ -1643,6 +1786,41 @@ public class AmazonGuardDutyAsyncClient extends AmazonGuardDutyClient implements
 
                 try {
                     result = executeUpdateIPSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest request) {
+
+        return updateOrganizationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            final UpdateOrganizationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler) {
+        final UpdateOrganizationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateOrganizationConfigurationResult>() {
+            @Override
+            public UpdateOrganizationConfigurationResult call() throws Exception {
+                UpdateOrganizationConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateOrganizationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

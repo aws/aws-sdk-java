@@ -130,29 +130,29 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
     private String registryDomainId;
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date updatedDate;
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
-     * time (UTC).
+     * The date when the registration for the domain is set to expire. The date and time is in Unix time format and
+     * Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date expirationDate;
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     * <code>"Amazon"</code> as the reseller.
+     * Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
+     * as the reseller.
      * </p>
      */
     private String reseller;
@@ -956,13 +956,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @param creationDate
      *        The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     *        Coordinated Universal time (UTC).
+     *        Unix time format and Coordinated Universal time (UTC).
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -971,12 +971,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @return The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     *         Coordinated Universal time (UTC).
+     *         Unix time format and Coordinated Universal time (UTC).
      */
 
     public java.util.Date getCreationDate() {
@@ -985,13 +985,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @param creationDate
      *        The date when the domain was created as found in the response to a WHOIS query. The date and time is in
-     *        Coordinated Universal time (UTC).
+     *        Unix time format and Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1002,13 +1002,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @param updatedDate
      *        The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     *        Coordinated Universal time (UTC).
+     *        Unix time format and Coordinated Universal time (UTC).
      */
 
     public void setUpdatedDate(java.util.Date updatedDate) {
@@ -1017,12 +1017,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @return The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     *         Coordinated Universal time (UTC).
+     *         Unix time format and Coordinated Universal time (UTC).
      */
 
     public java.util.Date getUpdatedDate() {
@@ -1031,13 +1031,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     * Coordinated Universal time (UTC).
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in Unix time
+     * format and Coordinated Universal time (UTC).
      * </p>
      * 
      * @param updatedDate
      *        The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
-     *        Coordinated Universal time (UTC).
+     *        Unix time format and Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,13 +1048,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
-     * time (UTC).
+     * The date when the registration for the domain is set to expire. The date and time is in Unix time format and
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param expirationDate
-     *        The date when the registration for the domain is set to expire. The date and time is in Coordinated
-     *        Universal time (UTC).
+     *        The date when the registration for the domain is set to expire. The date and time is in Unix time format
+     *        and Coordinated Universal time (UTC).
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -1063,12 +1063,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
-     * time (UTC).
+     * The date when the registration for the domain is set to expire. The date and time is in Unix time format and
+     * Coordinated Universal time (UTC).
      * </p>
      * 
-     * @return The date when the registration for the domain is set to expire. The date and time is in Coordinated
-     *         Universal time (UTC).
+     * @return The date when the registration for the domain is set to expire. The date and time is in Unix time format
+     *         and Coordinated Universal time (UTC).
      */
 
     public java.util.Date getExpirationDate() {
@@ -1077,13 +1077,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
-     * time (UTC).
+     * The date when the registration for the domain is set to expire. The date and time is in Unix time format and
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param expirationDate
-     *        The date when the registration for the domain is set to expire. The date and time is in Coordinated
-     *        Universal time (UTC).
+     *        The date when the registration for the domain is set to expire. The date and time is in Unix time format
+     *        and Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1094,12 +1094,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     * <code>"Amazon"</code> as the reseller.
+     * Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
+     * as the reseller.
      * </p>
      * 
      * @param reseller
-     *        Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     *        Reseller of the domain. Domains registered or transferred using Route 53 domains will have
      *        <code>"Amazon"</code> as the reseller.
      */
 
@@ -1109,11 +1109,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     * <code>"Amazon"</code> as the reseller.
+     * Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
+     * as the reseller.
      * </p>
      * 
-     * @return Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     * @return Reseller of the domain. Domains registered or transferred using Route 53 domains will have
      *         <code>"Amazon"</code> as the reseller.
      */
 
@@ -1123,12 +1123,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
-     * <code>"Amazon"</code> as the reseller.
+     * Reseller of the domain. Domains registered or transferred using Route 53 domains will have <code>"Amazon"</code>
+     * as the reseller.
      * </p>
      * 
      * @param reseller
-     *        Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains will have
+     *        Reseller of the domain. Domains registered or transferred using Route 53 domains will have
      *        <code>"Amazon"</code> as the reseller.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

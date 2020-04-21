@@ -30,42 +30,42 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS API name.
+     * The AWS API name.
      * </p>
      */
     private String api;
     /**
      * <p>
-     * AWS API caller type.
+     * The AWS API caller type.
      * </p>
      */
     private String callerType;
     /**
      * <p>
-     * Domain information for the AWS API call.
+     * The domain information for the AWS API call.
      * </p>
      */
     private DomainDetails domainDetails;
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      */
     private RemoteIpDetails remoteIpDetails;
     /**
      * <p>
-     * AWS service name whose API was invoked.
+     * The AWS service name whose API was invoked.
      * </p>
      */
     private String serviceName;
 
     /**
      * <p>
-     * AWS API name.
+     * The AWS API name.
      * </p>
      * 
      * @param api
-     *        AWS API name.
+     *        The AWS API name.
      */
 
     public void setApi(String api) {
@@ -74,10 +74,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS API name.
+     * The AWS API name.
      * </p>
      * 
-     * @return AWS API name.
+     * @return The AWS API name.
      */
 
     public String getApi() {
@@ -86,11 +86,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS API name.
+     * The AWS API name.
      * </p>
      * 
      * @param api
-     *        AWS API name.
+     *        The AWS API name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS API caller type.
+     * The AWS API caller type.
      * </p>
      * 
      * @param callerType
-     *        AWS API caller type.
+     *        The AWS API caller type.
      */
 
     public void setCallerType(String callerType) {
@@ -114,10 +114,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS API caller type.
+     * The AWS API caller type.
      * </p>
      * 
-     * @return AWS API caller type.
+     * @return The AWS API caller type.
      */
 
     public String getCallerType() {
@@ -126,11 +126,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS API caller type.
+     * The AWS API caller type.
      * </p>
      * 
      * @param callerType
-     *        AWS API caller type.
+     *        The AWS API caller type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Domain information for the AWS API call.
+     * The domain information for the AWS API call.
      * </p>
      * 
      * @param domainDetails
-     *        Domain information for the AWS API call.
+     *        The domain information for the AWS API call.
      */
 
     public void setDomainDetails(DomainDetails domainDetails) {
@@ -154,10 +154,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Domain information for the AWS API call.
+     * The domain information for the AWS API call.
      * </p>
      * 
-     * @return Domain information for the AWS API call.
+     * @return The domain information for the AWS API call.
      */
 
     public DomainDetails getDomainDetails() {
@@ -166,11 +166,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Domain information for the AWS API call.
+     * The domain information for the AWS API call.
      * </p>
      * 
      * @param domainDetails
-     *        Domain information for the AWS API call.
+     *        The domain information for the AWS API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
      * @param remoteIpDetails
-     *        Remote IP information of the connection.
+     *        The remote IP information of the connection.
      */
 
     public void setRemoteIpDetails(RemoteIpDetails remoteIpDetails) {
@@ -194,10 +194,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
-     * @return Remote IP information of the connection.
+     * @return The remote IP information of the connection.
      */
 
     public RemoteIpDetails getRemoteIpDetails() {
@@ -206,11 +206,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
      * @param remoteIpDetails
-     *        Remote IP information of the connection.
+     *        The remote IP information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS service name whose API was invoked.
+     * The AWS service name whose API was invoked.
      * </p>
      * 
      * @param serviceName
-     *        AWS service name whose API was invoked.
+     *        The AWS service name whose API was invoked.
      */
 
     public void setServiceName(String serviceName) {
@@ -234,10 +234,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS service name whose API was invoked.
+     * The AWS service name whose API was invoked.
      * </p>
      * 
-     * @return AWS service name whose API was invoked.
+     * @return The AWS service name whose API was invoked.
      */
 
     public String getServiceName() {
@@ -246,11 +246,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS service name whose API was invoked.
+     * The AWS service name whose API was invoked.
      * </p>
      * 
      * @param serviceName
-     *        AWS service name whose API was invoked.
+     *        The AWS service name whose API was invoked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

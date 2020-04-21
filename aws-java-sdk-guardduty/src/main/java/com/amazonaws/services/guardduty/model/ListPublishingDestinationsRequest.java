@@ -39,9 +39,9 @@ public class ListPublishingDestinationsRequest extends com.amazonaws.AmazonWebSe
     private Integer maxResults;
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      */
     private String nextToken;
@@ -128,14 +128,14 @@ public class ListPublishingDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      * 
      * @param nextToken
-     *        A token to use for paginating results returned in the repsonse. Set the value of this parameter to null
-     *        for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
+     *        A token to use for paginating results that are returned in the response. Set the value of this parameter
+     *        to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
      *        returned from the previous request to continue listing results after the first page.
      */
 
@@ -145,14 +145,14 @@ public class ListPublishingDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      * 
-     * @return A token to use for paginating results returned in the repsonse. Set the value of this parameter to null
-     *         for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
-     *         returned from the previous request to continue listing results after the first page.
+     * @return A token to use for paginating results that are returned in the response. Set the value of this parameter
+     *         to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code>
+     *         value returned from the previous request to continue listing results after the first page.
      */
 
     public String getNextToken() {
@@ -161,14 +161,14 @@ public class ListPublishingDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to use for paginating results returned in the repsonse. Set the value of this parameter to null for the
-     * first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the
-     * previous request to continue listing results after the first page.
+     * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
+     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
+     * the previous request to continue listing results after the first page.
      * </p>
      * 
      * @param nextToken
-     *        A token to use for paginating results returned in the repsonse. Set the value of this parameter to null
-     *        for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
+     *        A token to use for paginating results that are returned in the response. Set the value of this parameter
+     *        to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
      *        returned from the previous request to continue listing results after the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

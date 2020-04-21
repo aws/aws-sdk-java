@@ -33,13 +33,13 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
     private String detectorId;
     /**
      * <p>
-     * Types of finding statistics to retrieve.
+     * The types of finding statistics to retrieve.
      * </p>
      */
     private java.util.List<String> findingStatisticTypes;
     /**
      * <p>
-     * Represents the criteria used for querying findings.
+     * Represents the criteria that is used for querying findings.
      * </p>
      */
     private FindingCriteria findingCriteria;
@@ -89,10 +89,10 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Types of finding statistics to retrieve.
+     * The types of finding statistics to retrieve.
      * </p>
      * 
-     * @return Types of finding statistics to retrieve.
+     * @return The types of finding statistics to retrieve.
      * @see FindingStatisticType
      */
 
@@ -102,11 +102,11 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Types of finding statistics to retrieve.
+     * The types of finding statistics to retrieve.
      * </p>
      * 
      * @param findingStatisticTypes
-     *        Types of finding statistics to retrieve.
+     *        The types of finding statistics to retrieve.
      * @see FindingStatisticType
      */
 
@@ -121,7 +121,7 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Types of finding statistics to retrieve.
+     * The types of finding statistics to retrieve.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param findingStatisticTypes
-     *        Types of finding statistics to retrieve.
+     *        The types of finding statistics to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingStatisticType
      */
@@ -147,11 +147,11 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Types of finding statistics to retrieve.
+     * The types of finding statistics to retrieve.
      * </p>
      * 
      * @param findingStatisticTypes
-     *        Types of finding statistics to retrieve.
+     *        The types of finding statistics to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingStatisticType
      */
@@ -163,11 +163,11 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Types of finding statistics to retrieve.
+     * The types of finding statistics to retrieve.
      * </p>
      * 
      * @param findingStatisticTypes
-     *        Types of finding statistics to retrieve.
+     *        The types of finding statistics to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingStatisticType
      */
@@ -187,11 +187,11 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Represents the criteria used for querying findings.
+     * Represents the criteria that is used for querying findings.
      * </p>
      * 
      * @param findingCriteria
-     *        Represents the criteria used for querying findings.
+     *        Represents the criteria that is used for querying findings.
      */
 
     public void setFindingCriteria(FindingCriteria findingCriteria) {
@@ -200,10 +200,10 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Represents the criteria used for querying findings.
+     * Represents the criteria that is used for querying findings.
      * </p>
      * 
-     * @return Represents the criteria used for querying findings.
+     * @return Represents the criteria that is used for querying findings.
      */
 
     public FindingCriteria getFindingCriteria() {
@@ -212,11 +212,11 @@ public class GetFindingsStatisticsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Represents the criteria used for querying findings.
+     * Represents the criteria that is used for querying findings.
      * </p>
      * 
      * @param findingCriteria
-     *        Represents the criteria used for querying findings.
+     *        Represents the criteria that is used for querying findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

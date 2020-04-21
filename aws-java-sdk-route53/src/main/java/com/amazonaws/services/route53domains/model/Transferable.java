@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Whether the domain name can be transferred to Amazon Route 53.
+ * Whether the domain name can be transferred to Route 53.
  * </p>
  * <note>
  * <p>
@@ -30,13 +30,13 @@ import javax.annotation.Generated;
  * <dt>TRANSFERABLE</dt>
  * <dd>
  * <p>
- * The domain name can be transferred to Amazon Route 53.
+ * The domain name can be transferred to Route 53.
  * </p>
  * </dd>
  * <dt>UNTRANSFERRABLE</dt>
  * <dd>
  * <p>
- * The domain name can't be transferred to Amazon Route 53.
+ * The domain name can't be transferred to Route 53.
  * </p>
  * </dd>
  * <dt>DONT_KNOW</dt>

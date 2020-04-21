@@ -28,21 +28,19 @@ public class CheckDomainTransferabilityResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A complex type that contains information about whether the specified domain can be transferred to Amazon Route
-     * 53.
+     * A complex type that contains information about whether the specified domain can be transferred to Route 53.
      * </p>
      */
     private DomainTransferability transferability;
 
     /**
      * <p>
-     * A complex type that contains information about whether the specified domain can be transferred to Amazon Route
-     * 53.
+     * A complex type that contains information about whether the specified domain can be transferred to Route 53.
      * </p>
      * 
      * @param transferability
-     *        A complex type that contains information about whether the specified domain can be transferred to Amazon
-     *        Route 53.
+     *        A complex type that contains information about whether the specified domain can be transferred to Route
+     *        53.
      */
 
     public void setTransferability(DomainTransferability transferability) {
@@ -51,12 +49,11 @@ public class CheckDomainTransferabilityResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A complex type that contains information about whether the specified domain can be transferred to Amazon Route
-     * 53.
+     * A complex type that contains information about whether the specified domain can be transferred to Route 53.
      * </p>
      * 
-     * @return A complex type that contains information about whether the specified domain can be transferred to Amazon
-     *         Route 53.
+     * @return A complex type that contains information about whether the specified domain can be transferred to Route
+     *         53.
      */
 
     public DomainTransferability getTransferability() {
@@ -65,13 +62,12 @@ public class CheckDomainTransferabilityResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A complex type that contains information about whether the specified domain can be transferred to Amazon Route
-     * 53.
+     * A complex type that contains information about whether the specified domain can be transferred to Route 53.
      * </p>
      * 
      * @param transferability
-     *        A complex type that contains information about whether the specified domain can be transferred to Amazon
-     *        Route 53.
+     *        A complex type that contains information about whether the specified domain can be transferred to Route
+     *        53.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

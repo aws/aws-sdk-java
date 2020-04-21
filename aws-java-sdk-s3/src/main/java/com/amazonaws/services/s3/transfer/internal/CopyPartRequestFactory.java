@@ -83,6 +83,7 @@ public class CopyPartRequestFactory {
             // general meta data
             .withGeneralProgressListener(origReq.getGeneralProgressListener())
             .withRequestMetricCollector(origReq.getRequestMetricCollector())
+            .withRequestCredentialsProvider(origReq.getRequestCredentialsProvider())
             ;
         offset += partSize;
         remainingBytes -= partSize;

@@ -152,13 +152,13 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("StepConcurrencyLevel", targetDepth)) {
-                    context.nextToken();
-                    cluster.setStepConcurrencyLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("OutpostArn", targetDepth)) {
                     context.nextToken();
                     cluster.setOutpostArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StepConcurrencyLevel", targetDepth)) {
+                    context.nextToken();
+                    cluster.setStepConcurrencyLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

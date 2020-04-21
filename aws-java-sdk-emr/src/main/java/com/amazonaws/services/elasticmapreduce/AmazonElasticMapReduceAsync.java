@@ -579,6 +579,37 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Fetches the attached managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @param getManagedScalingPolicyRequest
+     * @return A Java Future containing the result of the GetManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.GetManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(GetManagedScalingPolicyRequest getManagedScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Fetches the attached managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @param getManagedScalingPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.GetManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(GetManagedScalingPolicyRequest getManagedScalingPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetManagedScalingPolicyRequest, GetManagedScalingPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information about the bootstrap actions associated with a cluster.
      * </p>
      * 
@@ -1056,6 +1087,41 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the
+     * limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only
+     * applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * </p>
+     * 
+     * @param putManagedScalingPolicyRequest
+     * @return A Java Future containing the result of the PutManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.PutManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutManagedScalingPolicyResult> putManagedScalingPolicyAsync(PutManagedScalingPolicyRequest putManagedScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the
+     * limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only
+     * applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * </p>
+     * 
+     * @param putManagedScalingPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.PutManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutManagedScalingPolicyResult> putManagedScalingPolicyAsync(PutManagedScalingPolicyRequest putManagedScalingPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutManagedScalingPolicyRequest, PutManagedScalingPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes an automatic scaling policy from a specified instance group within an EMR cluster.
      * </p>
      * 
@@ -1084,6 +1150,39 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      */
     java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveAutoScalingPolicyRequest, RemoveAutoScalingPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a managed scaling policy from a specified EMR cluster.
+     * </p>
+     * 
+     * @param removeManagedScalingPolicyRequest
+     * @return A Java Future containing the result of the RemoveManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduceAsync.RemoveManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveManagedScalingPolicyResult> removeManagedScalingPolicyAsync(
+            RemoveManagedScalingPolicyRequest removeManagedScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Removes a managed scaling policy from a specified EMR cluster.
+     * </p>
+     * 
+     * @param removeManagedScalingPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduceAsyncHandler.RemoveManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveManagedScalingPolicyResult> removeManagedScalingPolicyAsync(
+            RemoveManagedScalingPolicyRequest removeManagedScalingPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveManagedScalingPolicyRequest, RemoveManagedScalingPolicyResult> asyncHandler);
 
     /**
      * <p>

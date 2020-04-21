@@ -30,24 +30,24 @@ public class PrivateIpAddressDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Private DNS name of the EC2 instance.
+     * The private DNS name of the EC2 instance.
      * </p>
      */
     private String privateDnsName;
     /**
      * <p>
-     * Private IP address of the EC2 instance.
+     * The private IP address of the EC2 instance.
      * </p>
      */
     private String privateIpAddress;
 
     /**
      * <p>
-     * Private DNS name of the EC2 instance.
+     * The private DNS name of the EC2 instance.
      * </p>
      * 
      * @param privateDnsName
-     *        Private DNS name of the EC2 instance.
+     *        The private DNS name of the EC2 instance.
      */
 
     public void setPrivateDnsName(String privateDnsName) {
@@ -56,10 +56,10 @@ public class PrivateIpAddressDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Private DNS name of the EC2 instance.
+     * The private DNS name of the EC2 instance.
      * </p>
      * 
-     * @return Private DNS name of the EC2 instance.
+     * @return The private DNS name of the EC2 instance.
      */
 
     public String getPrivateDnsName() {
@@ -68,11 +68,11 @@ public class PrivateIpAddressDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Private DNS name of the EC2 instance.
+     * The private DNS name of the EC2 instance.
      * </p>
      * 
      * @param privateDnsName
-     *        Private DNS name of the EC2 instance.
+     *        The private DNS name of the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class PrivateIpAddressDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Private IP address of the EC2 instance.
+     * The private IP address of the EC2 instance.
      * </p>
      * 
      * @param privateIpAddress
-     *        Private IP address of the EC2 instance.
+     *        The private IP address of the EC2 instance.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -96,10 +96,10 @@ public class PrivateIpAddressDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Private IP address of the EC2 instance.
+     * The private IP address of the EC2 instance.
      * </p>
      * 
-     * @return Private IP address of the EC2 instance.
+     * @return The private IP address of the EC2 instance.
      */
 
     public String getPrivateIpAddress() {
@@ -108,11 +108,11 @@ public class PrivateIpAddressDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Private IP address of the EC2 instance.
+     * The private IP address of the EC2 instance.
      * </p>
      * 
      * @param privateIpAddress
-     *        Private IP address of the EC2 instance.
+     *        The private IP address of the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

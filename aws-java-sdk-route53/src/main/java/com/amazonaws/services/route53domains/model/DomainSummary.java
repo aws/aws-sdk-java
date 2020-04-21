@@ -48,7 +48,7 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
     private Boolean transferLock;
     /**
      * <p>
-     * Expiration date of the domain in Coordinated Universal Time (UTC).
+     * Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      * </p>
      */
     private java.util.Date expiry;
@@ -199,11 +199,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expiration date of the domain in Coordinated Universal Time (UTC).
+     * Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param expiry
-     *        Expiration date of the domain in Coordinated Universal Time (UTC).
+     *        Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      */
 
     public void setExpiry(java.util.Date expiry) {
@@ -212,10 +212,10 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expiration date of the domain in Coordinated Universal Time (UTC).
+     * Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      * </p>
      * 
-     * @return Expiration date of the domain in Coordinated Universal Time (UTC).
+     * @return Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      */
 
     public java.util.Date getExpiry() {
@@ -224,11 +224,11 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Expiration date of the domain in Coordinated Universal Time (UTC).
+     * Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param expiry
-     *        Expiration date of the domain in Coordinated Universal Time (UTC).
+     *        Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

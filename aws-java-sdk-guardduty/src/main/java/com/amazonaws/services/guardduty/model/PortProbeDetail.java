@@ -30,30 +30,30 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      */
     private LocalPortDetails localPortDetails;
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      */
     private LocalIpDetails localIpDetails;
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      */
     private RemoteIpDetails remoteIpDetails;
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      * 
      * @param localPortDetails
-     *        Local port information of the connection.
+     *        The local port information of the connection.
      */
 
     public void setLocalPortDetails(LocalPortDetails localPortDetails) {
@@ -62,10 +62,10 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      * 
-     * @return Local port information of the connection.
+     * @return The local port information of the connection.
      */
 
     public LocalPortDetails getLocalPortDetails() {
@@ -74,11 +74,11 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Local port information of the connection.
+     * The local port information of the connection.
      * </p>
      * 
      * @param localPortDetails
-     *        Local port information of the connection.
+     *        The local port information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      * 
      * @param localIpDetails
-     *        Local IP information of the connection.
+     *        The local IP information of the connection.
      */
 
     public void setLocalIpDetails(LocalIpDetails localIpDetails) {
@@ -102,10 +102,10 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      * 
-     * @return Local IP information of the connection.
+     * @return The local IP information of the connection.
      */
 
     public LocalIpDetails getLocalIpDetails() {
@@ -114,11 +114,11 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Local IP information of the connection.
+     * The local IP information of the connection.
      * </p>
      * 
      * @param localIpDetails
-     *        Local IP information of the connection.
+     *        The local IP information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
      * @param remoteIpDetails
-     *        Remote IP information of the connection.
+     *        The remote IP information of the connection.
      */
 
     public void setRemoteIpDetails(RemoteIpDetails remoteIpDetails) {
@@ -142,10 +142,10 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
-     * @return Remote IP information of the connection.
+     * @return The remote IP information of the connection.
      */
 
     public RemoteIpDetails getRemoteIpDetails() {
@@ -154,11 +154,11 @@ public class PortProbeDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Remote IP information of the connection.
+     * The remote IP information of the connection.
      * </p>
      * 
      * @param remoteIpDetails
-     *        Remote IP information of the connection.
+     *        The remote IP information of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

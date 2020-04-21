@@ -27,24 +27,24 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to get.
+     * The unique ID of the threatIntelSet that you want to get.
      * </p>
      */
     private String threatIntelSetId;
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the threatIntelSet is associated with.
+     *        The unique ID of the detector that the threatIntelSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      * 
-     * @return The unique ID of the detector the threatIntelSet is associated with.
+     * @return The unique ID of the detector that the threatIntelSet is associated with.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique ID of the detector the threatIntelSet is associated with.
+     * The unique ID of the detector that the threatIntelSet is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the threatIntelSet is associated with.
+     *        The unique ID of the detector that the threatIntelSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to get.
+     * The unique ID of the threatIntelSet that you want to get.
      * </p>
      * 
      * @param threatIntelSetId
-     *        The unique ID of the threatIntelSet you want to get.
+     *        The unique ID of the threatIntelSet that you want to get.
      */
 
     public void setThreatIntelSetId(String threatIntelSetId) {
@@ -93,10 +93,10 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to get.
+     * The unique ID of the threatIntelSet that you want to get.
      * </p>
      * 
-     * @return The unique ID of the threatIntelSet you want to get.
+     * @return The unique ID of the threatIntelSet that you want to get.
      */
 
     public String getThreatIntelSetId() {
@@ -105,11 +105,11 @@ public class GetThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The unique ID of the threatIntelSet you want to get.
+     * The unique ID of the threatIntelSet that you want to get.
      * </p>
      * 
      * @param threatIntelSetId
-     *        The unique ID of the threatIntelSet you want to get.
+     *        The unique ID of the threatIntelSet that you want to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

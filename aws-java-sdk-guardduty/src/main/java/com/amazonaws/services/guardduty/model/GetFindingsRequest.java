@@ -33,7 +33,7 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String detectorId;
     /**
      * <p>
-     * IDs of the findings that you want to retrieve.
+     * The IDs of the findings that you want to retrieve.
      * </p>
      */
     private java.util.List<String> findingIds;
@@ -86,10 +86,10 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * IDs of the findings that you want to retrieve.
+     * The IDs of the findings that you want to retrieve.
      * </p>
      * 
-     * @return IDs of the findings that you want to retrieve.
+     * @return The IDs of the findings that you want to retrieve.
      */
 
     public java.util.List<String> getFindingIds() {
@@ -98,11 +98,11 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * IDs of the findings that you want to retrieve.
+     * The IDs of the findings that you want to retrieve.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to retrieve.
+     *        The IDs of the findings that you want to retrieve.
      */
 
     public void setFindingIds(java.util.Collection<String> findingIds) {
@@ -116,7 +116,7 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * IDs of the findings that you want to retrieve.
+     * The IDs of the findings that you want to retrieve.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to retrieve.
+     *        The IDs of the findings that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * IDs of the findings that you want to retrieve.
+     * The IDs of the findings that you want to retrieve.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to retrieve.
+     *        The IDs of the findings that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

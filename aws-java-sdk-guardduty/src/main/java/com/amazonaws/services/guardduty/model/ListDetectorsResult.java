@@ -25,23 +25,23 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of detector Ids.
+     * A list of detector IDs.
      * </p>
      */
     private java.util.List<String> detectorIds;
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of detector Ids.
+     * A list of detector IDs.
      * </p>
      * 
-     * @return A list of detector Ids.
+     * @return A list of detector IDs.
      */
 
     public java.util.List<String> getDetectorIds() {
@@ -50,11 +50,11 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of detector Ids.
+     * A list of detector IDs.
      * </p>
      * 
      * @param detectorIds
-     *        A list of detector Ids.
+     *        A list of detector IDs.
      */
 
     public void setDetectorIds(java.util.Collection<String> detectorIds) {
@@ -68,7 +68,7 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of detector Ids.
+     * A list of detector IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param detectorIds
-     *        A list of detector Ids.
+     *        A list of detector IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of detector Ids.
+     * A list of detector IDs.
      * </p>
      * 
      * @param detectorIds
-     *        A list of detector Ids.
+     *        A list of detector IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      * 
      * @param nextToken
-     *        Pagination parameter to be used on the next list operation to retrieve more items.
+     *        The pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      * 
-     * @return Pagination parameter to be used on the next list operation to retrieve more items.
+     * @return The pagination parameter to be used on the next list operation to retrieve more items.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListDetectorsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination parameter to be used on the next list operation to retrieve more items.
+     * The pagination parameter to be used on the next list operation to retrieve more items.
      * </p>
      * 
      * @param nextToken
-     *        Pagination parameter to be used on the next list operation to retrieve more items.
+     *        The pagination parameter to be used on the next list operation to retrieve more items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

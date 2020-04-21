@@ -154,6 +154,7 @@ final class DownloadCallable extends AbstractDownloadCallable {
             getPartRequest.setMatchingETagConstraints(req.getMatchingETagConstraints());
             getPartRequest.setNonmatchingETagConstraints(req.getNonmatchingETagConstraints());
             getPartRequest.setRequesterPays(req.isRequesterPays());
+            getPartRequest.setRequestCredentialsProvider(req.getRequestCredentialsProvider());
 
             // Update the part number
             getPartRequest.setPartNumber(i);

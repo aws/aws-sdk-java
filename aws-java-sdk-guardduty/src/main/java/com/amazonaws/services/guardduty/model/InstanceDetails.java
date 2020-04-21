@@ -30,7 +30,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The availability zone of the EC2 instance.
+     * The Availability Zone of the EC2 instance.
      * </p>
      */
     private String availabilityZone;
@@ -84,7 +84,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
     private String launchTime;
     /**
      * <p>
-     * The network interface information of the EC2 instance.
+     * The elastic network interface information of the EC2 instance.
      * </p>
      */
     private java.util.List<NetworkInterface> networkInterfaces;
@@ -109,11 +109,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The availability zone of the EC2 instance.
+     * The Availability Zone of the EC2 instance.
      * </p>
      * 
      * @param availabilityZone
-     *        The availability zone of the EC2 instance.
+     *        The Availability Zone of the EC2 instance.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -122,10 +122,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The availability zone of the EC2 instance.
+     * The Availability Zone of the EC2 instance.
      * </p>
      * 
-     * @return The availability zone of the EC2 instance.
+     * @return The Availability Zone of the EC2 instance.
      */
 
     public String getAvailabilityZone() {
@@ -134,11 +134,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The availability zone of the EC2 instance.
+     * The Availability Zone of the EC2 instance.
      * </p>
      * 
      * @param availabilityZone
-     *        The availability zone of the EC2 instance.
+     *        The Availability Zone of the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,10 +469,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interface information of the EC2 instance.
+     * The elastic network interface information of the EC2 instance.
      * </p>
      * 
-     * @return The network interface information of the EC2 instance.
+     * @return The elastic network interface information of the EC2 instance.
      */
 
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
@@ -481,11 +481,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interface information of the EC2 instance.
+     * The elastic network interface information of the EC2 instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interface information of the EC2 instance.
+     *        The elastic network interface information of the EC2 instance.
      */
 
     public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
@@ -499,7 +499,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interface information of the EC2 instance.
+     * The elastic network interface information of the EC2 instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -508,7 +508,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interface information of the EC2 instance.
+     *        The elastic network interface information of the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,11 +524,11 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The network interface information of the EC2 instance.
+     * The elastic network interface information of the EC2 instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interface information of the EC2 instance.
+     *        The elastic network interface information of the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

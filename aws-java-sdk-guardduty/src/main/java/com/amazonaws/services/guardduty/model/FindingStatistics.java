@@ -30,17 +30,17 @@ public class FindingStatistics implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents a map of severity to count statistic for a set of findings
+     * Represents a map of severity to count statistics for a set of findings.
      * </p>
      */
     private java.util.Map<String, Integer> countBySeverity;
 
     /**
      * <p>
-     * Represents a map of severity to count statistic for a set of findings
+     * Represents a map of severity to count statistics for a set of findings.
      * </p>
      * 
-     * @return Represents a map of severity to count statistic for a set of findings
+     * @return Represents a map of severity to count statistics for a set of findings.
      */
 
     public java.util.Map<String, Integer> getCountBySeverity() {
@@ -49,11 +49,11 @@ public class FindingStatistics implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents a map of severity to count statistic for a set of findings
+     * Represents a map of severity to count statistics for a set of findings.
      * </p>
      * 
      * @param countBySeverity
-     *        Represents a map of severity to count statistic for a set of findings
+     *        Represents a map of severity to count statistics for a set of findings.
      */
 
     public void setCountBySeverity(java.util.Map<String, Integer> countBySeverity) {
@@ -62,11 +62,11 @@ public class FindingStatistics implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Represents a map of severity to count statistic for a set of findings
+     * Represents a map of severity to count statistics for a set of findings.
      * </p>
      * 
      * @param countBySeverity
-     *        Represents a map of severity to count statistic for a set of findings
+     *        Represents a map of severity to count statistics for a set of findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,24 +30,24 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account ID.
+     * The member account ID.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      */
     private String email;
 
     /**
      * <p>
-     * Member account ID.
+     * The member account ID.
      * </p>
      * 
      * @param accountId
-     *        Member account ID.
+     *        The member account ID.
      */
 
     public void setAccountId(String accountId) {
@@ -56,10 +56,10 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account ID.
+     * The member account ID.
      * </p>
      * 
-     * @return Member account ID.
+     * @return The member account ID.
      */
 
     public String getAccountId() {
@@ -68,11 +68,11 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account ID.
+     * The member account ID.
      * </p>
      * 
      * @param accountId
-     *        Member account ID.
+     *        The member account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      * 
      * @param email
-     *        Member account's email address.
+     *        The email address of the member account.
      */
 
     public void setEmail(String email) {
@@ -96,10 +96,10 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      * 
-     * @return Member account's email address.
+     * @return The email address of the member account.
      */
 
     public String getEmail() {
@@ -108,11 +108,11 @@ public class AccountDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      * 
      * @param email
-     *        Member account's email address.
+     *        The email address of the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

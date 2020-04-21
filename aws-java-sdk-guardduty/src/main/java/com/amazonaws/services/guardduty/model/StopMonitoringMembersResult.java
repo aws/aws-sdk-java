@@ -25,18 +25,20 @@ public class StopMonitoringMembersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain an accountId for each account that could not be processed, and a result string
+     * that indicates why the account was not processed.
      * </p>
      */
     private java.util.List<UnprocessedAccount> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain an accountId for each account that could not be processed, and a result string
+     * that indicates why the account was not processed.
      * </p>
      * 
-     * @return A list of objects containing the unprocessed account and a result string explaining why it was
-     *         unprocessed.
+     * @return A list of objects that contain an accountId for each account that could not be processed, and a result
+     *         string that indicates why the account was not processed.
      */
 
     public java.util.List<UnprocessedAccount> getUnprocessedAccounts() {
@@ -45,12 +47,13 @@ public class StopMonitoringMembersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain an accountId for each account that could not be processed, and a result string
+     * that indicates why the account was not processed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        A list of objects that contain an accountId for each account that could not be processed, and a result
+     *        string that indicates why the account was not processed.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<UnprocessedAccount> unprocessedAccounts) {
@@ -64,7 +67,8 @@ public class StopMonitoringMembersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain an accountId for each account that could not be processed, and a result string
+     * that indicates why the account was not processed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,8 +77,8 @@ public class StopMonitoringMembersResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        A list of objects that contain an accountId for each account that could not be processed, and a result
+     *        string that indicates why the account was not processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,12 +94,13 @@ public class StopMonitoringMembersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain an accountId for each account that could not be processed, and a result string
+     * that indicates why the account was not processed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        A list of objects that contain an accountId for each account that could not be processed, and a result
+     *        string that indicates why the account was not processed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

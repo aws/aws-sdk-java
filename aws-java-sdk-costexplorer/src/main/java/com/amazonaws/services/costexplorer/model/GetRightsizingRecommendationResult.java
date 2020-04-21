@@ -47,6 +47,15 @@ public class GetRightsizingRecommendationResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String nextPageToken;
+    /**
+     * <p>
+     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
+     * instances within the same instance families or across different instance families. You can also choose to view
+     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
+     * benefits, or niether.
+     * </p>
+     */
+    private RightsizingRecommendationConfiguration configuration;
 
     /**
      * <p>
@@ -239,6 +248,64 @@ public class GetRightsizingRecommendationResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
+     * instances within the same instance families or across different instance families. You can also choose to view
+     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
+     * benefits, or niether.
+     * </p>
+     * 
+     * @param configuration
+     *        Enables you to customize recommendations across two attributes. You can choose to view recommendations for
+     *        instances within the same instance families or across different instance families. You can also choose to
+     *        view your estimated savings associated with recommendations with consideration of existing Savings Plans
+     *        or RI benefits, or niether.
+     */
+
+    public void setConfiguration(RightsizingRecommendationConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
+     * instances within the same instance families or across different instance families. You can also choose to view
+     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
+     * benefits, or niether.
+     * </p>
+     * 
+     * @return Enables you to customize recommendations across two attributes. You can choose to view recommendations
+     *         for instances within the same instance families or across different instance families. You can also
+     *         choose to view your estimated savings associated with recommendations with consideration of existing
+     *         Savings Plans or RI benefits, or niether.
+     */
+
+    public RightsizingRecommendationConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * Enables you to customize recommendations across two attributes. You can choose to view recommendations for
+     * instances within the same instance families or across different instance families. You can also choose to view
+     * your estimated savings associated with recommendations with consideration of existing Savings Plans or RI
+     * benefits, or niether.
+     * </p>
+     * 
+     * @param configuration
+     *        Enables you to customize recommendations across two attributes. You can choose to view recommendations for
+     *        instances within the same instance families or across different instance families. You can also choose to
+     *        view your estimated savings associated with recommendations with consideration of existing Savings Plans
+     *        or RI benefits, or niether.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRightsizingRecommendationResult withConfiguration(RightsizingRecommendationConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -257,7 +324,9 @@ public class GetRightsizingRecommendationResult extends com.amazonaws.AmazonWebS
         if (getRightsizingRecommendations() != null)
             sb.append("RightsizingRecommendations: ").append(getRightsizingRecommendations()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: ").append(getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +357,10 @@ public class GetRightsizingRecommendationResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +373,7 @@ public class GetRightsizingRecommendationResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getSummary() == null) ? 0 : getSummary().hashCode());
         hashCode = prime * hashCode + ((getRightsizingRecommendations() == null) ? 0 : getRightsizingRecommendations().hashCode());
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

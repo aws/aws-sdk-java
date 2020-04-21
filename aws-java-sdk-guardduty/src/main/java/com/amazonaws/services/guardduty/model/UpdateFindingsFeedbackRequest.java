@@ -33,7 +33,7 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
     private String detectorId;
     /**
      * <p>
-     * IDs of the findings that you want to mark as useful or not useful.
+     * The IDs of the findings that you want to mark as useful or not useful.
      * </p>
      */
     private java.util.List<String> findingIds;
@@ -92,10 +92,10 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * IDs of the findings that you want to mark as useful or not useful.
+     * The IDs of the findings that you want to mark as useful or not useful.
      * </p>
      * 
-     * @return IDs of the findings that you want to mark as useful or not useful.
+     * @return The IDs of the findings that you want to mark as useful or not useful.
      */
 
     public java.util.List<String> getFindingIds() {
@@ -104,11 +104,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * IDs of the findings that you want to mark as useful or not useful.
+     * The IDs of the findings that you want to mark as useful or not useful.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to mark as useful or not useful.
+     *        The IDs of the findings that you want to mark as useful or not useful.
      */
 
     public void setFindingIds(java.util.Collection<String> findingIds) {
@@ -122,7 +122,7 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * IDs of the findings that you want to mark as useful or not useful.
+     * The IDs of the findings that you want to mark as useful or not useful.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +131,7 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to mark as useful or not useful.
+     *        The IDs of the findings that you want to mark as useful or not useful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class UpdateFindingsFeedbackRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * IDs of the findings that you want to mark as useful or not useful.
+     * The IDs of the findings that you want to mark as useful or not useful.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to mark as useful or not useful.
+     *        The IDs of the findings that you want to mark as useful or not useful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

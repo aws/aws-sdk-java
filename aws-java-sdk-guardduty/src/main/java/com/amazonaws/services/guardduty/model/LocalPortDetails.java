@@ -30,24 +30,24 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port number of the local connection.
+     * The port number of the local connection.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * Port name of the local connection.
+     * The port name of the local connection.
      * </p>
      */
     private String portName;
 
     /**
      * <p>
-     * Port number of the local connection.
+     * The port number of the local connection.
      * </p>
      * 
      * @param port
-     *        Port number of the local connection.
+     *        The port number of the local connection.
      */
 
     public void setPort(Integer port) {
@@ -56,10 +56,10 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port number of the local connection.
+     * The port number of the local connection.
      * </p>
      * 
-     * @return Port number of the local connection.
+     * @return The port number of the local connection.
      */
 
     public Integer getPort() {
@@ -68,11 +68,11 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port number of the local connection.
+     * The port number of the local connection.
      * </p>
      * 
      * @param port
-     *        Port number of the local connection.
+     *        The port number of the local connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port name of the local connection.
+     * The port name of the local connection.
      * </p>
      * 
      * @param portName
-     *        Port name of the local connection.
+     *        The port name of the local connection.
      */
 
     public void setPortName(String portName) {
@@ -96,10 +96,10 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port name of the local connection.
+     * The port name of the local connection.
      * </p>
      * 
-     * @return Port name of the local connection.
+     * @return The port name of the local connection.
      */
 
     public String getPortName() {
@@ -108,11 +108,11 @@ public class LocalPortDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Port name of the local connection.
+     * The port name of the local connection.
      * </p>
      * 
      * @param portName
-     *        Port name of the local connection.
+     *        The port name of the local connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

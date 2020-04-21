@@ -30,24 +30,24 @@ public class RemotePortDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Port number of the remote connection.
+     * The port number of the remote connection.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * Port name of the remote connection.
+     * The port name of the remote connection.
      * </p>
      */
     private String portName;
 
     /**
      * <p>
-     * Port number of the remote connection.
+     * The port number of the remote connection.
      * </p>
      * 
      * @param port
-     *        Port number of the remote connection.
+     *        The port number of the remote connection.
      */
 
     public void setPort(Integer port) {
@@ -56,10 +56,10 @@ public class RemotePortDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Port number of the remote connection.
+     * The port number of the remote connection.
      * </p>
      * 
-     * @return Port number of the remote connection.
+     * @return The port number of the remote connection.
      */
 
     public Integer getPort() {
@@ -68,11 +68,11 @@ public class RemotePortDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Port number of the remote connection.
+     * The port number of the remote connection.
      * </p>
      * 
      * @param port
-     *        Port number of the remote connection.
+     *        The port number of the remote connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class RemotePortDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Port name of the remote connection.
+     * The port name of the remote connection.
      * </p>
      * 
      * @param portName
-     *        Port name of the remote connection.
+     *        The port name of the remote connection.
      */
 
     public void setPortName(String portName) {
@@ -96,10 +96,10 @@ public class RemotePortDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Port name of the remote connection.
+     * The port name of the remote connection.
      * </p>
      * 
-     * @return Port name of the remote connection.
+     * @return The port name of the remote connection.
      */
 
     public String getPortName() {
@@ -108,11 +108,11 @@ public class RemotePortDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Port name of the remote connection.
+     * The port name of the remote connection.
      * </p>
      * 
      * @param portName
-     *        Port name of the remote connection.
+     *        The port name of the remote connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

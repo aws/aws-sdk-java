@@ -30,7 +30,7 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Access key ID of the user.
+     * The access key ID of the user.
      * </p>
      */
     private String accessKeyId;
@@ -55,11 +55,11 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Access key ID of the user.
+     * The access key ID of the user.
      * </p>
      * 
      * @param accessKeyId
-     *        Access key ID of the user.
+     *        The access key ID of the user.
      */
 
     public void setAccessKeyId(String accessKeyId) {
@@ -68,10 +68,10 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Access key ID of the user.
+     * The access key ID of the user.
      * </p>
      * 
-     * @return Access key ID of the user.
+     * @return The access key ID of the user.
      */
 
     public String getAccessKeyId() {
@@ -80,11 +80,11 @@ public class AccessKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Access key ID of the user.
+     * The access key ID of the user.
      * </p>
      * 
      * @param accessKeyId
-     *        Access key ID of the user.
+     *        The access key ID of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

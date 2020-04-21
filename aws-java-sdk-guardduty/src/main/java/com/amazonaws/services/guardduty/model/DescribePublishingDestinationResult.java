@@ -32,7 +32,7 @@ public class DescribePublishingDestinationResult extends com.amazonaws.AmazonWeb
     private String destinationId;
     /**
      * <p>
-     * The type of the publishing destination. Currently, only S3 is supported.
+     * The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      */
     private String destinationType;
@@ -99,11 +99,11 @@ public class DescribePublishingDestinationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of the publishing destination. Currently, only S3 is supported.
+     * The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of the publishing destination. Currently, only S3 is supported.
+     *        The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * @see DestinationType
      */
 
@@ -113,10 +113,10 @@ public class DescribePublishingDestinationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of the publishing destination. Currently, only S3 is supported.
+     * The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
-     * @return The type of the publishing destination. Currently, only S3 is supported.
+     * @return The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * @see DestinationType
      */
 
@@ -126,11 +126,11 @@ public class DescribePublishingDestinationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of the publishing destination. Currently, only S3 is supported.
+     * The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of the publishing destination. Currently, only S3 is supported.
+     *        The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */
@@ -142,11 +142,11 @@ public class DescribePublishingDestinationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of the publishing destination. Currently, only S3 is supported.
+     * The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of the publishing destination. Currently, only S3 is supported.
+     *        The type of publishing destination. Currently, only Amazon S3 buckets are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */

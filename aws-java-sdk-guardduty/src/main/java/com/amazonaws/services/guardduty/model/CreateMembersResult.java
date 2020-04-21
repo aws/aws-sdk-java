@@ -25,18 +25,20 @@ public class CreateMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that
+     * explains why each was unprocessed.
      * </p>
      */
     private java.util.List<UnprocessedAccount> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that
+     * explains why each was unprocessed.
      * </p>
      * 
-     * @return A list of objects containing the unprocessed account and a result string explaining why it was
-     *         unprocessed.
+     * @return A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result
+     *         string that explains why each was unprocessed.
      */
 
     public java.util.List<UnprocessedAccount> getUnprocessedAccounts() {
@@ -45,12 +47,13 @@ public class CreateMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that
+     * explains why each was unprocessed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string
+     *        that explains why each was unprocessed.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<UnprocessedAccount> unprocessedAccounts) {
@@ -64,7 +67,8 @@ public class CreateMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that
+     * explains why each was unprocessed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,8 +77,8 @@ public class CreateMembersResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string
+     *        that explains why each was unprocessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,12 +94,13 @@ public class CreateMembersResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string that
+     * explains why each was unprocessed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
-     *        unprocessed.
+     *        A list of objects that include the <code>accountIds</code> of the unprocessed accounts and a result string
+     *        that explains why each was unprocessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

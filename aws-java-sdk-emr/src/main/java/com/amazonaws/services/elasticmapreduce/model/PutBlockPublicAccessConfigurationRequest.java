@@ -35,6 +35,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.
      * </p>
+     * <note>
+     * <p>
+     * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
+     * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * </p>
+     * </note>
      */
     private BlockPublicAccessConfiguration blockPublicAccessConfiguration;
 
@@ -48,6 +55,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.
      * </p>
+     * <note>
+     * <p>
+     * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
+     * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * </p>
+     * </note>
      * 
      * @param blockPublicAccessConfiguration
      *        A configuration for Amazon EMR block public access. The configuration applies to all clusters created in
@@ -56,7 +70,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      *        allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using
      *        <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By
      *        default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by
-     *        updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.
+     *        updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+     *        <p>
+     *        For accounts that created clusters in a Region before November 25, 2019, block public access is disabled
+     *        by default in that Region. To use this feature, you must manually enable and configure it. For accounts
+     *        that did not create an EMR cluster in a Region before this date, block public access is enabled by default
+     *        in that Region.
+     *        </p>
      */
 
     public void setBlockPublicAccessConfiguration(BlockPublicAccessConfiguration blockPublicAccessConfiguration) {
@@ -73,6 +93,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.
      * </p>
+     * <note>
+     * <p>
+     * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
+     * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * </p>
+     * </note>
      * 
      * @return A configuration for Amazon EMR block public access. The configuration applies to all clusters created in
      *         your account for the current Region. The configuration specifies whether block public access is enabled.
@@ -81,7 +108,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      *         using <code>PermittedPublicSecurityGroupRuleRanges</code> in the
      *         <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access
      *         is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to
-     *         remove the exception.
+     *         remove the exception.</p> <note>
+     *         <p>
+     *         For accounts that created clusters in a Region before November 25, 2019, block public access is disabled
+     *         by default in that Region. To use this feature, you must manually enable and configure it. For accounts
+     *         that did not create an EMR cluster in a Region before this date, block public access is enabled by
+     *         default in that Region.
+     *         </p>
      */
 
     public BlockPublicAccessConfiguration getBlockPublicAccessConfiguration() {
@@ -98,6 +131,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      * default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by
      * updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.
      * </p>
+     * <note>
+     * <p>
+     * For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by
+     * default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not
+     * create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.
+     * </p>
+     * </note>
      * 
      * @param blockPublicAccessConfiguration
      *        A configuration for Amazon EMR block public access. The configuration applies to all clusters created in
@@ -106,7 +146,13 @@ public class PutBlockPublicAccessConfigurationRequest extends com.amazonaws.Amaz
      *        allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using
      *        <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By
      *        default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by
-     *        updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.
+     *        updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
+     *        <p>
+     *        For accounts that created clusters in a Region before November 25, 2019, block public access is disabled
+     *        by default in that Region. To use this feature, you must manually enable and configure it. For accounts
+     *        that did not create an EMR cluster in a Region before this date, block public access is enabled by default
+     *        in that Region.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

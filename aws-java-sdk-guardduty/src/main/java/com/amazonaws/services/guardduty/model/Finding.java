@@ -36,7 +36,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The ARN for the finding.
+     * The ARN of the finding.
      * </p>
      */
     private String arn;
@@ -48,7 +48,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private Double confidence;
     /**
      * <p>
-     * The time and date at which the finding was created.
+     * The time and date when the finding was created.
      * </p>
      */
     private String createdAt;
@@ -72,7 +72,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String partition;
     /**
      * <p>
-     * The Region in which the finding was generated.
+     * The Region where the finding was generated.
      * </p>
      */
     private String region;
@@ -94,19 +94,19 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private Double severity;
     /**
      * <p>
-     * The title for the finding.
+     * The title of the finding.
      * </p>
      */
     private String title;
     /**
      * <p>
-     * The type of the finding.
+     * The type of finding.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The time and date at which the finding was laste updated.
+     * The time and date when the finding was last updated.
      * </p>
      */
     private String updatedAt;
@@ -153,11 +153,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the finding.
+     * The ARN of the finding.
      * </p>
      * 
      * @param arn
-     *        The ARN for the finding.
+     *        The ARN of the finding.
      */
 
     public void setArn(String arn) {
@@ -166,10 +166,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the finding.
+     * The ARN of the finding.
      * </p>
      * 
-     * @return The ARN for the finding.
+     * @return The ARN of the finding.
      */
 
     public String getArn() {
@@ -178,11 +178,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the finding.
+     * The ARN of the finding.
      * </p>
      * 
      * @param arn
-     *        The ARN for the finding.
+     *        The ARN of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date at which the finding was created.
+     * The time and date when the finding was created.
      * </p>
      * 
      * @param createdAt
-     *        The time and date at which the finding was created.
+     *        The time and date when the finding was created.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -246,10 +246,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date at which the finding was created.
+     * The time and date when the finding was created.
      * </p>
      * 
-     * @return The time and date at which the finding was created.
+     * @return The time and date when the finding was created.
      */
 
     public String getCreatedAt() {
@@ -258,11 +258,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date at which the finding was created.
+     * The time and date when the finding was created.
      * </p>
      * 
      * @param createdAt
-     *        The time and date at which the finding was created.
+     *        The time and date when the finding was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,11 +393,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region in which the finding was generated.
+     * The Region where the finding was generated.
      * </p>
      * 
      * @param region
-     *        The Region in which the finding was generated.
+     *        The Region where the finding was generated.
      */
 
     public void setRegion(String region) {
@@ -406,10 +406,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region in which the finding was generated.
+     * The Region where the finding was generated.
      * </p>
      * 
-     * @return The Region in which the finding was generated.
+     * @return The Region where the finding was generated.
      */
 
     public String getRegion() {
@@ -418,11 +418,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region in which the finding was generated.
+     * The Region where the finding was generated.
      * </p>
      * 
      * @param region
-     *        The Region in which the finding was generated.
+     *        The Region where the finding was generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,11 +565,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The title for the finding.
+     * The title of the finding.
      * </p>
      * 
      * @param title
-     *        The title for the finding.
+     *        The title of the finding.
      */
 
     public void setTitle(String title) {
@@ -578,10 +578,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The title for the finding.
+     * The title of the finding.
      * </p>
      * 
-     * @return The title for the finding.
+     * @return The title of the finding.
      */
 
     public String getTitle() {
@@ -590,11 +590,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The title for the finding.
+     * The title of the finding.
      * </p>
      * 
      * @param title
-     *        The title for the finding.
+     *        The title of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,11 +605,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of finding.
      * </p>
      * 
      * @param type
-     *        The type of the finding.
+     *        The type of finding.
      */
 
     public void setType(String type) {
@@ -618,10 +618,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of finding.
      * </p>
      * 
-     * @return The type of the finding.
+     * @return The type of finding.
      */
 
     public String getType() {
@@ -630,11 +630,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the finding.
+     * The type of finding.
      * </p>
      * 
      * @param type
-     *        The type of the finding.
+     *        The type of finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,11 +645,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date at which the finding was laste updated.
+     * The time and date when the finding was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The time and date at which the finding was laste updated.
+     *        The time and date when the finding was last updated.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -658,10 +658,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date at which the finding was laste updated.
+     * The time and date when the finding was last updated.
      * </p>
      * 
-     * @return The time and date at which the finding was laste updated.
+     * @return The time and date when the finding was last updated.
      */
 
     public String getUpdatedAt() {
@@ -670,11 +670,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date at which the finding was laste updated.
+     * The time and date when the finding was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The time and date at which the finding was laste updated.
+     *        The time and date when the finding was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

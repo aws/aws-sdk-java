@@ -33,13 +33,13 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
     private String detectorId;
     /**
      * <p>
-     * The type of resource for the publishing destination. Currently only S3 is supported.
+     * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * </p>
      */
     private String destinationType;
     /**
      * <p>
-     * Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
+     * The properties of the publishing destination, including the ARNs for the destination and the KMS key used for
      * encryption.
      * </p>
      */
@@ -93,11 +93,11 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The type of resource for the publishing destination. Currently only S3 is supported.
+     * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of resource for the publishing destination. Currently only S3 is supported.
+     *        The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * @see DestinationType
      */
 
@@ -107,10 +107,10 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The type of resource for the publishing destination. Currently only S3 is supported.
+     * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * </p>
      * 
-     * @return The type of resource for the publishing destination. Currently only S3 is supported.
+     * @return The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * @see DestinationType
      */
 
@@ -120,11 +120,11 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The type of resource for the publishing destination. Currently only S3 is supported.
+     * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of resource for the publishing destination. Currently only S3 is supported.
+     *        The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */
@@ -136,11 +136,11 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The type of resource for the publishing destination. Currently only S3 is supported.
+     * The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of resource for the publishing destination. Currently only S3 is supported.
+     *        The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */
@@ -152,13 +152,13 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
+     * The properties of the publishing destination, including the ARNs for the destination and the KMS key used for
      * encryption.
      * </p>
      * 
      * @param destinationProperties
-     *        Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
-     *        encryption.
+     *        The properties of the publishing destination, including the ARNs for the destination and the KMS key used
+     *        for encryption.
      */
 
     public void setDestinationProperties(DestinationProperties destinationProperties) {
@@ -167,12 +167,12 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
+     * The properties of the publishing destination, including the ARNs for the destination and the KMS key used for
      * encryption.
      * </p>
      * 
-     * @return Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
-     *         encryption.
+     * @return The properties of the publishing destination, including the ARNs for the destination and the KMS key used
+     *         for encryption.
      */
 
     public DestinationProperties getDestinationProperties() {
@@ -181,13 +181,13 @@ public class CreatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
+     * The properties of the publishing destination, including the ARNs for the destination and the KMS key used for
      * encryption.
      * </p>
      * 
      * @param destinationProperties
-     *        Properties of the publishing destination, including the ARNs for the destination and the KMS key used for
-     *        encryption.
+     *        The properties of the publishing destination, including the ARNs for the destination and the KMS key used
+     *        for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

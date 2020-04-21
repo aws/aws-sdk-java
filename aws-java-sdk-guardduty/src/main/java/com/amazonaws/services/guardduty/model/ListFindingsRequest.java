@@ -98,11 +98,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -228,11 +223,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * service.action.networkConnectionAction.remoteIpDetails.city.cityName
      * </p>
      * </li>
@@ -317,7 +307,7 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      */
@@ -430,11 +420,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -556,11 +541,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -697,11 +677,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.outpostArn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        resource.instanceDetails.networkInterfaces.ipv6Addresses
      *        </p>
      *        </li>
@@ -823,11 +798,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        service.action.networkConnectionAction.protocol
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
      *        </p>
      *        </li>
      *        <li>
@@ -970,11 +940,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -1096,11 +1061,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -1236,11 +1196,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         resource.instanceDetails.outpostArn
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         resource.instanceDetails.networkInterfaces.ipv6Addresses
      *         </p>
      *         </li>
@@ -1362,11 +1317,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         service.action.networkConnectionAction.protocol
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.localIpDetails.ipAddressV4
      *         </p>
      *         </li>
      *         <li>
@@ -1509,11 +1459,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * resource.instanceDetails.networkInterfaces.ipv6Addresses
      * </p>
      * </li>
@@ -1635,11 +1580,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
      * </p>
      * </li>
      * <li>
@@ -1776,11 +1716,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.outpostArn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        resource.instanceDetails.networkInterfaces.ipv6Addresses
      *        </p>
      *        </li>
@@ -1902,11 +1837,6 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        service.action.networkConnectionAction.protocol
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
      *        </p>
      *        </li>
      *        <li>
@@ -2073,13 +2003,13 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *        of NextToken from the previous response to continue listing data.
      */
 
@@ -2090,12 +2020,12 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *         of NextToken from the previous response to continue listing data.
      */
 
@@ -2106,13 +2036,13 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -33,7 +33,7 @@ public class ArchiveFindingsRequest extends com.amazonaws.AmazonWebServiceReques
     private String detectorId;
     /**
      * <p>
-     * IDs of the findings that you want to archive.
+     * The IDs of the findings that you want to archive.
      * </p>
      */
     private java.util.List<String> findingIds;
@@ -80,10 +80,10 @@ public class ArchiveFindingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * IDs of the findings that you want to archive.
+     * The IDs of the findings that you want to archive.
      * </p>
      * 
-     * @return IDs of the findings that you want to archive.
+     * @return The IDs of the findings that you want to archive.
      */
 
     public java.util.List<String> getFindingIds() {
@@ -92,11 +92,11 @@ public class ArchiveFindingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * IDs of the findings that you want to archive.
+     * The IDs of the findings that you want to archive.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to archive.
+     *        The IDs of the findings that you want to archive.
      */
 
     public void setFindingIds(java.util.Collection<String> findingIds) {
@@ -110,7 +110,7 @@ public class ArchiveFindingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * IDs of the findings that you want to archive.
+     * The IDs of the findings that you want to archive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class ArchiveFindingsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to archive.
+     *        The IDs of the findings that you want to archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class ArchiveFindingsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * IDs of the findings that you want to archive.
+     * The IDs of the findings that you want to archive.
      * </p>
      * 
      * @param findingIds
-     *        IDs of the findings that you want to archive.
+     *        The IDs of the findings that you want to archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

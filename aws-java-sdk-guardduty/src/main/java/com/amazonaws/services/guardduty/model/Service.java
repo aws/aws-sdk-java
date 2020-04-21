@@ -30,7 +30,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the activity described in a finding.
+     * Information about the activity that is described in a finding.
      * </p>
      */
     private Action action;
@@ -48,31 +48,31 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Boolean archived;
     /**
      * <p>
-     * Total count of the occurrences of this finding type.
+     * The total count of the occurrences of this finding type.
      * </p>
      */
     private Integer count;
     /**
      * <p>
-     * Detector ID for the GuardDuty service.
+     * The detector ID for the GuardDuty service.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      */
     private String eventFirstSeen;
     /**
      * <p>
-     * Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      */
     private String eventLastSeen;
     /**
      * <p>
-     * Resource role information for this finding.
+     * The resource role information for this finding.
      * </p>
      */
     private String resourceRole;
@@ -84,18 +84,18 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String serviceName;
     /**
      * <p>
-     * Feedback left about the finding.
+     * Feedback that was submitted about the finding.
      * </p>
      */
     private String userFeedback;
 
     /**
      * <p>
-     * Information about the activity described in a finding.
+     * Information about the activity that is described in a finding.
      * </p>
      * 
      * @param action
-     *        Information about the activity described in a finding.
+     *        Information about the activity that is described in a finding.
      */
 
     public void setAction(Action action) {
@@ -104,10 +104,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the activity described in a finding.
+     * Information about the activity that is described in a finding.
      * </p>
      * 
-     * @return Information about the activity described in a finding.
+     * @return Information about the activity that is described in a finding.
      */
 
     public Action getAction() {
@@ -116,11 +116,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the activity described in a finding.
+     * Information about the activity that is described in a finding.
      * </p>
      * 
      * @param action
-     *        Information about the activity described in a finding.
+     *        Information about the activity that is described in a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +223,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total count of the occurrences of this finding type.
+     * The total count of the occurrences of this finding type.
      * </p>
      * 
      * @param count
-     *        Total count of the occurrences of this finding type.
+     *        The total count of the occurrences of this finding type.
      */
 
     public void setCount(Integer count) {
@@ -236,10 +236,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total count of the occurrences of this finding type.
+     * The total count of the occurrences of this finding type.
      * </p>
      * 
-     * @return Total count of the occurrences of this finding type.
+     * @return The total count of the occurrences of this finding type.
      */
 
     public Integer getCount() {
@@ -248,11 +248,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total count of the occurrences of this finding type.
+     * The total count of the occurrences of this finding type.
      * </p>
      * 
      * @param count
-     *        Total count of the occurrences of this finding type.
+     *        The total count of the occurrences of this finding type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +263,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Detector ID for the GuardDuty service.
+     * The detector ID for the GuardDuty service.
      * </p>
      * 
      * @param detectorId
-     *        Detector ID for the GuardDuty service.
+     *        The detector ID for the GuardDuty service.
      */
 
     public void setDetectorId(String detectorId) {
@@ -276,10 +276,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Detector ID for the GuardDuty service.
+     * The detector ID for the GuardDuty service.
      * </p>
      * 
-     * @return Detector ID for the GuardDuty service.
+     * @return The detector ID for the GuardDuty service.
      */
 
     public String getDetectorId() {
@@ -288,11 +288,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Detector ID for the GuardDuty service.
+     * The detector ID for the GuardDuty service.
      * </p>
      * 
      * @param detectorId
-     *        Detector ID for the GuardDuty service.
+     *        The detector ID for the GuardDuty service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,11 +303,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      * 
      * @param eventFirstSeen
-     *        First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     *        The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      */
 
     public void setEventFirstSeen(String eventFirstSeen) {
@@ -316,10 +316,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      * 
-     * @return First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * @return The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      */
 
     public String getEventFirstSeen() {
@@ -328,11 +328,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      * 
      * @param eventFirstSeen
-     *        First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     *        The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,11 +343,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      * 
      * @param eventLastSeen
-     *        Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     *        The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      */
 
     public void setEventLastSeen(String eventLastSeen) {
@@ -356,10 +356,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      * 
-     * @return Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * @return The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      */
 
     public String getEventLastSeen() {
@@ -368,11 +368,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     * The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * </p>
      * 
      * @param eventLastSeen
-     *        Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+     *        The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +383,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Resource role information for this finding.
+     * The resource role information for this finding.
      * </p>
      * 
      * @param resourceRole
-     *        Resource role information for this finding.
+     *        The resource role information for this finding.
      */
 
     public void setResourceRole(String resourceRole) {
@@ -396,10 +396,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Resource role information for this finding.
+     * The resource role information for this finding.
      * </p>
      * 
-     * @return Resource role information for this finding.
+     * @return The resource role information for this finding.
      */
 
     public String getResourceRole() {
@@ -408,11 +408,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Resource role information for this finding.
+     * The resource role information for this finding.
      * </p>
      * 
      * @param resourceRole
-     *        Resource role information for this finding.
+     *        The resource role information for this finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,11 +463,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Feedback left about the finding.
+     * Feedback that was submitted about the finding.
      * </p>
      * 
      * @param userFeedback
-     *        Feedback left about the finding.
+     *        Feedback that was submitted about the finding.
      */
 
     public void setUserFeedback(String userFeedback) {
@@ -476,10 +476,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Feedback left about the finding.
+     * Feedback that was submitted about the finding.
      * </p>
      * 
-     * @return Feedback left about the finding.
+     * @return Feedback that was submitted about the finding.
      */
 
     public String getUserFeedback() {
@@ -488,11 +488,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Feedback left about the finding.
+     * Feedback that was submitted about the finding.
      * </p>
      * 
      * @param userFeedback
-     *        Feedback left about the finding.
+     *        Feedback that was submitted about the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,17 +25,17 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      */
     private java.util.List<UnprocessedAccount> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * 
-     * @return A list of objects containing the unprocessed account and a result string explaining why it was
+     * @return A list of objects that contain the unprocessed account and a result string that explains why it was
      *         unprocessed.
      */
 
@@ -45,11 +45,11 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
+     *        A list of objects that contain the unprocessed account and a result string that explains why it was
      *        unprocessed.
      */
 
@@ -64,7 +64,7 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
+     *        A list of objects that contain the unprocessed account and a result string that explains why it was
      *        unprocessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -90,11 +90,11 @@ public class StartMonitoringMembersResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
+     *        A list of objects that contain the unprocessed account and a result string that explains why it was
      *        unprocessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

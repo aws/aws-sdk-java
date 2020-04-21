@@ -375,6 +375,19 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Fetches the attached managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @param getManagedScalingPolicyRequest
+     * @return Result of the GetManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.GetManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetManagedScalingPolicyResult getManagedScalingPolicy(GetManagedScalingPolicyRequest getManagedScalingPolicyRequest);
+
+    /**
+     * <p>
      * Provides information about the bootstrap actions associated with a cluster.
      * </p>
      * 
@@ -622,6 +635,21 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the
+     * limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only
+     * applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * </p>
+     * 
+     * @param putManagedScalingPolicyRequest
+     * @return Result of the PutManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.PutManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutManagedScalingPolicyResult putManagedScalingPolicy(PutManagedScalingPolicyRequest putManagedScalingPolicyRequest);
+
+    /**
+     * <p>
      * Removes an automatic scaling policy from a specified instance group within an EMR cluster.
      * </p>
      * 
@@ -632,6 +660,19 @@ public interface AmazonElasticMapReduce {
      *      target="_top">AWS API Documentation</a>
      */
     RemoveAutoScalingPolicyResult removeAutoScalingPolicy(RemoveAutoScalingPolicyRequest removeAutoScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Removes a managed scaling policy from a specified EMR cluster.
+     * </p>
+     * 
+     * @param removeManagedScalingPolicyRequest
+     * @return Result of the RemoveManagedScalingPolicy operation returned by the service.
+     * @sample AmazonElasticMapReduce.RemoveManagedScalingPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveManagedScalingPolicyResult removeManagedScalingPolicy(RemoveManagedScalingPolicyRequest removeManagedScalingPolicyRequest);
 
     /**
      * <p>

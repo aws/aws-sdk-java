@@ -1,3 +1,20 @@
+# __1.11.766__ __2020-04-21__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Cost Explorer Rightsizing Recommendations integrates with Compute Optimizer and begins offering across instance family rightsizing recommendations, adding to existing support for within instance family rightsizing recommendations. 
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR adds support for configuring a managed scaling policy for an Amazon EMR cluster. This enables automatic resizing of a cluster to optimize for job execution speed and reduced cluster cost.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - AWS GuardDuty now supports using AWS Organizations delegated administrators to create and manage GuardDuty master and member accounts.  The feature also allows GuardDuty to be automatically enabled on associated organization accounts.
+
+## __Amazon Route 53 Domains__
+  - ### Features
+    - You can now programmatically transfer domains between AWS accounts without having to contact AWS Support
+
 # __1.11.765__ __2020-04-20__
 ## __AWS Cost Explorer Service__
   - ### Features
@@ -10,6 +27,10 @@
 ## __AWS IoT Events__
   - ### Features
     - API update that allows users to add AWS Iot SiteWise actions while creating Detector Model in AWS Iot Events
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix a bug where the `TransferManager` was not copying the request override credentials provider to new requests it creates for `upload()`, `download()` and `copy()`.
 
 ## __AmazonApiGatewayV2__
   - ### Features

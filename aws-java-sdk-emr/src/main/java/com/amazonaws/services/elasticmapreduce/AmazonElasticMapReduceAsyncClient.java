@@ -673,6 +673,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request) {
+
+        return getManagedScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedScalingPolicyResult> getManagedScalingPolicyAsync(final GetManagedScalingPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetManagedScalingPolicyRequest, GetManagedScalingPolicyResult> asyncHandler) {
+        final GetManagedScalingPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetManagedScalingPolicyResult>() {
+            @Override
+            public GetManagedScalingPolicyResult call() throws Exception {
+                GetManagedScalingPolicyResult result = null;
+
+                try {
+                    result = executeGetManagedScalingPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBootstrapActionsResult> listBootstrapActionsAsync(ListBootstrapActionsRequest request) {
 
         return listBootstrapActionsAsync(request, null);
@@ -1117,6 +1150,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<PutManagedScalingPolicyResult> putManagedScalingPolicyAsync(PutManagedScalingPolicyRequest request) {
+
+        return putManagedScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutManagedScalingPolicyResult> putManagedScalingPolicyAsync(final PutManagedScalingPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutManagedScalingPolicyRequest, PutManagedScalingPolicyResult> asyncHandler) {
+        final PutManagedScalingPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutManagedScalingPolicyResult>() {
+            @Override
+            public PutManagedScalingPolicyResult call() throws Exception {
+                PutManagedScalingPolicyResult result = null;
+
+                try {
+                    result = executePutManagedScalingPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request) {
 
         return removeAutoScalingPolicyAsync(request, null);
@@ -1134,6 +1200,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
 
                 try {
                     result = executeRemoveAutoScalingPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveManagedScalingPolicyResult> removeManagedScalingPolicyAsync(RemoveManagedScalingPolicyRequest request) {
+
+        return removeManagedScalingPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveManagedScalingPolicyResult> removeManagedScalingPolicyAsync(final RemoveManagedScalingPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveManagedScalingPolicyRequest, RemoveManagedScalingPolicyResult> asyncHandler) {
+        final RemoveManagedScalingPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveManagedScalingPolicyResult>() {
+            @Override
+            public RemoveManagedScalingPolicyResult call() throws Exception {
+                RemoveManagedScalingPolicyResult result = null;
+
+                try {
+                    result = executeRemoveManagedScalingPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

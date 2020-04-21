@@ -213,7 +213,8 @@ public class UploadCallable implements Callable<UploadResult> {
         try {
             AbortMultipartUploadRequest abortRequest = new AbortMultipartUploadRequest(origReq.getBucketName(), origReq.getKey(),
                     multipartUploadId)
-                    .withRequesterPays(origReq.isRequesterPays());
+                    .withRequesterPays(origReq.isRequesterPays())
+                    .withRequestCredentialsProvider(origReq.getRequestCredentialsProvider());
             s3.abortMultipartUpload(abortRequest);
         } catch (Exception e2) {
             log.info(
@@ -265,7 +266,8 @@ public class UploadCallable implements Callable<UploadResult> {
                     .withRequesterPays(origReq.isRequesterPays())
             .withGeneralProgressListener(origReq.getGeneralProgressListener())
             .withRequestMetricCollector(origReq.getRequestMetricCollector())
-            ;
+            .withRequestCredentialsProvider(origReq.getRequestCredentialsProvider());
+
         CompleteMultipartUploadResult res = s3.completeMultipartUpload(req);
 
         UploadResult uploadResult = new UploadResult();
@@ -307,11 +309,14 @@ public class UploadCallable implements Callable<UploadResult> {
         int partNumber = 0;
 
         while (true) {
-            PartListing parts = s3.listParts(new ListPartsRequest(
+            ListPartsRequest listPartsRequest = new ListPartsRequest(
                     origReq.getBucketName(),
                     origReq.getKey(), uploadId)
                     .withPartNumberMarker(partNumber)
-                    .withRequesterPays(origReq.isRequesterPays()));
+                    .withRequesterPays(origReq.isRequesterPays())
+                    .withRequestCredentialsProvider(origReq.getRequestCredentialsProvider());
+
+            PartListing parts = s3.listParts(listPartsRequest);
             for (PartSummary partSummary : parts.getParts()) {
                 partNumbers.put(partSummary.getPartNumber(), partSummary);
             }
@@ -358,6 +363,8 @@ public class UploadCallable implements Callable<UploadResult> {
         req.withObjectLockMode(origReq.getObjectLockMode())
            .withObjectLockRetainUntilDate(origReq.getObjectLockRetainUntilDate())
            .withObjectLockLegalHoldStatus(origReq.getObjectLockLegalHoldStatus());
+
+        req.withRequestCredentialsProvider(origReq.getRequestCredentialsProvider());
 
         String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);

@@ -27,14 +27,16 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     * The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user-friendly name to identify the IPSet.
+     * </p>
+     * <p>
+     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      * </p>
      */
     private String name;
@@ -46,14 +48,14 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String format;
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * The URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      * </p>
      */
     private String location;
     /**
      * <p>
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      * </p>
      */
     private Boolean activate;
@@ -72,11 +74,11 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     * The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     *        The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      */
 
     public void setDetectorId(String detectorId) {
@@ -85,10 +87,10 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     * The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      * </p>
      * 
-     * @return The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     * @return The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      */
 
     public String getDetectorId() {
@@ -97,11 +99,11 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     * The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
+     *        The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +114,16 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user-friendly name to identify the IPSet.
+     * </p>
+     * <p>
+     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param name
-     *        The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     *        activity that involves IP addresses included in this IPSet.
+     *        The user-friendly name to identify the IPSet.</p>
+     *        <p>
+     *        Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      */
 
     public void setName(String name) {
@@ -127,12 +132,15 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user-friendly name to identify the IPSet.
+     * </p>
+     * <p>
+     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      * </p>
      * 
-     * @return The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered
-     *         by activity that involves IP addresses included in this IPSet.
+     * @return The user-friendly name to identify the IPSet.</p>
+     *         <p>
+     *         Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      */
 
     public String getName() {
@@ -141,13 +149,16 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     * activity that involves IP addresses included in this IPSet.
+     * The user-friendly name to identify the IPSet.
+     * </p>
+     * <p>
+     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      * </p>
      * 
      * @param name
-     *        The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by
-     *        activity that involves IP addresses included in this IPSet.
+     *        The user-friendly name to identify the IPSet.</p>
+     *        <p>
+     *        Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,13 +228,13 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * The URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      * </p>
      * 
      * @param location
-     *        The URI of the file that contains the IPSet. For example
-     *        (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     *        The URI of the file that contains the IPSet. For example:
+     *        https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      */
 
     public void setLocation(String location) {
@@ -232,12 +243,12 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * The URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      * </p>
      * 
-     * @return The URI of the file that contains the IPSet. For example
-     *         (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * @return The URI of the file that contains the IPSet. For example:
+     *         https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      */
 
     public String getLocation() {
@@ -246,13 +257,13 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     * The URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      * </p>
      * 
      * @param location
-     *        The URI of the file that contains the IPSet. For example
-     *        (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+     *        The URI of the file that contains the IPSet. For example:
+     *        https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +274,11 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      * </p>
      * 
      * @param activate
-     *        A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     *        A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      */
 
     public void setActivate(Boolean activate) {
@@ -276,10 +287,10 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      * </p>
      * 
-     * @return A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * @return A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      */
 
     public Boolean getActivate() {
@@ -288,11 +299,11 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      * </p>
      * 
      * @param activate
-     *        A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     *        A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,10 +314,10 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      * </p>
      * 
-     * @return A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+     * @return A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
      */
 
     public Boolean isActivate() {

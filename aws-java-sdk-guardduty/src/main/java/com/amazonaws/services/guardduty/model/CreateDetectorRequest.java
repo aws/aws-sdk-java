@@ -27,7 +27,7 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean value that specifies whether the detector is to be enabled.
+     * A Boolean value that specifies whether the detector is to be enabled.
      * </p>
      */
     private Boolean enable;
@@ -39,7 +39,7 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     private String clientToken;
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * An enum value that specifies how frequently updated findings are exported.
      * </p>
      */
     private String findingPublishingFrequency;
@@ -52,11 +52,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean value that specifies whether the detector is to be enabled.
+     * A Boolean value that specifies whether the detector is to be enabled.
      * </p>
      * 
      * @param enable
-     *        A boolean value that specifies whether the detector is to be enabled.
+     *        A Boolean value that specifies whether the detector is to be enabled.
      */
 
     public void setEnable(Boolean enable) {
@@ -65,10 +65,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean value that specifies whether the detector is to be enabled.
+     * A Boolean value that specifies whether the detector is to be enabled.
      * </p>
      * 
-     * @return A boolean value that specifies whether the detector is to be enabled.
+     * @return A Boolean value that specifies whether the detector is to be enabled.
      */
 
     public Boolean getEnable() {
@@ -77,11 +77,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean value that specifies whether the detector is to be enabled.
+     * A Boolean value that specifies whether the detector is to be enabled.
      * </p>
      * 
      * @param enable
-     *        A boolean value that specifies whether the detector is to be enabled.
+     *        A Boolean value that specifies whether the detector is to be enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,10 +92,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A boolean value that specifies whether the detector is to be enabled.
+     * A Boolean value that specifies whether the detector is to be enabled.
      * </p>
      * 
-     * @return A boolean value that specifies whether the detector is to be enabled.
+     * @return A Boolean value that specifies whether the detector is to be enabled.
      */
 
     public Boolean isEnable() {
@@ -144,11 +144,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * An enum value that specifies how frequently updated findings are exported.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently customer got Finding updates published.
+     *        An enum value that specifies how frequently updated findings are exported.
      * @see FindingPublishingFrequency
      */
 
@@ -158,10 +158,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * An enum value that specifies how frequently updated findings are exported.
      * </p>
      * 
-     * @return A enum value that specifies how frequently customer got Finding updates published.
+     * @return An enum value that specifies how frequently updated findings are exported.
      * @see FindingPublishingFrequency
      */
 
@@ -171,11 +171,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * An enum value that specifies how frequently updated findings are exported.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently customer got Finding updates published.
+     *        An enum value that specifies how frequently updated findings are exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -187,11 +187,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently customer got Finding updates published.
+     * An enum value that specifies how frequently updated findings are exported.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently customer got Finding updates published.
+     *        An enum value that specifies how frequently updated findings are exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */

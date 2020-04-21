@@ -30,89 +30,89 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private java.util.List<String> eq;
     /**
      * <p>
-     * Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private java.util.List<String> neq;
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer gt;
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer gte;
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer lt;
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     @Deprecated
     private Integer lte;
     /**
      * <p>
-     * Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     * Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      */
     private java.util.List<String> equals;
     /**
      * <p>
-     * Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     * Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      */
     private java.util.List<String> notEquals;
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Long greaterThan;
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Long greaterThanOrEqual;
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Long lessThan;
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      */
     private Long lessThanOrEqual;
 
     /**
      * <p>
-     * Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents the equal condition to be applied to a single field when querying for findings.
+     * @return Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public java.util.List<String> getEq() {
@@ -121,11 +121,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param eq
-     *        Represents the equal condition to be applied to a single field when querying for findings.
+     *        Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setEq(java.util.Collection<String> eq) {
@@ -139,7 +139,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -148,7 +148,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param eq
-     *        Represents the equal condition to be applied to a single field when querying for findings.
+     *        Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -164,11 +164,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param eq
-     *        Represents the equal condition to be applied to a single field when querying for findings.
+     *        Represents the <i>equal</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -179,10 +179,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents the not equal condition to be applied to a single field when querying for findings.
+     * @return Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public java.util.List<String> getNeq() {
@@ -191,11 +191,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param neq
-     *        Represents the not equal condition to be applied to a single field when querying for findings.
+     *        Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setNeq(java.util.Collection<String> neq) {
@@ -209,7 +209,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -218,7 +218,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param neq
-     *        Represents the not equal condition to be applied to a single field when querying for findings.
+     *        Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -234,11 +234,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the not equal condition to be applied to a single field when querying for findings.
+     * Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param neq
-     *        Represents the not equal condition to be applied to a single field when querying for findings.
+     *        Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -249,11 +249,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gt
-     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setGt(Integer gt) {
@@ -262,10 +262,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a greater than condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public Integer getGt() {
@@ -274,11 +274,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gt
-     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -289,11 +289,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gte
-     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      */
     @Deprecated
     public void setGte(Integer gte) {
@@ -302,10 +303,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for
+     *         findings.
      */
     @Deprecated
     public Integer getGte() {
@@ -314,11 +316,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param gte
-     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -329,11 +332,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lt
-     *        Represents a less than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public void setLt(Integer lt) {
@@ -342,10 +345,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a less than condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      */
     @Deprecated
     public Integer getLt() {
@@ -354,11 +357,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lt
-     *        Represents a less than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -369,11 +372,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lte
-     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      */
     @Deprecated
     public void setLte(Integer lte) {
@@ -382,10 +386,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a less than equal condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>less than or equal</i> condition to be applied to a single field when querying for
+     *         findings.
      */
     @Deprecated
     public Integer getLte() {
@@ -394,11 +399,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lte
-     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -409,10 +415,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     * Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     * @return Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      */
 
     public java.util.List<String> getEquals() {
@@ -421,11 +427,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     * Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param equals
-     *        Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     *        Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      */
 
     public void setEquals(java.util.Collection<String> equals) {
@@ -439,7 +445,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     * Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -448,7 +454,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param equals
-     *        Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     *        Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,11 +470,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     * Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param equals
-     *        Represents an <b>equal</b> condition to be applied to a single field when querying for findings.
+     *        Represents an <i>equal</i> <b/> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,10 +485,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     * Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      */
 
     public java.util.List<String> getNotEquals() {
@@ -491,11 +497,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     * Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param notEquals
-     *        Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     *        Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      */
 
     public void setNotEquals(java.util.Collection<String> notEquals) {
@@ -509,7 +515,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     * Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -518,7 +524,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param notEquals
-     *        Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     *        Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -534,11 +540,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     * Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param notEquals
-     *        Represents an <b>not equal</b> condition to be applied to a single field when querying for findings.
+     *        Represents a <i>not equal</i> <b/> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,11 +555,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param greaterThan
-     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      */
 
     public void setGreaterThan(Long greaterThan) {
@@ -562,10 +568,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a greater than condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      */
 
     public Long getGreaterThan() {
@@ -574,11 +580,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param greaterThan
-     *        Represents a greater than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -589,11 +595,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param greaterThanOrEqual
-     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      */
 
     public void setGreaterThanOrEqual(Long greaterThanOrEqual) {
@@ -602,10 +609,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for
+     *         findings.
      */
 
     public Long getGreaterThanOrEqual() {
@@ -614,11 +622,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a greater than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param greaterThanOrEqual
-     *        Represents a greater than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -629,11 +638,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lessThan
-     *        Represents a less than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      */
 
     public void setLessThan(Long lessThan) {
@@ -642,10 +651,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a less than condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      */
 
     public Long getLessThan() {
@@ -654,11 +663,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lessThan
-     *        Represents a less than condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than</i> condition to be applied to a single field when querying for findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -669,11 +678,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lessThanOrEqual
-     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      */
 
     public void setLessThanOrEqual(Long lessThanOrEqual) {
@@ -682,10 +692,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
-     * @return Represents a less than equal condition to be applied to a single field when querying for findings.
+     * @return Represents a <i>less than or equal</i> condition to be applied to a single field when querying for
+     *         findings.
      */
 
     public Long getLessThanOrEqual() {
@@ -694,11 +705,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents a less than equal condition to be applied to a single field when querying for findings.
+     * Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.
      * </p>
      * 
      * @param lessThanOrEqual
-     *        Represents a less than equal condition to be applied to a single field when querying for findings.
+     *        Represents a <i>less than or equal</i> condition to be applied to a single field when querying for
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

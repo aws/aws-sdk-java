@@ -45,7 +45,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private InstanceDetails instanceDetails;
     /**
      * <p>
-     * The type of the AWS resource.
+     * The type of AWS resource.
      * </p>
      */
     private String resourceType;
@@ -144,11 +144,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the AWS resource.
+     * The type of AWS resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of the AWS resource.
+     *        The type of AWS resource.
      */
 
     public void setResourceType(String resourceType) {
@@ -157,10 +157,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the AWS resource.
+     * The type of AWS resource.
      * </p>
      * 
-     * @return The type of the AWS resource.
+     * @return The type of AWS resource.
      */
 
     public String getResourceType() {
@@ -169,11 +169,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the AWS resource.
+     * The type of AWS resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of the AWS resource.
+     *        The type of AWS resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     * The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      * </p>
      */
     private String detectorId;
@@ -41,11 +41,11 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     * The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     *        The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -54,10 +54,10 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     * The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      * </p>
      * 
-     * @return The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     * @return The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      */
 
     public String getDetectorId() {
@@ -66,11 +66,11 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     * The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+     *        The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

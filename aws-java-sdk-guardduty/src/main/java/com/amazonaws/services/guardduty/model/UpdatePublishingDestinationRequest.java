@@ -27,13 +27,13 @@ public class UpdatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the
+     * The ID of the detector associated with the publishing destinations to update.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * The ID of the detector associated with the publishing destinations to update.
+     * The ID of the publishing destination to update.
      * </p>
      */
     private String destinationId;
@@ -47,55 +47,15 @@ public class UpdatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the
+     * The ID of the detector associated with the publishing destinations to update.
      * </p>
      * 
      * @param detectorId
-     *        The ID of the
+     *        The ID of the detector associated with the publishing destinations to update.
      */
 
     public void setDetectorId(String detectorId) {
         this.detectorId = detectorId;
-    }
-
-    /**
-     * <p>
-     * The ID of the
-     * </p>
-     * 
-     * @return The ID of the
-     */
-
-    public String getDetectorId() {
-        return this.detectorId;
-    }
-
-    /**
-     * <p>
-     * The ID of the
-     * </p>
-     * 
-     * @param detectorId
-     *        The ID of the
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdatePublishingDestinationRequest withDetectorId(String detectorId) {
-        setDetectorId(detectorId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the detector associated with the publishing destinations to update.
-     * </p>
-     * 
-     * @param destinationId
-     *        The ID of the detector associated with the publishing destinations to update.
-     */
-
-    public void setDestinationId(String destinationId) {
-        this.destinationId = destinationId;
     }
 
     /**
@@ -106,8 +66,8 @@ public class UpdatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
      * @return The ID of the detector associated with the publishing destinations to update.
      */
 
-    public String getDestinationId() {
-        return this.destinationId;
+    public String getDetectorId() {
+        return this.detectorId;
     }
 
     /**
@@ -115,8 +75,48 @@ public class UpdatePublishingDestinationRequest extends com.amazonaws.AmazonWebS
      * The ID of the detector associated with the publishing destinations to update.
      * </p>
      * 
-     * @param destinationId
+     * @param detectorId
      *        The ID of the detector associated with the publishing destinations to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePublishingDestinationRequest withDetectorId(String detectorId) {
+        setDetectorId(detectorId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the publishing destination to update.
+     * </p>
+     * 
+     * @param destinationId
+     *        The ID of the publishing destination to update.
+     */
+
+    public void setDestinationId(String destinationId) {
+        this.destinationId = destinationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the publishing destination to update.
+     * </p>
+     * 
+     * @return The ID of the publishing destination to update.
+     */
+
+    public String getDestinationId() {
+        return this.destinationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the publishing destination to update.
+     * </p>
+     * 
+     * @param destinationId
+     *        The ID of the publishing destination to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

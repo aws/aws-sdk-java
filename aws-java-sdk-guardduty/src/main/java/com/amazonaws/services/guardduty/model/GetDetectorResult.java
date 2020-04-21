@@ -25,13 +25,13 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector creation timestamp.
+     * The timestamp of when the detector was created.
      * </p>
      */
     private String createdAt;
     /**
      * <p>
-     * Finding publishing frequency.
+     * The publishing frequency of the finding.
      * </p>
      */
     private String findingPublishingFrequency;
@@ -49,7 +49,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String status;
     /**
      * <p>
-     * Detector last update timestamp.
+     * The last-updated timestamp for the detector.
      * </p>
      */
     private String updatedAt;
@@ -62,11 +62,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector creation timestamp.
+     * The timestamp of when the detector was created.
      * </p>
      * 
      * @param createdAt
-     *        Detector creation timestamp.
+     *        The timestamp of when the detector was created.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -75,10 +75,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector creation timestamp.
+     * The timestamp of when the detector was created.
      * </p>
      * 
-     * @return Detector creation timestamp.
+     * @return The timestamp of when the detector was created.
      */
 
     public String getCreatedAt() {
@@ -87,11 +87,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector creation timestamp.
+     * The timestamp of when the detector was created.
      * </p>
      * 
      * @param createdAt
-     *        Detector creation timestamp.
+     *        The timestamp of when the detector was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Finding publishing frequency.
+     * The publishing frequency of the finding.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        Finding publishing frequency.
+     *        The publishing frequency of the finding.
      * @see FindingPublishingFrequency
      */
 
@@ -116,10 +116,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Finding publishing frequency.
+     * The publishing frequency of the finding.
      * </p>
      * 
-     * @return Finding publishing frequency.
+     * @return The publishing frequency of the finding.
      * @see FindingPublishingFrequency
      */
 
@@ -129,11 +129,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Finding publishing frequency.
+     * The publishing frequency of the finding.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        Finding publishing frequency.
+     *        The publishing frequency of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -145,11 +145,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Finding publishing frequency.
+     * The publishing frequency of the finding.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        Finding publishing frequency.
+     *        The publishing frequency of the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -260,11 +260,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector last update timestamp.
+     * The last-updated timestamp for the detector.
      * </p>
      * 
      * @param updatedAt
-     *        Detector last update timestamp.
+     *        The last-updated timestamp for the detector.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -273,10 +273,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector last update timestamp.
+     * The last-updated timestamp for the detector.
      * </p>
      * 
-     * @return Detector last update timestamp.
+     * @return The last-updated timestamp for the detector.
      */
 
     public String getUpdatedAt() {
@@ -285,11 +285,11 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Detector last update timestamp.
+     * The last-updated timestamp for the detector.
      * </p>
      * 
      * @param updatedAt
-     *        Detector last update timestamp.
+     *        The last-updated timestamp for the detector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

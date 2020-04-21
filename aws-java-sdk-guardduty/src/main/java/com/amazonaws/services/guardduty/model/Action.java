@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about action.
+ * Contains information about actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Action" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * GuardDuty Finding activity type.
+     * The GuardDuty finding activity type.
      * </p>
      */
     private String actionType;
@@ -61,11 +61,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * GuardDuty Finding activity type.
+     * The GuardDuty finding activity type.
      * </p>
      * 
      * @param actionType
-     *        GuardDuty Finding activity type.
+     *        The GuardDuty finding activity type.
      */
 
     public void setActionType(String actionType) {
@@ -74,10 +74,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * GuardDuty Finding activity type.
+     * The GuardDuty finding activity type.
      * </p>
      * 
-     * @return GuardDuty Finding activity type.
+     * @return The GuardDuty finding activity type.
      */
 
     public String getActionType() {
@@ -86,11 +86,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * GuardDuty Finding activity type.
+     * The GuardDuty finding activity type.
      * </p>
      * 
      * @param actionType
-     *        GuardDuty Finding activity type.
+     *        The GuardDuty finding activity type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

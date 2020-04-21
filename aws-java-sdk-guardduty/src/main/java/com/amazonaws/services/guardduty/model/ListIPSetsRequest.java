@@ -27,7 +27,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector that the IPSet is associated with.
      * </p>
      */
     private String detectorId;
@@ -41,7 +41,7 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      */
@@ -49,11 +49,11 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector that the IPSet is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the ipSet is associated with.
+     *        The unique ID of the detector that the IPSet is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -62,10 +62,10 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector that the IPSet is associated with.
      * </p>
      * 
-     * @return The unique ID of the detector the ipSet is associated with.
+     * @return The unique ID of the detector that the IPSet is associated with.
      */
 
     public String getDetectorId() {
@@ -74,11 +74,11 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique ID of the detector the ipSet is associated with.
+     * The unique ID of the detector that the IPSet is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the ipSet is associated with.
+     *        The unique ID of the detector that the IPSet is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *        of NextToken from the previous response to continue listing data.
      */
 
@@ -153,12 +153,12 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *         of NextToken from the previous response to continue listing data.
      */
 
@@ -169,13 +169,13 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

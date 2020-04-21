@@ -25,18 +25,18 @@ public class GetFindingsStatisticsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Finding statistics object.
+     * The finding statistics object.
      * </p>
      */
     private FindingStatistics findingStatistics;
 
     /**
      * <p>
-     * Finding statistics object.
+     * The finding statistics object.
      * </p>
      * 
      * @param findingStatistics
-     *        Finding statistics object.
+     *        The finding statistics object.
      */
 
     public void setFindingStatistics(FindingStatistics findingStatistics) {
@@ -45,10 +45,10 @@ public class GetFindingsStatisticsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Finding statistics object.
+     * The finding statistics object.
      * </p>
      * 
-     * @return Finding statistics object.
+     * @return The finding statistics object.
      */
 
     public FindingStatistics getFindingStatistics() {
@@ -57,11 +57,11 @@ public class GetFindingsStatisticsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Finding statistics object.
+     * The finding statistics object.
      * </p>
      * 
      * @param findingStatistics
-     *        Finding statistics object.
+     *        The finding statistics object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

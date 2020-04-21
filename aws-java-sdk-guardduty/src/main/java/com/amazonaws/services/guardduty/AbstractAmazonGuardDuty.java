@@ -113,7 +113,17 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public DescribeOrganizationConfigurationResult describeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePublishingDestinationResult describePublishingDestination(DescribePublishingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableOrganizationAdminAccountResult disableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +134,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public DisassociateMembersResult disassociateMembers(DisassociateMembersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,6 +223,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPublishingDestinationsResult listPublishingDestinations(ListPublishingDestinationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +284,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateOrganizationConfigurationResult updateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

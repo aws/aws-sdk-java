@@ -68,9 +68,9 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      * <dt>DONT_KNOW</dt>
      * <dd>
      * <p>
-     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon Route
-     * 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try
-     * again later.
+     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can
+     * return this response for a variety of reasons, for example, the registry is performing maintenance. Try again
+     * later.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -182,9 +182,9 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      * <dt>DONT_KNOW</dt>
      * <dd>
      * <p>
-     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon Route
-     * 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try
-     * again later.
+     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can
+     * return this response for a variety of reasons, for example, the registry is performing maintenance. Try again
+     * later.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -251,9 +251,9 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      *        <dt>DONT_KNOW</dt>
      *        <dd>
      *        <p>
-     *        The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon
-     *        Route 53 can return this response for a variety of reasons, for example, the registry is performing
-     *        maintenance. Try again later.
+     *        The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route
+     *        53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
+     *        Try again later.
      *        </p>
      *        </dd>
      *        <dt>PENDING</dt>
@@ -327,9 +327,9 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      * <dt>DONT_KNOW</dt>
      * <dd>
      * <p>
-     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon Route
-     * 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try
-     * again later.
+     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can
+     * return this response for a variety of reasons, for example, the registry is performing maintenance. Try again
+     * later.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -395,8 +395,8 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      *         <dt>DONT_KNOW</dt>
      *         <dd>
      *         <p>
-     *         The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon
-     *         Route 53 can return this response for a variety of reasons, for example, the registry is performing
+     *         The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route
+     *         53 can return this response for a variety of reasons, for example, the registry is performing
      *         maintenance. Try again later.
      *         </p>
      *         </dd>
@@ -471,9 +471,9 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      * <dt>DONT_KNOW</dt>
      * <dd>
      * <p>
-     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon Route
-     * 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try
-     * again later.
+     * The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can
+     * return this response for a variety of reasons, for example, the registry is performing maintenance. Try again
+     * later.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -540,9 +540,9 @@ public class DomainSuggestion implements Serializable, Cloneable, StructuredPojo
      *        <dt>DONT_KNOW</dt>
      *        <dd>
      *        <p>
-     *        The TLD registry didn't reply with a definitive answer about whether the domain name is available. Amazon
-     *        Route 53 can return this response for a variety of reasons, for example, the registry is performing
-     *        maintenance. Try again later.
+     *        The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route
+     *        53 can return this response for a variety of reasons, for example, the registry is performing maintenance.
+     *        Try again later.
      *        </p>
      *        </dd>
      *        <dt>PENDING</dt>

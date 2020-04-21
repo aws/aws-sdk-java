@@ -30,6 +30,7 @@ public class RequestCopyUtils {
                 .withVersionId(getObjectRequest.getVersionId())
                 .withRequesterPays(getObjectRequest.isRequesterPays())
                 .withSSECustomerKey(getObjectRequest.getSSECustomerKey())
-                .withPartNumber(getObjectRequest.getPartNumber());
+                .withPartNumber(getObjectRequest.getPartNumber())
+                .withRequestCredentialsProvider(getObjectRequest.getRequestCredentialsProvider());
     }
 }

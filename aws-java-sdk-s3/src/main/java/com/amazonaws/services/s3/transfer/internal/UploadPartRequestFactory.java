@@ -132,6 +132,9 @@ public class UploadPartRequestFactory {
            .withRequestMetricCollector(origReq.getRequestMetricCollector())
            ;
         req.getRequestClientOptions().setReadLimit(origReq.getReadLimit());
+
+        req.withRequestCredentialsProvider(origReq.getRequestCredentialsProvider());
+
         return req;
     }
 

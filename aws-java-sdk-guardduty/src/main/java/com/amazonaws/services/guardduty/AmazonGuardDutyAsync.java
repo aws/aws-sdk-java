@@ -27,16 +27,21 @@ import com.amazonaws.services.guardduty.model.*;
  * <p>
  * <p>
  * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
- * VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. It uses threat intelligence feeds, such as lists of malicious
- * IPs and domains, and machine learning to identify unexpected and potentially unauthorized and malicious activity
- * within your AWS environment. This can include issues like escalations of privileges, uses of exposed credentials, or
- * communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances
- * serving malware or mining bitcoin. It also monitors AWS account access behavior for signs of compromise, such as
- * unauthorized infrastructure deployments, like instances deployed in a region that has never been used, or unusual API
- * calls, like a password policy change to reduce password strength. GuardDuty informs you of the status of your AWS
- * environment by producing security findings that you can view in the GuardDuty console or through Amazon CloudWatch
- * events. For more information, see <a
- * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a>.
+ * VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. It uses threat intelligence feeds (such as lists of malicious
+ * IPs and domains) and machine learning to identify unexpected, potentially unauthorized, and malicious activity within
+ * your AWS environment. This can include issues like escalations of privileges, uses of exposed credentials, or
+ * communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances that
+ * serve malware or mine bitcoin.
+ * </p>
+ * <p>
+ * GuardDuty also monitors AWS account access behavior for signs of compromise. Some examples of this are unauthorized
+ * infrastructure deployments such as EC2 instances deployed in a Region that has never been used, or unusual API calls
+ * like a password policy change to reduce password strength.
+ * </p>
+ * <p>
+ * GuardDuty informs you of the status of your AWS environment by producing security findings that you can view in the
+ * GuardDuty console or through Amazon CloudWatch events. For more information, see the <i> <a
+ * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a> </i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -75,11 +80,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Archives GuardDuty findings specified by the list of finding IDs.
+     * Archives GuardDuty findings that are specified by the list of finding IDs.
      * </p>
      * <note>
      * <p>
-     * Only the master account can archive findings. Member accounts do not have permission to archive findings from
+     * Only the master account can archive findings. Member accounts don't have permission to archive findings from
      * their accounts.
      * </p>
      * </note>
@@ -94,11 +99,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Archives GuardDuty findings specified by the list of finding IDs.
+     * Archives GuardDuty findings that are specified by the list of finding IDs.
      * </p>
      * <note>
      * <p>
-     * Only the master account can archive findings. Member accounts do not have permission to archive findings from
+     * Only the master account can archive findings. Member accounts don't have permission to archive findings from
      * their accounts.
      * </p>
      * </note>
@@ -119,8 +124,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
-     * start using GuardDuty, you must create a detector in each region that you enable the service. You can have only
-     * one detector per account per region.
+     * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
+     * one detector per account per Region.
      * </p>
      * 
      * @param createDetectorRequest
@@ -134,8 +139,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
-     * start using GuardDuty, you must create a detector in each region that you enable the service. You can have only
-     * one detector per account per region.
+     * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
+     * one detector per account per Region.
      * </p>
      * 
      * @param createDetectorRequest
@@ -184,9 +189,10 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet is a list IP addresses
-     * trusted for secure communication with AWS infrastructure and applications. GuardDuty does not generate findings
-     * for IP addresses included in IPSets. Only users from the master account can use this operation.
+     * Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP
+     * addresses that are trusted for secure communication with AWS infrastructure and applications. GuardDuty doesn't
+     * generate findings for IP addresses that are included in IPSets. Only users from the master account can use this
+     * operation.
      * </p>
      * 
      * @param createIPSetRequest
@@ -199,9 +205,10 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates a new IPSet, called Trusted IP list in the consoler user interface. An IPSet is a list IP addresses
-     * trusted for secure communication with AWS infrastructure and applications. GuardDuty does not generate findings
-     * for IP addresses included in IPSets. Only users from the master account can use this operation.
+     * Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP
+     * addresses that are trusted for secure communication with AWS infrastructure and applications. GuardDuty doesn't
+     * generate findings for IP addresses that are included in IPSets. Only users from the master account can use this
+     * operation.
      * </p>
      * 
      * @param createIPSetRequest
@@ -252,8 +259,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates a publishing destination to send findings to. The resource to send findings to must exist before you use
-     * this operation.
+     * Creates a publishing destination to export findings to. The resource to export findings to must exist before you
+     * use this operation.
      * </p>
      * 
      * @param createPublishingDestinationRequest
@@ -267,8 +274,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates a publishing destination to send findings to. The resource to send findings to must exist before you use
-     * this operation.
+     * Creates a publishing destination to export findings to. The resource to export findings to must exist before you
+     * use this operation.
      * </p>
      * 
      * @param createPublishingDestinationRequest
@@ -320,7 +327,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
+     * Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
      * findings based on ThreatIntelSets. Only users of the master account can use this operation.
      * </p>
      * 
@@ -334,7 +341,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
+     * Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates
      * findings based on ThreatIntelSets. Only users of the master account can use this operation.
      * </p>
      * 
@@ -353,7 +360,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Declines invitations sent to the current member account by AWS account specified by their account IDs.
+     * Declines invitations sent to the current member account by AWS accounts specified by their account IDs.
      * </p>
      * 
      * @param declineInvitationsRequest
@@ -366,7 +373,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Declines invitations sent to the current member account by AWS account specified by their account IDs.
+     * Declines invitations sent to the current member account by AWS accounts specified by their account IDs.
      * </p>
      * 
      * @param declineInvitationsRequest
@@ -384,7 +391,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes a Amazon GuardDuty detector specified by the detector ID.
+     * Deletes an Amazon GuardDuty detector that is specified by the detector ID.
      * </p>
      * 
      * @param deleteDetectorRequest
@@ -397,7 +404,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes a Amazon GuardDuty detector specified by the detector ID.
+     * Deletes an Amazon GuardDuty detector that is specified by the detector ID.
      * </p>
      * 
      * @param deleteDetectorRequest
@@ -446,7 +453,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted IP lists in the console user
+     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user
      * interface.
      * </p>
      * 
@@ -460,7 +467,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called Trusted IP lists in the console user
+     * Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user
      * interface.
      * </p>
      * 
@@ -574,7 +581,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+     * Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
      * </p>
      * 
      * @param deleteThreatIntelSetRequest
@@ -587,7 +594,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Deletes ThreatIntelSet specified by the ThreatIntelSet ID.
+     * Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
      * </p>
      * 
      * @param deleteThreatIntelSetRequest
@@ -602,6 +609,41 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<DeleteThreatIntelSetResult> deleteThreatIntelSetAsync(DeleteThreatIntelSetRequest deleteThreatIntelSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteThreatIntelSetRequest, DeleteThreatIntelSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the account selected as the delegated administrator for GuardDuty.
+     * </p>
+     * 
+     * @param describeOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the DescribeOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsync.DescribeOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns information about the account selected as the delegated administrator for GuardDuty.
+     * </p>
+     * 
+     * @param describeOrganizationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsyncHandler.DescribeOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigurationRequest, DescribeOrganizationConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -637,6 +679,41 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(
             DescribePublishingDestinationRequest describePublishingDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePublishingDestinationRequest, DescribePublishingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables GuardDuty administrator permissions for an AWS account within the Organization.
+     * </p>
+     * 
+     * @param disableOrganizationAdminAccountRequest
+     * @return A Java Future containing the result of the DisableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsync.DisableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest);
+
+    /**
+     * <p>
+     * Disables GuardDuty administrator permissions for an AWS account within the Organization.
+     * </p>
+     * 
+     * @param disableOrganizationAdminAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsyncHandler.DisableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableOrganizationAdminAccountRequest, DisableOrganizationAdminAccountResult> asyncHandler);
 
     /**
      * <p>
@@ -703,6 +780,41 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<DisassociateMembersResult> disassociateMembersAsync(DisassociateMembersRequest disassociateMembersRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateMembersRequest, DisassociateMembersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables GuardDuty administrator permissions for an AWS account within the organization.
+     * </p>
+     * 
+     * @param enableOrganizationAdminAccountRequest
+     * @return A Java Future containing the result of the EnableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsync.EnableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
+            EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest);
+
+    /**
+     * <p>
+     * Enables GuardDuty administrator permissions for an AWS account within the organization.
+     * </p>
+     * 
+     * @param enableOrganizationAdminAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsyncHandler.EnableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
+            EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler);
 
     /**
      * <p>
@@ -799,7 +911,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+     * Lists Amazon GuardDuty findings statistics for the specified detector ID.
      * </p>
      * 
      * @param getFindingsStatisticsRequest
@@ -812,7 +924,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+     * Lists Amazon GuardDuty findings statistics for the specified detector ID.
      * </p>
      * 
      * @param getFindingsStatisticsRequest
@@ -987,7 +1099,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty
+     * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty,
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
      * </p>
@@ -1002,7 +1114,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty
+     * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty,
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
      * </p>
@@ -1179,7 +1291,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about associated member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1192,7 +1304,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about associated member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1207,6 +1319,41 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest listMembersRequest,
             com.amazonaws.handlers.AsyncHandler<ListMembersRequest, ListMembersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the accounts configured as AWS Organization delegated administrators.
+     * </p>
+     * 
+     * @param listOrganizationAdminAccountsRequest
+     * @return A Java Future containing the result of the ListOrganizationAdminAccounts operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsync.ListOrganizationAdminAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
+            ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest);
+
+    /**
+     * <p>
+     * Lists the accounts configured as AWS Organization delegated administrators.
+     * </p>
+     * 
+     * @param listOrganizationAdminAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOrganizationAdminAccounts operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsyncHandler.ListOrganizationAdminAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
+            ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler);
 
     /**
      * <p>
@@ -1243,9 +1390,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
-     * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
-     * given resource..
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat
+     * intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+     * given resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1258,9 +1405,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and Threat
-     * Intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
-     * given resource..
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat
+     * intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+     * given resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1344,8 +1491,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code> to
-     * restart monitoring for those accounts.
+     * Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
+     * operation to restart monitoring for those accounts.
      * </p>
      * 
      * @param stopMonitoringMembersRequest
@@ -1358,8 +1505,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Stops GuardDuty monitoring for the specified member accounnts. Use the <code>StartMonitoringMembers</code> to
-     * restart monitoring for those accounts.
+     * Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
+     * operation to restart monitoring for those accounts.
      * </p>
      * 
      * @param stopMonitoringMembersRequest
@@ -1594,6 +1741,41 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
+     * Updates the delegated administrator account with the values provided.
+     * </p>
+     * 
+     * @param updateOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the UpdateOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsync.UpdateOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the delegated administrator account with the values provided.
+     * </p>
+     * 
+     * @param updateOrganizationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonGuardDutyAsyncHandler.UpdateOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates information about the publishing destination specified by the <code>destinationId</code>.
      * </p>
      * 
@@ -1627,7 +1809,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Updates the ThreatIntelSet specified by ThreatIntelSet ID.
+     * Updates the ThreatIntelSet specified by the ThreatIntelSet ID.
      * </p>
      * 
      * @param updateThreatIntelSetRequest
@@ -1640,7 +1822,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Updates the ThreatIntelSet specified by ThreatIntelSet ID.
+     * Updates the ThreatIntelSet specified by the ThreatIntelSet ID.
      * </p>
      * 
      * @param updateThreatIntelSetRequest

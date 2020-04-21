@@ -26,6 +26,7 @@ import static com.amazonaws.codegen.internal.Utils.unCapitialize;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.Protocol;
+import com.amazonaws.codegen.model.service.Input;
 import com.amazonaws.codegen.model.service.Output;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.util.StringUtils;
@@ -77,6 +78,12 @@ public class DefaultNamingStrategy implements NamingStrategy {
 
     @Override
     public String getRequestClassName(String operationName) {
+        if(customizationConfig.useModeledInputShapeNames()) {
+            final Input operationInput = serviceModel.getOperation(operationName).getInput();
+            if (operationInput != null) {
+                return operationInput.getShape();
+            }
+        }
         return Utils.sanitize(operationName).map(Utils::capitialize).collect(Collectors.joining()) + REQUEST_CLASS_SUFFIX;
     }
 

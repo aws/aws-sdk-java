@@ -172,6 +172,15 @@ public class CustomizationConfig {
     private boolean useModeledOutputShapeNames;
 
     /**
+     * Customization to use the actual shape name of input shapes (as defined in the service model)
+     * to name the corresponding Java class. Normally we derive a new name using the operation name
+     * (i.e. PutFooRequest). This is similar to the 'wrapper' trait in the normalized model but
+     * unlike for Query services, this customization has no affect on how the shape is represented
+     * on the wire.
+     */
+    private boolean useModeledInputShapeNames;
+
+    /**
      * Service specific base class for all modeled exceptions. By default this is syncInterface +
      * Exception (i.e. AmazonSQSException). Currently only DynamoDB Streams utilizes this
      * customization since it shares exception types with the DynamoDB client.
@@ -466,6 +475,14 @@ public class CustomizationConfig {
 
     public void setCustomErrorCodeFieldName(String customErrorCodeFieldName) {
         this.customErrorCodeFieldName = customErrorCodeFieldName;
+    }
+
+    public boolean useModeledInputShapeNames() {
+        return useModeledInputShapeNames;
+    }
+
+    public void setUseModeledInputShapeNames(boolean useModeledInputShapeNames) {
+        this.useModeledInputShapeNames = useModeledInputShapeNames;
     }
 
     public boolean useModeledOutputShapeNames() {

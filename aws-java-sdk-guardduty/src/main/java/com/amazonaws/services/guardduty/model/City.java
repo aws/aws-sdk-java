@@ -30,18 +30,18 @@ public class City implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * City name of the remote IP address.
+     * The city name of the remote IP address.
      * </p>
      */
     private String cityName;
 
     /**
      * <p>
-     * City name of the remote IP address.
+     * The city name of the remote IP address.
      * </p>
      * 
      * @param cityName
-     *        City name of the remote IP address.
+     *        The city name of the remote IP address.
      */
 
     public void setCityName(String cityName) {
@@ -50,10 +50,10 @@ public class City implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * City name of the remote IP address.
+     * The city name of the remote IP address.
      * </p>
      * 
-     * @return City name of the remote IP address.
+     * @return The city name of the remote IP address.
      */
 
     public String getCityName() {
@@ -62,11 +62,11 @@ public class City implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * City name of the remote IP address.
+     * The city name of the remote IP address.
      * </p>
      * 
      * @param cityName
-     *        City name of the remote IP address.
+     *        The city name of the remote IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

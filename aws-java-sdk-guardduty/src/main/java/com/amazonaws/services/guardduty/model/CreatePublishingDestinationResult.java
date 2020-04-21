@@ -25,18 +25,18 @@ public class CreatePublishingDestinationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the publishing destination created.
+     * The ID of the publishing destination that is created.
      * </p>
      */
     private String destinationId;
 
     /**
      * <p>
-     * The ID of the publishing destination created.
+     * The ID of the publishing destination that is created.
      * </p>
      * 
      * @param destinationId
-     *        The ID of the publishing destination created.
+     *        The ID of the publishing destination that is created.
      */
 
     public void setDestinationId(String destinationId) {
@@ -45,10 +45,10 @@ public class CreatePublishingDestinationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the publishing destination created.
+     * The ID of the publishing destination that is created.
      * </p>
      * 
-     * @return The ID of the publishing destination created.
+     * @return The ID of the publishing destination that is created.
      */
 
     public String getDestinationId() {
@@ -57,11 +57,11 @@ public class CreatePublishingDestinationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the publishing destination created.
+     * The ID of the publishing destination that is created.
      * </p>
      * 
      * @param destinationId
-     *        The ID of the publishing destination created.
+     *        The ID of the publishing destination that is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

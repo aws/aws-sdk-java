@@ -286,6 +286,12 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Integer stepConcurrencyLevel;
+    /**
+     * <p>
+     * The specified managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     */
+    private ManagedScalingPolicy managedScalingPolicy;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
@@ -2476,6 +2482,46 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The specified managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @param managedScalingPolicy
+     *        The specified managed scaling policy for an Amazon EMR cluster.
+     */
+
+    public void setManagedScalingPolicy(ManagedScalingPolicy managedScalingPolicy) {
+        this.managedScalingPolicy = managedScalingPolicy;
+    }
+
+    /**
+     * <p>
+     * The specified managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @return The specified managed scaling policy for an Amazon EMR cluster.
+     */
+
+    public ManagedScalingPolicy getManagedScalingPolicy() {
+        return this.managedScalingPolicy;
+    }
+
+    /**
+     * <p>
+     * The specified managed scaling policy for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @param managedScalingPolicy
+     *        The specified managed scaling policy for an Amazon EMR cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withManagedScalingPolicy(ManagedScalingPolicy managedScalingPolicy) {
+        setManagedScalingPolicy(managedScalingPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2534,7 +2580,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getKerberosAttributes() != null)
             sb.append("KerberosAttributes: ").append(getKerberosAttributes()).append(",");
         if (getStepConcurrencyLevel() != null)
-            sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel());
+            sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel()).append(",");
+        if (getManagedScalingPolicy() != null)
+            sb.append("ManagedScalingPolicy: ").append(getManagedScalingPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -2645,6 +2693,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getStepConcurrencyLevel() != null && other.getStepConcurrencyLevel().equals(this.getStepConcurrencyLevel()) == false)
             return false;
+        if (other.getManagedScalingPolicy() == null ^ this.getManagedScalingPolicy() == null)
+            return false;
+        if (other.getManagedScalingPolicy() != null && other.getManagedScalingPolicy().equals(this.getManagedScalingPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -2677,6 +2729,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
         hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
         hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
+        hashCode = prime * hashCode + ((getManagedScalingPolicy() == null) ? 0 : getManagedScalingPolicy().hashCode());
         return hashCode;
     }
 

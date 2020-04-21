@@ -30,18 +30,18 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IPV4 remote address of the connection.
+     * The IPv4 local address of the connection.
      * </p>
      */
     private String ipAddressV4;
 
     /**
      * <p>
-     * IPV4 remote address of the connection.
+     * The IPv4 local address of the connection.
      * </p>
      * 
      * @param ipAddressV4
-     *        IPV4 remote address of the connection.
+     *        The IPv4 local address of the connection.
      */
 
     public void setIpAddressV4(String ipAddressV4) {
@@ -50,10 +50,10 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IPV4 remote address of the connection.
+     * The IPv4 local address of the connection.
      * </p>
      * 
-     * @return IPV4 remote address of the connection.
+     * @return The IPv4 local address of the connection.
      */
 
     public String getIpAddressV4() {
@@ -62,11 +62,11 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IPV4 remote address of the connection.
+     * The IPv4 local address of the connection.
      * </p>
      * 
      * @param ipAddressV4
-     *        IPV4 remote address of the connection.
+     *        The IPv4 local address of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

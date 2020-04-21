@@ -39,7 +39,7 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     private String masterId;
     /**
      * <p>
-     * This value is used to validate the master account to the member account.
+     * The value that is used to validate the master account to the member account.
      * </p>
      */
     private String invitationId;
@@ -126,11 +126,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This value is used to validate the master account to the member account.
+     * The value that is used to validate the master account to the member account.
      * </p>
      * 
      * @param invitationId
-     *        This value is used to validate the master account to the member account.
+     *        The value that is used to validate the master account to the member account.
      */
 
     public void setInvitationId(String invitationId) {
@@ -139,10 +139,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This value is used to validate the master account to the member account.
+     * The value that is used to validate the master account to the member account.
      * </p>
      * 
-     * @return This value is used to validate the master account to the member account.
+     * @return The value that is used to validate the master account to the member account.
      */
 
     public String getInvitationId() {
@@ -151,11 +151,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This value is used to validate the master account to the member account.
+     * The value that is used to validate the master account to the member account.
      * </p>
      * 
      * @param invitationId
-     *        This value is used to validate the master account to the member account.
+     *        The value that is used to validate the master account to the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,7 +31,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<Member> members;
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      */
     private java.util.List<UnprocessedAccount> unprocessedAccounts;
@@ -108,10 +108,10 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * 
-     * @return A list of objects containing the unprocessed account and a result string explaining why it was
+     * @return A list of objects that contain the unprocessed account and a result string that explains why it was
      *         unprocessed.
      */
 
@@ -121,11 +121,11 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
+     *        A list of objects that contain the unprocessed account and a result string that explains why it was
      *        unprocessed.
      */
 
@@ -140,7 +140,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -149,7 +149,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
+     *        A list of objects that contain the unprocessed account and a result string that explains why it was
      *        unprocessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -166,11 +166,11 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+     * A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of objects containing the unprocessed account and a result string explaining why it was
+     *        A list of objects that contain the unprocessed account and a result string that explains why it was
      *        unprocessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

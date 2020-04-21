@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Continas information about the member account
+ * Contains information about the member account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Member" target="_top">AWS API
@@ -30,25 +30,25 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account ID.
+     * The ID of the member account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Member account's detector ID.
+     * The detector ID of the member account.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * Master account ID.
+     * The master account ID.
      * </p>
      */
     private String masterId;
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      */
     private String email;
@@ -60,24 +60,24 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private String relationshipStatus;
     /**
      * <p>
-     * Timestamp at which the invitation was sent
+     * The timestamp when the invitation was sent.
      * </p>
      */
     private String invitedAt;
     /**
      * <p>
-     * Member last updated timestamp.
+     * The last-updated timestamp of the member.
      * </p>
      */
     private String updatedAt;
 
     /**
      * <p>
-     * Member account ID.
+     * The ID of the member account.
      * </p>
      * 
      * @param accountId
-     *        Member account ID.
+     *        The ID of the member account.
      */
 
     public void setAccountId(String accountId) {
@@ -86,10 +86,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account ID.
+     * The ID of the member account.
      * </p>
      * 
-     * @return Member account ID.
+     * @return The ID of the member account.
      */
 
     public String getAccountId() {
@@ -98,11 +98,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account ID.
+     * The ID of the member account.
      * </p>
      * 
      * @param accountId
-     *        Member account ID.
+     *        The ID of the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's detector ID.
+     * The detector ID of the member account.
      * </p>
      * 
      * @param detectorId
-     *        Member account's detector ID.
+     *        The detector ID of the member account.
      */
 
     public void setDetectorId(String detectorId) {
@@ -126,10 +126,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's detector ID.
+     * The detector ID of the member account.
      * </p>
      * 
-     * @return Member account's detector ID.
+     * @return The detector ID of the member account.
      */
 
     public String getDetectorId() {
@@ -138,11 +138,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's detector ID.
+     * The detector ID of the member account.
      * </p>
      * 
      * @param detectorId
-     *        Member account's detector ID.
+     *        The detector ID of the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Master account ID.
+     * The master account ID.
      * </p>
      * 
      * @param masterId
-     *        Master account ID.
+     *        The master account ID.
      */
 
     public void setMasterId(String masterId) {
@@ -166,10 +166,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Master account ID.
+     * The master account ID.
      * </p>
      * 
-     * @return Master account ID.
+     * @return The master account ID.
      */
 
     public String getMasterId() {
@@ -178,11 +178,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Master account ID.
+     * The master account ID.
      * </p>
      * 
      * @param masterId
-     *        Master account ID.
+     *        The master account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      * 
      * @param email
-     *        Member account's email address.
+     *        The email address of the member account.
      */
 
     public void setEmail(String email) {
@@ -206,10 +206,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      * 
-     * @return Member account's email address.
+     * @return The email address of the member account.
      */
 
     public String getEmail() {
@@ -218,11 +218,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member account's email address.
+     * The email address of the member account.
      * </p>
      * 
      * @param email
-     *        Member account's email address.
+     *        The email address of the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp at which the invitation was sent
+     * The timestamp when the invitation was sent.
      * </p>
      * 
      * @param invitedAt
-     *        Timestamp at which the invitation was sent
+     *        The timestamp when the invitation was sent.
      */
 
     public void setInvitedAt(String invitedAt) {
@@ -286,10 +286,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp at which the invitation was sent
+     * The timestamp when the invitation was sent.
      * </p>
      * 
-     * @return Timestamp at which the invitation was sent
+     * @return The timestamp when the invitation was sent.
      */
 
     public String getInvitedAt() {
@@ -298,11 +298,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp at which the invitation was sent
+     * The timestamp when the invitation was sent.
      * </p>
      * 
      * @param invitedAt
-     *        Timestamp at which the invitation was sent
+     *        The timestamp when the invitation was sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member last updated timestamp.
+     * The last-updated timestamp of the member.
      * </p>
      * 
      * @param updatedAt
-     *        Member last updated timestamp.
+     *        The last-updated timestamp of the member.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -326,10 +326,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member last updated timestamp.
+     * The last-updated timestamp of the member.
      * </p>
      * 
-     * @return Member last updated timestamp.
+     * @return The last-updated timestamp of the member.
      */
 
     public String getUpdatedAt() {
@@ -338,11 +338,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Member last updated timestamp.
+     * The last-updated timestamp of the member.
      * </p>
      * 
      * @param updatedAt
-     *        Member last updated timestamp.
+     *        The last-updated timestamp of the member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

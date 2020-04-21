@@ -246,6 +246,76 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptDomainTransferFromAnotherAwsAccountResult> acceptDomainTransferFromAnotherAwsAccountAsync(
+            AcceptDomainTransferFromAnotherAwsAccountRequest request) {
+
+        return acceptDomainTransferFromAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptDomainTransferFromAnotherAwsAccountResult> acceptDomainTransferFromAnotherAwsAccountAsync(
+            final AcceptDomainTransferFromAnotherAwsAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptDomainTransferFromAnotherAwsAccountRequest, AcceptDomainTransferFromAnotherAwsAccountResult> asyncHandler) {
+        final AcceptDomainTransferFromAnotherAwsAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptDomainTransferFromAnotherAwsAccountResult>() {
+            @Override
+            public AcceptDomainTransferFromAnotherAwsAccountResult call() throws Exception {
+                AcceptDomainTransferFromAnotherAwsAccountResult result = null;
+
+                try {
+                    result = executeAcceptDomainTransferFromAnotherAwsAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainTransferToAnotherAwsAccountResult> cancelDomainTransferToAnotherAwsAccountAsync(
+            CancelDomainTransferToAnotherAwsAccountRequest request) {
+
+        return cancelDomainTransferToAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainTransferToAnotherAwsAccountResult> cancelDomainTransferToAnotherAwsAccountAsync(
+            final CancelDomainTransferToAnotherAwsAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelDomainTransferToAnotherAwsAccountRequest, CancelDomainTransferToAnotherAwsAccountResult> asyncHandler) {
+        final CancelDomainTransferToAnotherAwsAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelDomainTransferToAnotherAwsAccountResult>() {
+            @Override
+            public CancelDomainTransferToAnotherAwsAccountResult call() throws Exception {
+                CancelDomainTransferToAnotherAwsAccountResult result = null;
+
+                try {
+                    result = executeCancelDomainTransferToAnotherAwsAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(CheckDomainAvailabilityRequest request) {
 
         return checkDomainAvailabilityAsync(request, null);
@@ -787,6 +857,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<RejectDomainTransferFromAnotherAwsAccountResult> rejectDomainTransferFromAnotherAwsAccountAsync(
+            RejectDomainTransferFromAnotherAwsAccountRequest request) {
+
+        return rejectDomainTransferFromAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectDomainTransferFromAnotherAwsAccountResult> rejectDomainTransferFromAnotherAwsAccountAsync(
+            final RejectDomainTransferFromAnotherAwsAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectDomainTransferFromAnotherAwsAccountRequest, RejectDomainTransferFromAnotherAwsAccountResult> asyncHandler) {
+        final RejectDomainTransferFromAnotherAwsAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectDomainTransferFromAnotherAwsAccountResult>() {
+            @Override
+            public RejectDomainTransferFromAnotherAwsAccountResult call() throws Exception {
+                RejectDomainTransferFromAnotherAwsAccountResult result = null;
+
+                try {
+                    result = executeRejectDomainTransferFromAnotherAwsAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(RenewDomainRequest request) {
 
         return renewDomainAsync(request, null);
@@ -904,6 +1009,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
 
                 try {
                     result = executeTransferDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferDomainToAnotherAwsAccountResult> transferDomainToAnotherAwsAccountAsync(
+            TransferDomainToAnotherAwsAccountRequest request) {
+
+        return transferDomainToAnotherAwsAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferDomainToAnotherAwsAccountResult> transferDomainToAnotherAwsAccountAsync(
+            final TransferDomainToAnotherAwsAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TransferDomainToAnotherAwsAccountRequest, TransferDomainToAnotherAwsAccountResult> asyncHandler) {
+        final TransferDomainToAnotherAwsAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TransferDomainToAnotherAwsAccountResult>() {
+            @Override
+            public TransferDomainToAnotherAwsAccountResult call() throws Exception {
+                TransferDomainToAnotherAwsAccountResult result = null;
+
+                try {
+                    result = executeTransferDomainToAnotherAwsAccount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

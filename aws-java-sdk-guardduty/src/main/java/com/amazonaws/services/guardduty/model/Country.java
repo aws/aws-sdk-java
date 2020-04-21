@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the country in which the remote IP address is located.
+ * Contains information about the country where the remote IP address is located.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Country" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Country code of the remote IP address.
+     * The country code of the remote IP address.
      * </p>
      */
     private String countryCode;
     /**
      * <p>
-     * Country name of the remote IP address.
+     * The country name of the remote IP address.
      * </p>
      */
     private String countryName;
 
     /**
      * <p>
-     * Country code of the remote IP address.
+     * The country code of the remote IP address.
      * </p>
      * 
      * @param countryCode
-     *        Country code of the remote IP address.
+     *        The country code of the remote IP address.
      */
 
     public void setCountryCode(String countryCode) {
@@ -56,10 +56,10 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Country code of the remote IP address.
+     * The country code of the remote IP address.
      * </p>
      * 
-     * @return Country code of the remote IP address.
+     * @return The country code of the remote IP address.
      */
 
     public String getCountryCode() {
@@ -68,11 +68,11 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Country code of the remote IP address.
+     * The country code of the remote IP address.
      * </p>
      * 
      * @param countryCode
-     *        Country code of the remote IP address.
+     *        The country code of the remote IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Country name of the remote IP address.
+     * The country name of the remote IP address.
      * </p>
      * 
      * @param countryName
-     *        Country name of the remote IP address.
+     *        The country name of the remote IP address.
      */
 
     public void setCountryName(String countryName) {
@@ -96,10 +96,10 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Country name of the remote IP address.
+     * The country name of the remote IP address.
      * </p>
      * 
-     * @return Country name of the remote IP address.
+     * @return The country name of the remote IP address.
      */
 
     public String getCountryName() {
@@ -108,11 +108,11 @@ public class Country implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Country name of the remote IP address.
+     * The country name of the remote IP address.
      * </p>
      * 
      * @param countryName
-     *        Country name of the remote IP address.
+     *        The country name of the remote IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

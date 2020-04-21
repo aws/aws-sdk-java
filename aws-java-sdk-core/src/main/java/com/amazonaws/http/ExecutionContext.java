@@ -21,6 +21,7 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.timers.client.ClientExecutionAbortTrackerTask;
+import com.amazonaws.http.timers.client.NoOpClientExecutionAbortTrackerTask;
 import com.amazonaws.internal.auth.NoOpSignerProvider;
 import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.internal.auth.SignerProvider;
@@ -56,7 +57,7 @@ public class ExecutionContext {
      */
     private AuthErrorRetryStrategy authErrorRetryStrategy;
 
-    private ClientExecutionAbortTrackerTask clientExecutionTrackerTask;
+    private ClientExecutionAbortTrackerTask clientExecutionTrackerTask = NoOpClientExecutionAbortTrackerTask.INSTANCE;
 
     /** For testing purposes. */
     public ExecutionContext(boolean isMetricEnabled) {

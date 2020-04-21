@@ -38,6 +38,16 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public AcceptDomainTransferFromAnotherAwsAccountResult acceptDomainTransferFromAnotherAwsAccount(AcceptDomainTransferFromAnotherAwsAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelDomainTransferToAnotherAwsAccountResult cancelDomainTransferToAnotherAwsAccount(CancelDomainTransferToAnotherAwsAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +133,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public RejectDomainTransferFromAnotherAwsAccountResult rejectDomainTransferFromAnotherAwsAccount(RejectDomainTransferFromAnotherAwsAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RenewDomainResult renewDomain(RenewDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +154,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
 
     @Override
     public TransferDomainResult transferDomain(TransferDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TransferDomainToAnotherAwsAccountResult transferDomainToAnotherAwsAccount(TransferDomainToAnotherAwsAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

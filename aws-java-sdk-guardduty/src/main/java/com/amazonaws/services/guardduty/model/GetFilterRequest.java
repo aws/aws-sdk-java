@@ -27,7 +27,7 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      */
     private String detectorId;
@@ -40,11 +40,11 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the filter is associated with.
+     *        The unique ID of the detector that the filter is associated with.
      */
 
     public void setDetectorId(String detectorId) {
@@ -53,10 +53,10 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      * 
-     * @return The unique ID of the detector the filter is associated with.
+     * @return The unique ID of the detector that the filter is associated with.
      */
 
     public String getDetectorId() {
@@ -65,11 +65,11 @@ public class GetFilterRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The unique ID of the detector the filter is associated with.
+     * The unique ID of the detector that the filter is associated with.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector the filter is associated with.
+     *        The unique ID of the detector that the filter is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,6 +88,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
                     .withRequesterPays(origReq.isRequesterPays())
                 .withGeneralProgressListener(origReq.getGeneralProgressListener())
                 .withRequestMetricCollector(origReq.getRequestMetricCollector())
+                .withRequestCredentialsProvider(origReq.getRequestCredentialsProvider())
                 ;
             res = s3.completeMultipartUpload(req);
         } catch (Exception e) {

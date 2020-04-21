@@ -30,24 +30,24 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Port probe blocked information.
+     * Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      * </p>
      */
     private Boolean blocked;
     /**
      * <p>
-     * A list of port probe details objects.
+     * A list of objects related to port probe details.
      * </p>
      */
     private java.util.List<PortProbeDetail> portProbeDetails;
 
     /**
      * <p>
-     * Port probe blocked information.
+     * Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      * </p>
      * 
      * @param blocked
-     *        Port probe blocked information.
+     *        Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      */
 
     public void setBlocked(Boolean blocked) {
@@ -56,10 +56,10 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Port probe blocked information.
+     * Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      * </p>
      * 
-     * @return Port probe blocked information.
+     * @return Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      */
 
     public Boolean getBlocked() {
@@ -68,11 +68,11 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Port probe blocked information.
+     * Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      * </p>
      * 
      * @param blocked
-     *        Port probe blocked information.
+     *        Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Port probe blocked information.
+     * Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      * </p>
      * 
-     * @return Port probe blocked information.
+     * @return Indicates whether EC2 blocked the port probe to the instance, such as with an ACL.
      */
 
     public Boolean isBlocked() {
@@ -95,10 +95,10 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of port probe details objects.
+     * A list of objects related to port probe details.
      * </p>
      * 
-     * @return A list of port probe details objects.
+     * @return A list of objects related to port probe details.
      */
 
     public java.util.List<PortProbeDetail> getPortProbeDetails() {
@@ -107,11 +107,11 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of port probe details objects.
+     * A list of objects related to port probe details.
      * </p>
      * 
      * @param portProbeDetails
-     *        A list of port probe details objects.
+     *        A list of objects related to port probe details.
      */
 
     public void setPortProbeDetails(java.util.Collection<PortProbeDetail> portProbeDetails) {
@@ -125,7 +125,7 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of port probe details objects.
+     * A list of objects related to port probe details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +134,7 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param portProbeDetails
-     *        A list of port probe details objects.
+     *        A list of objects related to port probe details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +150,11 @@ public class PortProbeAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of port probe details objects.
+     * A list of objects related to port probe details.
      * </p>
      * 
      * @param portProbeDetails
-     *        A list of port probe details objects.
+     *        A list of objects related to port probe details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

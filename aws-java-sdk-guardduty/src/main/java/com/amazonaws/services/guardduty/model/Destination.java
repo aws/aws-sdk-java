@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a publishing destination, including the ID, type, and status.
+ * Contains information about the publishing destination, including the ID, type, and status.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Destination" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String destinationId;
     /**
      * <p>
-     * The type of resource used for the publishing destination. Currently, only S3 is supported.
+     * The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      */
     private String destinationType;
@@ -89,11 +89,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource used for the publishing destination. Currently, only S3 is supported.
+     * The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of resource used for the publishing destination. Currently, only S3 is supported.
+     *        The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * @see DestinationType
      */
 
@@ -103,10 +103,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource used for the publishing destination. Currently, only S3 is supported.
+     * The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
-     * @return The type of resource used for the publishing destination. Currently, only S3 is supported.
+     * @return The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are
+     *         supported.
      * @see DestinationType
      */
 
@@ -116,11 +117,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource used for the publishing destination. Currently, only S3 is supported.
+     * The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of resource used for the publishing destination. Currently, only S3 is supported.
+     *        The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */
@@ -132,11 +133,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource used for the publishing destination. Currently, only S3 is supported.
+     * The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * </p>
      * 
      * @param destinationType
-     *        The type of resource used for the publishing destination. Currently, only S3 is supported.
+     *        The type of resource used for the publishing destination. Currently, only Amazon S3 buckets are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */

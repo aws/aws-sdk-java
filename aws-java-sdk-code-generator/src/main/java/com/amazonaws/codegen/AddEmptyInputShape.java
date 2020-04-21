@@ -49,7 +49,9 @@ final class AddEmptyInputShape implements IntermediateModelShapeProcessor {
     @Override
     public Map<String, ShapeModel> process(Map<String, OperationModel> currentOperations,
                                            Map<String, ShapeModel> currentShapes) {
-        if (customizationConfig.useModeledOutputShapeNames()) {
+        // For backward compatibility we have to use both the checks, earlier the check was to only use
+        // ModeledOutputShapeNames parameter.
+        if (customizationConfig.useModeledOutputShapeNames() || customizationConfig.useModeledInputShapeNames()) {
             return currentShapes;
         } else {
             return addEmptyInputShapes(currentOperations);

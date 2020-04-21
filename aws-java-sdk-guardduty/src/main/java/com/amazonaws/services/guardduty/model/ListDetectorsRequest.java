@@ -27,15 +27,15 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 50. The maximum value is 50.
+     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
+     * value is 50. The maximum value is 50.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      */
@@ -43,13 +43,13 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 50. The maximum value is 50.
+     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
+     * value is 50. The maximum value is 50.
      * </p>
      * 
      * @param maxResults
-     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
-     *        value is 50. The maximum value is 50.
+     *        You can use this parameter to indicate the maximum number of items that you want in the response. The
+     *        default value is 50. The maximum value is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -58,12 +58,12 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 50. The maximum value is 50.
+     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
+     * value is 50. The maximum value is 50.
      * </p>
      * 
-     * @return You can use this parameter to indicate the maximum number of items you want in the response. The default
-     *         value is 50. The maximum value is 50.
+     * @return You can use this parameter to indicate the maximum number of items that you want in the response. The
+     *         default value is 50. The maximum value is 50.
      */
 
     public Integer getMaxResults() {
@@ -72,13 +72,13 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * You can use this parameter to indicate the maximum number of items you want in the response. The default value is
-     * 50. The maximum value is 50.
+     * You can use this parameter to indicate the maximum number of items that you want in the response. The default
+     * value is 50. The maximum value is 50.
      * </p>
      * 
      * @param maxResults
-     *        You can use this parameter to indicate the maximum number of items you want in the response. The default
-     *        value is 50. The maximum value is 50.
+     *        You can use this parameter to indicate the maximum number of items that you want in the response. The
+     *        default value is 50. The maximum value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,13 +90,13 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *        of NextToken from the previous response to continue listing data.
      */
 
@@ -107,12 +107,12 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @return You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *         call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *         call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *         of NextToken from the previous response to continue listing data.
      */
 
@@ -123,13 +123,13 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * You can use this parameter when paginating results. Set the value of this parameter to null on your first call to
-     * the list action. For subsequent calls to the action fill nextToken in the request with the value of NextToken
+     * the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken
      * from the previous response to continue listing data.
      * </p>
      * 
      * @param nextToken
      *        You can use this parameter when paginating results. Set the value of this parameter to null on your first
-     *        call to the list action. For subsequent calls to the action fill nextToken in the request with the value
+     *        call to the list action. For subsequent calls to the action, fill nextToken in the request with the value
      *        of NextToken from the previous response to continue listing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

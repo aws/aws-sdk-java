@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Continas information about the ISP organization of the remote IP address.
+ * Contains information about the ISP organization of the remote IP address.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Organization" target="_top">AWS API
@@ -30,36 +30,36 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Autonomous system number of the internet provider of the remote IP address.
+     * The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      * </p>
      */
     private String asn;
     /**
      * <p>
-     * Organization that registered this ASN.
+     * The organization that registered this ASN.
      * </p>
      */
     private String asnOrg;
     /**
      * <p>
-     * ISP information for the internet provider.
+     * The ISP information for the internet provider.
      * </p>
      */
     private String isp;
     /**
      * <p>
-     * Name of the internet provider.
+     * The name of the internet provider.
      * </p>
      */
     private String org;
 
     /**
      * <p>
-     * Autonomous system number of the internet provider of the remote IP address.
+     * The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      * </p>
      * 
      * @param asn
-     *        Autonomous system number of the internet provider of the remote IP address.
+     *        The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      */
 
     public void setAsn(String asn) {
@@ -68,10 +68,10 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Autonomous system number of the internet provider of the remote IP address.
+     * The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      * </p>
      * 
-     * @return Autonomous system number of the internet provider of the remote IP address.
+     * @return The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      */
 
     public String getAsn() {
@@ -80,11 +80,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Autonomous system number of the internet provider of the remote IP address.
+     * The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      * </p>
      * 
      * @param asn
-     *        Autonomous system number of the internet provider of the remote IP address.
+     *        The Autonomous System Number (ASN) of the internet provider of the remote IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Organization that registered this ASN.
+     * The organization that registered this ASN.
      * </p>
      * 
      * @param asnOrg
-     *        Organization that registered this ASN.
+     *        The organization that registered this ASN.
      */
 
     public void setAsnOrg(String asnOrg) {
@@ -108,10 +108,10 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Organization that registered this ASN.
+     * The organization that registered this ASN.
      * </p>
      * 
-     * @return Organization that registered this ASN.
+     * @return The organization that registered this ASN.
      */
 
     public String getAsnOrg() {
@@ -120,11 +120,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Organization that registered this ASN.
+     * The organization that registered this ASN.
      * </p>
      * 
      * @param asnOrg
-     *        Organization that registered this ASN.
+     *        The organization that registered this ASN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ISP information for the internet provider.
+     * The ISP information for the internet provider.
      * </p>
      * 
      * @param isp
-     *        ISP information for the internet provider.
+     *        The ISP information for the internet provider.
      */
 
     public void setIsp(String isp) {
@@ -148,10 +148,10 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ISP information for the internet provider.
+     * The ISP information for the internet provider.
      * </p>
      * 
-     * @return ISP information for the internet provider.
+     * @return The ISP information for the internet provider.
      */
 
     public String getIsp() {
@@ -160,11 +160,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ISP information for the internet provider.
+     * The ISP information for the internet provider.
      * </p>
      * 
      * @param isp
-     *        ISP information for the internet provider.
+     *        The ISP information for the internet provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the internet provider.
+     * The name of the internet provider.
      * </p>
      * 
      * @param org
-     *        Name of the internet provider.
+     *        The name of the internet provider.
      */
 
     public void setOrg(String org) {
@@ -188,10 +188,10 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the internet provider.
+     * The name of the internet provider.
      * </p>
      * 
-     * @return Name of the internet provider.
+     * @return The name of the internet provider.
      */
 
     public String getOrg() {
@@ -200,11 +200,11 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the internet provider.
+     * The name of the internet provider.
      * </p>
      * 
      * @param org
-     *        Name of the internet provider.
+     *        The name of the internet provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

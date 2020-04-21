@@ -29,6 +29,8 @@ public class GetRightsizingRecommendationRequestMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<String> SERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Service").build();
     private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -53,6 +55,7 @@ public class GetRightsizingRecommendationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getRightsizingRecommendationRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getRightsizingRecommendationRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(getRightsizingRecommendationRequest.getService(), SERVICE_BINDING);
             protocolMarshaller.marshall(getRightsizingRecommendationRequest.getPageSize(), PAGESIZE_BINDING);
             protocolMarshaller.marshall(getRightsizingRecommendationRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);

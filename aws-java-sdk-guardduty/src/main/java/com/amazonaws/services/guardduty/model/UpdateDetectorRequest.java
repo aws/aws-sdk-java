@@ -39,7 +39,7 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean enable;
     /**
      * <p>
-     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     * An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      */
     private String findingPublishingFrequency;
@@ -138,11 +138,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     * An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     *        An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @see FindingPublishingFrequency
      */
 
@@ -152,10 +152,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     * An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
-     * @return A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     * @return An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @see FindingPublishingFrequency
      */
 
@@ -165,11 +165,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     * An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     *        An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -181,11 +181,11 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     * An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        A enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
+     *        An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
