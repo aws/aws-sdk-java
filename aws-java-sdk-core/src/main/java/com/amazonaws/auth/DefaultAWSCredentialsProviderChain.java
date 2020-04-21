@@ -25,11 +25,11 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
  *      or <code>AWS_ACCESS_KEY</code> and <code>AWS_SECRET_KEY</code> (only recognized by Java SDK)
  *   </li>
  *   <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+ *   <li>Web Identity Token credentials from the environment or container.</li>
  *   <li>Credential profiles file at the default location (~/.aws/credentials) shared by all AWS SDKs and the AWS CLI</li>
  *   <li>Credentials delivered through the Amazon EC2 container service if AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" environment variable is set
  *   and security manager has permission to access the variable,</li>
  *   <li>Instance profile credentials delivered through the Amazon EC2 metadata service</li>
- *   <li>Web Identity Token credentials from the environment or container.</li>
  * </ul>
  *
  * @see EnvironmentVariableCredentialsProvider
