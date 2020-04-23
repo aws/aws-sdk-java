@@ -460,6 +460,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true), new PostContentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             return response.getAwsResponse();
 
         } finally {
@@ -719,6 +721,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<PutSessionResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(false).withHasStreamingSuccessResponse(true), new PutSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
+
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
 
             return response.getAwsResponse();
 

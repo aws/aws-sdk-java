@@ -195,6 +195,8 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true), new GetSnapshotBlockResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             return response.getAwsResponse();
 
         } finally {

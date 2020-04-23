@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the AWS Lambda function to use as a code hook for a campaign.
+ * Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignHook" target="_top">AWS API
@@ -30,15 +30,29 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send messages
-     * for a campaign.
+     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a
+     * segment for a campaign.
      * </p>
      */
     private String lambdaFunctionName;
     /**
      * <p>
-     * Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     * The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FILTER - Invoke the function to customize the segment that's used by a campaign.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     * functionality is not supported anymore. To send a campaign through a custom channel, use the
+     * CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String mode;
     /**
@@ -50,13 +64,13 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send messages
-     * for a campaign.
+     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a
+     * segment for a campaign.
      * </p>
      * 
      * @param lambdaFunctionName
-     *        The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send
-     *        messages for a campaign.
+     *        The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to
+     *        customize a segment for a campaign.
      */
 
     public void setLambdaFunctionName(String lambdaFunctionName) {
@@ -65,12 +79,12 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send messages
-     * for a campaign.
+     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a
+     * segment for a campaign.
      * </p>
      * 
-     * @return The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send
-     *         messages for a campaign.
+     * @return The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to
+     *         customize a segment for a campaign.
      */
 
     public String getLambdaFunctionName() {
@@ -79,13 +93,13 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send messages
-     * for a campaign.
+     * The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a
+     * segment for a campaign.
      * </p>
      * 
      * @param lambdaFunctionName
-     *        The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to send
-     *        messages for a campaign.
+     *        The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to
+     *        customize a segment for a campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +110,38 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     * The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FILTER - Invoke the function to customize the segment that's used by a campaign.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     * functionality is not supported anymore. To send a campaign through a custom channel, use the
+     * CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param mode
-     *        Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     *        The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        FILTER - Invoke the function to customize the segment that's used by a campaign.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     *        functionality is not supported anymore. To send a campaign through a custom channel, use the
+     *        CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     *        </p>
+     *        </li>
      * @see Mode
      */
 
@@ -110,10 +151,37 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     * The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FILTER - Invoke the function to customize the segment that's used by a campaign.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     * functionality is not supported anymore. To send a campaign through a custom channel, use the
+     * CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     * @return The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         FILTER - Invoke the function to customize the segment that's used by a campaign.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel.
+     *         This functionality is not supported anymore. To send a campaign through a custom channel, use the
+     *         CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     *         </p>
+     *         </li>
      * @see Mode
      */
 
@@ -123,11 +191,38 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     * The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FILTER - Invoke the function to customize the segment that's used by a campaign.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     * functionality is not supported anymore. To send a campaign through a custom channel, use the
+     * CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param mode
-     *        Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     *        The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        FILTER - Invoke the function to customize the segment that's used by a campaign.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     *        functionality is not supported anymore. To send a campaign through a custom channel, use the
+     *        CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */
@@ -139,11 +234,38 @@ public class CampaignHook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     * The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FILTER - Invoke the function to customize the segment that's used by a campaign.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     * functionality is not supported anymore. To send a campaign through a custom channel, use the
+     * CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param mode
-     *        Specifies which Lambda mode to use when invoking the AWS Lambda function.
+     *        The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        FILTER - Invoke the function to customize the segment that's used by a campaign.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This
+     *        functionality is not supported anymore. To send a campaign through a custom channel, use the
+     *        CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */

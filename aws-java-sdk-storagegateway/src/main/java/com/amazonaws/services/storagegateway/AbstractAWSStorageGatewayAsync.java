@@ -251,6 +251,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAutomaticTapeCreationPolicyResult> deleteAutomaticTapeCreationPolicyAsync(
+            DeleteAutomaticTapeCreationPolicyRequest request) {
+
+        return deleteAutomaticTapeCreationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutomaticTapeCreationPolicyResult> deleteAutomaticTapeCreationPolicyAsync(
+            DeleteAutomaticTapeCreationPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAutomaticTapeCreationPolicyRequest, DeleteAutomaticTapeCreationPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBandwidthRateLimitResult> deleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest request) {
 
         return deleteBandwidthRateLimitAsync(request, null);
@@ -653,6 +668,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutomaticTapeCreationPoliciesResult> listAutomaticTapeCreationPoliciesAsync(
+            ListAutomaticTapeCreationPoliciesRequest request) {
+
+        return listAutomaticTapeCreationPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutomaticTapeCreationPoliciesResult> listAutomaticTapeCreationPoliciesAsync(
+            ListAutomaticTapeCreationPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAutomaticTapeCreationPoliciesRequest, ListAutomaticTapeCreationPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest request) {
 
         return listFileSharesAsync(request, null);
@@ -964,6 +994,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<StartGatewayResult> startGatewayAsync(StartGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<StartGatewayRequest, StartGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomaticTapeCreationPolicyResult> updateAutomaticTapeCreationPolicyAsync(
+            UpdateAutomaticTapeCreationPolicyRequest request) {
+
+        return updateAutomaticTapeCreationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomaticTapeCreationPolicyResult> updateAutomaticTapeCreationPolicyAsync(
+            UpdateAutomaticTapeCreationPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAutomaticTapeCreationPolicyRequest, UpdateAutomaticTapeCreationPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

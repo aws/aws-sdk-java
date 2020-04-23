@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This response identifies the user, the server they belong to, and the identifier of the SSH public key associated
- * with that user. A user can have more than one key on each server that they are associated with.
+ * Identifies the user, the file transfer protocol-enabled server they belong to, and the identifier of the SSH public
+ * key associated with that user. A user can have more than one key on each server that they are associated with.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey" target="_top">AWS API
@@ -29,13 +29,13 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * This identifier is the name given to a public key by the system that was imported.
+     * The name given to a public key by the system that was imported.
      * </p>
      */
     private String sshPublicKeyId;
@@ -48,11 +48,11 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server.
      */
 
     public void setServerId(String serverId) {
@@ -61,10 +61,10 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server.
      */
 
     public String getServerId() {
@@ -73,11 +73,11 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * This identifier is the name given to a public key by the system that was imported.
+     * The name given to a public key by the system that was imported.
      * </p>
      * 
      * @param sshPublicKeyId
-     *        This identifier is the name given to a public key by the system that was imported.
+     *        The name given to a public key by the system that was imported.
      */
 
     public void setSshPublicKeyId(String sshPublicKeyId) {
@@ -101,10 +101,10 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * This identifier is the name given to a public key by the system that was imported.
+     * The name given to a public key by the system that was imported.
      * </p>
      * 
-     * @return This identifier is the name given to a public key by the system that was imported.
+     * @return The name given to a public key by the system that was imported.
      */
 
     public String getSshPublicKeyId() {
@@ -113,11 +113,11 @@ public class ImportSshPublicKeyResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * This identifier is the name given to a public key by the system that was imported.
+     * The name given to a public key by the system that was imported.
      * </p>
      * 
      * @param sshPublicKeyId
-     *        This identifier is the name given to a public key by the system that was imported.
+     *        The name given to a public key by the system that was imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

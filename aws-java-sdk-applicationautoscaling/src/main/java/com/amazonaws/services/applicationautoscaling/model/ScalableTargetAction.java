@@ -32,6 +32,10 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * <p>
      * The minimum capacity.
      * </p>
+     * <p>
+     * For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum value
+     * allowed is 1.
+     * </p>
      */
     private Integer minCapacity;
     /**
@@ -45,9 +49,16 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * <p>
      * The minimum capacity.
      * </p>
+     * <p>
+     * For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum value
+     * allowed is 1.
+     * </p>
      * 
      * @param minCapacity
-     *        The minimum capacity.
+     *        The minimum capacity.</p>
+     *        <p>
+     *        For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum
+     *        value allowed is 1.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -58,8 +69,15 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * <p>
      * The minimum capacity.
      * </p>
+     * <p>
+     * For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum value
+     * allowed is 1.
+     * </p>
      * 
-     * @return The minimum capacity.
+     * @return The minimum capacity.</p>
+     *         <p>
+     *         For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum
+     *         value allowed is 1.
      */
 
     public Integer getMinCapacity() {
@@ -70,9 +88,16 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * <p>
      * The minimum capacity.
      * </p>
+     * <p>
+     * For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum value
+     * allowed is 1.
+     * </p>
      * 
      * @param minCapacity
-     *        The minimum capacity.
+     *        The minimum capacity.</p>
+     *        <p>
+     *        For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum
+     *        value allowed is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

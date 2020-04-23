@@ -20,6 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
+ * This parameter is required if <code>Enabled</code> is set to true.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SchemaConfiguration" target="_top">AWS API

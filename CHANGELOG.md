@@ -1,3 +1,44 @@
+# __1.11.768__ __2020-04-23__
+## __AWS Elemental MediaPackage VOD__
+  - ### Features
+    - Adds tagging support for PackagingGroups, PackagingConfigurations, and Assets
+
+## __AWS Resource Access Manager__
+  - ### Features
+    - AWS Resource Access Manager (RAM) provides a new ListResourceTypes action. This action lets you list the resource types that can be shared using AWS RAM.
+
+## __AWS S3__
+  - ### Features
+    - Add `af-south-1` region to Region enum
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add `af-south-1` region to Regions enum
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Added AutomaticTapeCreation APIs
+
+## __AWS Transfer Family__
+  - ### Features
+    - This release adds support for transfers over FTPS and FTP in and out of Amazon S3, which makes it easy to migrate File Transfer Protocol over SSL (FTPS) and FTP workloads to AWS, in addition to the existing support for Secure File Transfer Protocol (SFTP).
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - You can now deliver streaming data to an Amazon Elasticsearch Service domain in an Amazon VPC. You can now compress streaming data delivered to S3 using Hadoop-Snappy in addition to Gzip, Zip and Snappy formats.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release of the Amazon Pinpoint API enhances support for sending campaigns through custom channels to locations such as AWS Lambda functions or web applications. Campaigns can now use CustomDeliveryConfiguration and CampaignCustomMessage to configure custom channel settings for a campaign.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds support for AWS Local Zones, including a new optional parameter AvailabilityZoneGroup for the DescribeOrderableDBInstanceOptions operation.
+
+## __Application Auto Scaling__
+  - ### Features
+    - This release supports Auto Scaling in Amazon Keyspaces for Apache Cassandra.
+
 # __1.11.767__ __2020-04-22__
 ## __Amazon CodeGuru Reviewer__
   - ### Features

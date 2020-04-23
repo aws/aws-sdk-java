@@ -1454,6 +1454,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<GetObjectRequest> request = createRequest(getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest, HttpMethodName.GET);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObject");
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
 
         if (getObjectRequest.getVersionId() != null) {
             request.addParameter("versionId", getObjectRequest.getVersionId());
@@ -4835,6 +4836,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<PresignedUrlDownloadRequest> request = createRequestForPresignedUrl(presignedUrlDownloadRequest, HttpMethodName.GET,
                                                                                     presignedUrlDownloadRequest.getPresignedUrl());
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObject");
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
 
         // set range header if present on request
         long[] range = presignedUrlDownloadRequest.getRange();

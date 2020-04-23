@@ -37,6 +37,8 @@ public class CampaignResponseMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMDELIVERYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDeliveryConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultState").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -96,6 +98,7 @@ public class CampaignResponseMarshaller {
             protocolMarshaller.marshall(campaignResponse.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(campaignResponse.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(campaignResponse.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(campaignResponse.getCustomDeliveryConfiguration(), CUSTOMDELIVERYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(campaignResponse.getDefaultState(), DEFAULTSTATE_BINDING);
             protocolMarshaller.marshall(campaignResponse.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(campaignResponse.getHoldoutPercent(), HOLDOUTPERCENT_BINDING);

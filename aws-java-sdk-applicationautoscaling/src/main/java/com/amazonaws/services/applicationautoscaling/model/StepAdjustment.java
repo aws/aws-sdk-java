@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a step adjustment for a <a>StepScalingPolicyConfiguration</a>. Describes an adjustment based on the
- * difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the
- * alarm.
+ * Represents a step adjustment for a <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html"
+ * >StepScalingPolicyConfiguration</a>. Describes an adjustment based on the difference between the value of the
+ * aggregated CloudWatch metric and the breach threshold that you've defined for the alarm.
  * </p>
  * <p>
  * For the following examples, suppose that you have an alarm with a breach threshold of 50:
@@ -98,7 +99,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * scalable dimension while a negative number removes from the current scalable dimension.
+     * capacity while a negative number removes from the current capacity.
      * </p>
      */
     private Integer scalingAdjustment;
@@ -237,12 +238,12 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * scalable dimension while a negative number removes from the current scalable dimension.
+     * capacity while a negative number removes from the current capacity.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     *        scalable dimension while a negative number removes from the current scalable dimension.
+     *        capacity while a negative number removes from the current capacity.
      */
 
     public void setScalingAdjustment(Integer scalingAdjustment) {
@@ -252,11 +253,11 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * scalable dimension while a negative number removes from the current scalable dimension.
+     * capacity while a negative number removes from the current capacity.
      * </p>
      * 
      * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
-     *         current scalable dimension while a negative number removes from the current scalable dimension.
+     *         current capacity while a negative number removes from the current capacity.
      */
 
     public Integer getScalingAdjustment() {
@@ -266,12 +267,12 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     * scalable dimension while a negative number removes from the current scalable dimension.
+     * capacity while a negative number removes from the current capacity.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
-     *        scalable dimension while a negative number removes from the current scalable dimension.
+     *        capacity while a negative number removes from the current capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

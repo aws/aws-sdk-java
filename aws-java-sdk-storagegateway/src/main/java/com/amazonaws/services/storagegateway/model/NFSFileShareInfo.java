@@ -40,7 +40,7 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private String gatewayARN;
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      */
@@ -236,12 +236,12 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      */
 
@@ -251,11 +251,11 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -265,12 +265,12 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -282,11 +282,11 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 

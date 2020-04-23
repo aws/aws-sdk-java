@@ -176,6 +176,8 @@ public class AmazonWorkMailMessageFlowClient extends AmazonWebServiceClient impl
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true), new GetRawMessageContentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             return response.getAwsResponse();
 
         } finally {

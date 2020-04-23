@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request has failed because the AWS Transfer for SFTP service is not available.
+ * The request has failed because the AWS Transfer Family service is not available.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

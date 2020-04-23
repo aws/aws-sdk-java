@@ -26,14 +26,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     private String gatewayARN;
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * An array of strings that identify disks that are to be configured as working storage. Each string has a minimum
      * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> diskIds;
     /**
      * <p>
-     * The amount of cache in bytes allocated to the a gateway.
+     * The amount of cache in bytes allocated to a gateway.
      * </p>
      */
     private Long cacheAllocatedInBytes;
@@ -94,11 +94,11 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * An array of strings that identify disks that are to be configured as working storage. Each string has a minimum
      * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * 
-     * @return An array of strings that identify disks that are to be configured as working storage. Each string have a
+     * @return An array of strings that identify disks that are to be configured as working storage. Each string has a
      *         minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *         API.
      */
@@ -112,12 +112,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * An array of strings that identify disks that are to be configured as working storage. Each string has a minimum
      * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * 
      * @param diskIds
-     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        An array of strings that identify disks that are to be configured as working storage. Each string has a
      *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *        API.
      */
@@ -133,7 +133,7 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * An array of strings that identify disks that are to be configured as working storage. Each string has a minimum
      * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * <p>
@@ -143,7 +143,7 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param diskIds
-     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        An array of strings that identify disks that are to be configured as working storage. Each string has a
      *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -161,12 +161,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * An array of strings that identify disks that are to be configured as working storage. Each string has a minimum
      * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
      * </p>
      * 
      * @param diskIds
-     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        An array of strings that identify disks that are to be configured as working storage. Each string has a
      *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -179,11 +179,11 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The amount of cache in bytes allocated to the a gateway.
+     * The amount of cache in bytes allocated to a gateway.
      * </p>
      * 
      * @param cacheAllocatedInBytes
-     *        The amount of cache in bytes allocated to the a gateway.
+     *        The amount of cache in bytes allocated to a gateway.
      */
 
     public void setCacheAllocatedInBytes(Long cacheAllocatedInBytes) {
@@ -192,10 +192,10 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The amount of cache in bytes allocated to the a gateway.
+     * The amount of cache in bytes allocated to a gateway.
      * </p>
      * 
-     * @return The amount of cache in bytes allocated to the a gateway.
+     * @return The amount of cache in bytes allocated to a gateway.
      */
 
     public Long getCacheAllocatedInBytes() {
@@ -204,11 +204,11 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The amount of cache in bytes allocated to the a gateway.
+     * The amount of cache in bytes allocated to a gateway.
      * </p>
      * 
      * @param cacheAllocatedInBytes
-     *        The amount of cache in bytes allocated to the a gateway.
+     *        The amount of cache in bytes allocated to a gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

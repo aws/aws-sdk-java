@@ -84,6 +84,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * AWS Lambda function provisioned concurrency
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Keyspaces for Apache Cassandra tables
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>API Summary</b>
@@ -107,10 +112,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * Suspend and resume scaling - Temporarily suspend and later resume automatic scaling by calling the
- * <a>RegisterScalableTarget</a> action for any Application Auto Scaling scalable target. You can suspend and resume,
- * individually or in combination, scale-out activities triggered by a scaling policy, scale-in activities triggered by
- * a scaling policy, and scheduled scaling.
+ * Suspend and resume scaling - Temporarily suspend and later resume automatic scaling by calling the <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html"
+ * >RegisterScalableTarget</a> API action for any Application Auto Scaling scalable target. You can suspend and resume
+ * (individually or in combination) scale-out activities that are triggered by a scaling policy, scale-in activities
+ * that are triggered by a scaling policy, and scheduled scaling.
  * </p>
  * </li>
  * </ul>

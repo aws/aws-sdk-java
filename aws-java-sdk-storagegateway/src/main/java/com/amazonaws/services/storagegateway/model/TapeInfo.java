@@ -63,7 +63,7 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
      * Valid values: "GLACIER", "DEEP_ARCHIVE"
@@ -281,7 +281,7 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
      * Valid values: "GLACIER", "DEEP_ARCHIVE"
@@ -290,8 +290,8 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * @param poolId
      *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
      *        the S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *        tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
-     *        the pool.</p>
+     *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
+     *        corresponds to the pool.</p>
      *        <p>
      *        Valid values: "GLACIER", "DEEP_ARCHIVE"
      */
@@ -304,7 +304,7 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
      * Valid values: "GLACIER", "DEEP_ARCHIVE"
@@ -312,8 +312,8 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
      *         the S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *         tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
-     *         the pool.</p>
+     *         tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
+     *         corresponds to the pool.</p>
      *         <p>
      *         Valid values: "GLACIER", "DEEP_ARCHIVE"
      */
@@ -326,7 +326,7 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
      * Valid values: "GLACIER", "DEEP_ARCHIVE"
@@ -335,8 +335,8 @@ public class TapeInfo implements Serializable, Cloneable, StructuredPojo {
      * @param poolId
      *        The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
      *        the S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *        tape, the tape is archived directly into the storage class (Glacier or Deep Archive) that corresponds to
-     *        the pool.</p>
+     *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
+     *        corresponds to the pool.</p>
      *        <p>
      *        Valid values: "GLACIER", "DEEP_ARCHIVE"
      * @return Returns a reference to this object so that method calls can be chained together.

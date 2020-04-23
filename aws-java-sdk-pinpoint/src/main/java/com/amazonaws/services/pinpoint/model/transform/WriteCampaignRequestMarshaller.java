@@ -31,6 +31,8 @@ public class WriteCampaignRequestMarshaller {
 
     private static final MarshallingInfo<List> ADDITIONALTREATMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalTreatments").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMDELIVERYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDeliveryConfiguration").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> HOLDOUTPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -77,6 +79,7 @@ public class WriteCampaignRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(writeCampaignRequest.getAdditionalTreatments(), ADDITIONALTREATMENTS_BINDING);
+            protocolMarshaller.marshall(writeCampaignRequest.getCustomDeliveryConfiguration(), CUSTOMDELIVERYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getHoldoutPercent(), HOLDOUTPERCENT_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getHook(), HOOK_BINDING);

@@ -951,9 +951,10 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * </p>
      * <p>
      * Even if encryption is currently enabled for a delivery stream, you can still invoke this operation on it to
-     * change the ARN of the CMK or both its type and ARN. In this case, Kinesis Data Firehose schedules the grant it
-     * had on the old CMK for retirement and creates a grant that enables it to use the new CMK to encrypt and decrypt
-     * data and to manage the grant.
+     * change the ARN of the CMK or both its type and ARN. If you invoke this method to change the CMK, and the old CMK
+     * is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose schedules the grant it had on the old CMK for
+     * retirement. If the new CMK is of type <code>CUSTOMER_MANAGED_CMK</code>, Kinesis Data Firehose creates a grant
+     * that enables it to use the new CMK to encrypt and decrypt data and to manage the grant.
      * </p>
      * <p>
      * If a delivery stream already has encryption enabled and then you invoke this operation to change the ARN of the
@@ -962,10 +963,12 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * </p>
      * <p>
      * If the encryption status of your delivery stream is <code>ENABLING_FAILED</code>, you can invoke this operation
-     * again.
+     * again with a valid CMK. The CMK must be enabled and the key policy mustn't explicitly deny the permission for
+     * Kinesis Data Firehose to invoke KMS encrypt and decrypt operations.
      * </p>
      * <p>
-     * You can only enable SSE for a delivery stream that uses <code>DirectPut</code> as its source.
+     * You can enable SSE for a delivery stream only if it's a delivery stream that uses <code>DirectPut</code> as its
+     * source.
      * </p>
      * <p>
      * The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A JSON object containing the of the updated storage volume.
+ * A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule"

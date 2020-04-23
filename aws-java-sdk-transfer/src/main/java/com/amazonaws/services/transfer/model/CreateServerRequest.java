@@ -27,18 +27,25 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint,
-     * you can restrict access to your SFTP server to resources only within your VPC. To control incoming internet
-     * traffic, you will need to invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's
-     * endpoint.
+     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * </p>
+     */
+    private String certificate;
+    /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
+     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
+     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public
-     * internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to your SFTP
-     * server and resources only within your VPC.
+     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
+     * to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can
+     * restrict access to your server and resources only within your VPC.
      * </p>
      */
     private String endpointType;
@@ -48,63 +55,132 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't
      * update the host key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see
-     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in the
-     * <i>AWS SFTP User Guide.</i>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
+     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      */
     private String hostKey;
     /**
      * <p>
-     * This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts
-     * an array containing all of the information required to call a customer-supplied authentication API, including the
-     * API Gateway URL. This property is not required when the <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
+     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
+     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      */
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Specifies the mode of authentication for the SFTP server. The default value is <code>SERVICE_MANAGED</code>,
-     * which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
+     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     * authentication using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      */
     private String identityProviderType;
     /**
      * <p>
-     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
-     * and auditing purposes.
+     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
+     * purposes.
      * </p>
      */
     private String loggingRole;
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for servers.
+     * Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to
+     * your server's endpoint. The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<String> protocols;
+    /**
+     * <p>
+     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint,
-     * you can restrict access to your SFTP server to resources only within your VPC. To control incoming internet
-     * traffic, you will need to invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's
-     * endpoint.
+     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * </p>
+     * 
+     * @param certificate
+     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     *        <code>Protocols</code> is set to <code>FTPS</code>.
+     */
+
+    public void setCertificate(String certificate) {
+        this.certificate = certificate;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     *         <code>Protocols</code> is set to <code>FTPS</code>.
+     */
+
+    public String getCertificate() {
+        return this.certificate;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * </p>
+     * 
+     * @param certificate
+     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
+     *        <code>Protocols</code> is set to <code>FTPS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServerRequest withCertificate(String certificate) {
+        setCertificate(certificate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
+     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
+     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC
-     *        endpoint, you can restrict access to your SFTP server to resources only within your VPC. To control
-     *        incoming internet traffic, you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
-     *        IP to your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
+     *        protocol-enabled server. When you host your endpoint within your VPC, you can make it accessible only to
+     *        resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the
+     *        internet. Your VPC's default security groups are automatically assigned to your endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -113,16 +189,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint,
-     * you can restrict access to your SFTP server to resources only within your VPC. To control incoming internet
-     * traffic, you will need to invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
+     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
+     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC
-     *         endpoint, you can restrict access to your SFTP server to resources only within your VPC. To control
-     *         incoming internet traffic, you will need to invoke the <code>UpdateServer</code> API and attach an
-     *         Elastic IP to your server's endpoint.
+     * @return The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
+     *         protocol-enabled server. When you host your endpoint within your VPC, you can make it accessible only to
+     *         resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the
+     *         internet. Your VPC's default security groups are automatically assigned to your endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -131,17 +207,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint,
-     * you can restrict access to your SFTP server to resources only within your VPC. To control incoming internet
-     * traffic, you will need to invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
+     * server. When you host your endpoint within your VPC, you can make it accessible only to resources within your
+     * VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. Your VPC's default
+     * security groups are automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC
-     *        endpoint, you can restrict access to your SFTP server to resources only within your VPC. To control
-     *        incoming internet traffic, you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
-     *        IP to your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
+     *        protocol-enabled server. When you host your endpoint within your VPC, you can make it accessible only to
+     *        resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the
+     *        internet. Your VPC's default security groups are automatically assigned to your endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,15 +228,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public
-     * internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to your SFTP
-     * server and resources only within your VPC.
+     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
+     * to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can
+     * restrict access to your server and resources only within your VPC.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the
-     *        public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to
-     *        your SFTP server and resources only within your VPC.
+     *        The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
+     *        choose to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint,
+     *        you can restrict access to your server and resources only within your VPC.
      * @see EndpointType
      */
 
@@ -170,14 +246,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public
-     * internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to your SFTP
-     * server and resources only within your VPC.
+     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
+     * to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can
+     * restrict access to your server and resources only within your VPC.
      * </p>
      * 
-     * @return The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the
-     *         public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access
-     *         to your SFTP server and resources only within your VPC.
+     * @return The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
+     *         choose to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint,
+     *         you can restrict access to your server and resources only within your VPC.
      * @see EndpointType
      */
 
@@ -187,15 +263,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public
-     * internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to your SFTP
-     * server and resources only within your VPC.
+     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
+     * to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can
+     * restrict access to your server and resources only within your VPC.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the
-     *        public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to
-     *        your SFTP server and resources only within your VPC.
+     *        The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
+     *        choose to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint,
+     *        you can restrict access to your server and resources only within your VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -207,15 +283,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public
-     * internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to your SFTP
-     * server and resources only within your VPC.
+     * The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can choose
+     * to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can
+     * restrict access to your server and resources only within your VPC.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the
-     *        public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint, you can restrict access to
-     *        your SFTP server and resources only within your VPC.
+     *        The type of VPC endpoint that you want your file transfer protocol-enabled server to connect to. You can
+     *        choose to connect to the public internet or a virtual private cloud (VPC) endpoint. With a VPC endpoint,
+     *        you can restrict access to your server and resources only within your VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -231,28 +307,29 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't
      * update the host key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see
-     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in the
-     * <i>AWS SFTP User Guide.</i>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
+     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      * 
      * @param hostKey
      *        The RSA private key as generated by the <code>ssh-keygen -N "" -f my-new-server-key</code> command.</p>
      *        <important>
      *        <p>
-     *        If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server,
+     *        If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server,
      *        don't update the host key. Accidentally changing a server's host key can be disruptive.
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see
-     *        "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in
-     *        the <i>AWS SFTP User Guide.</i>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     *        >Changing the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User
+     *        Guide</i>.
      */
 
     public void setHostKey(String hostKey) {
@@ -265,27 +342,28 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't
      * update the host key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see
-     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in the
-     * <i>AWS SFTP User Guide.</i>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
+     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      * 
      * @return The RSA private key as generated by the <code>ssh-keygen -N "" -f my-new-server-key</code> command.</p>
      *         <important>
      *         <p>
-     *         If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server,
+     *         If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server,
      *         don't update the host key. Accidentally changing a server's host key can be disruptive.
      *         </p>
      *         </important>
      *         <p>
-     *         For more information, see
-     *         "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in
-     *         the <i>AWS SFTP User Guide.</i>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     *         >Changing the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User
+     *         Guide</i>.
      */
 
     public String getHostKey() {
@@ -298,28 +376,29 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server, don't
+     * If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't
      * update the host key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see
-     * "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in the
-     * <i>AWS SFTP User Guide.</i>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
+     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      * 
      * @param hostKey
      *        The RSA private key as generated by the <code>ssh-keygen -N "" -f my-new-server-key</code> command.</p>
      *        <important>
      *        <p>
-     *        If you aren't planning to migrate existing users from an existing SFTP server to a new AWS SFTP server,
+     *        If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server,
      *        don't update the host key. Accidentally changing a server's host key can be disruptive.
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see
-     *        "https://alpha-docs-aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key" in
-     *        the <i>AWS SFTP User Guide.</i>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
+     *        >Changing the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,17 +409,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts
-     * an array containing all of the information required to call a customer-supplied authentication API, including the
-     * API Gateway URL. This property is not required when the <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
+     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
+     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
-     *        This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>.
-     *        Accepts an array containing all of the information required to call a customer-supplied authentication
-     *        API, including the API Gateway URL. This property is not required when the
-     *        <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     *        Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array
+     *        containing all of the information required to call a customer-supplied authentication API, including the
+     *        API Gateway URL. Not required when <code>IdentityProviderType</code> is set to
+     *        <code>SERVICE_MANAGED</code>.
      */
 
     public void setIdentityProviderDetails(IdentityProviderDetails identityProviderDetails) {
@@ -349,16 +427,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts
-     * an array containing all of the information required to call a customer-supplied authentication API, including the
-     * API Gateway URL. This property is not required when the <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
+     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
+     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      * 
-     * @return This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>.
-     *         Accepts an array containing all of the information required to call a customer-supplied authentication
-     *         API, including the API Gateway URL. This property is not required when the
-     *         <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     * @return Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array
+     *         containing all of the information required to call a customer-supplied authentication API, including the
+     *         API Gateway URL. Not required when <code>IdentityProviderType</code> is set to
+     *         <code>SERVICE_MANAGED</code>.
      */
 
     public IdentityProviderDetails getIdentityProviderDetails() {
@@ -367,17 +444,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts
-     * an array containing all of the information required to call a customer-supplied authentication API, including the
-     * API Gateway URL. This property is not required when the <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
+     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
+     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
-     *        This parameter is required when the <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>.
-     *        Accepts an array containing all of the information required to call a customer-supplied authentication
-     *        API, including the API Gateway URL. This property is not required when the
-     *        <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     *        Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array
+     *        containing all of the information required to call a customer-supplied authentication API, including the
+     *        API Gateway URL. Not required when <code>IdentityProviderType</code> is set to
+     *        <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,19 +464,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for the SFTP server. The default value is <code>SERVICE_MANAGED</code>,
-     * which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
+     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     * authentication using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for the SFTP server. The default value is
-     *        <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the AWS
-     *        Transfer for SFTP service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider
-     *        of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL
-     *        to call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     *        <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
+     *        Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
+     *        your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
+     *        call for authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -410,18 +486,18 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for the SFTP server. The default value is <code>SERVICE_MANAGED</code>,
-     * which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
+     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     * authentication using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
-     * @return Specifies the mode of authentication for the SFTP server. The default value is
-     *         <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the AWS
-     *         Transfer for SFTP service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider
-     *         of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint
-     *         URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     * @return Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     *         <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
+     *         Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
+     *         your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL
+     *         to call for authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -431,19 +507,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for the SFTP server. The default value is <code>SERVICE_MANAGED</code>,
-     * which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
+     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     * authentication using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for the SFTP server. The default value is
-     *        <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the AWS
-     *        Transfer for SFTP service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider
-     *        of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL
-     *        to call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     *        <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
+     *        Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
+     *        your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
+     *        call for authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -455,19 +531,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the mode of authentication for the SFTP server. The default value is <code>SERVICE_MANAGED</code>,
-     * which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
-     * using the <code>IdentityProviderDetails</code> parameter.
+     * Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS Transfer
+     * Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     * The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     * authentication using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @param identityProviderType
-     *        Specifies the mode of authentication for the SFTP server. The default value is
-     *        <code>SERVICE_MANAGED</code>, which allows you to store and access SFTP user credentials within the AWS
-     *        Transfer for SFTP service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider
-     *        of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL
-     *        to call for authentication using the <code>IdentityProviderDetails</code> parameter.
+     *        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is
+     *        <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the AWS
+     *        Transfer Family service. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of
+     *        your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
+     *        call for authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -479,13 +555,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
-     * and auditing purposes.
+     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
+     * purposes.
      * </p>
      * 
      * @param loggingRole
-     *        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for
-     *        monitoring and auditing purposes.
+     *        Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and
+     *        auditing purposes.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -494,12 +570,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
-     * and auditing purposes.
+     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
+     * purposes.
      * </p>
      * 
-     * @return A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for
-     *         monitoring and auditing purposes.
+     * @return Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and
+     *         auditing purposes.
      */
 
     public String getLoggingRole() {
@@ -508,13 +584,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring
-     * and auditing purposes.
+     * Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing
+     * purposes.
      * </p>
      * 
      * @param loggingRole
-     *        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for
-     *        monitoring and auditing purposes.
+     *        Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and
+     *        auditing purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,10 +601,283 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for servers.
+     * Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to
+     * your server's endpoint. The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the file transfer protocol or protocols over which your file transfer protocol client can
+     *         connect to your server's endpoint. The available protocols are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         File Transfer Protocol (FTP): Unencrypted file transfer
+     *         </p>
+     *         </li>
+     * @see Protocol
+     */
+
+    public java.util.List<String> getProtocols() {
+        return protocols;
+    }
+
+    /**
+     * <p>
+     * Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to
+     * your server's endpoint. The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocols
+     *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
+     *        connect to your server's endpoint. The available protocols are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        </p>
+     *        </li>
+     * @see Protocol
+     */
+
+    public void setProtocols(java.util.Collection<String> protocols) {
+        if (protocols == null) {
+            this.protocols = null;
+            return;
+        }
+
+        this.protocols = new java.util.ArrayList<String>(protocols);
+    }
+
+    /**
+     * <p>
+     * Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to
+     * your server's endpoint. The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @return Key-value pairs that can be used to group and search for servers.
+     * @param protocols
+     *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
+     *        connect to your server's endpoint. The available protocols are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateServerRequest withProtocols(String... protocols) {
+        if (this.protocols == null) {
+            setProtocols(new java.util.ArrayList<String>(protocols.length));
+        }
+        for (String ele : protocols) {
+            this.protocols.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to
+     * your server's endpoint. The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocols
+     *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
+     *        connect to your server's endpoint. The available protocols are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateServerRequest withProtocols(java.util.Collection<String> protocols) {
+        setProtocols(protocols);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to
+     * your server's endpoint. The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocols
+     *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
+     *        connect to your server's endpoint. The available protocols are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateServerRequest withProtocols(Protocol... protocols) {
+        java.util.ArrayList<String> protocolsCopy = new java.util.ArrayList<String>(protocols.length);
+        for (Protocol value : protocols) {
+            protocolsCopy.add(value.toString());
+        }
+        if (getProtocols() == null) {
+            setProtocols(protocolsCopy);
+        } else {
+            getProtocols().addAll(protocolsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @return Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      */
 
     public java.util.List<Tag> getTags() {
@@ -537,11 +886,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for servers.
+     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs that can be used to group and search for servers.
+     *        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -555,7 +904,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for servers.
+     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -564,7 +913,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tags
-     *        Key-value pairs that can be used to group and search for servers.
+     *        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,11 +929,11 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs that can be used to group and search for servers.
+     * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      * </p>
      * 
      * @param tags
-     *        Key-value pairs that can be used to group and search for servers.
+     *        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,6 +954,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCertificate() != null)
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getEndpointDetails() != null)
             sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
         if (getEndpointType() != null)
@@ -617,6 +968,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("IdentityProviderType: ").append(getIdentityProviderType()).append(",");
         if (getLoggingRole() != null)
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
+        if (getProtocols() != null)
+            sb.append("Protocols: ").append(getProtocols()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -633,6 +986,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof CreateServerRequest == false)
             return false;
         CreateServerRequest other = (CreateServerRequest) obj;
+        if (other.getCertificate() == null ^ this.getCertificate() == null)
+            return false;
+        if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
         if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
             return false;
         if (other.getEndpointDetails() != null && other.getEndpointDetails().equals(this.getEndpointDetails()) == false)
@@ -657,6 +1014,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getLoggingRole() != null && other.getLoggingRole().equals(this.getLoggingRole()) == false)
             return false;
+        if (other.getProtocols() == null ^ this.getProtocols() == null)
+            return false;
+        if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -669,12 +1030,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getHostKey() == null) ? 0 : getHostKey().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
+        hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

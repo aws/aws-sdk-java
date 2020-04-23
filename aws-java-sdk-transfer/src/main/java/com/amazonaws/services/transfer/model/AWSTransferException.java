@@ -15,7 +15,7 @@ package com.amazonaws.services.transfer.model;
 import javax.annotation.Generated;
 
 /**
- * Base exception for all service exceptions thrown by AWS Transfer for SFTP
+ * Base exception for all service exceptions thrown by AWS Transfer Family
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSTransferException extends com.amazonaws.AmazonServiceException {

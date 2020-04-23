@@ -117,7 +117,7 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
     private String requestId;
     /**
      * <p>
-     * One or more custom user attributes that describe the user who's associated with the endpoint.
+     * One or more custom attributes that describe the user who's associated with the endpoint.
      * </p>
      */
     private EndpointUser user;
@@ -776,11 +776,11 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * One or more custom user attributes that describe the user who's associated with the endpoint.
+     * One or more custom attributes that describe the user who's associated with the endpoint.
      * </p>
      * 
      * @param user
-     *        One or more custom user attributes that describe the user who's associated with the endpoint.
+     *        One or more custom attributes that describe the user who's associated with the endpoint.
      */
 
     public void setUser(EndpointUser user) {
@@ -789,10 +789,10 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * One or more custom user attributes that describe the user who's associated with the endpoint.
+     * One or more custom attributes that describe the user who's associated with the endpoint.
      * </p>
      * 
-     * @return One or more custom user attributes that describe the user who's associated with the endpoint.
+     * @return One or more custom attributes that describe the user who's associated with the endpoint.
      */
 
     public EndpointUser getUser() {
@@ -801,11 +801,11 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * One or more custom user attributes that describe the user who's associated with the endpoint.
+     * One or more custom attributes that describe the user who's associated with the endpoint.
      * </p>
      * 
      * @param user
-     *        One or more custom user attributes that describe the user who's associated with the endpoint.
+     *        One or more custom attributes that describe the user who's associated with the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

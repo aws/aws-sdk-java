@@ -45,7 +45,8 @@ public enum Regions {
     CN_NORTH_1("cn-north-1", "China (Beijing)"),
     CN_NORTHWEST_1("cn-northwest-1", "China (Ningxia)"),
     CA_CENTRAL_1("ca-central-1", "Canada (Central)"),
-    ME_SOUTH_1("me-south-1", "Middle East (Bahrain)")
+    ME_SOUTH_1("me-south-1", "Middle East (Bahrain)"),
+    AF_SOUTH_1("af-south-1", "Africa (Cape Town)")
     ;
 
     /**

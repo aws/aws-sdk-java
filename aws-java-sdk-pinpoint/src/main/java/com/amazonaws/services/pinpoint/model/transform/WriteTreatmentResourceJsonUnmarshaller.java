@@ -48,6 +48,10 @@ public class WriteTreatmentResourceJsonUnmarshaller implements Unmarshaller<Writ
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    context.nextToken();
+                    writeTreatmentResource.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
                     context.nextToken();
                     writeTreatmentResource.setMessageConfiguration(MessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

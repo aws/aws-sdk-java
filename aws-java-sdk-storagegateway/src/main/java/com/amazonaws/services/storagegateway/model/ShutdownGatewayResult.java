@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A JSON object containing the of the gateway that was shut down.
+ * A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway" target="_top">AWS API

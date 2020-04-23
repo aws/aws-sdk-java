@@ -37,7 +37,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
     private String applicationId;
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
      * </p>
      */
     private CampaignHook campaignHook;
@@ -49,7 +50,7 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
     private String lastModifiedDate;
     /**
      * <p>
-     * The default sending limits for campaigns in the application.
+     * The default sending limits for campaigns and journeys in the application.
      * </p>
      */
     private CampaignLimits limits;
@@ -132,12 +133,13 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
      * </p>
      * 
      * @param campaignHook
-     *        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-     *        application.
+     *        The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the
+     *        application. You can use this hook to customize segments that are used by campaigns in the application.
      */
 
     public void setCampaignHook(CampaignHook campaignHook) {
@@ -146,11 +148,12 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
      * </p>
      * 
-     * @return The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-     *         application.
+     * @return The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the
+     *         application. You can use this hook to customize segments that are used by campaigns in the application.
      */
 
     public CampaignHook getCampaignHook() {
@@ -159,12 +162,13 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
      * </p>
      * 
      * @param campaignHook
-     *        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-     *        application.
+     *        The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the
+     *        application. You can use this hook to customize segments that are used by campaigns in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +219,11 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default sending limits for campaigns in the application.
+     * The default sending limits for campaigns and journeys in the application.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns in the application.
+     *        The default sending limits for campaigns and journeys in the application.
      */
 
     public void setLimits(CampaignLimits limits) {
@@ -228,10 +232,10 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default sending limits for campaigns in the application.
+     * The default sending limits for campaigns and journeys in the application.
      * </p>
      * 
-     * @return The default sending limits for campaigns in the application.
+     * @return The default sending limits for campaigns and journeys in the application.
      */
 
     public CampaignLimits getLimits() {
@@ -240,11 +244,11 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default sending limits for campaigns in the application.
+     * The default sending limits for campaigns and journeys in the application.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns in the application.
+     *        The default sending limits for campaigns and journeys in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

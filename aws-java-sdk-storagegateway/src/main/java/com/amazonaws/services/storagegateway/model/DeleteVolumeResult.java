@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A JSON object containing the of the storage volume that was deleted
+ * A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume" target="_top">AWS API

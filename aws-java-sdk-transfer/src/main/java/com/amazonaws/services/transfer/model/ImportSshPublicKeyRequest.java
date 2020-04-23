@@ -27,7 +27,7 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      */
     private String serverId;
@@ -39,18 +39,18 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
     private String sshPublicKeyBody;
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server.
      */
 
     public void setServerId(String serverId) {
@@ -59,10 +59,10 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server.
      */
 
     public String getServerId() {
@@ -71,11 +71,11 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      * </p>
      * 
      * @param userName
-     *        The name of the user account that is assigned to one or more servers.
+     *        The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      */
 
     public void setUserName(String userName) {
@@ -139,10 +139,10 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      * </p>
      * 
-     * @return The name of the user account that is assigned to one or more servers.
+     * @return The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      */
 
     public String getUserName() {
@@ -151,11 +151,11 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      * </p>
      * 
      * @param userName
-     *        The name of the user account that is assigned to one or more servers.
+     *        The name of the user account that is assigned to one or more file transfer protocol-enabled servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

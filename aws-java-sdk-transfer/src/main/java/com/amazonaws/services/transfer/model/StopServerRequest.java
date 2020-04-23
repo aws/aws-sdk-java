@@ -27,18 +27,18 @@ public class StopServerRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you stopped.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      * </p>
      */
     private String serverId;
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you stopped.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that you stopped.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      */
 
     public void setServerId(String serverId) {
@@ -47,10 +47,10 @@ public class StopServerRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you stopped.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server that you stopped.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      */
 
     public String getServerId() {
@@ -59,11 +59,11 @@ public class StopServerRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you stopped.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that you stopped.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that you stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

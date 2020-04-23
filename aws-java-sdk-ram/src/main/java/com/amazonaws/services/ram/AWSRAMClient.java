@@ -857,6 +857,8 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
      *         The specified value for NextToken is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
+     * @throws ResourceArnNotFoundException
+     *         An Amazon Resource Name (ARN) was not found.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -989,6 +991,8 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
      *         The specified value for MaxResults is not valid.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
      * @throws InvalidNextTokenException
      *         The specified value for NextToken is not valid.
      * @throws InvalidParameterException
@@ -1382,6 +1386,67 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
 
     /**
      * <p>
+     * Lists the shareable resource types supported by AWS RAM.
+     * </p>
+     * 
+     * @param listResourceTypesRequest
+     * @return Result of the ListResourceTypes operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The specified value for NextToken is not valid.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @sample AWSRAM.ListResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListResourceTypesResult listResourceTypes(ListResourceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceTypes(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceTypesResult executeListResourceTypes(ListResourceTypesRequest listResourceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceTypesRequest> request = null;
+        Response<ListResourceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListResourceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the resources that you added to a resource shares or the resources that are shared with you.
      * </p>
      * 
@@ -1482,6 +1547,8 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
      *         The service is not available.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
      * @sample AWSRAM.PromoteResourceShareCreatedFromPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy"
      *      target="_top">AWS API Documentation</a>

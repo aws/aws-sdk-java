@@ -27,8 +27,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
-     * for a specific AWS resource, such as a server, user, or role.
+     * The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a
+     * specific AWS resource, such as a server, user, or role.
      * </p>
      */
     private String arn;
@@ -42,13 +42,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
-     * for a specific AWS resource, such as a server, user, or role.
+     * The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a
+     * specific AWS resource, such as a server, user, or role.
      * </p>
      * 
      * @param arn
-     *        This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an
-     *        identifier for a specific AWS resource, such as a server, user, or role.
+     *        The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
+     *        for a specific AWS resource, such as a server, user, or role.
      */
 
     public void setArn(String arn) {
@@ -57,12 +57,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
-     * for a specific AWS resource, such as a server, user, or role.
+     * The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a
+     * specific AWS resource, such as a server, user, or role.
      * </p>
      * 
-     * @return This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an
-     *         identifier for a specific AWS resource, such as a server, user, or role.
+     * @return The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
+     *         for a specific AWS resource, such as a server, user, or role.
      */
 
     public String getArn() {
@@ -71,13 +71,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
-     * for a specific AWS resource, such as a server, user, or role.
+     * The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a
+     * specific AWS resource, such as a server, user, or role.
      * </p>
      * 
      * @param arn
-     *        This is the value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an
-     *        identifier for a specific AWS resource, such as a server, user, or role.
+     *        The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier
+     *        for a specific AWS resource, such as a server, user, or role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

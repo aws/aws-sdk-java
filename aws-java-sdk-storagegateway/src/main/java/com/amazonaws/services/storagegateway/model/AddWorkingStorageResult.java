@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A JSON object containing the of the gateway for which working storage was configured.
+ * A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage" target="_top">AWS

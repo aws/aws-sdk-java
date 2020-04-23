@@ -27,13 +27,13 @@ import com.amazonaws.services.transfer.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Transfer for SFTP is a fully managed service that enables the transfer of files directly into and out of Amazon
- * S3 using the Secure File Transfer Protocol (SFTP)—also known as Secure Shell (SSH) File Transfer Protocol. AWS helps
- * you seamlessly migrate your file transfer workflows to AWS Transfer for SFTP—by integrating with existing
- * authentication systems, and providing DNS routing with Amazon Route 53—so nothing changes for your customers and
- * partners, or their applications. With your data in S3, you can use it with AWS services for processing, analytics,
- * machine learning, and archiving. Getting started with AWS Transfer for SFTP (AWS SFTP) is easy; there is no
- * infrastructure to buy and set up.
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
+ * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
+ * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
+ * 53 so nothing changes for your customers and partners, or their applications. With your data in Amazon S3, you can
+ * use it with AWS services for processing, analytics, machine learning, and archiving. Getting started with AWS
+ * Transfer Family is easy since there is no infrastructure to buy and set up.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,21 +49,27 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP) in AWS. When you make
-     * updates to your server or when you work with users, use the service-generated <code>ServerId</code> property that
-     * is assigned to the newly created server.
+     * Instantiates an autoscaling virtual server based on the selected file transfer protocol in AWS. When you make
+     * updates to your file transfer protocol-enabled server or when you work with users, use the service-generated
+     * <code>ServerId</code> property that is assigned to the newly created server.
      * </p>
      * 
      * @param createServerRequest
      * @return Result of the CreateServer operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceExistsException
      *         The requested resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         HTTP Status Code: 400
      * @sample AWSTransfer.CreateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer" target="_top">AWS API
      *      Documentation</a>
@@ -72,8 +78,8 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Creates a user and associates them with an existing Secure File Transfer Protocol (SFTP) server. You can only
-     * create and associate users with SFTP servers that have the <code>IdentityProviderType</code> set to
+     * Creates a user and associates them with an existing file transfer protocol-enabled server. You can only create
+     * and associate users with servers that have the <code>IdentityProviderType</code> set to
      * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you can specify the user name, set
      * the home directory, store the user's public key, and assign the user's AWS Identity and Access Management (IAM)
      * role. You can also optionally add a scope-down policy, and assign metadata with tags that can be used to group
@@ -83,15 +89,15 @@ public interface AWSTransfer {
      * @param createUserRequest
      * @return Result of the CreateUser operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceExistsException
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.CreateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateUser" target="_top">AWS API
      *      Documentation</a>
@@ -100,7 +106,7 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Deletes the Secure File Transfer Protocol (SFTP) server that you specify.
+     * Deletes the file transfer protocol-enabled server that you specify.
      * </p>
      * <p>
      * No response returns from this operation.
@@ -108,14 +114,16 @@ public interface AWSTransfer {
      * 
      * @param deleteServerRequest
      * @return Result of the DeleteServer operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.DeleteServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer" target="_top">AWS API
      *      Documentation</a>
@@ -133,13 +141,13 @@ public interface AWSTransfer {
      * @param deleteSshPublicKeyRequest
      * @return Result of the DeleteSshPublicKey operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.</p>
      *         <p>
@@ -152,7 +160,7 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Deletes the user belonging to the server you specify.
+     * Deletes the user belonging to a file transfer protocol-enabled server you specify.
      * </p>
      * <p>
      * No response returns from this operation.
@@ -166,13 +174,13 @@ public interface AWSTransfer {
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser" target="_top">AWS API
      *      Documentation</a>
@@ -181,23 +189,24 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Describes the server that you specify by passing the <code>ServerId</code> parameter.
+     * Describes a file transfer protocol-enabled server that you specify by passing the <code>ServerId</code>
+     * parameter.
      * </p>
      * <p>
-     * The response contains a description of the server's properties. When you set <code>EndpointType</code> to VPC,
-     * the response will contain the <code>EndpointDetails</code>.
+     * The response contains a description of a server's properties. When you set <code>EndpointType</code> to VPC, the
+     * response will contain the <code>EndpointDetails</code>.
      * </p>
      * 
      * @param describeServerRequest
      * @return Result of the DescribeServer operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.DescribeServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer" target="_top">AWS API
      *      Documentation</a>
@@ -206,7 +215,8 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Describes the user assigned to a specific server, as identified by its <code>ServerId</code> property.
+     * Describes the user assigned to the specific file transfer protocol-enabled server, as identified by its
+     * <code>ServerId</code> property.
      * </p>
      * <p>
      * The response from this call returns the properties of the user associated with the <code>ServerId</code> value
@@ -216,13 +226,13 @@ public interface AWSTransfer {
      * @param describeUserRequest
      * @return Result of the DescribeUser operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.DescribeUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser" target="_top">AWS API
      *      Documentation</a>
@@ -231,8 +241,8 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to a
-     * specific server, identified by <code>ServerId</code>.
+     * Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to
+     * the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.
      * </p>
      * <p>
      * The response returns the <code>UserName</code> value, the <code>ServerId</code> value, and the name of the
@@ -242,15 +252,15 @@ public interface AWSTransfer {
      * @param importSshPublicKeyRequest
      * @return Result of the ImportSshPublicKey operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceExistsException
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.</p>
      *         <p>
@@ -263,15 +273,15 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Lists the Secure File Transfer Protocol (SFTP) servers that are associated with your AWS account.
+     * Lists the file transfer protocol-enabled servers that are associated with your AWS account.
      * </p>
      * 
      * @param listServersRequest
      * @return Result of the ListServers operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
@@ -291,9 +301,9 @@ public interface AWSTransfer {
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
@@ -306,21 +316,22 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Lists the users for the server that you specify by passing the <code>ServerId</code> parameter.
+     * Lists the users for a file transfer protocol-enabled server that you specify by passing the <code>ServerId</code>
+     * parameter.
      * </p>
      * 
      * @param listUsersRequest
      * @return Result of the ListUsers operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> parameter that was passed is invalid.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.ListUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers" target="_top">AWS API
      *      Documentation</a>
@@ -329,9 +340,9 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Changes the state of a Secure File Transfer Protocol (SFTP) server from <code>OFFLINE</code> to
-     * <code>ONLINE</code>. It has no impact on an SFTP server that is already <code>ONLINE</code>. An
-     * <code>ONLINE</code> server can accept and process file transfer jobs.
+     * Changes the state of a file transfer protocol-enabled server from <code>OFFLINE</code> to <code>ONLINE</code>. It
+     * has no impact on a server that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
+     * process file transfer jobs.
      * </p>
      * <p>
      * The state of <code>STARTING</code> indicates that the server is in an intermediate state, either not fully able
@@ -344,13 +355,13 @@ public interface AWSTransfer {
      * @param startServerRequest
      * @return Result of the StartServer operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.</p>
      *         <p>
@@ -363,10 +374,10 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Changes the state of an SFTP server from <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code>
-     * server cannot accept and process file transfer jobs. Information tied to your server such as server and user
-     * properties are not affected by stopping your server. Stopping a server will not reduce or impact your Secure File
-     * Transfer Protocol (SFTP) endpoint billing.
+     * Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code> to <code>OFFLINE</code>. An
+     * <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server, such
+     * as server and user properties, are not affected by stopping your server. Stopping the server will not reduce or
+     * impact your file transfer protocol endpoint billing.
      * </p>
      * <p>
      * The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able
@@ -379,13 +390,13 @@ public interface AWSTransfer {
      * @param stopServerRequest
      * @return Result of the StopServer operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.</p>
      *         <p>
@@ -408,13 +419,13 @@ public interface AWSTransfer {
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -423,22 +434,22 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * If the <code>IdentityProviderType</code> of the server is <code>API_Gateway</code>, tests whether your API
-     * Gateway is set up successfully. We highly recommend that you call this operation to test your authentication
-     * method as soon as you create your server. By doing so, you can troubleshoot issues with the API Gateway
-     * integration to ensure that your users can successfully use the service.
+     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>API_Gateway</code>,
+     * tests whether your API Gateway is set up successfully. We highly recommend that you call this operation to test
+     * your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the
+     * API Gateway integration to ensure that your users can successfully use the service.
      * </p>
      * 
      * @param testIdentityProviderRequest
      * @return Result of the TestIdentityProvider operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.TestIdentityProvider
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider" target="_top">AWS
      *      API Documentation</a>
@@ -457,13 +468,13 @@ public interface AWSTransfer {
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @sample AWSTransfer.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -472,28 +483,30 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Updates the server properties after that server has been created.
+     * Updates the file transfer protocol-enabled server's properties after that server has been created.
      * </p>
      * <p>
-     * The <code>UpdateServer</code> call returns the <code>ServerId</code> of the Secure File Transfer Protocol (SFTP)
-     * server you updated.
+     * The <code>UpdateServer</code> call returns the <code>ServerId</code> of the server you updated.
      * </p>
      * 
      * @param updateServerRequest
      * @return Result of the UpdateServer operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws ConflictException
-     *         This exception is thrown when the <code>UpdatServer</code> is called for a server that has VPC as the
-     *         endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.
+     *         This exception is thrown when the <code>UpdatServer</code> is called for a file transfer protocol-enabled
+     *         server that has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not in the
+     *         available state.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceExistsException
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.</p>
      *         <p>
@@ -516,13 +529,13 @@ public interface AWSTransfer {
      * @param updateUserRequest
      * @return Result of the UpdateUser operation returned by the service.
      * @throws ServiceUnavailableException
-     *         The request has failed because the AWS Transfer for SFTP service is not available.
+     *         The request has failed because the AWS Transfer Family service is not available.
      * @throws InternalServiceErrorException
-     *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
      * @throws InvalidRequestException
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
-     *         This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.</p>
      *         <p>

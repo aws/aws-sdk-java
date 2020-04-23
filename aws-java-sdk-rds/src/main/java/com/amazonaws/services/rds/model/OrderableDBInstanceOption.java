@@ -55,6 +55,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private String licenseModel;
     /**
      * <p>
+     * The Availability Zone group for a DB instance.
+     * </p>
+     */
+    private String availabilityZoneGroup;
+    /**
+     * <p>
      * A list of Availability Zones for a DB instance.
      * </p>
      */
@@ -170,7 +176,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.
      * </p>
      */
     private Boolean supportsStorageAutoscaling;
@@ -338,6 +344,46 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     public OrderableDBInstanceOption withLicenseModel(String licenseModel) {
         setLicenseModel(licenseModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group for a DB instance.
+     * </p>
+     * 
+     * @param availabilityZoneGroup
+     *        The Availability Zone group for a DB instance.
+     */
+
+    public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
+        this.availabilityZoneGroup = availabilityZoneGroup;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group for a DB instance.
+     * </p>
+     * 
+     * @return The Availability Zone group for a DB instance.
+     */
+
+    public String getAvailabilityZoneGroup() {
+        return this.availabilityZoneGroup;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group for a DB instance.
+     * </p>
+     * 
+     * @param availabilityZoneGroup
+     *        The Availability Zone group for a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withAvailabilityZoneGroup(String availabilityZoneGroup) {
+        setAvailabilityZoneGroup(availabilityZoneGroup);
         return this;
     }
 
@@ -1306,11 +1352,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.
      * </p>
      * 
      * @param supportsStorageAutoscaling
-     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance
+     *        Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance
      *        class.
      */
 
@@ -1320,11 +1366,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.
      * </p>
      * 
-     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified
-     *         instance class.
+     * @return Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance
+     *         class.
      */
 
     public Boolean getSupportsStorageAutoscaling() {
@@ -1333,11 +1379,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.
      * </p>
      * 
      * @param supportsStorageAutoscaling
-     *        Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance
+     *        Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance
      *        class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1349,11 +1395,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified instance class.
+     * Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.
      * </p>
      * 
-     * @return Whether or not Amazon RDS can automatically scale storage for DB instances that use the specified
-     *         instance class.
+     * @return Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance
+     *         class.
      */
 
     public Boolean isSupportsStorageAutoscaling() {
@@ -1432,6 +1478,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             sb.append("DBInstanceClass: ").append(getDBInstanceClass()).append(",");
         if (getLicenseModel() != null)
             sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
+        if (getAvailabilityZoneGroup() != null)
+            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
         if (getAvailabilityZones() != null)
             sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getMultiAZCapable() != null)
@@ -1501,6 +1549,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
+            return false;
+        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null)
+            return false;
+        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false)
             return false;
         if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
             return false;
@@ -1596,6 +1648,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getMultiAZCapable() == null) ? 0 : getMultiAZCapable().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaCapable() == null) ? 0 : getReadReplicaCapable().hashCode());

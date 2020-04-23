@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when a resource is not found by the AWS Transfer for SFTP service.
+ * This exception is thrown when a resource is not found by the AWS Transfer Family service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

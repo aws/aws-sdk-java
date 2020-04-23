@@ -37,6 +37,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     private java.util.List<WriteTreatmentResource> additionalTreatments;
     /**
      * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel. This object is required if
+     * the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     * </p>
+     */
+    private CustomDeliveryConfiguration customDeliveryConfiguration;
+    /**
+     * <p>
      * A custom description of the campaign.
      * </p>
      */
@@ -49,14 +56,15 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     private Integer holdoutPercent;
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      */
     private CampaignHook hook;
     /**
      * <p>
-     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value
-     * to false.
+     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
      * </p>
      */
     private Boolean isPaused;
@@ -111,13 +119,14 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
-     * A custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of the default treatment for the campaign.
      * </p>
      */
     private String treatmentDescription;
     /**
      * <p>
-     * A custom name for a variation of the campaign to use for A/B testing.
+     * A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      */
     private String treatmentName;
@@ -197,6 +206,52 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     public WriteCampaignRequest withAdditionalTreatments(java.util.Collection<WriteTreatmentResource> additionalTreatments) {
         setAdditionalTreatments(additionalTreatments);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel. This object is required if
+     * the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     * </p>
+     * 
+     * @param customDeliveryConfiguration
+     *        The delivery configuration settings for sending the campaign through a custom channel. This object is
+     *        required if the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     */
+
+    public void setCustomDeliveryConfiguration(CustomDeliveryConfiguration customDeliveryConfiguration) {
+        this.customDeliveryConfiguration = customDeliveryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel. This object is required if
+     * the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     * </p>
+     * 
+     * @return The delivery configuration settings for sending the campaign through a custom channel. This object is
+     *         required if the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     */
+
+    public CustomDeliveryConfiguration getCustomDeliveryConfiguration() {
+        return this.customDeliveryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel. This object is required if
+     * the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     * </p>
+     * 
+     * @param customDeliveryConfiguration
+     *        The delivery configuration settings for sending the campaign through a custom channel. This object is
+     *        required if the MessageConfiguration object for the campaign specifies a CustomMessage object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteCampaignRequest withCustomDeliveryConfiguration(CustomDeliveryConfiguration customDeliveryConfiguration) {
+        setCustomDeliveryConfiguration(customDeliveryConfiguration);
         return this;
     }
 
@@ -282,11 +337,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      * 
      * @param hook
-     *        The settings for the AWS Lambda function to use as a code hook for the campaign.
+     *        The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook
+     *        to customize the segment that's used by the campaign.
      */
 
     public void setHook(CampaignHook hook) {
@@ -295,10 +352,12 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      * 
-     * @return The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * @return The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook
+     *         to customize the segment that's used by the campaign.
      */
 
     public CampaignHook getHook() {
@@ -307,11 +366,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      * 
      * @param hook
-     *        The settings for the AWS Lambda function to use as a code hook for the campaign.
+     *        The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook
+     *        to customize the segment that's used by the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,12 +383,12 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value
-     * to false.
+     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
      * </p>
      * 
      * @param isPaused
-     *        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting
+     *        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing
      *        this value to false.
      */
 
@@ -337,11 +398,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value
-     * to false.
+     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
      * </p>
      * 
-     * @return Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting
+     * @return Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing
      *         this value to false.
      */
 
@@ -351,12 +412,12 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value
-     * to false.
+     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
      * </p>
      * 
      * @param isPaused
-     *        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting
+     *        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing
      *        this value to false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -368,11 +429,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value
-     * to false.
+     * Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this
+     * value to false.
      * </p>
      * 
-     * @return Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting
+     * @return Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing
      *         this value to false.
      */
 
@@ -736,11 +797,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of the default treatment for the campaign.
      * </p>
      * 
      * @param treatmentDescription
-     *        A custom description of a variation of the campaign to use for A/B testing.
+     *        A custom description of the default treatment for the campaign.
      */
 
     public void setTreatmentDescription(String treatmentDescription) {
@@ -749,10 +810,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of the default treatment for the campaign.
      * </p>
      * 
-     * @return A custom description of a variation of the campaign to use for A/B testing.
+     * @return A custom description of the default treatment for the campaign.
      */
 
     public String getTreatmentDescription() {
@@ -761,11 +822,11 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A custom description of a variation of the campaign to use for A/B testing.
+     * A custom description of the default treatment for the campaign.
      * </p>
      * 
      * @param treatmentDescription
-     *        A custom description of a variation of the campaign to use for A/B testing.
+     *        A custom description of the default treatment for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -776,11 +837,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A custom name for a variation of the campaign to use for A/B testing.
+     * A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      * 
      * @param treatmentName
-     *        A custom name for a variation of the campaign to use for A/B testing.
+     *        A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     *        <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      */
 
     public void setTreatmentName(String treatmentName) {
@@ -789,10 +852,12 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A custom name for a variation of the campaign to use for A/B testing.
+     * A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      * 
-     * @return A custom name for a variation of the campaign to use for A/B testing.
+     * @return A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     *         <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      */
 
     public String getTreatmentName() {
@@ -801,11 +866,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A custom name for a variation of the campaign to use for A/B testing.
+     * A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      * 
      * @param treatmentName
-     *        A custom name for a variation of the campaign to use for A/B testing.
+     *        A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     *        <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -828,6 +895,8 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getAdditionalTreatments() != null)
             sb.append("AdditionalTreatments: ").append(getAdditionalTreatments()).append(",");
+        if (getCustomDeliveryConfiguration() != null)
+            sb.append("CustomDeliveryConfiguration: ").append(getCustomDeliveryConfiguration()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getHoldoutPercent() != null)
@@ -873,6 +942,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         if (other.getAdditionalTreatments() == null ^ this.getAdditionalTreatments() == null)
             return false;
         if (other.getAdditionalTreatments() != null && other.getAdditionalTreatments().equals(this.getAdditionalTreatments()) == false)
+            return false;
+        if (other.getCustomDeliveryConfiguration() == null ^ this.getCustomDeliveryConfiguration() == null)
+            return false;
+        if (other.getCustomDeliveryConfiguration() != null && other.getCustomDeliveryConfiguration().equals(this.getCustomDeliveryConfiguration()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -939,6 +1012,7 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdditionalTreatments() == null) ? 0 : getAdditionalTreatments().hashCode());
+        hashCode = prime * hashCode + ((getCustomDeliveryConfiguration() == null) ? 0 : getCustomDeliveryConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHoldoutPercent() == null) ? 0 : getHoldoutPercent().hashCode());
         hashCode = prime * hashCode + ((getHook() == null) ? 0 : getHook().hashCode());

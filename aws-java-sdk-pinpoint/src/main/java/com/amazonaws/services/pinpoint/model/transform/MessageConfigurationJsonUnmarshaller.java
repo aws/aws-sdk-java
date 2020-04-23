@@ -60,6 +60,10 @@ public class MessageConfigurationJsonUnmarshaller implements Unmarshaller<Messag
                     context.nextToken();
                     messageConfiguration.setBaiduMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setCustomMessage(CampaignCustomMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DefaultMessage", targetDepth)) {
                     context.nextToken();
                     messageConfiguration.setDefaultMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));

@@ -53,10 +53,80 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out action that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer scaleOutCooldown;
     /**
@@ -69,14 +139,84 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * policy during the cooldown period after a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer scaleInCooldown;
     /**
      * <p>
      * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
-     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable resource.
+     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target.
      * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
-     * resource. The default value is <code>false</code>.
+     * target. The default value is <code>false</code>.
      * </p>
      */
     private Boolean disableScaleIn;
@@ -212,18 +352,158 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out action that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scaleOutCooldown
      *        The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can
      *        start.</p>
      *        <p>
-     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
+     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out action
      *        that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
      *        intention is to continuously (but not excessively) scale out.
+     *        </p>
+     *        <p>
+     *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleet requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For all other scalable targets, the default value is 0:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DynamoDB tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary indexes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
      */
 
     public void setScaleOutCooldown(Integer scaleOutCooldown) {
@@ -235,17 +515,157 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out action that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The amount of time, in seconds, after a scale-out activity completes before another scale-out activity
      *         can start.</p>
      *         <p>
-     *         While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
+     *         While the cooldown period is in effect, the capacity that has been added by the previous scale-out action
      *         that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
      *         intention is to continuously (but not excessively) scale out.
+     *         </p>
+     *         <p>
+     *         Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ECS services
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot Fleet requests
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AppStream 2.0 fleets
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora DB clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Custom resources
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all other scalable targets, the default value is 0:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DynamoDB tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary indexes
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Comprehend document classification endpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
      */
 
     public Integer getScaleOutCooldown() {
@@ -257,18 +677,158 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out action that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scaleOutCooldown
      *        The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can
      *        start.</p>
      *        <p>
-     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
+     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out action
      *        that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
      *        intention is to continuously (but not excessively) scale out.
+     *        </p>
+     *        <p>
+     *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleet requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For all other scalable targets, the default value is 0:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DynamoDB tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary indexes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,6 +847,76 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * policy during the cooldown period after a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale-in activity completes before another scale in activity can
@@ -296,6 +926,76 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        to scale in conservatively to protect your application's availability. However, if another alarm triggers
      *        a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      *        scalable target immediately.
+     *        </p>
+     *        <p>
+     *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleet requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For all other scalable targets, the default value is 0:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DynamoDB tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary indexes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
      */
 
     public void setScaleInCooldown(Integer scaleInCooldown) {
@@ -312,6 +1012,76 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * policy during the cooldown period after a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The amount of time, in seconds, after a scale-in activity completes before another scale in activity can
      *         start.</p>
@@ -320,6 +1090,76 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         to scale in conservatively to protect your application's availability. However, if another alarm triggers
      *         a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      *         scalable target immediately.
+     *         </p>
+     *         <p>
+     *         Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ECS services
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot Fleet requests
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AppStream 2.0 fleets
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora DB clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Custom resources
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all other scalable targets, the default value is 0:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DynamoDB tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary indexes
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Comprehend document classification endpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
      */
 
     public Integer getScaleInCooldown() {
@@ -336,6 +1176,76 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * policy during the cooldown period after a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale-in activity completes before another scale in activity can
@@ -345,6 +1255,76 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        to scale in conservatively to protect your application's availability. However, if another alarm triggers
      *        a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      *        scalable target immediately.
+     *        </p>
+     *        <p>
+     *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleet requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For all other scalable targets, the default value is 0:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DynamoDB tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary indexes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,16 +1336,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
-     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable resource.
+     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target.
      * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
-     * resource. The default value is <code>false</code>.
+     * target. The default value is <code>false</code>.
      * </p>
      * 
      * @param disableScaleIn
      *        Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
      *        <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from
-     *        the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove
-     *        capacity from the scalable resource. The default value is <code>false</code>.
+     *        the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove
+     *        capacity from the scalable target. The default value is <code>false</code>.
      */
 
     public void setDisableScaleIn(Boolean disableScaleIn) {
@@ -375,15 +1355,15 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
-     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable resource.
+     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target.
      * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
-     * resource. The default value is <code>false</code>.
+     * target. The default value is <code>false</code>.
      * </p>
      * 
      * @return Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
      *         <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from
-     *         the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove
-     *         capacity from the scalable resource. The default value is <code>false</code>.
+     *         the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove
+     *         capacity from the scalable target. The default value is <code>false</code>.
      */
 
     public Boolean getDisableScaleIn() {
@@ -393,16 +1373,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
-     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable resource.
+     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target.
      * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
-     * resource. The default value is <code>false</code>.
+     * target. The default value is <code>false</code>.
      * </p>
      * 
      * @param disableScaleIn
      *        Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
      *        <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from
-     *        the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove
-     *        capacity from the scalable resource. The default value is <code>false</code>.
+     *        the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove
+     *        capacity from the scalable target. The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -414,15 +1394,15 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
-     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable resource.
+     * scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target.
      * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
-     * resource. The default value is <code>false</code>.
+     * target. The default value is <code>false</code>.
      * </p>
      * 
      * @return Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
      *         <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from
-     *         the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can remove
-     *         capacity from the scalable resource. The default value is <code>false</code>.
+     *         the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove
+     *         capacity from the scalable target. The default value is <code>false</code>.
      */
 
     public Boolean isDisableScaleIn() {

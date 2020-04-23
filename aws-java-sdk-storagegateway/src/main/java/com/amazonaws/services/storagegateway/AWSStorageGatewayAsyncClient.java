@@ -34,7 +34,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to
  * provide seamless and secure integration between an organization's on-premises IT environment and the AWS storage
- * infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid
+ * infrastructure. The service enables you to securely upload data to the AWS Cloud for cost effective backup and rapid
  * disaster recovery.
  * </p>
  * <p>
@@ -865,6 +865,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeCreateTapes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutomaticTapeCreationPolicyResult> deleteAutomaticTapeCreationPolicyAsync(
+            DeleteAutomaticTapeCreationPolicyRequest request) {
+
+        return deleteAutomaticTapeCreationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAutomaticTapeCreationPolicyResult> deleteAutomaticTapeCreationPolicyAsync(
+            final DeleteAutomaticTapeCreationPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAutomaticTapeCreationPolicyRequest, DeleteAutomaticTapeCreationPolicyResult> asyncHandler) {
+        final DeleteAutomaticTapeCreationPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAutomaticTapeCreationPolicyResult>() {
+            @Override
+            public DeleteAutomaticTapeCreationPolicyResult call() throws Exception {
+                DeleteAutomaticTapeCreationPolicyResult result = null;
+
+                try {
+                    result = executeDeleteAutomaticTapeCreationPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1863,6 +1898,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutomaticTapeCreationPoliciesResult> listAutomaticTapeCreationPoliciesAsync(
+            ListAutomaticTapeCreationPoliciesRequest request) {
+
+        return listAutomaticTapeCreationPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutomaticTapeCreationPoliciesResult> listAutomaticTapeCreationPoliciesAsync(
+            final ListAutomaticTapeCreationPoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAutomaticTapeCreationPoliciesRequest, ListAutomaticTapeCreationPoliciesResult> asyncHandler) {
+        final ListAutomaticTapeCreationPoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAutomaticTapeCreationPoliciesResult>() {
+            @Override
+            public ListAutomaticTapeCreationPoliciesResult call() throws Exception {
+                ListAutomaticTapeCreationPoliciesResult result = null;
+
+                try {
+                    result = executeListAutomaticTapeCreationPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest request) {
 
         return listFileSharesAsync(request, null);
@@ -2543,6 +2613,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeStartGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomaticTapeCreationPolicyResult> updateAutomaticTapeCreationPolicyAsync(
+            UpdateAutomaticTapeCreationPolicyRequest request) {
+
+        return updateAutomaticTapeCreationPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomaticTapeCreationPolicyResult> updateAutomaticTapeCreationPolicyAsync(
+            final UpdateAutomaticTapeCreationPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAutomaticTapeCreationPolicyRequest, UpdateAutomaticTapeCreationPolicyResult> asyncHandler) {
+        final UpdateAutomaticTapeCreationPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAutomaticTapeCreationPolicyResult>() {
+            @Override
+            public UpdateAutomaticTapeCreationPolicyResult call() throws Exception {
+                UpdateAutomaticTapeCreationPolicyResult result = null;
+
+                try {
+                    result = executeUpdateAutomaticTapeCreationPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

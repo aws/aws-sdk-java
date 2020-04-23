@@ -52,6 +52,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Certificate", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EndpointDetails", targetDepth)) {
                     context.nextToken();
                     describedServer.setEndpointDetails(EndpointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -75,6 +79,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                 if (context.testExpression("LoggingRole", targetDepth)) {
                     context.nextToken();
                     describedServer.setLoggingRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Protocols", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
                     context.nextToken();

@@ -25,7 +25,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is the ARN you specified to list the tags of.
+     * The ARN you specified to list the tags of.
      * </p>
      */
     private String arn;
@@ -47,11 +47,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is the ARN you specified to list the tags of.
+     * The ARN you specified to list the tags of.
      * </p>
      * 
      * @param arn
-     *        This value is the ARN you specified to list the tags of.
+     *        The ARN you specified to list the tags of.
      */
 
     public void setArn(String arn) {
@@ -60,10 +60,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is the ARN you specified to list the tags of.
+     * The ARN you specified to list the tags of.
      * </p>
      * 
-     * @return This value is the ARN you specified to list the tags of.
+     * @return The ARN you specified to list the tags of.
      */
 
     public String getArn() {
@@ -72,11 +72,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * This value is the ARN you specified to list the tags of.
+     * The ARN you specified to list the tags of.
      * </p>
      * 
      * @param arn
-     *        This value is the ARN you specified to list the tags of.
+     *        The ARN you specified to list the tags of.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

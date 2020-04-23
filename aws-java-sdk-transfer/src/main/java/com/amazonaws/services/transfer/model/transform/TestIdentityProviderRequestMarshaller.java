@@ -33,6 +33,8 @@ public class TestIdentityProviderRequestMarshaller {
             .marshallLocationName("UserName").build();
     private static final MarshallingInfo<String> USERPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPassword").build();
+    private static final MarshallingInfo<String> SERVERPROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerProtocol").build();
 
     private static final TestIdentityProviderRequestMarshaller instance = new TestIdentityProviderRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class TestIdentityProviderRequestMarshaller {
             protocolMarshaller.marshall(testIdentityProviderRequest.getServerId(), SERVERID_BINDING);
             protocolMarshaller.marshall(testIdentityProviderRequest.getUserName(), USERNAME_BINDING);
             protocolMarshaller.marshall(testIdentityProviderRequest.getUserPassword(), USERPASSWORD_BINDING);
+            protocolMarshaller.marshall(testIdentityProviderRequest.getServerProtocol(), SERVERPROTOCOL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

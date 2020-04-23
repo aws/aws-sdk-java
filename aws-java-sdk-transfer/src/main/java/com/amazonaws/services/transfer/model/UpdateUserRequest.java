@@ -27,46 +27,47 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client.
+     * Specifies the landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
+     * using their file transfer protocol client.
      * </p>
      * <p>
-     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      */
     private String homeDirectory;
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
-     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
+     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
+     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     * your users.
      * </p>
      */
     private String homeDirectoryType;
     /**
      * <p>
-     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
-     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
-     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
-     * access to paths in <code>Target</code>. The following is an example.
+     * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
+     * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
      * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
-     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
-     * call instead of s3 so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a / for it to be considered a folder.
+     * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
+     * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+     * sure that the end of the key name ends in a / for it to be considered a folder.
      * </p>
      * </note>
      */
@@ -80,16 +81,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
      * </p>
      * <p>
-     * For an example of a scope-down policy, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
-     * Scope-Down Policy.
+     * For an example of a scope-down policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
+     * Scope-Down Policy</a>.
      * </p>
      * <p>
-     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
      * Security Token Service API Reference</i>.
      * </p>
      * </note>
@@ -97,43 +99,44 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String policy;
     /**
      * <p>
-     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
+     * protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
+     * assigned to.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
-     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
-     * and hyphen. The user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     * specified by the <code>ServerId</code>. This is the string that will be used by your user when they log in to
+     * your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     * characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client.
+     * Specifies the landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
+     * using their file transfer protocol client.
      * </p>
      * <p>
-     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      * 
      * @param homeDirectory
-     *        A parameter that specifies the landing directory (folder) for a user when they log in to the server using
-     *        their client. </p>
+     *        Specifies the landing directory (folder) for a user when they log in to the file transfer protocol-enabled
+     *        server using their file transfer protocol client.</p>
      *        <p>
-     *        An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *        An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -142,17 +145,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client.
+     * Specifies the landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
+     * using their file transfer protocol client.
      * </p>
      * <p>
-     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      * 
-     * @return A parameter that specifies the landing directory (folder) for a user when they log in to the server using
-     *         their client. </p>
+     * @return Specifies the landing directory (folder) for a user when they log in to the file transfer
+     *         protocol-enabled server using their file transfer protocol client.</p>
      *         <p>
-     *         An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *         An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      */
 
     public String getHomeDirectory() {
@@ -161,18 +164,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
-     * client.
+     * Specifies the landing directory (folder) for a user when they log in to the file transfer protocol-enabled server
+     * using their file transfer protocol client.
      * </p>
      * <p>
-     * An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * </p>
      * 
      * @param homeDirectory
-     *        A parameter that specifies the landing directory (folder) for a user when they log in to the server using
-     *        their client. </p>
+     *        Specifies the landing directory (folder) for a user when they log in to the file transfer protocol-enabled
+     *        server using their file transfer protocol client.</p>
      *        <p>
-     *        An example is <code>&lt;your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *        An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,17 +186,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
-     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
+     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
+     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     * your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *        is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *        Amazon S3 paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -203,16 +208,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
-     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
+     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
+     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     * your users.
      * </p>
      * 
      * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *         SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *         is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *         <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *         file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *         Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *         you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *         Amazon S3 paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -222,17 +229,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
-     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
+     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
+     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     * your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *        is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *        Amazon S3 paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -244,17 +253,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of landing directory (folder) you want your users' home directory to be when they log into the SFTP
-     * serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the file
+     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
+     * bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     * provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
+     * your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        SFTP serve. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *        is in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *        Amazon S3 paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -266,50 +277,52 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
-     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
-     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
-     * access to paths in <code>Target</code>. The following is an example.
+     * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
+     * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
      * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
-     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
-     * call instead of s3 so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a / for it to be considered a folder.
+     * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
+     * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+     * sure that the end of the key name ends in a / for it to be considered a folder.
      * </p>
      * </note>
      * 
-     * @return Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
-     *         want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
-     *         pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual
-     *         S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that
-     *         your AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     * @return Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and
+     *         how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *         <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
+     *         <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *         is. You will need to also make sure that your AWS IAM Role provides access to paths in
+     *         <code>Target</code>. The following is an example.</p>
      *         <p>
      *         <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *         </p>
      *         <p>
-     *         In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *         In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *         designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *         <code>Target</code> to the HomeDirectory parameter value.
      *         </p>
      *         <note>
      *         <p>
-     *         If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
-     *         workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
-     *         the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
-     *         the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure
-     *         that the end of the key name ends in a / for it to be considered a folder.
+     *         If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     *         workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     *         If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the
+     *         put-object operation. For example, you use the following:
+     *         <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of
+     *         the key name ends in a / for it to be considered a folder.
      *         </p>
      */
 
@@ -319,51 +332,53 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
-     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
-     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
-     * access to paths in <code>Target</code>. The following is an example.
+     * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
+     * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
      * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
-     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
-     * call instead of s3 so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a / for it to be considered a folder.
+     * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
+     * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+     * sure that the end of the key name ends in a / for it to be considered a folder.
      * </p>
      * </note>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
-     *        want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
-     *        pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3
-     *        path. If you only specify a target, it will be displayed as is. You will need to also make sure that your
-     *        AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *        Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and
+     *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
+     *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
+     *        . The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
      *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      *        </p>
      *        <note>
      *        <p>
-     *        If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
-     *        workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
-     *        the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
-     *        the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
-     *        the end of the key name ends in a / for it to be considered a folder.
+     *        If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     *        workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If
+     *        using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object
+     *        operation. For example, you use the following:
+     *        <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the
+     *        key name ends in a / for it to be considered a folder.
      *        </p>
      */
 
@@ -378,27 +393,27 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
-     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
-     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
-     * access to paths in <code>Target</code>. The following is an example.
+     * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
+     * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
      * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
-     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
-     * call instead of s3 so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a / for it to be considered a folder.
+     * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
+     * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+     * sure that the end of the key name ends in a / for it to be considered a folder.
      * </p>
      * </note>
      * <p>
@@ -408,26 +423,28 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
-     *        want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
-     *        pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3
-     *        path. If you only specify a target, it will be displayed as is. You will need to also make sure that your
-     *        AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *        Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and
+     *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
+     *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
+     *        . The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
      *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      *        </p>
      *        <note>
      *        <p>
-     *        If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
-     *        workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
-     *        the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
-     *        the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
-     *        the end of the key name ends in a / for it to be considered a folder.
+     *        If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     *        workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If
+     *        using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object
+     *        operation. For example, you use the following:
+     *        <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the
+     *        key name ends in a / for it to be considered a folder.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -444,51 +461,53 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to
-     * make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair, where
-     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role provides
-     * access to paths in <code>Target</code>. The following is an example.
+     * Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and how you
+     * want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
+     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 path.
+     * If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
+     * provides access to paths in <code>Target</code>. The following is an example.
      * </p>
      * <p>
      * <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * <note>
      * <p>
-     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
-     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
-     * call instead of s3 so you can use the put-object operation. For example, you use the following:
-     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
-     * name ends in a / for it to be considered a folder.
+     * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
+     * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+     * sure that the end of the key name ends in a / for it to be considered a folder.
      * </p>
      * </note>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
-     *        want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
-     *        pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3
-     *        path. If you only specify a target, it will be displayed as is. You will need to also make sure that your
-     *        AWS IAM Role provides access to paths in <code>Target</code>. The following is an example.</p>
+     *        Logical directory mappings that specify what Amazon S3 paths and keys should be visible to your user and
+     *        how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
+     *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
+     *        . The following is an example.</p>
      *        <p>
      *        <code>'[ "/bucket2/documentation", { "Entry": "your-personal-report.pdf", "Target": "/bucket3/customized-reports/${transfer:UserName}.pdf" } ]'</code>
      *        </p>
      *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      *        </p>
      *        <note>
      *        <p>
-     *        If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
-     *        workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
-     *        the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
-     *        the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
-     *        the end of the key name ends in a / for it to be considered a folder.
+     *        If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
+     *        workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If
+     *        using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object
+     *        operation. For example, you use the following:
+     *        <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the
+     *        key name ends in a / for it to be considered a folder.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -507,16 +526,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
      * </p>
      * <p>
-     * For an example of a scope-down policy, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
-     * Scope-Down Policy.
+     * For an example of a scope-down policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
+     * Scope-Down Policy</a>.
      * </p>
      * <p>
-     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
      * Security Token Service API Reference</i>.
      * </p>
      * </note>
@@ -527,17 +547,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
      *        <p>
-     *        For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      *        <code>Policy</code> argument.
      *        </p>
      *        <p>
-     *        For an example of a scope-down policy, see
-     *        "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
-     *        Scope-Down Policy.
+     *        For an example of a scope-down policy, see <a
+     *        href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
+     *        a Scope-Down Policy</a>.
      *        </p>
      *        <p>
-     *        For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the
      *        <i>AWS Security Token Service API Reference</i>.
      *        </p>
      */
@@ -555,16 +576,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
      * </p>
      * <p>
-     * For an example of a scope-down policy, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
-     * Scope-Down Policy.
+     * For an example of a scope-down policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
+     * Scope-Down Policy</a>.
      * </p>
      * <p>
-     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
      * Security Token Service API Reference</i>.
      * </p>
      * </note>
@@ -574,18 +596,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      *         <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
      *         <p>
-     *         For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     *         For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *         Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      *         <code>Policy</code> argument.
      *         </p>
      *         <p>
-     *         For an example of a scope-down policy, see
-     *         "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
-     *         a Scope-Down Policy.
+     *         For an example of a scope-down policy, see <a
+     *         href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"
+     *         >Creating a Scope-Down Policy</a>.
      *         </p>
      *         <p>
-     *         For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in
-     *         the <i>AWS Security Token Service API Reference</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the
+     *         <i>AWS Security Token Service API Reference</i>.
      *         </p>
      */
 
@@ -602,16 +625,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <note>
      * <p>
-     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
      * </p>
      * <p>
-     * For an example of a scope-down policy, see
-     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
-     * Scope-Down Policy.
+     * For an example of a scope-down policy, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating a
+     * Scope-Down Policy</a>.
      * </p>
      * <p>
-     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>AWS
      * Security Token Service API Reference</i>.
      * </p>
      * </note>
@@ -622,17 +646,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
      *        <p>
-     *        For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
      *        <code>Policy</code> argument.
      *        </p>
      *        <p>
-     *        For an example of a scope-down policy, see
-     *        "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
-     *        Scope-Down Policy.
+     *        For an example of a scope-down policy, see <a
+     *        href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
+     *        a Scope-Down Policy</a>.
      *        </p>
      *        <p>
-     *        For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the
      *        <i>AWS Security Token Service API Reference</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -645,18 +670,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
+     * protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role
+     *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
      *        will determine the level of access you want to provide your users when transferring files into and out of
      *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the
-     *        Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user's
-     *        transfer requests.
+     *        file transfer protocol-enabled server to access your resources when servicing your users' transfer
+     *        requests.
      */
 
     public void setRole(String role) {
@@ -665,17 +690,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
+     * protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      * 
-     * @return The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this
+     * @return The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
      *         role will determine the level of access you want to provide your users when transferring files into and
      *         out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     *         allows the Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP
-     *         user's transfer requests.
+     *         allows the file transfer protocol-enabled server to access your resources when servicing your users'
+     *         transfer requests.
      */
 
     public String getRole() {
@@ -684,18 +709,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role will
+     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
      * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the Secure File Transfer
-     * Protocol (SFTP) server to access your resources when servicing your SFTP user's transfer requests.
+     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the file transfer
+     * protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your user's access to your Amazon S3 bucket. The policies attached to this role
+     *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
      *        will determine the level of access you want to provide your users when transferring files into and out of
      *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the
-     *        Secure File Transfer Protocol (SFTP) server to access your resources when servicing your SFTP user's
-     *        transfer requests.
+     *        file transfer protocol-enabled server to access your resources when servicing your users' transfer
+     *        requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -706,11 +731,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
+     * assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
+     *        account is assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -719,10 +746,12 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
+     * assigned to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
+     *         account is assigned to.
      */
 
     public String getServerId() {
@@ -731,11 +760,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
+     * assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server instance that the user account is assigned to.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
+     *        account is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -746,17 +777,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
-     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
-     * and hyphen. The user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     * specified by the <code>ServerId</code>. This is the string that will be used by your user when they log in to
+     * your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     * characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user and is associated with a server as specified by the
-     *        <code>ServerId</code>. This is the string that will be used by your user when they log in to your SFTP
-     *        server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
-     *        characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
+     *        A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     *        specified by the <code>ServerId</code>. This is the string that will be used by your user when they log in
+     *        to your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are
+     *        valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      */
 
     public void setUserName(String userName) {
@@ -765,16 +796,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
-     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
-     * and hyphen. The user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     * specified by the <code>ServerId</code>. This is the string that will be used by your user when they log in to
+     * your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     * characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      * </p>
      * 
-     * @return A unique string that identifies a user and is associated with a server as specified by the
-     *         <code>ServerId</code>. This is the string that will be used by your user when they log in to your SFTP
-     *         server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
-     *         characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
+     * @return A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     *         specified by the <code>ServerId</code>. This is the string that will be used by your user when they log
+     *         in to your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following
+     *         are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      */
 
     public String getUserName() {
@@ -783,17 +814,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
-     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
-     * and hyphen. The user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     * specified by the <code>ServerId</code>. This is the string that will be used by your user when they log in to
+     * your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     * characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user and is associated with a server as specified by the
-     *        <code>ServerId</code>. This is the string that will be used by your user when they log in to your SFTP
-     *        server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
-     *        characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
+     *        A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
+     *        specified by the <code>ServerId</code>. This is the string that will be used by your user when they log in
+     *        to your server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are
+     *        valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

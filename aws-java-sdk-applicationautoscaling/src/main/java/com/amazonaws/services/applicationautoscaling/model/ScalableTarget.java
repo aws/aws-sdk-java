@@ -30,10 +30,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * </p>
      */
     private String serviceNamespace;
@@ -111,6 +108,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
      * </p>
      * </li>
      * </ul>
@@ -193,6 +196,16 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
@@ -225,17 +238,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * @see ServiceNamespace
      */
 
@@ -245,16 +252,10 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * </p>
      * 
-     * @return The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a
-     *         resource provided by your own application or service. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * @see ServiceNamespace
      */
 
@@ -264,17 +265,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -286,17 +281,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * @see ServiceNamespace
      */
 
@@ -306,17 +295,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource, or a <code>custom-resource</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -402,6 +385,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -476,6 +465,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
+     *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
      *        </p>
      *        </li>
      */
@@ -560,6 +555,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
@@ -634,6 +635,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *         Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *         the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *         <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
+     *         name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
      *         </p>
      *         </li>
      */
@@ -718,6 +725,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -792,6 +805,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
+     *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -879,6 +898,16 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -954,6 +983,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1040,6 +1081,16 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -1114,6 +1165,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *         table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *         table.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1200,6 +1263,16 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1275,6 +1348,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1363,6 +1448,16 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1438,6 +1533,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1524,6 +1631,16 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1599,6 +1716,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -55,8 +55,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     private String creationDate;
     /**
      * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel.
+     * </p>
+     */
+    private CustomDeliveryConfiguration customDeliveryConfiguration;
+    /**
+     * <p>
      * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
-     * one treatment, to support A/B testing.
+     * one treatment.
      * </p>
      */
     private CampaignState defaultState;
@@ -74,7 +80,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     private Integer holdoutPercent;
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      */
     private CampaignHook hook;
@@ -154,13 +161,14 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     private TemplateConfiguration templateConfiguration;
     /**
      * <p>
-     * The custom description of a variation of the campaign that's used for A/B testing.
+     * The custom description of the default treatment for the campaign.
      * </p>
      */
     private String treatmentDescription;
     /**
      * <p>
-     * The custom name of a variation of the campaign that's used for A/B testing.
+     * The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      */
     private String treatmentName;
@@ -371,13 +379,53 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel.
+     * </p>
+     * 
+     * @param customDeliveryConfiguration
+     *        The delivery configuration settings for sending the campaign through a custom channel.
+     */
+
+    public void setCustomDeliveryConfiguration(CustomDeliveryConfiguration customDeliveryConfiguration) {
+        this.customDeliveryConfiguration = customDeliveryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel.
+     * </p>
+     * 
+     * @return The delivery configuration settings for sending the campaign through a custom channel.
+     */
+
+    public CustomDeliveryConfiguration getCustomDeliveryConfiguration() {
+        return this.customDeliveryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the campaign through a custom channel.
+     * </p>
+     * 
+     * @param customDeliveryConfiguration
+     *        The delivery configuration settings for sending the campaign through a custom channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignResponse withCustomDeliveryConfiguration(CustomDeliveryConfiguration customDeliveryConfiguration) {
+        setCustomDeliveryConfiguration(customDeliveryConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
-     * one treatment, to support A/B testing.
+     * one treatment.
      * </p>
      * 
      * @param defaultState
      *        The current status of the campaign's default treatment. This value exists only for campaigns that have
-     *        more than one treatment, to support A/B testing.
+     *        more than one treatment.
      */
 
     public void setDefaultState(CampaignState defaultState) {
@@ -387,11 +435,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
-     * one treatment, to support A/B testing.
+     * one treatment.
      * </p>
      * 
      * @return The current status of the campaign's default treatment. This value exists only for campaigns that have
-     *         more than one treatment, to support A/B testing.
+     *         more than one treatment.
      */
 
     public CampaignState getDefaultState() {
@@ -401,12 +449,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the campaign's default treatment. This value exists only for campaigns that have more than
-     * one treatment, to support A/B testing.
+     * one treatment.
      * </p>
      * 
      * @param defaultState
      *        The current status of the campaign's default treatment. This value exists only for campaigns that have
-     *        more than one treatment, to support A/B testing.
+     *        more than one treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,11 +545,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      * 
      * @param hook
-     *        The settings for the AWS Lambda function to use as a code hook for the campaign.
+     *        The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     *        customize the segment that's used by the campaign.
      */
 
     public void setHook(CampaignHook hook) {
@@ -510,10 +560,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      * 
-     * @return The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * @return The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     *         customize the segment that's used by the campaign.
      */
 
     public CampaignHook getHook() {
@@ -522,11 +574,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use as a code hook for the campaign.
+     * The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     * customize the segment that's used by the campaign.
      * </p>
      * 
      * @param hook
-     *        The settings for the AWS Lambda function to use as a code hook for the campaign.
+     *        The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to
+     *        customize the segment that's used by the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1071,11 +1125,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom description of a variation of the campaign that's used for A/B testing.
+     * The custom description of the default treatment for the campaign.
      * </p>
      * 
      * @param treatmentDescription
-     *        The custom description of a variation of the campaign that's used for A/B testing.
+     *        The custom description of the default treatment for the campaign.
      */
 
     public void setTreatmentDescription(String treatmentDescription) {
@@ -1084,10 +1138,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom description of a variation of the campaign that's used for A/B testing.
+     * The custom description of the default treatment for the campaign.
      * </p>
      * 
-     * @return The custom description of a variation of the campaign that's used for A/B testing.
+     * @return The custom description of the default treatment for the campaign.
      */
 
     public String getTreatmentDescription() {
@@ -1096,11 +1150,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom description of a variation of the campaign that's used for A/B testing.
+     * The custom description of the default treatment for the campaign.
      * </p>
      * 
      * @param treatmentDescription
-     *        The custom description of a variation of the campaign that's used for A/B testing.
+     *        The custom description of the default treatment for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1111,11 +1165,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom name of a variation of the campaign that's used for A/B testing.
+     * The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      * 
      * @param treatmentName
-     *        The custom name of a variation of the campaign that's used for A/B testing.
+     *        The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     *        <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      */
 
     public void setTreatmentName(String treatmentName) {
@@ -1124,10 +1180,12 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom name of a variation of the campaign that's used for A/B testing.
+     * The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      * 
-     * @return The custom name of a variation of the campaign that's used for A/B testing.
+     * @return The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     *         <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      */
 
     public String getTreatmentName() {
@@ -1136,11 +1194,13 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom name of a variation of the campaign that's used for A/B testing.
+     * The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     * <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * </p>
      * 
      * @param treatmentName
-     *        The custom name of a variation of the campaign that's used for A/B testing.
+     *        The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A
+     *        <i>treatment</i> is a variation of a campaign that's used for A/B testing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1209,6 +1269,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getCustomDeliveryConfiguration() != null)
+            sb.append("CustomDeliveryConfiguration: ").append(getCustomDeliveryConfiguration()).append(",");
         if (getDefaultState() != null)
             sb.append("DefaultState: ").append(getDefaultState()).append(",");
         if (getDescription() != null)
@@ -1276,6 +1338,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getCustomDeliveryConfiguration() == null ^ this.getCustomDeliveryConfiguration() == null)
+            return false;
+        if (other.getCustomDeliveryConfiguration() != null && other.getCustomDeliveryConfiguration().equals(this.getCustomDeliveryConfiguration()) == false)
             return false;
         if (other.getDefaultState() == null ^ this.getDefaultState() == null)
             return false;
@@ -1365,6 +1431,7 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomDeliveryConfiguration() == null) ? 0 : getCustomDeliveryConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDefaultState() == null) ? 0 : getDefaultState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHoldoutPercent() == null) ? 0 : getHoldoutPercent().hashCode());

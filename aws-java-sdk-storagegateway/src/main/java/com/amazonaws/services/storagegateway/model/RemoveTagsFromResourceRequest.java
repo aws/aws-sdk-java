@@ -36,7 +36,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
     private String resourceARN;
     /**
      * <p>
-     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value pair.
+     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
@@ -83,10 +83,10 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value pair.
+     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.
      * </p>
      * 
-     * @return The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value
+     * @return The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value
      *         pair.
      */
 
@@ -99,11 +99,11 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value pair.
+     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value
+     *        The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value
      *        pair.
      */
 
@@ -118,7 +118,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value pair.
+     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value
+     *        The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value
      *        pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -144,11 +144,11 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value pair.
+     * The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the tags you want to remove from the specified resource. A tag is composed of a key/value
+     *        The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value
      *        pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

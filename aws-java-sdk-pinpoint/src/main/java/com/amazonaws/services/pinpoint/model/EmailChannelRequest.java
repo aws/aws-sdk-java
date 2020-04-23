@@ -30,8 +30,8 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The configuration set that you want to apply to email that you send through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that you want to apply to messages that you send through the channel.
      * </p>
      */
     private String configurationSet;
@@ -64,13 +64,13 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The configuration set that you want to apply to email that you send through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that you want to apply to messages that you send through the channel.
      * </p>
      * 
      * @param configurationSet
-     *        The configuration set that you want to apply to email that you send through the channel by using the <a
-     *        href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     *        The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     *        configuration set</a> that you want to apply to messages that you send through the channel.
      */
 
     public void setConfigurationSet(String configurationSet) {
@@ -79,12 +79,12 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The configuration set that you want to apply to email that you send through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that you want to apply to messages that you send through the channel.
      * </p>
      * 
-     * @return The configuration set that you want to apply to email that you send through the channel by using the <a
-     *         href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * @return The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     *         configuration set</a> that you want to apply to messages that you send through the channel.
      */
 
     public String getConfigurationSet() {
@@ -93,13 +93,13 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The configuration set that you want to apply to email that you send through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that you want to apply to messages that you send through the channel.
      * </p>
      * 
      * @param configurationSet
-     *        The configuration set that you want to apply to email that you send through the channel by using the <a
-     *        href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     *        The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     *        configuration set</a> that you want to apply to messages that you send through the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -53,6 +53,10 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
                     writeCampaignRequest.setAdditionalTreatments(new ListUnmarshaller<WriteTreatmentResource>(WriteTreatmentResourceJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    context.nextToken();
+                    writeCampaignRequest.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     writeCampaignRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

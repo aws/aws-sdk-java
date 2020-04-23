@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.mediapackagevod.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateAssetRequestMarshaller {
             .marshallLocationName("sourceArn").build();
     private static final MarshallingInfo<String> SOURCEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceRoleArn").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateAssetRequestMarshaller instance = new CreateAssetRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateAssetRequestMarshaller {
             protocolMarshaller.marshall(createAssetRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(createAssetRequest.getSourceArn(), SOURCEARN_BINDING);
             protocolMarshaller.marshall(createAssetRequest.getSourceRoleArn(), SOURCEROLEARN_BINDING);
+            protocolMarshaller.marshall(createAssetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

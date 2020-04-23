@@ -77,6 +77,11 @@ public class HandlerContextKey<T> {
     public static final HandlerContextKey<Boolean> HAS_STREAMING_INPUT = new HandlerContextKey<Boolean>("HasStreamingInput");
 
     /**
+     * A boolean value indicating if the output of the operation has a streaming member.
+     */
+    public static final HandlerContextKey<Boolean> HAS_STREAMING_OUTPUT = new HandlerContextKey<Boolean>("HasStreamingOutput");
+
+    /**
      * Advanced client configuration. Contents will be service specific.
      */
     public static final HandlerContextKey<AdvancedConfig> ADVANCED_CONFIG = new HandlerContextKey<AdvancedConfig>("AdvancedConfig");

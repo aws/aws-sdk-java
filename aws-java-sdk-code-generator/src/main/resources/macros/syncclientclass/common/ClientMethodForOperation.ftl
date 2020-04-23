@@ -107,6 +107,11 @@
                                                      this));
 
                 </#if>
+
+                <#if operationModel.outputShape?? && operationModel.outputShape.hasStreamingMember >
+                    request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+                </#if>
+
                 <#-- This macro is used in glacier for wrapping the response streams -->
                 <#if WrapResponseStreamMacro?has_content>
                     <@WrapResponseStreamMacro.content operationModel/>

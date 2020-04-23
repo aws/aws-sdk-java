@@ -337,6 +337,8 @@ public interface AWSRAM {
      *         The specified value for NextToken is not valid.
      * @throws InvalidParameterException
      *         A parameter is not valid.
+     * @throws ResourceArnNotFoundException
+     *         An Amazon Resource Name (ARN) was not found.
      * @throws ServerInternalException
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
@@ -387,6 +389,8 @@ public interface AWSRAM {
      *         The specified value for MaxResults is not valid.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
      * @throws InvalidNextTokenException
      *         The specified value for NextToken is not valid.
      * @throws InvalidParameterException
@@ -534,6 +538,27 @@ public interface AWSRAM {
 
     /**
      * <p>
+     * Lists the shareable resource types supported by AWS RAM.
+     * </p>
+     * 
+     * @param listResourceTypesRequest
+     * @return Result of the ListResourceTypes operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The specified value for NextToken is not valid.
+     * @throws InvalidParameterException
+     *         A parameter is not valid.
+     * @throws ServerInternalException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ServiceUnavailableException
+     *         The service is not available.
+     * @sample AWSRAM.ListResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListResourceTypesResult listResourceTypes(ListResourceTypesRequest listResourceTypesRequest);
+
+    /**
+     * <p>
      * Lists the resources that you added to a resource shares or the resources that are shared with you.
      * </p>
      * 
@@ -594,6 +619,8 @@ public interface AWSRAM {
      *         The service could not respond to the request due to an internal problem.
      * @throws ServiceUnavailableException
      *         The service is not available.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
      * @sample AWSRAM.PromoteResourceShareCreatedFromPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy"
      *      target="_top">AWS API Documentation</a>

@@ -606,6 +606,37 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
+     * Lists the shareable resource types supported by AWS RAM.
+     * </p>
+     * 
+     * @param listResourceTypesRequest
+     * @return A Java Future containing the result of the ListResourceTypes operation returned by the service.
+     * @sample AWSRAMAsync.ListResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(ListResourceTypesRequest listResourceTypesRequest);
+
+    /**
+     * <p>
+     * Lists the shareable resource types supported by AWS RAM.
+     * </p>
+     * 
+     * @param listResourceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceTypes operation returned by the service.
+     * @sample AWSRAMAsyncHandler.ListResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(ListResourceTypesRequest listResourceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceTypesRequest, ListResourceTypesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the resources that you added to a resource shares or the resources that are shared with you.
      * </p>
      * 

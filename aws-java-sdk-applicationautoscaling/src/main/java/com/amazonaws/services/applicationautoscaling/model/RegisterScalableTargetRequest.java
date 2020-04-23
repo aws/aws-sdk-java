@@ -27,10 +27,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource. For a resource provided by your own application or
+     * service, use <code>custom-resource</code> instead.
      * </p>
      */
     private String serviceNamespace;
@@ -108,6 +106,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
      * </p>
      * </li>
      * </ul>
@@ -190,33 +194,51 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to register a
-     * scalable target.
+     * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
+     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to register
-     * a scalable target.
+     * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target.
      * </p>
      */
     private Integer maxCapacity;
     /**
      * <p>
-     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
-     * on your behalf. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     * >Service-Linked Roles for Application Auto Scaling</a>.
+     * This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it
+     * must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     * behalf.
      * </p>
      * <p>
-     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
-     * Auto Scaling to modify the scalable target on your behalf.
+     * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
+     * creates if it does not yet exist. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     * >Application Auto Scaling IAM Roles</a>.
      * </p>
      */
     private String roleARN;
@@ -259,17 +281,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource. For a resource provided by your own application or
+     * service, use <code>custom-resource</code> instead.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource. For a resource provided by your own
+     *        application or service, use <code>custom-resource</code> instead.
      * @see ServiceNamespace
      */
 
@@ -279,16 +297,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource. For a resource provided by your own application or
+     * service, use <code>custom-resource</code> instead.
      * </p>
      * 
-     * @return The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a
-     *         resource provided by your own application or service. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * @return The namespace of the AWS service that provides the resource. For a resource provided by your own
+     *         application or service, use <code>custom-resource</code> instead.
      * @see ServiceNamespace
      */
 
@@ -298,17 +312,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource. For a resource provided by your own application or
+     * service, use <code>custom-resource</code> instead.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource. For a resource provided by your own
+     *        application or service, use <code>custom-resource</code> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -320,17 +330,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource. For a resource provided by your own application or
+     * service, use <code>custom-resource</code> instead.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource. For a resource provided by your own
+     *        application or service, use <code>custom-resource</code> instead.
      * @see ServiceNamespace
      */
 
@@ -340,17 +346,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     * provided by your own application or service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     * The namespace of the AWS service that provides the resource. For a resource provided by your own application or
+     * service, use <code>custom-resource</code> instead.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
-     *        provided by your own application or service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
-     *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
+     *        The namespace of the AWS service that provides the resource. For a resource provided by your own
+     *        application or service, use <code>custom-resource</code> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -436,6 +438,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -510,6 +518,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
+     *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
      *        </p>
      *        </li>
      */
@@ -594,6 +608,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource that is associated with the scalable target. This string consists of the
@@ -668,6 +688,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *         the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *         <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
+     *         name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
      *         </p>
      *         </li>
      */
@@ -752,6 +778,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+     * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -826,6 +858,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
+     *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -913,6 +951,16 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -988,6 +1036,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1074,6 +1134,16 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -1148,6 +1218,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <li>
      *         <p>
      *         <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *         table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *         table.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1234,6 +1316,16 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1309,6 +1401,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1397,6 +1501,16 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1472,6 +1586,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1558,6 +1684,16 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1635,6 +1771,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
+     *        table.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -1646,13 +1794,21 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to register a
-     * scalable target.
+     * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
+     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to
-     *        register a scalable target.
+     *        The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
+     *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     *        </p>
+     *        <p>
+     *        This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency,
+     *        the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -1661,12 +1817,20 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to register a
-     * scalable target.
+     * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
+     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      * </p>
      * 
-     * @return The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to
-     *         register a scalable target.
+     * @return The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
+     *         Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     *         </p>
+     *         <p>
+     *         This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency,
+     *         the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      */
 
     public Integer getMinCapacity() {
@@ -1675,13 +1839,21 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to register a
-     * scalable target.
+     * The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency, the
+     * minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value to scale to in response to a scale-in event. <code>MinCapacity</code> is required to
-     *        register a scalable target.
+     *        The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
+     *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
+     *        </p>
+     *        <p>
+     *        This parameter is required if you are registering a scalable target. For Lambda provisioned concurrency,
+     *        the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1692,13 +1864,19 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to register
-     * a scalable target.
+     * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to
-     *        register a scalable target.
+     *        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
+     *        Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     *        </p>
+     *        <p>
+     *        This parameter is required if you are registering a scalable target.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -1707,12 +1885,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to register
-     * a scalable target.
+     * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target.
      * </p>
      * 
-     * @return The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to
-     *         register a scalable target.
+     * @return The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
+     *         Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     *         </p>
+     *         <p>
+     *         This parameter is required if you are registering a scalable target.
      */
 
     public Integer getMaxCapacity() {
@@ -1721,13 +1905,19 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to register
-     * a scalable target.
+     * The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can
+     * scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     * </p>
+     * <p>
+     * This parameter is required if you are registering a scalable target.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value to scale to in response to a scale-out event. <code>MaxCapacity</code> is required to
-     *        register a scalable target.
+     *        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
+     *        Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
+     *        </p>
+     *        <p>
+     *        This parameter is required if you are registering a scalable target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1738,24 +1928,26 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
-     * on your behalf. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     * >Service-Linked Roles for Application Auto Scaling</a>.
+     * This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it
+     * must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     * behalf.
      * </p>
      * <p>
-     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
-     * Auto Scaling to modify the scalable target on your behalf.
+     * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
+     * creates if it does not yet exist. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     * >Application Auto Scaling IAM Roles</a>.
      * </p>
      * 
      * @param roleARN
-     *        Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
-     *        target on your behalf. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     *        >Service-Linked Roles for Application Auto Scaling</a>.</p>
+     *        This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and
+     *        it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target
+     *        on your behalf. </p>
      *        <p>
-     *        For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows
-     *        Application Auto Scaling to modify the scalable target on your behalf.
+     *        If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
+     *        it creates if it does not yet exist. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     *        >Application Auto Scaling IAM Roles</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -1764,23 +1956,25 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
-     * on your behalf. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     * >Service-Linked Roles for Application Auto Scaling</a>.
+     * This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it
+     * must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     * behalf.
      * </p>
      * <p>
-     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
-     * Auto Scaling to modify the scalable target on your behalf.
+     * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
+     * creates if it does not yet exist. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     * >Application Auto Scaling IAM Roles</a>.
      * </p>
      * 
-     * @return Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
-     *         target on your behalf. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     *         >Service-Linked Roles for Application Auto Scaling</a>.</p>
+     * @return This parameter is required for services that do not support service-linked roles (such as Amazon EMR),
+     *         and it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable
+     *         target on your behalf. </p>
      *         <p>
-     *         For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows
-     *         Application Auto Scaling to modify the scalable target on your behalf.
+     *         If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
+     *         it creates if it does not yet exist. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     *         >Application Auto Scaling IAM Roles</a>.
      */
 
     public String getRoleARN() {
@@ -1789,24 +1983,26 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
-     * on your behalf. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     * >Service-Linked Roles for Application Auto Scaling</a>.
+     * This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and it
+     * must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     * behalf.
      * </p>
      * <p>
-     * For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows Application
-     * Auto Scaling to modify the scalable target on your behalf.
+     * If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which it
+     * creates if it does not yet exist. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     * >Application Auto Scaling IAM Roles</a>.
      * </p>
      * 
      * @param roleARN
-     *        Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
-     *        target on your behalf. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html"
-     *        >Service-Linked Roles for Application Auto Scaling</a>.</p>
+     *        This parameter is required for services that do not support service-linked roles (such as Amazon EMR), and
+     *        it must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target
+     *        on your behalf. </p>
      *        <p>
-     *        For Amazon EMR, this parameter is required, and it must specify the ARN of an IAM role that allows
-     *        Application Auto Scaling to modify the scalable target on your behalf.
+     *        If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
+     *        it creates if it does not yet exist. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles"
+     *        >Application Auto Scaling IAM Roles</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1494,6 +1494,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true), new GetJobOutputResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             GetJobOutputResult result = response.getAwsResponse();
 
             // wrapping the response with the LengthCheckInputStream.

@@ -23,7 +23,8 @@ public enum CompressionFormat {
     UNCOMPRESSED("UNCOMPRESSED"),
     GZIP("GZIP"),
     ZIP("ZIP"),
-    Snappy("Snappy");
+    Snappy("Snappy"),
+    HADOOP_SNAPPY("HADOOP_SNAPPY");
 
     private String value;
 

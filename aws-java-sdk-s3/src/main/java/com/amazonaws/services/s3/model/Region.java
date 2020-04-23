@@ -281,7 +281,17 @@ public enum Region {
      * <code>s3.me-south-1.amazonaws.com</code>.
      * </p>
      */
-    ME_Bahrain("me-south-1")
+    ME_Bahrain("me-south-1"),
+
+    /**
+     * The Africa South (Cape Town) Region. This region uses Amazon S3 servers
+     * located in Cape Town.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.af-south-1.amazonaws.com</code>.
+     * </p>
+     */
+    AF_CapeTown("af-south-1")
     ;
 
    /**

@@ -978,6 +978,8 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true), new SynthesizeSpeechResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             return response.getAwsResponse();
 
         } finally {

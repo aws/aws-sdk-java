@@ -34,8 +34,8 @@ public class ListJourneysRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String applicationId;
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      */
     private String pageSize;
@@ -94,13 +94,13 @@ public class ListJourneysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported for application, campaign, and journey metrics.
+     *        The maximum number of items to include in each page of a paginated response. This parameter is not
+     *        supported for application, campaign, and journey metrics.
      */
 
     public void setPageSize(String pageSize) {
@@ -109,12 +109,12 @@ public class ListJourneysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      * 
-     * @return The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *         not supported for application, campaign, and journey metrics.
+     * @return The maximum number of items to include in each page of a paginated response. This parameter is not
+     *         supported for application, campaign, and journey metrics.
      */
 
     public String getPageSize() {
@@ -123,13 +123,13 @@ public class ListJourneysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported for application, campaign, and journey metrics.
+     *        The maximum number of items to include in each page of a paginated response. This parameter is not
+     *        supported for application, campaign, and journey metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

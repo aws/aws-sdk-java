@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The virtual private cloud (VPC) endpoint settings that are configured for your SFTP server. With a VPC endpoint, you
- * can restrict access to your SFTP server and resources only within your VPC. To control incoming internet traffic,
- * invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
+ * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled server.
+ * With a VPC endpoint, you can restrict access to your server and resources only within your VPC. To control incoming
+ * internet traffic, invoke the <code>UpdateServer</code> API and attach an Elastic IP to your server's endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails" target="_top">AWS API
@@ -32,8 +32,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     * endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
      * </p>
      * <note>
      * <p>
@@ -44,7 +44,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> addressAllocationIds;
     /**
      * <p>
-     * A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -56,15 +56,15 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
     private String vpcEndpointId;
     /**
      * <p>
-     * The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
      */
     private String vpcId;
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     * endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
      * </p>
      * <note>
      * <p>
@@ -72,8 +72,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     *         endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     * @return A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     *         protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
      *         <p>
      *         This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
      *         </p>
@@ -85,8 +85,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     * endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
      * </p>
      * <note>
      * <p>
@@ -95,8 +95,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param addressAllocationIds
-     *        A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     *        endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     *        A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     *        protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
      *        <p>
      *        This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
@@ -113,8 +113,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     * endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
      * </p>
      * <note>
      * <p>
@@ -128,8 +128,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param addressAllocationIds
-     *        A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     *        endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     *        A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     *        protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
      *        <p>
      *        This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
@@ -148,8 +148,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     * endpoint. This is only valid in the <code>UpdateServer</code> API.
+     * A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     * protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.
      * </p>
      * <note>
      * <p>
@@ -158,8 +158,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param addressAllocationIds
-     *        A list of address allocation IDs that are required to attach an Elastic IP address to your SFTP server's
-     *        endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
+     *        A list of address allocation IDs that are required to attach an Elastic IP address to your file transfer
+     *        protocol-enabled server's endpoint. This is only valid in the <code>UpdateServer</code> API.</p> <note>
      *        <p>
      *        This property can only be use when <code>EndpointType</code> is set to <code>VPC</code>.
      *        </p>
@@ -173,10 +173,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
      * 
-     * @return A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     * @return A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in
+     *         your VPC.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -185,11 +186,12 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
+     *        VPC.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -203,7 +205,7 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -212,7 +214,8 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
+     *        VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +231,12 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     * A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your VPC.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs that are required to host your SFTP server endpoint in your VPC.
+     *        A list of subnet IDs that are required to host your file transfer protocol-enabled server endpoint in your
+     *        VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +287,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
      * 
      * @param vpcId
-     *        The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      */
 
     public void setVpcId(String vpcId) {
@@ -296,10 +300,10 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
      * 
-     * @return The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     * @return The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      */
 
     public String getVpcId() {
@@ -308,11 +312,11 @@ public class EndpointDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     * The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * </p>
      * 
      * @param vpcId
-     *        The VPC ID of the virtual private cloud in which the SFTP server's endpoint will be hosted.
+     *        The VPC ID of the VPC in which a file transfer protocol-enabled server's endpoint will be hosted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

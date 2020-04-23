@@ -7307,8 +7307,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an
-     * application. You can also use this operation to define custom attributes (Attributes, Metrics, and UserAttributes
-     * properties) for an endpoint.
+     * application. You can also use this operation to define custom attributes for an endpoint. If an update includes
+     * one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new
+     * values.
      * </p>
      * 
      * @param updateEndpointRequest
@@ -7380,8 +7381,9 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing
-     * endpoints for an application. You can also use this operation to define custom attributes (Attributes, Metrics,
-     * and UserAttributes properties) for a batch of endpoints.
+     * endpoints for an application. You can also use this operation to define custom attributes for a batch of
+     * endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites)
+     * any existing values with the new values.
      * </p>
      * 
      * @param updateEndpointsBatchRequest

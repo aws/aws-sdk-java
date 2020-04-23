@@ -47,8 +47,8 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      */
     private String kpiName;
@@ -165,16 +165,17 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @param kpiName
      *        The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *        retrieved for. This value describes the associated metric and consists of two or more terms, which are
      *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see
-     *        the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
-     *        Developer Guide</a>.
+     *        the <a
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        Pinpoint Developer Guide</a>.
      */
 
     public void setKpiName(String kpiName) {
@@ -186,15 +187,15 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @return The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *         retrieved for. This value describes the associated metric and consists of two or more terms, which are
      *         comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see
-     *         the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
-     *         Developer Guide</a>.
+     *         the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">
+     *         Amazon Pinpoint Developer Guide</a>.
      */
 
     public String getKpiName() {
@@ -206,16 +207,17 @@ public class ApplicationDateRangeKpiResponse implements Serializable, Cloneable,
      * The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved
      * for. This value describes the associated metric and consists of two or more terms, which are comprised of
      * lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @param kpiName
      *        The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was
      *        retrieved for. This value describes the associated metric and consists of two or more terms, which are
      *        comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see
-     *        the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint
-     *        Developer Guide</a>.
+     *        the <a
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        Pinpoint Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

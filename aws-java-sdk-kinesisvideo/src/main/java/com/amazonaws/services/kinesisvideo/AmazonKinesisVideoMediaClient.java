@@ -267,6 +267,8 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
 
             response.getAwsResponse().setPayload(new com.amazonaws.util.ServiceClientHolderInputStream(response.getAwsResponse().getPayload(), this));
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             return response.getAwsResponse();
 
         } finally {

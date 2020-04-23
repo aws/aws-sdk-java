@@ -37,8 +37,7 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
     public RetryPolicyAdapter(RetryPolicy legacyRetryPolicy, ClientConfiguration clientConfiguration) {
         this.legacyRetryPolicy = assertNotNull(legacyRetryPolicy, "legacyRetryPolicy");
         this.clientConfiguration = assertNotNull(clientConfiguration, "clientConfiguration");
-
-        this.maxErrorRetry = getMaxErrorRetry();
+        this.maxErrorRetry = resolveMaxErrorRetry();
     }
 
     @Override
@@ -65,7 +64,7 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
         return this.legacyRetryPolicy;
     }
 
-    private int getMaxErrorRetry() {
+    private int resolveMaxErrorRetry() {
         if(legacyRetryPolicy.isMaxErrorRetryInClientConfigHonored() && clientConfiguration.getMaxErrorRetry() >= 0) {
             return clientConfiguration.getMaxErrorRetry();
         }
@@ -97,5 +96,9 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
 
     public boolean maxRetriesExceeded(RetryPolicyContext context) {
         return context.retriesAttempted() >= maxErrorRetry;
+    }
+
+    public int getMaxErrorRetry() {
+        return maxErrorRetry;
     }
 }

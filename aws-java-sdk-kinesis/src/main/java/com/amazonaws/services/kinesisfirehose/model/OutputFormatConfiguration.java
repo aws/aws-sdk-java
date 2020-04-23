@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it
- * writes it to Amazon S3.
+ * writes it to Amazon S3. This parameter is required if <code>Enabled</code> is set to true.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/OutputFormatConfiguration" target="_top">AWS

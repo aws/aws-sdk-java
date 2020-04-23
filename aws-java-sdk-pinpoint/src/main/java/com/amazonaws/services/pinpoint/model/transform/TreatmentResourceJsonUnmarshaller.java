@@ -48,6 +48,10 @@ public class TreatmentResourceJsonUnmarshaller implements Unmarshaller<Treatment
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    context.nextToken();
+                    treatmentResource.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     treatmentResource.setId(context.getUnmarshaller(String.class).unmarshall(context));

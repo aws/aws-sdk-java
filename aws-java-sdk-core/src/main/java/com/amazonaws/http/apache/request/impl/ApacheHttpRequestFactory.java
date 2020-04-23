@@ -239,7 +239,6 @@ public class ApacheHttpRequestFactory implements
         return Boolean.TRUE.equals(request.getHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT));
     }
 
-
     /**
      * Configures the headers in the specified Apache HTTP request.
      */

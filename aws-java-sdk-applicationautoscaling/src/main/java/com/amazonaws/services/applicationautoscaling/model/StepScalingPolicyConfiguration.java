@@ -31,8 +31,12 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
-     * percentage of the current capacity.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * </p>
+     * <p>
+     * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      */
     private String adjustmentType;
@@ -40,19 +44,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
+     * <p>
+     * At least one step adjustment is required if you are adding a new step scaling policy configuration.
+     * </p>
      */
     private java.util.List<StepAdjustment> stepAdjustments;
     /**
      * <p>
-     * The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the scalable target by
-     * this amount.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      * </p>
      * <p>
-     * For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and
-     * you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is
-     * performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     * Application Auto Scaling scales out the service by 2 tasks.
+     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      * </p>
      */
     private Integer minAdjustmentMagnitude;
@@ -63,12 +68,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the previous
-     * scale-out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out.
-     * The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step scaling
-     * policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a cooldown
-     * period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but at a more
-     * aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous
-     * scale-out event are considered part of that capacity and only 1 additional task is added to the desired count.
+     * scale-out action that initiated the cooldown is calculated as part of the desired capacity for the next scale
+     * out. The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step
+     * scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a
+     * cooldown period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but
+     * at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the
+     * previous scale-out action are considered part of that capacity and only 1 additional task is added to the desired
+     * count.
      * </p>
      * <p>
      * For scale-in policies, the cooldown period is used to block subsequent scale-in requests until it has expired.
@@ -76,6 +82,76 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * triggers a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      * scalable target immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer cooldown;
     /**
@@ -88,13 +164,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
-     * percentage of the current capacity.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * </p>
+     * <p>
+     * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
-     *        number or a percentage of the current capacity.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        <p>
+     *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
      */
 
@@ -104,12 +187,19 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
-     * percentage of the current capacity.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * </p>
+     * <p>
+     * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
-     * @return Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
-     *         number or a percentage of the current capacity.
+     * @return Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *         href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     *         >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *         <p>
+     *         <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
      */
 
@@ -119,13 +209,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
-     * percentage of the current capacity.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * </p>
+     * <p>
+     * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
-     *        number or a percentage of the current capacity.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        <p>
+     *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdjustmentType
      */
@@ -137,13 +234,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
-     * percentage of the current capacity.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * </p>
+     * <p>
+     * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
-     *        number or a percentage of the current capacity.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        <p>
+     *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
      */
 
@@ -153,13 +257,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute number or a
-     * percentage of the current capacity.
+     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * </p>
+     * <p>
+     * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a>StepAdjustment</a> is an absolute
-     *        number or a percentage of the current capacity.
+     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
+     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        <p>
+     *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdjustmentType
      */
@@ -173,8 +284,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
+     * <p>
+     * At least one step adjustment is required if you are adding a new step scaling policy configuration.
+     * </p>
      * 
-     * @return A set of adjustments that enable you to scale based on the size of the alarm breach.
+     * @return A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+     *         <p>
+     *         At least one step adjustment is required if you are adding a new step scaling policy configuration.
      */
 
     public java.util.List<StepAdjustment> getStepAdjustments() {
@@ -185,9 +301,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
+     * <p>
+     * At least one step adjustment is required if you are adding a new step scaling policy configuration.
+     * </p>
      * 
      * @param stepAdjustments
-     *        A set of adjustments that enable you to scale based on the size of the alarm breach.
+     *        A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+     *        <p>
+     *        At least one step adjustment is required if you are adding a new step scaling policy configuration.
      */
 
     public void setStepAdjustments(java.util.Collection<StepAdjustment> stepAdjustments) {
@@ -204,13 +325,18 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
+     * At least one step adjustment is required if you are adding a new step scaling policy configuration.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStepAdjustments(java.util.Collection)} or {@link #withStepAdjustments(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param stepAdjustments
-     *        A set of adjustments that enable you to scale based on the size of the alarm breach.
+     *        A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+     *        <p>
+     *        At least one step adjustment is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,9 +354,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
+     * <p>
+     * At least one step adjustment is required if you are adding a new step scaling policy configuration.
+     * </p>
      * 
      * @param stepAdjustments
-     *        A set of adjustments that enable you to scale based on the size of the alarm breach.
+     *        A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+     *        <p>
+     *        At least one step adjustment is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,26 +372,23 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the scalable target by
-     * this amount.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      * </p>
      * <p>
-     * For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and
-     * you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is
-     * performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     * Application Auto Scaling scales out the service by 2 tasks.
+     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment
-     *        type is <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the
-     *        scalable target by this amount.</p>
+     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
+     *        scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     *        <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
+     *        25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
+     *        Application Auto Scaling scales out the service by 2 tasks.</p>
      *        <p>
-     *        For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25
-     *        percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the
-     *        scaling policy is performed, 25 percent of 4 is 1. However, because you specified a
-     *        <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
+     *        Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      */
 
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
@@ -269,25 +397,22 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the scalable target by
-     * this amount.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      * </p>
      * <p>
-     * For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and
-     * you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is
-     * performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     * Application Auto Scaling scales out the service by 2 tasks.
+     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      * </p>
      * 
-     * @return The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment
-     *         type is <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the
-     *         scalable target by this amount.</p>
+     * @return The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
+     *         scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     *         <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
+     *         25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
+     *         Application Auto Scaling scales out the service by 2 tasks.</p>
      *         <p>
-     *         For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25
-     *         percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the
-     *         scaling policy is performed, 25 percent of 4 is 1. However, because you specified a
-     *         <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
+     *         Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      */
 
     public Integer getMinAdjustmentMagnitude() {
@@ -296,26 +421,23 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment type is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the scalable target by
-     * this amount.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      * </p>
      * <p>
-     * For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and
-     * you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is
-     * performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     * Application Auto Scaling scales out the service by 2 tasks.
+     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum number to adjust your scalable dimension as a result of a scaling activity. If the adjustment
-     *        type is <code>PercentChangeInCapacity</code>, the scaling policy changes the scalable dimension of the
-     *        scalable target by this amount.</p>
+     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
+     *        scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     *        <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
+     *        25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
+     *        Application Auto Scaling scales out the service by 2 tasks.</p>
      *        <p>
-     *        For example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25
-     *        percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the
-     *        scaling policy is performed, 25 percent of 4 is 1. However, because you specified a
-     *        <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
+     *        Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,12 +453,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the previous
-     * scale-out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out.
-     * The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step scaling
-     * policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a cooldown
-     * period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but at a more
-     * aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous
-     * scale-out event are considered part of that capacity and only 1 additional task is added to the desired count.
+     * scale-out action that initiated the cooldown is calculated as part of the desired capacity for the next scale
+     * out. The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step
+     * scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a
+     * cooldown period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but
+     * at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the
+     * previous scale-out action are considered part of that capacity and only 1 additional task is added to the desired
+     * count.
      * </p>
      * <p>
      * For scale-in policies, the cooldown period is used to block subsequent scale-in requests until it has expired.
@@ -344,18 +467,88 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * triggers a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      * scalable target immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cooldown
      *        The amount of time, in seconds, after a scaling activity completes where previous trigger-related scaling
      *        activities can influence future scaling events.</p>
      *        <p>
      *        For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the
-     *        previous scale-out event that initiated the cooldown is calculated as part of the desired capacity for the
-     *        next scale out. The intention is to continuously (but not excessively) scale out. For example, an alarm
-     *        triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity
+     *        previous scale-out action that initiated the cooldown is calculated as part of the desired capacity for
+     *        the next scale out. The intention is to continuously (but not excessively) scale out. For example, an
+     *        alarm triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity
      *        completes successfully, and a cooldown period of 5 minutes starts. During the cooldown period, if the
      *        alarm triggers the same policy again but at a more aggressive step adjustment to scale out the service by
-     *        3 tasks, the 2 tasks that were added in the previous scale-out event are considered part of that capacity
+     *        3 tasks, the 2 tasks that were added in the previous scale-out action are considered part of that capacity
      *        and only 1 additional task is added to the desired count.
      *        </p>
      *        <p>
@@ -363,6 +556,76 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        expired. The intention is to scale in conservatively to protect your application's availability. However,
      *        if another alarm triggers a scale-out policy during the cooldown period after a scale-in, Application Auto
      *        Scaling scales out your scalable target immediately.
+     *        </p>
+     *        <p>
+     *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleet requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For all other scalable targets, the default value is 0:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DynamoDB tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary indexes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
      */
 
     public void setCooldown(Integer cooldown) {
@@ -376,12 +639,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the previous
-     * scale-out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out.
-     * The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step scaling
-     * policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a cooldown
-     * period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but at a more
-     * aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous
-     * scale-out event are considered part of that capacity and only 1 additional task is added to the desired count.
+     * scale-out action that initiated the cooldown is calculated as part of the desired capacity for the next scale
+     * out. The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step
+     * scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a
+     * cooldown period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but
+     * at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the
+     * previous scale-out action are considered part of that capacity and only 1 additional task is added to the desired
+     * count.
      * </p>
      * <p>
      * For scale-in policies, the cooldown period is used to block subsequent scale-in requests until it has expired.
@@ -389,24 +653,164 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * triggers a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      * scalable target immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The amount of time, in seconds, after a scaling activity completes where previous trigger-related scaling
      *         activities can influence future scaling events.</p>
      *         <p>
      *         For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the
-     *         previous scale-out event that initiated the cooldown is calculated as part of the desired capacity for
+     *         previous scale-out action that initiated the cooldown is calculated as part of the desired capacity for
      *         the next scale out. The intention is to continuously (but not excessively) scale out. For example, an
      *         alarm triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity
      *         completes successfully, and a cooldown period of 5 minutes starts. During the cooldown period, if the
      *         alarm triggers the same policy again but at a more aggressive step adjustment to scale out the service by
-     *         3 tasks, the 2 tasks that were added in the previous scale-out event are considered part of that capacity
-     *         and only 1 additional task is added to the desired count.
+     *         3 tasks, the 2 tasks that were added in the previous scale-out action are considered part of that
+     *         capacity and only 1 additional task is added to the desired count.
      *         </p>
      *         <p>
      *         For scale-in policies, the cooldown period is used to block subsequent scale-in requests until it has
      *         expired. The intention is to scale in conservatively to protect your application's availability. However,
      *         if another alarm triggers a scale-out policy during the cooldown period after a scale-in, Application
      *         Auto Scaling scales out your scalable target immediately.
+     *         </p>
+     *         <p>
+     *         Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ECS services
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot Fleet requests
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AppStream 2.0 fleets
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora DB clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Custom resources
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all other scalable targets, the default value is 0:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DynamoDB tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary indexes
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Comprehend document classification endpoints
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
      */
 
     public Integer getCooldown() {
@@ -420,12 +824,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the previous
-     * scale-out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out.
-     * The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step scaling
-     * policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a cooldown
-     * period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but at a more
-     * aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous
-     * scale-out event are considered part of that capacity and only 1 additional task is added to the desired count.
+     * scale-out action that initiated the cooldown is calculated as part of the desired capacity for the next scale
+     * out. The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step
+     * scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a
+     * cooldown period of 5 minutes starts. During the cooldown period, if the alarm triggers the same policy again but
+     * at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the
+     * previous scale-out action are considered part of that capacity and only 1 additional task is added to the desired
+     * count.
      * </p>
      * <p>
      * For scale-in policies, the cooldown period is used to block subsequent scale-in requests until it has expired.
@@ -433,18 +838,88 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * triggers a scale-out policy during the cooldown period after a scale-in, Application Auto Scaling scales out your
      * scalable target immediately.
      * </p>
+     * <p>
+     * Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleet requests
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For all other scalable targets, the default value is 0:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DynamoDB tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary indexes
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Comprehend document classification endpoints
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cooldown
      *        The amount of time, in seconds, after a scaling activity completes where previous trigger-related scaling
      *        activities can influence future scaling events.</p>
      *        <p>
      *        For scale-out policies, while the cooldown period is in effect, the capacity that has been added by the
-     *        previous scale-out event that initiated the cooldown is calculated as part of the desired capacity for the
-     *        next scale out. The intention is to continuously (but not excessively) scale out. For example, an alarm
-     *        triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity
+     *        previous scale-out action that initiated the cooldown is calculated as part of the desired capacity for
+     *        the next scale out. The intention is to continuously (but not excessively) scale out. For example, an
+     *        alarm triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity
      *        completes successfully, and a cooldown period of 5 minutes starts. During the cooldown period, if the
      *        alarm triggers the same policy again but at a more aggressive step adjustment to scale out the service by
-     *        3 tasks, the 2 tasks that were added in the previous scale-out event are considered part of that capacity
+     *        3 tasks, the 2 tasks that were added in the previous scale-out action are considered part of that capacity
      *        and only 1 additional task is added to the desired count.
      *        </p>
      *        <p>
@@ -452,6 +927,76 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        expired. The intention is to scale in conservatively to protect your application's availability. However,
      *        if another alarm triggers a scale-out policy during the cooldown period after a scale-in, Application Auto
      *        Scaling scales out your scalable target immediately.
+     *        </p>
+     *        <p>
+     *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleet requests
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For all other scalable targets, the default value is 0:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DynamoDB tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary indexes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend document classification endpoints
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

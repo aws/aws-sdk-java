@@ -30,10 +30,12 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
-     * override these settings for a specific campaign, use the <link
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
-     * settings for the campaign.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
+     * </p>
+     * <p>
+     * To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+     * <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      * </p>
      */
     private CampaignHook campaignHook;
@@ -45,9 +47,10 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     private Boolean cloudWatchMetricsEnabled;
     /**
      * <p>
-     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
-     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
-     * limits for the campaign.
+     * The default sending limits for campaigns and journeys in the application. To override these limits and define
+     * custom limits for a specific campaign or journey, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      */
     private CampaignLimits limits;
@@ -90,17 +93,21 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
-     * override these settings for a specific campaign, use the <link
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
-     * settings for the campaign.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
+     * </p>
+     * <p>
+     * To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+     * <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      * </p>
      * 
      * @param campaignHook
-     *        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-     *        application. To override these settings for a specific campaign, use the <link
-     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda
-     *        function settings for the campaign.
+     *        The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the
+     *        application. You can use this hook to customize segments that are used by campaigns in the
+     *        application.</p>
+     *        <p>
+     *        To override these settings and define custom settings for a specific campaign, use the CampaignHook object
+     *        of the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      */
 
     public void setCampaignHook(CampaignHook campaignHook) {
@@ -109,16 +116,20 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
-     * override these settings for a specific campaign, use the <link
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
-     * settings for the campaign.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
+     * </p>
+     * <p>
+     * To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+     * <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      * </p>
      * 
-     * @return The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-     *         application. To override these settings for a specific campaign, use the <link
-     *         linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda
-     *         function settings for the campaign.
+     * @return The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the
+     *         application. You can use this hook to customize segments that are used by campaigns in the
+     *         application.</p>
+     *         <p>
+     *         To override these settings and define custom settings for a specific campaign, use the CampaignHook
+     *         object of the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      */
 
     public CampaignHook getCampaignHook() {
@@ -127,17 +138,21 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The settings for the AWS Lambda function to use by default as a code hook for campaigns in the application. To
-     * override these settings for a specific campaign, use the <link
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda function
-     * settings for the campaign.
+     * The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application.
+     * You can use this hook to customize segments that are used by campaigns in the application.
+     * </p>
+     * <p>
+     * To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the
+     * <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      * </p>
      * 
      * @param campaignHook
-     *        The settings for the AWS Lambda function to use by default as a code hook for campaigns in the
-     *        application. To override these settings for a specific campaign, use the <link
-     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom Lambda
-     *        function settings for the campaign.
+     *        The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the
+     *        application. You can use this hook to customize segments that are used by campaigns in the
+     *        application.</p>
+     *        <p>
+     *        To override these settings and define custom settings for a specific campaign, use the CampaignHook object
+     *        of the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,15 +215,17 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
-     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
-     * limits for the campaign.
+     * The default sending limits for campaigns and journeys in the application. To override these limits and define
+     * custom limits for a specific campaign or journey, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns in the application. To override these limits for a specific
-     *        campaign, use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     *        define custom limits for the campaign.
+     *        The default sending limits for campaigns and journeys in the application. To override these limits and
+     *        define custom limits for a specific campaign or journey, use the <link
+     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     *        linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      */
 
     public void setLimits(CampaignLimits limits) {
@@ -217,14 +234,16 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
-     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
-     * limits for the campaign.
+     * The default sending limits for campaigns and journeys in the application. To override these limits and define
+     * custom limits for a specific campaign or journey, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      * 
-     * @return The default sending limits for campaigns in the application. To override these limits for a specific
-     *         campaign, use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     *         define custom limits for the campaign.
+     * @return The default sending limits for campaigns and journeys in the application. To override these limits and
+     *         define custom limits for a specific campaign or journey, use the <link
+     *         linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     *         linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      */
 
     public CampaignLimits getLimits() {
@@ -233,15 +252,17 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default sending limits for campaigns in the application. To override these limits for a specific campaign,
-     * use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to define custom
-     * limits for the campaign.
+     * The default sending limits for campaigns and journeys in the application. To override these limits and define
+     * custom limits for a specific campaign or journey, use the <link
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns in the application. To override these limits for a specific
-     *        campaign, use the <link linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     *        define custom limits for the campaign.
+     *        The default sending limits for campaigns and journeys in the application. To override these limits and
+     *        define custom limits for a specific campaign or journey, use the <link
+     *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
+     *        linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

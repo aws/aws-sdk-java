@@ -54,7 +54,7 @@ import com.amazonaws.services.storagegateway.model.transform.*;
  * <p>
  * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to
  * provide seamless and secure integration between an organization's on-premises IT environment and the AWS storage
- * infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid
+ * infrastructure. The service enables you to securely upload data to the AWS Cloud for cost effective backup and rapid
  * disaster recovery.
  * </p>
  * <p>
@@ -765,7 +765,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived in the S3 storage class that
      * is associated with the pool. When you use your backup application to eject the tape, the tape is archived
-     * directly into the S3 storage class (Glacier or Deep Archive) that corresponds to the pool.
+     * directly into the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
      * Valid values: "GLACIER", "DEEP_ARCHIVE"
@@ -1092,12 +1092,12 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
-     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
+     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using an NFS
      * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
      * <p>
-     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
      * Make sure AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in the AWS Region, activate it. For information about how to activate AWS STS, see Activating and
      * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management User Guide.
@@ -1165,7 +1165,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
-     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using an SMB
      * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
@@ -1242,9 +1242,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-     * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
-     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-     * This API enables you to take ad-hoc snapshot. For more information, see <a
+     * Service (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store
+     * (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled
+     * or ad hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a Snapshot Schedule</a>.
      * </p>
@@ -1523,7 +1523,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
-     * barcode is unique and can not be reused if it has already been used on a tape . This applies to barcodes used on
+     * barcode is unique and cannot be reused if it has already been used on a tape. This applies to barcodes used on
      * deleted tapes. This operation is only supported in the tape gateway type.
      * </p>
      * <note>
@@ -1646,6 +1646,69 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTapesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTapesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the automatic tape creation policy of a gateway. If you delete this policy, new virtual tapes must be
+     * created manually. Use the Amazon Resource Name (ARN) of the gateway in your request to remove the policy.
+     * </p>
+     * 
+     * @param deleteAutomaticTapeCreationPolicyRequest
+     * @return Result of the DeleteAutomaticTapeCreationPolicy operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DeleteAutomaticTapeCreationPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteAutomaticTapeCreationPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAutomaticTapeCreationPolicyResult deleteAutomaticTapeCreationPolicy(DeleteAutomaticTapeCreationPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAutomaticTapeCreationPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAutomaticTapeCreationPolicyResult executeDeleteAutomaticTapeCreationPolicy(
+            DeleteAutomaticTapeCreationPolicyRequest deleteAutomaticTapeCreationPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAutomaticTapeCreationPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAutomaticTapeCreationPolicyRequest> request = null;
+        Response<DeleteAutomaticTapeCreationPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAutomaticTapeCreationPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAutomaticTapeCreationPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAutomaticTapeCreationPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAutomaticTapeCreationPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAutomaticTapeCreationPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1949,8 +2012,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <note>
      * <p>
-     * To list or delete a snapshot, you must use the Amazon EC2 API. in <i>Amazon Elastic Compute Cloud API
-     * Reference</i>.
+     * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> in
+     * the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * </note>
      * 
@@ -2279,7 +2343,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeBandwidthRateLimitRequest
-     *        A JSON object containing the of the gateway.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway.
      * @return Result of the DescribeBandwidthRateLimit operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -2337,8 +2401,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape and
-     * file gateway types.
+     * Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape,
+     * and file gateway types.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and
@@ -2405,8 +2469,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * cached volume gateway types.
      * </p>
      * <p>
-     * The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway
-     * returns volume information sorted by volume Amazon Resource Name (ARN).
+     * The list of gateway volumes in the request must be from one gateway. In the response, AWS Storage Gateway returns
+     * volume information sorted by volume Amazon Resource Name (ARN).
      * </p>
      * 
      * @param describeCachediSCSIVolumesRequest
@@ -2600,7 +2664,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeMaintenanceStartTimeRequest
-     *        A JSON object containing the of the gateway.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway.
      * @return Result of the DescribeMaintenanceStartTime operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -2907,8 +2971,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the
-     * request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by
-     * volume ARNs. This operation is only supported in stored volume gateway type.
+     * request must be from one gateway. In the response AWS Storage Gateway returns volume information sorted by volume
+     * ARNs. This operation is only supported in stored volume gateway type.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
@@ -3313,7 +3377,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeWorkingStorageRequest
-     *        A JSON object containing the of the gateway.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway.
      * @return Result of the DescribeWorkingStorage operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -3442,7 +3506,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <important>
      * <p>
-     * Once a gateway is disabled it cannot be enabled.
+     * After a gateway is disabled, it cannot be enabled.
      * </p>
      * </important>
      * 
@@ -3552,6 +3616,72 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<JoinDomainResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new JoinDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the automatic tape creation policies for a gateway. If there are no automatic tape creation policies for
+     * the gateway, it returns an empty list.
+     * </p>
+     * <p>
+     * This operation is only supported for tape gateways.
+     * </p>
+     * 
+     * @param listAutomaticTapeCreationPoliciesRequest
+     * @return Result of the ListAutomaticTapeCreationPolicies operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.ListAutomaticTapeCreationPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListAutomaticTapeCreationPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAutomaticTapeCreationPoliciesResult listAutomaticTapeCreationPolicies(ListAutomaticTapeCreationPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAutomaticTapeCreationPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListAutomaticTapeCreationPoliciesResult executeListAutomaticTapeCreationPolicies(
+            ListAutomaticTapeCreationPoliciesRequest listAutomaticTapeCreationPoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAutomaticTapeCreationPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAutomaticTapeCreationPoliciesRequest> request = null;
+        Response<ListAutomaticTapeCreationPoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAutomaticTapeCreationPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAutomaticTapeCreationPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAutomaticTapeCreationPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAutomaticTapeCreationPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAutomaticTapeCreationPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3722,7 +3852,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param listLocalDisksRequest
-     *        A JSON object containing the of the gateway.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway.
      * @return Result of the ListLocalDisks operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -4364,10 +4494,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Resets all cache disks that have encountered a error and makes the disks available for reconfiguration as cache
-     * storage. If your cache disk encounters a error, the gateway prevents read and write operations on virtual tapes
+     * Resets all cache disks that have encountered an error and makes the disks available for reconfiguration as cache
+     * storage. If your cache disk encounters an error, the gateway prevents read and write operations on virtual tapes
      * in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a
-     * cache is reset, the gateway loses its cache storage. At this point you can reconfigure the disks as cache disks.
+     * cache is reset, the gateway loses its cache storage. At this point, you can reconfigure the disks as cache disks.
      * This operation is only supported in the cached volume and tape types.
      * </p>
      * <important>
@@ -4715,8 +4845,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </note>
      * <p>
      * After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>,
-     * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>.
-     * Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.
+     * <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>. Your
+     * applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.
      * </p>
      * <note>
      * <p>
@@ -4731,7 +4861,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param shutdownGatewayRequest
-     *        A JSON object containing the of the gateway to shut down.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down.
      * @return Result of the ShutdownGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -4872,7 +5002,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param startGatewayRequest
-     *        A JSON object containing the of the gateway to start.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway to start.
      * @return Result of the StartGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -4916,6 +5046,77 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<StartGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the automatic tape creation policy of a gateway. Use this to update the policy with a new set of
+     * automatic tape creation rules. This is only supported for tape gateways.
+     * </p>
+     * <p>
+     * By default, there is no automatic tape creation policy.
+     * </p>
+     * <note>
+     * <p>
+     * A gateway can have only one automatic tape creation policy.
+     * </p>
+     * </note>
+     * 
+     * @param updateAutomaticTapeCreationPolicyRequest
+     * @return Result of the UpdateAutomaticTapeCreationPolicy operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateAutomaticTapeCreationPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateAutomaticTapeCreationPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAutomaticTapeCreationPolicyResult updateAutomaticTapeCreationPolicy(UpdateAutomaticTapeCreationPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAutomaticTapeCreationPolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAutomaticTapeCreationPolicyResult executeUpdateAutomaticTapeCreationPolicy(
+            UpdateAutomaticTapeCreationPolicyRequest updateAutomaticTapeCreationPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAutomaticTapeCreationPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAutomaticTapeCreationPolicyRequest> request = null;
+        Response<UpdateAutomaticTapeCreationPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAutomaticTapeCreationPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAutomaticTapeCreationPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAutomaticTapeCreationPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAutomaticTapeCreationPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAutomaticTapeCreationPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5189,7 +5390,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </important>
      * 
      * @param updateGatewaySoftwareNowRequest
-     *        A JSON object containing the of the gateway to update.
+     *        A JSON object containing the Amazon Resource Name (ARN) of the gateway to update.
      * @return Result of the UpdateGatewaySoftwareNow operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,

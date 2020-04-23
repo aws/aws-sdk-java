@@ -51,6 +51,8 @@ public class ElasticsearchDestinationDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGGINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptions").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfigurationDescription").build();
 
     private static final ElasticsearchDestinationDescriptionMarshaller instance = new ElasticsearchDestinationDescriptionMarshaller();
 
@@ -80,6 +82,7 @@ public class ElasticsearchDestinationDescriptionMarshaller {
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getS3DestinationDescription(), S3DESTINATIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getProcessingConfiguration(), PROCESSINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(elasticsearchDestinationDescription.getCloudWatchLoggingOptions(), CLOUDWATCHLOGGINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDestinationDescription.getVpcConfigurationDescription(), VPCCONFIGURATIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the settings for a campaign treatment. A treatment is a variation of a campaign that's used for A/B testing
- * of a campaign.
+ * Specifies the settings for a campaign treatment. A <i>treatment</i> is a variation of a campaign that's used for A/B
+ * testing of a campaign.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteTreatmentResource" target="_top">AWS
@@ -29,6 +29,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteTreatmentResource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The delivery configuration settings for sending the treatment through a custom channel. This object is required
+     * if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     * </p>
+     */
+    private CustomDeliveryConfiguration customDeliveryConfiguration;
     /**
      * <p>
      * The message configuration settings for the treatment.
@@ -61,11 +68,56 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     private String treatmentDescription;
     /**
      * <p>
-     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
-     * campaign.
+     * A custom name for the treatment.
      * </p>
      */
     private String treatmentName;
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the treatment through a custom channel. This object is required
+     * if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     * </p>
+     * 
+     * @param customDeliveryConfiguration
+     *        The delivery configuration settings for sending the treatment through a custom channel. This object is
+     *        required if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     */
+
+    public void setCustomDeliveryConfiguration(CustomDeliveryConfiguration customDeliveryConfiguration) {
+        this.customDeliveryConfiguration = customDeliveryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the treatment through a custom channel. This object is required
+     * if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     * </p>
+     * 
+     * @return The delivery configuration settings for sending the treatment through a custom channel. This object is
+     *         required if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     */
+
+    public CustomDeliveryConfiguration getCustomDeliveryConfiguration() {
+        return this.customDeliveryConfiguration;
+    }
+
+    /**
+     * <p>
+     * The delivery configuration settings for sending the treatment through a custom channel. This object is required
+     * if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     * </p>
+     * 
+     * @param customDeliveryConfiguration
+     *        The delivery configuration settings for sending the treatment through a custom channel. This object is
+     *        required if the MessageConfiguration object for the treatment specifies a CustomMessage object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteTreatmentResource withCustomDeliveryConfiguration(CustomDeliveryConfiguration customDeliveryConfiguration) {
+        setCustomDeliveryConfiguration(customDeliveryConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -269,13 +321,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
-     * campaign.
+     * A custom name for the treatment.
      * </p>
      * 
      * @param treatmentName
-     *        A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
-     *        campaign.
+     *        A custom name for the treatment.
      */
 
     public void setTreatmentName(String treatmentName) {
@@ -284,12 +334,10 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
-     * campaign.
+     * A custom name for the treatment.
      * </p>
      * 
-     * @return A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of
-     *         a campaign.
+     * @return A custom name for the treatment.
      */
 
     public String getTreatmentName() {
@@ -298,13 +346,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
-     * campaign.
+     * A custom name for the treatment.
      * </p>
      * 
      * @param treatmentName
-     *        A custom name for the treatment. A treatment is a variation of a campaign that's used for A/B testing of a
-     *        campaign.
+     *        A custom name for the treatment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,6 +371,8 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomDeliveryConfiguration() != null)
+            sb.append("CustomDeliveryConfiguration: ").append(getCustomDeliveryConfiguration()).append(",");
         if (getMessageConfiguration() != null)
             sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
         if (getSchedule() != null)
@@ -351,6 +399,10 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
         if (obj instanceof WriteTreatmentResource == false)
             return false;
         WriteTreatmentResource other = (WriteTreatmentResource) obj;
+        if (other.getCustomDeliveryConfiguration() == null ^ this.getCustomDeliveryConfiguration() == null)
+            return false;
+        if (other.getCustomDeliveryConfiguration() != null && other.getCustomDeliveryConfiguration().equals(this.getCustomDeliveryConfiguration()) == false)
+            return false;
         if (other.getMessageConfiguration() == null ^ this.getMessageConfiguration() == null)
             return false;
         if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
@@ -383,6 +435,7 @@ public class WriteTreatmentResource implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomDeliveryConfiguration() == null) ? 0 : getCustomDeliveryConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getSizePercent() == null) ? 0 : getSizePercent().hashCode());

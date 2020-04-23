@@ -22,6 +22,7 @@ import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.auth.internal.AWS4SignerUtils;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.ValidationUtils;
 import java.util.Collections;
@@ -55,11 +56,30 @@ public final class ClockSkewAdjuster {
      */
     private static final int CLOCK_SKEW_ADJUST_THRESHOLD_IN_SECONDS = 4 * 60;
 
+    private volatile Integer estimatedSkew;
+
     static {
         Set<Integer> statusCodes = new HashSet<Integer>();
         statusCodes.add(401);
         statusCodes.add(403);
         AUTHENTICATION_ERROR_STATUS_CODES = Collections.unmodifiableSet(statusCodes);
+    }
+
+    /**
+     * The estimated skew is the difference between the local time at which the client received the response and the Date
+     * header from the service's response. This time represents both the time difference between the client and server due to
+     * clock differences as well as the network latency for sending a response from the service to the client.
+     */
+    public Integer getEstimatedSkew() {
+        return estimatedSkew;
+    }
+
+    public void updateEstimatedSkew(AdjustmentRequest adjustmentRequest) {
+        Date serverDate = getServerDate(adjustmentRequest);
+
+        if (serverDate != null) {
+            estimatedSkew = timeSkewInSeconds(getCurrentDate(adjustmentRequest), serverDate);
+        }
     }
 
     /**

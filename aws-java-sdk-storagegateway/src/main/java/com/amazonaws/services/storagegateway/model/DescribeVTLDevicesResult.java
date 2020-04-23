@@ -29,7 +29,7 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
     private String gatewayARN;
     /**
      * <p>
-     * An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     * An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VTLDevice> vTLDevices;
@@ -70,10 +70,10 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     * An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * </p>
      * 
-     * @return An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     * @return An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      */
 
     public java.util.List<VTLDevice> getVTLDevices() {
@@ -85,11 +85,11 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     * An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * </p>
      * 
      * @param vTLDevices
-     *        An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     *        An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      */
 
     public void setVTLDevices(java.util.Collection<VTLDevice> vTLDevices) {
@@ -103,7 +103,7 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     * An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -112,7 +112,7 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param vTLDevices
-     *        An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     *        An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +128,11 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     * An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * </p>
      * 
      * @param vTLDevices
-     *        An array of VTL device objects composed of the Amazon Resource Name(ARN) of the VTL devices.
+     *        An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

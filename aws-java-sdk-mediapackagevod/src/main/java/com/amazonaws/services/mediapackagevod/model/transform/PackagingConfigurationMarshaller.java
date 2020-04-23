@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.mediapackagevod.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +43,8 @@ public class PackagingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mssPackage").build();
     private static final MarshallingInfo<String> PACKAGINGGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("packagingGroupId").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PackagingConfigurationMarshaller instance = new PackagingConfigurationMarshaller();
 
@@ -65,6 +69,7 @@ public class PackagingConfigurationMarshaller {
             protocolMarshaller.marshall(packagingConfiguration.getId(), ID_BINDING);
             protocolMarshaller.marshall(packagingConfiguration.getMssPackage(), MSSPACKAGE_BINDING);
             protocolMarshaller.marshall(packagingConfiguration.getPackagingGroupId(), PACKAGINGGROUPID_BINDING);
+            protocolMarshaller.marshall(packagingConfiguration.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

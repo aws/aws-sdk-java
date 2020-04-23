@@ -25,7 +25,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that has this user assigned.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
      * </p>
      */
     private String serverId;
@@ -38,11 +38,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that has this user assigned.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that has this user assigned.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that has this user
+     *        assigned.
      */
 
     public void setServerId(String serverId) {
@@ -51,10 +52,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that has this user assigned.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server that has this user assigned.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that has this user
+     *         assigned.
      */
 
     public String getServerId() {
@@ -63,11 +65,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that has this user assigned.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that has this user assigned.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that has this user
+     *        assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

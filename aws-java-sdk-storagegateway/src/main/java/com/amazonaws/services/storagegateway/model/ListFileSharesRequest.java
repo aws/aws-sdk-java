@@ -30,7 +30,7 @@ public class ListFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
+     * The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
      * all file shares under your account are listed.
      * </p>
      */
@@ -52,12 +52,12 @@ public class ListFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
+     * The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
      * all file shares under your account are listed.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not
+     *        The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not
      *        present, all file shares under your account are listed.
      */
 
@@ -67,11 +67,11 @@ public class ListFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
+     * The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
      * all file shares under your account are listed.
      * </p>
      * 
-     * @return The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not
+     * @return The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not
      *         present, all file shares under your account are listed.
      */
 
@@ -81,12 +81,12 @@ public class ListFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
+     * The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present,
      * all file shares under your account are listed.
      * </p>
      * 
      * @param gatewayARN
-     *        The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not
+     *        The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not
      *        present, all file shares under your account are listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

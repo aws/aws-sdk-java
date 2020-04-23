@@ -58,6 +58,10 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements
             request.addParameter("LicenseModel", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getLicenseModel()));
         }
 
+        if (describeOrderableDBInstanceOptionsRequest.getAvailabilityZoneGroup() != null) {
+            request.addParameter("AvailabilityZoneGroup", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getAvailabilityZoneGroup()));
+        }
+
         if (describeOrderableDBInstanceOptionsRequest.getVpc() != null) {
             request.addParameter("Vpc", StringUtils.fromBoolean(describeOrderableDBInstanceOptionsRequest.getVpc()));
         }

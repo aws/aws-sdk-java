@@ -87,6 +87,7 @@ import com.amazonaws.retry.ClockSkewAdjuster.ClockSkewAdjustment;
 import com.amazonaws.retry.RetryMode;
 import com.amazonaws.retry.RetryPolicyAdapter;
 import com.amazonaws.retry.RetryUtils;
+import com.amazonaws.internal.SdkRequestRetryHeaderProvider;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.retry.v2.RetryPolicy;
@@ -139,9 +140,11 @@ import org.apache.http.protocol.HttpContext;
 
 @ThreadSafe
 public class AmazonHttpClient {
+
     public static final String HEADER_USER_AGENT = "User-Agent";
     public static final String HEADER_SDK_TRANSACTION_ID = "amz-sdk-invocation-id";
     public static final String HEADER_SDK_RETRY_INFO = "amz-sdk-retry";
+
     /**
      * Logger for more detailed debugging information, that might not be as useful for end users
      * (ex: HTTP client configuration, etc).
@@ -251,6 +254,8 @@ public class AmazonHttpClient {
     private volatile int timeOffset = SDKGlobalTime.getGlobalTimeOffset();
 
     private final RetryMode retryMode;
+
+    private final SdkRequestRetryHeaderProvider sdkRequestHeaderProvider;
 
     /**
      * Constructs a new AWS client using the specified client configuration options (ex: max retry
@@ -371,6 +376,7 @@ public class AmazonHttpClient {
         int throttledRetryMaxCapacity = clientConfig.useThrottledRetries()
                 ? THROTTLED_RETRY_COST * config.getMaxConsecutiveRetriesBeforeThrottling() : -1;
         this.retryCapacity = new CapacityManager(throttledRetryMaxCapacity);
+        this.sdkRequestHeaderProvider = new SdkRequestRetryHeaderProvider(config, this.retryPolicy, clockSkewAdjuster);
     }
 
     public static Builder builder() {
@@ -1276,6 +1282,7 @@ public class AmazonHttpClient {
                 pauseBeforeRetry(execOneParams, listener);
             }
             updateRetryHeaderInfo(request, execOneParams);
+            sdkRequestHeaderProvider.addSdkRequestRetryHeader(request, execOneParams.requestCount);
 
             // Sign the request if a signer was provided
             execOneParams.newSigner(request, executionContext);
@@ -1351,6 +1358,11 @@ public class AmazonHttpClient {
             publishProgress(listener, ProgressEventType.HTTP_REQUEST_COMPLETED_EVENT);
             final StatusLine statusLine = execOneParams.apacheResponse.getStatusLine();
             final int statusCode = statusLine == null ? -1 : statusLine.getStatusCode();
+
+            // Always update estimated skew if the wire call is successful.
+            clockSkewAdjuster.updateEstimatedSkew(new AdjustmentRequest()
+                                                      .clientRequest(request)
+                                                      .serviceResponse(execOneParams.apacheResponse));
 
             if (ApacheUtils.isRequestSuccessful(execOneParams.apacheResponse)) {
                 return handleSuccessResponse(execOneParams, localRequestContext, statusCode);

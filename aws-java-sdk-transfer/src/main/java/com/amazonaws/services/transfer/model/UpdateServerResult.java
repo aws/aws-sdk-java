@@ -25,18 +25,21 @@ public class UpdateServerResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is assigned
+     * to.
      * </p>
      */
     private String serverId;
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is assigned
+     * to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is
+     *        assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -45,10 +48,12 @@ public class UpdateServerResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is assigned
+     * to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is
+     *         assigned to.
      */
 
     public String getServerId() {
@@ -57,11 +62,13 @@ public class UpdateServerResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is assigned
+     * to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that the user account is assigned to.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that the user account is
+     *        assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

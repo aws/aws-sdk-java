@@ -52,22 +52,22 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
      * value describes the associated metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a
      * list of valid values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      */
     private String kpiName;
     /**
      * <p>
-     * The string that specifies which page of results to return in a paginated response. This parameter is currently
-     * not supported for application, campaign, and journey metrics.
+     * The string that specifies which page of results to return in a paginated response. This parameter is not
+     * supported for application, campaign, and journey metrics.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      */
     private String pageSize;
@@ -225,8 +225,8 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
      * value describes the associated metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a
      * list of valid values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @param kpiName
@@ -234,8 +234,8 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
      *        for. This value describes the associated metric and consists of two or more terms, which are comprised of
      *        lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and
      *        successful-delivery-rate. For a list of valid values, see the <a
-     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        Pinpoint Developer Guide</a>.
      */
 
     public void setKpiName(String kpiName) {
@@ -248,16 +248,16 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
      * value describes the associated metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a
      * list of valid values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @return The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data
      *         for. This value describes the associated metric and consists of two or more terms, which are comprised of
      *         lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and
      *         successful-delivery-rate. For a list of valid values, see the <a
-     *         href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     *         Guide</a>.
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *         Pinpoint Developer Guide</a>.
      */
 
     public String getKpiName() {
@@ -270,8 +270,8 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
      * value describes the associated metric and consists of two or more terms, which are comprised of lowercase
      * alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a
      * list of valid values, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @param kpiName
@@ -279,8 +279,8 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
      *        for. This value describes the associated metric and consists of two or more terms, which are comprised of
      *        lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and
      *        successful-delivery-rate. For a list of valid values, see the <a
-     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        Pinpoint Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,13 +291,13 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string that specifies which page of results to return in a paginated response. This parameter is currently
-     * not supported for application, campaign, and journey metrics.
+     * The string that specifies which page of results to return in a paginated response. This parameter is not
+     * supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @param nextToken
-     *        The string that specifies which page of results to return in a paginated response. This parameter is
-     *        currently not supported for application, campaign, and journey metrics.
+     *        The string that specifies which page of results to return in a paginated response. This parameter is not
+     *        supported for application, campaign, and journey metrics.
      */
 
     public void setNextToken(String nextToken) {
@@ -306,12 +306,12 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string that specifies which page of results to return in a paginated response. This parameter is currently
-     * not supported for application, campaign, and journey metrics.
+     * The string that specifies which page of results to return in a paginated response. This parameter is not
+     * supported for application, campaign, and journey metrics.
      * </p>
      * 
-     * @return The string that specifies which page of results to return in a paginated response. This parameter is
-     *         currently not supported for application, campaign, and journey metrics.
+     * @return The string that specifies which page of results to return in a paginated response. This parameter is not
+     *         supported for application, campaign, and journey metrics.
      */
 
     public String getNextToken() {
@@ -320,13 +320,13 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string that specifies which page of results to return in a paginated response. This parameter is currently
-     * not supported for application, campaign, and journey metrics.
+     * The string that specifies which page of results to return in a paginated response. This parameter is not
+     * supported for application, campaign, and journey metrics.
      * </p>
      * 
      * @param nextToken
-     *        The string that specifies which page of results to return in a paginated response. This parameter is
-     *        currently not supported for application, campaign, and journey metrics.
+     *        The string that specifies which page of results to return in a paginated response. This parameter is not
+     *        supported for application, campaign, and journey metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,13 +337,13 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported for application, campaign, and journey metrics.
+     *        The maximum number of items to include in each page of a paginated response. This parameter is not
+     *        supported for application, campaign, and journey metrics.
      */
 
     public void setPageSize(String pageSize) {
@@ -352,12 +352,12 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      * 
-     * @return The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *         not supported for application, campaign, and journey metrics.
+     * @return The maximum number of items to include in each page of a paginated response. This parameter is not
+     *         supported for application, campaign, and journey metrics.
      */
 
     public String getPageSize() {
@@ -366,13 +366,13 @@ public class GetJourneyDateRangeKpiRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum number of items to include in each page of a paginated response. This parameter is currently not
-     * supported for application, campaign, and journey metrics.
+     * The maximum number of items to include in each page of a paginated response. This parameter is not supported for
+     * application, campaign, and journey metrics.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to include in each page of a paginated response. This parameter is currently
-     *        not supported for application, campaign, and journey metrics.
+     *        The maximum number of items to include in each page of a paginated response. This parameter is not
+     *        supported for application, campaign, and journey metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

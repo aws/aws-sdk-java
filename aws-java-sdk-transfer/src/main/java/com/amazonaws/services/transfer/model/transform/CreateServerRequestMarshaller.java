@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateServerRequestMarshaller {
 
+    private static final MarshallingInfo<String> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Certificate").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointDetails").build();
     private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -40,6 +42,8 @@ public class CreateServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderType").build();
     private static final MarshallingInfo<String> LOGGINGROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingRole").build();
+    private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Protocols").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -59,12 +63,14 @@ public class CreateServerRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createServerRequest.getCertificate(), CERTIFICATE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getHostKey(), HOSTKEY_BINDING);
             protocolMarshaller.marshall(createServerRequest.getIdentityProviderDetails(), IDENTITYPROVIDERDETAILS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getLoggingRole(), LOGGINGROLE_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getProtocols(), PROTOCOLS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -55,6 +55,16 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
     private String licenseModel;
     /**
      * <p>
+     * The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings
+     * for the Local Zones in the group.
+     * </p>
+     * <p>
+     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * </p>
+     */
+    private String availabilityZoneGroup;
+    /**
+     * <p>
      * A value that indicates whether to show only VPC or non-VPC offerings.
      * </p>
      */
@@ -263,6 +273,67 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     public DescribeOrderableDBInstanceOptionsRequest withLicenseModel(String licenseModel) {
         setLicenseModel(licenseModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings
+     * for the Local Zones in the group.
+     * </p>
+     * <p>
+     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * </p>
+     * 
+     * @param availabilityZoneGroup
+     *        The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available
+     *        offerings for the Local Zones in the group.</p>
+     *        <p>
+     *        Omit this parameter to show the available offerings in the specified AWS Region.
+     */
+
+    public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
+        this.availabilityZoneGroup = availabilityZoneGroup;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings
+     * for the Local Zones in the group.
+     * </p>
+     * <p>
+     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * </p>
+     * 
+     * @return The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available
+     *         offerings for the Local Zones in the group.</p>
+     *         <p>
+     *         Omit this parameter to show the available offerings in the specified AWS Region.
+     */
+
+    public String getAvailabilityZoneGroup() {
+        return this.availabilityZoneGroup;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings
+     * for the Local Zones in the group.
+     * </p>
+     * <p>
+     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * </p>
+     * 
+     * @param availabilityZoneGroup
+     *        The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available
+     *        offerings for the Local Zones in the group.</p>
+     *        <p>
+     *        Omit this parameter to show the available offerings in the specified AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrderableDBInstanceOptionsRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
+        setAvailabilityZoneGroup(availabilityZoneGroup);
         return this;
     }
 
@@ -548,6 +619,8 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
             sb.append("DBInstanceClass: ").append(getDBInstanceClass()).append(",");
         if (getLicenseModel() != null)
             sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
+        if (getAvailabilityZoneGroup() != null)
+            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
         if (getVpc() != null)
             sb.append("Vpc: ").append(getVpc()).append(",");
         if (getFilters() != null)
@@ -586,6 +659,10 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
             return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
             return false;
+        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null)
+            return false;
+        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false)
+            return false;
         if (other.getVpc() == null ^ this.getVpc() == null)
             return false;
         if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
@@ -614,6 +691,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode());
         hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());

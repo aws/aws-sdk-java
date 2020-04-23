@@ -444,6 +444,49 @@
         "documentation": "A collection of MediaPackage VOD PackagingGroup resources.",
         "shape": "ListPackagingGroupsResponse"
       }
+    },
+    "ListTagsForResource": {
+      "documentation": "List tags for a given MediaPackage VOD resource",
+      "errors": [],
+      "http": {
+        "method": "GET",
+        "requestUri": "/tags/{resource-arn}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListTagsForResourceRequest"
+      },
+      "name": "ListTagsForResource",
+      "output": {
+        "documentation": "200 response",
+        "shape": "ListTagsForResourceResponse"
+      }
+    },
+    "TagResource": {
+      "documentation": "Set tags for a given MediaPackage VOD resource",
+      "errors": [],
+      "http": {
+        "method": "POST",
+        "requestUri": "/tags/{resource-arn}",
+        "responseCode": 204
+      },
+      "input": {
+        "shape": "TagResourceRequest"
+      },
+      "name": "TagResource"
+    },
+    "UntagResource": {
+      "documentation": "Delete tags for a given MediaPackage VOD resource",
+      "errors": [],
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/tags/{resource-arn}",
+        "responseCode": 204
+      },
+      "input": {
+        "shape": "UntagResourceRequest"
+      },
+      "name": "UntagResource"
     }
   },
   "shapes": {
@@ -497,6 +540,10 @@
           "documentation": "The IAM role_arn used to access the source S3 bucket.",
           "locationName": "sourceRoleArn",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -528,6 +575,10 @@
           "documentation": "The IAM role ARN used to access the source S3 bucket.",
           "locationName": "sourceRoleArn",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
@@ -591,6 +642,10 @@
           "documentation": "The IAM role ARN used to access the source S3 bucket.",
           "locationName": "sourceRoleArn",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -658,6 +713,10 @@
           "documentation": "The IAM role ARN used to access the source S3 bucket.",
           "locationName": "sourceRoleArn",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
@@ -709,6 +768,10 @@
           "documentation": "The IAM role_arn used to access the source S3 bucket.",
           "locationName": "sourceRoleArn",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -741,6 +804,10 @@
           "documentation": "The ID of a PackagingGroup.",
           "locationName": "packagingGroupId",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
@@ -781,6 +848,10 @@
           "documentation": "The ID of a PackagingGroup.",
           "locationName": "packagingGroupId",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -792,6 +863,10 @@
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
@@ -815,6 +890,10 @@
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -1004,6 +1083,10 @@
           "documentation": "The IAM role_arn used to access the source S3 bucket.",
           "locationName": "sourceRoleArn",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -1054,6 +1137,10 @@
           "documentation": "The ID of a PackagingGroup.",
           "locationName": "packagingGroupId",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -1088,6 +1175,10 @@
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -1337,6 +1428,28 @@
       },
       "type": "structure"
     },
+    "ListTagsForResourceRequest": {
+      "members": {
+        "ResourceArn": {
+          "location": "uri",
+          "locationName": "resource-arn",
+          "shape": "__string"
+        }
+      },
+      "required": [
+        "ResourceArn"
+      ],
+      "type": "structure"
+    },
+    "ListTagsForResourceResponse": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "__mapOf__string"
+        }
+      },
+      "type": "structure"
+    },
     "ManifestLayout": {
       "enum": [
         "FULL",
@@ -1447,6 +1560,10 @@
           "documentation": "The ID of a PackagingGroup.",
           "locationName": "packagingGroupId",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -1479,6 +1596,10 @@
           "documentation": "The ID of a PackagingGroup.",
           "locationName": "packagingGroupId",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
@@ -1520,6 +1641,10 @@
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "type": "structure"
@@ -1531,6 +1656,10 @@
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
         }
       },
       "required": [
@@ -1638,6 +1767,46 @@
       },
       "type": "structure"
     },
+    "TagResourceRequest": {
+      "members": {
+        "ResourceArn": {
+          "location": "uri",
+          "locationName": "resource-arn",
+          "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "__mapOf__string"
+        }
+      },
+      "required": [
+        "ResourceArn",
+        "Tags"
+      ],
+      "type": "structure"
+    },
+    "Tags": {
+      "documentation": "A collection of tags associated with a resource",
+      "key": {
+        "shape": "__string"
+      },
+      "type": "map",
+      "value": {
+        "shape": "__string"
+      }
+    },
+    "TagsModel": {
+      "members": {
+        "Tags": {
+          "locationName": "tags",
+          "shape": "__mapOf__string"
+        }
+      },
+      "required": [
+        "Tags"
+      ],
+      "type": "structure"
+    },
     "TooManyRequestsException": {
       "documentation": "The client has exceeded their resource or throttling limits.",
       "error": {
@@ -1664,6 +1833,26 @@
           "shape": "__string"
         }
       },
+      "type": "structure"
+    },
+    "UntagResourceRequest": {
+      "members": {
+        "ResourceArn": {
+          "location": "uri",
+          "locationName": "resource-arn",
+          "shape": "__string"
+        },
+        "TagKeys": {
+          "documentation": "The key(s) of tag to be deleted",
+          "location": "querystring",
+          "locationName": "tagKeys",
+          "shape": "__listOf__string"
+        }
+      },
+      "required": [
+        "TagKeys",
+        "ResourceArn"
+      ],
       "type": "structure"
     },
     "__PeriodTriggersElement": {
@@ -1737,6 +1926,15 @@
     },
     "__long": {
       "type": "long"
+    },
+    "__mapOf__string": {
+      "key": {
+        "shape": "__string"
+      },
+      "type": "map",
+      "value": {
+        "shape": "__string"
+      }
     },
     "__string": {
       "type": "string"

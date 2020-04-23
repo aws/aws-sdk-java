@@ -42,14 +42,14 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String gatewayARN;
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      */
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
      * be set when KMSEncrypted is true. Optional.
      * </p>
      */
@@ -145,7 +145,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -265,12 +265,12 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      */
 
@@ -280,11 +280,11 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -294,12 +294,12 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -311,11 +311,11 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -325,12 +325,12 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
      * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
      *        can only be set when KMSEncrypted is true. Optional.
      */
 
@@ -340,11 +340,11 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
      * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
      *         can only be set when KMSEncrypted is true. Optional.
      */
 
@@ -354,12 +354,12 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
      * be set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
      *        can only be set when KMSEncrypted is true. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1103,12 +1103,12 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @return A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *         must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
+     *         must be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if
      *         Authentication is set to <code>ActiveDirectory</code>.
      */
 
@@ -1122,14 +1122,14 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      */
 
     public void setInvalidUserList(java.util.Collection<String> invalidUserList) {
@@ -1144,7 +1144,7 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -1155,8 +1155,8 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1173,14 +1173,14 @@ public class CreateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be
-     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * prefixed with the @ character. For example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param invalidUserList
      *        A list of users or groups in the Active Directory that are not allowed to access the file share. A group
-     *        must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication
-     *        is set to <code>ActiveDirectory</code>.
+     *        must be prefixed with the @ character. For example, <code>@group1</code>. Can only be set if
+     *        Authentication is set to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

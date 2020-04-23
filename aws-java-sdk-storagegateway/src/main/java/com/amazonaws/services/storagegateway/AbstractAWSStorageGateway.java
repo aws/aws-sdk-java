@@ -123,6 +123,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DeleteAutomaticTapeCreationPolicyResult deleteAutomaticTapeCreationPolicy(DeleteAutomaticTapeCreationPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -273,6 +278,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public ListAutomaticTapeCreationPoliciesResult listAutomaticTapeCreationPolicies(ListAutomaticTapeCreationPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFileSharesResult listFileShares(ListFileSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -379,6 +389,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public StartGatewayResult startGateway(StartGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAutomaticTapeCreationPolicyResult updateAutomaticTapeCreationPolicy(UpdateAutomaticTapeCreationPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

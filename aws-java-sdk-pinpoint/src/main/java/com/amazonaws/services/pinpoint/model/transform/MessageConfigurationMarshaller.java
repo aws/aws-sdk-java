@@ -33,6 +33,8 @@ public class MessageConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("APNSMessage").build();
     private static final MarshallingInfo<StructuredPojo> BAIDUMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaiduMessage").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomMessage").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultMessage").build();
     private static final MarshallingInfo<StructuredPojo> EMAILMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -61,6 +63,7 @@ public class MessageConfigurationMarshaller {
             protocolMarshaller.marshall(messageConfiguration.getADMMessage(), ADMMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getAPNSMessage(), APNSMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getBaiduMessage(), BAIDUMESSAGE_BINDING);
+            protocolMarshaller.marshall(messageConfiguration.getCustomMessage(), CUSTOMMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getDefaultMessage(), DEFAULTMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getEmailMessage(), EMAILMESSAGE_BINDING);
             protocolMarshaller.marshall(messageConfiguration.getGCMMessage(), GCMMESSAGE_BINDING);

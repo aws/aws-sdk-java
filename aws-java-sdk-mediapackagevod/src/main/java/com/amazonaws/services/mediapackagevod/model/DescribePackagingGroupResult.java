@@ -30,6 +30,8 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
     /** The ID of the PackagingGroup. */
     private String id;
 
+    private java.util.Map<String, String> tags;
+
     /**
      * The ARN of the PackagingGroup.
      * 
@@ -133,6 +135,60 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackagingGroupResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribePackagingGroupResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackagingGroupResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePackagingGroupResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -149,7 +205,9 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -176,6 +234,10 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -187,6 +249,7 @@ public class DescribePackagingGroupResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

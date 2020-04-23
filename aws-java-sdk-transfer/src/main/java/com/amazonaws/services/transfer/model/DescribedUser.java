@@ -30,33 +30,28 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
+     * Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * This property specifies the landing directory (or folder), which is the location that files are written to or
-     * read from in an Amazon S3 bucket for the described user. An example is
+     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
+     * Amazon S3 bucket for the described user. An example is
      * <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      * </p>
      */
     private String homeDirectory;
     /**
      * <p>
-     * Logical directory mappings that you specified for what S3 paths and keys should be visible to your user and how
-     * you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
-     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you
-     * only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
-     * provides access to paths in <code>Target</code>.
+     * Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your user
+     * and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>
+     * " pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon
+     * S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS
+     * IAM Role provides access to paths in <code>Target</code>.
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
-     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.
-     * </p>
-     * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
@@ -64,10 +59,11 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP server. If
-     * you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP
-     * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you mapped for your users to see when they log into the file transfer
+     * protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
+     * paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your
+     * users.
      * </p>
      */
     private String homeDirectoryType;
@@ -79,42 +75,41 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private String policy;
     /**
      * <p>
-     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
+     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
+     * role will determine the level of access you want to provide your users when transferring files into and out of
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
+     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
+     * Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * </p>
      */
     private java.util.List<SshPublicKey> sshPublicKeys;
     /**
      * <p>
-     * This property contains the key-value pairs for the user requested. Tag can be used to search for and group users
-     * for a variety of purposes.
+     * Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety
+     * of purposes.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * This property is the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your SFTP server.
+     * The name of the user that was requested to be described. User names are used for authentication purposes. This is
+     * the string that will be used by your user when they log in to your file transfer protocol-enabled server.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
+     * Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      * </p>
      * 
      * @param arn
-     *        This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be
-     *        described.
+     *        Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      */
 
     public void setArn(String arn) {
@@ -123,11 +118,10 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
+     * Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      * </p>
      * 
-     * @return This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be
-     *         described.
+     * @return Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      */
 
     public String getArn() {
@@ -136,12 +130,11 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
+     * Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      * </p>
      * 
      * @param arn
-     *        This property contains the unique Amazon Resource Name (ARN) for the user that was requested to be
-     *        described.
+     *        Contains the unique Amazon Resource Name (ARN) for the user that was requested to be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,14 +145,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the landing directory (or folder), which is the location that files are written to or
-     * read from in an Amazon S3 bucket for the described user. An example is
+     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
+     * Amazon S3 bucket for the described user. An example is
      * <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      * </p>
      * 
      * @param homeDirectory
-     *        This property specifies the landing directory (or folder), which is the location that files are written to
-     *        or read from in an Amazon S3 bucket for the described user. An example is
+     *        Specifies the landing directory (or folder), which is the location that files are written to or read from
+     *        in an Amazon S3 bucket for the described user. An example is
      *        <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      */
 
@@ -169,13 +162,13 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the landing directory (or folder), which is the location that files are written to or
-     * read from in an Amazon S3 bucket for the described user. An example is
+     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
+     * Amazon S3 bucket for the described user. An example is
      * <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      * </p>
      * 
-     * @return This property specifies the landing directory (or folder), which is the location that files are written
-     *         to or read from in an Amazon S3 bucket for the described user. An example is
+     * @return Specifies the landing directory (or folder), which is the location that files are written to or read from
+     *         in an Amazon S3 bucket for the described user. An example is
      *         <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      */
 
@@ -185,14 +178,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the landing directory (or folder), which is the location that files are written to or
-     * read from in an Amazon S3 bucket for the described user. An example is
+     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
+     * Amazon S3 bucket for the described user. An example is
      * <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      * </p>
      * 
      * @param homeDirectory
-     *        This property specifies the landing directory (or folder), which is the location that files are written to
-     *        or read from in an Amazon S3 bucket for the described user. An example is
+     *        Specifies the landing directory (or folder), which is the location that files are written to or read from
+     *        in an Amazon S3 bucket for the described user. An example is
      *        <code>/<i>your s3 bucket name</i>/home/<i>username</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -204,35 +197,26 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Logical directory mappings that you specified for what S3 paths and keys should be visible to your user and how
-     * you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
-     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you
-     * only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
-     * provides access to paths in <code>Target</code>.
+     * Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your user
+     * and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>
+     * " pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon
+     * S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS
+     * IAM Role provides access to paths in <code>Target</code>.
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
-     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.
-     * </p>
-     * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * 
-     * @return Logical directory mappings that you specified for what S3 paths and keys should be visible to your user
-     *         and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     * @return Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your
+     *         user and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *         <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     *         <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You
-     *         will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>.</p>
+     *         <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *         is. You will need to also make sure that your AWS IAM Role provides access to paths in
+     *         <code>Target</code>.</p>
      *         <p>
-     *         In most cases, you can use this value instead of the scope down policy to lock your user down to the
-     *         designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
-     *         <code>Target</code> to the HomeDirectory parameter value.
-     *         </p>
-     *         <p>
-     *         In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *         In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *         designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *         <code>Target</code> to the HomeDirectory parameter value.
      */
@@ -243,36 +227,27 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Logical directory mappings that you specified for what S3 paths and keys should be visible to your user and how
-     * you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
-     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you
-     * only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
-     * provides access to paths in <code>Target</code>.
+     * Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your user
+     * and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>
+     * " pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon
+     * S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS
+     * IAM Role provides access to paths in <code>Target</code>.
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
-     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.
-     * </p>
-     * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that you specified for what S3 paths and keys should be visible to your user
-     *        and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *        Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your
+     *        user and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     *        <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You
-     *        will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>.</p>
+     *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
+     *        .</p>
      *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
-     *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
-     *        <code>Target</code> to the HomeDirectory parameter value.
-     *        </p>
-     *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      */
@@ -288,19 +263,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Logical directory mappings that you specified for what S3 paths and keys should be visible to your user and how
-     * you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
-     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you
-     * only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
-     * provides access to paths in <code>Target</code>.
+     * Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your user
+     * and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>
+     * " pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon
+     * S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS
+     * IAM Role provides access to paths in <code>Target</code>.
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
-     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.
-     * </p>
-     * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
@@ -311,18 +281,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that you specified for what S3 paths and keys should be visible to your user
-     *        and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *        Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your
+     *        user and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     *        <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You
-     *        will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>.</p>
+     *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
+     *        .</p>
      *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
-     *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
-     *        <code>Target</code> to the HomeDirectory parameter value.
-     *        </p>
-     *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -340,36 +306,27 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Logical directory mappings that you specified for what S3 paths and keys should be visible to your user and how
-     * you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>" pair,
-     * where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual S3 path. If you
-     * only specify a target, it will be displayed as is. You will need to also make sure that your AWS IAM Role
-     * provides access to paths in <code>Target</code>.
+     * Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your user
+     * and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>
+     * " pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon
+     * S3 path. If you only specify a target, it will be displayed as is. You will need to also make sure that your AWS
+     * IAM Role provides access to paths in <code>Target</code>.
      * </p>
      * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
-     * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
-     * HomeDirectory parameter value.
-     * </p>
-     * <p>
-     * In most cases, you can use this value instead of the scope down policy to lock your user down to the designated
+     * In most cases, you can use this value instead of the scope-down policy to lock your user down to the designated
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
      * 
      * @param homeDirectoryMappings
-     *        Logical directory mappings that you specified for what S3 paths and keys should be visible to your user
-     *        and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
+     *        Logical directory mappings that you specified for what Amazon S3 paths and keys should be visible to your
+     *        user and how you want to make them visible. You will need to specify the "<code>Entry</code>" and "
      *        <code>Target</code>" pair, where <code>Entry</code> shows how the path is made visible and
-     *        <code>Target</code> is the actual S3 path. If you only specify a target, it will be displayed as is. You
-     *        will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>.</p>
+     *        <code>Target</code> is the actual Amazon S3 path. If you only specify a target, it will be displayed as
+     *        is. You will need to also make sure that your AWS IAM Role provides access to paths in <code>Target</code>
+     *        .</p>
      *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
-     *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
-     *        <code>Target</code> to the HomeDirectory parameter value.
-     *        </p>
-     *        <p>
-     *        In most cases, you can use this value instead of the scope down policy to lock your user down to the
+     *        In most cases, you can use this value instead of the scope-down policy to lock your user down to the
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -382,17 +339,19 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP server. If
-     * you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP
-     * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you mapped for your users to see when they log into the file transfer
+     * protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
+     * paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your
+     * users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
-     *        their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *        The type of landing directory (folder) you mapped for your users to see when they log into the file
+     *        transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *        Amazon S3 paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -402,16 +361,18 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP server. If
-     * you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP
-     * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you mapped for your users to see when they log into the file transfer
+     * protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
+     * paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your
+     * users.
      * </p>
      * 
-     * @return The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP
-     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     *         in their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *         <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * @return The type of landing directory (folder) you mapped for your users to see when they log into the file
+     *         transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *         Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *         you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *         Amazon S3 paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -421,17 +382,19 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP server. If
-     * you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP
-     * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you mapped for your users to see when they log into the file transfer
+     * protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
+     * paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your
+     * users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
-     *        their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *        The type of landing directory (folder) you mapped for your users to see when they log into the file
+     *        transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *        Amazon S3 paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -443,17 +406,19 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP server. If
-     * you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their SFTP
-     * clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     * The type of landing directory (folder) you mapped for your users to see when they log into the file transfer
+     * protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket
+     * paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your
+     * users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) you mapped for your users' to see when they log into the SFTP
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
-     *        their SFTP clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     *        <code>HomeDirectoryMappings</code> for how you want to make S3 paths visible to your user.
+     *        The type of landing directory (folder) you mapped for your users to see when they log into the file
+     *        transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
+     *        Amazon S3 bucket paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>,
+     *        you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     *        Amazon S3 paths visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -505,17 +470,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
+     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
+     * role will determine the level of access you want to provide your users when transferring files into and out of
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
+     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
-     *        This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The
-     *        policies attached to this role will determine the level of access you want to provide your users when
-     *        transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a
-     *        trust relationship that allows the SFTP server to access your resources when servicing your SFTP user's
+     *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to
+     *        this role will determine the level of access you want to provide your users when transferring files into
+     *        and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
+     *        allows a file transfer protocol-enabled server to access your resources when servicing your users'
      *        transfer requests.
      */
 
@@ -525,16 +490,16 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
+     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
+     * role will determine the level of access you want to provide your users when transferring files into and out of
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
+     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      * 
-     * @return This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The
-     *         policies attached to this role will determine the level of access you want to provide your users when
-     *         transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a
-     *         trust relationship that allows the SFTP server to access your resources when servicing your SFTP user's
+     * @return Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached
+     *         to this role will determine the level of access you want to provide your users when transferring files
+     *         into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship
+     *         that allows a file transfer protocol-enabled server to access your resources when servicing your users'
      *         transfer requests.
      */
 
@@ -544,17 +509,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     * allows the SFTP server to access your resources when servicing your SFTP user's transfer requests.
+     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
+     * role will determine the level of access you want to provide your users when transferring files into and out of
+     * your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a file
+     * transfer protocol-enabled server to access your resources when servicing your users' transfer requests.
      * </p>
      * 
      * @param role
-     *        This property specifies the IAM role that controls your user's access to your Amazon S3 bucket. The
-     *        policies attached to this role will determine the level of access you want to provide your users when
-     *        transferring files into and out of your Amazon S3 bucket or buckets. The IAM role should also contain a
-     *        trust relationship that allows the SFTP server to access your resources when servicing your SFTP user's
+     *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to
+     *        this role will determine the level of access you want to provide your users when transferring files into
+     *        and out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
+     *        allows a file transfer protocol-enabled server to access your resources when servicing your users'
      *        transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -566,11 +531,10 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
+     * Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * </p>
      * 
-     * @return This property contains the public key portion of the Secure Shell (SSH) keys stored for the described
-     *         user.
+     * @return Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      */
 
     public java.util.List<SshPublicKey> getSshPublicKeys() {
@@ -579,12 +543,11 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
+     * Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * </p>
      * 
      * @param sshPublicKeys
-     *        This property contains the public key portion of the Secure Shell (SSH) keys stored for the described
-     *        user.
+     *        Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      */
 
     public void setSshPublicKeys(java.util.Collection<SshPublicKey> sshPublicKeys) {
@@ -598,7 +561,7 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
+     * Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -607,8 +570,7 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param sshPublicKeys
-     *        This property contains the public key portion of the Secure Shell (SSH) keys stored for the described
-     *        user.
+     *        Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -624,12 +586,11 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
+     * Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * </p>
      * 
      * @param sshPublicKeys
-     *        This property contains the public key portion of the Secure Shell (SSH) keys stored for the described
-     *        user.
+     *        Contains the public key portion of the Secure Shell (SSH) keys stored for the described user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -640,12 +601,12 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the key-value pairs for the user requested. Tag can be used to search for and group users
-     * for a variety of purposes.
+     * Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety
+     * of purposes.
      * </p>
      * 
-     * @return This property contains the key-value pairs for the user requested. Tag can be used to search for and
-     *         group users for a variety of purposes.
+     * @return Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a
+     *         variety of purposes.
      */
 
     public java.util.List<Tag> getTags() {
@@ -654,13 +615,13 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the key-value pairs for the user requested. Tag can be used to search for and group users
-     * for a variety of purposes.
+     * Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety
+     * of purposes.
      * </p>
      * 
      * @param tags
-     *        This property contains the key-value pairs for the user requested. Tag can be used to search for and group
-     *        users for a variety of purposes.
+     *        Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a
+     *        variety of purposes.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -674,8 +635,8 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the key-value pairs for the user requested. Tag can be used to search for and group users
-     * for a variety of purposes.
+     * Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety
+     * of purposes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -684,8 +645,8 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        This property contains the key-value pairs for the user requested. Tag can be used to search for and group
-     *        users for a variety of purposes.
+     *        Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a
+     *        variety of purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -701,13 +662,13 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property contains the key-value pairs for the user requested. Tag can be used to search for and group users
-     * for a variety of purposes.
+     * Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a variety
+     * of purposes.
      * </p>
      * 
      * @param tags
-     *        This property contains the key-value pairs for the user requested. Tag can be used to search for and group
-     *        users for a variety of purposes.
+     *        Contains the key-value pairs for the user requested. Tag can be used to search for and group users for a
+     *        variety of purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -718,13 +679,13 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your SFTP server.
+     * The name of the user that was requested to be described. User names are used for authentication purposes. This is
+     * the string that will be used by your user when they log in to your file transfer protocol-enabled server.
      * </p>
      * 
      * @param userName
-     *        This property is the name of the user that was requested to be described. User names are used for
-     *        authentication purposes. This is the string that will be used by your user when they log in to your SFTP
+     *        The name of the user that was requested to be described. User names are used for authentication purposes.
+     *        This is the string that will be used by your user when they log in to your file transfer protocol-enabled
      *        server.
      */
 
@@ -734,12 +695,12 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your SFTP server.
+     * The name of the user that was requested to be described. User names are used for authentication purposes. This is
+     * the string that will be used by your user when they log in to your file transfer protocol-enabled server.
      * </p>
      * 
-     * @return This property is the name of the user that was requested to be described. User names are used for
-     *         authentication purposes. This is the string that will be used by your user when they log in to your SFTP
+     * @return The name of the user that was requested to be described. User names are used for authentication purposes.
+     *         This is the string that will be used by your user when they log in to your file transfer protocol-enabled
      *         server.
      */
 
@@ -749,13 +710,13 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the name of the user that was requested to be described. User names are used for authentication
-     * purposes. This is the string that will be used by your user when they log in to your SFTP server.
+     * The name of the user that was requested to be described. User names are used for authentication purposes. This is
+     * the string that will be used by your user when they log in to your file transfer protocol-enabled server.
      * </p>
      * 
      * @param userName
-     *        This property is the name of the user that was requested to be described. User names are used for
-     *        authentication purposes. This is the string that will be used by your user when they log in to your SFTP
+     *        The name of the user that was requested to be described. User names are used for authentication purposes.
+     *        This is the string that will be used by your user when they log in to your file transfer protocol-enabled
      *        server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

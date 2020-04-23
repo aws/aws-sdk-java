@@ -319,6 +319,39 @@ public interface AWSMediaPackageVod {
     ListPackagingGroupsResult listPackagingGroups(ListPackagingGroupsRequest listPackagingGroupsRequest);
 
     /**
+     * List tags for a given MediaPackage VOD resource
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaPackageVod.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Set tags for a given MediaPackage VOD resource
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @sample AWSMediaPackageVod.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * Delete tags for a given MediaPackage VOD resource
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @sample AWSMediaPackageVod.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

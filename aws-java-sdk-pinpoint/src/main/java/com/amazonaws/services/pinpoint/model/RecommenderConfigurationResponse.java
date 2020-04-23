@@ -31,14 +31,14 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
 
     /**
      * <p>
-     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommenderUserIdType
-     * property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender
-     * model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message
-     * variable in a message template.
+     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -120,43 +120,43 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
-     * a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console.
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      */
     private String recommendationsDisplayName;
     /**
      * <p>
      * The number of recommended items that are retrieved from the model for each endpoint or user, depending on the
-     * value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     * available for use as message variables in message templates.
+     * value for the RecommendationProviderIdType property. This number determines how many recommended items are
+     * available for use in message variables.
      * </p>
      */
     private Integer recommendationsPerMessage;
 
     /**
      * <p>
-     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommenderUserIdType
-     * property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender
-     * model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message
-     * variable in a message template.
+     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      * 
      * @return A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     *         RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's
-     *         retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each
-     *         attribute can be used as a message variable in a message template.</p>
+     *         RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item
+     *         that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing.
+     *         Each attribute can be used as a message variable in a message template.</p>
      *         <p>
-     *         This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to
-     *         perform additional processing of recommendation data.
+     *         This value is null if the configuration doesn't invoke an AWS Lambda function
+     *         (RecommendationTransformerUri) to perform additional processing of recommendation data.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -165,24 +165,24 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
 
     /**
      * <p>
-     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommenderUserIdType
-     * property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender
-     * model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message
-     * variable in a message template.
+     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      * 
      * @param attributes
      *        A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     *        RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's
-     *        retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each
-     *        attribute can be used as a message variable in a message template.</p>
+     *        RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item
+     *        that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing.
+     *        Each attribute can be used as a message variable in a message template.</p>
      *        <p>
-     *        This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to
-     *        perform additional processing of recommendation data.
+     *        This value is null if the configuration doesn't invoke an AWS Lambda function
+     *        (RecommendationTransformerUri) to perform additional processing of recommendation data.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -191,24 +191,24 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
 
     /**
      * <p>
-     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommenderUserIdType
-     * property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender
-     * model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message
-     * variable in a message template.
+     * A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      * 
      * @param attributes
      *        A map that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     *        RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's
-     *        retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each
-     *        attribute can be used as a message variable in a message template.</p>
+     *        RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item
+     *        that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing.
+     *        Each attribute can be used as a message variable in a message template.</p>
      *        <p>
-     *        This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to
-     *        perform additional processing of recommendation data.
+     *        This value is null if the configuration doesn't invoke an AWS Lambda function
+     *        (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,22 +732,22 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
-     * a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console.
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      * 
      * @param recommendationsDisplayName
      *        The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily
-     *        stores a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType
-     *        property. This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon
-     *        Pinpoint console.</p>
+     *        stores recommended items for each endpoint or user, depending on the value for the
+     *        RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template
+     *        editor on the Amazon Pinpoint console.</p>
      *        <p>
-     *        This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to
-     *        perform additional processing of recommendation data.
+     *        This value is null if the configuration doesn't invoke an AWS Lambda function
+     *        (RecommendationTransformerUri) to perform additional processing of recommendation data.
      */
 
     public void setRecommendationsDisplayName(String recommendationsDisplayName) {
@@ -757,21 +757,21 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
-     * a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console.
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      * 
      * @return The custom display name for the standard endpoint or user attribute (RecommendationItems) that
-     *         temporarily stores a recommended item for each endpoint or user, depending on the value for the
-     *         RecommenderUserIdType property. This name appears in the <b>Attribute finder</b> pane of the template
+     *         temporarily stores recommended items for each endpoint or user, depending on the value for the
+     *         RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template
      *         editor on the Amazon Pinpoint console.</p>
      *         <p>
-     *         This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to
-     *         perform additional processing of recommendation data.
+     *         This value is null if the configuration doesn't invoke an AWS Lambda function
+     *         (RecommendationTransformerUri) to perform additional processing of recommendation data.
      */
 
     public String getRecommendationsDisplayName() {
@@ -781,22 +781,22 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
-     * a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console.
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
      * </p>
      * <p>
-     * This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to
+     * perform additional processing of recommendation data.
      * </p>
      * 
      * @param recommendationsDisplayName
      *        The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily
-     *        stores a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType
-     *        property. This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon
-     *        Pinpoint console.</p>
+     *        stores recommended items for each endpoint or user, depending on the value for the
+     *        RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template
+     *        editor on the Amazon Pinpoint console.</p>
      *        <p>
-     *        This value is null if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to
-     *        perform additional processing of recommendation data.
+     *        This value is null if the configuration doesn't invoke an AWS Lambda function
+     *        (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -808,14 +808,14 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The number of recommended items that are retrieved from the model for each endpoint or user, depending on the
-     * value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     * available for use as message variables in message templates.
+     * value for the RecommendationProviderIdType property. This number determines how many recommended items are
+     * available for use in message variables.
      * </p>
      * 
      * @param recommendationsPerMessage
      *        The number of recommended items that are retrieved from the model for each endpoint or user, depending on
-     *        the value for the RecommenderUserIdType property. This number determines how many recommended attributes
-     *        are available for use as message variables in message templates.
+     *        the value for the RecommendationProviderIdType property. This number determines how many recommended items
+     *        are available for use in message variables.
      */
 
     public void setRecommendationsPerMessage(Integer recommendationsPerMessage) {
@@ -825,13 +825,13 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The number of recommended items that are retrieved from the model for each endpoint or user, depending on the
-     * value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     * available for use as message variables in message templates.
+     * value for the RecommendationProviderIdType property. This number determines how many recommended items are
+     * available for use in message variables.
      * </p>
      * 
      * @return The number of recommended items that are retrieved from the model for each endpoint or user, depending on
-     *         the value for the RecommenderUserIdType property. This number determines how many recommended attributes
-     *         are available for use as message variables in message templates.
+     *         the value for the RecommendationProviderIdType property. This number determines how many recommended
+     *         items are available for use in message variables.
      */
 
     public Integer getRecommendationsPerMessage() {
@@ -841,14 +841,14 @@ public class RecommenderConfigurationResponse implements Serializable, Cloneable
     /**
      * <p>
      * The number of recommended items that are retrieved from the model for each endpoint or user, depending on the
-     * value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     * available for use as message variables in message templates.
+     * value for the RecommendationProviderIdType property. This number determines how many recommended items are
+     * available for use in message variables.
      * </p>
      * 
      * @param recommendationsPerMessage
      *        The number of recommended items that are retrieved from the model for each endpoint or user, depending on
-     *        the value for the RecommenderUserIdType property. This number determines how many recommended attributes
-     *        are available for use as message variables in message templates.
+     *        the value for the RecommendationProviderIdType property. This number determines how many recommended items
+     *        are available for use in message variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

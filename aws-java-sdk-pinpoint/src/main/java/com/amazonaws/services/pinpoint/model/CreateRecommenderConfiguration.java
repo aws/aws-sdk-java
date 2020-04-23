@@ -32,14 +32,14 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     * RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's retrieved
-     * from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be
-     * used as a message variable in a message template.
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
      * In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute.
-     * The display name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:
+     * The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     * The following restrictions apply to these names:
      * </p>
      * <ul>
      * <li>
@@ -56,15 +56,15 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * </li>
      * </ul>
      * <p>
-     * This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.
+     * This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to
+     * process recommendation data. Otherwise, don't include this object in your request.
      * </p>
      */
     private java.util.Map<String, String> attributes;
     /**
      * <p>
      * A custom description of the configuration for the recommender model. The description can contain up to 128
-     * characters.
+     * characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      * </p>
      */
     private String description;
@@ -93,7 +93,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * <p>
      * PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The
      * data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in
-     * Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
+     * Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
      * the user's endpoint.
      * </p>
      * </li>
@@ -123,28 +123,27 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     private String recommendationTransformerUri;
     /**
      * <p>
-     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores a
-     * recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * value is required if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * <p>
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console. The
-     * name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens
-     * (-). These restrictions don't apply to attribute values.
+     * This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name
+     * can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).
+     * These restrictions don't apply to attribute values.
      * </p>
      */
     private String recommendationsDisplayName;
     /**
      * <p>
      * The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for
-     * the RecommenderUserIdType property. This number determines how many recommended attributes are available for use
-     * as message variables in message templates. The minimum value is 1. The maximum value is 5. The default value is
-     * 5.
+     * the RecommendationProviderIdType property. This number determines how many recommended items are available for
+     * use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.
      * </p>
      * <p>
      * To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     * function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      */
     private Integer recommendationsPerMessage;
@@ -152,14 +151,14 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     * RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's retrieved
-     * from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be
-     * used as a message variable in a message template.
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
      * In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute.
-     * The display name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:
+     * The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     * The following restrictions apply to these names:
      * </p>
      * <ul>
      * <li>
@@ -176,18 +175,18 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * </li>
      * </ul>
      * <p>
-     * This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.
+     * This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to
+     * process recommendation data. Otherwise, don't include this object in your request.
      * </p>
      * 
      * @return A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for
-     *         the RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's
-     *         retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each
-     *         attribute can be used as a message variable in a message template.</p>
+     *         the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item
+     *         that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing.
+     *         Each attribute can be used as a message variable in a message template.</p>
      *         <p>
      *         In the map, the key is the name of a custom attribute and the value is a custom display name for that
-     *         attribute. The display name appears in the <b>Attribute finder</b> pane of the template editor on the
-     *         Amazon Pinpoint console. The following restrictions apply to these names:
+     *         attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     *         Pinpoint console. The following restrictions apply to these names:
      *         </p>
      *         <ul>
      *         <li>
@@ -205,8 +204,9 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      *         </li>
      *         </ul>
      *         <p>
-     *         This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to
-     *         process recommendation data. Otherwise, don't include this object in your request.
+     *         This object is required if the configuration invokes an AWS Lambda function
+     *         (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in
+     *         your request.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -216,14 +216,14 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     * RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's retrieved
-     * from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be
-     * used as a message variable in a message template.
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
      * In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute.
-     * The display name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:
+     * The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     * The following restrictions apply to these names:
      * </p>
      * <ul>
      * <li>
@@ -240,19 +240,19 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * </li>
      * </ul>
      * <p>
-     * This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.
+     * This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to
+     * process recommendation data. Otherwise, don't include this object in your request.
      * </p>
      * 
      * @param attributes
      *        A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for
-     *        the RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's
-     *        retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each
-     *        attribute can be used as a message variable in a message template.</p>
+     *        the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item
+     *        that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing.
+     *        Each attribute can be used as a message variable in a message template.</p>
      *        <p>
      *        In the map, the key is the name of a custom attribute and the value is a custom display name for that
-     *        attribute. The display name appears in the <b>Attribute finder</b> pane of the template editor on the
-     *        Amazon Pinpoint console. The following restrictions apply to these names:
+     *        attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     *        Pinpoint console. The following restrictions apply to these names:
      *        </p>
      *        <ul>
      *        <li>
@@ -270,8 +270,8 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        </ul>
      *        <p>
-     *        This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     *        recommendation data. Otherwise, don't include this object in your request.
+     *        This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri)
+     *        to process recommendation data. Otherwise, don't include this object in your request.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -281,14 +281,14 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the
-     * RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's retrieved
-     * from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be
-     * used as a message variable in a message template.
+     * RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's
+     * retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute
+     * can be used as a message variable in a message template.
      * </p>
      * <p>
      * In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute.
-     * The display name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     * console. The following restrictions apply to these names:
+     * The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     * The following restrictions apply to these names:
      * </p>
      * <ul>
      * <li>
@@ -305,19 +305,19 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * </li>
      * </ul>
      * <p>
-     * This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     * recommendation data. Otherwise, don't include this object in your request.
+     * This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to
+     * process recommendation data. Otherwise, don't include this object in your request.
      * </p>
      * 
      * @param attributes
      *        A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for
-     *        the RecommenderUserIdType property. Each of these attributes temporarily stores a recommended item that's
-     *        retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each
-     *        attribute can be used as a message variable in a message template.</p>
+     *        the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item
+     *        that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing.
+     *        Each attribute can be used as a message variable in a message template.</p>
      *        <p>
      *        In the map, the key is the name of a custom attribute and the value is a custom display name for that
-     *        attribute. The display name appears in the <b>Attribute finder</b> pane of the template editor on the
-     *        Amazon Pinpoint console. The following restrictions apply to these names:
+     *        attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon
+     *        Pinpoint console. The following restrictions apply to these names:
      *        </p>
      *        <ul>
      *        <li>
@@ -335,8 +335,8 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        </ul>
      *        <p>
-     *        This object is required if the configuration invokes an AWS Lambda function (LambdaFunctionArn) to process
-     *        recommendation data. Otherwise, don't include this object in your request.
+     *        This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri)
+     *        to process recommendation data. Otherwise, don't include this object in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,12 +376,12 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A custom description of the configuration for the recommender model. The description can contain up to 128
-     * characters.
+     * characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      * </p>
      * 
      * @param description
      *        A custom description of the configuration for the recommender model. The description can contain up to 128
-     *        characters.
+     *        characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      */
 
     public void setDescription(String description) {
@@ -391,11 +391,11 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A custom description of the configuration for the recommender model. The description can contain up to 128
-     * characters.
+     * characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      * </p>
      * 
      * @return A custom description of the configuration for the recommender model. The description can contain up to
-     *         128 characters.
+     *         128 characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      */
 
     public String getDescription() {
@@ -405,12 +405,12 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * A custom description of the configuration for the recommender model. The description can contain up to 128
-     * characters.
+     * characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      * </p>
      * 
      * @param description
      *        A custom description of the configuration for the recommender model. The description can contain up to 128
-     *        characters.
+     *        characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,7 +488,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * <p>
      * PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The
      * data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in
-     * Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
+     * Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
      * the user's endpoint.
      * </p>
      * </li>
@@ -509,7 +509,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      *        <p>
      *        PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon
      *        Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an
-     *        endpoint definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID.
+     *        endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID.
      *        Otherwise, messages won’t be sent to the user's endpoint.
      *        </p>
      *        </li>
@@ -536,7 +536,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * <p>
      * PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The
      * data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in
-     * Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
+     * Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
      * the user's endpoint.
      * </p>
      * </li>
@@ -556,7 +556,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      *         <p>
      *         PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon
      *         Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an
-     *         endpoint definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID.
+     *         endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID.
      *         Otherwise, messages won’t be sent to the user's endpoint.
      *         </p>
      *         </li>
@@ -583,7 +583,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      * <p>
      * PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The
      * data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in
-     * Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
+     * Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to
      * the user's endpoint.
      * </p>
      * </li>
@@ -604,7 +604,7 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
      *        <p>
      *        PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon
      *        Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an
-     *        endpoint definition in Amazon Pinpoint has to specify a both a user ID (UserId) and an endpoint ID.
+     *        endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID.
      *        Otherwise, messages won’t be sent to the user's endpoint.
      *        </p>
      *        </li>
@@ -756,26 +756,27 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores a
-     * recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * value is required if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * <p>
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console. The
-     * name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens
-     * (-). These restrictions don't apply to attribute values.
+     * This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name
+     * can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).
+     * These restrictions don't apply to attribute values.
      * </p>
      * 
      * @param recommendationsDisplayName
      *        A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily
-     *        stores a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType
-     *        property. This value is required if the configuration doesn't invoke an AWS Lambda function
-     *        (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     *        stores recommended items for each endpoint or user, depending on the value for the
+     *        RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS
+     *        Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation
+     *        data.</p>
      *        <p>
-     *        This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     *        console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces,
-     *        underscores (_), or hyphens (-). These restrictions don't apply to attribute values.
+     *        This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     *        The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_),
+     *        or hyphens (-). These restrictions don't apply to attribute values.
      */
 
     public void setRecommendationsDisplayName(String recommendationsDisplayName) {
@@ -784,25 +785,26 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores a
-     * recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * value is required if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * <p>
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console. The
-     * name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens
-     * (-). These restrictions don't apply to attribute values.
+     * This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name
+     * can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).
+     * These restrictions don't apply to attribute values.
      * </p>
      * 
      * @return A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily
-     *         stores a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType
-     *         property. This value is required if the configuration doesn't invoke an AWS Lambda function
-     *         (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     *         stores recommended items for each endpoint or user, depending on the value for the
+     *         RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS
+     *         Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation
+     *         data.</p>
      *         <p>
-     *         This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     *         console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces,
-     *         underscores (_), or hyphens (-). These restrictions don't apply to attribute values.
+     *         This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     *         The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores
+     *         (_), or hyphens (-). These restrictions don't apply to attribute values.
      */
 
     public String getRecommendationsDisplayName() {
@@ -811,26 +813,27 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores a
-     * recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType property. This
-     * value is required if the configuration doesn't invoke an AWS Lambda function (LambdaFunctionArn) to perform
-     * additional processing of recommendation data.
+     * A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores
+     * recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType
+     * property. This value is required if the configuration doesn't invoke an AWS Lambda function
+     * (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * <p>
-     * This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint console. The
-     * name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens
-     * (-). These restrictions don't apply to attribute values.
+     * This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name
+     * can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).
+     * These restrictions don't apply to attribute values.
      * </p>
      * 
      * @param recommendationsDisplayName
      *        A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily
-     *        stores a recommended item for each endpoint or user, depending on the value for the RecommenderUserIdType
-     *        property. This value is required if the configuration doesn't invoke an AWS Lambda function
-     *        (LambdaFunctionArn) to perform additional processing of recommendation data.</p>
+     *        stores recommended items for each endpoint or user, depending on the value for the
+     *        RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS
+     *        Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation
+     *        data.</p>
      *        <p>
-     *        This name appears in the <b>Attribute finder</b> pane of the template editor on the Amazon Pinpoint
-     *        console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces,
-     *        underscores (_), or hyphens (-). These restrictions don't apply to attribute values.
+     *        This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.
+     *        The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_),
+     *        or hyphens (-). These restrictions don't apply to attribute values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,23 +845,22 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for
-     * the RecommenderUserIdType property. This number determines how many recommended attributes are available for use
-     * as message variables in message templates. The minimum value is 1. The maximum value is 5. The default value is
-     * 5.
+     * the RecommendationProviderIdType property. This number determines how many recommended items are available for
+     * use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.
      * </p>
      * <p>
      * To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     * function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * 
      * @param recommendationsPerMessage
      *        The number of recommended items to retrieve from the model for each endpoint or user, depending on the
-     *        value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     *        available for use as message variables in message templates. The minimum value is 1. The maximum value is
-     *        5. The default value is 5.</p>
+     *        value for the RecommendationProviderIdType property. This number determines how many recommended items are
+     *        available for use in message variables. The minimum value is 1. The maximum value is 5. The default value
+     *        is 5.</p>
      *        <p>
      *        To use multiple recommended items and custom attributes with message variables, you have to use an AWS
-     *        Lambda function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     *        Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      */
 
     public void setRecommendationsPerMessage(Integer recommendationsPerMessage) {
@@ -868,22 +870,21 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for
-     * the RecommenderUserIdType property. This number determines how many recommended attributes are available for use
-     * as message variables in message templates. The minimum value is 1. The maximum value is 5. The default value is
-     * 5.
+     * the RecommendationProviderIdType property. This number determines how many recommended items are available for
+     * use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.
      * </p>
      * <p>
      * To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     * function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * 
      * @return The number of recommended items to retrieve from the model for each endpoint or user, depending on the
-     *         value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     *         available for use as message variables in message templates. The minimum value is 1. The maximum value is
-     *         5. The default value is 5.</p>
+     *         value for the RecommendationProviderIdType property. This number determines how many recommended items
+     *         are available for use in message variables. The minimum value is 1. The maximum value is 5. The default
+     *         value is 5.</p>
      *         <p>
      *         To use multiple recommended items and custom attributes with message variables, you have to use an AWS
-     *         Lambda function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     *         Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      */
 
     public Integer getRecommendationsPerMessage() {
@@ -893,23 +894,22 @@ public class CreateRecommenderConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for
-     * the RecommenderUserIdType property. This number determines how many recommended attributes are available for use
-     * as message variables in message templates. The minimum value is 1. The maximum value is 5. The default value is
-     * 5.
+     * the RecommendationProviderIdType property. This number determines how many recommended items are available for
+     * use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.
      * </p>
      * <p>
      * To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda
-     * function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     * function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * </p>
      * 
      * @param recommendationsPerMessage
      *        The number of recommended items to retrieve from the model for each endpoint or user, depending on the
-     *        value for the RecommenderUserIdType property. This number determines how many recommended attributes are
-     *        available for use as message variables in message templates. The minimum value is 1. The maximum value is
-     *        5. The default value is 5.</p>
+     *        value for the RecommendationProviderIdType property. This number determines how many recommended items are
+     *        available for use in message variables. The minimum value is 1. The maximum value is 5. The default value
+     *        is 5.</p>
      *        <p>
      *        To use multiple recommended items and custom attributes with message variables, you have to use an AWS
-     *        Lambda function (LambdaFunctionArn) to perform additional processing of recommendation data.
+     *        Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

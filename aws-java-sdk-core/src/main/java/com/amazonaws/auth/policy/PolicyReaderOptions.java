@@ -22,7 +22,7 @@ public class PolicyReaderOptions {
     private boolean stripAwsPrincipalIdHyphensEnabled = true;
 
     /**
-     * Whether AWS account IDs should have hyphens removed in their name.
+     * Whether AWS principal IDs should have hyphens removed in their name.
      */
     public boolean isStripAwsPrincipalIdHyphensEnabled() {
         return stripAwsPrincipalIdHyphensEnabled;

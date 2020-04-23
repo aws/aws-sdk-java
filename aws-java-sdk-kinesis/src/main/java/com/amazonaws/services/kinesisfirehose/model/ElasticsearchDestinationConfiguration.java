@@ -129,6 +129,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
+    /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     */
+    private VpcConfiguration vpcConfiguration;
 
     /**
      * <p>
@@ -889,6 +895,46 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The details of the VPC of the Amazon ES destination.
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     * 
+     * @return The details of the VPC of the Amazon ES destination.
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The details of the VPC of the Amazon ES destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationConfiguration withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -923,7 +969,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
         if (getProcessingConfiguration() != null)
             sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -986,6 +1034,10 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
             return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1006,6 +1058,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
         hashCode = prime * hashCode + ((getS3Configuration() == null) ? 0 : getS3Configuration().hashCode());
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         return hashCode;
     }
 

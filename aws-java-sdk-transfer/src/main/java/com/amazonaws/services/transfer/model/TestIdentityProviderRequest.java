@@ -27,14 +27,14 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
-     * user name and password.
+     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     * authentication method is tested with a user name and password.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * This request parameter is the name of the user account to be tested.
+     * The name of the user account to be tested.
      * </p>
      */
     private String userName;
@@ -44,16 +44,42 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String userPassword;
+    /**
+     * <p>
+     * The type of file transfer protocol to be tested.
+     * </p>
+     * <p>
+     * The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP)
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String serverProtocol;
 
     /**
      * <p>
-     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
-     * user name and password.
+     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     * authentication method is tested with a user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
-     *        with a user name and password.
+     *        A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     *        authentication method is tested with a user name and password.
      */
 
     public void setServerId(String serverId) {
@@ -62,12 +88,12 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
-     * user name and password.
+     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     * authentication method is tested with a user name and password.
      * </p>
      * 
-     * @return A system-assigned identifier for a specific server. That server's user authentication method is tested
-     *         with a user name and password.
+     * @return A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     *         authentication method is tested with a user name and password.
      */
 
     public String getServerId() {
@@ -76,13 +102,13 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
-     * user name and password.
+     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     * authentication method is tested with a user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
-     *        with a user name and password.
+     *        A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
+     *        authentication method is tested with a user name and password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +119,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This request parameter is the name of the user account to be tested.
+     * The name of the user account to be tested.
      * </p>
      * 
      * @param userName
-     *        This request parameter is the name of the user account to be tested.
+     *        The name of the user account to be tested.
      */
 
     public void setUserName(String userName) {
@@ -106,10 +132,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This request parameter is the name of the user account to be tested.
+     * The name of the user account to be tested.
      * </p>
      * 
-     * @return This request parameter is the name of the user account to be tested.
+     * @return The name of the user account to be tested.
      */
 
     public String getUserName() {
@@ -118,11 +144,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This request parameter is the name of the user account to be tested.
+     * The name of the user account to be tested.
      * </p>
      * 
      * @param userName
-     *        This request parameter is the name of the user account to be tested.
+     *        The name of the user account to be tested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,6 +198,221 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The type of file transfer protocol to be tested.
+     * </p>
+     * <p>
+     * The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param serverProtocol
+     *        The type of file transfer protocol to be tested.</p>
+     *        <p>
+     *        The available protocols are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP)
+     *        </p>
+     *        </li>
+     * @see Protocol
+     */
+
+    public void setServerProtocol(String serverProtocol) {
+        this.serverProtocol = serverProtocol;
+    }
+
+    /**
+     * <p>
+     * The type of file transfer protocol to be tested.
+     * </p>
+     * <p>
+     * The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of file transfer protocol to be tested.</p>
+     *         <p>
+     *         The available protocols are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Secure Shell (SSH) File Transfer Protocol (SFTP)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         File Transfer Protocol Secure (FTPS)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         File Transfer Protocol (FTP)
+     *         </p>
+     *         </li>
+     * @see Protocol
+     */
+
+    public String getServerProtocol() {
+        return this.serverProtocol;
+    }
+
+    /**
+     * <p>
+     * The type of file transfer protocol to be tested.
+     * </p>
+     * <p>
+     * The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param serverProtocol
+     *        The type of file transfer protocol to be tested.</p>
+     *        <p>
+     *        The available protocols are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public TestIdentityProviderRequest withServerProtocol(String serverProtocol) {
+        setServerProtocol(serverProtocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of file transfer protocol to be tested.
+     * </p>
+     * <p>
+     * The available protocols are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Secure Shell (SSH) File Transfer Protocol (SFTP)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol Secure (FTPS)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * File Transfer Protocol (FTP)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param serverProtocol
+     *        The type of file transfer protocol to be tested.</p>
+     *        <p>
+     *        The available protocols are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Secure Shell (SSH) File Transfer Protocol (SFTP)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol Secure (FTPS)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        File Transfer Protocol (FTP)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public TestIdentityProviderRequest withServerProtocol(Protocol serverProtocol) {
+        this.serverProtocol = serverProtocol.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +429,9 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
         if (getUserName() != null)
             sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserPassword() != null)
-            sb.append("UserPassword: ").append("***Sensitive Data Redacted***");
+            sb.append("UserPassword: ").append("***Sensitive Data Redacted***").append(",");
+        if (getServerProtocol() != null)
+            sb.append("ServerProtocol: ").append(getServerProtocol());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +458,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getUserPassword() != null && other.getUserPassword().equals(this.getUserPassword()) == false)
             return false;
+        if (other.getServerProtocol() == null ^ this.getServerProtocol() == null)
+            return false;
+        if (other.getServerProtocol() != null && other.getServerProtocol().equals(this.getServerProtocol()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +473,7 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
         hashCode = prime * hashCode + ((getUserPassword() == null) ? 0 : getUserPassword().hashCode());
+        hashCode = prime * hashCode + ((getServerProtocol() == null) ? 0 : getServerProtocol().hashCode());
         return hashCode;
     }
 

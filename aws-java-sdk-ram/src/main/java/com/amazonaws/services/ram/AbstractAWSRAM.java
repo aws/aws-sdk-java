@@ -113,6 +113,11 @@ public class AbstractAWSRAM implements AWSRAM {
     }
 
     @Override
+    public ListResourceTypesResult listResourceTypes(ListResourceTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListResourcesResult listResources(ListResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

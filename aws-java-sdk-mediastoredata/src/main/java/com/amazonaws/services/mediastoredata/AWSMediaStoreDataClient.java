@@ -310,6 +310,8 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                     .withPayloadJson(false).withHasStreamingSuccessResponse(true), new GetObjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
+
             return response.getAwsResponse();
 
         } finally {

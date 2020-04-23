@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TreatmentResourceMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CUSTOMDELIVERYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDeliveryConfiguration").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<StructuredPojo> MESSAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class TreatmentResourceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(treatmentResource.getCustomDeliveryConfiguration(), CUSTOMDELIVERYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(treatmentResource.getId(), ID_BINDING);
             protocolMarshaller.marshall(treatmentResource.getMessageConfiguration(), MESSAGECONFIGURATION_BINDING);
             protocolMarshaller.marshall(treatmentResource.getSchedule(), SCHEDULE_BINDING);

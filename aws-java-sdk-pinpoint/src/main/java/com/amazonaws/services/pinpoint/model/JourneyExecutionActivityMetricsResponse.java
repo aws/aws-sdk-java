@@ -101,8 +101,8 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <p>
      * A JSON object that contains the results of the query. The results vary depending on the type of activity
      * (ActivityType). For information about the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      */
     private java.util.Map<String, String> metrics;
@@ -536,14 +536,14 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <p>
      * A JSON object that contains the results of the query. The results vary depending on the type of activity
      * (ActivityType). For information about the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @return A JSON object that contains the results of the query. The results vary depending on the type of activity
      *         (ActivityType). For information about the structure and contents of the results, see the <a
-     *         href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     *         Guide</a>.
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *         Pinpoint Developer Guide</a>.
      */
 
     public java.util.Map<String, String> getMetrics() {
@@ -554,15 +554,15 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <p>
      * A JSON object that contains the results of the query. The results vary depending on the type of activity
      * (ActivityType). For information about the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @param metrics
      *        A JSON object that contains the results of the query. The results vary depending on the type of activity
      *        (ActivityType). For information about the structure and contents of the results, see the <a
-     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        Pinpoint Developer Guide</a>.
      */
 
     public void setMetrics(java.util.Map<String, String> metrics) {
@@ -573,15 +573,15 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
      * <p>
      * A JSON object that contains the results of the query. The results vary depending on the type of activity
      * (ActivityType). For information about the structure and contents of the results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
+     * Developer Guide</a>.
      * </p>
      * 
      * @param metrics
      *        A JSON object that contains the results of the query. The results vary depending on the type of activity
      *        (ActivityType). For information about the structure and contents of the results, see the <a
-     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer
-     *        Guide</a>.
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        Pinpoint Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

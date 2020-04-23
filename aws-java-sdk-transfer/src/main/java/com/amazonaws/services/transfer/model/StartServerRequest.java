@@ -27,18 +27,18 @@ public class StartServerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you start.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      * </p>
      */
     private String serverId;
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you start.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that you start.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      */
 
     public void setServerId(String serverId) {
@@ -47,10 +47,10 @@ public class StartServerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you start.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      * </p>
      * 
-     * @return A system-assigned unique identifier for an SFTP server that you start.
+     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      */
 
     public String getServerId() {
@@ -59,11 +59,11 @@ public class StartServerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A system-assigned unique identifier for an SFTP server that you start.
+     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for an SFTP server that you start.
+     *        A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

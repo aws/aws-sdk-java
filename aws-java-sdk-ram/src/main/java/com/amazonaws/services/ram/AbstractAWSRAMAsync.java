@@ -254,6 +254,19 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(ListResourceTypesRequest request) {
+
+        return listResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(ListResourceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceTypesRequest, ListResourceTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest request) {
 
         return listResourcesAsync(request, null);

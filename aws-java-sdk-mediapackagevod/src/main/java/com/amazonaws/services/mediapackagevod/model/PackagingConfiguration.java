@@ -41,6 +41,8 @@ public class PackagingConfiguration implements Serializable, Cloneable, Structur
     /** The ID of a PackagingGroup. */
     private String packagingGroupId;
 
+    private java.util.Map<String, String> tags;
+
     /**
      * The ARN of the PackagingConfiguration.
      * 
@@ -248,6 +250,60 @@ public class PackagingConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingConfiguration withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see PackagingConfiguration#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingConfiguration addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingConfiguration clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -272,7 +328,9 @@ public class PackagingConfiguration implements Serializable, Cloneable, Structur
         if (getMssPackage() != null)
             sb.append("MssPackage: ").append(getMssPackage()).append(",");
         if (getPackagingGroupId() != null)
-            sb.append("PackagingGroupId: ").append(getPackagingGroupId());
+            sb.append("PackagingGroupId: ").append(getPackagingGroupId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +373,10 @@ public class PackagingConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getPackagingGroupId() != null && other.getPackagingGroupId().equals(this.getPackagingGroupId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +392,7 @@ public class PackagingConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getMssPackage() == null) ? 0 : getMssPackage().hashCode());
         hashCode = prime * hashCode + ((getPackagingGroupId() == null) ? 0 : getPackagingGroupId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

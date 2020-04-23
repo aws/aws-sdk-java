@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when the <code>UpdatServer</code> is called for a server that has VPC as the endpoint type
- * and the server's <code>VpcEndpointID</code> is not in the available state.
+ * This exception is thrown when the <code>UpdatServer</code> is called for a file transfer protocol-enabled server that
+ * has VPC as the endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

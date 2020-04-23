@@ -65,6 +65,11 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZoneGroup", targetDepth)) {
+                    orderableDBInstanceOption.setAvailabilityZoneGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     orderableDBInstanceOption.withAvailabilityZones(new ArrayList<AvailabilityZone>());
                     continue;

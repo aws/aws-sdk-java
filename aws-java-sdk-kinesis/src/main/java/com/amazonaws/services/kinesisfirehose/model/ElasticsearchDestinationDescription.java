@@ -110,6 +110,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
+    /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     */
+    private VpcConfigurationDescription vpcConfigurationDescription;
 
     /**
      * <p>
@@ -715,6 +721,46 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     * 
+     * @param vpcConfigurationDescription
+     *        The details of the VPC of the Amazon ES destination.
+     */
+
+    public void setVpcConfigurationDescription(VpcConfigurationDescription vpcConfigurationDescription) {
+        this.vpcConfigurationDescription = vpcConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     * 
+     * @return The details of the VPC of the Amazon ES destination.
+     */
+
+    public VpcConfigurationDescription getVpcConfigurationDescription() {
+        return this.vpcConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The details of the VPC of the Amazon ES destination.
+     * </p>
+     * 
+     * @param vpcConfigurationDescription
+     *        The details of the VPC of the Amazon ES destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationDescription withVpcConfigurationDescription(VpcConfigurationDescription vpcConfigurationDescription) {
+        setVpcConfigurationDescription(vpcConfigurationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -749,7 +795,9 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         if (getProcessingConfiguration() != null)
             sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
+        if (getVpcConfigurationDescription() != null)
+            sb.append("VpcConfigurationDescription: ").append(getVpcConfigurationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -812,6 +860,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
             return false;
+        if (other.getVpcConfigurationDescription() == null ^ this.getVpcConfigurationDescription() == null)
+            return false;
+        if (other.getVpcConfigurationDescription() != null && other.getVpcConfigurationDescription().equals(this.getVpcConfigurationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -832,6 +884,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         hashCode = prime * hashCode + ((getS3DestinationDescription() == null) ? 0 : getS3DestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfigurationDescription() == null) ? 0 : getVpcConfigurationDescription().hashCode());
         return hashCode;
     }
 

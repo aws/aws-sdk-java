@@ -207,6 +207,7 @@
         {"shape":"MalformedArnException"},
         {"shape":"InvalidNextTokenException"},
         {"shape":"InvalidParameterException"},
+        {"shape":"ResourceArnNotFoundException"},
         {"shape":"ServerInternalException"},
         {"shape":"ServiceUnavailableException"}
       ],
@@ -243,6 +244,7 @@
         {"shape":"ResourceShareInvitationArnNotFoundException"},
         {"shape":"InvalidMaxResultsException"},
         {"shape":"MalformedArnException"},
+        {"shape":"UnknownResourceException"},
         {"shape":"InvalidNextTokenException"},
         {"shape":"InvalidParameterException"},
         {"shape":"ServerInternalException"},
@@ -343,6 +345,22 @@
       ],
       "documentation":"<p>Lists the AWS RAM permissions that are associated with a resource share.</p>"
     },
+    "ListResourceTypes":{
+      "name":"ListResourceTypes",
+      "http":{
+        "method":"POST",
+        "requestUri":"/listresourcetypes"
+      },
+      "input":{"shape":"ListResourceTypesRequest"},
+      "output":{"shape":"ListResourceTypesResponse"},
+      "errors":[
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ServerInternalException"},
+        {"shape":"ServiceUnavailableException"}
+      ],
+      "documentation":"<p>Lists the shareable resource types supported by AWS RAM.</p>"
+    },
     "ListResources":{
       "name":"ListResources",
       "http":{
@@ -376,7 +394,8 @@
         {"shape":"InvalidParameterException"},
         {"shape":"MissingRequiredParameterException"},
         {"shape":"ServerInternalException"},
-        {"shape":"ServiceUnavailableException"}
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"UnknownResourceException"}
       ],
       "documentation":"<p>Resource shares that were created by attaching a policy to a resource are visible only to the resource share owner, and the resource share cannot be modified in AWS RAM.</p> <p>Use this API action to promote the resource share. When you promote the resource share, it becomes:</p> <ul> <li> <p>Visible to all principals that it is shared with.</p> </li> <li> <p>Modifiable in AWS RAM.</p> </li> </ul>"
     },
@@ -1058,7 +1077,7 @@
         },
         "resourceType":{
           "shape":"String",
-          "documentation":"<p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> I <code>resource-groups:Group</code> </p>"
+          "documentation":"<p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> </p>"
         },
         "resourceShareArns":{
           "shape":"ResourceShareArnList",
@@ -1118,6 +1137,32 @@
         }
       }
     },
+    "ListResourceTypesRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"String",
+          "documentation":"<p>The token for the next page of results.</p>"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>"
+        }
+      }
+    },
+    "ListResourceTypesResponse":{
+      "type":"structure",
+      "members":{
+        "resourceTypes":{
+          "shape":"ServiceNameAndResourceTypeList",
+          "documentation":"<p>The shareable resource types supported by AWS RAM.</p>"
+        },
+        "nextToken":{
+          "shape":"String",
+          "documentation":"<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>"
+        }
+      }
+    },
     "ListResourcesRequest":{
       "type":"structure",
       "required":["resourceOwner"],
@@ -1132,7 +1177,7 @@
         },
         "resourceType":{
           "shape":"String",
-          "documentation":"<p>The resource type.</p> <p>Valid values: <code>ec2:CapacityReservation</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>license-manager:LicenseConfiguration</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> | <code>resource-groups:Group</code> </p>"
+          "documentation":"<p>The resource type.</p> <p>Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code> </p>"
         },
         "resourceArns":{
           "shape":"ResourceArnList",
@@ -1695,6 +1740,24 @@
       "documentation":"<p>The service could not respond to the request due to an internal problem.</p>",
       "error":{"httpStatusCode":500},
       "exception":true
+    },
+    "ServiceNameAndResourceType":{
+      "type":"structure",
+      "members":{
+        "resourceType":{
+          "shape":"String",
+          "documentation":"<p>The shareable resource types.</p>"
+        },
+        "serviceName":{
+          "shape":"String",
+          "documentation":"<p>The name of the AWS services to which the resources belong.</p>"
+        }
+      },
+      "documentation":"<p>Information about the shareable resource types and the AWS services to which they belong.</p>"
+    },
+    "ServiceNameAndResourceTypeList":{
+      "type":"list",
+      "member":{"shape":"ServiceNameAndResourceType"}
     },
     "ServiceUnavailableException":{
       "type":"structure",

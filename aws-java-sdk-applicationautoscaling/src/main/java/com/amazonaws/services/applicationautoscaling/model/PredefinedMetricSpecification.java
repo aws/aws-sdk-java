@@ -21,6 +21,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling.
  * </p>
+ * <p>
+ * Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric
+ * already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console,
+ * follow the procedure in <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html">Building Dashboards
+ * with CloudWatch</a> in the <i>Application Auto Scaling User Guide</i>.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredefinedMetricSpecification"

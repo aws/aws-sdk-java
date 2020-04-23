@@ -48,14 +48,14 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String gatewayARN;
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      */
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only be set
+     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
      * when KMSEncrypted is true. Optional.
      * </p>
      */
@@ -285,12 +285,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      */
 
@@ -300,11 +300,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -314,12 +314,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *        Amazon S3. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -331,11 +331,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
      * S3. Optional.
      * </p>
      * 
-     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
      *         Amazon S3. Optional.
      */
 
@@ -345,12 +345,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only be set
+     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
      * when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only
+     *        The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only
      *        be set when KMSEncrypted is true. Optional.
      */
 
@@ -360,11 +360,11 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only be set
+     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
      * when KMSEncrypted is true. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * @return The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only
      *         be set when KMSEncrypted is true. Optional.
      */
 
@@ -374,12 +374,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only be set
+     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
      * when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server side encryption. This value can only
+     *        The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only
      *        be set when KMSEncrypted is true. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

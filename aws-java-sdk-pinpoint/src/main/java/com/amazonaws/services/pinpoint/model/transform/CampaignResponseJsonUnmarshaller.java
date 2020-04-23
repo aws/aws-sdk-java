@@ -65,6 +65,10 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                     context.nextToken();
                     campaignResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomDeliveryConfiguration", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setCustomDeliveryConfiguration(CustomDeliveryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DefaultState", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setDefaultState(CampaignStateJsonUnmarshaller.getInstance().unmarshall(context));

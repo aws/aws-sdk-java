@@ -638,6 +638,39 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(ListResourceTypesRequest request) {
+
+        return listResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(final ListResourceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceTypesRequest, ListResourceTypesResult> asyncHandler) {
+        final ListResourceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceTypesResult>() {
+            @Override
+            public ListResourceTypesResult call() throws Exception {
+                ListResourceTypesResult result = null;
+
+                try {
+                    result = executeListResourceTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest request) {
 
         return listResourcesAsync(request, null);

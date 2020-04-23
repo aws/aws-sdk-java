@@ -36,8 +36,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     private String applicationId;
     /**
      * <p>
-     * The configuration set that's applied to email that's sent through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that's applied to messages that are sent through the channel.
      * </p>
      */
     private String configurationSet;
@@ -55,7 +55,7 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     private Boolean enabled;
     /**
      * <p>
-     * The verified email address that you send email from when you send email through the channel.
+     * The verified email address that email is sent from when you send email through the channel.
      * </p>
      */
     private String fromAddress;
@@ -73,8 +73,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
-     * use when you send email through the channel.
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's
+     * used when you send email through the channel.
      * </p>
      */
     private String identity;
@@ -98,7 +98,7 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     private String lastModifiedDate;
     /**
      * <p>
-     * The maximum number of emails that you can send through the channel each second.
+     * The maximum number of emails that can be sent through the channel each second.
      * </p>
      */
     private Integer messagesPerSecond;
@@ -164,13 +164,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration set that's applied to email that's sent through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that's applied to messages that are sent through the channel.
      * </p>
      * 
      * @param configurationSet
-     *        The configuration set that's applied to email that's sent through the channel by using the <a
-     *        href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     *        The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     *        configuration set</a> that's applied to messages that are sent through the channel.
      */
 
     public void setConfigurationSet(String configurationSet) {
@@ -179,12 +179,12 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration set that's applied to email that's sent through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that's applied to messages that are sent through the channel.
      * </p>
      * 
-     * @return The configuration set that's applied to email that's sent through the channel by using the <a
-     *         href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * @return The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     *         configuration set</a> that's applied to messages that are sent through the channel.
      */
 
     public String getConfigurationSet() {
@@ -193,13 +193,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration set that's applied to email that's sent through the channel by using the <a
-     * href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     * The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     * configuration set</a> that's applied to messages that are sent through the channel.
      * </p>
      * 
      * @param configurationSet
-     *        The configuration set that's applied to email that's sent through the channel by using the <a
-     *        href="emailAPIreference.html">Amazon Pinpoint Email API</a>.
+     *        The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES
+     *        configuration set</a> that's applied to messages that are sent through the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,11 +302,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The verified email address that you send email from when you send email through the channel.
+     * The verified email address that email is sent from when you send email through the channel.
      * </p>
      * 
      * @param fromAddress
-     *        The verified email address that you send email from when you send email through the channel.
+     *        The verified email address that email is sent from when you send email through the channel.
      */
 
     public void setFromAddress(String fromAddress) {
@@ -315,10 +315,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The verified email address that you send email from when you send email through the channel.
+     * The verified email address that email is sent from when you send email through the channel.
      * </p>
      * 
-     * @return The verified email address that you send email from when you send email through the channel.
+     * @return The verified email address that email is sent from when you send email through the channel.
      */
 
     public String getFromAddress() {
@@ -327,11 +327,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The verified email address that you send email from when you send email through the channel.
+     * The verified email address that email is sent from when you send email through the channel.
      * </p>
      * 
      * @param fromAddress
-     *        The verified email address that you send email from when you send email through the channel.
+     *        The verified email address that email is sent from when you send email through the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,14 +437,14 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
-     * use when you send email through the channel.
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's
+     * used when you send email through the channel.
      * </p>
      * 
      * @param identity
      *        <p>
      *        The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
-     *        that you use when you send email through the channel.
+     *        that's used when you send email through the channel.
      *        </p>
      */
 
@@ -454,13 +454,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
-     * use when you send email through the channel.
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's
+     * used when you send email through the channel.
      * </p>
      * 
      * @return <p>
      *         The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
-     *         that you use when you send email through the channel.
+     *         that's used when you send email through the channel.
      *         </p>
      */
 
@@ -470,14 +470,14 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you
-     * use when you send email through the channel.
+     * The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's
+     * used when you send email through the channel.
      * </p>
      * 
      * @param identity
      *        <p>
      *        The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
-     *        that you use when you send email through the channel.
+     *        that's used when you send email through the channel.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -621,11 +621,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum number of emails that you can send through the channel each second.
+     * The maximum number of emails that can be sent through the channel each second.
      * </p>
      * 
      * @param messagesPerSecond
-     *        The maximum number of emails that you can send through the channel each second.
+     *        The maximum number of emails that can be sent through the channel each second.
      */
 
     public void setMessagesPerSecond(Integer messagesPerSecond) {
@@ -634,10 +634,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum number of emails that you can send through the channel each second.
+     * The maximum number of emails that can be sent through the channel each second.
      * </p>
      * 
-     * @return The maximum number of emails that you can send through the channel each second.
+     * @return The maximum number of emails that can be sent through the channel each second.
      */
 
     public Integer getMessagesPerSecond() {
@@ -646,11 +646,11 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum number of emails that you can send through the channel each second.
+     * The maximum number of emails that can be sent through the channel each second.
      * </p>
      * 
      * @param messagesPerSecond
-     *        The maximum number of emails that you can send through the channel each second.
+     *        The maximum number of emails that can be sent through the channel each second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
