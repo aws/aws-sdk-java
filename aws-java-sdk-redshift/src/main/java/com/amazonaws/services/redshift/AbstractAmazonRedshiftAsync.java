@@ -275,6 +275,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest request) {
+
+        return createUsageLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUsageLimitRequest, CreateUsageLimitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);
@@ -426,6 +439,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(DeleteUsageLimitRequest request) {
+
+        return deleteUsageLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(DeleteUsageLimitRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsageLimitRequest, DeleteUsageLimitResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1195,6 +1221,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(DescribeUsageLimitsRequest request) {
+
+        return describeUsageLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(DescribeUsageLimitsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUsageLimitsRequest, DescribeUsageLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableLoggingResult> disableLoggingAsync(DisableLoggingRequest request) {
 
         return disableLoggingAsync(request, null);
@@ -1426,6 +1465,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(ModifySnapshotScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifySnapshotScheduleRequest, ModifySnapshotScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(ModifyUsageLimitRequest request) {
+
+        return modifyUsageLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(ModifyUsageLimitRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyUsageLimitRequest, ModifyUsageLimitResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

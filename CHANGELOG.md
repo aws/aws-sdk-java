@@ -1,3 +1,24 @@
+# __1.11.767__ __2020-04-22__
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - Add support for code review and recommendation feedback APIs.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - This change adds a new field 'OptionalDeployment' to ServiceSoftwareOptions to indicate whether a service software update is optional or mandatory. If True, it indicates that the update is optional, and the service software is not automatically updated. If False, the service software is automatically updated after AutomatedUpdateDate.
+
+## __Amazon Redshift__
+  - ### Features
+    - Amazon Redshift support for usage limits
+
+## __Amazon Transcribe Streaming Service__
+  - ### Features
+    - Adding ServiceUnavailableException as one of the expected exceptions
+
+## __Firewall Management Service__
+  - ### Features
+    - This release is to support AWS Firewall Manager policy with Organizational Unit scope. 
+
 # __1.11.766__ __2020-04-21__
 ## __AWS Cost Explorer Service__
   - ### Features

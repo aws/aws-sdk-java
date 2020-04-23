@@ -301,6 +301,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSnapshotScheduleStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidUsageLimitExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
@@ -352,6 +353,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UsageLimitNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
@@ -384,6 +386,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new IncompatibleOrderableOptionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3BucketNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnsupportedOptionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UsageLimitAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
@@ -1803,6 +1806,74 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the
+     * returned usage limit identifier.
+     * </p>
+     * 
+     * @param createUsageLimitRequest
+     * @return Result of the CreateUsageLimit operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws LimitExceededException
+     *         The encryption key has exceeded its grant limit in AWS KMS.
+     * @throws UsageLimitAlreadyExistsException
+     *         The usage limit already exists.
+     * @throws InvalidUsageLimitException
+     *         The usage limit is not valid.
+     * @throws TagLimitExceededException
+     *         You have exceeded the number of tags allowed.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.CreateUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateUsageLimitResult createUsageLimit(CreateUsageLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUsageLimit(request);
+    }
+
+    @SdkInternalApi
+    final CreateUsageLimitResult executeCreateUsageLimit(CreateUsageLimitRequest createUsageLimitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUsageLimitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUsageLimitRequest> request = null;
+        Response<CreateUsageLimitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUsageLimitRequestMarshaller().marshall(super.beforeMarshalling(createUsageLimitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUsageLimit");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateUsageLimitResult> responseHandler = new StaxResponseHandler<CreateUsageLimitResult>(
+                    new CreateUsageLimitResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the
      * web service indicates that the request was received correctly. Use <a>DescribeClusters</a> to monitor the status
      * of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about
@@ -2531,6 +2602,63 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a usage limit from a cluster.
+     * </p>
+     * 
+     * @param deleteUsageLimitRequest
+     * @return Result of the DeleteUsageLimit operation returned by the service.
+     * @throws UsageLimitNotFoundException
+     *         The usage limit identifier can't be found.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.DeleteUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteUsageLimitResult deleteUsageLimit(DeleteUsageLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUsageLimit(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUsageLimitResult executeDeleteUsageLimit(DeleteUsageLimitRequest deleteUsageLimitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUsageLimitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUsageLimitRequest> request = null;
+        Response<DeleteUsageLimitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUsageLimitRequestMarshaller().marshall(super.beforeMarshalling(deleteUsageLimitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUsageLimit");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteUsageLimitResult> responseHandler = new StaxResponseHandler<DeleteUsageLimitResult>(
+                    new DeleteUsageLimitResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4395,6 +4523,88 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier,
+     * cluster identifier, and feature type parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If usage limit identifier, cluster identifier, and feature type are not provided, then all usage limit objects
+     * for the current account in the current region are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If usage limit identifier is provided, then the corresponding usage limit object is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier is provided, then all usage limit objects for the specified cluster are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier and feature type are provided, then all usage limit objects for the combination of cluster
+     * and feature are returned.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeUsageLimitsRequest
+     * @return Result of the DescribeUsageLimits operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.DescribeUsageLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeUsageLimitsResult describeUsageLimits(DescribeUsageLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUsageLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUsageLimitsResult executeDescribeUsageLimits(DescribeUsageLimitsRequest describeUsageLimitsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeUsageLimitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeUsageLimitsRequest> request = null;
+        Response<DescribeUsageLimitsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeUsageLimitsRequestMarshaller().marshall(super.beforeMarshalling(describeUsageLimitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsageLimits");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeUsageLimitsResult> responseHandler = new StaxResponseHandler<DescribeUsageLimitsResult>(
+                    new DescribeUsageLimitsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
      * </p>
      * 
@@ -5601,6 +5811,65 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<ModifySnapshotScheduleResult> responseHandler = new StaxResponseHandler<ModifySnapshotScheduleResult>(
                     new ModifySnapshotScheduleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.
+     * </p>
+     * 
+     * @param modifyUsageLimitRequest
+     * @return Result of the ModifyUsageLimit operation returned by the service.
+     * @throws InvalidUsageLimitException
+     *         The usage limit is not valid.
+     * @throws UsageLimitNotFoundException
+     *         The usage limit identifier can't be found.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.ModifyUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyUsageLimitResult modifyUsageLimit(ModifyUsageLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyUsageLimit(request);
+    }
+
+    @SdkInternalApi
+    final ModifyUsageLimitResult executeModifyUsageLimit(ModifyUsageLimitRequest modifyUsageLimitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyUsageLimitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyUsageLimitRequest> request = null;
+        Response<ModifyUsageLimitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyUsageLimitRequestMarshaller().marshall(super.beforeMarshalling(modifyUsageLimitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyUsageLimit");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyUsageLimitResult> responseHandler = new StaxResponseHandler<ModifyUsageLimitResult>(
+                    new ModifyUsageLimitResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

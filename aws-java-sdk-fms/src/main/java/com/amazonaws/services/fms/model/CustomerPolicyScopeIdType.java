@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CustomerPolicyScopeIdType {
 
-    ACCOUNT("ACCOUNT");
+    ACCOUNT("ACCOUNT"),
+    ORG_UNIT("ORG_UNIT");
 
     private String value;
 

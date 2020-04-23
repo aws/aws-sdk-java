@@ -71,6 +71,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date automatedUpdateDate;
+    /**
+     * <p>
+     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * </p>
+     */
+    private Boolean optionalDeployment;
 
     /**
      * <p>
@@ -422,6 +429,66 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * </p>
+     * 
+     * @param optionalDeployment
+     *        True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     *        is automatically updated after <code>AutomatedUpdateDate
+     */
+
+    public void setOptionalDeployment(Boolean optionalDeployment) {
+        this.optionalDeployment = optionalDeployment;
+    }
+
+    /**
+     * <p>
+     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * </p>
+     * 
+     * @return True</code> if a service software is never automatically updated. <code>False</code> if a service
+     *         software is automatically updated after <code>AutomatedUpdateDate
+     */
+
+    public Boolean getOptionalDeployment() {
+        return this.optionalDeployment;
+    }
+
+    /**
+     * <p>
+     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * </p>
+     * 
+     * @param optionalDeployment
+     *        True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     *        is automatically updated after <code>AutomatedUpdateDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceSoftwareOptions withOptionalDeployment(Boolean optionalDeployment) {
+        setOptionalDeployment(optionalDeployment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
+     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * </p>
+     * 
+     * @return True</code> if a service software is never automatically updated. <code>False</code> if a service
+     *         software is automatically updated after <code>AutomatedUpdateDate
+     */
+
+    public Boolean isOptionalDeployment() {
+        return this.optionalDeployment;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -446,7 +513,9 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getAutomatedUpdateDate() != null)
-            sb.append("AutomatedUpdateDate: ").append(getAutomatedUpdateDate());
+            sb.append("AutomatedUpdateDate: ").append(getAutomatedUpdateDate()).append(",");
+        if (getOptionalDeployment() != null)
+            sb.append("OptionalDeployment: ").append(getOptionalDeployment());
         sb.append("}");
         return sb.toString();
     }
@@ -489,6 +558,10 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
             return false;
         if (other.getAutomatedUpdateDate() != null && other.getAutomatedUpdateDate().equals(this.getAutomatedUpdateDate()) == false)
             return false;
+        if (other.getOptionalDeployment() == null ^ this.getOptionalDeployment() == null)
+            return false;
+        if (other.getOptionalDeployment() != null && other.getOptionalDeployment().equals(this.getOptionalDeployment()) == false)
+            return false;
         return true;
     }
 
@@ -504,6 +577,7 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getUpdateStatus() == null) ? 0 : getUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAutomatedUpdateDate() == null) ? 0 : getAutomatedUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getOptionalDeployment() == null) ? 0 : getOptionalDeployment().hashCode());
         return hashCode;
     }
 

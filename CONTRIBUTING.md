@@ -8,13 +8,12 @@ __Jump To:__
 * [Bug Reports](#bug-reports)
 * [Feature Requests](#feature-requests)
 * [Code Contributions](#code-contributions)
-* [Additional Resources](#additional-resources)
 
 ## Bug Reports
 Bug reports are accepted through the [Issues][issues] page.
 
-The following labels are used to track bug related issues: [Bug][label-bug],
-[Documentation Issue][label-doc-issue].
+The following labels are used to track bug related issues: [bug][label-bug],
+[documentation][label-doc-issue].
 
 ### Before Submitting a Bug Report
 Before submitting a bug report, please do the following:
@@ -65,7 +64,7 @@ the right design and that it makes sense to include in the SDK. Keep in mind
 that other concerns like source and binary compatibility will also play a
 deciding factor.
 
-Feature requests are labeled with [Feature Request][label-feature-request].
+Feature requests are labeled with [feature-request][label-feature-request].
 
 ### Submitting a Feature Request
 Open an [issue][issues] with the following:
@@ -108,10 +107,6 @@ Please keep the following in mind when considering a code contribution:
   verify that the code works as expected; i.e. that the issue has been fixed or
   that the functionality works as intended.
 
-### Your First Code Change
-For detailed information on getting started building and making code changes to
-the SDK, refer to our [Working on the SDK][working-on-the-sdk] wiki page.
-
 ### Pull Request Readiness
 Before submitting your pull request, refer to the pull request readiness
 checklist below:
@@ -126,10 +121,10 @@ checklist below:
 __Note__: Some changes have additional requirements. Refer to the section below
 to see if your change will require additional work to be accepted.
 
-#### Additional Pull Request Requirements
-### Getting Your Pull Request Merged
+### Additional Pull Request Requirements
+#### Getting Your Pull Request Merged
 All Pull Requests must be approved by at least one member of the SDK team
-before it can be merged in. The members only have limited bandwitdth to review
+before it can be merged in. The members only have limited bandwidth to review
 Pull Requests so it's not unusual for a Pull Request to go unreviewed for a few
 days, especially if it's a large or complex one. If, after a week, your Pull
 Request has not had any engagement from the SDK team, feel free to ping a
@@ -147,7 +142,8 @@ merged in.
 [markdown]: https://guides.github.com/features/mastering-markdown/
 [issues]: https://github.com/aws/aws-sdk-java/issues
 [pull-requests]: https://github.com/aws/aws-sdk-java/pulls
-[label-bug]: https://github.com/aws/aws-sdk-java/labels/Bug
-[label-doc-issue]: https://github.com/aws/aws-sdk-java/labels/Documentation%20Issue
-[label-feature-request]: https://github.com/aws/aws-sdk-java/labels/Feature%20Request
+[label-bug]: https://github.com/aws/aws-sdk-java/labels/bug
+[label-doc-issue]: https://github.com/aws/aws-sdk-java/labels/documentation
+[label-feature-request]: https://github.com/aws/aws-sdk-java/labels/feature-request
+[git-rewriting-history]: https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History
 [gitter]: https://gitter.im/aws/aws-sdk-java

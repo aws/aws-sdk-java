@@ -901,6 +901,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the
+     * returned usage limit identifier.
+     * </p>
+     * 
+     * @param createUsageLimitRequest
+     * @return A Java Future containing the result of the CreateUsageLimit operation returned by the service.
+     * @sample AmazonRedshiftAsync.CreateUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest createUsageLimitRequest);
+
+    /**
+     * <p>
+     * Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the
+     * returned usage limit identifier.
+     * </p>
+     * 
+     * @param createUsageLimitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUsageLimit operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.CreateUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest createUsageLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUsageLimitRequest, CreateUsageLimitResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the
      * web service indicates that the request was received correctly. Use <a>DescribeClusters</a> to monitor the status
      * of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about
@@ -1362,6 +1395,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a usage limit from a cluster.
+     * </p>
+     * 
+     * @param deleteUsageLimitRequest
+     * @return A Java Future containing the result of the DeleteUsageLimit operation returned by the service.
+     * @sample AmazonRedshiftAsync.DeleteUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(DeleteUsageLimitRequest deleteUsageLimitRequest);
+
+    /**
+     * <p>
+     * Deletes a usage limit from a cluster.
+     * </p>
+     * 
+     * @param deleteUsageLimitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUsageLimit operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(DeleteUsageLimitRequest deleteUsageLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUsageLimitRequest, DeleteUsageLimitResult> asyncHandler);
 
     /**
      * <p>
@@ -2926,6 +2990,87 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier,
+     * cluster identifier, and feature type parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If usage limit identifier, cluster identifier, and feature type are not provided, then all usage limit objects
+     * for the current account in the current region are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If usage limit identifier is provided, then the corresponding usage limit object is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier is provided, then all usage limit objects for the specified cluster are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier and feature type are provided, then all usage limit objects for the combination of cluster
+     * and feature are returned.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeUsageLimitsRequest
+     * @return A Java Future containing the result of the DescribeUsageLimits operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeUsageLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(DescribeUsageLimitsRequest describeUsageLimitsRequest);
+
+    /**
+     * <p>
+     * Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier,
+     * cluster identifier, and feature type parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If usage limit identifier, cluster identifier, and feature type are not provided, then all usage limit objects
+     * for the current account in the current region are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If usage limit identifier is provided, then the corresponding usage limit object is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier is provided, then all usage limit objects for the specified cluster are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier and feature type are provided, then all usage limit objects for the combination of cluster
+     * and feature are returned.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeUsageLimitsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUsageLimits operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeUsageLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(DescribeUsageLimitsRequest describeUsageLimitsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUsageLimitsRequest, DescribeUsageLimitsResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
      * </p>
      * 
@@ -3619,6 +3764,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<ModifySnapshotScheduleRequest, ModifySnapshotScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.
+     * </p>
+     * 
+     * @param modifyUsageLimitRequest
+     * @return A Java Future containing the result of the ModifyUsageLimit operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(ModifyUsageLimitRequest modifyUsageLimitRequest);
+
+    /**
+     * <p>
+     * Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.
+     * </p>
+     * 
+     * @param modifyUsageLimitRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyUsageLimit operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(ModifyUsageLimitRequest modifyUsageLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyUsageLimitRequest, ModifyUsageLimitResult> asyncHandler);
 
     /**
      * <p>

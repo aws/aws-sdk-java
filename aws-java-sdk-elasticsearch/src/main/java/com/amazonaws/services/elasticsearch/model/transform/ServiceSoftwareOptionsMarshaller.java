@@ -41,6 +41,8 @@ public class ServiceSoftwareOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<java.util.Date> AUTOMATEDUPDATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomatedUpdateDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> OPTIONALDEPLOYMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OptionalDeployment").build();
 
     private static final ServiceSoftwareOptionsMarshaller instance = new ServiceSoftwareOptionsMarshaller();
 
@@ -65,6 +67,7 @@ public class ServiceSoftwareOptionsMarshaller {
             protocolMarshaller.marshall(serviceSoftwareOptions.getUpdateStatus(), UPDATESTATUS_BINDING);
             protocolMarshaller.marshall(serviceSoftwareOptions.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(serviceSoftwareOptions.getAutomatedUpdateDate(), AUTOMATEDUPDATEDATE_BINDING);
+            protocolMarshaller.marshall(serviceSoftwareOptions.getOptionalDeployment(), OPTIONALDEPLOYMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

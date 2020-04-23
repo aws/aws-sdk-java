@@ -898,6 +898,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest request) {
+
+        return createUsageLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(final CreateUsageLimitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUsageLimitRequest, CreateUsageLimitResult> asyncHandler) {
+        final CreateUsageLimitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUsageLimitResult>() {
+            @Override
+            public CreateUsageLimitResult call() throws Exception {
+                CreateUsageLimitResult result = null;
+
+                try {
+                    result = executeCreateUsageLimit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> deleteClusterAsync(DeleteClusterRequest request) {
 
         return deleteClusterAsync(request, null);
@@ -1278,6 +1311,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDeleteTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(DeleteUsageLimitRequest request) {
+
+        return deleteUsageLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(final DeleteUsageLimitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUsageLimitRequest, DeleteUsageLimitResult> asyncHandler) {
+        final DeleteUsageLimitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUsageLimitResult>() {
+            @Override
+            public DeleteUsageLimitResult call() throws Exception {
+                DeleteUsageLimitResult result = null;
+
+                try {
+                    result = executeDeleteUsageLimit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2622,6 +2688,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(DescribeUsageLimitsRequest request) {
+
+        return describeUsageLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(final DescribeUsageLimitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUsageLimitsRequest, DescribeUsageLimitsResult> asyncHandler) {
+        final DescribeUsageLimitsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeUsageLimitsResult>() {
+            @Override
+            public DescribeUsageLimitsResult call() throws Exception {
+                DescribeUsageLimitsResult result = null;
+
+                try {
+                    result = executeDescribeUsageLimits(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableLoggingResult> disableLoggingAsync(DisableLoggingRequest request) {
 
         return disableLoggingAsync(request, null);
@@ -3203,6 +3302,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeModifySnapshotSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(ModifyUsageLimitRequest request) {
+
+        return modifyUsageLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(final ModifyUsageLimitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyUsageLimitRequest, ModifyUsageLimitResult> asyncHandler) {
+        final ModifyUsageLimitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyUsageLimitResult>() {
+            @Override
+            public ModifyUsageLimitResult call() throws Exception {
+                ModifyUsageLimitResult result = null;
+
+                try {
+                    result = executeModifyUsageLimit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

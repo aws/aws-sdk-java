@@ -761,6 +761,34 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the
+     * returned usage limit identifier.
+     * </p>
+     * 
+     * @param createUsageLimitRequest
+     * @return Result of the CreateUsageLimit operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws LimitExceededException
+     *         The encryption key has exceeded its grant limit in AWS KMS.
+     * @throws UsageLimitAlreadyExistsException
+     *         The usage limit already exists.
+     * @throws InvalidUsageLimitException
+     *         The usage limit is not valid.
+     * @throws TagLimitExceededException
+     *         You have exceeded the number of tags allowed.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.CreateUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateUsageLimitResult createUsageLimit(CreateUsageLimitRequest createUsageLimitRequest);
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the
      * web service indicates that the request was received correctly. Use <a>DescribeClusters</a> to monitor the status
      * of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about
@@ -1021,6 +1049,23 @@ public interface AmazonRedshift {
      *      Documentation</a>
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
+
+    /**
+     * <p>
+     * Deletes a usage limit from a cluster.
+     * </p>
+     * 
+     * @param deleteUsageLimitRequest
+     * @return Result of the DeleteUsageLimit operation returned by the service.
+     * @throws UsageLimitNotFoundException
+     *         The usage limit identifier can't be found.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.DeleteUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteUsageLimitResult deleteUsageLimit(DeleteUsageLimitRequest deleteUsageLimitRequest);
 
     /**
      * <p>
@@ -1789,6 +1834,48 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier,
+     * cluster identifier, and feature type parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If usage limit identifier, cluster identifier, and feature type are not provided, then all usage limit objects
+     * for the current account in the current region are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If usage limit identifier is provided, then the corresponding usage limit object is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier is provided, then all usage limit objects for the specified cluster are returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If cluster identifier and feature type are provided, then all usage limit objects for the combination of cluster
+     * and feature are returned.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeUsageLimitsRequest
+     * @return Result of the DescribeUsageLimits operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.DescribeUsageLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeUsageLimits" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeUsageLimitsResult describeUsageLimits(DescribeUsageLimitsRequest describeUsageLimitsRequest);
+
+    /**
+     * <p>
      * Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
      * </p>
      * 
@@ -2294,6 +2381,25 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest);
+
+    /**
+     * <p>
+     * Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.
+     * </p>
+     * 
+     * @param modifyUsageLimitRequest
+     * @return Result of the ModifyUsageLimit operation returned by the service.
+     * @throws InvalidUsageLimitException
+     *         The usage limit is not valid.
+     * @throws UsageLimitNotFoundException
+     *         The usage limit identifier can't be found.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.ModifyUsageLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyUsageLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyUsageLimitResult modifyUsageLimit(ModifyUsageLimitRequest modifyUsageLimitRequest);
 
     /**
      * <p>

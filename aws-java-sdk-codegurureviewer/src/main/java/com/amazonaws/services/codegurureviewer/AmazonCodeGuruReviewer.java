@@ -45,7 +45,7 @@ public interface AmazonCodeGuruReviewer {
      * <p>
      * Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate an AWS CodeCommit
      * repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer will provide recommendations for each pull
-     * request. You can view recommendations in the AWS CodeCommit repository.
+     * request raised within the repository. You can view recommendations in the AWS CodeCommit repository.
      * </p>
      * <p>
      * You can associate a GitHub repository using the Amazon CodeGuru Reviewer console.
@@ -69,6 +69,52 @@ public interface AmazonCodeGuruReviewer {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateRepositoryResult associateRepository(AssociateRepositoryRequest associateRepositoryRequest);
+
+    /**
+     * <p>
+     * Returns the metadaata associated with the code review along with its status.
+     * </p>
+     * 
+     * @param describeCodeReviewRequest
+     * @return Result of the DescribeCodeReview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.DescribeCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeCodeReviewResult describeCodeReview(DescribeCodeReviewRequest describeCodeReviewRequest);
+
+    /**
+     * <p>
+     * Describes the customer feedback for a CodeGuru Reviewer recommendation.
+     * </p>
+     * 
+     * @param describeRecommendationFeedbackRequest
+     * @return Result of the DescribeRecommendationFeedback operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.DescribeRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRecommendationFeedbackResult describeRecommendationFeedback(DescribeRecommendationFeedbackRequest describeRecommendationFeedbackRequest);
 
     /**
      * <p>
@@ -121,6 +167,75 @@ public interface AmazonCodeGuruReviewer {
 
     /**
      * <p>
+     * Lists all the code reviews that the customer has created in the past 90 days.
+     * </p>
+     * 
+     * @param listCodeReviewsRequest
+     * @return Result of the ListCodeReviews operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonCodeGuruReviewer.ListCodeReviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCodeReviewsResult listCodeReviews(ListCodeReviewsRequest listCodeReviewsRequest);
+
+    /**
+     * <p>
+     * Lists the customer feedback for a CodeGuru Reviewer recommendation for all users. This API will be used from the
+     * console to extract the previously given feedback by the user to pre-populate the feedback emojis for all
+     * recommendations.
+     * </p>
+     * 
+     * @param listRecommendationFeedbackRequest
+     * @return Result of the ListRecommendationFeedback operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.ListRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRecommendationFeedbackResult listRecommendationFeedback(ListRecommendationFeedbackRequest listRecommendationFeedbackRequest);
+
+    /**
+     * <p>
+     * Returns the list of all recommendations for a completed code review.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     * @return Result of the ListRecommendations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRecommendationsResult listRecommendations(ListRecommendationsRequest listRecommendationsRequest);
+
+    /**
+     * <p>
      * Lists repository associations. You can optionally filter on one or more of the following recommendation
      * properties: provider types, states, names, and owners.
      * </p>
@@ -138,6 +253,30 @@ public interface AmazonCodeGuruReviewer {
      *      target="_top">AWS API Documentation</a>
      */
     ListRepositoryAssociationsResult listRepositoryAssociations(ListRepositoryAssociationsRequest listRepositoryAssociationsRequest);
+
+    /**
+     * <p>
+     * Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is called again with different
+     * reactions the previous feedback is overwritten.
+     * </p>
+     * 
+     * @param putRecommendationFeedbackRequest
+     * @return Result of the PutRecommendationFeedback operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.PutRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutRecommendationFeedbackResult putRecommendationFeedback(PutRecommendationFeedbackRequest putRecommendationFeedbackRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

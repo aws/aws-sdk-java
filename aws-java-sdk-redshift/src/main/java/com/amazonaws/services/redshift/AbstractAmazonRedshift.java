@@ -134,6 +134,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public CreateUsageLimitResult createUsageLimit(CreateUsageLimitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Cluster deleteCluster(DeleteClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -190,6 +195,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteUsageLimitResult deleteUsageLimit(DeleteUsageLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -419,6 +429,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public DescribeUsageLimitsResult describeUsageLimits(DescribeUsageLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableLoggingResult disableLogging(DisableLoggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -505,6 +520,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyUsageLimitResult modifyUsageLimit(ModifyUsageLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -87,11 +87,14 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codegurureviewer.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codegurureviewer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codegurureviewer.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
@@ -147,7 +150,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
      * <p>
      * Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate an AWS CodeCommit
      * repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer will provide recommendations for each pull
-     * request. You can view recommendations in the AWS CodeCommit repository.
+     * request raised within the repository. You can view recommendations in the AWS CodeCommit repository.
      * </p>
      * <p>
      * You can associate a GitHub repository using the Amazon CodeGuru Reviewer console.
@@ -202,6 +205,134 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateRepositoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateRepositoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the metadaata associated with the code review along with its status.
+     * </p>
+     * 
+     * @param describeCodeReviewRequest
+     * @return Result of the DescribeCodeReview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.DescribeCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeCodeReviewResult describeCodeReview(DescribeCodeReviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCodeReview(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCodeReviewResult executeDescribeCodeReview(DescribeCodeReviewRequest describeCodeReviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCodeReviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCodeReviewRequest> request = null;
+        Response<DescribeCodeReviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCodeReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCodeReviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeReview");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCodeReviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCodeReviewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the customer feedback for a CodeGuru Reviewer recommendation.
+     * </p>
+     * 
+     * @param describeRecommendationFeedbackRequest
+     * @return Result of the DescribeRecommendationFeedback operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.DescribeRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRecommendationFeedbackResult describeRecommendationFeedback(DescribeRecommendationFeedbackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRecommendationFeedback(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRecommendationFeedbackResult executeDescribeRecommendationFeedback(DescribeRecommendationFeedbackRequest describeRecommendationFeedbackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRecommendationFeedbackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRecommendationFeedbackRequest> request = null;
+        Response<DescribeRecommendationFeedbackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRecommendationFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRecommendationFeedbackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecommendationFeedback");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRecommendationFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRecommendationFeedbackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -346,6 +477,197 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists all the code reviews that the customer has created in the past 90 days.
+     * </p>
+     * 
+     * @param listCodeReviewsRequest
+     * @return Result of the ListCodeReviews operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonCodeGuruReviewer.ListCodeReviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCodeReviewsResult listCodeReviews(ListCodeReviewsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCodeReviews(request);
+    }
+
+    @SdkInternalApi
+    final ListCodeReviewsResult executeListCodeReviews(ListCodeReviewsRequest listCodeReviewsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCodeReviewsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCodeReviewsRequest> request = null;
+        Response<ListCodeReviewsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCodeReviewsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCodeReviewsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodeReviews");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCodeReviewsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCodeReviewsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the customer feedback for a CodeGuru Reviewer recommendation for all users. This API will be used from the
+     * console to extract the previously given feedback by the user to pre-populate the feedback emojis for all
+     * recommendations.
+     * </p>
+     * 
+     * @param listRecommendationFeedbackRequest
+     * @return Result of the ListRecommendationFeedback operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.ListRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRecommendationFeedbackResult listRecommendationFeedback(ListRecommendationFeedbackRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRecommendationFeedback(request);
+    }
+
+    @SdkInternalApi
+    final ListRecommendationFeedbackResult executeListRecommendationFeedback(ListRecommendationFeedbackRequest listRecommendationFeedbackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRecommendationFeedbackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRecommendationFeedbackRequest> request = null;
+        Response<ListRecommendationFeedbackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRecommendationFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRecommendationFeedbackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecommendationFeedback");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRecommendationFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRecommendationFeedbackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of all recommendations for a completed code review.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     * @return Result of the ListRecommendations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRecommendationsResult listRecommendations(ListRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final ListRecommendationsResult executeListRecommendations(ListRecommendationsRequest listRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRecommendationsRequest> request = null;
+        Response<ListRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists repository associations. You can optionally filter on one or more of the following recommendation
      * properties: provider types, states, names, and owners.
      * </p>
@@ -396,6 +718,72 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<ListRepositoryAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListRepositoryAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is called again with different
+     * reactions the previous feedback is overwritten.
+     * </p>
+     * 
+     * @param putRecommendationFeedbackRequest
+     * @return Result of the PutRecommendationFeedback operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.PutRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutRecommendationFeedbackResult putRecommendationFeedback(PutRecommendationFeedbackRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRecommendationFeedback(request);
+    }
+
+    @SdkInternalApi
+    final PutRecommendationFeedbackResult executePutRecommendationFeedback(PutRecommendationFeedbackRequest putRecommendationFeedbackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRecommendationFeedbackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRecommendationFeedbackRequest> request = null;
+        Response<PutRecommendationFeedbackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRecommendationFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putRecommendationFeedbackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecommendationFeedback");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRecommendationFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutRecommendationFeedbackResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -30,7 +30,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The id of the repository association.
+     * The ID of the repository association.
      * </p>
      */
     private String associationId;
@@ -85,11 +85,11 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The id of the repository association.
+     * The ID of the repository association.
      * </p>
      * 
      * @param associationId
-     *        The id of the repository association.
+     *        The ID of the repository association.
      */
 
     public void setAssociationId(String associationId) {
@@ -98,10 +98,10 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The id of the repository association.
+     * The ID of the repository association.
      * </p>
      * 
-     * @return The id of the repository association.
+     * @return The ID of the repository association.
      */
 
     public String getAssociationId() {
@@ -110,11 +110,11 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The id of the repository association.
+     * The ID of the repository association.
      * </p>
      * 
      * @param associationId
-     *        The id of the repository association.
+     *        The ID of the repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

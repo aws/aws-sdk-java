@@ -27,18 +27,21 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * <code>ListRepositories</code>.
      * </p>
      */
     private String associationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * <code>ListRepositories</code>.
      * </p>
      * 
      * @param associationArn
-     *        The Amazon Resource Name (ARN) identifying the association.
+     *        The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     *        <code>ListRepositories</code>.
      */
 
     public void setAssociationArn(String associationArn) {
@@ -47,10 +50,12 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * <code>ListRepositories</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) identifying the association.
+     * @return The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     *         <code>ListRepositories</code>.
      */
 
     public String getAssociationArn() {
@@ -59,11 +64,13 @@ public class DescribeRepositoryAssociationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the association.
+     * The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     * <code>ListRepositories</code>.
      * </p>
      * 
      * @param associationArn
-     *        The Amazon Resource Name (ARN) identifying the association.
+     *        The Amazon Resource Name (ARN) identifying the association. You can retrieve this ARN by calling
+     *        <code>ListRepositories</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

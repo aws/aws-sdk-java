@@ -45,7 +45,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.766</version>
+      <version>1.11.767</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -133,15 +133,15 @@ The AWS SDK for Java is not directly affected by these findings. The SDKs own us
 
 A good explanation of this type of exploit can be found [here][jackson-deserialization-gadget].
 
-[aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/java-dg-roles.html
+[aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
 [blog]: https://aws.amazon.com/blogs/developer/category/java/
 [docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
-[docs-guide]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/welcome.html
+[docs-guide]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/welcome.html
 [docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
-[docs-java-env]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-install.html#installing-a-java-development-environment
-[docs-signup]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/signup-create-iam-user.html
-[docs-setup]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-install.html
+[docs-java-env]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/setup-install.html#installing-a-java-development-environment
+[docs-signup]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/signup-create-iam-user.html
+[docs-setup]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/setup-install.html
 [install-jar]: http://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip
 [sdk-forum]: http://developer.amazonwebservices.com/connect/forum.jspa?forumID=70
 [sdk-issues]: https://github.com/aws/aws-sdk-java/issues
@@ -152,7 +152,7 @@ A good explanation of this type of exploit can be found [here][jackson-deseriali
 [changes-file]: ./CHANGELOG.md
 [stack-overflow]: http://stackoverflow.com/questions/tagged/aws-java-sdk
 [gitter]: https://gitter.im/aws/aws-sdk-java
-[features]: https://github.com/aws/aws-sdk-java/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
+[features]: https://github.com/aws/aws-sdk-java/issues?q=is%3Aopen+is%3Aissue+label%3A%22feature-request%22
 [support-center]: https://console.aws.amazon.com/support/
 [console]: https://console.aws.amazon.com
 [jackson-deserialization-gadget]: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062

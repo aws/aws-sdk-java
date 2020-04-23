@@ -36,7 +36,7 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      * <p>
      * Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate an AWS CodeCommit
      * repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer will provide recommendations for each pull
-     * request. You can view recommendations in the AWS CodeCommit repository.
+     * request raised within the repository. You can view recommendations in the AWS CodeCommit repository.
      * </p>
      * <p>
      * You can associate a GitHub repository using the Amazon CodeGuru Reviewer console.
@@ -54,7 +54,7 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      * <p>
      * Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate an AWS CodeCommit
      * repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer will provide recommendations for each pull
-     * request. You can view recommendations in the AWS CodeCommit repository.
+     * request raised within the repository. You can view recommendations in the AWS CodeCommit repository.
      * </p>
      * <p>
      * You can associate a GitHub repository using the Amazon CodeGuru Reviewer console.
@@ -72,6 +72,72 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      */
     java.util.concurrent.Future<AssociateRepositoryResult> associateRepositoryAsync(AssociateRepositoryRequest associateRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateRepositoryRequest, AssociateRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the metadaata associated with the code review along with its status.
+     * </p>
+     * 
+     * @param describeCodeReviewRequest
+     * @return A Java Future containing the result of the DescribeCodeReview operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.DescribeCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCodeReviewResult> describeCodeReviewAsync(DescribeCodeReviewRequest describeCodeReviewRequest);
+
+    /**
+     * <p>
+     * Returns the metadaata associated with the code review along with its status.
+     * </p>
+     * 
+     * @param describeCodeReviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCodeReview operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.DescribeCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCodeReviewResult> describeCodeReviewAsync(DescribeCodeReviewRequest describeCodeReviewRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCodeReviewRequest, DescribeCodeReviewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the customer feedback for a CodeGuru Reviewer recommendation.
+     * </p>
+     * 
+     * @param describeRecommendationFeedbackRequest
+     * @return A Java Future containing the result of the DescribeRecommendationFeedback operation returned by the
+     *         service.
+     * @sample AmazonCodeGuruReviewerAsync.DescribeRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRecommendationFeedbackResult> describeRecommendationFeedbackAsync(
+            DescribeRecommendationFeedbackRequest describeRecommendationFeedbackRequest);
+
+    /**
+     * <p>
+     * Describes the customer feedback for a CodeGuru Reviewer recommendation.
+     * </p>
+     * 
+     * @param describeRecommendationFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRecommendationFeedback operation returned by the
+     *         service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.DescribeRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRecommendationFeedbackResult> describeRecommendationFeedbackAsync(
+            DescribeRecommendationFeedbackRequest describeRecommendationFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRecommendationFeedbackRequest, DescribeRecommendationFeedbackResult> asyncHandler);
 
     /**
      * <p>
@@ -141,6 +207,105 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
 
     /**
      * <p>
+     * Lists all the code reviews that the customer has created in the past 90 days.
+     * </p>
+     * 
+     * @param listCodeReviewsRequest
+     * @return A Java Future containing the result of the ListCodeReviews operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.ListCodeReviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodeReviewsResult> listCodeReviewsAsync(ListCodeReviewsRequest listCodeReviewsRequest);
+
+    /**
+     * <p>
+     * Lists all the code reviews that the customer has created in the past 90 days.
+     * </p>
+     * 
+     * @param listCodeReviewsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCodeReviews operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.ListCodeReviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodeReviewsResult> listCodeReviewsAsync(ListCodeReviewsRequest listCodeReviewsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCodeReviewsRequest, ListCodeReviewsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the customer feedback for a CodeGuru Reviewer recommendation for all users. This API will be used from the
+     * console to extract the previously given feedback by the user to pre-populate the feedback emojis for all
+     * recommendations.
+     * </p>
+     * 
+     * @param listRecommendationFeedbackRequest
+     * @return A Java Future containing the result of the ListRecommendationFeedback operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.ListRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationFeedbackResult> listRecommendationFeedbackAsync(
+            ListRecommendationFeedbackRequest listRecommendationFeedbackRequest);
+
+    /**
+     * <p>
+     * Lists the customer feedback for a CodeGuru Reviewer recommendation for all users. This API will be used from the
+     * console to extract the previously given feedback by the user to pre-populate the feedback emojis for all
+     * recommendations.
+     * </p>
+     * 
+     * @param listRecommendationFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRecommendationFeedback operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.ListRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationFeedbackResult> listRecommendationFeedbackAsync(
+            ListRecommendationFeedbackRequest listRecommendationFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationFeedbackRequest, ListRecommendationFeedbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of all recommendations for a completed code review.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     * @return A Java Future containing the result of the ListRecommendations operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest listRecommendationsRequest);
+
+    /**
+     * <p>
+     * Returns the list of all recommendations for a completed code review.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRecommendations operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest listRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationsRequest, ListRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists repository associations. You can optionally filter on one or more of the following recommendation
      * properties: provider types, states, names, and owners.
      * </p>
@@ -173,5 +338,40 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
     java.util.concurrent.Future<ListRepositoryAssociationsResult> listRepositoryAssociationsAsync(
             ListRepositoryAssociationsRequest listRepositoryAssociationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListRepositoryAssociationsRequest, ListRepositoryAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is called again with different
+     * reactions the previous feedback is overwritten.
+     * </p>
+     * 
+     * @param putRecommendationFeedbackRequest
+     * @return A Java Future containing the result of the PutRecommendationFeedback operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.PutRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRecommendationFeedbackResult> putRecommendationFeedbackAsync(
+            PutRecommendationFeedbackRequest putRecommendationFeedbackRequest);
+
+    /**
+     * <p>
+     * Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is called again with different
+     * reactions the previous feedback is overwritten.
+     * </p>
+     * 
+     * @param putRecommendationFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRecommendationFeedback operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.PutRecommendationFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRecommendationFeedbackResult> putRecommendationFeedbackAsync(
+            PutRecommendationFeedbackRequest putRecommendationFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRecommendationFeedbackRequest, PutRecommendationFeedbackResult> asyncHandler);
 
 }

@@ -63,6 +63,8 @@ public enum RedshiftActions implements Action {
     CreateSnapshotSchedule("redshift:CreateSnapshotSchedule"),
     /** Action for the CreateTags operation. */
     CreateTags("redshift:CreateTags"),
+    /** Action for the CreateUsageLimit operation. */
+    CreateUsageLimit("redshift:CreateUsageLimit"),
     /** Action for the DeleteCluster operation. */
     DeleteCluster("redshift:DeleteCluster"),
     /** Action for the DeleteClusterParameterGroup operation. */
@@ -87,6 +89,8 @@ public enum RedshiftActions implements Action {
     DeleteSnapshotSchedule("redshift:DeleteSnapshotSchedule"),
     /** Action for the DeleteTags operation. */
     DeleteTags("redshift:DeleteTags"),
+    /** Action for the DeleteUsageLimit operation. */
+    DeleteUsageLimit("redshift:DeleteUsageLimit"),
     /** Action for the DescribeAccountAttributes operation. */
     DescribeAccountAttributes("redshift:DescribeAccountAttributes"),
     /** Action for the DescribeClusterDbRevisions operation. */
@@ -143,6 +147,8 @@ public enum RedshiftActions implements Action {
     DescribeTableRestoreStatus("redshift:DescribeTableRestoreStatus"),
     /** Action for the DescribeTags operation. */
     DescribeTags("redshift:DescribeTags"),
+    /** Action for the DescribeUsageLimits operation. */
+    DescribeUsageLimits("redshift:DescribeUsageLimits"),
     /** Action for the DisableLogging operation. */
     DisableLogging("redshift:DisableLogging"),
     /** Action for the DisableSnapshotCopy operation. */
@@ -179,6 +185,8 @@ public enum RedshiftActions implements Action {
     ModifySnapshotCopyRetentionPeriod("redshift:ModifySnapshotCopyRetentionPeriod"),
     /** Action for the ModifySnapshotSchedule operation. */
     ModifySnapshotSchedule("redshift:ModifySnapshotSchedule"),
+    /** Action for the ModifyUsageLimit operation. */
+    ModifyUsageLimit("redshift:ModifyUsageLimit"),
     /** Action for the PauseCluster operation. */
     PauseCluster("redshift:PauseCluster"),
     /** Action for the PurchaseReservedNodeOffering operation. */

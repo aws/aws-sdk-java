@@ -84,8 +84,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * The association failed. For more information about troubleshooting (or why it failed), see [troubleshooting
-     * topic].
+     * The association failed.
      * </p>
      * </dd>
      * <dt>Disassociating</dt>
@@ -377,8 +376,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * The association failed. For more information about troubleshooting (or why it failed), see [troubleshooting
-     * topic].
+     * The association failed.
      * </p>
      * </dd>
      * <dt>Disassociating</dt>
@@ -407,8 +405,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *        <dt>Failed</dt>
      *        <dd>
      *        <p>
-     *        The association failed. For more information about troubleshooting (or why it failed), see
-     *        [troubleshooting topic].
+     *        The association failed.
      *        </p>
      *        </dd>
      *        <dt>Disassociating</dt>
@@ -444,8 +441,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * The association failed. For more information about troubleshooting (or why it failed), see [troubleshooting
-     * topic].
+     * The association failed.
      * </p>
      * </dd>
      * <dt>Disassociating</dt>
@@ -473,8 +469,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *         <dt>Failed</dt>
      *         <dd>
      *         <p>
-     *         The association failed. For more information about troubleshooting (or why it failed), see
-     *         [troubleshooting topic].
+     *         The association failed.
      *         </p>
      *         </dd>
      *         <dt>Disassociating</dt>
@@ -510,8 +505,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * The association failed. For more information about troubleshooting (or why it failed), see [troubleshooting
-     * topic].
+     * The association failed.
      * </p>
      * </dd>
      * <dt>Disassociating</dt>
@@ -540,8 +534,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *        <dt>Failed</dt>
      *        <dd>
      *        <p>
-     *        The association failed. For more information about troubleshooting (or why it failed), see
-     *        [troubleshooting topic].
+     *        The association failed.
      *        </p>
      *        </dd>
      *        <dt>Disassociating</dt>
@@ -579,8 +572,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <dt>Failed</dt>
      * <dd>
      * <p>
-     * The association failed. For more information about troubleshooting (or why it failed), see [troubleshooting
-     * topic].
+     * The association failed.
      * </p>
      * </dd>
      * <dt>Disassociating</dt>
@@ -609,8 +601,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      *        <dt>Failed</dt>
      *        <dd>
      *        <p>
-     *        The association failed. For more information about troubleshooting (or why it failed), see
-     *        [troubleshooting topic].
+     *        The association failed.
      *        </p>
      *        </dd>
      *        <dt>Disassociating</dt>

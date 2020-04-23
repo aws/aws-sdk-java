@@ -1043,7 +1043,13 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * </li>
      * <li>
      * <p>
-     * An AWS WAF policy, which contains a rule group and defines which resources are to be protected by that rule group
+     * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
+     * rule groups to run last in the web ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS WAF Classic policy (type WAF), which defines a rule group.
      * </p>
      * </li>
      * <li>
@@ -1053,8 +1059,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * </li>
      * </ul>
      * <p>
-     * Each policy is specific to one of the three types. If you want to enforce more than one policy type across
-     * accounts, you can create multiple policies. You can create multiple policies for each type.
+     * Each policy is specific to one of the types. If you want to enforce more than one policy type across accounts,
+     * create multiple policies. You can create multiple policies for each type.
      * </p>
      * <p>
      * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information about

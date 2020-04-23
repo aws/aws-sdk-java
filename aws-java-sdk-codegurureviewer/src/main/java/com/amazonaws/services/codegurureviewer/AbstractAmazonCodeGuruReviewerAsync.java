@@ -41,6 +41,32 @@ public class AbstractAmazonCodeGuruReviewerAsync extends AbstractAmazonCodeGuruR
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCodeReviewResult> describeCodeReviewAsync(DescribeCodeReviewRequest request) {
+
+        return describeCodeReviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCodeReviewResult> describeCodeReviewAsync(DescribeCodeReviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCodeReviewRequest, DescribeCodeReviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRecommendationFeedbackResult> describeRecommendationFeedbackAsync(DescribeRecommendationFeedbackRequest request) {
+
+        return describeRecommendationFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRecommendationFeedbackResult> describeRecommendationFeedbackAsync(DescribeRecommendationFeedbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRecommendationFeedbackRequest, DescribeRecommendationFeedbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRepositoryAssociationResult> describeRepositoryAssociationAsync(DescribeRepositoryAssociationRequest request) {
 
         return describeRepositoryAssociationAsync(request, null);
@@ -67,6 +93,45 @@ public class AbstractAmazonCodeGuruReviewerAsync extends AbstractAmazonCodeGuruR
     }
 
     @Override
+    public java.util.concurrent.Future<ListCodeReviewsResult> listCodeReviewsAsync(ListCodeReviewsRequest request) {
+
+        return listCodeReviewsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodeReviewsResult> listCodeReviewsAsync(ListCodeReviewsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCodeReviewsRequest, ListCodeReviewsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendationFeedbackResult> listRecommendationFeedbackAsync(ListRecommendationFeedbackRequest request) {
+
+        return listRecommendationFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendationFeedbackResult> listRecommendationFeedbackAsync(ListRecommendationFeedbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationFeedbackRequest, ListRecommendationFeedbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest request) {
+
+        return listRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationsRequest, ListRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRepositoryAssociationsResult> listRepositoryAssociationsAsync(ListRepositoryAssociationsRequest request) {
 
         return listRepositoryAssociationsAsync(request, null);
@@ -75,6 +140,19 @@ public class AbstractAmazonCodeGuruReviewerAsync extends AbstractAmazonCodeGuruR
     @Override
     public java.util.concurrent.Future<ListRepositoryAssociationsResult> listRepositoryAssociationsAsync(ListRepositoryAssociationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRepositoryAssociationsRequest, ListRepositoryAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRecommendationFeedbackResult> putRecommendationFeedbackAsync(PutRecommendationFeedbackRequest request) {
+
+        return putRecommendationFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRecommendationFeedbackResult> putRecommendationFeedbackAsync(PutRecommendationFeedbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRecommendationFeedbackRequest, PutRecommendationFeedbackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -48,12 +48,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>WAFV2</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Example: <code>WAF</code>
+     * Example: <code>WAF Classic</code>
      * </p>
      * <p>
      * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -64,7 +64,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      * </p>
      * </li>
      * <li>
@@ -187,12 +187,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>WAFV2</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Example: <code>WAF</code>
+     * Example: <code>WAF Classic</code>
      * </p>
      * <p>
      * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -203,7 +203,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      * </p>
      * </li>
      * <li>
@@ -239,12 +239,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        Example: <code>WAFV2</code>
      *        </p>
      *        <p>
-     *        <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     *        <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Example: <code>WAF</code>
+     *        Example: <code>WAF Classic</code>
      *        </p>
      *        <p>
      *        <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -255,7 +255,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        Example: <code>SECURITY_GROUPS_COMMON</code>
      *        </p>
      *        <p>
-     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      *        </p>
      *        </li>
      *        <li>
@@ -297,12 +297,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>WAFV2</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Example: <code>WAF</code>
+     * Example: <code>WAF Classic</code>
      * </p>
      * <p>
      * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -313,7 +313,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      * </p>
      * </li>
      * <li>
@@ -348,12 +348,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *         Example: <code>WAFV2</code>
      *         </p>
      *         <p>
-     *         <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     *         <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Example: <code>WAF</code>
+     *         Example: <code>WAF Classic</code>
      *         </p>
      *         <p>
      *         <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -364,7 +364,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *         Example: <code>SECURITY_GROUPS_COMMON</code>
      *         </p>
      *         <p>
-     *         <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *         <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      *         </p>
      *         </li>
      *         <li>
@@ -406,12 +406,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>WAFV2</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     * <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Example: <code>WAF</code>
+     * Example: <code>WAF Classic</code>
      * </p>
      * <p>
      * <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -422,7 +422,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      * Example: <code>SECURITY_GROUPS_COMMON</code>
      * </p>
      * <p>
-     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     * <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      * </p>
      * </li>
      * <li>
@@ -458,12 +458,12 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        Example: <code>WAFV2</code>
      *        </p>
      *        <p>
-     *        <code>"SecurityServicePolicyData": "{ \"type\": \"WAFV2\", \"postProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn", \"overrideAction\": { \"type\": \"COUNT|\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"preProcessRuleGroups\": [ { \"managedRuleGroupIdentifier\": { \"managedRuleGroupName\": \"AWSManagedRulesAdminProtectionRuleSet\", \"vendor\": \"AWS\" } \"ruleGroupARN\": \"rule group arn\", \"overrideAction\": { \"type\": \"COUNT\" }, \"excludedRules\": [ { \"name\" : \"EntityName\" } ], \"type\": \"ManagedRuleGroup|RuleGroup\" } ], \"defaultAction\": { \"type\": \"BLOCK\" }}" </code>
+     *        <code>"ManagedServiceData": "{\"type\":\"WAFV2\",\"defaultAction\":{\"type\":\"ALLOW\"},\"preProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":null,\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"COUNT\"},\"excludedRules\":[{\"name\":\"EntityName\"}],\"ruleGroupType\":\"RuleGroup\"}],\"postProcessRuleGroups\":[{\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendor\":\"AWS\"},\"ruleGroupArn\":\"rulegrouparn\",\"overrideAction\":{\"type\":\"NONE\"},\"excludedRules\":[],\"ruleGroupType\":\"ManagedRuleGroup\"}],\"overrideCustomerWebACLAssociation\":false}"</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Example: <code>WAF</code>
+     *        Example: <code>WAF Classic</code>
      *        </p>
      *        <p>
      *        <code>"ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code>
@@ -474,7 +474,7 @@ public class SecurityServicePolicyData implements Serializable, Cloneable, Struc
      *        Example: <code>SECURITY_GROUPS_COMMON</code>
      *        </p>
      *        <p>
-     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
+     *        <code>"SecurityServicePolicyData":{"Type":"SECURITY_GROUPS_COMMON","ManagedServiceData":"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false, \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\" sg-000e55995d61a06bd\"}]}"},"RemediationEnabled":false,"ResourceType":"AWS::EC2::NetworkInterface"}</code>
      *        </p>
      *        </li>
      *        <li>
