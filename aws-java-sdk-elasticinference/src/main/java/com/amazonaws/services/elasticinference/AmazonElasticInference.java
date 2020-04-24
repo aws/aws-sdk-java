@@ -26,7 +26,9 @@ import com.amazonaws.services.elasticinference.model.*;
  * {@link com.amazonaws.services.elasticinference.AbstractAmazonElasticInference} instead.
  * </p>
  * <p>
+ * <p>
  * Elastic Inference public APIs.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticInference {
@@ -37,10 +39,66 @@ public interface AmazonElasticInference {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "elastic-inference";
+    String ENDPOINT_PREFIX = "api.elastic-inference";
 
     /**
+     * <p>
+     * Describes the locations in which a given accelerator type or set of types is present in a given region.
+     * </p>
+     * 
+     * @param describeAcceleratorOfferingsRequest
+     * @return Result of the DescribeAcceleratorOfferings operation returned by the service.
+     * @throws BadRequestException
+     *         Raised when a malformed input has been provided to the API.
+     * @throws ResourceNotFoundException
+     *         Raised when the requested resource cannot be found.
+     * @throws InternalServerException
+     *         Raised when an unexpected error occurred during request processing.
+     * @sample AmazonElasticInference.DescribeAcceleratorOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAcceleratorOfferingsResult describeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest describeAcceleratorOfferingsRequest);
+
+    /**
+     * <p>
+     * Describes the accelerator types available in a given region, as well as their characteristics, such as memory and
+     * throughput.
+     * </p>
+     * 
+     * @param describeAcceleratorTypesRequest
+     * @return Result of the DescribeAcceleratorTypes operation returned by the service.
+     * @throws InternalServerException
+     *         Raised when an unexpected error occurred during request processing.
+     * @sample AmazonElasticInference.DescribeAcceleratorTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAcceleratorTypesResult describeAcceleratorTypes(DescribeAcceleratorTypesRequest describeAcceleratorTypesRequest);
+
+    /**
+     * <p>
+     * Describes information over a provided set of accelerators belonging to an account.
+     * </p>
+     * 
+     * @param describeAcceleratorsRequest
+     * @return Result of the DescribeAccelerators operation returned by the service.
+     * @throws BadRequestException
+     *         Raised when a malformed input has been provided to the API.
+     * @throws ResourceNotFoundException
+     *         Raised when the requested resource cannot be found.
+     * @throws InternalServerException
+     *         Raised when an unexpected error occurred during request processing.
+     * @sample AmazonElasticInference.DescribeAccelerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAcceleratorsResult describeAccelerators(DescribeAcceleratorsRequest describeAcceleratorsRequest);
+
+    /**
+     * <p>
      * Returns all tags of an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -57,7 +115,9 @@ public interface AmazonElasticInference {
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
-     * Adds the specified tag(s) to an Elastic Inference Accelerator.
+     * <p>
+     * Adds the specified tags to an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -74,7 +134,9 @@ public interface AmazonElasticInference {
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
-     * Removes the specified tag(s) from an Elastic Inference Accelerator.
+     * <p>
+     * Removes the specified tags from an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.

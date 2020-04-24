@@ -25,13 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ARN of the Elastic Inference Accelerator to tag. */
+    /**
+     * <p>
+     * The ARN of the Elastic Inference Accelerator to tag.
+     * </p>
+     */
     private String resourceArn;
-    /** The tags to add to the Elastic Inference Accelerator. */
+    /**
+     * <p>
+     * The tags to add to the Elastic Inference Accelerator.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to tag.
+     * </p>
      * 
      * @param resourceArn
      *        The ARN of the Elastic Inference Accelerator to tag.
@@ -42,7 +52,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to tag.
+     * </p>
      * 
      * @return The ARN of the Elastic Inference Accelerator to tag.
      */
@@ -52,7 +64,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to tag.
+     * </p>
      * 
      * @param resourceArn
      *        The ARN of the Elastic Inference Accelerator to tag.
@@ -65,7 +79,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The tags to add to the Elastic Inference Accelerator.
+     * </p>
      * 
      * @return The tags to add to the Elastic Inference Accelerator.
      */
@@ -75,7 +91,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The tags to add to the Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tags
      *        The tags to add to the Elastic Inference Accelerator.
@@ -86,7 +104,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
      * The tags to add to the Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tags
      *        The tags to add to the Elastic Inference Accelerator.

@@ -23,11 +23,17 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The tags of the Elastic Inference Accelerator. */
+    /**
+     * <p>
+     * The tags of the Elastic Inference Accelerator.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
+     * <p>
      * The tags of the Elastic Inference Accelerator.
+     * </p>
      * 
      * @return The tags of the Elastic Inference Accelerator.
      */
@@ -37,7 +43,9 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The tags of the Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tags
      *        The tags of the Elastic Inference Accelerator.
@@ -48,7 +56,9 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
      * The tags of the Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tags
      *        The tags of the Elastic Inference Accelerator.

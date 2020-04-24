@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticinference.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Raised when a malformed input has been provided to the API.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BadRequestException extends com.amazonaws.services.elasticinference.model.AmazonElasticInferenceException {

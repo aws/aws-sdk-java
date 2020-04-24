@@ -2980,7 +2980,8 @@
         {"shape":"InternalException"},
         {"shape":"NotConfiguredException"},
         {"shape":"InvalidRequestException"},
-        {"shape":"ServiceUnavailableException"}
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"LimitExceededException"}
       ],
       "documentation":"<p>Sets the logging level.</p>"
     },

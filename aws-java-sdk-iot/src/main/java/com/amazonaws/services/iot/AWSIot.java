@@ -4167,6 +4167,8 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
      * @sample AWSIot.SetV2LoggingLevel
      */
     SetV2LoggingLevelResult setV2LoggingLevel(SetV2LoggingLevelRequest setV2LoggingLevelRequest);

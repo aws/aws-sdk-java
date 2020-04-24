@@ -28,6 +28,45 @@ public class AbstractAmazonElasticInferenceAsync extends AbstractAmazonElasticIn
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAcceleratorOfferingsResult> describeAcceleratorOfferingsAsync(DescribeAcceleratorOfferingsRequest request) {
+
+        return describeAcceleratorOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorOfferingsResult> describeAcceleratorOfferingsAsync(DescribeAcceleratorOfferingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorOfferingsRequest, DescribeAcceleratorOfferingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorTypesResult> describeAcceleratorTypesAsync(DescribeAcceleratorTypesRequest request) {
+
+        return describeAcceleratorTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorTypesResult> describeAcceleratorTypesAsync(DescribeAcceleratorTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorTypesRequest, DescribeAcceleratorTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorsResult> describeAcceleratorsAsync(DescribeAcceleratorsRequest request) {
+
+        return describeAcceleratorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorsResult> describeAcceleratorsAsync(DescribeAcceleratorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorsRequest, DescribeAcceleratorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);

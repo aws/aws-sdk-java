@@ -25,13 +25,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ARN of the Elastic Inference Accelerator to untag. */
+    /**
+     * <p>
+     * The ARN of the Elastic Inference Accelerator to untag.
+     * </p>
+     */
     private String resourceArn;
-    /** The list of tags to remove from the Elastic Inference Accelerator. */
+    /**
+     * <p>
+     * The list of tags to remove from the Elastic Inference Accelerator.
+     * </p>
+     */
     private java.util.List<String> tagKeys;
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to untag.
+     * </p>
      * 
      * @param resourceArn
      *        The ARN of the Elastic Inference Accelerator to untag.
@@ -42,7 +52,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to untag.
+     * </p>
      * 
      * @return The ARN of the Elastic Inference Accelerator to untag.
      */
@@ -52,7 +64,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to untag.
+     * </p>
      * 
      * @param resourceArn
      *        The ARN of the Elastic Inference Accelerator to untag.
@@ -65,7 +79,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The list of tags to remove from the Elastic Inference Accelerator.
+     * </p>
      * 
      * @return The list of tags to remove from the Elastic Inference Accelerator.
      */
@@ -75,7 +91,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The list of tags to remove from the Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tagKeys
      *        The list of tags to remove from the Elastic Inference Accelerator.
@@ -91,7 +109,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The list of tags to remove from the Elastic Inference Accelerator.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
@@ -114,7 +134,9 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
      * The list of tags to remove from the Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tagKeys
      *        The list of tags to remove from the Elastic Inference Accelerator.

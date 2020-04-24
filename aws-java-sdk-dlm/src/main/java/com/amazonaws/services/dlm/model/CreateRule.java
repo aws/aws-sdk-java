@@ -30,7 +30,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     * The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      */
     private Integer interval;
@@ -52,11 +52,11 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     * The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      * 
      * @param interval
-     *        The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     *        The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      */
 
     public void setInterval(Integer interval) {
@@ -65,10 +65,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     * The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      * 
-     * @return The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     * @return The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      */
 
     public Integer getInterval() {
@@ -77,11 +77,11 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     * The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      * </p>
      * 
      * @param interval
-     *        The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+     *        The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

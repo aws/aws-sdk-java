@@ -28,6 +28,21 @@ public class AbstractAmazonElasticInference implements AmazonElasticInference {
     }
 
     @Override
+    public DescribeAcceleratorOfferingsResult describeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAcceleratorTypesResult describeAcceleratorTypes(DescribeAcceleratorTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAcceleratorsResult describeAccelerators(DescribeAcceleratorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

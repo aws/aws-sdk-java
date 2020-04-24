@@ -25,7 +25,9 @@ import java.util.concurrent.ExecutorService;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <p>
  * Elastic Inference public APIs.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -58,6 +60,105 @@ public class AmazonElasticInferenceAsyncClient extends AmazonElasticInferenceCli
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorOfferingsResult> describeAcceleratorOfferingsAsync(DescribeAcceleratorOfferingsRequest request) {
+
+        return describeAcceleratorOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorOfferingsResult> describeAcceleratorOfferingsAsync(final DescribeAcceleratorOfferingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorOfferingsRequest, DescribeAcceleratorOfferingsResult> asyncHandler) {
+        final DescribeAcceleratorOfferingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAcceleratorOfferingsResult>() {
+            @Override
+            public DescribeAcceleratorOfferingsResult call() throws Exception {
+                DescribeAcceleratorOfferingsResult result = null;
+
+                try {
+                    result = executeDescribeAcceleratorOfferings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorTypesResult> describeAcceleratorTypesAsync(DescribeAcceleratorTypesRequest request) {
+
+        return describeAcceleratorTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorTypesResult> describeAcceleratorTypesAsync(final DescribeAcceleratorTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorTypesRequest, DescribeAcceleratorTypesResult> asyncHandler) {
+        final DescribeAcceleratorTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAcceleratorTypesResult>() {
+            @Override
+            public DescribeAcceleratorTypesResult call() throws Exception {
+                DescribeAcceleratorTypesResult result = null;
+
+                try {
+                    result = executeDescribeAcceleratorTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorsResult> describeAcceleratorsAsync(DescribeAcceleratorsRequest request) {
+
+        return describeAcceleratorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAcceleratorsResult> describeAcceleratorsAsync(final DescribeAcceleratorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorsRequest, DescribeAcceleratorsResult> asyncHandler) {
+        final DescribeAcceleratorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAcceleratorsResult>() {
+            @Override
+            public DescribeAcceleratorsResult call() throws Exception {
+                DescribeAcceleratorsResult result = null;
+
+                try {
+                    result = executeDescribeAccelerators(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

@@ -25,13 +25,116 @@ import com.amazonaws.services.elasticinference.model.*;
  * {@link com.amazonaws.services.elasticinference.AbstractAmazonElasticInferenceAsync} instead.
  * </p>
  * <p>
+ * <p>
  * Elastic Inference public APIs.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonElasticInferenceAsync extends AmazonElasticInference {
 
     /**
+     * <p>
+     * Describes the locations in which a given accelerator type or set of types is present in a given region.
+     * </p>
+     * 
+     * @param describeAcceleratorOfferingsRequest
+     * @return A Java Future containing the result of the DescribeAcceleratorOfferings operation returned by the
+     *         service.
+     * @sample AmazonElasticInferenceAsync.DescribeAcceleratorOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAcceleratorOfferingsResult> describeAcceleratorOfferingsAsync(
+            DescribeAcceleratorOfferingsRequest describeAcceleratorOfferingsRequest);
+
+    /**
+     * <p>
+     * Describes the locations in which a given accelerator type or set of types is present in a given region.
+     * </p>
+     * 
+     * @param describeAcceleratorOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAcceleratorOfferings operation returned by the
+     *         service.
+     * @sample AmazonElasticInferenceAsyncHandler.DescribeAcceleratorOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAcceleratorOfferingsResult> describeAcceleratorOfferingsAsync(
+            DescribeAcceleratorOfferingsRequest describeAcceleratorOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorOfferingsRequest, DescribeAcceleratorOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the accelerator types available in a given region, as well as their characteristics, such as memory and
+     * throughput.
+     * </p>
+     * 
+     * @param describeAcceleratorTypesRequest
+     * @return A Java Future containing the result of the DescribeAcceleratorTypes operation returned by the service.
+     * @sample AmazonElasticInferenceAsync.DescribeAcceleratorTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAcceleratorTypesResult> describeAcceleratorTypesAsync(DescribeAcceleratorTypesRequest describeAcceleratorTypesRequest);
+
+    /**
+     * <p>
+     * Describes the accelerator types available in a given region, as well as their characteristics, such as memory and
+     * throughput.
+     * </p>
+     * 
+     * @param describeAcceleratorTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAcceleratorTypes operation returned by the service.
+     * @sample AmazonElasticInferenceAsyncHandler.DescribeAcceleratorTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAcceleratorTypesResult> describeAcceleratorTypesAsync(DescribeAcceleratorTypesRequest describeAcceleratorTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorTypesRequest, DescribeAcceleratorTypesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes information over a provided set of accelerators belonging to an account.
+     * </p>
+     * 
+     * @param describeAcceleratorsRequest
+     * @return A Java Future containing the result of the DescribeAccelerators operation returned by the service.
+     * @sample AmazonElasticInferenceAsync.DescribeAccelerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAcceleratorsResult> describeAcceleratorsAsync(DescribeAcceleratorsRequest describeAcceleratorsRequest);
+
+    /**
+     * <p>
+     * Describes information over a provided set of accelerators belonging to an account.
+     * </p>
+     * 
+     * @param describeAcceleratorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccelerators operation returned by the service.
+     * @sample AmazonElasticInferenceAsyncHandler.DescribeAccelerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAcceleratorsResult> describeAcceleratorsAsync(DescribeAcceleratorsRequest describeAcceleratorsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAcceleratorsRequest, DescribeAcceleratorsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns all tags of an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
@@ -42,7 +145,9 @@ public interface AmazonElasticInferenceAsync extends AmazonElasticInference {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <p>
      * Returns all tags of an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
@@ -58,7 +163,9 @@ public interface AmazonElasticInferenceAsync extends AmazonElasticInference {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
-     * Adds the specified tag(s) to an Elastic Inference Accelerator.
+     * <p>
+     * Adds the specified tags to an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
@@ -69,7 +176,9 @@ public interface AmazonElasticInferenceAsync extends AmazonElasticInference {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
-     * Adds the specified tag(s) to an Elastic Inference Accelerator.
+     * <p>
+     * Adds the specified tags to an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tagResourceRequest
      * @param asyncHandler
@@ -85,7 +194,9 @@ public interface AmazonElasticInferenceAsync extends AmazonElasticInference {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
-     * Removes the specified tag(s) from an Elastic Inference Accelerator.
+     * <p>
+     * Removes the specified tags from an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -96,7 +207,9 @@ public interface AmazonElasticInferenceAsync extends AmazonElasticInference {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
-     * Removes the specified tag(s) from an Elastic Inference Accelerator.
+     * <p>
+     * Removes the specified tags from an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param untagResourceRequest
      * @param asyncHandler

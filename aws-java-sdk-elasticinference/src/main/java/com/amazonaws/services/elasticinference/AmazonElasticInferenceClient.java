@@ -50,7 +50,9 @@ import com.amazonaws.services.elasticinference.model.transform.*;
  * Client for accessing Amazon Elastic Inference. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
+ * <p>
  * Elastic Inference public APIs.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -133,7 +135,187 @@ public class AmazonElasticInferenceClient extends AmazonWebServiceClient impleme
     }
 
     /**
+     * <p>
+     * Describes the locations in which a given accelerator type or set of types is present in a given region.
+     * </p>
+     * 
+     * @param describeAcceleratorOfferingsRequest
+     * @return Result of the DescribeAcceleratorOfferings operation returned by the service.
+     * @throws BadRequestException
+     *         Raised when a malformed input has been provided to the API.
+     * @throws ResourceNotFoundException
+     *         Raised when the requested resource cannot be found.
+     * @throws InternalServerException
+     *         Raised when an unexpected error occurred during request processing.
+     * @sample AmazonElasticInference.DescribeAcceleratorOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAcceleratorOfferingsResult describeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAcceleratorOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAcceleratorOfferingsResult executeDescribeAcceleratorOfferings(DescribeAcceleratorOfferingsRequest describeAcceleratorOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAcceleratorOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAcceleratorOfferingsRequest> request = null;
+        Response<DescribeAcceleratorOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAcceleratorOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAcceleratorOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Inference");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAcceleratorOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAcceleratorOfferingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAcceleratorOfferingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the accelerator types available in a given region, as well as their characteristics, such as memory and
+     * throughput.
+     * </p>
+     * 
+     * @param describeAcceleratorTypesRequest
+     * @return Result of the DescribeAcceleratorTypes operation returned by the service.
+     * @throws InternalServerException
+     *         Raised when an unexpected error occurred during request processing.
+     * @sample AmazonElasticInference.DescribeAcceleratorTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAcceleratorTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAcceleratorTypesResult describeAcceleratorTypes(DescribeAcceleratorTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAcceleratorTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAcceleratorTypesResult executeDescribeAcceleratorTypes(DescribeAcceleratorTypesRequest describeAcceleratorTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAcceleratorTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAcceleratorTypesRequest> request = null;
+        Response<DescribeAcceleratorTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAcceleratorTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAcceleratorTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Inference");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAcceleratorTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAcceleratorTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAcceleratorTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes information over a provided set of accelerators belonging to an account.
+     * </p>
+     * 
+     * @param describeAcceleratorsRequest
+     * @return Result of the DescribeAccelerators operation returned by the service.
+     * @throws BadRequestException
+     *         Raised when a malformed input has been provided to the API.
+     * @throws ResourceNotFoundException
+     *         Raised when the requested resource cannot be found.
+     * @throws InternalServerException
+     *         Raised when an unexpected error occurred during request processing.
+     * @sample AmazonElasticInference.DescribeAccelerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/DescribeAccelerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAcceleratorsResult describeAccelerators(DescribeAcceleratorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccelerators(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAcceleratorsResult executeDescribeAccelerators(DescribeAcceleratorsRequest describeAcceleratorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAcceleratorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAcceleratorsRequest> request = null;
+        Response<DescribeAcceleratorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAcceleratorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAcceleratorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Inference");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccelerators");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAcceleratorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAcceleratorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns all tags of an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -190,7 +372,9 @@ public class AmazonElasticInferenceClient extends AmazonWebServiceClient impleme
     }
 
     /**
-     * Adds the specified tag(s) to an Elastic Inference Accelerator.
+     * <p>
+     * Adds the specified tags to an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -247,7 +431,9 @@ public class AmazonElasticInferenceClient extends AmazonWebServiceClient impleme
     }
 
     /**
-     * Removes the specified tag(s) from an Elastic Inference Accelerator.
+     * <p>
+     * Removes the specified tags from an Elastic Inference Accelerator.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.

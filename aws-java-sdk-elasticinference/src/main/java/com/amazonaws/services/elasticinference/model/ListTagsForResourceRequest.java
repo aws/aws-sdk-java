@@ -25,11 +25,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The ARN of the Elastic Inference Accelerator to list the tags for. */
+    /**
+     * <p>
+     * The ARN of the Elastic Inference Accelerator to list the tags for.
+     * </p>
+     */
     private String resourceArn;
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to list the tags for.
+     * </p>
      * 
      * @param resourceArn
      *        The ARN of the Elastic Inference Accelerator to list the tags for.
@@ -40,7 +46,9 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to list the tags for.
+     * </p>
      * 
      * @return The ARN of the Elastic Inference Accelerator to list the tags for.
      */
@@ -50,7 +58,9 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
      * The ARN of the Elastic Inference Accelerator to list the tags for.
+     * </p>
      * 
      * @param resourceArn
      *        The ARN of the Elastic Inference Accelerator to list the tags for.

@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticinference.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Raised when an unexpected error occurred during request processing.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerException extends com.amazonaws.services.elasticinference.model.AmazonElasticInferenceException {

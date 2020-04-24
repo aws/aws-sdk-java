@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticinference.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Raised when the requested resource cannot be found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.elasticinference.model.AmazonElasticInferenceException {
