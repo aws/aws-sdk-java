@@ -42,6 +42,12 @@ public class ExportAssetsToS3RequestDetails implements Serializable, Cloneable, 
     private String dataSetId;
     /**
      * <p>
+     * Encryption configuration for the export job.
+     * </p>
+     */
+    private ExportServerSideEncryption encryption;
+    /**
+     * <p>
      * The unique identifier for the revision associated with this export request.
      * </p>
      */
@@ -159,6 +165,46 @@ public class ExportAssetsToS3RequestDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * Encryption configuration for the export job.
+     * </p>
+     * 
+     * @param encryption
+     *        Encryption configuration for the export job.
+     */
+
+    public void setEncryption(ExportServerSideEncryption encryption) {
+        this.encryption = encryption;
+    }
+
+    /**
+     * <p>
+     * Encryption configuration for the export job.
+     * </p>
+     * 
+     * @return Encryption configuration for the export job.
+     */
+
+    public ExportServerSideEncryption getEncryption() {
+        return this.encryption;
+    }
+
+    /**
+     * <p>
+     * Encryption configuration for the export job.
+     * </p>
+     * 
+     * @param encryption
+     *        Encryption configuration for the export job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportAssetsToS3RequestDetails withEncryption(ExportServerSideEncryption encryption) {
+        setEncryption(encryption);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique identifier for the revision associated with this export request.
      * </p>
      * 
@@ -213,6 +259,8 @@ public class ExportAssetsToS3RequestDetails implements Serializable, Cloneable, 
             sb.append("AssetDestinations: ").append(getAssetDestinations()).append(",");
         if (getDataSetId() != null)
             sb.append("DataSetId: ").append(getDataSetId()).append(",");
+        if (getEncryption() != null)
+            sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getRevisionId() != null)
             sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
@@ -237,6 +285,10 @@ public class ExportAssetsToS3RequestDetails implements Serializable, Cloneable, 
             return false;
         if (other.getDataSetId() != null && other.getDataSetId().equals(this.getDataSetId()) == false)
             return false;
+        if (other.getEncryption() == null ^ this.getEncryption() == null)
+            return false;
+        if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
+            return false;
         if (other.getRevisionId() == null ^ this.getRevisionId() == null)
             return false;
         if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
@@ -251,6 +303,7 @@ public class ExportAssetsToS3RequestDetails implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getAssetDestinations() == null) ? 0 : getAssetDestinations().hashCode());
         hashCode = prime * hashCode + ((getDataSetId() == null) ? 0 : getDataSetId().hashCode());
+        hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }

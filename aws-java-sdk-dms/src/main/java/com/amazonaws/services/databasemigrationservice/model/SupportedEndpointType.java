@@ -55,6 +55,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     private String endpointType;
     /**
      * <p>
+     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
+     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * </p>
+     */
+    private String replicationInstanceEngineMinimumVersion;
+    /**
+     * <p>
      * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
      * value would be "Amazon Aurora MySQL."
      * </p>
@@ -258,6 +265,52 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
+     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * </p>
+     * 
+     * @param replicationInstanceEngineMinimumVersion
+     *        The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines
+     *        released with AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     */
+
+    public void setReplicationInstanceEngineMinimumVersion(String replicationInstanceEngineMinimumVersion) {
+        this.replicationInstanceEngineMinimumVersion = replicationInstanceEngineMinimumVersion;
+    }
+
+    /**
+     * <p>
+     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
+     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * </p>
+     * 
+     * @return The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines
+     *         released with AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     */
+
+    public String getReplicationInstanceEngineMinimumVersion() {
+        return this.replicationInstanceEngineMinimumVersion;
+    }
+
+    /**
+     * <p>
+     * The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines released with
+     * AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * </p>
+     * 
+     * @param replicationInstanceEngineMinimumVersion
+     *        The earliest AWS DMS engine version that supports this endpoint engine. Note that endpoint engines
+     *        released with AWS DMS versions earlier than 3.1.1 do not return a value for this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SupportedEndpointType withReplicationInstanceEngineMinimumVersion(String replicationInstanceEngineMinimumVersion) {
+        setReplicationInstanceEngineMinimumVersion(replicationInstanceEngineMinimumVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
      * value would be "Amazon Aurora MySQL."
      * </p>
@@ -320,6 +373,8 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
             sb.append("SupportsCDC: ").append(getSupportsCDC()).append(",");
         if (getEndpointType() != null)
             sb.append("EndpointType: ").append(getEndpointType()).append(",");
+        if (getReplicationInstanceEngineMinimumVersion() != null)
+            sb.append("ReplicationInstanceEngineMinimumVersion: ").append(getReplicationInstanceEngineMinimumVersion()).append(",");
         if (getEngineDisplayName() != null)
             sb.append("EngineDisplayName: ").append(getEngineDisplayName());
         sb.append("}");
@@ -348,6 +403,11 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
             return false;
         if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
+        if (other.getReplicationInstanceEngineMinimumVersion() == null ^ this.getReplicationInstanceEngineMinimumVersion() == null)
+            return false;
+        if (other.getReplicationInstanceEngineMinimumVersion() != null
+                && other.getReplicationInstanceEngineMinimumVersion().equals(this.getReplicationInstanceEngineMinimumVersion()) == false)
+            return false;
         if (other.getEngineDisplayName() == null ^ this.getEngineDisplayName() == null)
             return false;
         if (other.getEngineDisplayName() != null && other.getEngineDisplayName().equals(this.getEngineDisplayName()) == false)
@@ -363,6 +423,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
         hashCode = prime * hashCode + ((getSupportsCDC() == null) ? 0 : getSupportsCDC().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getReplicationInstanceEngineMinimumVersion() == null) ? 0 : getReplicationInstanceEngineMinimumVersion().hashCode());
         hashCode = prime * hashCode + ((getEngineDisplayName() == null) ? 0 : getEngineDisplayName().hashCode());
         return hashCode;
     }

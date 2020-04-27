@@ -79,16 +79,16 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      */
     private String tableMappings;
     /**
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      */
     private String replicationTaskSettings;
@@ -150,6 +150,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     */
+    private String taskData;
 
     /**
      * <p>
@@ -509,14 +518,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Table Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public void setTableMappings(String tableMappings) {
@@ -526,13 +535,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @return The table mappings for the task, in JSON format. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *         >Table Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     *         >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      */
 
     public String getTableMappings() {
@@ -542,14 +551,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Table Mapping</a> in the <i>AWS Database Migration User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,14 +570,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
      *        Overall settings for the task, in JSON format. For more information, see <a
-     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     *        Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
+     *        >Specifying Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+     *        User Guide.</i>
      */
 
     public void setReplicationTaskSettings(String replicationTaskSettings) {
@@ -578,13 +588,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @return Overall settings for the task, in JSON format. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
-     *         >Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         >Specifying Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+     *         User Guide.</i>
      */
 
     public String getReplicationTaskSettings() {
@@ -594,14 +605,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration User Guide.</i>
      * </p>
      * 
      * @param replicationTaskSettings
      *        Overall settings for the task, in JSON format. For more information, see <a
-     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     *        Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html"
+     *        >Specifying Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+     *        User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1005,6 +1017,64 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param taskData
+     *        Supplemental information that the task requires to migrate the data for certain source and target
+     *        endpoints. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public void setTaskData(String taskData) {
+        this.taskData = taskData;
+    }
+
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @return Supplemental information that the task requires to migrate the data for certain source and target
+     *         endpoints. For more information, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public String getTaskData() {
+        return this.taskData;
+    }
+
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param taskData
+     *        Supplemental information that the task requires to migrate the data for certain source and target
+     *        endpoints. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationTaskRequest withTaskData(String taskData) {
+        setTaskData(taskData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1037,7 +1107,9 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
         if (getCdcStopPosition() != null)
             sb.append("CdcStopPosition: ").append(getCdcStopPosition()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTaskData() != null)
+            sb.append("TaskData: ").append(getTaskData());
         sb.append("}");
         return sb.toString();
     }
@@ -1096,6 +1168,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTaskData() == null ^ this.getTaskData() == null)
+            return false;
+        if (other.getTaskData() != null && other.getTaskData().equals(this.getTaskData()) == false)
+            return false;
         return true;
     }
 
@@ -1115,6 +1191,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCdcStartPosition() == null) ? 0 : getCdcStartPosition().hashCode());
         hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTaskData() == null) ? 0 : getTaskData().hashCode());
         return hashCode;
     }
 

@@ -144,6 +144,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setElasticsearchSettings(ElasticsearchSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NeptuneSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setNeptuneSettings(NeptuneSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RedshiftSettings", targetDepth)) {
                     context.nextToken();
                     endpoint.setRedshiftSettings(RedshiftSettingsJsonUnmarshaller.getInstance().unmarshall(context));

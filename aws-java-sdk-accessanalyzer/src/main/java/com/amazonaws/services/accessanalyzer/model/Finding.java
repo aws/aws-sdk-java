@@ -96,6 +96,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String resourceType;
     /**
      * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     */
+    private java.util.List<FindingSource> sources;
+    /**
+     * <p>
      * The current status of the finding.
      * </p>
      */
@@ -666,6 +673,84 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * 
+     * @return The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *         populated for Amazon S3 bucket findings.
+     */
+
+    public java.util.List<FindingSource> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * 
+     * @param sources
+     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *        populated for Amazon S3 bucket findings.
+     */
+
+    public void setSources(java.util.Collection<FindingSource> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<FindingSource>(sources);
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *        populated for Amazon S3 bucket findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withSources(FindingSource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<FindingSource>(sources.length));
+        }
+        for (FindingSource ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sources of the finding. This indicates how the access that generated the finding is granted. It is populated
+     * for Amazon S3 bucket findings.
+     * </p>
+     * 
+     * @param sources
+     *        The sources of the finding. This indicates how the access that generated the finding is granted. It is
+     *        populated for Amazon S3 bucket findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withSources(java.util.Collection<FindingSource> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the finding.
      * </p>
      * 
@@ -797,6 +882,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             sb.append("ResourceOwnerAccount: ").append(getResourceOwnerAccount()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getUpdatedAt() != null)
@@ -859,6 +946,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -886,6 +977,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         hashCode = prime * hashCode + ((getResourceOwnerAccount() == null) ? 0 : getResourceOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;

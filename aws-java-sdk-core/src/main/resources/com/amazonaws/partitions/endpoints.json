@@ -5728,6 +5728,12 @@
           "cn-northwest-1" : { }
         }
       },
+      "codecommit" : {
+        "endpoints" : {
+          "cn-north-1" : { },
+          "cn-northwest-1" : { }
+        }
+      },
       "codedeploy" : {
         "endpoints" : {
           "cn-north-1" : { },

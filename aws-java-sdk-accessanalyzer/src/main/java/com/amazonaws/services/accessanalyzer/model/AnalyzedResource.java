@@ -78,7 +78,7 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
     private String resourceType;
     /**
      * <p>
-     * Indicates how the access that generated the finding is granted.
+     * Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
      * </p>
      */
     private java.util.List<String> sharedVia;
@@ -482,10 +482,11 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates how the access that generated the finding is granted.
+     * Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
      * </p>
      * 
-     * @return Indicates how the access that generated the finding is granted.
+     * @return Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket
+     *         findings.
      */
 
     public java.util.List<String> getSharedVia() {
@@ -494,11 +495,12 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates how the access that generated the finding is granted.
+     * Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
      * </p>
      * 
      * @param sharedVia
-     *        Indicates how the access that generated the finding is granted.
+     *        Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket
+     *        findings.
      */
 
     public void setSharedVia(java.util.Collection<String> sharedVia) {
@@ -512,7 +514,7 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates how the access that generated the finding is granted.
+     * Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -521,7 +523,8 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param sharedVia
-     *        Indicates how the access that generated the finding is granted.
+     *        Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,11 +540,12 @@ public class AnalyzedResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates how the access that generated the finding is granted.
+     * Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.
      * </p>
      * 
      * @param sharedVia
-     *        Indicates how the access that generated the finding is granted.
+     *        Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

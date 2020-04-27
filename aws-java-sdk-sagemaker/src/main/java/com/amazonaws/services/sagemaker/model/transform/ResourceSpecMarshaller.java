@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ResourceSpecMarshaller {
 
-    private static final MarshallingInfo<String> ENVIRONMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentArn").build();
+    private static final MarshallingInfo<String> SAGEMAKERIMAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageArn").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
 
@@ -48,7 +48,7 @@ public class ResourceSpecMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(resourceSpec.getEnvironmentArn(), ENVIRONMENTARN_BINDING);
+            protocolMarshaller.marshall(resourceSpec.getSageMakerImageArn(), SAGEMAKERIMAGEARN_BINDING);
             protocolMarshaller.marshall(resourceSpec.getInstanceType(), INSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -74,7 +74,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String tableMappings;
     /**
      * <p>
-     * JSON file that contains settings for the task, such as target metadata settings.
+     * JSON file that contains settings for the task, such as task metadata settings.
      * </p>
      */
     private String replicationTaskSettings;
@@ -130,6 +130,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String cdcStopPosition;
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     */
+    private String taskData;
 
     /**
      * <p>
@@ -460,11 +469,11 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * JSON file that contains settings for the task, such as target metadata settings.
+     * JSON file that contains settings for the task, such as task metadata settings.
      * </p>
      * 
      * @param replicationTaskSettings
-     *        JSON file that contains settings for the task, such as target metadata settings.
+     *        JSON file that contains settings for the task, such as task metadata settings.
      */
 
     public void setReplicationTaskSettings(String replicationTaskSettings) {
@@ -473,10 +482,10 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * JSON file that contains settings for the task, such as target metadata settings.
+     * JSON file that contains settings for the task, such as task metadata settings.
      * </p>
      * 
-     * @return JSON file that contains settings for the task, such as target metadata settings.
+     * @return JSON file that contains settings for the task, such as task metadata settings.
      */
 
     public String getReplicationTaskSettings() {
@@ -485,11 +494,11 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * JSON file that contains settings for the task, such as target metadata settings.
+     * JSON file that contains settings for the task, such as task metadata settings.
      * </p>
      * 
      * @param replicationTaskSettings
-     *        JSON file that contains settings for the task, such as target metadata settings.
+     *        JSON file that contains settings for the task, such as task metadata settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -823,6 +832,64 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param taskData
+     *        Supplemental information that the task requires to migrate the data for certain source and target
+     *        endpoints. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public void setTaskData(String taskData) {
+        this.taskData = taskData;
+    }
+
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @return Supplemental information that the task requires to migrate the data for certain source and target
+     *         endpoints. For more information, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public String getTaskData() {
+        return this.taskData;
+    }
+
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param taskData
+     *        Supplemental information that the task requires to migrate the data for certain source and target
+     *        endpoints. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationTaskRequest withTaskData(String taskData) {
+        setTaskData(taskData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -849,7 +916,9 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
         if (getCdcStartPosition() != null)
             sb.append("CdcStartPosition: ").append(getCdcStartPosition()).append(",");
         if (getCdcStopPosition() != null)
-            sb.append("CdcStopPosition: ").append(getCdcStopPosition());
+            sb.append("CdcStopPosition: ").append(getCdcStopPosition()).append(",");
+        if (getTaskData() != null)
+            sb.append("TaskData: ").append(getTaskData());
         sb.append("}");
         return sb.toString();
     }
@@ -896,6 +965,10 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getCdcStopPosition() != null && other.getCdcStopPosition().equals(this.getCdcStopPosition()) == false)
             return false;
+        if (other.getTaskData() == null ^ this.getTaskData() == null)
+            return false;
+        if (other.getTaskData() != null && other.getTaskData().equals(this.getTaskData()) == false)
+            return false;
         return true;
     }
 
@@ -912,6 +985,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCdcStartTime() == null) ? 0 : getCdcStartTime().hashCode());
         hashCode = prime * hashCode + ((getCdcStartPosition() == null) ? 0 : getCdcStartPosition().hashCode());
         hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
+        hashCode = prime * hashCode + ((getTaskData() == null) ? 0 : getTaskData().hashCode());
         return hashCode;
     }
 

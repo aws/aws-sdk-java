@@ -40,7 +40,7 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     private Double limitValue;
     /** The message related to the job error. */
     private String message;
-    /** The unqiue identifier for the resource related to the error. */
+    /** The unique identifier for the resource related to the error. */
     private String resourceId;
     /** The type of resource related to the error. */
     private String resourceType;
@@ -250,10 +250,10 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      * 
      * @param resourceId
-     *        The unqiue identifier for the resource related to the error.
+     *        The unique identifier for the resource related to the error.
      */
 
     public void setResourceId(String resourceId) {
@@ -261,9 +261,9 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      * 
-     * @return The unqiue identifier for the resource related to the error.
+     * @return The unique identifier for the resource related to the error.
      */
 
     public String getResourceId() {
@@ -271,10 +271,10 @@ public class JobError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      * 
      * @param resourceId
-     *        The unqiue identifier for the resource related to the error.
+     *        The unique identifier for the resource related to the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

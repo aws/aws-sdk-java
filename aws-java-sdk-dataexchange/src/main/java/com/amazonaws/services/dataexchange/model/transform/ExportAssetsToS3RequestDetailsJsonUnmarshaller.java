@@ -57,6 +57,10 @@ public class ExportAssetsToS3RequestDetailsJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     exportAssetsToS3RequestDetails.setDataSetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Encryption", targetDepth)) {
+                    context.nextToken();
+                    exportAssetsToS3RequestDetails.setEncryption(ExportServerSideEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("RevisionId", targetDepth)) {
                     context.nextToken();
                     exportAssetsToS3RequestDetails.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));

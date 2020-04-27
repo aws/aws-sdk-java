@@ -173,6 +173,15 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ReplicationTaskStats replicationTaskStats;
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     */
+    private String taskData;
 
     /**
      * <p>
@@ -1140,6 +1149,64 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param taskData
+     *        Supplemental information that the task requires to migrate the data for certain source and target
+     *        endpoints. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public void setTaskData(String taskData) {
+        this.taskData = taskData;
+    }
+
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @return Supplemental information that the task requires to migrate the data for certain source and target
+     *         endpoints. For more information, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     */
+
+    public String getTaskData() {
+        return this.taskData;
+    }
+
+    /**
+     * <p>
+     * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
+     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * </p>
+     * 
+     * @param taskData
+     *        Supplemental information that the task requires to migrate the data for certain source and target
+     *        endpoints. For more information, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
+     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withTaskData(String taskData) {
+        setTaskData(taskData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1184,7 +1251,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
         if (getReplicationTaskArn() != null)
             sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getReplicationTaskStats() != null)
-            sb.append("ReplicationTaskStats: ").append(getReplicationTaskStats());
+            sb.append("ReplicationTaskStats: ").append(getReplicationTaskStats()).append(",");
+        if (getTaskData() != null)
+            sb.append("TaskData: ").append(getTaskData());
         sb.append("}");
         return sb.toString();
     }
@@ -1267,6 +1336,10 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getReplicationTaskStats() != null && other.getReplicationTaskStats().equals(this.getReplicationTaskStats()) == false)
             return false;
+        if (other.getTaskData() == null ^ this.getTaskData() == null)
+            return false;
+        if (other.getTaskData() != null && other.getTaskData().equals(this.getTaskData()) == false)
+            return false;
         return true;
     }
 
@@ -1292,6 +1365,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getRecoveryCheckpoint() == null) ? 0 : getRecoveryCheckpoint().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskStats() == null) ? 0 : getReplicationTaskStats().hashCode());
+        hashCode = prime * hashCode + ((getTaskData() == null) ? 0 : getTaskData().hashCode());
         return hashCode;
     }
 

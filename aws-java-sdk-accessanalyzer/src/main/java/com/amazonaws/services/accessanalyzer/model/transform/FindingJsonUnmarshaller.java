@@ -94,6 +94,10 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                     context.nextToken();
                     finding.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("sources", targetDepth)) {
+                    context.nextToken();
+                    finding.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     finding.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

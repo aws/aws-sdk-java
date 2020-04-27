@@ -176,6 +176,10 @@ public final class ClockSkewAdjuster {
                 return DateUtils.parseRFC822Date(serverDateStr);
             }
 
+            if (adjustmentRequest.exception == null) {
+                return null;
+            }
+
             // SQS doesn't return Date header
             final String exceptionMessage = adjustmentRequest.exception.getMessage();
             serverDateStr = getServerDateFromException(exceptionMessage);

@@ -245,6 +245,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private ElasticsearchSettings elasticsearchSettings;
     /**
      * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * structure.
+     * </p>
+     */
+    private NeptuneSettings neptuneSettings;
+    /**
+     * <p>
      * Settings for the Amazon Redshift endpoint.
      * </p>
      */
@@ -1575,6 +1582,52 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param neptuneSettings
+     *        The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     *        structure.
+     */
+
+    public void setNeptuneSettings(NeptuneSettings neptuneSettings) {
+        this.neptuneSettings = neptuneSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     *         structure.
+     */
+
+    public NeptuneSettings getNeptuneSettings() {
+        return this.neptuneSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param neptuneSettings
+     *        The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     *        structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withNeptuneSettings(NeptuneSettings neptuneSettings) {
+        setNeptuneSettings(neptuneSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * Settings for the Amazon Redshift endpoint.
      * </p>
      * 
@@ -1673,6 +1726,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("KafkaSettings: ").append(getKafkaSettings()).append(",");
         if (getElasticsearchSettings() != null)
             sb.append("ElasticsearchSettings: ").append(getElasticsearchSettings()).append(",");
+        if (getNeptuneSettings() != null)
+            sb.append("NeptuneSettings: ").append(getNeptuneSettings()).append(",");
         if (getRedshiftSettings() != null)
             sb.append("RedshiftSettings: ").append(getRedshiftSettings());
         sb.append("}");
@@ -1785,6 +1840,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getElasticsearchSettings() != null && other.getElasticsearchSettings().equals(this.getElasticsearchSettings()) == false)
             return false;
+        if (other.getNeptuneSettings() == null ^ this.getNeptuneSettings() == null)
+            return false;
+        if (other.getNeptuneSettings() != null && other.getNeptuneSettings().equals(this.getNeptuneSettings()) == false)
+            return false;
         if (other.getRedshiftSettings() == null ^ this.getRedshiftSettings() == null)
             return false;
         if (other.getRedshiftSettings() != null && other.getRedshiftSettings().equals(this.getRedshiftSettings()) == false)
@@ -1821,6 +1880,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKinesisSettings() == null) ? 0 : getKinesisSettings().hashCode());
         hashCode = prime * hashCode + ((getKafkaSettings() == null) ? 0 : getKafkaSettings().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
+        hashCode = prime * hashCode + ((getNeptuneSettings() == null) ? 0 : getNeptuneSettings().hashCode());
         hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
         return hashCode;
     }

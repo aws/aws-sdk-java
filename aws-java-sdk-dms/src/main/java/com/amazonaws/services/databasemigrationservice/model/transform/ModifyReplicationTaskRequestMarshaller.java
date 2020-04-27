@@ -43,6 +43,8 @@ public class ModifyReplicationTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStartPosition").build();
     private static final MarshallingInfo<String> CDCSTOPPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStopPosition").build();
+    private static final MarshallingInfo<String> TASKDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TaskData").build();
 
     private static final ModifyReplicationTaskRequestMarshaller instance = new ModifyReplicationTaskRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class ModifyReplicationTaskRequestMarshaller {
             protocolMarshaller.marshall(modifyReplicationTaskRequest.getCdcStartTime(), CDCSTARTTIME_BINDING);
             protocolMarshaller.marshall(modifyReplicationTaskRequest.getCdcStartPosition(), CDCSTARTPOSITION_BINDING);
             protocolMarshaller.marshall(modifyReplicationTaskRequest.getCdcStopPosition(), CDCSTOPPOSITION_BINDING);
+            protocolMarshaller.marshall(modifyReplicationTaskRequest.getTaskData(), TASKDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

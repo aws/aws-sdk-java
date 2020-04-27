@@ -51,6 +51,8 @@ public class FindingSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwnerAccount").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sources").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -83,6 +85,7 @@ public class FindingSummaryMarshaller {
             protocolMarshaller.marshall(findingSummary.getResource(), RESOURCE_BINDING);
             protocolMarshaller.marshall(findingSummary.getResourceOwnerAccount(), RESOURCEOWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(findingSummary.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(findingSummary.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(findingSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(findingSummary.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {

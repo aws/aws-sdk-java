@@ -48,9 +48,9 @@ public class ResourceSpecJsonUnmarshaller implements Unmarshaller<ResourceSpec, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("EnvironmentArn", targetDepth)) {
+                if (context.testExpression("SageMakerImageArn", targetDepth)) {
                     context.nextToken();
-                    resourceSpec.setEnvironmentArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    resourceSpec.setSageMakerImageArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();

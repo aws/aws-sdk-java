@@ -32,6 +32,8 @@ public class ExportAssetsToS3RequestDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssetDestinations").build();
     private static final MarshallingInfo<String> DATASETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DataSetId").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encryption").build();
     private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
@@ -53,6 +55,7 @@ public class ExportAssetsToS3RequestDetailsMarshaller {
         try {
             protocolMarshaller.marshall(exportAssetsToS3RequestDetails.getAssetDestinations(), ASSETDESTINATIONS_BINDING);
             protocolMarshaller.marshall(exportAssetsToS3RequestDetails.getDataSetId(), DATASETID_BINDING);
+            protocolMarshaller.marshall(exportAssetsToS3RequestDetails.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(exportAssetsToS3RequestDetails.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -60,6 +60,10 @@ public class SupportedEndpointTypeJsonUnmarshaller implements Unmarshaller<Suppo
                     context.nextToken();
                     supportedEndpointType.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicationInstanceEngineMinimumVersion", targetDepth)) {
+                    context.nextToken();
+                    supportedEndpointType.setReplicationInstanceEngineMinimumVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EngineDisplayName", targetDepth)) {
                     context.nextToken();
                     supportedEndpointType.setEngineDisplayName(context.getUnmarshaller(String.class).unmarshall(context));

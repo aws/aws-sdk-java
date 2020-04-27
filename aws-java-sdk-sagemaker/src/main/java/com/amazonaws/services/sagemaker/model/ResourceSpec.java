@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The instance type and quantity.
+ * The instance type and the Amazon Resource Name (ARN) of the image created on the instance. The ARN is stored as
+ * metadata in Amazon SageMaker Studio notebooks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec" target="_top">AWS API
@@ -30,10 +31,10 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment.
+     * The Amazon Resource Name (ARN) of the image created on the instance.
      * </p>
      */
-    private String environmentArn;
+    private String sageMakerImageArn;
     /**
      * <p>
      * The instance type.
@@ -43,41 +44,41 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment.
+     * The Amazon Resource Name (ARN) of the image created on the instance.
      * </p>
      * 
-     * @param environmentArn
-     *        The Amazon Resource Name (ARN) of the environment.
+     * @param sageMakerImageArn
+     *        The Amazon Resource Name (ARN) of the image created on the instance.
      */
 
-    public void setEnvironmentArn(String environmentArn) {
-        this.environmentArn = environmentArn;
+    public void setSageMakerImageArn(String sageMakerImageArn) {
+        this.sageMakerImageArn = sageMakerImageArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment.
+     * The Amazon Resource Name (ARN) of the image created on the instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the environment.
+     * @return The Amazon Resource Name (ARN) of the image created on the instance.
      */
 
-    public String getEnvironmentArn() {
-        return this.environmentArn;
+    public String getSageMakerImageArn() {
+        return this.sageMakerImageArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment.
+     * The Amazon Resource Name (ARN) of the image created on the instance.
      * </p>
      * 
-     * @param environmentArn
-     *        The Amazon Resource Name (ARN) of the environment.
+     * @param sageMakerImageArn
+     *        The Amazon Resource Name (ARN) of the image created on the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ResourceSpec withEnvironmentArn(String environmentArn) {
-        setEnvironmentArn(environmentArn);
+    public ResourceSpec withSageMakerImageArn(String sageMakerImageArn) {
+        setSageMakerImageArn(sageMakerImageArn);
         return this;
     }
 
@@ -152,8 +153,8 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEnvironmentArn() != null)
-            sb.append("EnvironmentArn: ").append(getEnvironmentArn()).append(",");
+        if (getSageMakerImageArn() != null)
+            sb.append("SageMakerImageArn: ").append(getSageMakerImageArn()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
@@ -170,9 +171,9 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ResourceSpec == false)
             return false;
         ResourceSpec other = (ResourceSpec) obj;
-        if (other.getEnvironmentArn() == null ^ this.getEnvironmentArn() == null)
+        if (other.getSageMakerImageArn() == null ^ this.getSageMakerImageArn() == null)
             return false;
-        if (other.getEnvironmentArn() != null && other.getEnvironmentArn().equals(this.getEnvironmentArn()) == false)
+        if (other.getSageMakerImageArn() != null && other.getSageMakerImageArn().equals(this.getSageMakerImageArn()) == false)
             return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
@@ -186,7 +187,7 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEnvironmentArn() == null) ? 0 : getEnvironmentArn().hashCode());
+        hashCode = prime * hashCode + ((getSageMakerImageArn() == null) ? 0 : getSageMakerImageArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         return hashCode;
     }
