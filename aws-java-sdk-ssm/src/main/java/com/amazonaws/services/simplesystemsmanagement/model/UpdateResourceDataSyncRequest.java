@@ -33,9 +33,7 @@ public class UpdateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
     private String syncName;
     /**
      * <p>
-     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      * </p>
      */
     private String syncType;
@@ -88,16 +86,11 @@ public class UpdateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      * </p>
      * 
      * @param syncType
-     *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
-     *        resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
-     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-     *        multiple AWS Regions.
+     *        The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      */
 
     public void setSyncType(String syncType) {
@@ -106,15 +99,10 @@ public class UpdateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      * </p>
      * 
-     * @return The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
-     *         resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
-     *         <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-     *         multiple AWS Regions.
+     * @return The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      */
 
     public String getSyncType() {
@@ -123,16 +111,11 @@ public class UpdateResourceDataSyncRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      * </p>
      * 
      * @param syncType
-     *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
-     *        resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
-     *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-     *        multiple AWS Regions.
+     *        The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

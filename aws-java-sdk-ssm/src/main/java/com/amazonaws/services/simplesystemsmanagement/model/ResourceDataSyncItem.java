@@ -37,8 +37,8 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
+     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
      * </p>
      */
     private String syncType;
@@ -50,7 +50,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     private ResourceDataSyncSourceWithState syncSource;
     /**
      * <p>
-     * Configuration information for the target Amazon S3 bucket.
+     * Configuration information for the target S3 bucket.
      * </p>
      */
     private ResourceDataSyncS3Destination s3Destination;
@@ -134,13 +134,13 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
+     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
      * </p>
      * 
      * @param syncType
      *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
-     *        resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
+     *        resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
      *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
      *        multiple AWS Regions.
      */
@@ -152,12 +152,12 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
+     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
      * </p>
      * 
      * @return The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
-     *         resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
+     *         resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
      *         <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
      *         multiple AWS Regions.
      */
@@ -169,13 +169,13 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the resource
-     * data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
-     * then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+     * data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code> then the
+     * resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
      * </p>
      * 
      * @param syncType
      *        The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>, then the
-     *        resource data sync synchronizes data to an Amazon S3 bucket. If the <code>SyncType</code> is
+     *        resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
      *        <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
      *        multiple AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -228,11 +228,11 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configuration information for the target Amazon S3 bucket.
+     * Configuration information for the target S3 bucket.
      * </p>
      * 
      * @param s3Destination
-     *        Configuration information for the target Amazon S3 bucket.
+     *        Configuration information for the target S3 bucket.
      */
 
     public void setS3Destination(ResourceDataSyncS3Destination s3Destination) {
@@ -241,10 +241,10 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configuration information for the target Amazon S3 bucket.
+     * Configuration information for the target S3 bucket.
      * </p>
      * 
-     * @return Configuration information for the target Amazon S3 bucket.
+     * @return Configuration information for the target S3 bucket.
      */
 
     public ResourceDataSyncS3Destination getS3Destination() {
@@ -253,11 +253,11 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Configuration information for the target Amazon S3 bucket.
+     * Configuration information for the target S3 bucket.
      * </p>
      * 
      * @param s3Destination
-     *        Configuration information for the target Amazon S3 bucket.
+     *        Configuration information for the target S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

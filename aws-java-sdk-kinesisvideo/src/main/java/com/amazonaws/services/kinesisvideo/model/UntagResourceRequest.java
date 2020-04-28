@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the signaling channel from which you want to remove tags.
+     * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the signaling channel from which you want to remove tags.
+     * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the signaling channel from which you want to remove tags.
+     *        The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the signaling channel from which you want to remove tags.
+     * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      * </p>
      * 
-     * @return The ARN of the signaling channel from which you want to remove tags.
+     * @return The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the signaling channel from which you want to remove tags.
+     * The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the signaling channel from which you want to remove tags.
+     *        The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

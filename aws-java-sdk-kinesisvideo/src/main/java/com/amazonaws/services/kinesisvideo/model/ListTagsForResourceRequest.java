@@ -27,27 +27,27 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next batch of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next batch of tags.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The ARN of the signaling channel for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      * </p>
      */
     private String resourceARN;
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next batch of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next batch of tags.
      * </p>
      * 
      * @param nextToken
-     *        If you specify this parameter and the result of a ListTagsForResource call is truncated, the response
-     *        includes a token that you can use in the next request to fetch the next batch of tags.
+     *        If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     *        response includes a token that you can use in the next request to fetch the next batch of tags.
      */
 
     public void setNextToken(String nextToken) {
@@ -56,12 +56,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next batch of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next batch of tags.
      * </p>
      * 
-     * @return If you specify this parameter and the result of a ListTagsForResource call is truncated, the response
-     *         includes a token that you can use in the next request to fetch the next batch of tags.
+     * @return If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     *         response includes a token that you can use in the next request to fetch the next batch of tags.
      */
 
     public String getNextToken() {
@@ -70,13 +70,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next batch of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next batch of tags.
      * </p>
      * 
      * @param nextToken
-     *        If you specify this parameter and the result of a ListTagsForResource call is truncated, the response
-     *        includes a token that you can use in the next request to fetch the next batch of tags.
+     *        If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     *        response includes a token that you can use in the next request to fetch the next batch of tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the signaling channel for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the signaling channel for which you want to list tags.
+     *        The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -100,10 +100,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the signaling channel for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      * </p>
      * 
-     * @return The ARN of the signaling channel for which you want to list tags.
+     * @return The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      */
 
     public String getResourceARN() {
@@ -112,11 +112,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the signaling channel for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the signaling channel for which you want to list tags.
+     *        The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

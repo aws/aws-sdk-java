@@ -55,7 +55,7 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Information about the compliance as defined by the resource type. For example, for a patch compliance type,
-     * <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     * <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ComplianceItemEntry> items;
@@ -66,6 +66,24 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String itemContentHash;
+    /**
+     * <p>
+     * The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     * <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must
+     * provide a full list of compliance items each time you send the request.
+     * </p>
+     * <p>
+     * In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     * association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all
+     * requests use <code>COMPLETE</code> mode.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only valid for association compliance.
+     * </p>
+     * </note>
+     */
+    private String uploadType;
 
     /**
      * <p>
@@ -248,11 +266,11 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Information about the compliance as defined by the resource type. For example, for a patch compliance type,
-     * <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     * <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * </p>
      * 
      * @return Information about the compliance as defined by the resource type. For example, for a patch compliance
-     *         type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     *         type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      */
 
     public java.util.List<ComplianceItemEntry> getItems() {
@@ -265,12 +283,12 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Information about the compliance as defined by the resource type. For example, for a patch compliance type,
-     * <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     * <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * </p>
      * 
      * @param items
      *        Information about the compliance as defined by the resource type. For example, for a patch compliance
-     *        type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     *        type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      */
 
     public void setItems(java.util.Collection<ComplianceItemEntry> items) {
@@ -285,7 +303,7 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Information about the compliance as defined by the resource type. For example, for a patch compliance type,
-     * <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     * <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -295,7 +313,7 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param items
      *        Information about the compliance as defined by the resource type. For example, for a patch compliance
-     *        type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     *        type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,12 +330,12 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Information about the compliance as defined by the resource type. For example, for a patch compliance type,
-     * <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     * <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * </p>
      * 
      * @param items
      *        Information about the compliance as defined by the resource type. For example, for a patch compliance
-     *        type, <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+     *        type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,6 +392,157 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     * <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must
+     * provide a full list of compliance items each time you send the request.
+     * </p>
+     * <p>
+     * In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     * association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all
+     * requests use <code>COMPLETE</code> mode.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only valid for association compliance.
+     * </p>
+     * </note>
+     * 
+     * @param uploadType
+     *        The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     *        <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource.
+     *        You must provide a full list of compliance items each time you send the request.</p>
+     *        <p>
+     *        In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     *        association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default,
+     *        all requests use <code>COMPLETE</code> mode.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This attribute is only valid for association compliance.
+     *        </p>
+     * @see ComplianceUploadType
+     */
+
+    public void setUploadType(String uploadType) {
+        this.uploadType = uploadType;
+    }
+
+    /**
+     * <p>
+     * The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     * <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must
+     * provide a full list of compliance items each time you send the request.
+     * </p>
+     * <p>
+     * In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     * association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all
+     * requests use <code>COMPLETE</code> mode.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only valid for association compliance.
+     * </p>
+     * </note>
+     * 
+     * @return The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>.
+     *         In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the
+     *         resource. You must provide a full list of compliance items each time you send the request.</p>
+     *         <p>
+     *         In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association.
+     *         The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By
+     *         default, all requests use <code>COMPLETE</code> mode.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This attribute is only valid for association compliance.
+     *         </p>
+     * @see ComplianceUploadType
+     */
+
+    public String getUploadType() {
+        return this.uploadType;
+    }
+
+    /**
+     * <p>
+     * The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     * <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must
+     * provide a full list of compliance items each time you send the request.
+     * </p>
+     * <p>
+     * In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     * association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all
+     * requests use <code>COMPLETE</code> mode.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only valid for association compliance.
+     * </p>
+     * </note>
+     * 
+     * @param uploadType
+     *        The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     *        <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource.
+     *        You must provide a full list of compliance items each time you send the request.</p>
+     *        <p>
+     *        In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     *        association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default,
+     *        all requests use <code>COMPLETE</code> mode.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This attribute is only valid for association compliance.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComplianceUploadType
+     */
+
+    public PutComplianceItemsRequest withUploadType(String uploadType) {
+        setUploadType(uploadType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     * <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must
+     * provide a full list of compliance items each time you send the request.
+     * </p>
+     * <p>
+     * In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     * association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all
+     * requests use <code>COMPLETE</code> mode.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only valid for association compliance.
+     * </p>
+     * </note>
+     * 
+     * @param uploadType
+     *        The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In
+     *        <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource.
+     *        You must provide a full list of compliance items each time you send the request.</p>
+     *        <p>
+     *        In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The
+     *        association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default,
+     *        all requests use <code>COMPLETE</code> mode.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This attribute is only valid for association compliance.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComplianceUploadType
+     */
+
+    public PutComplianceItemsRequest withUploadType(ComplianceUploadType uploadType) {
+        this.uploadType = uploadType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -396,7 +565,9 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getItems() != null)
             sb.append("Items: ").append(getItems()).append(",");
         if (getItemContentHash() != null)
-            sb.append("ItemContentHash: ").append(getItemContentHash());
+            sb.append("ItemContentHash: ").append(getItemContentHash()).append(",");
+        if (getUploadType() != null)
+            sb.append("UploadType: ").append(getUploadType());
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +606,10 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getItemContentHash() != null && other.getItemContentHash().equals(this.getItemContentHash()) == false)
             return false;
+        if (other.getUploadType() == null ^ this.getUploadType() == null)
+            return false;
+        if (other.getUploadType() != null && other.getUploadType().equals(this.getUploadType()) == false)
+            return false;
         return true;
     }
 
@@ -449,6 +624,7 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getExecutionSummary() == null) ? 0 : getExecutionSummary().hashCode());
         hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         hashCode = prime * hashCode + ((getItemContentHash() == null) ? 0 : getItemContentHash().hashCode());
+        hashCode = prime * hashCode + ((getUploadType() == null) ? 0 : getUploadType().hashCode());
         return hashCode;
     }
 

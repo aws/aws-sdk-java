@@ -101,6 +101,10 @@ public class AssociationVersionInfoJsonUnmarshaller implements Unmarshaller<Asso
                     context.nextToken();
                     associationVersionInfo.setComplianceSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SyncCompliance", targetDepth)) {
+                    context.nextToken();
+                    associationVersionInfo.setSyncCompliance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

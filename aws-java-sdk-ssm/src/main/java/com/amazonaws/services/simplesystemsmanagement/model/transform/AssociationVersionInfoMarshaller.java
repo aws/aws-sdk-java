@@ -55,6 +55,8 @@ public class AssociationVersionInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
     private static final MarshallingInfo<String> COMPLIANCESEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSeverity").build();
+    private static final MarshallingInfo<String> SYNCCOMPLIANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCompliance").build();
 
     private static final AssociationVersionInfoMarshaller instance = new AssociationVersionInfoMarshaller();
 
@@ -85,6 +87,7 @@ public class AssociationVersionInfoMarshaller {
             protocolMarshaller.marshall(associationVersionInfo.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(associationVersionInfo.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(associationVersionInfo.getComplianceSeverity(), COMPLIANCESEVERITY_BINDING);
+            protocolMarshaller.marshall(associationVersionInfo.getSyncCompliance(), SYNCCOMPLIANCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

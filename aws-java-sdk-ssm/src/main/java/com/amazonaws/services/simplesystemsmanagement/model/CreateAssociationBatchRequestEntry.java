@@ -95,7 +95,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     private String scheduleExpression;
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      */
     private InstanceAssociationOutputLocation outputLocation;
@@ -140,6 +140,23 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      */
     private String complianceSeverity;
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     */
+    private String syncCompliance;
 
     /**
      * <p>
@@ -619,11 +636,11 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param outputLocation
-     *        An Amazon S3 bucket where you want to store the results of this request.
+     *        An S3 bucket where you want to store the results of this request.
      */
 
     public void setOutputLocation(InstanceAssociationOutputLocation outputLocation) {
@@ -632,10 +649,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      * 
-     * @return An Amazon S3 bucket where you want to store the results of this request.
+     * @return An S3 bucket where you want to store the results of this request.
      */
 
     public InstanceAssociationOutputLocation getOutputLocation() {
@@ -644,11 +661,11 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param outputLocation
-     *        An Amazon S3 bucket where you want to store the results of this request.
+     *        An S3 bucket where you want to store the results of this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -933,6 +950,153 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @param syncCompliance
+     *        The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *        In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *        compliance status. If the association execution runs successfully, then the association is
+     *        <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *        <code>NON-COMPLIANT</code>. </p>
+     *        <p>
+     *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        </p>
+     *        <p>
+     *        By default, all associations use <code>AUTO</code> mode.
+     * @see AssociationSyncCompliance
+     */
+
+    public void setSyncCompliance(String syncCompliance) {
+        this.syncCompliance = syncCompliance;
+    }
+
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @return The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *         In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *         compliance status. If the association execution runs successfully, then the association is
+     *         <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *         <code>NON-COMPLIANT</code>. </p>
+     *         <p>
+     *         In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *         <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It
+     *         is managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *         </p>
+     *         <p>
+     *         By default, all associations use <code>AUTO</code> mode.
+     * @see AssociationSyncCompliance
+     */
+
+    public String getSyncCompliance() {
+        return this.syncCompliance;
+    }
+
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @param syncCompliance
+     *        The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *        In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *        compliance status. If the association execution runs successfully, then the association is
+     *        <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *        <code>NON-COMPLIANT</code>. </p>
+     *        <p>
+     *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        </p>
+     *        <p>
+     *        By default, all associations use <code>AUTO</code> mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationSyncCompliance
+     */
+
+    public CreateAssociationBatchRequestEntry withSyncCompliance(String syncCompliance) {
+        setSyncCompliance(syncCompliance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @param syncCompliance
+     *        The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *        In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *        compliance status. If the association execution runs successfully, then the association is
+     *        <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *        <code>NON-COMPLIANT</code>. </p>
+     *        <p>
+     *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        </p>
+     *        <p>
+     *        By default, all associations use <code>AUTO</code> mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationSyncCompliance
+     */
+
+    public CreateAssociationBatchRequestEntry withSyncCompliance(AssociationSyncCompliance syncCompliance) {
+        this.syncCompliance = syncCompliance.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -967,7 +1131,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         if (getMaxConcurrency() != null)
             sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getComplianceSeverity() != null)
-            sb.append("ComplianceSeverity: ").append(getComplianceSeverity());
+            sb.append("ComplianceSeverity: ").append(getComplianceSeverity()).append(",");
+        if (getSyncCompliance() != null)
+            sb.append("SyncCompliance: ").append(getSyncCompliance());
         sb.append("}");
         return sb.toString();
     }
@@ -1031,6 +1197,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
             return false;
         if (other.getComplianceSeverity() != null && other.getComplianceSeverity().equals(this.getComplianceSeverity()) == false)
             return false;
+        if (other.getSyncCompliance() == null ^ this.getSyncCompliance() == null)
+            return false;
+        if (other.getSyncCompliance() != null && other.getSyncCompliance().equals(this.getSyncCompliance()) == false)
+            return false;
         return true;
     }
 
@@ -1051,6 +1221,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
+        hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
         return hashCode;
     }
 

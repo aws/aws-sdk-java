@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
  * impacting the performance and health of their AWS resources. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a>
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a>
  * in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  * 
@@ -84,8 +84,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String status;
@@ -109,8 +109,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
     private String title;
     /**
      * <p>
-     * The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset of
-     * source.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.
      * </p>
      */
     private String source;
@@ -137,8 +136,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private java.util.Map<String, OpsItemDataValue> operationalData;
@@ -565,15 +564,15 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -585,14 +584,14 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *         >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     *         >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -604,15 +603,15 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */
@@ -626,15 +625,15 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
+     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */
@@ -766,12 +765,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset of
-     * source.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.
      * </p>
      * 
      * @param source
-     *        The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset of
+     *        The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of
      *        source.
      */
 
@@ -781,12 +779,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset of
-     * source.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.
      * </p>
      * 
-     * @return The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset
-     *         of source.
+     * @return The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of
+     *         source.
      */
 
     public String getSource() {
@@ -795,12 +792,11 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset of
-     * source.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.
      * </p>
      * 
      * @param source
-     *        The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager. The impacted resource is a subset of
+     *        The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of
      *        source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -833,8 +829,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Operational data is custom data that provides useful reference details about the OpsItem. For example,
@@ -857,8 +853,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *         OpsItem. To view AWS CLI example commands that use these keys, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *         >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *         >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.Map<String, OpsItemDataValue> getOperationalData() {
@@ -888,8 +884,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -913,8 +909,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setOperationalData(java.util.Map<String, OpsItemDataValue> operationalData) {
@@ -944,8 +940,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -969,8 +965,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

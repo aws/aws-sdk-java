@@ -69,15 +69,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Using service-linked roles for Systems Manager</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      * </p>
      * </li>
      * </ul>
@@ -131,7 +131,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private String maxErrors;
     /**
      * <p>
-     * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     * A structure containing information about an S3 bucket to write instance-level logs to.
      * </p>
      * <note>
      * <p>
@@ -421,15 +421,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Using service-linked roles for Systems Manager</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      * </p>
      * </li>
      * </ul>
@@ -446,15 +446,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     *        >Service-Linked Role Permissions for Systems Manager</a>
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *        >Using service-linked roles for Systems Manager</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *        >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      *        </p>
      *        </li>
      */
@@ -477,15 +477,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Using service-linked roles for Systems Manager</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      * </p>
      * </li>
      * </ul>
@@ -501,15 +501,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *         <li>
      *         <p>
      *         <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     *         >Service-Linked Role Permissions for Systems Manager</a>
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *         >Using service-linked roles for Systems Manager</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     *         >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *         >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      *         </p>
      *         </li>
      */
@@ -532,15 +532,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     * >Service-Linked Role Permissions for Systems Manager</a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Using service-linked roles for Systems Manager</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      * </p>
      * </li>
      * </ul>
@@ -557,15 +557,15 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
-     *        >Service-Linked Role Permissions for Systems Manager</a>
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *        >Using service-linked roles for Systems Manager</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
-     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a>
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *        >Should I use a service-linked role or a custom service role to run maintenance window tasks? </a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -936,7 +936,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     * A structure containing information about an S3 bucket to write instance-level logs to.
      * </p>
      * <note>
      * <p>
@@ -948,7 +948,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </note>
      * 
      * @param loggingInfo
-     *        A structure containing information about an Amazon S3 bucket to write instance-level logs to. </p> <note>
+     *        A structure containing information about an S3 bucket to write instance-level logs to. </p> <note>
      *        <p>
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
@@ -964,7 +964,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     * A structure containing information about an S3 bucket to write instance-level logs to.
      * </p>
      * <note>
      * <p>
@@ -975,7 +975,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * </note>
      * 
-     * @return A structure containing information about an Amazon S3 bucket to write instance-level logs to. </p> <note>
+     * @return A structure containing information about an S3 bucket to write instance-level logs to. </p> <note>
      *         <p>
      *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
@@ -991,7 +991,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A structure containing information about an Amazon S3 bucket to write instance-level logs to.
+     * A structure containing information about an S3 bucket to write instance-level logs to.
      * </p>
      * <note>
      * <p>
@@ -1003,7 +1003,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </note>
      * 
      * @param loggingInfo
-     *        A structure containing information about an Amazon S3 bucket to write instance-level logs to. </p> <note>
+     *        A structure containing information about an S3 bucket to write instance-level logs to. </p> <note>
      *        <p>
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the

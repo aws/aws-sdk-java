@@ -36,8 +36,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     private PatchFilterGroup patchFilterGroup;
     /**
      * <p>
-     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * A compliance severity level for all approved patches in a patch baseline.
      * </p>
      */
     private String complianceLevel;
@@ -45,13 +44,17 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of days after the release date of each patch matched by the rule that the patch is marked as approved
      * in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after
-     * they are released.
+     * they are released. Not supported on Ubuntu Server.
      * </p>
      */
     private Integer approveAfterDays;
     /**
      * <p>
-     * Example API
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date are installed
+     * automatically. Not supported on Ubuntu Server.
+     * </p>
+     * <p>
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      * </p>
      */
     private String approveUntilDate;
@@ -105,13 +108,11 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * A compliance severity level for all approved patches in a patch baseline.
      * </p>
      * 
      * @param complianceLevel
-     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     *        A compliance severity level for all approved patches in a patch baseline.
      * @see PatchComplianceLevel
      */
 
@@ -121,12 +122,10 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * A compliance severity level for all approved patches in a patch baseline.
      * </p>
      * 
-     * @return A compliance severity level for all approved patches in a patch baseline. Valid compliance severity
-     *         levels include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * @return A compliance severity level for all approved patches in a patch baseline.
      * @see PatchComplianceLevel
      */
 
@@ -136,13 +135,11 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * A compliance severity level for all approved patches in a patch baseline.
      * </p>
      * 
      * @param complianceLevel
-     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     *        A compliance severity level for all approved patches in a patch baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceLevel
      */
@@ -154,13 +151,11 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * A compliance severity level for all approved patches in a patch baseline.
      * </p>
      * 
      * @param complianceLevel
-     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     *        A compliance severity level for all approved patches in a patch baseline.
      * @see PatchComplianceLevel
      */
 
@@ -170,13 +165,11 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * A compliance severity level for all approved patches in a patch baseline.
      * </p>
      * 
      * @param complianceLevel
-     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
-     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     *        A compliance severity level for all approved patches in a patch baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceLevel
      */
@@ -190,13 +183,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of days after the release date of each patch matched by the rule that the patch is marked as approved
      * in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after
-     * they are released.
+     * they are released. Not supported on Ubuntu Server.
      * </p>
      * 
      * @param approveAfterDays
      *        The number of days after the release date of each patch matched by the rule that the patch is marked as
      *        approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved
-     *        seven days after they are released.
+     *        seven days after they are released. Not supported on Ubuntu Server.
      */
 
     public void setApproveAfterDays(Integer approveAfterDays) {
@@ -207,12 +200,12 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of days after the release date of each patch matched by the rule that the patch is marked as approved
      * in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after
-     * they are released.
+     * they are released. Not supported on Ubuntu Server.
      * </p>
      * 
      * @return The number of days after the release date of each patch matched by the rule that the patch is marked as
      *         approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved
-     *         seven days after they are released.
+     *         seven days after they are released. Not supported on Ubuntu Server.
      */
 
     public Integer getApproveAfterDays() {
@@ -223,13 +216,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The number of days after the release date of each patch matched by the rule that the patch is marked as approved
      * in the patch baseline. For example, a value of <code>7</code> means that patches are approved seven days after
-     * they are released.
+     * they are released. Not supported on Ubuntu Server.
      * </p>
      * 
      * @param approveAfterDays
      *        The number of days after the release date of each patch matched by the rule that the patch is marked as
      *        approved in the patch baseline. For example, a value of <code>7</code> means that patches are approved
-     *        seven days after they are released.
+     *        seven days after they are released. Not supported on Ubuntu Server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +233,18 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Example API
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date are installed
+     * automatically. Not supported on Ubuntu Server.
+     * </p>
+     * <p>
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      * </p>
      * 
      * @param approveUntilDate
-     *        Example API
+     *        The cutoff date for auto approval of released patches. Any patches released on or before this date are
+     *        installed automatically. Not supported on Ubuntu Server.</p>
+     *        <p>
+     *        Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      */
 
     public void setApproveUntilDate(String approveUntilDate) {
@@ -253,10 +253,17 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Example API
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date are installed
+     * automatically. Not supported on Ubuntu Server.
+     * </p>
+     * <p>
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      * </p>
      * 
-     * @return Example API
+     * @return The cutoff date for auto approval of released patches. Any patches released on or before this date are
+     *         installed automatically. Not supported on Ubuntu Server.</p>
+     *         <p>
+     *         Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      */
 
     public String getApproveUntilDate() {
@@ -265,11 +272,18 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Example API
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date are installed
+     * automatically. Not supported on Ubuntu Server.
+     * </p>
+     * <p>
+     * Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      * </p>
      * 
      * @param approveUntilDate
-     *        Example API
+     *        The cutoff date for auto approval of released patches. Any patches released on or before this date are
+     *        installed automatically. Not supported on Ubuntu Server.</p>
+     *        <p>
+     *        Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2020-12-31</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

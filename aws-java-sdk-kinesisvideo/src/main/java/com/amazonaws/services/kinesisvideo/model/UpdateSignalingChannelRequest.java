@@ -27,7 +27,7 @@ public class UpdateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to update.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      * </p>
      */
     private String channelARN;
@@ -47,11 +47,11 @@ public class UpdateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to update.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signaling channel that you want to update.
+     *        The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      */
 
     public void setChannelARN(String channelARN) {
@@ -60,10 +60,10 @@ public class UpdateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to update.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      * </p>
      * 
-     * @return The ARN of the signaling channel that you want to update.
+     * @return The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      */
 
     public String getChannelARN() {
@@ -72,11 +72,11 @@ public class UpdateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to update.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signaling channel that you want to update.
+     *        The Amazon Resource Name (ARN) of the signaling channel that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

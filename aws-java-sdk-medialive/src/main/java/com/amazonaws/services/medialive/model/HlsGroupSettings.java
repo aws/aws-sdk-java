@@ -156,6 +156,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
+     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * 
      * SEGMENTSONLY: Does not generate any manifests for this output group.
      */
     private String outputSelection;
@@ -1756,11 +1758,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
+     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * 
      * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
      *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *        output group.
+     * 
+     *        VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
      *        SEGMENTSONLY: Does not generate any manifests for this output group.
      * @see HlsOutputSelection
@@ -1774,10 +1780,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
+     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * 
      * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @return MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *         output group.
+     * 
+     *         VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
      *         SEGMENTSONLY: Does not generate any manifests for this output group.
      * @see HlsOutputSelection
@@ -1791,11 +1801,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
+     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * 
      * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
      *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *        output group.
+     * 
+     *        VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
      *        SEGMENTSONLY: Does not generate any manifests for this output group.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1811,11 +1825,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
+     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * 
      * SEGMENTSONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
      *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *        output group.
+     * 
+     *        VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
      *        SEGMENTSONLY: Does not generate any manifests for this output group.
      * @return Returns a reference to this object so that method calls can be chained together.

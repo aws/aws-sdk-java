@@ -30,23 +30,24 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting
  * system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs),
  * and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
- * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
- * on-premises machine in your hybrid environment that has been configured for Systems Manager.
+ * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon Elastic Compute Cloud
+ * instance (EC2 instance), or any on-premises server or virtual machine (VM) in your hybrid environment that has been
+ * configured for Systems Manager.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting Up AWS
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  * <p>
- * For information about other API actions you can perform on Amazon EC2 instances, see the <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about how
- * to use a Query API, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API Requests</a>.
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
+ * how to use a Query API, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -67,12 +68,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
      * set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based
-     * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string
-     * of characters.
+     * on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of
+     * characters.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * For more information about using tags with EC2 instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -99,12 +100,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
      * set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based
-     * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string
-     * of characters.
+     * on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of
+     * characters.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * For more information about using tags with EC2 instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -198,12 +199,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your
      * hybrid environment. For more information about requirements for managing on-premises instances and VMs using
      * Systems Manager, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+     * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * On-premises servers or VMs that are registered with Systems Manager and Amazon EC2 instances that you manage with
+     * On-premises servers or VMs that are registered with Systems Manager and EC2 instances that you manage with
      * Systems Manager are all called <i>managed instances</i>.
      * </p>
      * </note>
@@ -223,12 +224,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your
      * hybrid environment. For more information about requirements for managing on-premises instances and VMs using
      * Systems Manager, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+     * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * On-premises servers or VMs that are registered with Systems Manager and Amazon EC2 instances that you manage with
+     * On-premises servers or VMs that are registered with Systems Manager and EC2 instances that you manage with
      * Systems Manager are all called <i>managed instances</i>.
      * </p>
      * </note>
@@ -342,10 +343,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Creates a Systems Manager document.
-     * </p>
-     * <p>
-     * After you create a document, you can use CreateAssociation to associate it with one or more running instances.
+     * Creates a Systems Manager (SSM) document. An SSM document defines the actions that Systems Manager performs on
+     * your managed instances. For more information about SSM documents, including information about supported schemas,
+     * features, and syntax, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS Systems Manager
+     * Documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param createDocumentRequest
@@ -358,10 +360,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Creates a Systems Manager document.
-     * </p>
-     * <p>
-     * After you create a document, you can use CreateAssociation to associate it with one or more running instances.
+     * Creates a Systems Manager (SSM) document. An SSM document defines the actions that Systems Manager performs on
+     * your managed instances. For more information about SSM documents, including information about supported schemas,
+     * features, and syntax, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS Systems Manager
+     * Documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param createDocumentRequest
@@ -430,13 +433,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new
      * OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -452,13 +455,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new
      * OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -527,17 +530,18 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to synchronize
-     * Inventory data from multiple AWS Regions to a single Amazon S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+     * Inventory data from multiple AWS Regions to a single S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
      * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize operational
-     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single Amazon S3 bucket. This
-     * type can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or
-     * <code>EntireOrganization</code> by using AWS Organizations. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting Up
-     * Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems Manager User Guide</i>.
+     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single S3 bucket. This type
+     * can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code> by
+     * using AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>AWS Systems Manager
+     * User Guide</i>.
      * </p>
      * <p>
      * A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is
@@ -567,17 +571,18 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to synchronize
-     * Inventory data from multiple AWS Regions to a single Amazon S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+     * Inventory data from multiple AWS Regions to a single S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
      * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize operational
-     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single Amazon S3 bucket. This
-     * type can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or
-     * <code>EntireOrganization</code> by using AWS Organizations. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting Up
-     * Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems Manager User Guide</i>.
+     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single S3 bucket. This type
+     * can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code> by
+     * using AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>AWS Systems Manager
+     * User Guide</i>.
      * </p>
      * <p>
      * A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is
@@ -1470,16 +1475,18 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes one or more of your instances. You can use this to get information about instances like the operating
-     * system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns
-     * information for those instances. If you do not specify instance IDs, it returns information for all your
-     * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
-     * error.
+     * Describes one or more of your instances, including information about the operating system platform, the version
+     * of SSM Agent installed on the instance, instance status, and so on.
+     * </p>
+     * <p>
+     * If you specify one or more instance IDs, it returns information for those instances. If you do not specify
+     * instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or
+     * an instance that you do not own, you receive an error.
      * </p>
      * <note>
      * <p>
      * The IamRole field for this API action is the Amazon Identity and Access Management (IAM) role assigned to
-     * on-premises instances. This call does not return the IAM role for Amazon EC2 instances.
+     * on-premises instances. This call does not return the IAM role for EC2 instances.
      * </p>
      * </note>
      * 
@@ -1494,16 +1501,18 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes one or more of your instances. You can use this to get information about instances like the operating
-     * system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns
-     * information for those instances. If you do not specify instance IDs, it returns information for all your
-     * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
-     * error.
+     * Describes one or more of your instances, including information about the operating system platform, the version
+     * of SSM Agent installed on the instance, instance status, and so on.
+     * </p>
+     * <p>
+     * If you specify one or more instance IDs, it returns information for those instances. If you do not specify
+     * instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or
+     * an instance that you do not own, you receive an error.
      * </p>
      * <note>
      * <p>
      * The IamRole field for this API action is the Amazon Identity and Access Management (IAM) role assigned to
-     * on-premises instances. This call does not return the IAM role for Amazon EC2 instances.
+     * on-premises instances. This call does not return the IAM role for EC2 instances.
      * </p>
      * </note>
      * 
@@ -1943,13 +1952,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Query a set of OpsItems. You must have permission in AWS Identity and Access Management (IAM) to query a list of
      * OpsItems. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1965,13 +1974,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Query a set of OpsItems. You must have permission in AWS Identity and Access Management (IAM) to query a list of
      * OpsItems. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2401,7 +2410,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * Retrieves the Session Manager connection status for an instance to determine whether it is running and ready to
      * receive Session Manager connections.
      * </p>
      * 
@@ -2415,7 +2424,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * Retrieves the Session Manager connection status for an instance to determine whether it is running and ready to
      * receive Session Manager connections.
      * </p>
      * 
@@ -2774,13 +2783,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management
      * (IAM) to view information about an OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2796,13 +2805,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management
      * (IAM) to view information about an OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -4405,8 +4414,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
      * be installed on the client machine making the call. For information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
-     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html"
+     * >Install the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools for PowerShell on
@@ -4431,8 +4440,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
      * be installed on the client machine making the call. For information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
-     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html"
+     * >Install the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools for PowerShell on
@@ -4940,7 +4949,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Assigns or changes an Amazon Identity and Access Management (IAM) role for the managed instance.
+     * Changes the Amazon Identity and Access Management (IAM) role that is assigned to the on-premises instance or
+     * virtual machines (VM). IAM roles are first assigned to these hybrid instances during the activation process. For
+     * more information, see <a>CreateActivation</a>.
      * </p>
      * 
      * @param updateManagedInstanceRoleRequest
@@ -4954,7 +4965,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Assigns or changes an Amazon Identity and Access Management (IAM) role for the managed instance.
+     * Changes the Amazon Identity and Access Management (IAM) role that is assigned to the on-premises instance or
+     * virtual machines (VM). IAM roles are first assigned to these hybrid instances during the activation process. For
+     * more information, see <a>CreateActivation</a>.
      * </p>
      * 
      * @param updateManagedInstanceRoleRequest
@@ -4975,13 +4988,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an
      * OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -4997,13 +5010,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an
      * OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -5073,6 +5086,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * my AWS Organizations configuration option. Instead, you must delete the first resource data sync, and create a
      * new one.
      * </p>
+     * <note>
+     * <p>
+     * This API action only supports a resource data sync that was created with a SyncFromSource <code>SyncType</code>.
+     * </p>
+     * </note>
      * 
      * @param updateResourceDataSyncRequest
      * @return A Java Future containing the result of the UpdateResourceDataSync operation returned by the service.
@@ -5090,6 +5108,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * my AWS Organizations configuration option. Instead, you must delete the first resource data sync, and create a
      * new one.
      * </p>
+     * <note>
+     * <p>
+     * This API action only supports a resource data sync that was created with a SyncFromSource <code>SyncType</code>.
+     * </p>
+     * </note>
      * 
      * @param updateResourceDataSyncRequest
      * @param asyncHandler

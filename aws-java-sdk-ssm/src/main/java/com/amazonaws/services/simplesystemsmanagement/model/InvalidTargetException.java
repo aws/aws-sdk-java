@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you might not have
+ * The target is not valid or does not exist. It might not be configured for Systems Manager or you might not have
  * permission to perform the operation.
  * </p>
  */

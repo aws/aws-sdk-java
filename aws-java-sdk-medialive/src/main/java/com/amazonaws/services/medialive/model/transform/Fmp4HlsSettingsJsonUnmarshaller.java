@@ -52,6 +52,14 @@ public class Fmp4HlsSettingsJsonUnmarshaller implements Unmarshaller<Fmp4HlsSett
                     context.nextToken();
                     fmp4HlsSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("nielsenId3Behavior", targetDepth)) {
+                    context.nextToken();
+                    fmp4HlsSettings.setNielsenId3Behavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataBehavior", targetDepth)) {
+                    context.nextToken();
+                    fmp4HlsSettings.setTimedMetadataBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

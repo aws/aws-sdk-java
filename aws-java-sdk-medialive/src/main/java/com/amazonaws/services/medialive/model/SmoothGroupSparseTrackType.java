@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SmoothGroupSparseTrackType {
 
     NONE("NONE"),
-    SCTE_35("SCTE_35");
+    SCTE_35("SCTE_35"),
+    SCTE_35_WITHOUT_SEGMENTATION("SCTE_35_WITHOUT_SEGMENTATION");
 
     private String value;
 

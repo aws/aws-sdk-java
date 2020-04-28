@@ -45,6 +45,13 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The type of filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      */
     private String type;
 
@@ -173,9 +180,21 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The type of filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        The type of filter.
+     *        The type of filter.</p> <note>
+     *        <p>
+     *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
+     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      * @see InventoryQueryOperatorType
      */
 
@@ -187,8 +206,20 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The type of filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The type of filter.
+     * @return The type of filter.</p> <note>
+     *         <p>
+     *         The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
+     *         >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         </p>
      * @see InventoryQueryOperatorType
      */
 
@@ -200,9 +231,21 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The type of filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        The type of filter.
+     *        The type of filter.</p> <note>
+     *        <p>
+     *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
+     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryQueryOperatorType
      */
@@ -216,9 +259,21 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The type of filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        The type of filter.
+     *        The type of filter.</p> <note>
+     *        <p>
+     *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
+     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      * @see InventoryQueryOperatorType
      */
 
@@ -230,9 +285,21 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The type of filter.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param type
-     *        The type of filter.
+     *        The type of filter.</p> <note>
+     *        <p>
+     *        The <code>Exists</code> filter must be used with aggregators. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html"
+     *        >Aggregating inventory data</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryQueryOperatorType
      */

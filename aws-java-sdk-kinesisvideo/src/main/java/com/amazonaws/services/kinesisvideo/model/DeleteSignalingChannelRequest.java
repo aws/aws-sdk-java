@@ -27,25 +27,25 @@ public class DeleteSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to delete.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      * </p>
      */
     private String channelARN;
     /**
      * <p>
      * The current version of the signaling channel that you want to delete. You can obtain the current version by
-     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
      * </p>
      */
     private String currentVersion;
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to delete.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signaling channel that you want to delete.
+     *        The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      */
 
     public void setChannelARN(String channelARN) {
@@ -54,10 +54,10 @@ public class DeleteSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to delete.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      * </p>
      * 
-     * @return The ARN of the signaling channel that you want to delete.
+     * @return The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      */
 
     public String getChannelARN() {
@@ -66,11 +66,11 @@ public class DeleteSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the signaling channel that you want to delete.
+     * The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signaling channel that you want to delete.
+     *        The Amazon Resource Name (ARN) of the signaling channel that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,12 +82,13 @@ public class DeleteSignalingChannelRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The current version of the signaling channel that you want to delete. You can obtain the current version by
-     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
      * </p>
      * 
      * @param currentVersion
      *        The current version of the signaling channel that you want to delete. You can obtain the current version
-     *        by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     *        by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API
+     *        operations.
      */
 
     public void setCurrentVersion(String currentVersion) {
@@ -97,11 +98,12 @@ public class DeleteSignalingChannelRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The current version of the signaling channel that you want to delete. You can obtain the current version by
-     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
      * </p>
      * 
      * @return The current version of the signaling channel that you want to delete. You can obtain the current version
-     *         by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     *         by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API
+     *         operations.
      */
 
     public String getCurrentVersion() {
@@ -111,12 +113,13 @@ public class DeleteSignalingChannelRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The current version of the signaling channel that you want to delete. You can obtain the current version by
-     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     * invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.
      * </p>
      * 
      * @param currentVersion
      *        The current version of the signaling channel that you want to delete. You can obtain the current version
-     *        by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> APIs.
+     *        by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API
+     *        operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

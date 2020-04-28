@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about the compliance as defined by the resource type. For example, for a patch resource type,
- * <code>Items</code> includes information about the PatchSeverity, Classification, etc.
+ * <code>Items</code> includes information about the PatchSeverity, Classification, and so on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ComplianceItem" target="_top">AWS API

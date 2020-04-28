@@ -31,7 +31,7 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
     private com.amazonaws.internal.SdkInternalList<String> accountIds;
     /**
      * <p>
-     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * A list of AWS accounts where the current document is shared and the version shared with each account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountSharingInfo> accountSharingInfoList;
@@ -115,10 +115,10 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * A list of AWS accounts where the current document is shared and the version shared with each account.
      * </p>
      * 
-     * @return A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * @return A list of AWS accounts where the current document is shared and the version shared with each account.
      */
 
     public java.util.List<AccountSharingInfo> getAccountSharingInfoList() {
@@ -130,11 +130,11 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * A list of AWS accounts where the current document is shared and the version shared with each account.
      * </p>
      * 
      * @param accountSharingInfoList
-     *        A list of of AWS accounts where the current document is shared and the version shared with each account.
+     *        A list of AWS accounts where the current document is shared and the version shared with each account.
      */
 
     public void setAccountSharingInfoList(java.util.Collection<AccountSharingInfo> accountSharingInfoList) {
@@ -148,7 +148,7 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * A list of AWS accounts where the current document is shared and the version shared with each account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -157,7 +157,7 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param accountSharingInfoList
-     *        A list of of AWS accounts where the current document is shared and the version shared with each account.
+     *        A list of AWS accounts where the current document is shared and the version shared with each account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +173,11 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A list of of AWS accounts where the current document is shared and the version shared with each account.
+     * A list of AWS accounts where the current document is shared and the version shared with each account.
      * </p>
      * 
      * @param accountSharingInfoList
-     *        A list of of AWS accounts where the current document is shared and the version shared with each account.
+     *        A list of AWS accounts where the current document is shared and the version shared with each account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

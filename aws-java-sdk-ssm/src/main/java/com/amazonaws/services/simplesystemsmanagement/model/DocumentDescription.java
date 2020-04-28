@@ -153,7 +153,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
     private String targetType;
@@ -165,7 +165,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Details about the document attachments, including names, locations, sizes, etc.
+     * Details about the document attachments, including names, locations, sizes, and so on.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AttachmentInformation> attachmentsInformation;
@@ -1204,14 +1204,14 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
      *        /AWS::EC2::Instance. For a list of valid resource types, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -1223,13 +1223,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The target type which defines the kinds of resources the document can run on. For example,
      *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *         Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public String getTargetType() {
@@ -1241,14 +1241,14 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
      *        /AWS::EC2::Instance. For a list of valid resource types, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1332,10 +1332,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Details about the document attachments, including names, locations, sizes, etc.
+     * Details about the document attachments, including names, locations, sizes, and so on.
      * </p>
      * 
-     * @return Details about the document attachments, including names, locations, sizes, etc.
+     * @return Details about the document attachments, including names, locations, sizes, and so on.
      */
 
     public java.util.List<AttachmentInformation> getAttachmentsInformation() {
@@ -1347,11 +1347,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Details about the document attachments, including names, locations, sizes, etc.
+     * Details about the document attachments, including names, locations, sizes, and so on.
      * </p>
      * 
      * @param attachmentsInformation
-     *        Details about the document attachments, including names, locations, sizes, etc.
+     *        Details about the document attachments, including names, locations, sizes, and so on.
      */
 
     public void setAttachmentsInformation(java.util.Collection<AttachmentInformation> attachmentsInformation) {
@@ -1365,7 +1365,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Details about the document attachments, including names, locations, sizes, etc.
+     * Details about the document attachments, including names, locations, sizes, and so on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1374,7 +1374,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param attachmentsInformation
-     *        Details about the document attachments, including names, locations, sizes, etc.
+     *        Details about the document attachments, including names, locations, sizes, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1390,11 +1390,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Details about the document attachments, including names, locations, sizes, etc.
+     * Details about the document attachments, including names, locations, sizes, and so on.
      * </p>
      * 
      * @param attachmentsInformation
-     *        Details about the document attachments, including names, locations, sizes, etc.
+     *        Details about the document attachments, including names, locations, sizes, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

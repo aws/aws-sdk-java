@@ -90,7 +90,7 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
     private String errorCode;
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      */
     private InstanceAssociationOutputUrl outputUrl;
@@ -503,11 +503,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param outputUrl
-     *        A URL for an Amazon S3 bucket where you want to store the results of this request.
+     *        A URL for an S3 bucket where you want to store the results of this request.
      */
 
     public void setOutputUrl(InstanceAssociationOutputUrl outputUrl) {
@@ -516,10 +516,10 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      * 
-     * @return A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * @return A URL for an S3 bucket where you want to store the results of this request.
      */
 
     public InstanceAssociationOutputUrl getOutputUrl() {
@@ -528,11 +528,11 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param outputUrl
-     *        A URL for an Amazon S3 bucket where you want to store the results of this request.
+     *        A URL for an S3 bucket where you want to store the results of this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

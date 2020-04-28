@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the signaling channel to which you want to add tags.
+     * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the signaling channel to which you want to add tags.
+     * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the signaling channel to which you want to add tags.
+     *        The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the signaling channel to which you want to add tags.
+     * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      * </p>
      * 
-     * @return The ARN of the signaling channel to which you want to add tags.
+     * @return The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the signaling channel to which you want to add tags.
+     * The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the signaling channel to which you want to add tags.
+     *        The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

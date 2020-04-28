@@ -56,6 +56,10 @@ public class AudioSelectorSettingsJsonUnmarshaller implements Unmarshaller<Audio
                     context.nextToken();
                     audioSelectorSettings.setAudioPidSelection(AudioPidSelectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("audioTrackSelection", targetDepth)) {
+                    context.nextToken();
+                    audioSelectorSettings.setAudioTrackSelection(AudioTrackSelectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

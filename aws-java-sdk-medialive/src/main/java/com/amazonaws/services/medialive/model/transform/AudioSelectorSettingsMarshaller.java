@@ -31,6 +31,8 @@ public class AudioSelectorSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioLanguageSelection").build();
     private static final MarshallingInfo<StructuredPojo> AUDIOPIDSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioPidSelection").build();
+    private static final MarshallingInfo<StructuredPojo> AUDIOTRACKSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioTrackSelection").build();
 
     private static final AudioSelectorSettingsMarshaller instance = new AudioSelectorSettingsMarshaller();
 
@@ -50,6 +52,7 @@ public class AudioSelectorSettingsMarshaller {
         try {
             protocolMarshaller.marshall(audioSelectorSettings.getAudioLanguageSelection(), AUDIOLANGUAGESELECTION_BINDING);
             protocolMarshaller.marshall(audioSelectorSettings.getAudioPidSelection(), AUDIOPIDSELECTION_BINDING);
+            protocolMarshaller.marshall(audioSelectorSettings.getAudioTrackSelection(), AUDIOTRACKSELECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

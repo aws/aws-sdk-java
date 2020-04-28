@@ -95,13 +95,13 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     private NotificationConfig notificationConfig;
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      */
     private String outputS3BucketName;
     /**
      * <p>
-     * The Amazon S3 bucket subfolder.
+     * The S3 bucket subfolder.
      * </p>
      */
     private String outputS3KeyPrefix;
@@ -438,11 +438,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      * 
      * @param outputS3BucketName
-     *        The name of the Amazon S3 bucket.
+     *        The name of the S3 bucket.
      */
 
     public void setOutputS3BucketName(String outputS3BucketName) {
@@ -451,10 +451,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket.
+     * @return The name of the S3 bucket.
      */
 
     public String getOutputS3BucketName() {
@@ -463,11 +463,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      * 
      * @param outputS3BucketName
-     *        The name of the Amazon S3 bucket.
+     *        The name of the S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,11 +478,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The Amazon S3 bucket subfolder.
+     * The S3 bucket subfolder.
      * </p>
      * 
      * @param outputS3KeyPrefix
-     *        The Amazon S3 bucket subfolder.
+     *        The S3 bucket subfolder.
      */
 
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
@@ -491,10 +491,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The Amazon S3 bucket subfolder.
+     * The S3 bucket subfolder.
      * </p>
      * 
-     * @return The Amazon S3 bucket subfolder.
+     * @return The S3 bucket subfolder.
      */
 
     public String getOutputS3KeyPrefix() {
@@ -503,11 +503,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The Amazon S3 bucket subfolder.
+     * The S3 bucket subfolder.
      * </p>
      * 
      * @param outputS3KeyPrefix
-     *        The Amazon S3 bucket subfolder.
+     *        The S3 bucket subfolder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

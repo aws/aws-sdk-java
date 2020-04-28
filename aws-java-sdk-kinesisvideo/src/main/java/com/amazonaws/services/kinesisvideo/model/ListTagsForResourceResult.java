@@ -25,8 +25,8 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next set of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next set of tags.
      * </p>
      */
     private String nextToken;
@@ -39,13 +39,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next set of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next set of tags.
      * </p>
      * 
      * @param nextToken
-     *        If you specify this parameter and the result of a ListTagsForResource call is truncated, the response
-     *        includes a token that you can use in the next request to fetch the next set of tags.
+     *        If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     *        response includes a token that you can use in the next request to fetch the next set of tags.
      */
 
     public void setNextToken(String nextToken) {
@@ -54,12 +54,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next set of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next set of tags.
      * </p>
      * 
-     * @return If you specify this parameter and the result of a ListTagsForResource call is truncated, the response
-     *         includes a token that you can use in the next request to fetch the next set of tags.
+     * @return If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     *         response includes a token that you can use in the next request to fetch the next set of tags.
      */
 
     public String getNextToken() {
@@ -68,13 +68,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * If you specify this parameter and the result of a ListTagsForResource call is truncated, the response includes a
-     * token that you can use in the next request to fetch the next set of tags.
+     * If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     * response includes a token that you can use in the next request to fetch the next set of tags.
      * </p>
      * 
      * @param nextToken
-     *        If you specify this parameter and the result of a ListTagsForResource call is truncated, the response
-     *        includes a token that you can use in the next request to fetch the next set of tags.
+     *        If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the
+     *        response includes a token that you can use in the next request to fetch the next set of tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

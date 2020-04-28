@@ -84,7 +84,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     private String segmentationMode;
     /** Number of milliseconds to delay the output from the second pipeline. */
     private Integer sendDelayMs;
-    /** If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs. */
+    /**
+     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
+     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
+     * will still encode an IDR frame at a SCTE-35 marker.
+     */
     private String sparseTrackType;
     /** When set to send, send stream manifest so publishing point doesn't start until all streams start. */
     private String streamManifestBehavior;
@@ -798,10 +802,13 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
+     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
+     * will still encode an IDR frame at a SCTE-35 marker.
      * 
      * @param sparseTrackType
      *        If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *        outputs.
+     *        outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
+     *        SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
      * @see SmoothGroupSparseTrackType
      */
 
@@ -811,9 +818,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
+     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
+     * will still encode an IDR frame at a SCTE-35 marker.
      * 
      * @return If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *         outputs.
+     *         outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
+     *         SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
      * @see SmoothGroupSparseTrackType
      */
 
@@ -823,10 +833,13 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
+     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
+     * will still encode an IDR frame at a SCTE-35 marker.
      * 
      * @param sparseTrackType
      *        If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *        outputs.
+     *        outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
+     *        SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmoothGroupSparseTrackType
      */
@@ -838,10 +851,13 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
+     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
+     * will still encode an IDR frame at a SCTE-35 marker.
      * 
      * @param sparseTrackType
      *        If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *        outputs.
+     *        outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
+     *        SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmoothGroupSparseTrackType
      */

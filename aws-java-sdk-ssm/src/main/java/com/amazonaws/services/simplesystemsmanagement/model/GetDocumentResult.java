@@ -84,7 +84,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
     /**
      * <p>
-     * A description of the document attachments, including names, locations, sizes, etc.
+     * A description of the document attachments, including names, locations, sizes, and so on.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AttachmentContent> attachmentsContent;
@@ -619,10 +619,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A description of the document attachments, including names, locations, sizes, etc.
+     * A description of the document attachments, including names, locations, sizes, and so on.
      * </p>
      * 
-     * @return A description of the document attachments, including names, locations, sizes, etc.
+     * @return A description of the document attachments, including names, locations, sizes, and so on.
      */
 
     public java.util.List<AttachmentContent> getAttachmentsContent() {
@@ -634,11 +634,11 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A description of the document attachments, including names, locations, sizes, etc.
+     * A description of the document attachments, including names, locations, sizes, and so on.
      * </p>
      * 
      * @param attachmentsContent
-     *        A description of the document attachments, including names, locations, sizes, etc.
+     *        A description of the document attachments, including names, locations, sizes, and so on.
      */
 
     public void setAttachmentsContent(java.util.Collection<AttachmentContent> attachmentsContent) {
@@ -652,7 +652,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A description of the document attachments, including names, locations, sizes, etc.
+     * A description of the document attachments, including names, locations, sizes, and so on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -661,7 +661,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param attachmentsContent
-     *        A description of the document attachments, including names, locations, sizes, etc.
+     *        A description of the document attachments, including names, locations, sizes, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -677,11 +677,11 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A description of the document attachments, including names, locations, sizes, etc.
+     * A description of the document attachments, including names, locations, sizes, and so on.
      * </p>
      * 
      * @param attachmentsContent
-     *        A description of the document attachments, including names, locations, sizes, etc.
+     *        A description of the document attachments, including names, locations, sizes, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

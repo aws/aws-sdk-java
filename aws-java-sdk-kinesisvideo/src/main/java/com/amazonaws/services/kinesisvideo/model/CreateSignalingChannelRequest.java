@@ -27,7 +27,7 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A name for the signaling channel that you are creating. It must be unique for each account and region.
+     * A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.
      * </p>
      */
     private String channelName;
@@ -46,18 +46,19 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
     private SingleMasterConfiguration singleMasterConfiguration;
     /**
      * <p>
-     * A set of tags (key/value pairs) that you want to associate with this channel.
+     * A set of tags (key-value pairs) that you want to associate with this channel.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * A name for the signaling channel that you are creating. It must be unique for each account and region.
+     * A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.
      * </p>
      * 
      * @param channelName
-     *        A name for the signaling channel that you are creating. It must be unique for each account and region.
+     *        A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS
+     *        Region.
      */
 
     public void setChannelName(String channelName) {
@@ -66,10 +67,11 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A name for the signaling channel that you are creating. It must be unique for each account and region.
+     * A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.
      * </p>
      * 
-     * @return A name for the signaling channel that you are creating. It must be unique for each account and region.
+     * @return A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS
+     *         Region.
      */
 
     public String getChannelName() {
@@ -78,11 +80,12 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A name for the signaling channel that you are creating. It must be unique for each account and region.
+     * A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.
      * </p>
      * 
      * @param channelName
-     *        A name for the signaling channel that you are creating. It must be unique for each account and region.
+     *        A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS
+     *        Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,10 +203,10 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A set of tags (key/value pairs) that you want to associate with this channel.
+     * A set of tags (key-value pairs) that you want to associate with this channel.
      * </p>
      * 
-     * @return A set of tags (key/value pairs) that you want to associate with this channel.
+     * @return A set of tags (key-value pairs) that you want to associate with this channel.
      */
 
     public java.util.List<Tag> getTags() {
@@ -212,11 +215,11 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A set of tags (key/value pairs) that you want to associate with this channel.
+     * A set of tags (key-value pairs) that you want to associate with this channel.
      * </p>
      * 
      * @param tags
-     *        A set of tags (key/value pairs) that you want to associate with this channel.
+     *        A set of tags (key-value pairs) that you want to associate with this channel.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -230,7 +233,7 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A set of tags (key/value pairs) that you want to associate with this channel.
+     * A set of tags (key-value pairs) that you want to associate with this channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -239,7 +242,7 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        A set of tags (key/value pairs) that you want to associate with this channel.
+     *        A set of tags (key-value pairs) that you want to associate with this channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +258,11 @@ public class CreateSignalingChannelRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A set of tags (key/value pairs) that you want to associate with this channel.
+     * A set of tags (key-value pairs) that you want to associate with this channel.
      * </p>
      * 
      * @param tags
-     *        A set of tags (key/value pairs) that you want to associate with this channel.
+     *        A set of tags (key-value pairs) that you want to associate with this channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,18 +30,31 @@ public class ResetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the service setting to reset.
+     * The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
+     * For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * </p>
      */
     private String settingId;
 
     /**
      * <p>
-     * The ID of the service setting to reset.
+     * The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
+     * For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * </p>
      * 
      * @param settingId
-     *        The ID of the service setting to reset.
+     *        The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     *        <code>/ssm/parameter-store/default-parameter-tier</code>,
+     *        <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     *        <code>/ssm/managed-instance/activation-tier</code>. For example,
+     *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
+     *        .
      */
 
     public void setSettingId(String settingId) {
@@ -50,10 +63,19 @@ public class ResetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the service setting to reset.
+     * The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
+     * For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * </p>
      * 
-     * @return The ID of the service setting to reset.
+     * @return The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     *         <code>/ssm/parameter-store/default-parameter-tier</code>,
+     *         <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     *         <code>/ssm/managed-instance/activation-tier</code>. For example,
+     *         <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
+     *         .
      */
 
     public String getSettingId() {
@@ -62,11 +84,20 @@ public class ResetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the service setting to reset.
+     * The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
+     * For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * </p>
      * 
      * @param settingId
-     *        The ID of the service setting to reset.
+     *        The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be
+     *        <code>/ssm/parameter-store/default-parameter-tier</code>,
+     *        <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     *        <code>/ssm/managed-instance/activation-tier</code>. For example,
+     *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,8 @@ public class PutComplianceItemsRequestMarshaller {
             .marshallLocationName("Items").build();
     private static final MarshallingInfo<String> ITEMCONTENTHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ItemContentHash").build();
+    private static final MarshallingInfo<String> UPLOADTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UploadType").build();
 
     private static final PutComplianceItemsRequestMarshaller instance = new PutComplianceItemsRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class PutComplianceItemsRequestMarshaller {
             protocolMarshaller.marshall(putComplianceItemsRequest.getExecutionSummary(), EXECUTIONSUMMARY_BINDING);
             protocolMarshaller.marshall(putComplianceItemsRequest.getItems(), ITEMS_BINDING);
             protocolMarshaller.marshall(putComplianceItemsRequest.getItemContentHash(), ITEMCONTENTHASH_BINDING);
+            protocolMarshaller.marshall(putComplianceItemsRequest.getUploadType(), UPLOADTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

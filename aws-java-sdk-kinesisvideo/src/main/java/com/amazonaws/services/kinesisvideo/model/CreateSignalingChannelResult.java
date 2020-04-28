@@ -25,18 +25,18 @@ public class CreateSignalingChannelResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the created channel.
+     * The Amazon Resource Name (ARN) of the created channel.
      * </p>
      */
     private String channelARN;
 
     /**
      * <p>
-     * The ARN of the created channel.
+     * The Amazon Resource Name (ARN) of the created channel.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the created channel.
+     *        The Amazon Resource Name (ARN) of the created channel.
      */
 
     public void setChannelARN(String channelARN) {
@@ -45,10 +45,10 @@ public class CreateSignalingChannelResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the created channel.
+     * The Amazon Resource Name (ARN) of the created channel.
      * </p>
      * 
-     * @return The ARN of the created channel.
+     * @return The Amazon Resource Name (ARN) of the created channel.
      */
 
     public String getChannelARN() {
@@ -57,11 +57,11 @@ public class CreateSignalingChannelResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the created channel.
+     * The Amazon Resource Name (ARN) of the created channel.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the created channel.
+     *        The Amazon Resource Name (ARN) of the created channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

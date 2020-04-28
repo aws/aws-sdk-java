@@ -57,13 +57,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String installOverrideList;
@@ -352,23 +352,23 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param installOverrideList
      *        An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
-     *        list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     *        list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      *        <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
      *        <p>
      *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *        >About the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     *        >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setInstallOverrideList(String installOverrideList) {
@@ -378,22 +378,22 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
-     *         list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     *         list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      *         <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
      *         <p>
      *         For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *         >About the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     *         >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public String getInstallOverrideList() {
@@ -403,23 +403,23 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list,
-     * which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     * which you maintain in an S3 bucket in YAML format and specify in the SSM document
      * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.
      * </p>
      * <p>
      * For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     * >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param installOverrideList
      *        An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation
-     *        list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document
+     *        list, which you maintain in an S3 bucket in YAML format and specify in the SSM document
      *        <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
      *        <p>
      *        For more information about the <code>InstallOverrideList</code> parameter, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
-     *        >About the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html"
+     *        >About the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,6 +50,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private H264ColorSpaceSettings colorSpaceSettings;
     /** Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc. */
     private String entropyEncoding;
+    /** Settings associated with the specified filter. */
+    private H264FilterSettings filterSettings;
     /**
      * Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to
      * 'Fixed'.
@@ -58,11 +60,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     /** If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames. */
     private String flickerAq;
     /**
-     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
-     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
-     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
-     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
-     * appropriate for the content.
+     * This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field
+     * basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
+     * enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
+     * disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF),
+     * depending on what is most appropriate for the content.
      */
     private String forceFieldPictures;
     /**
@@ -135,6 +137,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer parNumerator;
     /** H.264 Profile. */
     private String profile;
+    /**
+     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     */
+    private String qualityLevel;
     /**
      * Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for
      * the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended
@@ -562,6 +569,40 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings associated with the specified filter.
+     * 
+     * @param filterSettings
+     *        Settings associated with the specified filter.
+     */
+
+    public void setFilterSettings(H264FilterSettings filterSettings) {
+        this.filterSettings = filterSettings;
+    }
+
+    /**
+     * Settings associated with the specified filter.
+     * 
+     * @return Settings associated with the specified filter.
+     */
+
+    public H264FilterSettings getFilterSettings() {
+        return this.filterSettings;
+    }
+
+    /**
+     * Settings associated with the specified filter.
+     * 
+     * @param filterSettings
+     *        Settings associated with the specified filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H264Settings withFilterSettings(H264FilterSettings filterSettings) {
+        setFilterSettings(filterSettings);
+        return this;
+    }
+
+    /**
      * Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to
      * 'Fixed'.
      * 
@@ -672,18 +713,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
-     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
-     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
-     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
-     * appropriate for the content.
+     * This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field
+     * basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
+     * enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
+     * disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF),
+     * depending on what is most appropriate for the content.
      * 
      * @param forceFieldPictures
-     *        This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
-     *        or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
-     *        code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
-     *        sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
-     *        depending on what is most appropriate for the content.
+     *        This setting applies only when scan type is "interlaced." It controls whether coding is performed on a
+     *        field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame
+     *        basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded
+     *        separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame
+     *        basis using PAFF), depending on what is most appropriate for the content.
      * @see H264ForceFieldPictures
      */
 
@@ -692,17 +733,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
-     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
-     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
-     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
-     * appropriate for the content.
+     * This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field
+     * basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
+     * enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
+     * disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF),
+     * depending on what is most appropriate for the content.
      * 
-     * @return This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
-     *         or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
-     *         code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
-     *         sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
-     *         depending on what is most appropriate for the content.
+     * @return This setting applies only when scan type is "interlaced." It controls whether coding is performed on a
+     *         field basis or on a frame basis. (When the video is progressive, the coding is always performed on a
+     *         frame basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are
+     *         coded separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a
+     *         frame basis using PAFF), depending on what is most appropriate for the content.
      * @see H264ForceFieldPictures
      */
 
@@ -711,18 +752,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
-     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
-     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
-     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
-     * appropriate for the content.
+     * This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field
+     * basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
+     * enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
+     * disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF),
+     * depending on what is most appropriate for the content.
      * 
      * @param forceFieldPictures
-     *        This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
-     *        or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
-     *        code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
-     *        sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
-     *        depending on what is most appropriate for the content.
+     *        This setting applies only when scan type is "interlaced." It controls whether coding is performed on a
+     *        field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame
+     *        basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded
+     *        separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame
+     *        basis using PAFF), depending on what is most appropriate for the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264ForceFieldPictures
      */
@@ -733,18 +774,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis or a
-     * frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always code on a
-     * field basis, so that odd and even sets of fields are coded separately. disabled: Code the two sets of fields
-     * separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF), depending on what is most
-     * appropriate for the content.
+     * This setting applies only when scan type is "interlaced." It controls whether coding is performed on a field
+     * basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame basis.)
+     * enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded separately.
+     * disabled: Code the two sets of fields separately (on a field basis) or together (on a frame basis using PAFF),
+     * depending on what is most appropriate for the content.
      * 
      * @param forceFieldPictures
-     *        This setting applies only when scan type is "interlaced." It controls whether coding is on a field basis
-     *        or a frame basis. (When the video is progressive, the coding is always on a frame basis.) enabled: Always
-     *        code on a field basis, so that odd and even sets of fields are coded separately. disabled: Code the two
-     *        sets of fields separately (on a field basis) or together (on a frame basis, using PAFF or MBAFF),
-     *        depending on what is most appropriate for the content.
+     *        This setting applies only when scan type is "interlaced." It controls whether coding is performed on a
+     *        field basis or on a frame basis. (When the video is progressive, the coding is always performed on a frame
+     *        basis.) enabled: Force MediaLive to code on a field basis, so that odd and even sets of fields are coded
+     *        separately. disabled: Code the two sets of fields separately (on a field basis) or together (on a frame
+     *        basis using PAFF), depending on what is most appropriate for the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264ForceFieldPictures
      */
@@ -1581,6 +1622,65 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * 
+     * @param qualityLevel
+     *        If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     *        delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * @see H264QualityLevel
+     */
+
+    public void setQualityLevel(String qualityLevel) {
+        this.qualityLevel = qualityLevel;
+    }
+
+    /**
+     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * 
+     * @return If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     *         delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * @see H264QualityLevel
+     */
+
+    public String getQualityLevel() {
+        return this.qualityLevel;
+    }
+
+    /**
+     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * 
+     * @param qualityLevel
+     *        If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     *        delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264QualityLevel
+     */
+
+    public H264Settings withQualityLevel(String qualityLevel) {
+        setQualityLevel(qualityLevel);
+        return this;
+    }
+
+    /**
+     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * 
+     * @param qualityLevel
+     *        If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
+     *        delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264QualityLevel
+     */
+
+    public H264Settings withQualityLevel(H264QualityLevel qualityLevel) {
+        this.qualityLevel = qualityLevel.toString();
+        return this;
+    }
+
+    /**
      * Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for
      * the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended
      * values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max
@@ -2304,6 +2404,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("ColorSpaceSettings: ").append(getColorSpaceSettings()).append(",");
         if (getEntropyEncoding() != null)
             sb.append("EntropyEncoding: ").append(getEntropyEncoding()).append(",");
+        if (getFilterSettings() != null)
+            sb.append("FilterSettings: ").append(getFilterSettings()).append(",");
         if (getFixedAfd() != null)
             sb.append("FixedAfd: ").append(getFixedAfd()).append(",");
         if (getFlickerAq() != null)
@@ -2344,6 +2446,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("ParNumerator: ").append(getParNumerator()).append(",");
         if (getProfile() != null)
             sb.append("Profile: ").append(getProfile()).append(",");
+        if (getQualityLevel() != null)
+            sb.append("QualityLevel: ").append(getQualityLevel()).append(",");
         if (getQvbrQualityLevel() != null)
             sb.append("QvbrQualityLevel: ").append(getQvbrQualityLevel()).append(",");
         if (getRateControlMode() != null)
@@ -2411,6 +2515,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getEntropyEncoding() == null ^ this.getEntropyEncoding() == null)
             return false;
         if (other.getEntropyEncoding() != null && other.getEntropyEncoding().equals(this.getEntropyEncoding()) == false)
+            return false;
+        if (other.getFilterSettings() == null ^ this.getFilterSettings() == null)
+            return false;
+        if (other.getFilterSettings() != null && other.getFilterSettings().equals(this.getFilterSettings()) == false)
             return false;
         if (other.getFixedAfd() == null ^ this.getFixedAfd() == null)
             return false;
@@ -2492,6 +2600,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProfile() != null && other.getProfile().equals(this.getProfile()) == false)
             return false;
+        if (other.getQualityLevel() == null ^ this.getQualityLevel() == null)
+            return false;
+        if (other.getQualityLevel() != null && other.getQualityLevel().equals(this.getQualityLevel()) == false)
+            return false;
         if (other.getQvbrQualityLevel() == null ^ this.getQvbrQualityLevel() == null)
             return false;
         if (other.getQvbrQualityLevel() != null && other.getQvbrQualityLevel().equals(this.getQvbrQualityLevel()) == false)
@@ -2552,6 +2664,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getColorMetadata() == null) ? 0 : getColorMetadata().hashCode());
         hashCode = prime * hashCode + ((getColorSpaceSettings() == null) ? 0 : getColorSpaceSettings().hashCode());
         hashCode = prime * hashCode + ((getEntropyEncoding() == null) ? 0 : getEntropyEncoding().hashCode());
+        hashCode = prime * hashCode + ((getFilterSettings() == null) ? 0 : getFilterSettings().hashCode());
         hashCode = prime * hashCode + ((getFixedAfd() == null) ? 0 : getFixedAfd().hashCode());
         hashCode = prime * hashCode + ((getFlickerAq() == null) ? 0 : getFlickerAq().hashCode());
         hashCode = prime * hashCode + ((getForceFieldPictures() == null) ? 0 : getForceFieldPictures().hashCode());
@@ -2572,6 +2685,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParDenominator() == null) ? 0 : getParDenominator().hashCode());
         hashCode = prime * hashCode + ((getParNumerator() == null) ? 0 : getParNumerator().hashCode());
         hashCode = prime * hashCode + ((getProfile() == null) ? 0 : getProfile().hashCode());
+        hashCode = prime * hashCode + ((getQualityLevel() == null) ? 0 : getQualityLevel().hashCode());
         hashCode = prime * hashCode + ((getQvbrQualityLevel() == null) ? 0 : getQvbrQualityLevel().hashCode());
         hashCode = prime * hashCode + ((getRateControlMode() == null) ? 0 : getRateControlMode().hashCode());
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());

@@ -27,7 +27,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more filters to limit the reponse.
+     * One or more filters to limit the response.
      * </p>
      * <ul>
      * <li>
@@ -157,7 +157,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more filters to limit the reponse.
+     * One or more filters to limit the response.
      * </p>
      * <ul>
      * <li>
@@ -270,7 +270,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * following JSON format: {"key":"key_name","value":"a_value"}
      * </p>
      * 
-     * @return One or more filters to limit the reponse.</p>
+     * @return One or more filters to limit the response.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -391,7 +391,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more filters to limit the reponse.
+     * One or more filters to limit the response.
      * </p>
      * <ul>
      * <li>
@@ -505,7 +505,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param opsItemFilters
-     *        One or more filters to limit the reponse.</p>
+     *        One or more filters to limit the response.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -628,7 +628,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more filters to limit the reponse.
+     * One or more filters to limit the response.
      * </p>
      * <ul>
      * <li>
@@ -747,7 +747,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param opsItemFilters
-     *        One or more filters to limit the reponse.</p>
+     *        One or more filters to limit the response.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -872,7 +872,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more filters to limit the reponse.
+     * One or more filters to limit the response.
      * </p>
      * <ul>
      * <li>
@@ -986,7 +986,7 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param opsItemFilters
-     *        One or more filters to limit the reponse.</p>
+     *        One or more filters to limit the response.</p>
      *        <ul>
      *        <li>
      *        <p>

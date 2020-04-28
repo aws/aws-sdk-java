@@ -85,7 +85,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private Integer priority;
     /**
      * <p>
-     * Information about an Amazon S3 bucket to write task-level logs to.
+     * Information about an S3 bucket to write task-level logs to.
      * </p>
      * <note>
      * <p>
@@ -586,7 +586,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Information about an Amazon S3 bucket to write task-level logs to.
+     * Information about an S3 bucket to write task-level logs to.
      * </p>
      * <note>
      * <p>
@@ -598,7 +598,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param loggingInfo
-     *        Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
+     *        Information about an S3 bucket to write task-level logs to.</p> <note>
      *        <p>
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
@@ -614,7 +614,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Information about an Amazon S3 bucket to write task-level logs to.
+     * Information about an S3 bucket to write task-level logs to.
      * </p>
      * <note>
      * <p>
@@ -625,7 +625,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
+     * @return Information about an S3 bucket to write task-level logs to.</p> <note>
      *         <p>
      *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
@@ -641,7 +641,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Information about an Amazon S3 bucket to write task-level logs to.
+     * Information about an S3 bucket to write task-level logs to.
      * </p>
      * <note>
      * <p>
@@ -653,7 +653,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param loggingInfo
-     *        Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
+     *        Information about an S3 bucket to write task-level logs to.</p> <note>
      *        <p>
      *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
      *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the

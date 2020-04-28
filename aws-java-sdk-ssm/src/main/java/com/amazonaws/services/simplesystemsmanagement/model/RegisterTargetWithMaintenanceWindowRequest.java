@@ -86,7 +86,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -278,7 +278,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The targets to register with the maintenance window. In other words, the instances to run commands on
@@ -328,7 +328,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *         <p>
      *         For more information about these examples formats, including the best use case for each one, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *         >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -387,7 +387,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -438,7 +438,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *        >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -499,7 +499,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -555,7 +555,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *        >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -618,7 +618,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * <p>
      * For more information about these examples formats, including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     * >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     * >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -669,7 +669,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      *        <p>
      *        For more information about these examples formats, including the best use case for each one, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html"
-     *        >Examples: Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        >Examples: Register targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

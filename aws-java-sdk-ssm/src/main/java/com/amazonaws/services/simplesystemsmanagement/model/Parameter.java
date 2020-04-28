@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An Amazon EC2 Systems Manager parameter in Parameter Store.
+ * An Systems Manager parameter in Parameter Store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter" target="_top">AWS API
@@ -36,7 +36,8 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The type of parameter. Valid values include the following: String, String list, Secure string.
+     * The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and
+     * <code>SecureString</code>.
      * </p>
      */
     private String type;
@@ -127,11 +128,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of parameter. Valid values include the following: String, String list, Secure string.
+     * The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and
+     * <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid values include the following: String, String list, Secure string.
+     *        The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+     *        and <code>SecureString</code>.
      * @see ParameterType
      */
 
@@ -141,10 +144,12 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of parameter. Valid values include the following: String, String list, Secure string.
+     * The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and
+     * <code>SecureString</code>.
      * </p>
      * 
-     * @return The type of parameter. Valid values include the following: String, String list, Secure string.
+     * @return The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+     *         and <code>SecureString</code>.
      * @see ParameterType
      */
 
@@ -154,11 +159,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of parameter. Valid values include the following: String, String list, Secure string.
+     * The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and
+     * <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid values include the following: String, String list, Secure string.
+     *        The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+     *        and <code>SecureString</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
      */
@@ -170,11 +177,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of parameter. Valid values include the following: String, String list, Secure string.
+     * The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and
+     * <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid values include the following: String, String list, Secure string.
+     *        The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+     *        and <code>SecureString</code>.
      * @see ParameterType
      */
 
@@ -184,11 +193,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of parameter. Valid values include the following: String, String list, Secure string.
+     * The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and
+     * <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid values include the following: String, String list, Secure string.
+     *        The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
+     *        and <code>SecureString</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
      */

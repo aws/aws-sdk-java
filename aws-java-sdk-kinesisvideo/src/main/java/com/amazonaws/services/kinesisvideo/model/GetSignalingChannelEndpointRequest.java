@@ -27,7 +27,7 @@ public class GetSignalingChannelEndpointRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the signalling channel for which you want to get an endpoint.
+     * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      * </p>
      */
     private String channelARN;
@@ -40,11 +40,11 @@ public class GetSignalingChannelEndpointRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the signalling channel for which you want to get an endpoint.
+     * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signalling channel for which you want to get an endpoint.
+     *        The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      */
 
     public void setChannelARN(String channelARN) {
@@ -53,10 +53,10 @@ public class GetSignalingChannelEndpointRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the signalling channel for which you want to get an endpoint.
+     * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      * </p>
      * 
-     * @return The ARN of the signalling channel for which you want to get an endpoint.
+     * @return The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      */
 
     public String getChannelARN() {
@@ -65,11 +65,11 @@ public class GetSignalingChannelEndpointRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the signalling channel for which you want to get an endpoint.
+     * The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signalling channel for which you want to get an endpoint.
+     *        The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

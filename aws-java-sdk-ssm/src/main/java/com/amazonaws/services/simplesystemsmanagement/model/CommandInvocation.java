@@ -45,8 +45,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     private String instanceId;
     /**
      * <p>
-     * The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
-     * on-premises instances, this is the name of the instance.
+     * The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For on-premises
+     * instances, this is the name of the instance.
      * </p>
      */
     private String instanceName;
@@ -86,8 +86,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -155,17 +155,17 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     private String traceOutput;
     /**
      * <p>
-     * The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      */
     private String standardOutputUrl;
     /**
      * <p>
-     * The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      */
     private String standardErrorUrl;
@@ -273,12 +273,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
-     * on-premises instances, this is the name of the instance.
+     * The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For on-premises
+     * instances, this is the name of the instance.
      * </p>
      * 
      * @param instanceName
-     *        The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
+     *        The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For
      *        on-premises instances, this is the name of the instance.
      */
 
@@ -288,11 +288,11 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
-     * on-premises instances, this is the name of the instance.
+     * The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For on-premises
+     * instances, this is the name of the instance.
      * </p>
      * 
-     * @return The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
+     * @return The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For
      *         on-premises instances, this is the name of the instance.
      */
 
@@ -302,12 +302,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
-     * on-premises instances, this is the name of the instance.
+     * The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For on-premises
+     * instances, this is the name of the instance.
      * </p>
      * 
      * @param instanceName
-     *        The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For
+     *        The name of the invocation target. For EC2 instances this is the value for the aws:Name tag. For
      *        on-premises instances, this is the name of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -556,8 +556,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -621,8 +621,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *        StatusDetails includes more information than Status because it includes states resulting from error and
      *        concurrency control parameters. StatusDetails can show different results than Status. For more information
      *        about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -692,8 +692,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -756,8 +756,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *         StatusDetails includes more information than Status because it includes states resulting from error and
      *         concurrency control parameters. StatusDetails can show different results than Status. For more
      *         information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *         following values:</p>
      *         <ul>
      *         <li>
@@ -827,8 +827,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -892,8 +892,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *        StatusDetails includes more information than Status because it includes states resulting from error and
      *        concurrency control parameters. StatusDetails can show different results than Status. For more information
      *        about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -1001,15 +1001,15 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      * 
      * @param standardOutputUrl
-     *        The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent
-     *        command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined for the
-     *        command, and the Amazon S3 bucket was defined for the command.
+     *        The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command. For
+     *        an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the
+     *        S3 bucket was defined for the command.
      */
 
     public void setStandardOutputUrl(String standardOutputUrl) {
@@ -1018,14 +1018,14 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      * 
-     * @return The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent
-     *         command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined for the
-     *         command, and the Amazon S3 bucket was defined for the command.
+     * @return The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command.
+     *         For an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command,
+     *         and the S3 bucket was defined for the command.
      */
 
     public String getStandardOutputUrl() {
@@ -1034,15 +1034,15 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      * 
      * @param standardOutputUrl
-     *        The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent
-     *        command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined for the
-     *        command, and the Amazon S3 bucket was defined for the command.
+     *        The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent command. For
+     *        an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the
+     *        S3 bucket was defined for the command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1053,15 +1053,15 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent
-     *        command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for the
-     *        command, and the Amazon S3 bucket was defined for the command.
+     *        The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command. For
+     *        an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the
+     *        S3 bucket was defined for the command.
      */
 
     public void setStandardErrorUrl(String standardErrorUrl) {
@@ -1070,14 +1070,14 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      * 
-     * @return The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent
-     *         command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for the
-     *         command, and the Amazon S3 bucket was defined for the command.
+     * @return The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command.
+     *         For an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and
+     *         the S3 bucket was defined for the command.
      */
 
     public String getStandardErrorUrl() {
@@ -1086,15 +1086,15 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For
-     * an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the Amazon
-     * S3 bucket was defined for the command.
+     * The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command. For an
+     * invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the S3 bucket
+     * was defined for the command.
      * </p>
      * 
      * @param standardErrorUrl
-     *        The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent
-     *        command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for the
-     *        command, and the Amazon S3 bucket was defined for the command.
+     *        The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent command. For
+     *        an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the
+     *        S3 bucket was defined for the command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

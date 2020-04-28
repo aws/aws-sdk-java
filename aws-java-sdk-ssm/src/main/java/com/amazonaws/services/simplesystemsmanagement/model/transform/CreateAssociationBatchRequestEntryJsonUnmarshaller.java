@@ -97,6 +97,10 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                     context.nextToken();
                     createAssociationBatchRequestEntry.setComplianceSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SyncCompliance", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setSyncCompliance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

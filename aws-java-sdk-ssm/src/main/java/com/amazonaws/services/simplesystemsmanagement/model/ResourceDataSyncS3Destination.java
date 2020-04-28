@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the target Amazon S3 bucket for the Resource Data Sync.
+ * Information about the target S3 bucket for the Resource Data Sync.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncS3Destination" target="_top">AWS
@@ -30,7 +30,7 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where the aggregated data is stored.
+     * The name of the S3 bucket where the aggregated data is stored.
      * </p>
      */
     private String bucketName;
@@ -48,14 +48,14 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
     private String syncFormat;
     /**
      * <p>
-     * The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
-     * Amazon S3 bucket.
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3
+     * bucket.
      * </p>
      */
     private String aWSKMSKeyARN;
@@ -68,11 +68,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where the aggregated data is stored.
+     * The name of the S3 bucket where the aggregated data is stored.
      * </p>
      * 
      * @param bucketName
-     *        The name of the Amazon S3 bucket where the aggregated data is stored.
+     *        The name of the S3 bucket where the aggregated data is stored.
      */
 
     public void setBucketName(String bucketName) {
@@ -81,10 +81,10 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where the aggregated data is stored.
+     * The name of the S3 bucket where the aggregated data is stored.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket where the aggregated data is stored.
+     * @return The name of the S3 bucket where the aggregated data is stored.
      */
 
     public String getBucketName() {
@@ -93,11 +93,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket where the aggregated data is stored.
+     * The name of the S3 bucket where the aggregated data is stored.
      * </p>
      * 
      * @param bucketName
-     *        The name of the Amazon S3 bucket where the aggregated data is stored.
+     *        The name of the S3 bucket where the aggregated data is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      * </p>
      * 
      * @param region
-     *        The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     *        The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      */
 
     public void setRegion(String region) {
@@ -234,10 +234,10 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      * </p>
      * 
-     * @return The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     * @return The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      */
 
     public String getRegion() {
@@ -246,11 +246,11 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     * The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      * </p>
      * 
      * @param region
-     *        The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+     *        The AWS Region with the S3 bucket targeted by the Resource Data Sync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,13 +261,13 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
-     * Amazon S3 bucket.
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3
+     * bucket.
      * </p>
      * 
      * @param aWSKMSKeyARN
      *        The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the
-     *        destination Amazon S3 bucket.
+     *        destination S3 bucket.
      */
 
     public void setAWSKMSKeyARN(String aWSKMSKeyARN) {
@@ -276,12 +276,12 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
-     * Amazon S3 bucket.
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3
+     * bucket.
      * </p>
      * 
      * @return The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the
-     *         destination Amazon S3 bucket.
+     *         destination S3 bucket.
      */
 
     public String getAWSKMSKeyARN() {
@@ -290,13 +290,13 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination
-     * Amazon S3 bucket.
+     * The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the destination S3
+     * bucket.
      * </p>
      * 
      * @param aWSKMSKeyARN
      *        The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as the
-     *        destination Amazon S3 bucket.
+     *        destination S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

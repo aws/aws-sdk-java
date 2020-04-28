@@ -24,7 +24,8 @@ public enum ImageFailureCode {
     InvalidImageTag("InvalidImageTag"),
     ImageTagDoesNotMatchDigest("ImageTagDoesNotMatchDigest"),
     ImageNotFound("ImageNotFound"),
-    MissingDigestAndTag("MissingDigestAndTag");
+    MissingDigestAndTag("MissingDigestAndTag"),
+    ImageReferencedByManifestList("ImageReferencedByManifestList");
 
     private String value;
 

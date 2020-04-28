@@ -61,8 +61,8 @@ public class InventoryDeletionStatusItem implements Serializable, Cloneable, Str
     /**
      * <p>
      * Information about the delete operation. For more information about this summary, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     * >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private InventoryDeletionSummary deletionSummary;
@@ -295,14 +295,14 @@ public class InventoryDeletionStatusItem implements Serializable, Cloneable, Str
     /**
      * <p>
      * Information about the delete operation. For more information about this summary, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     * >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param deletionSummary
      *        Information about the delete operation. For more information about this summary, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     *        >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     *        >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setDeletionSummary(InventoryDeletionSummary deletionSummary) {
@@ -312,13 +312,13 @@ public class InventoryDeletionStatusItem implements Serializable, Cloneable, Str
     /**
      * <p>
      * Information about the delete operation. For more information about this summary, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     * >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Information about the delete operation. For more information about this summary, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     *         >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     *         >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public InventoryDeletionSummary getDeletionSummary() {
@@ -328,14 +328,14 @@ public class InventoryDeletionStatusItem implements Serializable, Cloneable, Str
     /**
      * <p>
      * Information about the delete operation. For more information about this summary, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     * >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param deletionSummary
      *        Information about the delete operation. For more information about this summary, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
-     *        >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete"
+     *        >Understanding the delete inventory summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

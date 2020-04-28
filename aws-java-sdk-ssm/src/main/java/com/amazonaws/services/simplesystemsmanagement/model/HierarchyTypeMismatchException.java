@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change a parameter
- * from a String type to a SecureString type. You must create a new, unique parameter.
+ * from a <code>String</code> type to a <code>SecureString</code> type. You must create a new, unique parameter.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

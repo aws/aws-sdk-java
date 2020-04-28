@@ -58,8 +58,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private java.util.Map<String, OpsItemDataValue> operationalData;
@@ -93,8 +93,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String status;
@@ -195,8 +195,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
@@ -223,8 +223,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *         OpsItem. To view AWS CLI example commands that use these keys, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *         >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *         >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.Map<String, OpsItemDataValue> getOperationalData() {
@@ -257,8 +257,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -286,8 +286,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setOperationalData(java.util.Map<String, OpsItemDataValue> operationalData) {
@@ -320,8 +320,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
      * AWS CLI example commands that use these keys, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     * >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param operationalData
@@ -349,8 +349,8 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view AWS CLI example commands that use these keys, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
-     *        >Creating OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        >Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,15 +670,15 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -690,14 +690,14 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *         >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *         >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see OpsItemStatus
      */
 
@@ -709,15 +709,15 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */
@@ -731,15 +731,15 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     * >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     * >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param status
      *        The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html"
-     *        >Editing OpsItem Details</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details"
+     *        >Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpsItemStatus
      */

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A URL for the Amazon S3 bucket where you want to store the results of this request.
+ * A URL for the S3 bucket where you want to store the results of this request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/S3OutputUrl" target="_top">AWS API
@@ -30,18 +30,18 @@ public class S3OutputUrl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      */
     private String outputUrl;
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param outputUrl
-     *        A URL for an Amazon S3 bucket where you want to store the results of this request.
+     *        A URL for an S3 bucket where you want to store the results of this request.
      */
 
     public void setOutputUrl(String outputUrl) {
@@ -50,10 +50,10 @@ public class S3OutputUrl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      * 
-     * @return A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * @return A URL for an S3 bucket where you want to store the results of this request.
      */
 
     public String getOutputUrl() {
@@ -62,11 +62,11 @@ public class S3OutputUrl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL for an Amazon S3 bucket where you want to store the results of this request.
+     * A URL for an S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param outputUrl
-     *        A URL for an Amazon S3 bucket where you want to store the results of this request.
+     *        A URL for an S3 bucket where you want to store the results of this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,8 +31,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String commandId;
     /**
      * <p>
-     * The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance or an
-     * instance in your hybrid environment that is configured for Systems Manager.
+     * The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an instance
+     * in your hybrid environment that is configured for Systems Manager.
      * </p>
      */
     private String instanceId;
@@ -112,8 +112,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
      * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
      * different results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -129,13 +129,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
-     * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
-     * the command again.
+     * might not be available because of network issues, because the instance was stopped, or for similar reasons. The
+     * system will try to send the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was run successfully. This is a terminal state.
+     * Success: The command or plugin ran successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -189,8 +189,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String standardOutputContent;
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not
-     * specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not specified,
+     * then this string is empty.
      * </p>
      */
     private String standardOutputUrl;
@@ -257,13 +257,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance or an
-     * instance in your hybrid environment that is configured for Systems Manager.
+     * The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an instance
+     * in your hybrid environment that is configured for Systems Manager.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance
-     *        or an instance in your hybrid environment that is configured for Systems Manager.
+     *        The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an
+     *        instance in your hybrid environment that is configured for Systems Manager.
      */
 
     public void setInstanceId(String instanceId) {
@@ -272,12 +272,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance or an
-     * instance in your hybrid environment that is configured for Systems Manager.
+     * The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an instance
+     * in your hybrid environment that is configured for Systems Manager.
      * </p>
      * 
-     * @return The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance
-     *         or an instance in your hybrid environment that is configured for Systems Manager.
+     * @return The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an
+     *         instance in your hybrid environment that is configured for Systems Manager.
      */
 
     public String getInstanceId() {
@@ -286,13 +286,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance or an
-     * instance in your hybrid environment that is configured for Systems Manager.
+     * The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an instance
+     * in your hybrid environment that is configured for Systems Manager.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the managed instance targeted by the command. A managed instance can be an Amazon EC2 instance
-     *        or an instance in your hybrid environment that is configured for Systems Manager.
+     *        The ID of the managed instance targeted by the command. A managed instance can be an EC2 instance or an
+     *        instance in your hybrid environment that is configured for Systems Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -795,8 +795,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
      * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
      * different results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -812,13 +812,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
-     * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
-     * the command again.
+     * might not be available because of network issues, because the instance was stopped, or for similar reasons. The
+     * system will try to send the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was run successfully. This is a terminal state.
+     * Success: The command or plugin ran successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -866,8 +866,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        A detailed status of the command execution for an invocation. StatusDetails includes more information than
      *        Status because it includes states resulting from error and concurrency control parameters. StatusDetails
      *        can show different results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -883,13 +883,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        Delayed: The system attempted to send the command to the target, but the target was not available. The
-     *        instance might not be available because of network issues, the instance was stopped, etc. The system will
-     *        try to deliver the command again.
+     *        instance might not be available because of network issues, because the instance was stopped, or for
+     *        similar reasons. The system will try to send the command again.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success: The command or plugin was run successfully. This is a terminal state.
+     *        Success: The command or plugin ran successfully. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -943,8 +943,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
      * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
      * different results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -960,13 +960,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
-     * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
-     * the command again.
+     * might not be available because of network issues, because the instance was stopped, or for similar reasons. The
+     * system will try to send the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was run successfully. This is a terminal state.
+     * Success: The command or plugin ran successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -1013,8 +1013,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * @return A detailed status of the command execution for an invocation. StatusDetails includes more information
      *         than Status because it includes states resulting from error and concurrency control parameters.
      *         StatusDetails can show different results than Status. For more information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *         following values:</p>
      *         <ul>
      *         <li>
@@ -1030,13 +1030,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *         <li>
      *         <p>
      *         Delayed: The system attempted to send the command to the target, but the target was not available. The
-     *         instance might not be available because of network issues, the instance was stopped, etc. The system will
-     *         try to deliver the command again.
+     *         instance might not be available because of network issues, because the instance was stopped, or for
+     *         similar reasons. The system will try to send the command again.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Success: The command or plugin was run successfully. This is a terminal state.
+     *         Success: The command or plugin ran successfully. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
@@ -1090,8 +1090,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * A detailed status of the command execution for an invocation. StatusDetails includes more information than Status
      * because it includes states resulting from error and concurrency control parameters. StatusDetails can show
      * different results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -1107,13 +1107,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * Delayed: The system attempted to send the command to the target, but the target was not available. The instance
-     * might not be available because of network issues, the instance was stopped, etc. The system will try to deliver
-     * the command again.
+     * might not be available because of network issues, because the instance was stopped, or for similar reasons. The
+     * system will try to send the command again.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success: The command or plugin was run successfully. This is a terminal state.
+     * Success: The command or plugin ran successfully. This is a terminal state.
      * </p>
      * </li>
      * <li>
@@ -1161,8 +1161,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        A detailed status of the command execution for an invocation. StatusDetails includes more information than
      *        Status because it includes states resulting from error and concurrency control parameters. StatusDetails
      *        can show different results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -1178,13 +1178,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        Delayed: The system attempted to send the command to the target, but the target was not available. The
-     *        instance might not be available because of network issues, the instance was stopped, etc. The system will
-     *        try to deliver the command again.
+     *        instance might not be available because of network issues, because the instance was stopped, or for
+     *        similar reasons. The system will try to send the command again.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success: The command or plugin was run successfully. This is a terminal state.
+     *        Success: The command or plugin ran successfully. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
@@ -1283,12 +1283,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not
-     * specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not specified,
+     * then this string is empty.
      * </p>
      * 
      * @param standardOutputUrl
-     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not
+     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not
      *        specified, then this string is empty.
      */
 
@@ -1298,12 +1298,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not
-     * specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not specified,
+     * then this string is empty.
      * </p>
      * 
-     * @return The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was
-     *         not specified, then this string is empty.
+     * @return The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not
+     *         specified, then this string is empty.
      */
 
     public String getStandardOutputUrl() {
@@ -1312,12 +1312,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not
-     * specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not specified,
+     * then this string is empty.
      * </p>
      * 
      * @param standardOutputUrl
-     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If an Amazon S3 bucket was not
+     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If an S3 bucket was not
      *        specified, then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

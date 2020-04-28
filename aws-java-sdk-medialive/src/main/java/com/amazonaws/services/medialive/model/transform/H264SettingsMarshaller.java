@@ -43,6 +43,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpaceSettings").build();
     private static final MarshallingInfo<String> ENTROPYENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entropyEncoding").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterSettings").build();
     private static final MarshallingInfo<String> FIXEDAFD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fixedAfd").build();
     private static final MarshallingInfo<String> FLICKERAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -83,6 +85,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parNumerator").build();
     private static final MarshallingInfo<String> PROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("profile").build();
+    private static final MarshallingInfo<String> QUALITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qualityLevel").build();
     private static final MarshallingInfo<Integer> QVBRQUALITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qvbrQualityLevel").build();
     private static final MarshallingInfo<String> RATECONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -130,6 +134,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getColorMetadata(), COLORMETADATA_BINDING);
             protocolMarshaller.marshall(h264Settings.getColorSpaceSettings(), COLORSPACESETTINGS_BINDING);
             protocolMarshaller.marshall(h264Settings.getEntropyEncoding(), ENTROPYENCODING_BINDING);
+            protocolMarshaller.marshall(h264Settings.getFilterSettings(), FILTERSETTINGS_BINDING);
             protocolMarshaller.marshall(h264Settings.getFixedAfd(), FIXEDAFD_BINDING);
             protocolMarshaller.marshall(h264Settings.getFlickerAq(), FLICKERAQ_BINDING);
             protocolMarshaller.marshall(h264Settings.getForceFieldPictures(), FORCEFIELDPICTURES_BINDING);
@@ -150,6 +155,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getParDenominator(), PARDENOMINATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getParNumerator(), PARNUMERATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getProfile(), PROFILE_BINDING);
+            protocolMarshaller.marshall(h264Settings.getQualityLevel(), QUALITYLEVEL_BINDING);
             protocolMarshaller.marshall(h264Settings.getQvbrQualityLevel(), QVBRQUALITYLEVEL_BINDING);
             protocolMarshaller.marshall(h264Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
             protocolMarshaller.marshall(h264Settings.getScanType(), SCANTYPE_BINDING);

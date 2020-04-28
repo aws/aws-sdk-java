@@ -30,18 +30,25 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the service setting to get.
+     * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      */
     private String settingId;
 
     /**
      * <p>
-     * The ID of the service setting to get.
+     * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      * 
      * @param settingId
-     *        The ID of the service setting to get.
+     *        The ID of the service setting to get. The setting ID can be
+     *        <code>/ssm/parameter-store/default-parameter-tier</code>,
+     *        <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     *        <code>/ssm/managed-instance/activation-tier</code>.
      */
 
     public void setSettingId(String settingId) {
@@ -50,10 +57,15 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the service setting to get.
+     * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      * 
-     * @return The ID of the service setting to get.
+     * @return The ID of the service setting to get. The setting ID can be
+     *         <code>/ssm/parameter-store/default-parameter-tier</code>,
+     *         <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     *         <code>/ssm/managed-instance/activation-tier</code>.
      */
 
     public String getSettingId() {
@@ -62,11 +74,16 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the service setting to get.
+     * The ID of the service setting to get. The setting ID can be
+     * <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or <code>/ssm/managed-instance/activation-tier</code>.
      * </p>
      * 
      * @param settingId
-     *        The ID of the service setting to get.
+     *        The ID of the service setting to get. The setting ID can be
+     *        <code>/ssm/parameter-store/default-parameter-tier</code>,
+     *        <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     *        <code>/ssm/managed-instance/activation-tier</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

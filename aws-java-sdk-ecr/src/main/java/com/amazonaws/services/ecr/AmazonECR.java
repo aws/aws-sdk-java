@@ -103,16 +103,12 @@ public interface AmazonECR {
      * </p>
      * <p>
      * When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If
-     * it is, then the image layer is skipped.
-     * </p>
-     * <p>
-     * When an image is pulled from a repository, each image layer is checked once to verify it is available to be
-     * pulled.
+     * it has been uploaded, then the image layer is skipped.
      * </p>
      * <note>
      * <p>
-     * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
-     * and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
+     * This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing
+     * images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
      * </p>
      * </note>
      * 
@@ -197,8 +193,8 @@ public interface AmazonECR {
      * </p>
      * <note>
      * <p>
-     * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
-     * and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
+     * This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing
+     * images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
      * </p>
      * </note>
      * 
@@ -434,12 +430,13 @@ public interface AmazonECR {
      * layers that are referenced in an image.
      * </p>
      * <p>
-     * When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer.
+     * When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer that is not already
+     * cached.
      * </p>
      * <note>
      * <p>
-     * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
-     * and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
+     * This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing
+     * images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
      * </p>
      * </note>
      * 
@@ -535,13 +532,13 @@ public interface AmazonECR {
      * </p>
      * <p>
      * When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been
-     * uploaded. Whether an image layer has been uploaded before is determined by the <a>BatchCheckLayerAvailability</a>
-     * API action.
+     * uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API
+     * action.
      * </p>
      * <note>
      * <p>
-     * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
-     * and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
+     * This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing
+     * images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
      * </p>
      * </note>
      * 
@@ -613,12 +610,12 @@ public interface AmazonECR {
      * </p>
      * <p>
      * When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or
-     * update the image manifest and tags associated with the image.
+     * update the image manifest and the tags associated with the image.
      * </p>
      * <note>
      * <p>
-     * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
-     * and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
+     * This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing
+     * images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
      * </p>
      * </note>
      * 
@@ -636,6 +633,8 @@ public interface AmazonECR {
      *         the last push.
      * @throws LayersNotFoundException
      *         The specified layers could not be found, or the specified layer is not valid for this repository.
+     * @throws ReferencedImagesNotFoundException
+     *         The manifest list is referencing an image that does not exist.
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
@@ -750,6 +749,13 @@ public interface AmazonECR {
      *         These errors are usually caused by a server-side issue.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws UnsupportedImageTypeException
+     *         The image is of a type that cannot be scanned.
+     * @throws LimitExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
+     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
@@ -849,8 +855,8 @@ public interface AmazonECR {
      * </p>
      * <note>
      * <p>
-     * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
-     * and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
+     * This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing
+     * images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.
      * </p>
      * </note>
      * 

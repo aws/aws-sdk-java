@@ -31,6 +31,13 @@ public class Fmp4HlsSettings implements Serializable, Cloneable, StructuredPojo 
      * associated to the video, separate by ','.
      */
     private String audioRenditionSets;
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     */
+    private String nielsenId3Behavior;
+    /** When set to passthrough, timed metadata is passed through from input to output. */
+    private String timedMetadataBehavior;
 
     /**
      * List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are
@@ -73,6 +80,116 @@ public class Fmp4HlsSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @param nielsenId3Behavior
+     *        If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *        an equivalent ID3 tag will be inserted in the output.
+     * @see Fmp4NielsenId3Behavior
+     */
+
+    public void setNielsenId3Behavior(String nielsenId3Behavior) {
+        this.nielsenId3Behavior = nielsenId3Behavior;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @return If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *         an equivalent ID3 tag will be inserted in the output.
+     * @see Fmp4NielsenId3Behavior
+     */
+
+    public String getNielsenId3Behavior() {
+        return this.nielsenId3Behavior;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @param nielsenId3Behavior
+     *        If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *        an equivalent ID3 tag will be inserted in the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Fmp4NielsenId3Behavior
+     */
+
+    public Fmp4HlsSettings withNielsenId3Behavior(String nielsenId3Behavior) {
+        setNielsenId3Behavior(nielsenId3Behavior);
+        return this;
+    }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an
+     * equivalent ID3 tag will be inserted in the output.
+     * 
+     * @param nielsenId3Behavior
+     *        If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and
+     *        an equivalent ID3 tag will be inserted in the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Fmp4NielsenId3Behavior
+     */
+
+    public Fmp4HlsSettings withNielsenId3Behavior(Fmp4NielsenId3Behavior nielsenId3Behavior) {
+        this.nielsenId3Behavior = nielsenId3Behavior.toString();
+        return this;
+    }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     * 
+     * @param timedMetadataBehavior
+     *        When set to passthrough, timed metadata is passed through from input to output.
+     * @see Fmp4TimedMetadataBehavior
+     */
+
+    public void setTimedMetadataBehavior(String timedMetadataBehavior) {
+        this.timedMetadataBehavior = timedMetadataBehavior;
+    }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     * 
+     * @return When set to passthrough, timed metadata is passed through from input to output.
+     * @see Fmp4TimedMetadataBehavior
+     */
+
+    public String getTimedMetadataBehavior() {
+        return this.timedMetadataBehavior;
+    }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     * 
+     * @param timedMetadataBehavior
+     *        When set to passthrough, timed metadata is passed through from input to output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Fmp4TimedMetadataBehavior
+     */
+
+    public Fmp4HlsSettings withTimedMetadataBehavior(String timedMetadataBehavior) {
+        setTimedMetadataBehavior(timedMetadataBehavior);
+        return this;
+    }
+
+    /**
+     * When set to passthrough, timed metadata is passed through from input to output.
+     * 
+     * @param timedMetadataBehavior
+     *        When set to passthrough, timed metadata is passed through from input to output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Fmp4TimedMetadataBehavior
+     */
+
+    public Fmp4HlsSettings withTimedMetadataBehavior(Fmp4TimedMetadataBehavior timedMetadataBehavior) {
+        this.timedMetadataBehavior = timedMetadataBehavior.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +202,11 @@ public class Fmp4HlsSettings implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAudioRenditionSets() != null)
-            sb.append("AudioRenditionSets: ").append(getAudioRenditionSets());
+            sb.append("AudioRenditionSets: ").append(getAudioRenditionSets()).append(",");
+        if (getNielsenId3Behavior() != null)
+            sb.append("NielsenId3Behavior: ").append(getNielsenId3Behavior()).append(",");
+        if (getTimedMetadataBehavior() != null)
+            sb.append("TimedMetadataBehavior: ").append(getTimedMetadataBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +225,14 @@ public class Fmp4HlsSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAudioRenditionSets() != null && other.getAudioRenditionSets().equals(this.getAudioRenditionSets()) == false)
             return false;
+        if (other.getNielsenId3Behavior() == null ^ this.getNielsenId3Behavior() == null)
+            return false;
+        if (other.getNielsenId3Behavior() != null && other.getNielsenId3Behavior().equals(this.getNielsenId3Behavior()) == false)
+            return false;
+        if (other.getTimedMetadataBehavior() == null ^ this.getTimedMetadataBehavior() == null)
+            return false;
+        if (other.getTimedMetadataBehavior() != null && other.getTimedMetadataBehavior().equals(this.getTimedMetadataBehavior()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +242,8 @@ public class Fmp4HlsSettings implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAudioRenditionSets() == null) ? 0 : getAudioRenditionSets().hashCode());
+        hashCode = prime * hashCode + ((getNielsenId3Behavior() == null) ? 0 : getNielsenId3Behavior().hashCode());
+        hashCode = prime * hashCode + ((getTimedMetadataBehavior() == null) ? 0 : getTimedMetadataBehavior().hashCode());
         return hashCode;
     }
 

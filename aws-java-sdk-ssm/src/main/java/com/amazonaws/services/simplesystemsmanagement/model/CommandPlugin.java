@@ -46,8 +46,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -133,8 +133,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String output;
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for the
-     * command was not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
+     * not specified, then this string is empty.
      * </p>
      */
     private String standardOutputUrl;
@@ -148,7 +148,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the S3 bucket region.
      * </p>
      */
     private String outputS3Region;
@@ -161,7 +161,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -183,7 +183,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -321,8 +321,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -385,8 +385,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *        results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -456,8 +456,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -519,8 +519,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * @return A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      *         includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *         results than Status. For more information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *         following values:</p>
      *         <ul>
      *         <li>
@@ -590,8 +590,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -654,8 +654,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *        results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -884,13 +884,13 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for the
-     * command was not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
+     * not specified, then this string is empty.
      * </p>
      * 
      * @param standardOutputUrl
-     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for
-     *        the command was not specified, then this string is empty.
+     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the
+     *        command was not specified, then this string is empty.
      */
 
     public void setStandardOutputUrl(String standardOutputUrl) {
@@ -899,12 +899,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for the
-     * command was not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
+     * not specified, then this string is empty.
      * </p>
      * 
-     * @return The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for
-     *         the command was not specified, then this string is empty.
+     * @return The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the
+     *         command was not specified, then this string is empty.
      */
 
     public String getStandardOutputUrl() {
@@ -913,13 +913,13 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for the
-     * command was not specified, then this string is empty.
+     * The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command was
+     * not specified, then this string is empty.
      * </p>
      * 
      * @param standardOutputUrl
-     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If the Amazon S3 bucket for
-     *        the command was not specified, then this string is empty.
+     *        The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the
+     *        command was not specified, then this string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -977,12 +977,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
      *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the Amazon S3 bucket region.
+     *        automatically determines the S3 bucket region.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -992,11 +992,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the S3 bucket region.
      * </p>
      * 
      * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *         automatically determines the Amazon S3 bucket region.
+     *         automatically determines the S3 bucket region.
      */
 
     public String getOutputS3Region() {
@@ -1006,12 +1006,12 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
      *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the Amazon S3 bucket region.
+     *        automatically determines the S3 bucket region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1029,7 +1029,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1048,7 +1048,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1073,7 +1073,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1091,7 +1091,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *         test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *         </p>
      *         <p>
-     *         test_folder is the name of the Amazon S3 bucket;
+     *         test_folder is the name of the S3 bucket;
      *         </p>
      *         <p>
      *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1116,7 +1116,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1135,7 +1135,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1162,7 +1162,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1181,7 +1181,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1206,7 +1206,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1224,7 +1224,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *         test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *         </p>
      *         <p>
-     *         test_folder is the name of the Amazon S3 bucket;
+     *         test_folder is the name of the S3 bucket;
      *         </p>
      *         <p>
      *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1249,7 +1249,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the Amazon S3 bucket;
+     * test_folder is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
@@ -1268,7 +1268,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the Amazon S3 bucket;
+     *        test_folder is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;

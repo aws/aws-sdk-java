@@ -36,7 +36,8 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
+     * and <code>SecureString</code>.
      * </p>
      */
     private String type;
@@ -134,11 +135,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
+     * and <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     *        The type of parameter. Valid parameter types include the following: <code>String</code>,
+     *        <code>StringList</code>, and <code>SecureString</code>.
      * @see ParameterType
      */
 
@@ -148,10 +151,12 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
+     * and <code>SecureString</code>.
      * </p>
      * 
-     * @return The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * @return The type of parameter. Valid parameter types include the following: <code>String</code>,
+     *         <code>StringList</code>, and <code>SecureString</code>.
      * @see ParameterType
      */
 
@@ -161,11 +166,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
+     * and <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     *        The type of parameter. Valid parameter types include the following: <code>String</code>,
+     *        <code>StringList</code>, and <code>SecureString</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
      */
@@ -177,11 +184,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
+     * and <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     *        The type of parameter. Valid parameter types include the following: <code>String</code>,
+     *        <code>StringList</code>, and <code>SecureString</code>.
      * @see ParameterType
      */
 
@@ -191,11 +200,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     * The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>,
+     * and <code>SecureString</code>.
      * </p>
      * 
      * @param type
-     *        The type of parameter. Valid parameter types include the following: String, String list, Secure string.
+     *        The type of parameter. Valid parameter types include the following: <code>String</code>,
+     *        <code>StringList</code>, and <code>SecureString</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
      */

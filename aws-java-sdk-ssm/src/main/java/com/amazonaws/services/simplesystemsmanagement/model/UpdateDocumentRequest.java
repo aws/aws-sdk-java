@@ -52,7 +52,9 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String versionName;
     /**
      * <p>
-     * (Required) The version of the document that you want to update.
+     * (Required) The latest version of the document that you want to update. The latest document version can be
+     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
+     * supported.
      * </p>
      */
     private String documentVersion;
@@ -271,11 +273,15 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Required) The version of the document that you want to update.
+     * (Required) The latest version of the document that you want to update. The latest document version can be
+     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
+     * supported.
      * </p>
      * 
      * @param documentVersion
-     *        (Required) The version of the document that you want to update.
+     *        (Required) The latest version of the document that you want to update. The latest document version can be
+     *        specified using the $LATEST variable or by the version number. Updating a previous version of a document
+     *        is not supported.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -284,10 +290,14 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Required) The version of the document that you want to update.
+     * (Required) The latest version of the document that you want to update. The latest document version can be
+     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
+     * supported.
      * </p>
      * 
-     * @return (Required) The version of the document that you want to update.
+     * @return (Required) The latest version of the document that you want to update. The latest document version can be
+     *         specified using the $LATEST variable or by the version number. Updating a previous version of a document
+     *         is not supported.
      */
 
     public String getDocumentVersion() {
@@ -296,11 +306,15 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Required) The version of the document that you want to update.
+     * (Required) The latest version of the document that you want to update. The latest document version can be
+     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
+     * supported.
      * </p>
      * 
      * @param documentVersion
-     *        (Required) The version of the document that you want to update.
+     *        (Required) The latest version of the document that you want to update. The latest document version can be
+     *        specified using the $LATEST variable or by the version number. Updating a previous version of a document
+     *        is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

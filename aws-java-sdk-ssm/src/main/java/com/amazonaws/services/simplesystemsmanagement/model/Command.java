@@ -94,8 +94,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -154,7 +154,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the Region of the S3 bucket.
      * </p>
      */
     private String outputS3Region;
@@ -177,7 +177,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
      * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
      * about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
@@ -187,7 +187,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
@@ -783,8 +783,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -843,8 +843,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        A detailed status of the command execution. StatusDetails includes more information than Status because it
      *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *        results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -910,8 +910,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -969,8 +969,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @return A detailed status of the command execution. StatusDetails includes more information than Status because
      *         it includes states resulting from error and concurrency control parameters. StatusDetails can show
      *         different results than Status. For more information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *         following values:</p>
      *         <ul>
      *         <li>
@@ -1036,8 +1036,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the command execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
-     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+     * statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -1096,8 +1096,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        A detailed status of the command execution. StatusDetails includes more information than Status because it
      *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *        results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
      *        following values:</p>
      *        <ul>
      *        <li>
@@ -1163,12 +1163,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the Region of the S3 bucket.
      * </p>
      * 
      * @param outputS3Region
      *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the Amazon S3 bucket region.
+     *        automatically determines the Region of the S3 bucket.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -1178,11 +1178,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the Region of the S3 bucket.
      * </p>
      * 
      * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *         automatically determines the Amazon S3 bucket region.
+     *         automatically determines the Region of the S3 bucket.
      */
 
     public String getOutputS3Region() {
@@ -1192,12 +1192,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     * automatically determines the Amazon S3 bucket region.
+     * automatically determines the Region of the S3 bucket.
      * </p>
      * 
      * @param outputS3Region
      *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-     *        automatically determines the Amazon S3 bucket region.
+     *        automatically determines the Region of the S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1303,7 +1303,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
      * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
      * about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1311,8 +1311,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        The maximum number of instances that are allowed to run the command at the same time. You can specify a
      *        number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *        more information about how to use MaxConcurrency, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
-     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
+     *        using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -1324,15 +1324,15 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
      * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
      * about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The maximum number of instances that are allowed to run the command at the same time. You can specify a
      *         number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *         more information about how to use MaxConcurrency, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands
-     *         Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
+     *         using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public String getMaxConcurrency() {
@@ -1344,7 +1344,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of instances that are allowed to run the command at the same time. You can specify a number of
      * instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information
      * about how to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1352,8 +1352,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        The maximum number of instances that are allowed to run the command at the same time. You can specify a
      *        number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
      *        more information about how to use MaxConcurrency, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
-     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
+     *        using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1367,7 +1367,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1375,8 +1375,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is 0. For more information about how to use MaxErrors, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
-     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
+     *        using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -1388,15 +1388,15 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
      *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *         is 0. For more information about how to use MaxErrors, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands
-     *         Using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
+     *         using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public String getMaxErrors() {
@@ -1408,7 +1408,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using
      * Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1416,8 +1416,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
      *        is 0. For more information about how to use MaxErrors, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running Commands Using
-     *        Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
+     *        using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,14 +27,42 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON or YAML string.
+     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
+     * document in an external JSON or YAML file and referencing the file in a command.
      * </p>
+     * <p>
+     * For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an SSM
+     * document (console)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
+     * document (AWS CLI)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
+     * document (API)</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String content;
     /**
      * <p>
-     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
-     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When a user
+     * creates an AppConfig configuration in an SSM document, the user must also specify a required document for
+     * validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in the
+     * <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
@@ -50,7 +78,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <important>
      * <p>
-     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name
      * prefixes:
      * </p>
      * <ul>
@@ -100,7 +128,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
     private String targetType;
@@ -132,11 +160,58 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON or YAML string.
+     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
+     * document in an external JSON or YAML file and referencing the file in a command.
      * </p>
+     * <p>
+     * For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an SSM
+     * document (console)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
+     * document (AWS CLI)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
+     * document (API)</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param content
-     *        A valid JSON or YAML string.
+     *        The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
+     *        new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *        <p>
+     *        For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an
+     *        SSM document (console)</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     *        an SSM document (AWS CLI)</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     *        an SSM document (API)</a>
+     *        </p>
+     *        </li>
      */
 
     public void setContent(String content) {
@@ -145,10 +220,59 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON or YAML string.
+     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
+     * document in an external JSON or YAML file and referencing the file in a command.
      * </p>
+     * <p>
+     * For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an SSM
+     * document (console)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
+     * document (AWS CLI)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
+     * document (API)</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A valid JSON or YAML string.
+     * @return The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
+     *         new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *         <p>
+     *         For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an
+     *         SSM document (console)</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     *         an SSM document (AWS CLI)</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     *         an SSM document (API)</a>
+     *         </p>
+     *         </li>
      */
 
     public String getContent() {
@@ -157,11 +281,58 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A valid JSON or YAML string.
+     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
+     * document in an external JSON or YAML file and referencing the file in a command.
      * </p>
+     * <p>
+     * For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an SSM
+     * document (console)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM
+     * document (AWS CLI)</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM
+     * document (API)</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param content
-     *        A valid JSON or YAML string.
+     *        The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
+     *        new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *        <p>
+     *        For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create an
+     *        SSM document (console)</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     *        an SSM document (AWS CLI)</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     *        an SSM document (API)</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,12 +343,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
-     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When a user
+     * creates an AppConfig configuration in an SSM document, the user must also specify a required document for
+     * validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in the
+     * <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-     *         document requires an <code>ApplicationConfigurationSchema</code> document.
+     * @return A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When
+     *         a user creates an AppConfig configuration in an SSM document, the user must also specify a required
+     *         document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document
+     *         requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in
+     *         the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.List<DocumentRequires> getRequires() {
@@ -189,13 +369,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
-     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When a user
+     * creates an AppConfig configuration in an SSM document, the user must also specify a required document for
+     * validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in the
+     * <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param requires
-     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     *        A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When
+     *        a user creates an AppConfig configuration in an SSM document, the user must also specify a required
+     *        document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires
+     *        an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in
+     *        the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setRequires(java.util.Collection<DocumentRequires> requires) {
@@ -209,8 +397,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
-     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When a user
+     * creates an AppConfig configuration in an SSM document, the user must also specify a required document for
+     * validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in the
+     * <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -219,8 +411,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param requires
-     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     *        A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When
+     *        a user creates an AppConfig configuration in an SSM document, the user must also specify a required
+     *        document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires
+     *        an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in
+     *        the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,13 +432,21 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document
-     * requires an <code>ApplicationConfigurationSchema</code> document.
+     * A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When a user
+     * creates an AppConfig configuration in an SSM document, the user must also specify a required document for
+     * validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in the
+     * <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param requires
-     *        A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-     *        document requires an <code>ApplicationConfigurationSchema</code> document.
+     *        A list of SSM documents required by a document. This parameter is used exclusively by AWS AppConfig. When
+     *        a user creates an AppConfig configuration in an SSM document, the user must also specify a required
+     *        document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires
+     *        an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see
+     *        <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in
+     *        the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,7 +534,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <important>
      * <p>
-     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name
      * prefixes:
      * </p>
      * <ul>
@@ -355,8 +559,8 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param name
      *        A name for the Systems Manager document.</p> <important>
      *        <p>
-     *        Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
-     *        document prefixes:
+     *        You can't use the following strings as document name prefixes. These are reserved by AWS for use as
+     *        document name prefixes:
      *        </p>
      *        <ul>
      *        <li>
@@ -387,7 +591,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <important>
      * <p>
-     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name
      * prefixes:
      * </p>
      * <ul>
@@ -411,8 +615,8 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return A name for the Systems Manager document.</p> <important>
      *         <p>
-     *         Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
-     *         document prefixes:
+     *         You can't use the following strings as document name prefixes. These are reserved by AWS for use as
+     *         document name prefixes:
      *         </p>
      *         <ul>
      *         <li>
@@ -443,7 +647,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <important>
      * <p>
-     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name
      * prefixes:
      * </p>
      * <ul>
@@ -468,8 +672,8 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param name
      *        A name for the Systems Manager document.</p> <important>
      *        <p>
-     *        Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
-     *        document prefixes:
+     *        You can't use the following strings as document name prefixes. These are reserved by AWS for use as
+     *        document name prefixes:
      *        </p>
      *        <ul>
      *        <li>
@@ -705,7 +909,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
@@ -714,7 +918,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the document can run on all types of resources. If you don't specify a value, the document can't run on
      *        any resources. For a list of valid resource types, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -728,7 +932,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @return Specify a target type to define the kinds of resources the document can run on. For example, to run a
@@ -736,7 +940,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *         '/' the document can run on all types of resources. If you don't specify a value, the document can't run
      *         on any resources. For a list of valid resource types, see <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *         Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public String getTargetType() {
@@ -750,7 +954,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
@@ -759,7 +963,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the document can run on all types of resources. If you don't specify a value, the document can't run on
      *        any resources. For a list of valid resource types, see <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

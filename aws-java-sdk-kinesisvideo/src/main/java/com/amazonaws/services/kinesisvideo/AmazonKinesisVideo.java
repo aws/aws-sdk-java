@@ -57,7 +57,7 @@ public interface AmazonKinesisVideo {
      * @throws AccountChannelLimitExceededException
      *         You have reached the maximum limit of active signaling channels for this AWS account in this region.
      * @throws ResourceInUseException
-     *         The stream is currently not available for this operation.
+     *         The signaling channel is currently not available for this operation.
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws TagsPerResourceExceededLimitException
@@ -95,7 +95,7 @@ public interface AmazonKinesisVideo {
      * @throws DeviceStreamLimitExceededException
      *         Not implemented.
      * @throws ResourceInUseException
-     *         The stream is currently not available for this operation.
+     *         The signaling channel is currently not available for this operation.
      * @throws InvalidDeviceException
      *         Not implemented.
      * @throws InvalidArgumentException
@@ -134,6 +134,8 @@ public interface AmazonKinesisVideo {
      *         href
      *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
      *         API.
+     * @throws ResourceInUseException
+     *         The signaling channel is currently not available for this operation.
      * @sample AmazonKinesisVideo.DeleteSignalingChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel"
      *      target="_top">AWS API Documentation</a>
@@ -174,6 +176,8 @@ public interface AmazonKinesisVideo {
      *         href
      *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
      *         API.
+     * @throws ResourceInUseException
+     *         The signaling channel is currently not available for this operation.
      * @sample AmazonKinesisVideo.DeleteStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream" target="_top">AWS API
      *      Documentation</a>
@@ -182,8 +186,8 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
-     * Returns the most current information about the signaling channel. You must specify either the name or the ARN of
-     * the channel that you want to describe.
+     * Returns the most current information about the signaling channel. You must specify either the name or the Amazon
+     * Resource Name (ARN) of the channel that you want to describe.
      * </p>
      * 
      * @param describeSignalingChannelRequest
@@ -266,9 +270,9 @@ public interface AmazonKinesisVideo {
      * <code>Protocols</code> and <code>Role</code> properties.
      * </p>
      * <p>
-     * <code>Protocols</code> is used to determine the communication mechanism. For example, specifying <code>WSS</code>
-     * as the protocol, results in this API producing a secure websocket endpoint, and specifying <code>HTTPS</code> as
-     * the protocol, results in this API generating an HTTPS endpoint.
+     * <code>Protocols</code> is used to determine the communication mechanism. For example, if you specify
+     * <code>WSS</code> as the protocol, this API produces a secure websocket endpoint. If you specify
+     * <code>HTTPS</code> as the protocol, this API generates an HTTPS endpoint.
      * </p>
      * <p>
      * <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role results in this API generating
@@ -287,7 +291,7 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The stream is currently not available for this operation.
+     *         The signaling channel is currently not available for this operation.
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @sample AmazonKinesisVideo.GetSignalingChannelEndpoint
@@ -549,7 +553,7 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The stream is currently not available for this operation.
+     *         The signaling channel is currently not available for this operation.
      * @throws NotAuthorizedException
      *         The caller is not authorized to perform this operation.
      * @throws VersionMismatchException
@@ -568,8 +572,8 @@ public interface AmazonKinesisVideo {
      * Updates the existing signaling channel. This is an asynchronous operation and takes time to complete.
      * </p>
      * <p>
-     * If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced), then it only applies to new
-     * messages sent via this channel after it's been updated. Existing messages are still expire as per the previous
+     * If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced), it only applies to new
+     * messages sent via this channel after it's been updated. Existing messages are still expired as per the previous
      * <code>MessageTtlSeconds</code> value.
      * </p>
      * 
@@ -583,7 +587,7 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The stream is currently not available for this operation.
+     *         The signaling channel is currently not available for this operation.
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws VersionMismatchException
@@ -623,7 +627,7 @@ public interface AmazonKinesisVideo {
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The stream is currently not available for this operation.
+     *         The signaling channel is currently not available for this operation.
      * @throws NotAuthorizedException
      *         The caller is not authorized to perform this operation.
      * @throws VersionMismatchException

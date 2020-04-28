@@ -46,7 +46,7 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
      * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
      * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.
+     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -150,7 +150,7 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
      * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
      * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.
+     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -165,8 +165,8 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
      *        <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
      *        the <b>Region</b> column in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager Service
-     *        Endpoints</a> in the <i>AWS General Reference</i>.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
+     *        endpoints</a> in the <i>AWS General Reference</i>.
      *        </p>
      *        <p>
      *        <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -186,7 +186,7 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
      * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
      * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.
+     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -200,8 +200,8 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      *         <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such
      *         as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values,
      *         see the <b>Region</b> column in <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager Service
-     *         Endpoints</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
+     *         endpoints</a> in the <i>AWS General Reference</i>.
      *         </p>
      *         <p>
      *         <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -221,7 +221,7 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      * <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
      * <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the
      * <b>Region</b> column in <a href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
-     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.
+     * Manager service endpoints</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
@@ -236,8 +236,8 @@ public class StartSessionResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <b>region</b> represents the Region identifier for an AWS Region supported by AWS Systems Manager, such as
      *        <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see
      *        the <b>Region</b> column in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager Service
-     *        Endpoints</a> in the <i>AWS General Reference</i>.
+     *        href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service
+     *        endpoints</a> in the <i>AWS General Reference</i>.
      *        </p>
      *        <p>
      *        <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.

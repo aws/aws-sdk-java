@@ -56,6 +56,9 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The size, in bytes, of the image in the repository.
      * </p>
+     * <p>
+     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
@@ -279,6 +282,9 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The size, in bytes, of the image in the repository.
      * </p>
+     * <p>
+     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
@@ -288,7 +294,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param imageSizeInBytes
-     *        The size, in bytes, of the image in the repository.</p> <note>
+     *        The size, in bytes, of the image in the repository.</p>
+     *        <p>
+     *        If the image is a manifest list, this will be the max size of all manifests in the list.
+     *        </p>
+     *        <note>
      *        <p>
      *        Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *        Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
@@ -304,6 +314,9 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The size, in bytes, of the image in the repository.
      * </p>
+     * <p>
+     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
@@ -312,7 +325,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return The size, in bytes, of the image in the repository.</p> <note>
+     * @return The size, in bytes, of the image in the repository.</p>
+     *         <p>
+     *         If the image is a manifest list, this will be the max size of all manifests in the list.
+     *         </p>
+     *         <note>
      *         <p>
      *         Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *         Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,
@@ -328,6 +345,9 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The size, in bytes, of the image in the repository.
      * </p>
+     * <p>
+     * If the image is a manifest list, this will be the max size of all manifests in the list.
+     * </p>
      * <note>
      * <p>
      * Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker
@@ -337,7 +357,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param imageSizeInBytes
-     *        The size, in bytes, of the image in the repository.</p> <note>
+     *        The size, in bytes, of the image in the repository.</p>
+     *        <p>
+     *        If the image is a manifest list, this will be the max size of all manifests in the list.
+     *        </p>
+     *        <note>
      *        <p>
      *        Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2
      *        Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size,

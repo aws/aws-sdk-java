@@ -16,10 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Microsoft application patching is only available on EC2 instances and Advanced Instances. To patch Microsoft
- * applications on on-premises servers and VMs, you must enable Advanced Instances. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
- * >Using the Advanced-Instances Tier</a> in the <i>AWS Systems Manager User Guide</i>.
+ * Microsoft application patching is only available on EC2 instances and advanced instances. To patch Microsoft
+ * applications on on-premises servers and VMs, you must enable advanced instances. For more information, see <a
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
+ * >Using the advanced-instances tier</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

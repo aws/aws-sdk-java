@@ -59,8 +59,8 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For descriptions of each patch state, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String state;
@@ -238,16 +238,16 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For descriptions of each patch state, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      *        <p>
      *        For descriptions of each patch state, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -261,15 +261,15 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For descriptions of each patch state, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      *         <p>
      *         For descriptions of each patch state, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *         >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *         >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -283,16 +283,16 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For descriptions of each patch state, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      *        <p>
      *        For descriptions of each patch state, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceDataState
      */
@@ -308,16 +308,16 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For descriptions of each patch state, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      *        <p>
      *        For descriptions of each patch state, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @see PatchComplianceDataState
      */
 
@@ -331,16 +331,16 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * For descriptions of each patch state, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     * >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     * >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param state
      *        The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      *        <p>
      *        For descriptions of each patch state, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
-     *        >About Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch"
+     *        >About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchComplianceDataState
      */

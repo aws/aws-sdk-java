@@ -40,7 +40,12 @@ public enum CloudWatchRegion {
     EuNorth1("eu-north-1"),
     SaEast1("sa-east-1"),
     CnNorthwest1("cn-northwest-1"),
-    CnNorth1("cn-north-1");
+    CnNorth1("cn-north-1"),
+    AfSouth1("af-south-1"),
+    UsGovWest1("us-gov-west-1"),
+    UsGovEast1("us-gov-east-1"),
+    UsIsoEast1("us-iso-east-1"),
+    UsIsobEast1("us-isob-east-1");
 
     private String value;
 

@@ -31,23 +31,24 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting
  * system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs),
  * and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
- * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
- * on-premises machine in your hybrid environment that has been configured for Systems Manager.
+ * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon Elastic Compute Cloud
+ * instance (EC2 instance), or any on-premises server or virtual machine (VM) in your hybrid environment that has been
+ * configured for Systems Manager.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting Up AWS
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  * <p>
- * For information about other API actions you can perform on Amazon EC2 instances, see the <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about how
- * to use a Query API, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API Requests</a>.
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
+ * how to use a Query API, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -128,12 +129,12 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
      * set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based
-     * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string
-     * of characters.
+     * on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of
+     * characters.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * For more information about using tags with EC2 instances, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -205,8 +206,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @sample AWSSimpleSystemsManagement.CancelMaintenanceWindowExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution"
      *      target="_top">AWS API Documentation</a>
@@ -220,12 +221,12 @@ public interface AWSSimpleSystemsManagement {
      * Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your
      * hybrid environment. For more information about requirements for managing on-premises instances and VMs using
      * Systems Manager, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+     * up AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * On-premises servers or VMs that are registered with Systems Manager and Amazon EC2 instances that you manage with
+     * On-premises servers or VMs that are registered with Systems Manager and EC2 instances that you manage with
      * Systems Manager are all called <i>managed instances</i>.
      * </p>
      * </note>
@@ -288,8 +289,8 @@ public interface AWSSimpleSystemsManagement {
      *         You must specify values for all required parameters in the Systems Manager document. You can only supply
      *         values to parameters defined in the Systems Manager document.
      * @throws InvalidTargetException
-     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
-     *         might not have permission to perform the operation.
+     *         The target is not valid or does not exist. It might not be configured for Systems Manager or you might
+     *         not have permission to perform the operation.
      * @throws InvalidScheduleException
      *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @sample AWSSimpleSystemsManagement.CreateAssociation
@@ -346,8 +347,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidOutputLocationException
      *         The output location is not valid or does not exist.
      * @throws InvalidTargetException
-     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
-     *         might not have permission to perform the operation.
+     *         The target is not valid or does not exist. It might not be configured for Systems Manager or you might
+     *         not have permission to perform the operation.
      * @throws InvalidScheduleException
      *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @sample AWSSimpleSystemsManagement.CreateAssociationBatch
@@ -358,10 +359,11 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Creates a Systems Manager document.
-     * </p>
-     * <p>
-     * After you create a document, you can use CreateAssociation to associate it with one or more running instances.
+     * Creates a Systems Manager (SSM) document. An SSM document defines the actions that Systems Manager performs on
+     * your managed instances. For more information about SSM documents, including information about supported schemas,
+     * features, and syntax, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS Systems Manager
+     * Documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param createDocumentRequest
@@ -408,8 +410,8 @@ public interface AWSSimpleSystemsManagement {
      *         maintenance windows or patch baselines have been created.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateMaintenanceWindow
@@ -422,13 +424,13 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new
      * OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -441,7 +443,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemLimitExceededException
      *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
      *         >What are the resource limits for OpsCenter?</a>.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
@@ -473,8 +475,8 @@ public interface AWSSimpleSystemsManagement {
      *         maintenance windows or patch baselines have been created.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreatePatchBaseline
@@ -490,17 +492,18 @@ public interface AWSSimpleSystemsManagement {
      * </p>
      * <p>
      * You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to synchronize
-     * Inventory data from multiple AWS Regions to a single Amazon S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+     * Inventory data from multiple AWS Regions to a single S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
      * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize operational
-     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single Amazon S3 bucket. This
-     * type can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or
-     * <code>EntireOrganization</code> by using AWS Organizations. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting Up
-     * Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems Manager User Guide</i>.
+     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single S3 bucket. This type
+     * can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or <code>EntireOrganization</code> by
+     * using AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up
+     * Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>AWS Systems Manager
+     * User Guide</i>.
      * </p>
      * <p>
      * A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is
@@ -791,8 +794,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws TargetInUseException
@@ -817,8 +820,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterTaskFromMaintenanceWindow
@@ -1076,8 +1079,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
      *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
@@ -1124,16 +1127,18 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Describes one or more of your instances. You can use this to get information about instances like the operating
-     * system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns
-     * information for those instances. If you do not specify instance IDs, it returns information for all your
-     * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
-     * error.
+     * Describes one or more of your instances, including information about the operating system platform, the version
+     * of SSM Agent installed on the instance, instance status, and so on.
+     * </p>
+     * <p>
+     * If you specify one or more instance IDs, it returns information for those instances. If you do not specify
+     * instance IDs, it returns information for all your instances. If you specify an instance ID that is not valid or
+     * an instance that you do not own, you receive an error.
      * </p>
      * <note>
      * <p>
      * The IamRole field for this API action is the Amazon Identity and Access Management (IAM) role assigned to
-     * on-premises instances. This call does not return the IAM role for Amazon EC2 instances.
+     * on-premises instances. This call does not return the IAM role for EC2 instances.
      * </p>
      * </note>
      * 
@@ -1270,8 +1275,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTaskInvocations
@@ -1294,8 +1299,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTasks
@@ -1336,8 +1341,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -1356,8 +1361,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTargets
@@ -1378,8 +1383,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTasks
@@ -1423,13 +1428,13 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Query a set of OpsItems. You must have permission in AWS Identity and Access Management (IAM) to query a list of
      * OpsItems. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1690,7 +1695,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Retrieves the Session Manager connection status for an instance to determine whether it is connected and ready to
+     * Retrieves the Session Manager connection status for an instance to determine whether it is running and ready to
      * receive Session Manager connections.
      * </p>
      * 
@@ -1737,11 +1742,11 @@ public interface AWSSimpleSystemsManagement {
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
      *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
      * @throws UnsupportedFeatureRequiredException
-     *         Microsoft application patching is only available on EC2 instances and Advanced Instances. To patch
-     *         Microsoft applications on on-premises servers and VMs, you must enable Advanced Instances. For more
+     *         Microsoft application patching is only available on EC2 instances and advanced instances. To patch
+     *         Microsoft applications on on-premises servers and VMs, you must enable advanced instances. For more
      *         information, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
-     *         >Using the Advanced-Instances Tier</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html"
+     *         >Using the advanced-instances tier</a> in the <i>AWS Systems Manager User Guide</i>.
      * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
      *      target="_top">AWS API Documentation</a>
@@ -1828,8 +1833,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindow
@@ -1850,8 +1855,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecution
@@ -1872,8 +1877,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTask
@@ -1894,8 +1899,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTaskInvocation
@@ -1917,8 +1922,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowTask
@@ -1931,13 +1936,13 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management
      * (IAM) to view information about an OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2086,8 +2091,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -2737,11 +2742,12 @@ public interface AWSSimpleSystemsManagement {
      *         The parameter already exists. You can't create duplicate parameters.
      * @throws HierarchyLevelLimitExceededException
      *         A hierarchy can have a maximum of 15 levels. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *         >Requirements and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
+     *         >Requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws HierarchyTypeMismatchException
      *         Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change
-     *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
+     *         a parameter from a <code>String</code> type to a <code>SecureString</code> type. You must create a new,
+     *         unique parameter.
      * @throws InvalidAllowedPatternException
      *         The request does not meet the regular expression requirement.
      * @throws ParameterMaxVersionLimitExceededException
@@ -2786,8 +2792,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterDefaultPatchBaseline
@@ -2811,8 +2817,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws ResourceLimitExceededException
@@ -2821,8 +2827,8 @@ public interface AWSSimpleSystemsManagement {
      *         </p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterPatchBaselineForPatchGroup
@@ -2847,16 +2853,16 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.
      *         </p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterTargetWithMaintenanceWindow
@@ -2881,16 +2887,16 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.
      *         </p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws FeatureNotAvailableException
      *         You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the corresponding service is
      *         not available.
@@ -2978,8 +2984,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.ResumeSession
@@ -3052,7 +3058,7 @@ public interface AWSSimpleSystemsManagement {
      *         The role name can't contain invalid characters. Also verify that you specified an IAM role for
      *         notifications that includes the required trust policy. For information about configuring the IAM role for
      *         Run Command notifications, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
      *         Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws InvalidNotificationConfigException
      *         One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided
@@ -3101,8 +3107,8 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws InvalidTargetException
-     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
-     *         might not have permission to perform the operation.
+     *         The target is not valid or does not exist. It might not be configured for Systems Manager or you might
+     *         not have permission to perform the operation.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartAutomationExecution
@@ -3120,8 +3126,8 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to
      * be installed on the client machine making the call. For information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
-     * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html"
+     * >Install the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools for PowerShell on
@@ -3135,9 +3141,9 @@ public interface AWSSimpleSystemsManagement {
      *         The specified document does not exist.
      * @throws TargetNotConnectedException
      *         The specified target instance for the session is not fully configured for use with Session Manager. For
-     *         more information, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
-     *         >Getting Started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
+     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartSession
@@ -3178,8 +3184,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.TerminateSession
@@ -3227,8 +3233,8 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidDocumentException
      *         The specified document does not exist.
      * @throws InvalidTargetException
-     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
-     *         might not have permission to perform the operation.
+     *         The target is not valid or does not exist. It might not be configured for Systems Manager or you might
+     *         not have permission to perform the operation.
      * @throws InvalidAssociationVersionException
      *         The version you specified is not valid. Use ListAssociationVersions to view all versions of an
      *         association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the
@@ -3357,8 +3363,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindow
@@ -3417,8 +3423,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindowTarget
@@ -3477,8 +3483,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindowTask
@@ -3489,7 +3495,9 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Assigns or changes an Amazon Identity and Access Management (IAM) role for the managed instance.
+     * Changes the Amazon Identity and Access Management (IAM) role that is assigned to the on-premises instance or
+     * virtual machines (VM). IAM roles are first assigned to these hybrid instances during the activation process. For
+     * more information, see <a>CreateActivation</a>.
      * </p>
      * 
      * @param updateManagedInstanceRoleRequest
@@ -3520,13 +3528,13 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an
      * OpsItem. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting Started
-     * with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues
      * impacting the performance and health of their AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager
      * OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -3541,7 +3549,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemLimitExceededException
      *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
      *         >What are the resource limits for OpsCenter?</a>.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
@@ -3570,8 +3578,8 @@ public interface AWSSimpleSystemsManagement {
      *         doesn't exist.</p>
      *         <p>
      *         For information about resource quotas in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
-     *         Quotas</a> in the <i>AWS General Reference</i>.
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service
+     *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdatePatchBaseline
@@ -3588,6 +3596,11 @@ public interface AWSSimpleSystemsManagement {
      * my AWS Organizations configuration option. Instead, you must delete the first resource data sync, and create a
      * new one.
      * </p>
+     * <note>
+     * <p>
+     * This API action only supports a resource data sync that was created with a SyncFromSource <code>SyncType</code>.
+     * </p>
+     * </note>
      * 
      * @param updateResourceDataSyncRequest
      * @return Result of the UpdateResourceDataSync operation returned by the service.

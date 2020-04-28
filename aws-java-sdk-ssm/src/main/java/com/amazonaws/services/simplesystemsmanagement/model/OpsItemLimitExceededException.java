@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a href=
- * "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+ * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
  * >What are the resource limits for OpsCenter?</a>.
  * </p>
  */

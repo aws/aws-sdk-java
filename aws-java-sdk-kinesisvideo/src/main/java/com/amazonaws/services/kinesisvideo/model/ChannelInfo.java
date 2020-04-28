@@ -36,7 +36,7 @@ public class ChannelInfo implements Serializable, Cloneable, StructuredPojo {
     private String channelName;
     /**
      * <p>
-     * The ARN of the signaling channel.
+     * The Amazon Resource Name (ARN) of the signaling channel.
      * </p>
      */
     private String channelARN;
@@ -113,11 +113,11 @@ public class ChannelInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the signaling channel.
+     * The Amazon Resource Name (ARN) of the signaling channel.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signaling channel.
+     *        The Amazon Resource Name (ARN) of the signaling channel.
      */
 
     public void setChannelARN(String channelARN) {
@@ -126,10 +126,10 @@ public class ChannelInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the signaling channel.
+     * The Amazon Resource Name (ARN) of the signaling channel.
      * </p>
      * 
-     * @return The ARN of the signaling channel.
+     * @return The Amazon Resource Name (ARN) of the signaling channel.
      */
 
     public String getChannelARN() {
@@ -138,11 +138,11 @@ public class ChannelInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the signaling channel.
+     * The Amazon Resource Name (ARN) of the signaling channel.
      * </p>
      * 
      * @param channelARN
-     *        The ARN of the signaling channel.
+     *        The Amazon Resource Name (ARN) of the signaling channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

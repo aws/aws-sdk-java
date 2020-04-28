@@ -86,7 +86,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
  * </p>
  * <p>
- * This example demonstrates how to target only Amazon EC2 instances and VPCs in your maintenance window.
+ * This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.
  * </p>
  * </li>
  * <li>
@@ -102,7 +102,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a
  * href=
  * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
- * >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+ * >Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target" target="_top">AWS API Documentation</a>
@@ -119,7 +119,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
-     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
      */
@@ -168,13 +168,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
-     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
      * 
      * @return User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *         <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *         that include Amazon EC2 tags of <code>ServerRole,WebServer</code>.
+     *         that include EC2 tags of <code>ServerRole,WebServer</code>.
      */
 
     public java.util.List<String> getValues() {
@@ -187,14 +187,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
-     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include Amazon EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -209,7 +209,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
-     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
@@ -221,7 +221,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include Amazon EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,14 +238,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
-     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include Amazon EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

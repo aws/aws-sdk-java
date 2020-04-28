@@ -26,7 +26,8 @@ public enum AssociationFilterKey {
     AssociationStatusName("AssociationStatusName"),
     LastExecutedBefore("LastExecutedBefore"),
     LastExecutedAfter("LastExecutedAfter"),
-    AssociationName("AssociationName");
+    AssociationName("AssociationName"),
+    ResourceGroupName("ResourceGroupName");
 
     private String value;
 

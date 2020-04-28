@@ -30,6 +30,10 @@ public enum VPCRegion {
     EuCentral1("eu-central-1"),
     ApEast1("ap-east-1"),
     MeSouth1("me-south-1"),
+    UsGovWest1("us-gov-west-1"),
+    UsGovEast1("us-gov-east-1"),
+    UsIsoEast1("us-iso-east-1"),
+    UsIsobEast1("us-isob-east-1"),
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
     ApSouth1("ap-south-1"),
@@ -39,7 +43,8 @@ public enum VPCRegion {
     EuNorth1("eu-north-1"),
     SaEast1("sa-east-1"),
     CaCentral1("ca-central-1"),
-    CnNorth1("cn-north-1");
+    CnNorth1("cn-north-1"),
+    AfSouth1("af-south-1");
 
     private String value;
 

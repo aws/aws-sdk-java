@@ -30,7 +30,7 @@ public class OutputSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the output source, for example the URL of an Amazon S3 bucket.
+     * The ID of the output source, for example the URL of an S3 bucket.
      * </p>
      */
     private String outputSourceId;
@@ -43,11 +43,11 @@ public class OutputSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the output source, for example the URL of an Amazon S3 bucket.
+     * The ID of the output source, for example the URL of an S3 bucket.
      * </p>
      * 
      * @param outputSourceId
-     *        The ID of the output source, for example the URL of an Amazon S3 bucket.
+     *        The ID of the output source, for example the URL of an S3 bucket.
      */
 
     public void setOutputSourceId(String outputSourceId) {
@@ -56,10 +56,10 @@ public class OutputSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the output source, for example the URL of an Amazon S3 bucket.
+     * The ID of the output source, for example the URL of an S3 bucket.
      * </p>
      * 
-     * @return The ID of the output source, for example the URL of an Amazon S3 bucket.
+     * @return The ID of the output source, for example the URL of an S3 bucket.
      */
 
     public String getOutputSourceId() {
@@ -68,11 +68,11 @@ public class OutputSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the output source, for example the URL of an Amazon S3 bucket.
+     * The ID of the output source, for example the URL of an S3 bucket.
      * </p>
      * 
      * @param outputSourceId
-     *        The ID of the output source, for example the URL of an Amazon S3 bucket.
+     *        The ID of the output source, for example the URL of an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

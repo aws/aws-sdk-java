@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An Amazon S3 bucket where you want to store the results of this request.
+ * An S3 bucket where you want to store the results of this request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationOutputLocation"
@@ -30,18 +30,18 @@ public class InstanceAssociationOutputLocation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      */
     private S3OutputLocation s3Location;
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param s3Location
-     *        An Amazon S3 bucket where you want to store the results of this request.
+     *        An S3 bucket where you want to store the results of this request.
      */
 
     public void setS3Location(S3OutputLocation s3Location) {
@@ -50,10 +50,10 @@ public class InstanceAssociationOutputLocation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      * 
-     * @return An Amazon S3 bucket where you want to store the results of this request.
+     * @return An S3 bucket where you want to store the results of this request.
      */
 
     public S3OutputLocation getS3Location() {
@@ -62,11 +62,11 @@ public class InstanceAssociationOutputLocation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the results of this request.
+     * An S3 bucket where you want to store the results of this request.
      * </p>
      * 
      * @param s3Location
-     *        An Amazon S3 bucket where you want to store the results of this request.
+     *        An S3 bucket where you want to store the results of this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

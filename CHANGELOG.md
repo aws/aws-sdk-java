@@ -1,3 +1,28 @@
+# __1.11.771__ __2020-04-28__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports several new features: enhanced VQ for H.264 (AVC) output encodes; passthrough of timed metadata and of Nielsen ID3 metadata in fMP4 containers in HLS outputs; the ability to generate a SCTE-35 sparse track without additional segmentation, in Microsoft Smooth outputs;  the ability to select the audio from a TS input by specifying the audio track; and conversion of HDR colorspace in the input to an SDR colorspace in the output.
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release adds support for multi-architecture images also known as a manifest list
+
+## __Amazon Kinesis Video Streams__
+  - ### Features
+    - Add "GET_CLIP" to the list of supported API names for the GetDataEndpoint API.
+
+## __Amazon Kinesis Video Streams Archived Media__
+  - ### Features
+    - Add support for the GetClip API for retrieving media from a video stream in the MP4 format.
+
+## __Amazon Route 53__
+  - ### Features
+    - Amazon Route 53 now supports the Africa (Cape Town) Region (af-south-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - SSM State Manager support for adding list association filter for Resource Group and manual mode of managing compliance for an association. 
+
 # __1.11.770__ __2020-04-27__
 ## __AWS Data Exchange__
   - ### Features

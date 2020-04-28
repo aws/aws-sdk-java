@@ -30,24 +30,103 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the service setting to update.
+     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
+     * setting ID can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String settingId;
     /**
      * <p>
-     * The new value to specify for the service setting.
+     * The new value to specify for the service setting. For the
+     * <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     * following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Advanced
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Intelligent-Tiering
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
      */
     private String settingValue;
 
     /**
      * <p>
-     * The ID of the service setting to update.
+     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
+     * setting ID can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param settingId
-     *        The ID of the service setting to update.
+     *        The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
+     *        . The setting ID can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/parameter-store/default-parameter-tier</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/parameter-store/high-throughput-enabled</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/activation-tier</code>
+     *        </p>
+     *        </li>
      */
 
     public void setSettingId(String settingId) {
@@ -56,10 +135,47 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the service setting to update.
+     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
+     * setting ID can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the service setting to update.
+     * @return The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     *         <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
+     *         . The setting ID can be one of the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/parameter-store/default-parameter-tier</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/parameter-store/high-throughput-enabled</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/managed-instance/activation-tier</code>
+     *         </p>
+     *         </li>
      */
 
     public String getSettingId() {
@@ -68,11 +184,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the service setting to update.
+     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
+     * setting ID can be one of the following.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/default-parameter-tier</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/activation-tier</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param settingId
-     *        The ID of the service setting to update.
+     *        The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
+     *        . The setting ID can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/parameter-store/default-parameter-tier</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/parameter-store/high-throughput-enabled</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/activation-tier</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +236,56 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new value to specify for the service setting.
+     * The new value to specify for the service setting. For the
+     * <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     * following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Advanced
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Intelligent-Tiering
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
      * 
      * @param settingValue
-     *        The new value to specify for the service setting.
+     *        The new value to specify for the service setting. For the
+     *        <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     *        following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Standard
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Advanced
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Intelligent-Tiering
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     *        <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      */
 
     public void setSettingValue(String settingValue) {
@@ -96,10 +294,55 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new value to specify for the service setting.
+     * The new value to specify for the service setting. For the
+     * <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     * following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Advanced
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Intelligent-Tiering
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
      * 
-     * @return The new value to specify for the service setting.
+     * @return The new value to specify for the service setting. For the
+     *         <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     *         following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Standard
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Advanced
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Intelligent-Tiering
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     *         <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      */
 
     public String getSettingValue() {
@@ -108,11 +351,56 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new value to specify for the service setting.
+     * The new value to specify for the service setting. For the
+     * <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     * following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Standard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Advanced
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Intelligent-Tiering
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
      * 
      * @param settingValue
-     *        The new value to specify for the service setting.
+     *        The new value to specify for the service setting. For the
+     *        <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
+     *        following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Standard
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Advanced
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Intelligent-Tiering
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
+     *        <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

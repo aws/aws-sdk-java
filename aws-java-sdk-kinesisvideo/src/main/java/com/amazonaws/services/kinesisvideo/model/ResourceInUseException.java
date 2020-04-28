@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The stream is currently not available for this operation.
+ * The signaling channel is currently not available for this operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

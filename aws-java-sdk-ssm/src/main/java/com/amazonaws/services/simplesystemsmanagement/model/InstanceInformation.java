@@ -87,7 +87,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     * instances. This call does not return the IAM role for Amazon EC2 instances.
+     * instances. This call does not return the IAM role for EC2 instances.
      * </p>
      */
     private String iamRole;
@@ -603,12 +603,12 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     * instances. This call does not return the IAM role for Amazon EC2 instances.
+     * instances. This call does not return the IAM role for EC2 instances.
      * </p>
      * 
      * @param iamRole
      *        The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     *        instances. This call does not return the IAM role for Amazon EC2 instances.
+     *        instances. This call does not return the IAM role for EC2 instances.
      */
 
     public void setIamRole(String iamRole) {
@@ -618,11 +618,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     * instances. This call does not return the IAM role for Amazon EC2 instances.
+     * instances. This call does not return the IAM role for EC2 instances.
      * </p>
      * 
      * @return The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     *         instances. This call does not return the IAM role for Amazon EC2 instances.
+     *         instances. This call does not return the IAM role for EC2 instances.
      */
 
     public String getIamRole() {
@@ -632,12 +632,12 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     * instances. This call does not return the IAM role for Amazon EC2 instances.
+     * instances. This call does not return the IAM role for EC2 instances.
      * </p>
      * 
      * @param iamRole
      *        The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
-     *        instances. This call does not return the IAM role for Amazon EC2 instances.
+     *        instances. This call does not return the IAM role for EC2 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

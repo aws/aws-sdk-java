@@ -29,6 +29,10 @@ public class Fmp4HlsSettingsMarshaller {
 
     private static final MarshallingInfo<String> AUDIORENDITIONSETS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioRenditionSets").build();
+    private static final MarshallingInfo<String> NIELSENID3BEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenId3Behavior").build();
+    private static final MarshallingInfo<String> TIMEDMETADATABEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataBehavior").build();
 
     private static final Fmp4HlsSettingsMarshaller instance = new Fmp4HlsSettingsMarshaller();
 
@@ -47,6 +51,8 @@ public class Fmp4HlsSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(fmp4HlsSettings.getAudioRenditionSets(), AUDIORENDITIONSETS_BINDING);
+            protocolMarshaller.marshall(fmp4HlsSettings.getNielsenId3Behavior(), NIELSENID3BEHAVIOR_BINDING);
+            protocolMarshaller.marshall(fmp4HlsSettings.getTimedMetadataBehavior(), TIMEDMETADATABEHAVIOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

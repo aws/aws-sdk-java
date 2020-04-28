@@ -83,8 +83,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * The targets (either instances or tags) for the association. You must specify a value for <code>Targets</code> if
-     * you don't specify a value for <code>InstanceId</code>.
+     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
+     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -96,7 +100,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String scheduleExpression;
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the output details of the request.
+     * An S3 bucket where you want to store the output details of the request.
      * </p>
      */
     private InstanceAssociationOutputLocation outputLocation;
@@ -148,6 +152,23 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String complianceSeverity;
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     */
+    private String syncCompliance;
 
     /**
      * <p>
@@ -528,12 +549,20 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets (either instances or tags) for the association. You must specify a value for <code>Targets</code> if
-     * you don't specify a value for <code>InstanceId</code>.
+     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
+     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * 
-     * @return The targets (either instances or tags) for the association. You must specify a value for
-     *         <code>Targets</code> if you don't specify a value for <code>InstanceId</code>.
+     * @return The targets for the association. You can target instances by using tags, AWS Resource Groups, all
+     *         instances in an AWS account, or individual instance IDs. For more information about choosing targets for
+     *         an association, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     *         >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     *         Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -545,13 +574,21 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets (either instances or tags) for the association. You must specify a value for <code>Targets</code> if
-     * you don't specify a value for <code>InstanceId</code>.
+     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
+     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) for the association. You must specify a value for
-     *        <code>Targets</code> if you don't specify a value for <code>InstanceId</code>.
+     *        The targets for the association. You can target instances by using tags, AWS Resource Groups, all
+     *        instances in an AWS account, or individual instance IDs. For more information about choosing targets for
+     *        an association, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     *        >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     *        Guide</i>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -565,8 +602,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets (either instances or tags) for the association. You must specify a value for <code>Targets</code> if
-     * you don't specify a value for <code>InstanceId</code>.
+     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
+     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -575,8 +616,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) for the association. You must specify a value for
-     *        <code>Targets</code> if you don't specify a value for <code>InstanceId</code>.
+     *        The targets for the association. You can target instances by using tags, AWS Resource Groups, all
+     *        instances in an AWS account, or individual instance IDs. For more information about choosing targets for
+     *        an association, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     *        >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,13 +637,21 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The targets (either instances or tags) for the association. You must specify a value for <code>Targets</code> if
-     * you don't specify a value for <code>InstanceId</code>.
+     * The targets for the association. You can target instances by using tags, AWS Resource Groups, all instances in an
+     * AWS account, or individual instance IDs. For more information about choosing targets for an association, see <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     * >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) for the association. You must specify a value for
-     *        <code>Targets</code> if you don't specify a value for <code>InstanceId</code>.
+     *        The targets for the association. You can target instances by using tags, AWS Resource Groups, all
+     *        instances in an AWS account, or individual instance IDs. For more information about choosing targets for
+     *        an association, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
+     *        >Using targets and rate controls with State Manager associations</a> in the <i>AWS Systems Manager User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -649,11 +702,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the output details of the request.
+     * An S3 bucket where you want to store the output details of the request.
      * </p>
      * 
      * @param outputLocation
-     *        An Amazon S3 bucket where you want to store the output details of the request.
+     *        An S3 bucket where you want to store the output details of the request.
      */
 
     public void setOutputLocation(InstanceAssociationOutputLocation outputLocation) {
@@ -662,10 +715,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the output details of the request.
+     * An S3 bucket where you want to store the output details of the request.
      * </p>
      * 
-     * @return An Amazon S3 bucket where you want to store the output details of the request.
+     * @return An S3 bucket where you want to store the output details of the request.
      */
 
     public InstanceAssociationOutputLocation getOutputLocation() {
@@ -674,11 +727,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An Amazon S3 bucket where you want to store the output details of the request.
+     * An S3 bucket where you want to store the output details of the request.
      * </p>
      * 
      * @param outputLocation
-     *        An Amazon S3 bucket where you want to store the output details of the request.
+     *        An S3 bucket where you want to store the output details of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1009,6 +1062,153 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @param syncCompliance
+     *        The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *        In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *        compliance status. If the association execution runs successfully, then the association is
+     *        <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *        <code>NON-COMPLIANT</code>.</p>
+     *        <p>
+     *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        </p>
+     *        <p>
+     *        By default, all associations use <code>AUTO</code> mode.
+     * @see AssociationSyncCompliance
+     */
+
+    public void setSyncCompliance(String syncCompliance) {
+        this.syncCompliance = syncCompliance;
+    }
+
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @return The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *         In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *         compliance status. If the association execution runs successfully, then the association is
+     *         <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *         <code>NON-COMPLIANT</code>.</p>
+     *         <p>
+     *         In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *         <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It
+     *         is managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *         </p>
+     *         <p>
+     *         By default, all associations use <code>AUTO</code> mode.
+     * @see AssociationSyncCompliance
+     */
+
+    public String getSyncCompliance() {
+        return this.syncCompliance;
+    }
+
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @param syncCompliance
+     *        The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *        In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *        compliance status. If the association execution runs successfully, then the association is
+     *        <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *        <code>NON-COMPLIANT</code>.</p>
+     *        <p>
+     *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        </p>
+     *        <p>
+     *        By default, all associations use <code>AUTO</code> mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationSyncCompliance
+     */
+
+    public CreateAssociationRequest withSyncCompliance(String syncCompliance) {
+        setSyncCompliance(syncCompliance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In
+     * <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance
+     * status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the
+     * association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
+     * </p>
+     * <p>
+     * In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     * managed by your direct call to the <a>PutComplianceItems</a> API action.
+     * </p>
+     * <p>
+     * By default, all associations use <code>AUTO</code> mode.
+     * </p>
+     * 
+     * @param syncCompliance
+     *        The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>.
+     *        In <code>AUTO</code> mode, the system uses the status of the association execution to determine the
+     *        compliance status. If the association execution runs successfully, then the association is
+     *        <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is
+     *        <code>NON-COMPLIANT</code>.</p>
+     *        <p>
+     *        In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the
+     *        <a>PutComplianceItems</a> API action. In this case, compliance data is not managed by State Manager. It is
+     *        managed by your direct call to the <a>PutComplianceItems</a> API action.
+     *        </p>
+     *        <p>
+     *        By default, all associations use <code>AUTO</code> mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationSyncCompliance
+     */
+
+    public CreateAssociationRequest withSyncCompliance(AssociationSyncCompliance syncCompliance) {
+        this.syncCompliance = syncCompliance.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1043,7 +1243,9 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getMaxConcurrency() != null)
             sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getComplianceSeverity() != null)
-            sb.append("ComplianceSeverity: ").append(getComplianceSeverity());
+            sb.append("ComplianceSeverity: ").append(getComplianceSeverity()).append(",");
+        if (getSyncCompliance() != null)
+            sb.append("SyncCompliance: ").append(getSyncCompliance());
         sb.append("}");
         return sb.toString();
     }
@@ -1107,6 +1309,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getComplianceSeverity() != null && other.getComplianceSeverity().equals(this.getComplianceSeverity()) == false)
             return false;
+        if (other.getSyncCompliance() == null ^ this.getSyncCompliance() == null)
+            return false;
+        if (other.getSyncCompliance() != null && other.getSyncCompliance().equals(this.getSyncCompliance()) == false)
+            return false;
         return true;
     }
 
@@ -1127,6 +1333,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
+        hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
         return hashCode;
     }
 

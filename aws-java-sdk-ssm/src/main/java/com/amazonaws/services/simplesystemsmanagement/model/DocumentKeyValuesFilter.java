@@ -43,7 +43,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * results.
  * </p>
  * <p>
- * To specify a custom key and value pair, use the format <code>Key=tag:[tagName],Values=[valueName]</code>.
+ * To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
  * </p>
  * <p>
  * For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code>

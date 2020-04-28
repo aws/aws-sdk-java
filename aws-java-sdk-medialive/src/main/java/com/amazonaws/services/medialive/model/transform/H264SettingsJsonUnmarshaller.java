@@ -80,6 +80,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setEntropyEncoding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("filterSettings", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setFilterSettings(H264FilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("fixedAfd", targetDepth)) {
                     context.nextToken();
                     h264Settings.setFixedAfd(context.getUnmarshaller(String.class).unmarshall(context));
@@ -159,6 +163,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                 if (context.testExpression("profile", targetDepth)) {
                     context.nextToken();
                     h264Settings.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("qualityLevel", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setQualityLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("qvbrQualityLevel", targetDepth)) {
                     context.nextToken();

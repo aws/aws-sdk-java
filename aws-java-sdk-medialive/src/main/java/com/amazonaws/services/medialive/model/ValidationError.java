@@ -26,12 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationError implements Serializable, Cloneable, StructuredPojo {
 
+    /** Path to the source of the error. */
     private String elementPath;
-
+    /** The error message. */
     private String errorMessage;
 
     /**
+     * Path to the source of the error.
+     * 
      * @param elementPath
+     *        Path to the source of the error.
      */
 
     public void setElementPath(String elementPath) {
@@ -39,7 +43,9 @@ public class ValidationError implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * Path to the source of the error.
+     * 
+     * @return Path to the source of the error.
      */
 
     public String getElementPath() {
@@ -47,7 +53,10 @@ public class ValidationError implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Path to the source of the error.
+     * 
      * @param elementPath
+     *        Path to the source of the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -57,7 +66,10 @@ public class ValidationError implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * The error message.
+     * 
      * @param errorMessage
+     *        The error message.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -65,7 +77,9 @@ public class ValidationError implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * The error message.
+     * 
+     * @return The error message.
      */
 
     public String getErrorMessage() {
@@ -73,7 +87,10 @@ public class ValidationError implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * The error message.
+     * 
      * @param errorMessage
+     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

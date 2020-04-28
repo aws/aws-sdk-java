@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about resource quotas in Systems Manager, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service Quotas</a> in the
+ * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the
  * <i>AWS General Reference</i>.
  * </p>
  */

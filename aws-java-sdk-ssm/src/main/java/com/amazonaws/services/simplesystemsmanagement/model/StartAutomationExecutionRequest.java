@@ -104,8 +104,9 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use this
      * action to start an Automation in multiple Regions and multiple accounts. For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     * >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
@@ -747,15 +748,16 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use this
      * action to start an Automation in multiple Regions and multiple accounts. For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     * >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @return A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use
      *         this action to start an Automation in multiple Regions and multiple accounts. For more information, see
      *         <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     *         >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *         >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
      *         Guide</i>.
      */
 
@@ -770,16 +772,17 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use this
      * action to start an Automation in multiple Regions and multiple accounts. For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     * >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param targetLocations
      *        A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use
      *        this action to start an Automation in multiple Regions and multiple accounts. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     *        >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
      *        Guide</i>.
      */
 
@@ -796,8 +799,9 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use this
      * action to start an Automation in multiple Regions and multiple accounts. For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     * >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -809,8 +813,8 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      *        A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use
      *        this action to start an Automation in multiple Regions and multiple accounts. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     *        >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -829,16 +833,17 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use this
      * action to start an Automation in multiple Regions and multiple accounts. For more information, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     * >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User Guide</i>.
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     * >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
+     * Guide</i>.
      * </p>
      * 
      * @param targetLocations
      *        A location is a combination of AWS Regions and/or AWS accounts where you want to run the Automation. Use
      *        this action to start an Automation in multiple Regions and multiple accounts. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
-     *        >Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
+     *        >Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -26,8 +26,8 @@ public class LabelParameterVersionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The label does not meet the requirements. For information about parameter label requirements, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     * Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     * parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> invalidLabels;
@@ -41,13 +41,14 @@ public class LabelParameterVersionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The label does not meet the requirements. For information about parameter label requirements, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     * Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     * parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The label does not meet the requirements. For information about parameter label requirements, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     *         Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     *         parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.List<String> getInvalidLabels() {
@@ -60,14 +61,14 @@ public class LabelParameterVersionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The label does not meet the requirements. For information about parameter label requirements, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     * Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     * parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param invalidLabels
      *        The label does not meet the requirements. For information about parameter label requirements, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     *        Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     *        parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setInvalidLabels(java.util.Collection<String> invalidLabels) {
@@ -82,8 +83,8 @@ public class LabelParameterVersionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The label does not meet the requirements. For information about parameter label requirements, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     * Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     * parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -93,8 +94,8 @@ public class LabelParameterVersionResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @param invalidLabels
      *        The label does not meet the requirements. For information about parameter label requirements, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     *        Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     *        parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,14 +112,14 @@ public class LabelParameterVersionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The label does not meet the requirements. For information about parameter label requirements, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     * Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     * parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param invalidLabels
      *        The label does not meet the requirements. For information about parameter label requirements, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-     *        Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
+     *        parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
