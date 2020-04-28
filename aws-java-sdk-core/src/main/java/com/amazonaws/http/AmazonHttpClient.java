@@ -1212,7 +1212,7 @@ public class AmazonHttpClient {
             if (log.isTraceEnabled()) {
                 log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""), e);
             } else if (log.isDebugEnabled()) {
-                log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
+                log.debug(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
             }
             if (!willRetry) {
                 throw lastReset(sdkClientException);
