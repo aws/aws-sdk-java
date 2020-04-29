@@ -33,7 +33,8 @@ public class DeregisterInstanceRequest extends com.amazonaws.AmazonWebServiceReq
     private String serviceId;
     /**
      * <p>
-     * The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     * The value that you specified for <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.
      * </p>
      */
     private String instanceId;
@@ -80,11 +81,14 @@ public class DeregisterInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     * The value that you specified for <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.
      * </p>
      * 
      * @param instanceId
-     *        The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     *        The value that you specified for <code>Id</code> in the <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
+     *        request.
      */
 
     public void setInstanceId(String instanceId) {
@@ -93,10 +97,13 @@ public class DeregisterInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     * The value that you specified for <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.
      * </p>
      * 
-     * @return The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     * @return The value that you specified for <code>Id</code> in the <a
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
+     *         request.
      */
 
     public String getInstanceId() {
@@ -105,11 +112,14 @@ public class DeregisterInstanceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     * The value that you specified for <code>Id</code> in the <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.
      * </p>
      * 
      * @param instanceId
-     *        The value that you specified for <code>Id</code> in the <a>RegisterInstance</a> request.
+     *        The value that you specified for <code>Id</code> in the <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

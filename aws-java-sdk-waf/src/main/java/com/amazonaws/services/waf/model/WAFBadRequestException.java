@@ -15,7 +15,7 @@ package com.amazonaws.services.waf.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p/>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFBadRequestException extends com.amazonaws.services.waf.model.AWSWAFException {

@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In a response to a <a>DiscoverInstance</a> request, <code>HttpInstanceSummary</code> contains information about one
- * instance that matches the values that you specified in the request.
+ * In a response to a <a
+ * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a> request,
+ * <code>HttpInstanceSummary</code> contains information about one instance that matches the values that you specified
+ * in the request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HttpInstanceSummary"

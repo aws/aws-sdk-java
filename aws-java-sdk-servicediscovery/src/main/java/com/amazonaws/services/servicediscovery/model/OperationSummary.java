@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about an operation that matches the criteria that you specified in a
- * <a>ListOperations</a> request.
+ * A complex type that contains information about an operation that matches the criteria that you specified in a <a
+ * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/OperationSummary" target="_top">AWS

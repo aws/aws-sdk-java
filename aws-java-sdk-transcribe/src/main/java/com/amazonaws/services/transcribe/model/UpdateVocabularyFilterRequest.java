@@ -27,7 +27,8 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update.
+     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as a
+     * previous vocabulary filter you will receive a <code>ConflictException</code> error.
      * </p>
      */
     private String vocabularyFilterName;
@@ -63,11 +64,13 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update.
+     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as a
+     * previous vocabulary filter you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter to update.
+     *        The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name
+     *        as a previous vocabulary filter you will receive a <code>ConflictException</code> error.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -76,10 +79,12 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update.
+     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as a
+     * previous vocabulary filter you will receive a <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the vocabulary filter to update.
+     * @return The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name
+     *         as a previous vocabulary filter you will receive a <code>ConflictException</code> error.
      */
 
     public String getVocabularyFilterName() {
@@ -88,11 +93,13 @@ public class UpdateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the vocabulary filter to update.
+     * The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as a
+     * previous vocabulary filter you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the vocabulary filter to update.
+     *        The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name
+     *        as a previous vocabulary filter you will receive a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

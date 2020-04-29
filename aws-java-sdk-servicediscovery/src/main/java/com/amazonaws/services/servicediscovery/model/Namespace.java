@@ -48,8 +48,28 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     * The type of the namespace. The methods for discovering instances depends on the value that you specify:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
@@ -208,11 +228,51 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     * The type of the namespace. The methods for discovering instances depends on the value that you specify:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     *        The type of the namespace. The methods for discovering instances depends on the value that you
+     *        specify:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
      * @see NamespaceType
      */
 
@@ -222,10 +282,50 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     * The type of the namespace. The methods for discovering instances depends on the value that you specify:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     * @return The type of the namespace. The methods for discovering instances depends on the value that you
+     *         specify:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     *         <code>DiscoverInstances</code> API.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     *         <code>DiscoverInstances</code> API.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     *         <code>DiscoverInstances</code> API.
+     *         </p>
+     *         </li>
      * @see NamespaceType
      */
 
@@ -235,11 +335,51 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     * The type of the namespace. The methods for discovering instances depends on the value that you specify:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     *        The type of the namespace. The methods for discovering instances depends on the value that you
+     *        specify:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NamespaceType
      */
@@ -251,11 +391,51 @@ public class Namespace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     * The type of the namespace. The methods for discovering instances depends on the value that you specify:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     * <code>DiscoverInstances</code> API.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the namespace. Valid values are <code>DNS_PUBLIC</code> and <code>DNS_PRIVATE</code>.
+     *        The type of the namespace. The methods for discovering instances depends on the value that you
+     *        specify:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>HTTP</code>: Instances can be discovered only programmatically, using the AWS Cloud Map
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_PUBLIC</code>: Instances can be discovered using public DNS queries and using the
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DNS_PRIVATE</code>: Instances can be discovered using DNS queries in VPCs and using the
+     *        <code>DiscoverInstances</code> API.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NamespaceType
      */

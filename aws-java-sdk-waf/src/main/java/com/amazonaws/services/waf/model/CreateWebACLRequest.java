@@ -54,7 +54,7 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String changeToken;
-
+    /** <p/> */
     private java.util.List<Tag> tags;
 
     /**
@@ -248,6 +248,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -256,6 +258,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p/>
+     * 
      * @param tags
      */
 
@@ -269,6 +273,7 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -290,6 +295,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p/>
+     * 
      * @param tags
      * @return Returns a reference to this object so that method calls can be chained together.
      */

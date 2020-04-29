@@ -184,6 +184,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWebACLMigrationStackResult> createWebACLMigrationStackAsync(CreateWebACLMigrationStackRequest request) {
+
+        return createWebACLMigrationStackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebACLMigrationStackResult> createWebACLMigrationStackAsync(CreateWebACLMigrationStackRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWebACLMigrationStackRequest, CreateWebACLMigrationStackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(CreateXssMatchSetRequest request) {
 
         return createXssMatchSetAsync(request, null);

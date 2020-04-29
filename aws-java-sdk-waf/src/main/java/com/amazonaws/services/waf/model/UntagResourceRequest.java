@@ -25,11 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** <p/> */
     private String resourceARN;
-
+    /** <p/> */
     private java.util.List<String> tagKeys;
 
     /**
+     * <p/>
+     * 
      * @param resourceARN
      */
 
@@ -38,6 +41,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -46,6 +51,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p/>
+     * 
      * @param resourceARN
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -56,6 +63,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -64,6 +73,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p/>
+     * 
      * @param tagKeys
      */
 
@@ -77,6 +88,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
@@ -98,6 +110,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p/>
+     * 
      * @param tagKeys
      * @return Returns a reference to this object so that method calls can be chained together.
      */

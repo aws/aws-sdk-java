@@ -25,19 +25,44 @@ import com.amazonaws.services.waf.model.*;
  * {@link com.amazonaws.services.waf.AbstractAWSWAFAsync} instead.
  * </p>
  * <p>
+ * <note>
  * <p>
- * This is the <i>AWS WAF API Reference</i> for using AWS WAF with Amazon CloudFront. The AWS WAF actions and data types
- * listed in the reference are available for protecting Amazon CloudFront distributions. You can use these actions and
- * data types via the endpoint <i>waf.amazonaws.com</i>. This guide is for developers who need detailed information
- * about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an
- * overview of how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
- * WAF Developer Guide</a>.
+ * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+ * developer guide.
+ * </p>
+ * <p>
+ * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the
+ * latest version, AWS WAF has a single set of endpoints for regional and global use.
+ * </p>
+ * </note>
+ * <p>
+ * This is the <i>AWS WAF Classic API Reference</i> for using AWS WAF Classic with Amazon CloudFront. The AWS WAF
+ * Classic actions and data types listed in the reference are available for protecting Amazon CloudFront distributions.
+ * You can use these actions and data types via the endpoint <i>waf.amazonaws.com</i>. This guide is for developers who
+ * need detailed information about the AWS WAF Classic API actions, data types, and errors. For detailed information
+ * about AWS WAF Classic features and an overview of how to use the AWS WAF Classic API, see the <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+ * developer guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSWAFAsync extends AWSWAF {
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>ByteMatchSet</code>. You then use <a>UpdateByteMatchSet</a> to identify the part of a web request
      * that you want AWS WAF to inspect, such as the values of the <code>User-Agent</code> header or the query string.
@@ -86,6 +111,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateByteMatchSetResult> createByteMatchSetAsync(CreateByteMatchSetRequest createByteMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>ByteMatchSet</code>. You then use <a>UpdateByteMatchSet</a> to identify the part of a web request
      * that you want AWS WAF to inspect, such as the values of the <code>User-Agent</code> header or the query string.
@@ -139,6 +176,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateByteMatchSetRequest, CreateByteMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates an <a>GeoMatchSet</a>, which you use to specify which web requests you want to allow or block based on
      * the country that the requests originate from. For example, if you're receiving a lot of requests from one or more
@@ -186,6 +235,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateGeoMatchSetResult> createGeoMatchSetAsync(CreateGeoMatchSetRequest createGeoMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates an <a>GeoMatchSet</a>, which you use to specify which web requests you want to allow or block based on
      * the country that the requests originate from. For example, if you're receiving a lot of requests from one or more
@@ -238,6 +299,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateGeoMatchSetRequest, CreateGeoMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
      * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
@@ -285,6 +358,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest createIPSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
      * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
@@ -337,6 +422,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a <code>RateLimit</code>, which specifies
      * the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period. The
@@ -346,8 +443,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * If you add more than one predicate to a <code>RateBasedRule</code>, a request not only must exceed the
-     * <code>RateLimit</code>, but it also must match all the specifications to be counted or blocked. For example,
-     * suppose you add the following to a <code>RateBasedRule</code>:
+     * <code>RateLimit</code>, but it also must match all the conditions to be counted or blocked. For example, suppose
+     * you add the following to a <code>RateBasedRule</code>:
      * </p>
      * <ul>
      * <li>
@@ -362,15 +459,15 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
      * that meet the conditions in the rule. For a request to be blocked, it must come from the IP address 192.0.2.44
      * <i>and</i> the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further,
-     * requests that match these two conditions must be received at a rate of more than 15,000 requests every five
+     * requests that match these two conditions must be received at a rate of more than 1,000 requests every five
      * minutes. If both conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the rate drops
-     * below 15,000 for a five-minute period, AWS WAF no longer blocks the requests.
+     * below 1,000 for a five-minute period, AWS WAF no longer blocks the requests.
      * </p>
      * <p>
      * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
@@ -394,7 +491,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
@@ -454,6 +551,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest createRateBasedRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a <code>RateLimit</code>, which specifies
      * the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period. The
@@ -463,8 +572,8 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * If you add more than one predicate to a <code>RateBasedRule</code>, a request not only must exceed the
-     * <code>RateLimit</code>, but it also must match all the specifications to be counted or blocked. For example,
-     * suppose you add the following to a <code>RateBasedRule</code>:
+     * <code>RateLimit</code>, but it also must match all the conditions to be counted or blocked. For example, suppose
+     * you add the following to a <code>RateBasedRule</code>:
      * </p>
      * <ul>
      * <li>
@@ -479,15 +588,15 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
      * that meet the conditions in the rule. For a request to be blocked, it must come from the IP address 192.0.2.44
      * <i>and</i> the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further,
-     * requests that match these two conditions must be received at a rate of more than 15,000 requests every five
+     * requests that match these two conditions must be received at a rate of more than 1,000 requests every five
      * minutes. If both conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the rate drops
-     * below 15,000 for a five-minute period, AWS WAF no longer blocks the requests.
+     * below 1,000 for a five-minute period, AWS WAF no longer blocks the requests.
      * </p>
      * <p>
      * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
@@ -511,7 +620,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
@@ -576,6 +685,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateRateBasedRuleRequest, CreateRateBasedRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the part of a web request
      * that you want AWS WAF to inspect, such as the values of the <code>User-Agent</code> header or the query string.
@@ -626,6 +747,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateRegexMatchSetResult> createRegexMatchSetAsync(CreateRegexMatchSetRequest createRegexMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the part of a web request
      * that you want AWS WAF to inspect, such as the values of the <code>User-Agent</code> header or the query string.
@@ -681,6 +814,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateRegexMatchSetRequest, CreateRegexMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to specify the regular
      * expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then
@@ -727,6 +872,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateRegexPatternSetResult> createRegexPatternSetAsync(CreateRegexPatternSetRequest createRegexPatternSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to specify the regular
      * expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then
@@ -778,6 +935,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateRegexPatternSetRequest, CreateRegexPatternSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
@@ -855,6 +1024,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest createRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
@@ -937,6 +1118,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateRuleRequest, CreateRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>RuleGroup</code>. A rule group is a collection of predefined rules that you add to a web ACL. You
      * use <a>UpdateRuleGroup</a> to add rules to the rule group.
@@ -975,6 +1168,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest createRuleGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>RuleGroup</code>. A rule group is a collection of predefined rules that you add to a web ACL. You
      * use <a>UpdateRuleGroup</a> to add rules to the rule group.
@@ -1018,6 +1223,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateRuleGroupRequest, CreateRuleGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to identify the part of a
      * web request that you want AWS WAF to check for length, such as the length of the <code>User-Agent</code> header
@@ -1067,6 +1284,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(CreateSizeConstraintSetRequest createSizeConstraintSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to identify the part of a
      * web request that you want AWS WAF to check for length, such as the length of the <code>User-Agent</code> header
@@ -1121,6 +1350,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <a>SqlInjectionMatchSet</a>, which you use to allow, block, or count requests that contain snippets of
      * SQL code in a specified part of web requests. AWS WAF searches for character sequences that are likely to be
@@ -1170,6 +1411,18 @@ public interface AWSWAFAsync extends AWSWAF {
             CreateSqlInjectionMatchSetRequest createSqlInjectionMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <a>SqlInjectionMatchSet</a>, which you use to allow, block, or count requests that contain snippets of
      * SQL code in a specified part of web requests. AWS WAF searches for character sequences that are likely to be
@@ -1224,6 +1477,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateSqlInjectionMatchSetRequest, CreateSqlInjectionMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>WebACL</code>, which contains the <code>Rules</code> that identify the CloudFront web requests
      * that you want to allow, block, or count. AWS WAF evaluates <code>Rules</code> in order based on the value of
@@ -1290,6 +1555,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(CreateWebACLRequest createWebACLRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates a <code>WebACL</code>, which contains the <code>Rules</code> that identify the CloudFront web requests
      * that you want to allow, block, or count. AWS WAF evaluates <code>Rules</code> in order based on the value of
@@ -1362,6 +1639,71 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the specified Amazon S3 bucket. Then,
+     * in CloudFormation, you create a stack from the template, to create the web ACL and its resources in AWS WAFV2.
+     * Use this to migrate your AWS WAF Classic web ACL to the latest version of AWS WAF.
+     * </p>
+     * <p>
+     * This is part of a larger migration procedure for web ACLs from AWS WAF Classic to the latest version of AWS WAF.
+     * For the full procedure, including caveats and manual steps to complete the migration and switch over to the new
+     * web ACL, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-migrating-from-classic.html">Migrating your AWS
+     * WAF Classic resources to AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createWebACLMigrationStackRequest
+     * @return A Java Future containing the result of the CreateWebACLMigrationStack operation returned by the service.
+     * @sample AWSWAFAsync.CreateWebACLMigrationStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACLMigrationStack" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWebACLMigrationStackResult> createWebACLMigrationStackAsync(
+            CreateWebACLMigrationStackRequest createWebACLMigrationStackRequest);
+
+    /**
+     * <p>
+     * Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the specified Amazon S3 bucket. Then,
+     * in CloudFormation, you create a stack from the template, to create the web ACL and its resources in AWS WAFV2.
+     * Use this to migrate your AWS WAF Classic web ACL to the latest version of AWS WAF.
+     * </p>
+     * <p>
+     * This is part of a larger migration procedure for web ACLs from AWS WAF Classic to the latest version of AWS WAF.
+     * For the full procedure, including caveats and manual steps to complete the migration and switch over to the new
+     * web ACL, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-migrating-from-classic.html">Migrating your AWS
+     * WAF Classic resources to AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createWebACLMigrationStackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWebACLMigrationStack operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateWebACLMigrationStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACLMigrationStack" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWebACLMigrationStackResult> createWebACLMigrationStackAsync(
+            CreateWebACLMigrationStackRequest createWebACLMigrationStackRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWebACLMigrationStackRequest, CreateWebACLMigrationStackResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
      * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count requests that contain cross-site scripting
      * attacks in the specified part of web requests. AWS WAF searches for character sequences that are likely to be
      * malicious strings.
@@ -1409,6 +1751,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(CreateXssMatchSetRequest createXssMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count requests that contain cross-site scripting
      * attacks in the specified part of web requests. AWS WAF searches for character sequences that are likely to be
@@ -1462,6 +1816,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>ByteMatchSet</a>. You can't delete a <code>ByteMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any <a>ByteMatchTuple</a> objects (any filters).
@@ -1501,6 +1867,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteByteMatchSetResult> deleteByteMatchSetAsync(DeleteByteMatchSetRequest deleteByteMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>ByteMatchSet</a>. You can't delete a <code>ByteMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any <a>ByteMatchTuple</a> objects (any filters).
@@ -1545,6 +1923,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteByteMatchSetRequest, DeleteByteMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any countries.
@@ -1583,6 +1973,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteGeoMatchSetResult> deleteGeoMatchSetAsync(DeleteGeoMatchSetRequest deleteGeoMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any countries.
@@ -1626,6 +2028,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteGeoMatchSetRequest, DeleteGeoMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes an <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any IP addresses.
@@ -1664,6 +2078,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest deleteIPSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes an <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any IP addresses.
@@ -1707,6 +2133,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
      * </p>
@@ -1721,6 +2159,18 @@ public interface AWSWAFAsync extends AWSWAF {
             DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
      * </p>
@@ -1740,6 +2190,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes an IAM policy from the specified RuleGroup.
      * </p>
@@ -1756,6 +2218,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest deletePermissionPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes an IAM policy from the specified RuleGroup.
      * </p>
@@ -1777,6 +2251,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
      * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
@@ -1816,6 +2302,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest deleteRateBasedRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
      * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
@@ -1860,6 +2358,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteRateBasedRuleRequest, DeleteRateBasedRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's still used in
      * any <code>Rules</code> or if it still includes any <code>RegexMatchTuples</code> objects (any filters).
@@ -1899,6 +2409,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteRegexMatchSetResult> deleteRegexMatchSetAsync(DeleteRegexMatchSetRequest deleteRegexMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's still used in
      * any <code>Rules</code> or if it still includes any <code>RegexMatchTuples</code> objects (any filters).
@@ -1943,6 +2465,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteRegexMatchSetRequest, DeleteRegexMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's still used
      * in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
@@ -1957,6 +2491,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteRegexPatternSetResult> deleteRegexPatternSetAsync(DeleteRegexPatternSetRequest deleteRegexPatternSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's still used
      * in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
@@ -1976,6 +2522,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteRegexPatternSetRequest, DeleteRegexPatternSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>Rule</a>. You can't delete a <code>Rule</code> if it's still used in any
      * <code>WebACL</code> objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
@@ -2014,6 +2572,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>Rule</a>. You can't delete a <code>Rule</code> if it's still used in any
      * <code>WebACL</code> objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
@@ -2057,6 +2627,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used in any
      * <code>WebACL</code> objects or if it still includes any rules.
@@ -2095,6 +2677,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest deleteRuleGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used in any
      * <code>WebACL</code> objects or if it still includes any rules.
@@ -2138,6 +2732,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupRequest, DeleteRuleGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if it's still
      * used in any <code>Rules</code> or if it still includes any <a>SizeConstraint</a> objects (any filters).
@@ -2177,6 +2783,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if it's still
      * used in any <code>Rules</code> or if it still includes any <a>SizeConstraint</a> objects (any filters).
@@ -2221,6 +2839,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>SqlInjectionMatchSet</a>. You can't delete a <code>SqlInjectionMatchSet</code> if it's
      * still used in any <code>Rules</code> or if it still contains any <a>SqlInjectionMatchTuple</a> objects.
@@ -2262,6 +2892,18 @@ public interface AWSWAFAsync extends AWSWAF {
             DeleteSqlInjectionMatchSetRequest deleteSqlInjectionMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>SqlInjectionMatchSet</a>. You can't delete a <code>SqlInjectionMatchSet</code> if it's
      * still used in any <code>Rules</code> or if it still contains any <a>SqlInjectionMatchTuple</a> objects.
@@ -2308,6 +2950,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteSqlInjectionMatchSetRequest, DeleteSqlInjectionMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>WebACL</a>. You can't delete a <code>WebACL</code> if it still contains any
      * <code>Rules</code>.
@@ -2344,6 +2998,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(DeleteWebACLRequest deleteWebACLRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes a <a>WebACL</a>. You can't delete a <code>WebACL</code> if it still contains any
      * <code>Rules</code>.
@@ -2385,6 +3051,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes an <a>XssMatchSet</a>. You can't delete an <code>XssMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still contains any <a>XssMatchTuple</a> objects.
@@ -2425,6 +3103,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(DeleteXssMatchSetRequest deleteXssMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Permanently deletes an <a>XssMatchSet</a>. You can't delete an <code>XssMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still contains any <a>XssMatchTuple</a> objects.
@@ -2470,6 +3160,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.
      * </p>
@@ -2483,6 +3185,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetByteMatchSetResult> getByteMatchSetAsync(GetByteMatchSetRequest getByteMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>ByteMatchSet</a> specified by <code>ByteMatchSetId</code>.
      * </p>
@@ -2501,6 +3215,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetByteMatchSetRequest, GetByteMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * When you want to create, update, or delete AWS WAF objects, get a change token and include the change token in
      * the create, update, or delete request. Change tokens ensure that your application doesn't submit conflicting
@@ -2527,6 +3253,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetChangeTokenResult> getChangeTokenAsync(GetChangeTokenRequest getChangeTokenRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * When you want to create, update, or delete AWS WAF objects, get a change token and include the change token in
      * the create, update, or delete request. Change tokens ensure that your application doesn't submit conflicting
@@ -2558,6 +3296,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetChangeTokenRequest, GetChangeTokenResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
      * <code>ChangeTokenStatus</code> is one of the following values:
@@ -2590,6 +3340,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetChangeTokenStatusResult> getChangeTokenStatusAsync(GetChangeTokenStatusRequest getChangeTokenStatusRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
      * <code>ChangeTokenStatus</code> is one of the following values:
@@ -2627,6 +3389,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetChangeTokenStatusRequest, GetChangeTokenStatusResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>GeoMatchSet</a> that is specified by <code>GeoMatchSetId</code>.
      * </p>
@@ -2640,6 +3414,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetGeoMatchSetResult> getGeoMatchSetAsync(GetGeoMatchSetRequest getGeoMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>GeoMatchSet</a> that is specified by <code>GeoMatchSetId</code>.
      * </p>
@@ -2658,6 +3444,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetGeoMatchSetRequest, GetGeoMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.
      * </p>
@@ -2671,6 +3469,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest getIPSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.
      * </p>
@@ -2689,6 +3499,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
      * </p>
@@ -2702,6 +3524,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
      * </p>
@@ -2720,6 +3554,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the IAM policy attached to the RuleGroup.
      * </p>
@@ -2733,6 +3579,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest getPermissionPolicyRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the IAM policy attached to the RuleGroup.
      * </p>
@@ -2751,6 +3609,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRateBasedRule</code> request.
@@ -2765,6 +3635,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest getRateBasedRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRateBasedRule</code> request.
@@ -2784,6 +3666,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleRequest, GetRateBasedRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of IP addresses currently being blocked by the <a>RateBasedRule</a> that is specified by the
      * <code>RuleId</code>. The maximum number of managed keys that will be blocked is 10,000. If more than 10,000
@@ -2800,6 +3694,18 @@ public interface AWSWAFAsync extends AWSWAF {
             GetRateBasedRuleManagedKeysRequest getRateBasedRuleManagedKeysRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of IP addresses currently being blocked by the <a>RateBasedRule</a> that is specified by the
      * <code>RuleId</code>. The maximum number of managed keys that will be blocked is 10,000. If more than 10,000
@@ -2821,6 +3727,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleManagedKeysRequest, GetRateBasedRuleManagedKeysResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.
      * </p>
@@ -2834,6 +3752,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetRegexMatchSetResult> getRegexMatchSetAsync(GetRegexMatchSetRequest getRegexMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.
      * </p>
@@ -2852,6 +3782,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetRegexMatchSetRequest, GetRegexMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RegexPatternSet</a> specified by <code>RegexPatternSetId</code>.
      * </p>
@@ -2865,6 +3807,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetRegexPatternSetResult> getRegexPatternSetAsync(GetRegexPatternSetRequest getRegexPatternSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RegexPatternSet</a> specified by <code>RegexPatternSetId</code>.
      * </p>
@@ -2883,6 +3837,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetRegexPatternSetRequest, GetRegexPatternSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRule</code> request.
@@ -2897,6 +3863,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetRuleResult> getRuleAsync(GetRuleRequest getRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRule</code> request.
@@ -2916,6 +3894,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetRuleRequest, GetRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you included in the
      * <code>GetRuleGroup</code> request.
@@ -2933,6 +3923,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest getRuleGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you included in the
      * <code>GetRuleGroup</code> request.
@@ -2955,6 +3957,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetRuleGroupRequest, GetRuleGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
@@ -2976,6 +3990,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(GetSampledRequestsRequest getSampledRequestsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
@@ -3002,6 +4028,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetSampledRequestsRequest, GetSampledRequestsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>SizeConstraintSet</a> specified by <code>SizeConstraintSetId</code>.
      * </p>
@@ -3015,6 +4053,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(GetSizeConstraintSetRequest getSizeConstraintSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>SizeConstraintSet</a> specified by <code>SizeConstraintSetId</code>.
      * </p>
@@ -3033,6 +4083,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>SqlInjectionMatchSet</a> that is specified by <code>SqlInjectionMatchSetId</code>.
      * </p>
@@ -3047,6 +4109,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetSqlInjectionMatchSetResult> getSqlInjectionMatchSetAsync(GetSqlInjectionMatchSetRequest getSqlInjectionMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>SqlInjectionMatchSet</a> that is specified by <code>SqlInjectionMatchSetId</code>.
      * </p>
@@ -3066,6 +4140,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetSqlInjectionMatchSetRequest, GetSqlInjectionMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>WebACL</a> that is specified by <code>WebACLId</code>.
      * </p>
@@ -3079,6 +4165,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(GetWebACLRequest getWebACLRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>WebACL</a> that is specified by <code>WebACLId</code>.
      * </p>
@@ -3097,6 +4195,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetWebACLRequest, GetWebACLResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>XssMatchSet</a> that is specified by <code>XssMatchSetId</code>.
      * </p>
@@ -3111,6 +4221,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(GetXssMatchSetRequest getXssMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns the <a>XssMatchSet</a> that is specified by <code>XssMatchSetId</code>.
      * </p>
@@ -3130,6 +4252,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>ActivatedRule</a> objects.
      * </p>
@@ -3145,6 +4279,18 @@ public interface AWSWAFAsync extends AWSWAF {
             ListActivatedRulesInRuleGroupRequest listActivatedRulesInRuleGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>ActivatedRule</a> objects.
      * </p>
@@ -3165,6 +4311,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListActivatedRulesInRuleGroupRequest, ListActivatedRulesInRuleGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>ByteMatchSetSummary</a> objects.
      * </p>
@@ -3178,6 +4336,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListByteMatchSetsResult> listByteMatchSetsAsync(ListByteMatchSetsRequest listByteMatchSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>ByteMatchSetSummary</a> objects.
      * </p>
@@ -3196,6 +4366,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListByteMatchSetsRequest, ListByteMatchSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>GeoMatchSetSummary</a> objects in the response.
      * </p>
@@ -3209,6 +4391,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListGeoMatchSetsResult> listGeoMatchSetsAsync(ListGeoMatchSetsRequest listGeoMatchSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>GeoMatchSetSummary</a> objects in the response.
      * </p>
@@ -3227,6 +4421,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListGeoMatchSetsRequest, ListGeoMatchSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>IPSetSummary</a> objects in the response.
      * </p>
@@ -3240,6 +4446,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>IPSetSummary</a> objects in the response.
      * </p>
@@ -3258,6 +4476,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>LoggingConfiguration</a> objects.
      * </p>
@@ -3272,6 +4502,18 @@ public interface AWSWAFAsync extends AWSWAF {
             ListLoggingConfigurationsRequest listLoggingConfigurationsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>LoggingConfiguration</a> objects.
      * </p>
@@ -3291,6 +4533,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListLoggingConfigurationsRequest, ListLoggingConfigurationsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
@@ -3304,6 +4558,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest listRateBasedRulesRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
@@ -3322,6 +4588,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListRateBasedRulesRequest, ListRateBasedRulesResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RegexMatchSetSummary</a> objects.
      * </p>
@@ -3335,6 +4613,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListRegexMatchSetsResult> listRegexMatchSetsAsync(ListRegexMatchSetsRequest listRegexMatchSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RegexMatchSetSummary</a> objects.
      * </p>
@@ -3353,6 +4643,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListRegexMatchSetsRequest, ListRegexMatchSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RegexPatternSetSummary</a> objects.
      * </p>
@@ -3366,6 +4668,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListRegexPatternSetsResult> listRegexPatternSetsAsync(ListRegexPatternSetsRequest listRegexPatternSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RegexPatternSetSummary</a> objects.
      * </p>
@@ -3384,6 +4698,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListRegexPatternSetsRequest, ListRegexPatternSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleGroup</a> objects.
      * </p>
@@ -3397,6 +4723,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest listRuleGroupsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleGroup</a> objects.
      * </p>
@@ -3415,6 +4753,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListRuleGroupsRequest, ListRuleGroupsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
@@ -3428,6 +4778,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
@@ -3446,6 +4808,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>SizeConstraintSetSummary</a> objects.
      * </p>
@@ -3459,6 +4833,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(ListSizeConstraintSetsRequest listSizeConstraintSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>SizeConstraintSetSummary</a> objects.
      * </p>
@@ -3477,6 +4863,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>SqlInjectionMatchSet</a> objects.
      * </p>
@@ -3492,6 +4890,18 @@ public interface AWSWAFAsync extends AWSWAF {
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>SqlInjectionMatchSet</a> objects.
      * </p>
@@ -3512,6 +4922,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListSqlInjectionMatchSetsRequest, ListSqlInjectionMatchSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleGroup</a> objects that you are subscribed to.
      * </p>
@@ -3525,6 +4947,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest listSubscribedRuleGroupsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>RuleGroup</a> objects that you are subscribed to.
      * </p>
@@ -3543,6 +4977,30 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListSubscribedRuleGroupsRequest, ListSubscribedRuleGroupsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves the tags associated with the specified AWS resource. Tags are key:value pairs that you can use to
+     * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
+     * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS
+     * resource, up to 50 tags for a resource.
+     * </p>
+     * <p>
+     * Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF
+     * Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups,
+     * and rules.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSWAFAsync.ListTagsForResource
@@ -3552,6 +5010,30 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves the tags associated with the specified AWS resource. Tags are key:value pairs that you can use to
+     * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
+     * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS
+     * resource, up to 50 tags for a resource.
+     * </p>
+     * <p>
+     * Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF
+     * Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups,
+     * and rules.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -3566,6 +5048,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>WebACLSummary</a> objects in the response.
      * </p>
@@ -3579,6 +5073,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(ListWebACLsRequest listWebACLsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>WebACLSummary</a> objects in the response.
      * </p>
@@ -3597,6 +5103,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>XssMatchSet</a> objects.
      * </p>
@@ -3611,6 +5129,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(ListXssMatchSetsRequest listXssMatchSetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Returns an array of <a>XssMatchSet</a> objects.
      * </p>
@@ -3630,6 +5160,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
      * </p>
@@ -3672,6 +5214,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
      * </p>
@@ -3719,8 +5273,20 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<PutLoggingConfigurationRequest, PutLoggingConfigurationResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
+     * Attaches an IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
      * across accounts.
      * </p>
      * <p>
@@ -3787,8 +5353,20 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest putPermissionPolicyRequest);
 
     /**
+     * <note>
      * <p>
-     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
+     * Attaches an IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
      * across accounts.
      * </p>
      * <p>
@@ -3860,6 +5438,30 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
+     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
+     * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
+     * value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for
+     * a resource.
+     * </p>
+     * <p>
+     * Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF
+     * Classic console. You can use this action to tag the AWS resources that you manage through AWS WAF Classic: web
+     * ACLs, rule groups, and rules.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AWSWAFAsync.TagResource
@@ -3869,6 +5471,30 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p>
+     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
+     * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
+     * value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for
+     * a resource.
+     * </p>
+     * <p>
+     * Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF
+     * Classic console. You can use this action to tag the AWS resources that you manage through AWS WAF Classic: web
+     * ACLs, rule groups, and rules.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -3883,6 +5509,20 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p/>
+     * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AWSWAFAsync.UntagResource
@@ -3892,6 +5532,20 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
+     * <p/>
+     * 
      * @param untagResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -3906,6 +5560,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>. For each
      * <code>ByteMatchTuple</code> object, you specify the following values:
@@ -3983,6 +5649,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(UpdateByteMatchSetRequest updateByteMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>. For each
      * <code>ByteMatchTuple</code> object, you specify the following values:
@@ -4065,6 +5743,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateByteMatchSetRequest, UpdateByteMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
      * <code>GeoMatchConstraint</code> object, you specify the following values:
@@ -4127,6 +5817,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateGeoMatchSetResult> updateGeoMatchSetAsync(UpdateGeoMatchSetRequest updateGeoMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
      * <code>GeoMatchConstraint</code> object, you specify the following values:
@@ -4194,6 +5896,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateGeoMatchSetRequest, UpdateGeoMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each <code>IPSetDescriptor</code>
      * object, you specify the following values:
@@ -4297,6 +6011,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each <code>IPSetDescriptor</code>
      * object, you specify the following values:
@@ -4405,6 +6131,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the rule.
      * </p>
@@ -4431,13 +6169,13 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
      * that satisfy the rule. For a request to be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
      * <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further, requests that
-     * match these two conditions much be received at a rate of more than 15,000 every five minutes. If the rate drops
+     * match these two conditions much be received at a rate of more than 1,000 every five minutes. If the rate drops
      * below this limit, AWS WAF no longer blocks the requests.
      * </p>
      * <p>
@@ -4462,7 +6200,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
@@ -4478,6 +6216,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest updateRateBasedRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the rule.
      * </p>
@@ -4504,13 +6254,13 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
      * that satisfy the rule. For a request to be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
      * <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further, requests that
-     * match these two conditions much be received at a rate of more than 15,000 every five minutes. If the rate drops
+     * match these two conditions much be received at a rate of more than 1,000 every five minutes. If the rate drops
      * below this limit, AWS WAF no longer blocks the requests.
      * </p>
      * <p>
@@ -4535,7 +6285,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * Further, you specify a <code>RateLimit</code> of 1,000.
      * </p>
      * <p>
      * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
@@ -4556,6 +6306,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateRateBasedRuleRequest, UpdateRateBasedRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
      * <code>RegexMatchSetUpdate</code> object, you specify the following values:
@@ -4628,6 +6390,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateRegexMatchSetResult> updateRegexMatchSetAsync(UpdateRegexMatchSetRequest updateRegexMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
      * <code>RegexMatchSetUpdate</code> object, you specify the following values:
@@ -4705,6 +6479,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateRegexMatchSetRequest, UpdateRegexMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
      * <code>RegexPatternString</code> object, you specify the following values:
@@ -4784,6 +6570,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateRegexPatternSetResult> updateRegexPatternSetAsync(UpdateRegexPatternSetRequest updateRegexPatternSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
      * <code>RegexPatternString</code> object, you specify the following values:
@@ -4868,6 +6666,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateRegexPatternSetRequest, UpdateRegexPatternSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
@@ -4941,6 +6751,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest updateRuleRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
@@ -5019,6 +6841,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
      * </p>
@@ -5072,6 +6906,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest updateRuleGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
      * </p>
@@ -5130,6 +6976,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateRuleGroupRequest, UpdateRuleGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>. For each
      * <code>SizeConstraint</code> object, you specify the following values:
@@ -5211,6 +7069,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>. For each
      * <code>SizeConstraint</code> object, you specify the following values:
@@ -5297,6 +7167,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>. For each
      * <code>SqlInjectionMatchTuple</code> object, you specify the following values:
@@ -5368,6 +7250,18 @@ public interface AWSWAFAsync extends AWSWAF {
             UpdateSqlInjectionMatchSetRequest updateSqlInjectionMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>. For each
      * <code>SqlInjectionMatchTuple</code> object, you specify the following values:
@@ -5444,6 +7338,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateSqlInjectionMatchSetRequest, UpdateSqlInjectionMatchSetResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>ActivatedRule</a> objects in a <code>WebACL</code>. Each <code>Rule</code> identifies web
      * requests that you want to allow, block, or count. When you update a <code>WebACL</code>, you specify the
@@ -5517,12 +7423,12 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
-     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * <code>ActivatedRule</code> , you can exclude specific rules from that rule group.
      * </p>
      * <p>
      * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
      * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
-     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a> .
      * </p>
      * </li>
      * </ol>
@@ -5545,6 +7451,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(UpdateWebACLRequest updateWebACLRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>ActivatedRule</a> objects in a <code>WebACL</code>. Each <code>Rule</code> identifies web
      * requests that you want to allow, block, or count. When you update a <code>WebACL</code>, you specify the
@@ -5618,12 +7536,12 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * <p>
      * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
-     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * <code>ActivatedRule</code> , you can exclude specific rules from that rule group.
      * </p>
      * <p>
      * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
      * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
-     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a> .
      * </p>
      * </li>
      * </ol>
@@ -5651,6 +7569,18 @@ public interface AWSWAFAsync extends AWSWAF {
             com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>. For each
      * <code>XssMatchTuple</code> object, you specify the following values:
@@ -5721,6 +7651,18 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(UpdateXssMatchSetRequest updateXssMatchSetRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is <b>AWS WAF Classic</b> documentation. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the
+     * developer guide.
+     * </p>
+     * <p>
+     * <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With
+     * the latest version, AWS WAF has a single set of endpoints for regional and global use.
+     * </p>
+     * </note>
      * <p>
      * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>. For each
      * <code>XssMatchTuple</code> object, you specify the following values:

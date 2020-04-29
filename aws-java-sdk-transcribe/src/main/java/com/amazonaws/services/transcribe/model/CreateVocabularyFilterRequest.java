@@ -27,7 +27,9 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The vocabulary filter name. The name must be unique within the account that contains it.
+     * The vocabulary filter name. The name must be unique within the account that contains it.If you try to create a
+     * vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     * <code>ConflictException</code> error.
      * </p>
      */
     private String vocabularyFilterName;
@@ -70,11 +72,15 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The vocabulary filter name. The name must be unique within the account that contains it.
+     * The vocabulary filter name. The name must be unique within the account that contains it.If you try to create a
+     * vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The vocabulary filter name. The name must be unique within the account that contains it.
+     *        The vocabulary filter name. The name must be unique within the account that contains it.If you try to
+     *        create a vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     *        <code>ConflictException</code> error.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -83,10 +89,14 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The vocabulary filter name. The name must be unique within the account that contains it.
+     * The vocabulary filter name. The name must be unique within the account that contains it.If you try to create a
+     * vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The vocabulary filter name. The name must be unique within the account that contains it.
+     * @return The vocabulary filter name. The name must be unique within the account that contains it.If you try to
+     *         create a vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     *         <code>ConflictException</code> error.
      */
 
     public String getVocabularyFilterName() {
@@ -95,11 +105,15 @@ public class CreateVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The vocabulary filter name. The name must be unique within the account that contains it.
+     * The vocabulary filter name. The name must be unique within the account that contains it.If you try to create a
+     * vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The vocabulary filter name. The name must be unique within the account that contains it.
+     *        The vocabulary filter name. The name must be unique within the account that contains it.If you try to
+     *        create a vocabulary filter with the same name as a previous vocabulary filter you will receive a
+     *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,7 +52,7 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
      * 
      * @param status
      *        The requested vocabulary state.
-     * @see TranscriptionJobStatus
+     * @see VocabularyState
      */
 
     public void setStatus(String status) {
@@ -65,7 +65,7 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @return The requested vocabulary state.
-     * @see TranscriptionJobStatus
+     * @see VocabularyState
      */
 
     public String getStatus() {
@@ -80,7 +80,7 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
      * @param status
      *        The requested vocabulary state.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TranscriptionJobStatus
+     * @see VocabularyState
      */
 
     public ListVocabulariesResult withStatus(String status) {
@@ -96,10 +96,10 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
      * @param status
      *        The requested vocabulary state.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see TranscriptionJobStatus
+     * @see VocabularyState
      */
 
-    public ListVocabulariesResult withStatus(TranscriptionJobStatus status) {
+    public ListVocabulariesResult withStatus(VocabularyState status) {
         this.status = status.toString();
         return this;
     }

@@ -25,13 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** <p/> */
     private String nextMarker;
-
+    /** <p/> */
     private Integer limit;
-
+    /** <p/> */
     private String resourceARN;
 
     /**
+     * <p/>
+     * 
      * @param nextMarker
      */
 
@@ -40,6 +43,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -48,6 +53,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param nextMarker
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -58,6 +65,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param limit
      */
 
@@ -66,6 +75,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -74,6 +85,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param limit
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -84,6 +97,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param resourceARN
      */
 
@@ -92,6 +107,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -100,6 +117,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param resourceARN
      * @return Returns a reference to this object so that method calls can be chained together.
      */

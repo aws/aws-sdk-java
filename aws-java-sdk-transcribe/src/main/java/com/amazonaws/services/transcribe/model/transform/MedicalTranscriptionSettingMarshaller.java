@@ -37,6 +37,8 @@ public class MedicalTranscriptionSettingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShowAlternatives").build();
     private static final MarshallingInfo<Integer> MAXALTERNATIVES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxAlternatives").build();
+    private static final MarshallingInfo<String> VOCABULARYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyName").build();
 
     private static final MedicalTranscriptionSettingMarshaller instance = new MedicalTranscriptionSettingMarshaller();
 
@@ -59,6 +61,7 @@ public class MedicalTranscriptionSettingMarshaller {
             protocolMarshaller.marshall(medicalTranscriptionSetting.getChannelIdentification(), CHANNELIDENTIFICATION_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionSetting.getShowAlternatives(), SHOWALTERNATIVES_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionSetting.getMaxAlternatives(), MAXALTERNATIVES_BINDING);
+            protocolMarshaller.marshall(medicalTranscriptionSetting.getVocabularyName(), VOCABULARYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

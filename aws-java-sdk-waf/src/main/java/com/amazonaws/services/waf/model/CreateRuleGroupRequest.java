@@ -47,7 +47,7 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String changeToken;
-
+    /** <p/> */
     private java.util.List<Tag> tags;
 
     /**
@@ -195,6 +195,8 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -203,6 +205,8 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p/>
+     * 
      * @param tags
      */
 
@@ -216,6 +220,7 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -237,6 +242,8 @@ public class CreateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p/>
+     * 
      * @param tags
      * @return Returns a reference to this object so that method calls can be chained together.
      */

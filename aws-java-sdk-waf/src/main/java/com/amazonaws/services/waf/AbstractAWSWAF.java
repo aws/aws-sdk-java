@@ -93,6 +93,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public CreateWebACLMigrationStackResult createWebACLMigrationStack(CreateWebACLMigrationStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,3 +1,28 @@
+# __1.11.772__ __2020-04-29__
+## __AWS Cloud Map__
+  - ### Features
+    - Documentation updates for servicediscovery
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - AWS IoT SiteWise is a managed service that makes it easy to collect, store, organize and monitor data from industrial equipment at scale. You can use AWS IoT SiteWise to model your physical assets, processes and facilities, quickly compute common industrial performance metrics, and create fully managed web applications to help analyze industrial equipment data, prevent costly equipment issues, and reduce production inefficiencies.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fix an issue where the SDK fails to update the estimated clock skew and causes `Time is too skewed to adjust` error to be thrown. See [#2305](https://github.com/aws/aws-sdk-java/issues/2305)
+
+## __AWS WAF__
+  - ### Features
+    - This release add migration API for AWS WAF Classic ("waf" and "waf-regional"). The migration API will parse through your web ACL and generate a CloudFormation template into your S3 bucket. Deploying this template will create equivalent web ACL under new AWS WAF ("wafv2").
+
+## __AWS WAF Regional__
+  - ### Features
+    - This release add migration API for AWS WAF Classic ("waf" and "waf-regional"). The migration API will parse through your web ACL and generate a CloudFormation template into your S3 bucket. Deploying this template will create equivalent web ACL under new AWS WAF ("wafv2").
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this release, you can now use Amazon Transcribe to create medical custom vocabularies and use them in both medical real-time streaming and medical batch transcription jobs.
+
 # __1.11.771__ __2020-04-28__
 ## __AWS Elemental MediaLive__
   - ### Features

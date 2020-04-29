@@ -29,6 +29,30 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name that you want to assign to the service.
      * </p>
+     * <p>
+     * If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a system
+     * that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following
+     * for <code>Name</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     * concatenating the service name and the namespace name, for example:
+     * </p>
+     * <p>
+     * <code>_exampleservice._tcp.example.com</code>
+     * </p>
      */
     private String name;
     /**
@@ -60,9 +84,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private DnsConfig dnsConfig;
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
-     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
-     * records that you specify in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route
+     * 53 DNS records that you specify in <code>DnsConfig</code>.
      * </p>
      * <important>
      * <p>
@@ -86,6 +110,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>HealthCheckConfig</code> but not both.
      * </p>
      * </important>
+     * <p>
+     * You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.
+     * </p>
      */
     private HealthCheckCustomConfig healthCheckCustomConfig;
 
@@ -93,9 +120,56 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name that you want to assign to the service.
      * </p>
+     * <p>
+     * If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a system
+     * that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following
+     * for <code>Name</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     * concatenating the service name and the namespace name, for example:
+     * </p>
+     * <p>
+     * <code>_exampleservice._tcp.example.com</code>
+     * </p>
      * 
      * @param name
-     *        The name that you want to assign to the service.
+     *        The name that you want to assign to the service.</p>
+     *        <p>
+     *        If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a
+     *        system that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify
+     *        the following for <code>Name</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Start the name with an underscore (_), such as <code>_exampleservice</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     *        concatenating the service name and the namespace name, for example:
+     *        </p>
+     *        <p>
+     *        <code>_exampleservice._tcp.example.com</code>
      */
 
     public void setName(String name) {
@@ -106,8 +180,55 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name that you want to assign to the service.
      * </p>
+     * <p>
+     * If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a system
+     * that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following
+     * for <code>Name</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     * concatenating the service name and the namespace name, for example:
+     * </p>
+     * <p>
+     * <code>_exampleservice._tcp.example.com</code>
+     * </p>
      * 
-     * @return The name that you want to assign to the service.
+     * @return The name that you want to assign to the service.</p>
+     *         <p>
+     *         If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a
+     *         system that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+     *         specify the following for <code>Name</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Start the name with an underscore (_), such as <code>_exampleservice</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     *         concatenating the service name and the namespace name, for example:
+     *         </p>
+     *         <p>
+     *         <code>_exampleservice._tcp.example.com</code>
      */
 
     public String getName() {
@@ -118,9 +239,56 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The name that you want to assign to the service.
      * </p>
+     * <p>
+     * If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a system
+     * that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following
+     * for <code>Name</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     * concatenating the service name and the namespace name, for example:
+     * </p>
+     * <p>
+     * <code>_exampleservice._tcp.example.com</code>
+     * </p>
      * 
      * @param name
-     *        The name that you want to assign to the service.
+     *        The name that you want to assign to the service.</p>
+     *        <p>
+     *        If you want AWS Cloud Map to create an SRV record when you register an instance, and if you're using a
+     *        system that requires a specific SRV format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify
+     *        the following for <code>Name</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Start the name with an underscore (_), such as <code>_exampleservice</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you register an instance, AWS Cloud Map creates an SRV record and assigns a name to the record by
+     *        concatenating the service name and the namespace name, for example:
+     *        </p>
+     *        <p>
+     *        <code>_exampleservice._tcp.example.com</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,9 +477,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
-     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
-     * records that you specify in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route
+     * 53 DNS records that you specify in <code>DnsConfig</code>.
      * </p>
      * <important>
      * <p>
@@ -325,9 +493,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param healthCheckConfig
-     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health
-     *        check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the
-     *        Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+     *        <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53
+     *        health check. If you specify settings for a health check, AWS Cloud Map associates the health check with
+     *        all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
      *        <p>
      *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
      *        or <code>HealthCheckConfig</code> but not both.
@@ -344,9 +512,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
-     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
-     * records that you specify in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route
+     * 53 DNS records that you specify in <code>DnsConfig</code>.
      * </p>
      * <important>
      * <p>
@@ -359,9 +527,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Cloud Map Pricing</a>.
      * </p>
      * 
-     * @return <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health
-     *         check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the
-     *         Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+     * @return <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route
+     *         53 health check. If you specify settings for a health check, AWS Cloud Map associates the health check
+     *         with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
      *         <p>
      *         If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
      *         or <code>HealthCheckConfig</code> but not both.
@@ -378,9 +546,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
-     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
-     * records that you specify in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route
+     * 53 DNS records that you specify in <code>DnsConfig</code>.
      * </p>
      * <important>
      * <p>
@@ -394,9 +562,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param healthCheckConfig
-     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health
-     *        check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the
-     *        Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+     *        <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53
+     *        health check. If you specify settings for a health check, AWS Cloud Map associates the health check with
+     *        all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
      *        <p>
      *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
      *        or <code>HealthCheckConfig</code> but not both.
@@ -423,6 +591,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>HealthCheckConfig</code> but not both.
      * </p>
      * </important>
+     * <p>
+     * You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.
+     * </p>
      * 
      * @param healthCheckCustomConfig
      *        A complex type that contains information about an optional custom health check.</p> <important>
@@ -430,6 +601,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
      *        or <code>HealthCheckConfig</code> but not both.
      *        </p>
+     *        </important>
+     *        <p>
+     *        You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing
+     *        service.
      */
 
     public void setHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
@@ -446,12 +621,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>HealthCheckConfig</code> but not both.
      * </p>
      * </important>
+     * <p>
+     * You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.
+     * </p>
      * 
      * @return A complex type that contains information about an optional custom health check.</p> <important>
      *         <p>
      *         If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
      *         or <code>HealthCheckConfig</code> but not both.
      *         </p>
+     *         </important>
+     *         <p>
+     *         You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing
+     *         service.
      */
 
     public HealthCheckCustomConfig getHealthCheckCustomConfig() {
@@ -468,6 +650,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>HealthCheckConfig</code> but not both.
      * </p>
      * </important>
+     * <p>
+     * You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.
+     * </p>
      * 
      * @param healthCheckCustomConfig
      *        A complex type that contains information about an optional custom health check.</p> <important>
@@ -475,6 +660,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
      *        or <code>HealthCheckConfig</code> but not both.
      *        </p>
+     *        </important>
+     *        <p>
+     *        You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing
+     *        service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

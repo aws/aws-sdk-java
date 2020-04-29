@@ -41,8 +41,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * To get the IDs for the instances that you've registered by using a specified service, submit a
-     * <a>ListInstances</a> request.
+     * To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      * </p>
      * </note>
      */
@@ -117,8 +117,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * To get the IDs for the instances that you've registered by using a specified service, submit a
-     * <a>ListInstances</a> request.
+     * To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      * </p>
      * </note>
      * 
@@ -129,8 +129,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      *         </p>
      *         <note>
      *         <p>
-     *         To get the IDs for the instances that you've registered by using a specified service, submit a
-     *         <a>ListInstances</a> request.
+     *         To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      *         </p>
      */
 
@@ -148,8 +148,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * To get the IDs for the instances that you've registered by using a specified service, submit a
-     * <a>ListInstances</a> request.
+     * To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      * </p>
      * </note>
      * 
@@ -161,8 +161,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <note>
      *        <p>
-     *        To get the IDs for the instances that you've registered by using a specified service, submit a
-     *        <a>ListInstances</a> request.
+     *        To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      *        </p>
      */
 
@@ -185,8 +185,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * To get the IDs for the instances that you've registered by using a specified service, submit a
-     * <a>ListInstances</a> request.
+     * To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      * </p>
      * </note>
      * <p>
@@ -203,8 +203,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <note>
      *        <p>
-     *        To get the IDs for the instances that you've registered by using a specified service, submit a
-     *        <a>ListInstances</a> request.
+     *        To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -229,8 +229,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * To get the IDs for the instances that you've registered by using a specified service, submit a
-     * <a>ListInstances</a> request.
+     * To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      * </p>
      * </note>
      * 
@@ -242,8 +242,8 @@ public class GetInstancesHealthStatusRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <note>
      *        <p>
-     *        To get the IDs for the instances that you've registered by using a specified service, submit a
-     *        <a>ListInstances</a> request.
+     *        To get the IDs for the instances that you've registered by using a specified service, submit a <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

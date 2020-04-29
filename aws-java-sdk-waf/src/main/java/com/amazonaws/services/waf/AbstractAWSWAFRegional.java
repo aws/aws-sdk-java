@@ -98,6 +98,11 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
     }
 
     @Override
+    public CreateWebACLMigrationStackResult createWebACLMigrationStack(CreateWebACLMigrationStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateXssMatchSetResult createXssMatchSet(CreateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -28,6 +28,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public CreateMedicalVocabularyResult createMedicalVocabulary(CreateMedicalVocabularyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVocabularyResult createVocabulary(CreateVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +44,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public DeleteMedicalTranscriptionJobResult deleteMedicalTranscriptionJob(DeleteMedicalTranscriptionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMedicalVocabularyResult deleteMedicalVocabulary(DeleteMedicalVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,6 +73,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public GetMedicalVocabularyResult getMedicalVocabulary(GetMedicalVocabularyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTranscriptionJobResult getTranscriptionJob(GetTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +94,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public ListMedicalTranscriptionJobsResult listMedicalTranscriptionJobs(ListMedicalTranscriptionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMedicalVocabulariesResult listMedicalVocabularies(ListMedicalVocabulariesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +124,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public StartTranscriptionJobResult startTranscriptionJob(StartTranscriptionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMedicalVocabularyResult updateMedicalVocabulary(UpdateMedicalVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

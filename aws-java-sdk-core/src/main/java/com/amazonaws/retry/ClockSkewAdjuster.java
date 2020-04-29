@@ -75,10 +75,14 @@ public final class ClockSkewAdjuster {
     }
 
     public void updateEstimatedSkew(AdjustmentRequest adjustmentRequest) {
-        Date serverDate = getServerDate(adjustmentRequest);
+        try {
+            Date serverDate = getServerDate(adjustmentRequest);
 
-        if (serverDate != null) {
-            estimatedSkew = timeSkewInSeconds(getCurrentDate(adjustmentRequest), serverDate);
+            if (serverDate != null) {
+                estimatedSkew = timeSkewInSeconds(getCurrentDate(adjustmentRequest), serverDate);
+            }
+        } catch(RuntimeException exception) {
+            log.debug("Unable to update estimated skew.", exception);
         }
     }
 

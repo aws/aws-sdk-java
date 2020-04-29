@@ -61,7 +61,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      */
     private Integer instanceCount;
@@ -74,9 +75,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private DnsConfig dnsConfig;
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
@@ -316,12 +317,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count.
+     *        associated with the service but that have been deleted are not included in the count. The count might not
+     *        reflect pending registrations and deregistrations.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -331,11 +334,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      * 
      * @return The number of instances that are currently associated with the service. Instances that were previously
-     *         associated with the service but that have been deleted are not included in the count.
+     *         associated with the service but that have been deleted are not included in the count. The count might not
+     *         reflect pending registrations and deregistrations.
      */
 
     public Integer getInstanceCount() {
@@ -345,12 +350,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count.
+     *        associated with the service but that have been deleted are not included in the count. The count might not
+     *        reflect pending registrations and deregistrations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,9 +414,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
@@ -417,9 +424,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param healthCheckConfig
-     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *        you specify settings for a health check, AWS Cloud Map associates the health check with the records that
-     *        you specify in <code>DnsConfig</code>.</p>
+     *        <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health
+     *        check. If you specify settings for a health check, AWS Cloud Map associates the health check with the
+     *        records that you specify in <code>DnsConfig</code>.</p>
      *        <p>
      *        For information about the charges for health checks, see <a
      *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
@@ -431,18 +438,18 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
      * Route 53 Pricing</a>.
      * </p>
      * 
-     * @return <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *         you specify settings for a health check, AWS Cloud Map associates the health check with the records that
-     *         you specify in <code>DnsConfig</code>.</p>
+     * @return <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health
+     *         check. If you specify settings for a health check, AWS Cloud Map associates the health check with the
+     *         records that you specify in <code>DnsConfig</code>.</p>
      *         <p>
      *         For information about the charges for health checks, see <a
      *         href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
@@ -454,9 +461,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
@@ -464,9 +471,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param healthCheckConfig
-     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *        you specify settings for a health check, AWS Cloud Map associates the health check with the records that
-     *        you specify in <code>DnsConfig</code>.</p>
+     *        <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health
+     *        check. If you specify settings for a health check, AWS Cloud Map associates the health check with the
+     *        records that you specify in <code>DnsConfig</code>.</p>
      *        <p>
      *        For information about the charges for health checks, see <a
      *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.

@@ -38,7 +38,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -106,7 +107,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      * </p>
      * <p>
      * Note the following:
@@ -188,7 +189,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -202,7 +204,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -237,7 +240,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
      *        of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *        information, see <a>DnsRecord$Type</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
+     *        >DnsRecord &gt; Type</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -278,7 +283,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -312,7 +318,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
      *         of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *         information, see <a>DnsRecord$Type</a>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
+     *         >DnsRecord &gt; Type</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -353,7 +361,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -388,7 +397,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
      *        of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *        information, see <a>DnsRecord$Type</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
+     *        >DnsRecord &gt; Type</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -515,7 +526,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      * </p>
      * <p>
      * Note the following:
@@ -597,7 +608,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * 
      * @return A string map that contains the following information for the service that you specify in
@@ -627,7 +639,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
      *         Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *         about how to get the DNS name, see "DNSName" in the topic <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      *         </p>
      *         <p>
      *         Note the following:
@@ -711,7 +723,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         to send requests to.
      *         </p>
      *         <p>
-     *         This value is required if you specified settings for an SRV record when you created the service.
+     *         This value is required if you specified settings for an SRV record or a Route 53 health check when you
+     *         created the service.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -747,7 +760,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      * </p>
      * <p>
      * Note the following:
@@ -829,7 +842,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * 
      * @param attributes
@@ -860,7 +874,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *        about how to get the DNS name, see "DNSName" in the topic <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      *        </p>
      *        <p>
      *        Note the following:
@@ -944,7 +958,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        send requests to.
      *        </p>
      *        <p>
-     *        This value is required if you specified settings for an SRV record when you created the service.
+     *        This value is required if you specified settings for an SRV record or a Route 53 health check when you
+     *        created the service.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -980,7 +995,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      * </p>
      * <p>
      * Note the following:
@@ -1062,7 +1077,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * 
      * @param attributes
@@ -1093,7 +1109,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *        about how to get the DNS name, see "DNSName" in the topic <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
      *        </p>
      *        <p>
      *        Note the following:
@@ -1177,7 +1193,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        send requests to.
      *        </p>
      *        <p>
-     *        This value is required if you specified settings for an SRV record when you created the service.
+     *        This value is required if you specified settings for an SRV record or a Route 53 health check when you
+     *        created the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,7 +66,7 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String changeToken;
-
+    /** <p/> */
     private java.util.List<Tag> tags;
 
     /**
@@ -384,6 +384,8 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -392,6 +394,8 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param tags
      */
 
@@ -405,6 +409,7 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -426,6 +431,8 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param tags
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -26,7 +26,7 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A value that you can use to determine whether the request completed successfully. To get the status of the
-     * operation, see <a>GetOperation</a>.
+     * operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      * </p>
      */
     private String operationId;
@@ -34,12 +34,13 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A value that you can use to determine whether the request completed successfully. To get the status of the
-     * operation, see <a>GetOperation</a>.
+     * operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      * </p>
      * 
      * @param operationId
      *        A value that you can use to determine whether the request completed successfully. To get the status of the
-     *        operation, see <a>GetOperation</a>.
+     *        operation, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      */
 
     public void setOperationId(String operationId) {
@@ -49,11 +50,12 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A value that you can use to determine whether the request completed successfully. To get the status of the
-     * operation, see <a>GetOperation</a>.
+     * operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      * </p>
      * 
      * @return A value that you can use to determine whether the request completed successfully. To get the status of
-     *         the operation, see <a>GetOperation</a>.
+     *         the operation, see <a
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      */
 
     public String getOperationId() {
@@ -63,12 +65,13 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * A value that you can use to determine whether the request completed successfully. To get the status of the
-     * operation, see <a>GetOperation</a>.
+     * operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      * </p>
      * 
      * @param operationId
      *        A value that you can use to determine whether the request completed successfully. To get the status of the
-     *        operation, see <a>GetOperation</a>.
+     *        operation, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

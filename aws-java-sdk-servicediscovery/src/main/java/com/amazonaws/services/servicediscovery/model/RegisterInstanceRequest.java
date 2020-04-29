@@ -40,7 +40,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -108,7 +109,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
      * how to get the DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
      * <i>Route 53 API Reference</i>.
      * </p>
      * <p>
@@ -200,7 +201,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * <p>
      * <b>Custom attributes</b>
@@ -261,7 +263,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -296,7 +299,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
      *        of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *        information, see <a>DnsRecord$Type</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
+     *        >DnsRecord &gt; Type</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -337,7 +342,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -371,7 +377,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
      *         of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *         information, see <a>DnsRecord$Type</a>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
+     *         >DnsRecord &gt; Type</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -412,7 +420,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a>DnsRecord$Type</a>.
+     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
+     * DnsRecord &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -447,7 +456,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
      *        of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *        information, see <a>DnsRecord$Type</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
+     *        >DnsRecord &gt; Type</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -574,7 +585,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
      * how to get the DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
      * <i>Route 53 API Reference</i>.
      * </p>
      * <p>
@@ -666,7 +677,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * <p>
      * <b>Custom attributes</b>
@@ -703,8 +715,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
      *         Load Balancing load balancer, specify the DNS name that is associated with the load balancer. For
      *         information about how to get the DNS name, see "DNSName" in the topic <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
-     *         <i>Route 53 API Reference</i>.
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in
+     *         the <i>Route 53 API Reference</i>.
      *         </p>
      *         <p>
      *         Note the following:
@@ -797,7 +809,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         to send requests to.
      *         </p>
      *         <p>
-     *         This value is required if you specified settings for an SRV record when you created the service.
+     *         This value is required if you specified settings for an SRV record or a Route 53 health check when you
+     *         created the service.
      *         </p>
      *         <p>
      *         <b>Custom attributes</b>
@@ -840,7 +853,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
      * how to get the DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
      * <i>Route 53 API Reference</i>.
      * </p>
      * <p>
@@ -932,7 +945,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * <p>
      * <b>Custom attributes</b>
@@ -970,7 +984,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *        about how to get the DNS name, see "DNSName" in the topic <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
      *        <i>Route 53 API Reference</i>.
      *        </p>
      *        <p>
@@ -1064,7 +1078,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        send requests to.
      *        </p>
      *        <p>
-     *        This value is required if you specified settings for an SRV record when you created the service.
+     *        This value is required if you specified settings for an SRV record or a Route 53 health check when you
+     *        created the service.
      *        </p>
      *        <p>
      *        <b>Custom attributes</b>
@@ -1107,7 +1122,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
      * how to get the DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
      * <i>Route 53 API Reference</i>.
      * </p>
      * <p>
@@ -1199,7 +1214,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record when you created the service.
+     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
+     * the service.
      * </p>
      * <p>
      * <b>Custom attributes</b>
@@ -1237,7 +1253,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *        about how to get the DNS name, see "DNSName" in the topic <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the
      *        <i>Route 53 API Reference</i>.
      *        </p>
      *        <p>
@@ -1331,7 +1347,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        send requests to.
      *        </p>
      *        <p>
-     *        This value is required if you specified settings for an SRV record when you created the service.
+     *        This value is required if you specified settings for an SRV record or a Route 53 health check when you
+     *        created the service.
      *        </p>
      *        <p>
      *        <b>Custom attributes</b>

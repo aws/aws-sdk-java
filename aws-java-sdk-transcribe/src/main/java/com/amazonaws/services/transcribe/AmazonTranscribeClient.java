@@ -141,6 +141,73 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical transcribes your audio
+     * file.
+     * </p>
+     * 
+     * @param createMedicalVocabularyRequest
+     * @return Result of the CreateMedicalVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws ConflictException
+     *         The resource name already exists.
+     * @sample AmazonTranscribe.CreateMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMedicalVocabularyResult createMedicalVocabulary(CreateMedicalVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMedicalVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final CreateMedicalVocabularyResult executeCreateMedicalVocabulary(CreateMedicalVocabularyRequest createMedicalVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMedicalVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMedicalVocabularyRequest> request = null;
+        Response<CreateMedicalVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMedicalVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMedicalVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMedicalVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMedicalVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMedicalVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
      * audio file.
      * </p>
@@ -157,11 +224,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
-     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
-     *         <p>
-     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
-     *         time. Resend the second request later.
+     *         The resource name already exists.
      * @sample AmazonTranscribe.CreateVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary" target="_top">AWS
      *      API Documentation</a>
@@ -226,11 +289,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
-     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
-     *         <p>
-     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
-     *         time. Resend the second request later.
+     *         The resource name already exists.
      * @sample AmazonTranscribe.CreateVocabularyFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter"
      *      target="_top">AWS API Documentation</a>
@@ -332,6 +391,72 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DeleteMedicalTranscriptionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteMedicalTranscriptionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a vocabulary from Amazon Transcribe Medical.
+     * </p>
+     * 
+     * @param deleteMedicalVocabularyRequest
+     * @return Result of the DeleteMedicalVocabulary operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMedicalVocabularyResult deleteMedicalVocabulary(DeleteMedicalVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMedicalVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMedicalVocabularyResult executeDeleteMedicalVocabulary(DeleteMedicalVocabularyRequest deleteMedicalVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMedicalVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMedicalVocabularyRequest> request = null;
+        Response<DeleteMedicalVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMedicalVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMedicalVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMedicalVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMedicalVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteMedicalVocabularyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -605,6 +730,70 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Retrieve information about a medical vocabulary.
+     * </p>
+     * 
+     * @param getMedicalVocabularyRequest
+     * @return Result of the GetMedicalVocabulary operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @sample AmazonTranscribe.GetMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMedicalVocabularyResult getMedicalVocabulary(GetMedicalVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMedicalVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final GetMedicalVocabularyResult executeGetMedicalVocabulary(GetMedicalVocabularyRequest getMedicalVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMedicalVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMedicalVocabularyRequest> request = null;
+        Response<GetMedicalVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMedicalVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMedicalVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMedicalVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMedicalVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMedicalVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a transcription job. To see the status of the job, check the
      * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
      * can find the results at the location specified in the <code>TranscriptFileUri</code> field. If you enable content
@@ -864,6 +1053,71 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Returns a list of vocabularies that match the specified criteria. You get the entire list of vocabularies if you
+     * don't enter a value in any of the request parameters.
+     * </p>
+     * 
+     * @param listMedicalVocabulariesRequest
+     * @return Result of the ListMedicalVocabularies operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.ListMedicalVocabularies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMedicalVocabulariesResult listMedicalVocabularies(ListMedicalVocabulariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMedicalVocabularies(request);
+    }
+
+    @SdkInternalApi
+    final ListMedicalVocabulariesResult executeListMedicalVocabularies(ListMedicalVocabulariesRequest listMedicalVocabulariesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMedicalVocabulariesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMedicalVocabulariesRequest> request = null;
+        Response<ListMedicalVocabulariesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMedicalVocabulariesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMedicalVocabulariesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMedicalVocabularies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMedicalVocabulariesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMedicalVocabulariesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists transcription jobs with the specified status.
      * </p>
      * 
@@ -1068,11 +1322,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
-     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
-     *         <p>
-     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
-     *         time. Resend the second request later.
+     *         The resource name already exists.
      * @sample AmazonTranscribe.StartMedicalTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob"
      *      target="_top">AWS API Documentation</a>
@@ -1138,11 +1388,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
-     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
-     *         <p>
-     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
-     *         time. Resend the second request later.
+     *         The resource name already exists.
      * @sample AmazonTranscribe.StartTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob"
      *      target="_top">AWS API Documentation</a>
@@ -1192,6 +1438,75 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+     * operation overwrites all of the existing information with the values that you provide in the request.
+     * </p>
+     * 
+     * @param updateMedicalVocabularyRequest
+     * @return Result of the UpdateMedicalVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @throws ConflictException
+     *         The resource name already exists.
+     * @sample AmazonTranscribe.UpdateMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMedicalVocabularyResult updateMedicalVocabulary(UpdateMedicalVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMedicalVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMedicalVocabularyResult executeUpdateMedicalVocabulary(UpdateMedicalVocabularyRequest updateMedicalVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMedicalVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMedicalVocabularyRequest> request = null;
+        Response<UpdateMedicalVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMedicalVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMedicalVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMedicalVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMedicalVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMedicalVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
      * existing information with the values that you provide in the request.
      * </p>
@@ -1210,11 +1525,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws NotFoundException
      *         We can't find the requested resource. Check the name and try your request again.
      * @throws ConflictException
-     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
-     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
-     *         <p>
-     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
-     *         time. Resend the second request later.
+     *         The resource name already exists.
      * @sample AmazonTranscribe.UpdateVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary" target="_top">AWS
      *      API Documentation</a>

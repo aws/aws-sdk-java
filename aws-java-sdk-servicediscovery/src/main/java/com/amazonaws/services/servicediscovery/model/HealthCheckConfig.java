@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you specify
- * settings for a health check, AWS Cloud Map associates the health check with the records that you specify in
- * <code>DnsConfig</code>.
+ * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If
+ * you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
+ * in <code>DnsConfig</code>.
  * </p>
  * <important>
  * <p>
@@ -67,7 +67,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a
  * href=
- * "http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions"
+ * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions"
  * >Regions</a>.
  * </p>
  * <p>
@@ -83,7 +83,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When
  * <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such
  * as an ELB load balancer. For more information, see <a href=
- * "http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth"
+ * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth"
  * >EvaluateTargetHealth</a>.
  * </p>
  * </li>
@@ -149,7 +149,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      */
@@ -171,7 +171,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
      * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      */
@@ -218,7 +218,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -261,7 +261,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * @see HealthCheckType
      */
@@ -311,7 +311,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -353,7 +353,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * @see HealthCheckType
      */
@@ -403,7 +403,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -446,7 +446,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckType
@@ -498,7 +498,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * </ul>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -541,7 +541,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HealthCheckType
@@ -638,14 +638,14 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
      * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the
      *        current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      */
 
@@ -657,14 +657,14 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
      * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @return The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the
      *         current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      */
 
@@ -676,14 +676,14 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
      * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the
      *        current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

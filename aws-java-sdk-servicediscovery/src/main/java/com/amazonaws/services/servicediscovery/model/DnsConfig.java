@@ -69,7 +69,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      * >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -92,7 +92,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the weighted routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      * >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      */
@@ -178,7 +178,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      * >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -201,7 +201,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the weighted routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      * >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -235,7 +235,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about the multivalue routing policy, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      *        >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -258,7 +258,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about the weighted routing policy, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      *        >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * @see RoutingPolicy
      */
@@ -300,7 +300,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      * >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -323,7 +323,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the weighted routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      * >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -356,7 +356,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For more information about the multivalue routing policy, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      *         >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      *         </p>
      *         <p>
@@ -379,7 +379,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For more information about the weighted routing policy, see <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      *         >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * @see RoutingPolicy
      */
@@ -421,7 +421,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      * >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -444,7 +444,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the weighted routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      * >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -478,7 +478,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about the multivalue routing policy, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      *        >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -501,7 +501,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about the weighted routing policy, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      *        >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingPolicy
@@ -545,7 +545,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      * >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * <p>
@@ -568,7 +568,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about the weighted routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      * >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
@@ -602,7 +602,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about the multivalue routing policy, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue"
      *        >Multivalue Answer Routing</a> in the <i>Route 53 Developer Guide</i>.
      *        </p>
      *        <p>
@@ -625,7 +625,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about the weighted routing policy, see <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted"
      *        >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingPolicy

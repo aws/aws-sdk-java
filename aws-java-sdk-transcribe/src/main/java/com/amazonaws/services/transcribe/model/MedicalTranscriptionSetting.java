@@ -80,6 +80,12 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
      * </p>
      */
     private Integer maxAlternatives;
+    /**
+     * <p>
+     * The name of the vocabulary to use when processing a medical transcription job.
+     * </p>
+     */
+    private String vocabularyName;
 
     /**
      * <p>
@@ -480,6 +486,46 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The name of the vocabulary to use when processing a medical transcription job.
+     * </p>
+     * 
+     * @param vocabularyName
+     *        The name of the vocabulary to use when processing a medical transcription job.
+     */
+
+    public void setVocabularyName(String vocabularyName) {
+        this.vocabularyName = vocabularyName;
+    }
+
+    /**
+     * <p>
+     * The name of the vocabulary to use when processing a medical transcription job.
+     * </p>
+     * 
+     * @return The name of the vocabulary to use when processing a medical transcription job.
+     */
+
+    public String getVocabularyName() {
+        return this.vocabularyName;
+    }
+
+    /**
+     * <p>
+     * The name of the vocabulary to use when processing a medical transcription job.
+     * </p>
+     * 
+     * @param vocabularyName
+     *        The name of the vocabulary to use when processing a medical transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MedicalTranscriptionSetting withVocabularyName(String vocabularyName) {
+        setVocabularyName(vocabularyName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -500,7 +546,9 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
         if (getShowAlternatives() != null)
             sb.append("ShowAlternatives: ").append(getShowAlternatives()).append(",");
         if (getMaxAlternatives() != null)
-            sb.append("MaxAlternatives: ").append(getMaxAlternatives());
+            sb.append("MaxAlternatives: ").append(getMaxAlternatives()).append(",");
+        if (getVocabularyName() != null)
+            sb.append("VocabularyName: ").append(getVocabularyName());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +583,10 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
             return false;
         if (other.getMaxAlternatives() != null && other.getMaxAlternatives().equals(this.getMaxAlternatives()) == false)
             return false;
+        if (other.getVocabularyName() == null ^ this.getVocabularyName() == null)
+            return false;
+        if (other.getVocabularyName() != null && other.getVocabularyName().equals(this.getVocabularyName()) == false)
+            return false;
         return true;
     }
 
@@ -548,6 +600,7 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getChannelIdentification() == null) ? 0 : getChannelIdentification().hashCode());
         hashCode = prime * hashCode + ((getShowAlternatives() == null) ? 0 : getShowAlternatives().hashCode());
         hashCode = prime * hashCode + ((getMaxAlternatives() == null) ? 0 : getMaxAlternatives().hashCode());
+        hashCode = prime * hashCode + ((getVocabularyName() == null) ? 0 : getVocabularyName().hashCode());
         return hashCode;
     }
 

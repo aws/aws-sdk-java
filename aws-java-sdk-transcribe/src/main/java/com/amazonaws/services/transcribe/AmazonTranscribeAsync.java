@@ -34,6 +34,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
+     * Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical transcribes your audio
+     * file.
+     * </p>
+     * 
+     * @param createMedicalVocabularyRequest
+     * @return A Java Future containing the result of the CreateMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsync.CreateMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMedicalVocabularyResult> createMedicalVocabularyAsync(CreateMedicalVocabularyRequest createMedicalVocabularyRequest);
+
+    /**
+     * <p>
+     * Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical transcribes your audio
+     * file.
+     * </p>
+     * 
+     * @param createMedicalVocabularyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.CreateMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMedicalVocabularyResult> createMedicalVocabularyAsync(CreateMedicalVocabularyRequest createMedicalVocabularyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMedicalVocabularyRequest, CreateMedicalVocabularyResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
      * audio file.
      * </p>
@@ -132,6 +165,37 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     java.util.concurrent.Future<DeleteMedicalTranscriptionJobResult> deleteMedicalTranscriptionJobAsync(
             DeleteMedicalTranscriptionJobRequest deleteMedicalTranscriptionJobRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMedicalTranscriptionJobRequest, DeleteMedicalTranscriptionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a vocabulary from Amazon Transcribe Medical.
+     * </p>
+     * 
+     * @param deleteMedicalVocabularyRequest
+     * @return A Java Future containing the result of the DeleteMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsync.DeleteMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMedicalVocabularyResult> deleteMedicalVocabularyAsync(DeleteMedicalVocabularyRequest deleteMedicalVocabularyRequest);
+
+    /**
+     * <p>
+     * Deletes a vocabulary from Amazon Transcribe Medical.
+     * </p>
+     * 
+     * @param deleteMedicalVocabularyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.DeleteMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMedicalVocabularyResult> deleteMedicalVocabularyAsync(DeleteMedicalVocabularyRequest deleteMedicalVocabularyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMedicalVocabularyRequest, DeleteMedicalVocabularyResult> asyncHandler);
 
     /**
      * <p>
@@ -267,6 +331,37 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
+     * Retrieve information about a medical vocabulary.
+     * </p>
+     * 
+     * @param getMedicalVocabularyRequest
+     * @return A Java Future containing the result of the GetMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsync.GetMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMedicalVocabularyResult> getMedicalVocabularyAsync(GetMedicalVocabularyRequest getMedicalVocabularyRequest);
+
+    /**
+     * <p>
+     * Retrieve information about a medical vocabulary.
+     * </p>
+     * 
+     * @param getMedicalVocabularyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.GetMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMedicalVocabularyResult> getMedicalVocabularyAsync(GetMedicalVocabularyRequest getMedicalVocabularyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMedicalVocabularyRequest, GetMedicalVocabularyResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a transcription job. To see the status of the job, check the
      * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
      * can find the results at the location specified in the <code>TranscriptFileUri</code> field. If you enable content
@@ -398,6 +493,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     java.util.concurrent.Future<ListMedicalTranscriptionJobsResult> listMedicalTranscriptionJobsAsync(
             ListMedicalTranscriptionJobsRequest listMedicalTranscriptionJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListMedicalTranscriptionJobsRequest, ListMedicalTranscriptionJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of vocabularies that match the specified criteria. You get the entire list of vocabularies if you
+     * don't enter a value in any of the request parameters.
+     * </p>
+     * 
+     * @param listMedicalVocabulariesRequest
+     * @return A Java Future containing the result of the ListMedicalVocabularies operation returned by the service.
+     * @sample AmazonTranscribeAsync.ListMedicalVocabularies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMedicalVocabulariesResult> listMedicalVocabulariesAsync(ListMedicalVocabulariesRequest listMedicalVocabulariesRequest);
+
+    /**
+     * <p>
+     * Returns a list of vocabularies that match the specified criteria. You get the entire list of vocabularies if you
+     * don't enter a value in any of the request parameters.
+     * </p>
+     * 
+     * @param listMedicalVocabulariesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMedicalVocabularies operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.ListMedicalVocabularies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMedicalVocabulariesResult> listMedicalVocabulariesAsync(ListMedicalVocabulariesRequest listMedicalVocabulariesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMedicalVocabulariesRequest, ListMedicalVocabulariesResult> asyncHandler);
 
     /**
      * <p>
@@ -559,6 +687,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      */
     java.util.concurrent.Future<StartTranscriptionJobResult> startTranscriptionJobAsync(StartTranscriptionJobRequest startTranscriptionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StartTranscriptionJobRequest, StartTranscriptionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+     * operation overwrites all of the existing information with the values that you provide in the request.
+     * </p>
+     * 
+     * @param updateMedicalVocabularyRequest
+     * @return A Java Future containing the result of the UpdateMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsync.UpdateMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMedicalVocabularyResult> updateMedicalVocabularyAsync(UpdateMedicalVocabularyRequest updateMedicalVocabularyRequest);
+
+    /**
+     * <p>
+     * Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
+     * operation overwrites all of the existing information with the values that you provide in the request.
+     * </p>
+     * 
+     * @param updateMedicalVocabularyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMedicalVocabulary operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.UpdateMedicalVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMedicalVocabularyResult> updateMedicalVocabularyAsync(UpdateMedicalVocabularyRequest updateMedicalVocabularyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMedicalVocabularyRequest, UpdateMedicalVocabularyResult> asyncHandler);
 
     /**
      * <p>

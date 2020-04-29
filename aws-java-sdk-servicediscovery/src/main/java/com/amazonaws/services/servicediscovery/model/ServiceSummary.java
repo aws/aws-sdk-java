@@ -55,7 +55,8 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      */
     private Integer instanceCount;
@@ -235,12 +236,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count.
+     *        associated with the service but that have been deleted are not included in the count. The count might not
+     *        reflect pending registrations and deregistrations.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -250,11 +253,13 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      * 
      * @return The number of instances that are currently associated with the service. Instances that were previously
-     *         associated with the service but that have been deleted are not included in the count.
+     *         associated with the service but that have been deleted are not included in the count. The count might not
+     *         reflect pending registrations and deregistrations.
      */
 
     public Integer getInstanceCount() {
@@ -264,12 +269,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count.
+     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count.
+     *        associated with the service but that have been deleted are not included in the count. The count might not
+     *        reflect pending registrations and deregistrations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

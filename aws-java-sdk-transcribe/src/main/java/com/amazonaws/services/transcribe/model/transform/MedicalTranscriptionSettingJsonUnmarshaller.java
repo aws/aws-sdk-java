@@ -68,6 +68,10 @@ public class MedicalTranscriptionSettingJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     medicalTranscriptionSetting.setMaxAlternatives(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("VocabularyName", targetDepth)) {
+                    context.nextToken();
+                    medicalTranscriptionSetting.setVocabularyName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

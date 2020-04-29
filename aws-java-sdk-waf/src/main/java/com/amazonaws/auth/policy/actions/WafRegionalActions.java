@@ -49,6 +49,8 @@ public enum WafRegionalActions implements Action {
     CreateSqlInjectionMatchSet("waf-regional:CreateSqlInjectionMatchSet"),
     /** Action for the CreateWebACL operation. */
     CreateWebACL("waf-regional:CreateWebACL"),
+    /** Action for the CreateWebACLMigrationStack operation. */
+    CreateWebACLMigrationStack("waf-regional:CreateWebACLMigrationStack"),
     /** Action for the CreateXssMatchSet operation. */
     CreateXssMatchSet("waf-regional:CreateXssMatchSet"),
     /** Action for the DeleteByteMatchSet operation. */

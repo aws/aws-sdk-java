@@ -15,6 +15,8 @@
 
 package com.amazonaws.retry;
 
+import static org.junit.Assert.assertEquals;
+
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
@@ -40,6 +42,7 @@ public class ClockSkewAdjusterTest {
     private Date unskewedDate = new Date();
     private Date futureSkewedDate = new Date(unskewedDate.getTime() + SKEWED_MILLIS);
     private Date pastSkewedDate = new Date(unskewedDate.getTime() - SKEWED_MILLIS);
+    private Date tooSkewedDate = new Date(-1000000000000L); // Sunday, April 24, 1938 10:13:20 PM
 
     @Test
     public void nonSkewErrorsDoNotAdjust() {
@@ -99,6 +102,19 @@ public class ClockSkewAdjusterTest {
         assertAdjusts(SKEWED_SECONDS, clientRequest(0), amazonServiceException("", "", 403), httpResponse(pastSkewedDate));
         assertAdjusts(-SKEWED_SECONDS, clientRequest(SKEWED_SECONDS), amazonServiceException("", "", 401), httpResponse(unskewedDate));
         assertAdjusts(SKEWED_SECONDS, clientRequest(-SKEWED_SECONDS), amazonServiceException("", "", 403), httpResponse(unskewedDate));
+    }
+
+    @Test
+    public void timeToSkewed_ShouldNotAdjustEstimatedSkew() {
+        ClockSkewAdjuster clockSkewAdjuster = new ClockSkewAdjuster();
+
+        Integer estimatedSkew = clockSkewAdjuster.getEstimatedSkew();
+        AdjustmentRequest adjustmentRequest = new AdjustmentRequest()
+            .clientRequest(clientRequest(0))
+            .serviceResponse(httpResponse(tooSkewedDate));
+        clockSkewAdjuster.updateEstimatedSkew(adjustmentRequest);
+        assertEquals(estimatedSkew, clockSkewAdjuster.getEstimatedSkew());
+
     }
 
     private String sqsExceptionMessage(Date clientTime, Date serverTime) {

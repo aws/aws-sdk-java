@@ -16,12 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a duplicate of a
- * previously entered job name. Resend your request with a different name.
- * </p>
- * <p>
- * When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same time. Resend
- * the second request later.
+ * The resource name already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -28,7 +28,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account.
+     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
+     * transcription job you will receive a <code>ConflictException</code> error.
      * </p>
      */
     private String transcriptionJobName;
@@ -157,12 +158,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account.
+     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
+     * transcription job you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param transcriptionJobName
      *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *        name must also be unique within an AWS account.
+     *        name must also be unique within an AWS account. If you try to create a transcription job with the same
+     *        name as a previous transcription job you will receive a <code>ConflictException</code> error.
      */
 
     public void setTranscriptionJobName(String transcriptionJobName) {
@@ -172,11 +175,13 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account.
+     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
+     * transcription job you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @return The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *         name must also be unique within an AWS account.
+     *         name must also be unique within an AWS account. If you try to create a transcription job with the same
+     *         name as a previous transcription job you will receive a <code>ConflictException</code> error.
      */
 
     public String getTranscriptionJobName() {
@@ -186,12 +191,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account.
+     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
+     * transcription job you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param transcriptionJobName
      *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *        name must also be unique within an AWS account.
+     *        name must also be unique within an AWS account. If you try to create a transcription job with the same
+     *        name as a previous transcription job you will receive a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
