@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartDiscovererRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     */
     private String discovererId;
 
     /**
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     * 
      * @param discovererId
+     *        The ID of the discoverer.
      */
 
     public void setDiscovererId(String discovererId) {
@@ -36,7 +46,11 @@ public class StartDiscovererRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     * 
+     * @return The ID of the discoverer.
      */
 
     public String getDiscovererId() {
@@ -44,7 +58,12 @@ public class StartDiscovererRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     * 
      * @param discovererId
+     *        The ID of the discoverer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

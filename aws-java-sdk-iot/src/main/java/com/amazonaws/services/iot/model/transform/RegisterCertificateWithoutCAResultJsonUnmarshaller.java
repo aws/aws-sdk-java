@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.iotevents.model.*;
+import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,19 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * TagrisPartialResourcesExistResultsException JSON Unmarshaller
+ * RegisterCertificateWithoutCAResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagrisPartialResourcesExistResultsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
-    private TagrisPartialResourcesExistResultsExceptionUnmarshaller() {
-        super(com.amazonaws.services.iotevents.model.TagrisPartialResourcesExistResultsException.class, "TagrisPartialResourcesExistResultsException");
-    }
+public class RegisterCertificateWithoutCAResultJsonUnmarshaller implements Unmarshaller<RegisterCertificateWithoutCAResult, JsonUnmarshallerContext> {
 
-    @Override
-    public com.amazonaws.services.iotevents.model.TagrisPartialResourcesExistResultsException unmarshallFromContext(JsonUnmarshallerContext context)
-            throws Exception {
-        com.amazonaws.services.iotevents.model.TagrisPartialResourcesExistResultsException tagrisPartialResourcesExistResultsException = new com.amazonaws.services.iotevents.model.TagrisPartialResourcesExistResultsException(
-                null);
+    public RegisterCertificateWithoutCAResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        RegisterCertificateWithoutCAResult registerCertificateWithoutCAResult = new RegisterCertificateWithoutCAResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -46,7 +40,7 @@ public class TagrisPartialResourcesExistResultsExceptionUnmarshaller extends Enh
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return null;
+            return registerCertificateWithoutCAResult;
         }
 
         while (true) {
@@ -54,10 +48,13 @@ public class TagrisPartialResourcesExistResultsExceptionUnmarshaller extends Enh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("resourceExistenceInformation", targetDepth)) {
+                if (context.testExpression("certificateArn", targetDepth)) {
                     context.nextToken();
-                    tagrisPartialResourcesExistResultsException.setResourceExistenceInformation(new MapUnmarshaller<String, String>(context
-                            .getUnmarshaller(String.class), context.getUnmarshaller(String.class)).unmarshall(context));
+                    registerCertificateWithoutCAResult.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("certificateId", targetDepth)) {
+                    context.nextToken();
+                    registerCertificateWithoutCAResult.setCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -67,14 +64,15 @@ public class TagrisPartialResourcesExistResultsExceptionUnmarshaller extends Enh
             }
             token = context.nextToken();
         }
-        return tagrisPartialResourcesExistResultsException;
+
+        return registerCertificateWithoutCAResult;
     }
 
-    private static TagrisPartialResourcesExistResultsExceptionUnmarshaller instance;
+    private static RegisterCertificateWithoutCAResultJsonUnmarshaller instance;
 
-    public static TagrisPartialResourcesExistResultsExceptionUnmarshaller getInstance() {
+    public static RegisterCertificateWithoutCAResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new TagrisPartialResourcesExistResultsExceptionUnmarshaller();
+            instance = new RegisterCertificateWithoutCAResultJsonUnmarshaller();
         return instance;
     }
 }

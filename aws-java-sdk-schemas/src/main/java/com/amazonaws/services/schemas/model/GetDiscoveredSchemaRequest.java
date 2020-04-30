@@ -27,7 +27,8 @@ public class GetDiscoveredSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of strings that
+     * An array of strings where each string is a JSON event. These are the events that were used to generate the
+     * schema. The array includes a single type of event and has a maximum size of 10 events.
      * </p>
      */
     private java.util.List<String> events;
@@ -40,10 +41,12 @@ public class GetDiscoveredSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of strings that
+     * An array of strings where each string is a JSON event. These are the events that were used to generate the
+     * schema. The array includes a single type of event and has a maximum size of 10 events.
      * </p>
      * 
-     * @return An array of strings that
+     * @return An array of strings where each string is a JSON event. These are the events that were used to generate
+     *         the schema. The array includes a single type of event and has a maximum size of 10 events.
      */
 
     public java.util.List<String> getEvents() {
@@ -52,11 +55,13 @@ public class GetDiscoveredSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of strings that
+     * An array of strings where each string is a JSON event. These are the events that were used to generate the
+     * schema. The array includes a single type of event and has a maximum size of 10 events.
      * </p>
      * 
      * @param events
-     *        An array of strings that
+     *        An array of strings where each string is a JSON event. These are the events that were used to generate the
+     *        schema. The array includes a single type of event and has a maximum size of 10 events.
      */
 
     public void setEvents(java.util.Collection<String> events) {
@@ -70,7 +75,8 @@ public class GetDiscoveredSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of strings that
+     * An array of strings where each string is a JSON event. These are the events that were used to generate the
+     * schema. The array includes a single type of event and has a maximum size of 10 events.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +85,8 @@ public class GetDiscoveredSchemaRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param events
-     *        An array of strings that
+     *        An array of strings where each string is a JSON event. These are the events that were used to generate the
+     *        schema. The array includes a single type of event and has a maximum size of 10 events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +102,13 @@ public class GetDiscoveredSchemaRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of strings that
+     * An array of strings where each string is a JSON event. These are the events that were used to generate the
+     * schema. The array includes a single type of event and has a maximum size of 10 events.
      * </p>
      * 
      * @param events
-     *        An array of strings that
+     *        An array of strings where each string is a JSON event. These are the events that were used to generate the
+     *        schema. The array includes a single type of event and has a maximum size of 10 events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

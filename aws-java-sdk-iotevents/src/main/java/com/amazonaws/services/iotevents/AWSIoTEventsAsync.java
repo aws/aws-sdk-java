@@ -548,31 +548,4 @@ public interface AWSIoTEventsAsync extends AWSIoTEvents {
     java.util.concurrent.Future<UpdateInputResult> updateInputAsync(UpdateInputRequest updateInputRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInputRequest, UpdateInputResult> asyncHandler);
 
-    /**
-     * @param verifyResourcesExistForTagrisRequest
-     * @return A Java Future containing the result of the VerifyResourcesExistForTagris operation returned by the
-     *         service.
-     * @sample AWSIoTEventsAsync.VerifyResourcesExistForTagris
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/VerifyResourcesExistForTagris"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(
-            VerifyResourcesExistForTagrisRequest verifyResourcesExistForTagrisRequest);
-
-    /**
-     * @param verifyResourcesExistForTagrisRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the VerifyResourcesExistForTagris operation returned by the
-     *         service.
-     * @sample AWSIoTEventsAsyncHandler.VerifyResourcesExistForTagris
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/VerifyResourcesExistForTagris"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(
-            VerifyResourcesExistForTagrisRequest verifyResourcesExistForTagrisRequest,
-            com.amazonaws.handlers.AsyncHandler<VerifyResourcesExistForTagrisRequest, VerifyResourcesExistForTagrisResult> asyncHandler);
-
 }

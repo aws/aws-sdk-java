@@ -25,14 +25,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
-
+    /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     */
     private String schemaName;
-
+    /**
+     * <p>
+     * Specifying this limits the results to only this schema version.
+     * </p>
+     */
     private String schemaVersion;
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -40,7 +58,11 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -48,7 +70,12 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +85,12 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema.
      */
 
     public void setSchemaName(String schemaName) {
@@ -66,7 +98,11 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
+     * @return The name of the schema.
      */
 
     public String getSchemaName() {
@@ -74,7 +110,12 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +125,12 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only this schema version.
+     * </p>
+     * 
      * @param schemaVersion
+     *        Specifying this limits the results to only this schema version.
      */
 
     public void setSchemaVersion(String schemaVersion) {
@@ -92,7 +138,11 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Specifying this limits the results to only this schema version.
+     * </p>
+     * 
+     * @return Specifying this limits the results to only this schema version.
      */
 
     public String getSchemaVersion() {
@@ -100,7 +150,12 @@ public class DescribeSchemaRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only this schema version.
+     * </p>
+     * 
      * @param schemaVersion
+     *        Specifying this limits the results to only this schema version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

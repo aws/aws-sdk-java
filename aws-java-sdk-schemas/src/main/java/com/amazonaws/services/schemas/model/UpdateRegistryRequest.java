@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Updates the registry.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry" target="_top">AWS API
  *      Documentation</a>
@@ -31,7 +34,11 @@ public class UpdateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
 
     /**
@@ -75,7 +82,12 @@ public class UpdateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -83,7 +95,11 @@ public class UpdateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -91,7 +107,12 @@ public class UpdateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

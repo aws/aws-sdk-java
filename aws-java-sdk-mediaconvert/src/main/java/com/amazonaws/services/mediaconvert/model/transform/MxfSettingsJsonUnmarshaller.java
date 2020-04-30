@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model.transform;
+package com.amazonaws.services.mediaconvert.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.iotevents.model.*;
+import com.amazonaws.services.mediaconvert.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,18 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * TagrisAccessDeniedException JSON Unmarshaller
+ * MxfSettings JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagrisAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
-    private TagrisAccessDeniedExceptionUnmarshaller() {
-        super(com.amazonaws.services.iotevents.model.TagrisAccessDeniedException.class, "TagrisAccessDeniedException");
-    }
+public class MxfSettingsJsonUnmarshaller implements Unmarshaller<MxfSettings, JsonUnmarshallerContext> {
 
-    @Override
-    public com.amazonaws.services.iotevents.model.TagrisAccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
-        com.amazonaws.services.iotevents.model.TagrisAccessDeniedException tagrisAccessDeniedException = new com.amazonaws.services.iotevents.model.TagrisAccessDeniedException(
-                null);
+    public MxfSettings unmarshall(JsonUnmarshallerContext context) throws Exception {
+        MxfSettings mxfSettings = new MxfSettings();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -53,6 +48,10 @@ public class TagrisAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("afdSignaling", targetDepth)) {
+                    context.nextToken();
+                    mxfSettings.setAfdSignaling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
@@ -61,14 +60,15 @@ public class TagrisAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUn
             }
             token = context.nextToken();
         }
-        return tagrisAccessDeniedException;
+
+        return mxfSettings;
     }
 
-    private static TagrisAccessDeniedExceptionUnmarshaller instance;
+    private static MxfSettingsJsonUnmarshaller instance;
 
-    public static TagrisAccessDeniedExceptionUnmarshaller getInstance() {
+    public static MxfSettingsJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new TagrisAccessDeniedExceptionUnmarshaller();
+            instance = new MxfSettingsJsonUnmarshaller();
         return instance;
     }
 }

@@ -53,6 +53,12 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
     private String provisioningRoleArn;
     /**
      * <p>
+     * Creates a pre-provisioning hook template.
+     * </p>
+     */
+    private ProvisioningHook preProvisioningHook;
+    /**
+     * <p>
      * Metadata which can be used to manage the fleet provisioning template.
      * </p>
      * <note>
@@ -289,6 +295,46 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * Creates a pre-provisioning hook template.
+     * </p>
+     * 
+     * @param preProvisioningHook
+     *        Creates a pre-provisioning hook template.
+     */
+
+    public void setPreProvisioningHook(ProvisioningHook preProvisioningHook) {
+        this.preProvisioningHook = preProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Creates a pre-provisioning hook template.
+     * </p>
+     * 
+     * @return Creates a pre-provisioning hook template.
+     */
+
+    public ProvisioningHook getPreProvisioningHook() {
+        return this.preProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Creates a pre-provisioning hook template.
+     * </p>
+     * 
+     * @param preProvisioningHook
+     *        Creates a pre-provisioning hook template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProvisioningTemplateRequest withPreProvisioningHook(ProvisioningHook preProvisioningHook) {
+        setPreProvisioningHook(preProvisioningHook);
+        return this;
+    }
+
+    /**
+     * <p>
      * Metadata which can be used to manage the fleet provisioning template.
      * </p>
      * <note>
@@ -459,6 +505,8 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getProvisioningRoleArn() != null)
             sb.append("ProvisioningRoleArn: ").append(getProvisioningRoleArn()).append(",");
+        if (getPreProvisioningHook() != null)
+            sb.append("PreProvisioningHook: ").append(getPreProvisioningHook()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -495,6 +543,10 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getProvisioningRoleArn() != null && other.getProvisioningRoleArn().equals(this.getProvisioningRoleArn()) == false)
             return false;
+        if (other.getPreProvisioningHook() == null ^ this.getPreProvisioningHook() == null)
+            return false;
+        if (other.getPreProvisioningHook() != null && other.getPreProvisioningHook().equals(this.getPreProvisioningHook()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -512,6 +564,7 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getProvisioningRoleArn() == null) ? 0 : getProvisioningRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getPreProvisioningHook() == null) ? 0 : getPreProvisioningHook().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -93,6 +93,19 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(DeleteSchemaRequest request) {
 
         return deleteSchemaAsync(request, null);
@@ -197,6 +210,19 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDiscoverersResult> listDiscoverersAsync(ListDiscoverersRequest request) {
 
         return listDiscoverersAsync(request, null);
@@ -262,19 +288,6 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     }
 
     @Override
-    public java.util.concurrent.Future<LockServiceLinkedRoleResult> lockServiceLinkedRoleAsync(LockServiceLinkedRoleRequest request) {
-
-        return lockServiceLinkedRoleAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<LockServiceLinkedRoleResult> lockServiceLinkedRoleAsync(LockServiceLinkedRoleRequest request,
-            com.amazonaws.handlers.AsyncHandler<LockServiceLinkedRoleRequest, LockServiceLinkedRoleResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<PutCodeBindingResult> putCodeBindingAsync(PutCodeBindingRequest request) {
 
         return putCodeBindingAsync(request, null);
@@ -283,6 +296,19 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     @Override
     public java.util.concurrent.Future<PutCodeBindingResult> putCodeBindingAsync(PutCodeBindingRequest request,
             com.amazonaws.handlers.AsyncHandler<PutCodeBindingRequest, PutCodeBindingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -335,19 +361,6 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnlockServiceLinkedRoleResult> unlockServiceLinkedRoleAsync(UnlockServiceLinkedRoleRequest request) {
-
-        return unlockServiceLinkedRoleAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnlockServiceLinkedRoleResult> unlockServiceLinkedRoleAsync(UnlockServiceLinkedRoleRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnlockServiceLinkedRoleRequest, UnlockServiceLinkedRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

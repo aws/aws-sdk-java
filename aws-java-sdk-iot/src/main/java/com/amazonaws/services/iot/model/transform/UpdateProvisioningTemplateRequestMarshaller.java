@@ -37,6 +37,10 @@ public class UpdateProvisioningTemplateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultVersionId").build();
     private static final MarshallingInfo<String> PROVISIONINGROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("provisioningRoleArn").build();
+    private static final MarshallingInfo<StructuredPojo> PREPROVISIONINGHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preProvisioningHook").build();
+    private static final MarshallingInfo<Boolean> REMOVEPREPROVISIONINGHOOK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removePreProvisioningHook").build();
 
     private static final UpdateProvisioningTemplateRequestMarshaller instance = new UpdateProvisioningTemplateRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class UpdateProvisioningTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateProvisioningTemplateRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(updateProvisioningTemplateRequest.getDefaultVersionId(), DEFAULTVERSIONID_BINDING);
             protocolMarshaller.marshall(updateProvisioningTemplateRequest.getProvisioningRoleArn(), PROVISIONINGROLEARN_BINDING);
+            protocolMarshaller.marshall(updateProvisioningTemplateRequest.getPreProvisioningHook(), PREPROVISIONINGHOOK_BINDING);
+            protocolMarshaller.marshall(updateProvisioningTemplateRequest.getRemovePreProvisioningHook(), REMOVEPREPROVISIONINGHOOK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

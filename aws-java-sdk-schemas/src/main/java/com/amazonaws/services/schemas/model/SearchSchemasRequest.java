@@ -25,16 +25,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifying this limits the results to only schemas that include the provided keywords.
+     * </p>
+     */
     private String keywords;
 
     private Integer limit;
-
+    /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
 
     /**
+     * <p>
+     * Specifying this limits the results to only schemas that include the provided keywords.
+     * </p>
+     * 
      * @param keywords
+     *        Specifying this limits the results to only schemas that include the provided keywords.
      */
 
     public void setKeywords(String keywords) {
@@ -42,7 +61,11 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Specifying this limits the results to only schemas that include the provided keywords.
+     * </p>
+     * 
+     * @return Specifying this limits the results to only schemas that include the provided keywords.
      */
 
     public String getKeywords() {
@@ -50,7 +73,12 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only schemas that include the provided keywords.
+     * </p>
+     * 
      * @param keywords
+     *        Specifying this limits the results to only schemas that include the provided keywords.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +114,14 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public void setNextToken(String nextToken) {
@@ -94,7 +129,13 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
+     * @return The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *         empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public String getNextToken() {
@@ -102,7 +143,14 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +160,12 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -120,7 +173,11 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -128,7 +185,12 @@ public class SearchSchemasRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

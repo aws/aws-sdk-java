@@ -54,6 +54,11 @@ public class AbstractAWSSchemas implements AWSSchemas {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSchemaResult deleteSchema(DeleteSchemaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +99,11 @@ public class AbstractAWSSchemas implements AWSSchemas {
     }
 
     @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDiscoverersResult listDiscoverers(ListDiscoverersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,12 +129,12 @@ public class AbstractAWSSchemas implements AWSSchemas {
     }
 
     @Override
-    public LockServiceLinkedRoleResult lockServiceLinkedRole(LockServiceLinkedRoleRequest request) {
+    public PutCodeBindingResult putCodeBinding(PutCodeBindingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public PutCodeBindingResult putCodeBinding(PutCodeBindingRequest request) {
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -145,11 +155,6 @@ public class AbstractAWSSchemas implements AWSSchemas {
 
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public UnlockServiceLinkedRoleResult unlockServiceLinkedRole(UnlockServiceLinkedRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

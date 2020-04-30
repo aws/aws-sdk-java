@@ -5455,6 +5455,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The specified resource does not exist.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
@@ -10874,6 +10876,75 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Register a certificate that does not have a certificate authority (CA).
+     * </p>
+     * 
+     * @param registerCertificateWithoutCARequest
+     * @return Result of the RegisterCertificateWithoutCA operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws CertificateValidationException
+     *         The certificate is invalid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCertificateWithoutCA
+     */
+    @Override
+    public RegisterCertificateWithoutCAResult registerCertificateWithoutCA(RegisterCertificateWithoutCARequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterCertificateWithoutCA(request);
+    }
+
+    @SdkInternalApi
+    final RegisterCertificateWithoutCAResult executeRegisterCertificateWithoutCA(RegisterCertificateWithoutCARequest registerCertificateWithoutCARequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerCertificateWithoutCARequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterCertificateWithoutCARequest> request = null;
+        Response<RegisterCertificateWithoutCAResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterCertificateWithoutCARequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(registerCertificateWithoutCARequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCertificateWithoutCA");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterCertificateWithoutCAResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RegisterCertificateWithoutCAResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
      * might exceed your account level <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
@@ -11483,8 +11554,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
-     * @throws LimitExceededException
-     *         A limit has been exceeded.
      * @sample AWSIot.SetV2LoggingLevel
      */
     @Override

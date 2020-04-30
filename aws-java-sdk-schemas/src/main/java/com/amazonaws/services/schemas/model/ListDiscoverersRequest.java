@@ -25,16 +25,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
+     * </p>
+     */
     private String discovererIdPrefix;
 
     private Integer limit;
-
+    /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * Specifying this limits the results to only those ARNs that start with the specified prefix.
+     * </p>
+     */
     private String sourceArnPrefix;
 
     /**
+     * <p>
+     * Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
+     * </p>
+     * 
      * @param discovererIdPrefix
+     *        Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
      */
 
     public void setDiscovererIdPrefix(String discovererIdPrefix) {
@@ -42,7 +61,11 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
+     * </p>
+     * 
+     * @return Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
      */
 
     public String getDiscovererIdPrefix() {
@@ -50,7 +73,12 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
+     * </p>
+     * 
      * @param discovererIdPrefix
+     *        Specifying this limits the results to only those discoverer IDs that start with the specified prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +114,14 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public void setNextToken(String nextToken) {
@@ -94,7 +129,13 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
+     * @return The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *         empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public String getNextToken() {
@@ -102,7 +143,14 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +160,12 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those ARNs that start with the specified prefix.
+     * </p>
+     * 
      * @param sourceArnPrefix
+     *        Specifying this limits the results to only those ARNs that start with the specified prefix.
      */
 
     public void setSourceArnPrefix(String sourceArnPrefix) {
@@ -120,7 +173,11 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Specifying this limits the results to only those ARNs that start with the specified prefix.
+     * </p>
+     * 
+     * @return Specifying this limits the results to only those ARNs that start with the specified prefix.
      */
 
     public String getSourceArnPrefix() {
@@ -128,7 +185,12 @@ public class ListDiscoverersRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those ARNs that start with the specified prefix.
+     * </p>
+     * 
      * @param sourceArnPrefix
+     *        Specifying this limits the results to only those ARNs that start with the specified prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

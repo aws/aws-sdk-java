@@ -26,11 +26,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private Integer limit;
-
+    /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * Specifying this limits the results to only those registry names that start with the specified prefix.
+     * </p>
+     */
     private String registryNamePrefix;
-
+    /**
+     * <p>
+     * Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
+     * </p>
+     */
     private String scope;
 
     /**
@@ -60,7 +73,14 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public void setNextToken(String nextToken) {
@@ -68,7 +88,13 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
+     * @return The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *         empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public String getNextToken() {
@@ -76,7 +102,14 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +119,12 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those registry names that start with the specified prefix.
+     * </p>
+     * 
      * @param registryNamePrefix
+     *        Specifying this limits the results to only those registry names that start with the specified prefix.
      */
 
     public void setRegistryNamePrefix(String registryNamePrefix) {
@@ -94,7 +132,11 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Specifying this limits the results to only those registry names that start with the specified prefix.
+     * </p>
+     * 
+     * @return Specifying this limits the results to only those registry names that start with the specified prefix.
      */
 
     public String getRegistryNamePrefix() {
@@ -102,7 +144,12 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those registry names that start with the specified prefix.
+     * </p>
+     * 
      * @param registryNamePrefix
+     *        Specifying this limits the results to only those registry names that start with the specified prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +159,12 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
+     * </p>
+     * 
      * @param scope
+     *        Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
      */
 
     public void setScope(String scope) {
@@ -120,7 +172,11 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
+     * </p>
+     * 
+     * @return Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
      */
 
     public String getScope() {
@@ -128,7 +184,12 @@ public class ListRegistriesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
+     * </p>
+     * 
      * @param scope
+     *        Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

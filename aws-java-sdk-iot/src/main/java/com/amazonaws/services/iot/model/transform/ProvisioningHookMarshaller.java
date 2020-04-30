@@ -10,44 +10,46 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
-import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.iotevents.model.*;
+import com.amazonaws.services.iot.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * VerifyResourcesExistForTagrisRequestMarshaller
+ * ProvisioningHookMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class VerifyResourcesExistForTagrisRequestMarshaller {
+public class ProvisioningHookMarshaller {
 
-    private static final MarshallingInfo<List> TAGRISSWEEPLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagrisSweepList").build();
+    private static final MarshallingInfo<String> PAYLOADVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payloadVersion").build();
+    private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("targetArn").build();
 
-    private static final VerifyResourcesExistForTagrisRequestMarshaller instance = new VerifyResourcesExistForTagrisRequestMarshaller();
+    private static final ProvisioningHookMarshaller instance = new ProvisioningHookMarshaller();
 
-    public static VerifyResourcesExistForTagrisRequestMarshaller getInstance() {
+    public static ProvisioningHookMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(VerifyResourcesExistForTagrisRequest verifyResourcesExistForTagrisRequest, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(ProvisioningHook provisioningHook, ProtocolMarshaller protocolMarshaller) {
 
-        if (verifyResourcesExistForTagrisRequest == null) {
+        if (provisioningHook == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(verifyResourcesExistForTagrisRequest.getTagrisSweepList(), TAGRISSWEEPLIST_BINDING);
+            protocolMarshaller.marshall(provisioningHook.getPayloadVersion(), PAYLOADVERSION_BINDING);
+            protocolMarshaller.marshall(provisioningHook.getTargetArn(), TARGETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

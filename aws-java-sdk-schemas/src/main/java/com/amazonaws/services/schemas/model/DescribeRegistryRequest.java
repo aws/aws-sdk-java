@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeRegistryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -36,7 +46,11 @@ public class DescribeRegistryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -44,7 +58,12 @@ public class DescribeRegistryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

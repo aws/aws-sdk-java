@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model;
+package com.amazonaws.services.schemas.model;
 
 import javax.annotation.Generated;
 
@@ -18,46 +18,65 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagrisInvalidArnException extends com.amazonaws.services.iotevents.model.AWSIoTEventsException {
+public class PreconditionFailedException extends com.amazonaws.services.schemas.model.AWSSchemasException {
     private static final long serialVersionUID = 1L;
 
-    private TagrisSweepListItem sweepListItem;
+    /**
+     * <p>
+     * The error code.
+     * </p>
+     */
+    private String code;
 
     /**
-     * Constructs a new TagrisInvalidArnException with the specified error message.
+     * Constructs a new PreconditionFailedException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
      */
-    public TagrisInvalidArnException(String message) {
+    public PreconditionFailedException(String message) {
         super(message);
     }
 
     /**
-     * @param sweepListItem
+     * <p>
+     * The error code.
+     * </p>
+     * 
+     * @param code
+     *        The error code.
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sweepListItem")
-    public void setSweepListItem(TagrisSweepListItem sweepListItem) {
-        this.sweepListItem = sweepListItem;
+    @com.fasterxml.jackson.annotation.JsonProperty("Code")
+    public void setCode(String code) {
+        this.code = code;
     }
 
     /**
-     * @return
+     * <p>
+     * The error code.
+     * </p>
+     * 
+     * @return The error code.
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sweepListItem")
-    public TagrisSweepListItem getSweepListItem() {
-        return this.sweepListItem;
+    @com.fasterxml.jackson.annotation.JsonProperty("Code")
+    public String getCode() {
+        return this.code;
     }
 
     /**
-     * @param sweepListItem
+     * <p>
+     * The error code.
+     * </p>
+     * 
+     * @param code
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TagrisInvalidArnException withSweepListItem(TagrisSweepListItem sweepListItem) {
-        setSweepListItem(sweepListItem);
+    public PreconditionFailedException withCode(String code) {
+        setCode(code);
         return this;
     }
 

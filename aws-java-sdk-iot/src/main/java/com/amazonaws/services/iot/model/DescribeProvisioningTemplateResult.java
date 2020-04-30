@@ -73,6 +73,12 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String provisioningRoleArn;
+    /**
+     * <p>
+     * Gets information about a pre-provisioned hook.
+     * </p>
+     */
+    private ProvisioningHook preProvisioningHook;
 
     /**
      * <p>
@@ -453,6 +459,46 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Gets information about a pre-provisioned hook.
+     * </p>
+     * 
+     * @param preProvisioningHook
+     *        Gets information about a pre-provisioned hook.
+     */
+
+    public void setPreProvisioningHook(ProvisioningHook preProvisioningHook) {
+        this.preProvisioningHook = preProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Gets information about a pre-provisioned hook.
+     * </p>
+     * 
+     * @return Gets information about a pre-provisioned hook.
+     */
+
+    public ProvisioningHook getPreProvisioningHook() {
+        return this.preProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Gets information about a pre-provisioned hook.
+     * </p>
+     * 
+     * @param preProvisioningHook
+     *        Gets information about a pre-provisioned hook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningTemplateResult withPreProvisioningHook(ProvisioningHook preProvisioningHook) {
+        setPreProvisioningHook(preProvisioningHook);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -481,7 +527,9 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getProvisioningRoleArn() != null)
-            sb.append("ProvisioningRoleArn: ").append(getProvisioningRoleArn());
+            sb.append("ProvisioningRoleArn: ").append(getProvisioningRoleArn()).append(",");
+        if (getPreProvisioningHook() != null)
+            sb.append("PreProvisioningHook: ").append(getPreProvisioningHook());
         sb.append("}");
         return sb.toString();
     }
@@ -532,6 +580,10 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getProvisioningRoleArn() != null && other.getProvisioningRoleArn().equals(this.getProvisioningRoleArn()) == false)
             return false;
+        if (other.getPreProvisioningHook() == null ^ this.getPreProvisioningHook() == null)
+            return false;
+        if (other.getPreProvisioningHook() != null && other.getPreProvisioningHook().equals(this.getPreProvisioningHook()) == false)
+            return false;
         return true;
     }
 
@@ -549,6 +601,7 @@ public class DescribeProvisioningTemplateResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getProvisioningRoleArn() == null) ? 0 : getProvisioningRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getPreProvisioningHook() == null) ? 0 : getPreProvisioningHook().hashCode());
         return hashCode;
     }
 

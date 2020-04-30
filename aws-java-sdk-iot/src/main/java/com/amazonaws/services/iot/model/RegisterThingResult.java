@@ -20,7 +20,7 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * .
+     * The certificate data, in PEM format.
      * </p>
      */
     private String certificatePem;
@@ -33,11 +33,11 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * .
+     * The certificate data, in PEM format.
      * </p>
      * 
      * @param certificatePem
-     *        .
+     *        The certificate data, in PEM format.
      */
 
     public void setCertificatePem(String certificatePem) {
@@ -46,10 +46,10 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * .
+     * The certificate data, in PEM format.
      * </p>
      * 
-     * @return .
+     * @return The certificate data, in PEM format.
      */
 
     public String getCertificatePem() {
@@ -58,11 +58,11 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * .
+     * The certificate data, in PEM format.
      * </p>
      * 
      * @param certificatePem
-     *        .
+     *        The certificate data, in PEM format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

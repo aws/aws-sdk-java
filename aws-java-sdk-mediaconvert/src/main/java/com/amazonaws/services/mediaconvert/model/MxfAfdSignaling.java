@@ -10,22 +10,27 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model;
+package com.amazonaws.services.mediaconvert.model;
 
 import javax.annotation.Generated;
 
 /**
- * 
+ * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also
+ * include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy
+ * from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper.
+ * Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your
+ * output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling
+ * under the output's video encoding settings.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum TagrisStatus {
+public enum MxfAfdSignaling {
 
-    ACTIVE("ACTIVE"),
-    NOT_ACTIVE("NOT_ACTIVE");
+    NO_COPY("NO_COPY"),
+    COPY_FROM_VIDEO("COPY_FROM_VIDEO");
 
     private String value;
 
-    private TagrisStatus(String value) {
+    private MxfAfdSignaling(String value) {
         this.value = value;
     }
 
@@ -39,17 +44,17 @@ public enum TagrisStatus {
      *
      * @param value
      *        real value
-     * @return TagrisStatus corresponding to the value
+     * @return MxfAfdSignaling corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static TagrisStatus fromValue(String value) {
+    public static MxfAfdSignaling fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (TagrisStatus enumEntry : TagrisStatus.values()) {
+        for (MxfAfdSignaling enumEntry : MxfAfdSignaling.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

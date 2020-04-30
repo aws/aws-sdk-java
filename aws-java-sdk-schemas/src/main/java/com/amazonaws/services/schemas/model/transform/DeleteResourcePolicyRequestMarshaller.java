@@ -21,35 +21,32 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * LockServiceLinkedRoleRequestMarshaller
+ * DeleteResourcePolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class LockServiceLinkedRoleRequestMarshaller {
+public class DeleteResourcePolicyRequestMarshaller {
 
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("RoleArn").build();
-    private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Timeout").build();
+    private static final MarshallingInfo<String> REGISTRYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("registryName").build();
 
-    private static final LockServiceLinkedRoleRequestMarshaller instance = new LockServiceLinkedRoleRequestMarshaller();
+    private static final DeleteResourcePolicyRequestMarshaller instance = new DeleteResourcePolicyRequestMarshaller();
 
-    public static LockServiceLinkedRoleRequestMarshaller getInstance() {
+    public static DeleteResourcePolicyRequestMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(LockServiceLinkedRoleRequest lockServiceLinkedRoleRequest, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(DeleteResourcePolicyRequest deleteResourcePolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
-        if (lockServiceLinkedRoleRequest == null) {
+        if (deleteResourcePolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(lockServiceLinkedRoleRequest.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(lockServiceLinkedRoleRequest.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(deleteResourcePolicyRequest.getRegistryName(), REGISTRYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

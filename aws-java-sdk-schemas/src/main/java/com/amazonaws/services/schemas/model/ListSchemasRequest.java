@@ -26,11 +26,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private Integer limit;
-
+    /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
-
+    /**
+     * <p>
+     * Specifying this limits the results to only those schema names that start with the specified prefix.
+     * </p>
+     */
     private String schemaNamePrefix;
 
     /**
@@ -60,7 +73,14 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public void setNextToken(String nextToken) {
@@ -68,7 +88,13 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
+     * @return The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *         empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      */
 
     public String getNextToken() {
@@ -76,7 +102,14 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The token that specifies the next page of results to return. To request the first page, leave NextToken empty.
+     * The token will expire in 24 hours, and cannot be shared with other accounts.
+     * </p>
+     * 
      * @param nextToken
+     *        The token that specifies the next page of results to return. To request the first page, leave NextToken
+     *        empty. The token will expire in 24 hours, and cannot be shared with other accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +119,12 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -94,7 +132,11 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -102,7 +144,12 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +159,12 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those schema names that start with the specified prefix.
+     * </p>
+     * 
      * @param schemaNamePrefix
+     *        Specifying this limits the results to only those schema names that start with the specified prefix.
      */
 
     public void setSchemaNamePrefix(String schemaNamePrefix) {
@@ -120,7 +172,11 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * Specifying this limits the results to only those schema names that start with the specified prefix.
+     * </p>
+     * 
+     * @return Specifying this limits the results to only those schema names that start with the specified prefix.
      */
 
     public String getSchemaNamePrefix() {
@@ -128,7 +184,12 @@ public class ListSchemasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Specifying this limits the results to only those schema names that start with the specified prefix.
+     * </p>
+     * 
      * @param schemaNamePrefix
+     *        Specifying this limits the results to only those schema names that start with the specified prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -118,8 +118,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private DynamoDBv2Action dynamoDBv2;
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     * SiteWise asset property.
+     * Sends information about the detector model instance and the event that triggered the action to an asset property
+     * in AWS IoT SiteWise .
      * </p>
      */
     private IotSiteWiseAction iotSiteWise;
@@ -708,13 +708,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     * SiteWise asset property.
+     * Sends information about the detector model instance and the event that triggered the action to an asset property
+     * in AWS IoT SiteWise .
      * </p>
      * 
      * @param iotSiteWise
-     *        Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     *        SiteWise asset property.
+     *        Sends information about the detector model instance and the event that triggered the action to an asset
+     *        property in AWS IoT SiteWise .
      */
 
     public void setIotSiteWise(IotSiteWiseAction iotSiteWise) {
@@ -723,12 +723,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     * SiteWise asset property.
+     * Sends information about the detector model instance and the event that triggered the action to an asset property
+     * in AWS IoT SiteWise .
      * </p>
      * 
-     * @return Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     *         SiteWise asset property.
+     * @return Sends information about the detector model instance and the event that triggered the action to an asset
+     *         property in AWS IoT SiteWise .
      */
 
     public IotSiteWiseAction getIotSiteWise() {
@@ -737,13 +737,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     * SiteWise asset property.
+     * Sends information about the detector model instance and the event that triggered the action to an asset property
+     * in AWS IoT SiteWise .
      * </p>
      * 
      * @param iotSiteWise
-     *        Sends information about the detector model instance and the event that triggered the action to an AWS IoT
-     *        SiteWise asset property.
+     *        Sends information about the detector model instance and the event that triggered the action to an asset
+     *        property in AWS IoT SiteWise .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

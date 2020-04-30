@@ -862,6 +862,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public RegisterCertificateWithoutCAResult registerCertificateWithoutCA(RegisterCertificateWithoutCARequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterThingResult registerThing(RegisterThingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -4089,7 +4089,7 @@
     "StorageClass":{
       "type":"string",
       "documentation":"<p/>",
-      "max":20,
+      "max":50,
       "min":5
     },
     "StorageGatewayError":{

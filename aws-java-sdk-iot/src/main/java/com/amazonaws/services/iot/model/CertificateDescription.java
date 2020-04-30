@@ -103,6 +103,12 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private CertificateValidity validity;
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     */
+    private String certificateMode;
 
     /**
      * <p>
@@ -658,6 +664,79 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @see CertificateMode
+     */
+
+    public void setCertificateMode(String certificateMode) {
+        this.certificateMode = certificateMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @return The mode of the certificate.
+     * @see CertificateMode
+     */
+
+    public String getCertificateMode() {
+        return this.certificateMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateMode
+     */
+
+    public CertificateDescription withCertificateMode(String certificateMode) {
+        setCertificateMode(certificateMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @see CertificateMode
+     */
+
+    public void setCertificateMode(CertificateMode certificateMode) {
+        withCertificateMode(certificateMode);
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateMode
+     */
+
+    public CertificateDescription withCertificateMode(CertificateMode certificateMode) {
+        this.certificateMode = certificateMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -694,7 +773,9 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
         if (getGenerationId() != null)
             sb.append("GenerationId: ").append(getGenerationId()).append(",");
         if (getValidity() != null)
-            sb.append("Validity: ").append(getValidity());
+            sb.append("Validity: ").append(getValidity()).append(",");
+        if (getCertificateMode() != null)
+            sb.append("CertificateMode: ").append(getCertificateMode());
         sb.append("}");
         return sb.toString();
     }
@@ -761,6 +842,10 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getValidity() != null && other.getValidity().equals(this.getValidity()) == false)
             return false;
+        if (other.getCertificateMode() == null ^ this.getCertificateMode() == null)
+            return false;
+        if (other.getCertificateMode() != null && other.getCertificateMode().equals(this.getCertificateMode()) == false)
+            return false;
         return true;
     }
 
@@ -782,6 +867,7 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getTransferData() == null) ? 0 : getTransferData().hashCode());
         hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
         hashCode = prime * hashCode + ((getValidity() == null) ? 0 : getValidity().hashCode());
+        hashCode = prime * hashCode + ((getCertificateMode() == null) ? 0 : getCertificateMode().hashCode());
         return hashCode;
     }
 

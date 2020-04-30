@@ -43,7 +43,11 @@ public class DiscovererSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String sourceArn;
-
+    /**
+     * <p>
+     * The state of the discoverer.
+     * </p>
+     */
     private String state;
     /**
      * <p>
@@ -173,7 +177,12 @@ public class DiscovererSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The state of the discoverer.
+     * </p>
+     * 
      * @param state
+     *        The state of the discoverer.
      * @see DiscovererState
      */
 
@@ -182,7 +191,11 @@ public class DiscovererSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The state of the discoverer.
+     * </p>
+     * 
+     * @return The state of the discoverer.
      * @see DiscovererState
      */
 
@@ -191,7 +204,12 @@ public class DiscovererSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The state of the discoverer.
+     * </p>
+     * 
      * @param state
+     *        The state of the discoverer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiscovererState
      */
@@ -202,7 +220,12 @@ public class DiscovererSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The state of the discoverer.
+     * </p>
+     * 
      * @param state
+     *        The state of the discoverer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiscovererState
      */

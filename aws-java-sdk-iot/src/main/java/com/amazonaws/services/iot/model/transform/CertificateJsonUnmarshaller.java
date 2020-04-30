@@ -60,6 +60,10 @@ public class CertificateJsonUnmarshaller implements Unmarshaller<Certificate, Js
                     context.nextToken();
                     certificate.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("certificateMode", targetDepth)) {
+                    context.nextToken();
+                    certificate.setCertificateMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
                     certificate.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

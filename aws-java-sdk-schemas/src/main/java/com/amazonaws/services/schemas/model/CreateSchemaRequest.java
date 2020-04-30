@@ -25,6 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     */
     private String content;
     /**
      * <p>
@@ -32,9 +37,17 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
-
+    /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     */
     private String schemaName;
     /**
      * <p>
@@ -42,11 +55,20 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Map<String, String> tags;
-
+    /**
+     * <p>
+     * The type of schema.
+     * </p>
+     */
     private String type;
 
     /**
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     * 
      * @param content
+     *        The source of the schema definition.
      */
 
     public void setContent(String content) {
@@ -54,7 +76,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     * 
+     * @return The source of the schema definition.
      */
 
     public String getContent() {
@@ -62,7 +88,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     * 
      * @param content
+     *        The source of the schema definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +143,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -120,7 +156,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -128,7 +168,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +183,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema.
      */
 
     public void setSchemaName(String schemaName) {
@@ -146,7 +196,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
+     * @return The name of the schema.
      */
 
     public String getSchemaName() {
@@ -154,7 +208,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +291,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
      * @param type
+     *        The type of schema.
      * @see Type
      */
 
@@ -241,7 +305,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
+     * @return The type of schema.
      * @see Type
      */
 
@@ -250,7 +318,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
      * @param type
+     *        The type of schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -261,7 +334,12 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
      * @param type
+     *        The type of schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

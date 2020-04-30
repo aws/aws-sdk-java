@@ -28,20 +28,20 @@ public class ImscDestinationSettings implements Serializable, Cloneable, Structu
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position information from the captions
-     * source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML.
-     * Disable this setting for simplified output captions.
+     * source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable
+     * this setting for simplified output captions.
      */
     private String stylePassthrough;
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position information from the captions
-     * source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML.
-     * Disable this setting for simplified output captions.
+     * source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable
+     * this setting for simplified output captions.
      * 
      * @param stylePassthrough
      *        Keep this setting enabled to have MediaConvert use the font style and position information from the
-     *        captions source in the output. This option is available only when your input captions are CFF-TT, IMSC,
-     *        SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+     *        captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT,
+     *        or TTML. Disable this setting for simplified output captions.
      * @see ImscStylePassthrough
      */
 
@@ -51,12 +51,12 @@ public class ImscDestinationSettings implements Serializable, Cloneable, Structu
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position information from the captions
-     * source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML.
-     * Disable this setting for simplified output captions.
+     * source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable
+     * this setting for simplified output captions.
      * 
      * @return Keep this setting enabled to have MediaConvert use the font style and position information from the
-     *         captions source in the output. This option is available only when your input captions are CFF-TT, IMSC,
-     *         SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+     *         captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT,
+     *         or TTML. Disable this setting for simplified output captions.
      * @see ImscStylePassthrough
      */
 
@@ -66,13 +66,13 @@ public class ImscDestinationSettings implements Serializable, Cloneable, Structu
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position information from the captions
-     * source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML.
-     * Disable this setting for simplified output captions.
+     * source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable
+     * this setting for simplified output captions.
      * 
      * @param stylePassthrough
      *        Keep this setting enabled to have MediaConvert use the font style and position information from the
-     *        captions source in the output. This option is available only when your input captions are CFF-TT, IMSC,
-     *        SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+     *        captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT,
+     *        or TTML. Disable this setting for simplified output captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImscStylePassthrough
      */
@@ -84,13 +84,13 @@ public class ImscDestinationSettings implements Serializable, Cloneable, Structu
 
     /**
      * Keep this setting enabled to have MediaConvert use the font style and position information from the captions
-     * source in the output. This option is available only when your input captions are CFF-TT, IMSC, SMPTE-TT, or TTML.
-     * Disable this setting for simplified output captions.
+     * source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable
+     * this setting for simplified output captions.
      * 
      * @param stylePassthrough
      *        Keep this setting enabled to have MediaConvert use the font style and position information from the
-     *        captions source in the output. This option is available only when your input captions are CFF-TT, IMSC,
-     *        SMPTE-TT, or TTML. Disable this setting for simplified output captions.
+     *        captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT,
+     *        or TTML. Disable this setting for simplified output captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImscStylePassthrough
      */

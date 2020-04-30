@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
-
+    /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     */
     private String schemaName;
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -38,7 +52,11 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -46,7 +64,12 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema.
      */
 
     public void setSchemaName(String schemaName) {
@@ -64,7 +92,11 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
+     * @return The name of the schema.
      */
 
     public String getSchemaName() {
@@ -72,7 +104,12 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the schema.
+     * </p>
+     * 
      * @param schemaName
+     *        The name of the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

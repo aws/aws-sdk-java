@@ -31,7 +31,11 @@ public class UpdateDiscovererRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     */
     private String discovererId;
 
     /**
@@ -75,7 +79,12 @@ public class UpdateDiscovererRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     * 
      * @param discovererId
+     *        The ID of the discoverer.
      */
 
     public void setDiscovererId(String discovererId) {
@@ -83,7 +92,11 @@ public class UpdateDiscovererRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     * 
+     * @return The ID of the discoverer.
      */
 
     public String getDiscovererId() {
@@ -91,7 +104,12 @@ public class UpdateDiscovererRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ID of the discoverer.
+     * </p>
+     * 
      * @param discovererId
+     *        The ID of the discoverer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -100,6 +100,10 @@ public class CertificateDescriptionJsonUnmarshaller implements Unmarshaller<Cert
                     context.nextToken();
                     certificateDescription.setValidity(CertificateValidityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("certificateMode", targetDepth)) {
+                    context.nextToken();
+                    certificateDescription.setCertificateMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

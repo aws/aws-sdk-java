@@ -19,37 +19,56 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnlockServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
-
-    private String roleArn;
+public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * @param roleArn
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
+    private String registryName;
+
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @param registryName
+     *        The name of the registry.
      */
 
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
+    public void setRegistryName(String registryName) {
+        this.registryName = registryName;
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
-    public String getRoleArn() {
-        return this.roleArn;
+    public String getRegistryName() {
+        return this.registryName;
     }
 
     /**
-     * @param roleArn
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UnlockServiceLinkedRoleRequest withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
+    public DeleteResourcePolicyRequest withRegistryName(String registryName) {
+        setRegistryName(registryName);
         return this;
     }
 
@@ -65,8 +84,8 @@ public class UnlockServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+        if (getRegistryName() != null)
+            sb.append("RegistryName: ").append(getRegistryName());
         sb.append("}");
         return sb.toString();
     }
@@ -78,12 +97,12 @@ public class UnlockServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
         if (obj == null)
             return false;
 
-        if (obj instanceof UnlockServiceLinkedRoleRequest == false)
+        if (obj instanceof DeleteResourcePolicyRequest == false)
             return false;
-        UnlockServiceLinkedRoleRequest other = (UnlockServiceLinkedRoleRequest) obj;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+        DeleteResourcePolicyRequest other = (DeleteResourcePolicyRequest) obj;
+        if (other.getRegistryName() == null ^ this.getRegistryName() == null)
             return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+        if (other.getRegistryName() != null && other.getRegistryName().equals(this.getRegistryName()) == false)
             return false;
         return true;
     }
@@ -93,13 +112,13 @@ public class UnlockServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getRegistryName() == null) ? 0 : getRegistryName().hashCode());
         return hashCode;
     }
 
     @Override
-    public UnlockServiceLinkedRoleRequest clone() {
-        return (UnlockServiceLinkedRoleRequest) super.clone();
+    public DeleteResourcePolicyRequest clone() {
+        return (DeleteResourcePolicyRequest) super.clone();
     }
 
 }

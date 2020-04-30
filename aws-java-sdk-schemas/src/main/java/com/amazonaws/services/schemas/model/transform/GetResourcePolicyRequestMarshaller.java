@@ -21,32 +21,32 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UnlockServiceLinkedRoleRequestMarshaller
+ * GetResourcePolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class UnlockServiceLinkedRoleRequestMarshaller {
+public class GetResourcePolicyRequestMarshaller {
 
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<String> REGISTRYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("registryName").build();
 
-    private static final UnlockServiceLinkedRoleRequestMarshaller instance = new UnlockServiceLinkedRoleRequestMarshaller();
+    private static final GetResourcePolicyRequestMarshaller instance = new GetResourcePolicyRequestMarshaller();
 
-    public static UnlockServiceLinkedRoleRequestMarshaller getInstance() {
+    public static GetResourcePolicyRequestMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(UnlockServiceLinkedRoleRequest unlockServiceLinkedRoleRequest, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(GetResourcePolicyRequest getResourcePolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
-        if (unlockServiceLinkedRoleRequest == null) {
+        if (getResourcePolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(unlockServiceLinkedRoleRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(getResourcePolicyRequest.getRegistryName(), REGISTRYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -2045,6 +2045,8 @@ public interface AWSIot {
      *         The specified resource does not exist.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
@@ -3926,6 +3928,33 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Register a certificate that does not have a certificate authority (CA).
+     * </p>
+     * 
+     * @param registerCertificateWithoutCARequest
+     * @return Result of the RegisterCertificateWithoutCA operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws CertificateValidationException
+     *         The certificate is invalid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCertificateWithoutCA
+     */
+    RegisterCertificateWithoutCAResult registerCertificateWithoutCA(RegisterCertificateWithoutCARequest registerCertificateWithoutCARequest);
+
+    /**
+     * <p>
      * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
      * might exceed your account level <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling
@@ -4167,8 +4196,6 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
-     * @throws LimitExceededException
-     *         A limit has been exceeded.
      * @sample AWSIot.SetV2LoggingLevel
      */
     SetV2LoggingLevelResult setV2LoggingLevel(SetV2LoggingLevelRequest setV2LoggingLevelRequest);

@@ -15,8 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT
- * output or TTML output.
+ * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TtmlStylePassthrough {

@@ -31,7 +31,11 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     */
     private String registryName;
     /**
      * <p>
@@ -81,7 +85,12 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      */
 
     public void setRegistryName(String registryName) {
@@ -89,7 +98,11 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
+     * @return The name of the registry.
      */
 
     public String getRegistryName() {
@@ -97,7 +110,12 @@ public class CreateRegistryRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the registry.
+     * </p>
+     * 
      * @param registryName
+     *        The name of the registry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

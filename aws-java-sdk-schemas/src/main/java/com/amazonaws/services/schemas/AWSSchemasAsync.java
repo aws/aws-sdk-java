@@ -26,7 +26,7 @@ import com.amazonaws.services.schemas.model.*;
  * </p>
  * <p>
  * <p>
- * AWS EventBridge Schemas
+ * Amazon EventBridge Schema Registry
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -98,6 +98,11 @@ public interface AWSSchemasAsync extends AWSSchemas {
      * <p>
      * Creates a schema definition.
      * </p>
+     * <note>
+     * <p>
+     * Inactive schemas will be deleted after two years.
+     * </p>
+     * </note>
      * 
      * @param createSchemaRequest
      * @return A Java Future containing the result of the CreateSchema operation returned by the service.
@@ -111,6 +116,11 @@ public interface AWSSchemasAsync extends AWSSchemas {
      * <p>
      * Creates a schema definition.
      * </p>
+     * <note>
+     * <p>
+     * Inactive schemas will be deleted after two years.
+     * </p>
+     * </note>
      * 
      * @param createSchemaRequest
      * @param asyncHandler
@@ -186,6 +196,37 @@ public interface AWSSchemasAsync extends AWSSchemas {
      */
     java.util.concurrent.Future<DeleteRegistryResult> deleteRegistryAsync(DeleteRegistryRequest deleteRegistryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRegistryRequest, DeleteRegistryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the resource-based policy attached to the specified registry.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSSchemasAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Delete the resource-based policy attached to the specified registry.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSSchemasAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -437,6 +478,37 @@ public interface AWSSchemasAsync extends AWSSchemas {
 
     /**
      * <p>
+     * Retrieves the resource-based policy attached to a given registry.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSSchemasAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the resource-based policy attached to a given registry.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSSchemasAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * List the discoverers.
      * </p>
      * 
@@ -591,29 +663,6 @@ public interface AWSSchemasAsync extends AWSSchemas {
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
-     * @param lockServiceLinkedRoleRequest
-     * @return A Java Future containing the result of the LockServiceLinkedRole operation returned by the service.
-     * @sample AWSSchemasAsync.LockServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<LockServiceLinkedRoleResult> lockServiceLinkedRoleAsync(LockServiceLinkedRoleRequest lockServiceLinkedRoleRequest);
-
-    /**
-     * @param lockServiceLinkedRoleRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the LockServiceLinkedRole operation returned by the service.
-     * @sample AWSSchemasAsyncHandler.LockServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<LockServiceLinkedRoleResult> lockServiceLinkedRoleAsync(LockServiceLinkedRoleRequest lockServiceLinkedRoleRequest,
-            com.amazonaws.handlers.AsyncHandler<LockServiceLinkedRoleRequest, LockServiceLinkedRoleResult> asyncHandler);
-
-    /**
      * <p>
      * Put code binding URI
      * </p>
@@ -643,6 +692,39 @@ public interface AWSSchemasAsync extends AWSSchemas {
      */
     java.util.concurrent.Future<PutCodeBindingResult> putCodeBindingAsync(PutCodeBindingRequest putCodeBindingRequest,
             com.amazonaws.handlers.AsyncHandler<PutCodeBindingRequest, PutCodeBindingResult> asyncHandler);
+
+    /**
+     * <p>
+     * The name of the policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     *        The name of the policy.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSSchemasAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * The name of the policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     *        The name of the policy.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSSchemasAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -769,29 +851,6 @@ public interface AWSSchemasAsync extends AWSSchemas {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
-     * @param unlockServiceLinkedRoleRequest
-     * @return A Java Future containing the result of the UnlockServiceLinkedRole operation returned by the service.
-     * @sample AWSSchemasAsync.UnlockServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<UnlockServiceLinkedRoleResult> unlockServiceLinkedRoleAsync(UnlockServiceLinkedRoleRequest unlockServiceLinkedRoleRequest);
-
-    /**
-     * @param unlockServiceLinkedRoleRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UnlockServiceLinkedRole operation returned by the service.
-     * @sample AWSSchemasAsyncHandler.UnlockServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<UnlockServiceLinkedRoleResult> unlockServiceLinkedRoleAsync(UnlockServiceLinkedRoleRequest unlockServiceLinkedRoleRequest,
-            com.amazonaws.handlers.AsyncHandler<UnlockServiceLinkedRoleRequest, UnlockServiceLinkedRoleResult> asyncHandler);
-
-    /**
      * <p>
      * Removes tags from a resource.
      * </p>
@@ -859,6 +918,7 @@ public interface AWSSchemasAsync extends AWSSchemas {
      * </p>
      * 
      * @param updateRegistryRequest
+     *        Updates the registry.
      * @return A Java Future containing the result of the UpdateRegistry operation returned by the service.
      * @sample AWSSchemasAsync.UpdateRegistry
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry" target="_top">AWS API
@@ -872,6 +932,7 @@ public interface AWSSchemasAsync extends AWSSchemas {
      * </p>
      * 
      * @param updateRegistryRequest
+     *        Updates the registry.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -888,6 +949,11 @@ public interface AWSSchemasAsync extends AWSSchemas {
      * <p>
      * Updates the schema definition
      * </p>
+     * <note>
+     * <p>
+     * Inactive schemas will be deleted after two years.
+     * </p>
+     * </note>
      * 
      * @param updateSchemaRequest
      * @return A Java Future containing the result of the UpdateSchema operation returned by the service.
@@ -901,6 +967,11 @@ public interface AWSSchemasAsync extends AWSSchemas {
      * <p>
      * Updates the schema definition
      * </p>
+     * <note>
+     * <p>
+     * Inactive schemas will be deleted after two years.
+     * </p>
+     * </note>
      * 
      * @param updateSchemaRequest
      * @param asyncHandler

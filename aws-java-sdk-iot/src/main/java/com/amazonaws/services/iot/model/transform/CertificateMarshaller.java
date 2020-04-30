@@ -33,6 +33,8 @@ public class CertificateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> CERTIFICATEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateMode").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
 
@@ -55,6 +57,7 @@ public class CertificateMarshaller {
             protocolMarshaller.marshall(certificate.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(certificate.getCertificateId(), CERTIFICATEID_BINDING);
             protocolMarshaller.marshall(certificate.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(certificate.getCertificateMode(), CERTIFICATEMODE_BINDING);
             protocolMarshaller.marshall(certificate.getCreationDate(), CREATIONDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

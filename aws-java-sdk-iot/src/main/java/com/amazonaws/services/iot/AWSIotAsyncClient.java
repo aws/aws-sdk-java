@@ -5712,6 +5712,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterCertificateWithoutCAResult> registerCertificateWithoutCAAsync(RegisterCertificateWithoutCARequest request) {
+
+        return registerCertificateWithoutCAAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterCertificateWithoutCAResult> registerCertificateWithoutCAAsync(final RegisterCertificateWithoutCARequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterCertificateWithoutCARequest, RegisterCertificateWithoutCAResult> asyncHandler) {
+        final RegisterCertificateWithoutCARequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterCertificateWithoutCAResult>() {
+            @Override
+            public RegisterCertificateWithoutCAResult call() throws Exception {
+                RegisterCertificateWithoutCAResult result = null;
+
+                try {
+                    result = executeRegisterCertificateWithoutCA(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterThingResult> registerThingAsync(RegisterThingRequest request) {
 
         return registerThingAsync(request, null);

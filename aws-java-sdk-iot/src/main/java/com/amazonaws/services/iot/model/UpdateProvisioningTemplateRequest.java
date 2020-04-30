@@ -51,6 +51,18 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String provisioningRoleArn;
+    /**
+     * <p>
+     * Updates the pre-provisioning hook template.
+     * </p>
+     */
+    private ProvisioningHook preProvisioningHook;
+    /**
+     * <p>
+     * Removes pre-provisioning hook template.
+     * </p>
+     */
+    private Boolean removePreProvisioningHook;
 
     /**
      * <p>
@@ -271,6 +283,98 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Updates the pre-provisioning hook template.
+     * </p>
+     * 
+     * @param preProvisioningHook
+     *        Updates the pre-provisioning hook template.
+     */
+
+    public void setPreProvisioningHook(ProvisioningHook preProvisioningHook) {
+        this.preProvisioningHook = preProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Updates the pre-provisioning hook template.
+     * </p>
+     * 
+     * @return Updates the pre-provisioning hook template.
+     */
+
+    public ProvisioningHook getPreProvisioningHook() {
+        return this.preProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Updates the pre-provisioning hook template.
+     * </p>
+     * 
+     * @param preProvisioningHook
+     *        Updates the pre-provisioning hook template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisioningTemplateRequest withPreProvisioningHook(ProvisioningHook preProvisioningHook) {
+        setPreProvisioningHook(preProvisioningHook);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes pre-provisioning hook template.
+     * </p>
+     * 
+     * @param removePreProvisioningHook
+     *        Removes pre-provisioning hook template.
+     */
+
+    public void setRemovePreProvisioningHook(Boolean removePreProvisioningHook) {
+        this.removePreProvisioningHook = removePreProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Removes pre-provisioning hook template.
+     * </p>
+     * 
+     * @return Removes pre-provisioning hook template.
+     */
+
+    public Boolean getRemovePreProvisioningHook() {
+        return this.removePreProvisioningHook;
+    }
+
+    /**
+     * <p>
+     * Removes pre-provisioning hook template.
+     * </p>
+     * 
+     * @param removePreProvisioningHook
+     *        Removes pre-provisioning hook template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisioningTemplateRequest withRemovePreProvisioningHook(Boolean removePreProvisioningHook) {
+        setRemovePreProvisioningHook(removePreProvisioningHook);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes pre-provisioning hook template.
+     * </p>
+     * 
+     * @return Removes pre-provisioning hook template.
+     */
+
+    public Boolean isRemovePreProvisioningHook() {
+        return this.removePreProvisioningHook;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -291,7 +395,11 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
         if (getDefaultVersionId() != null)
             sb.append("DefaultVersionId: ").append(getDefaultVersionId()).append(",");
         if (getProvisioningRoleArn() != null)
-            sb.append("ProvisioningRoleArn: ").append(getProvisioningRoleArn());
+            sb.append("ProvisioningRoleArn: ").append(getProvisioningRoleArn()).append(",");
+        if (getPreProvisioningHook() != null)
+            sb.append("PreProvisioningHook: ").append(getPreProvisioningHook()).append(",");
+        if (getRemovePreProvisioningHook() != null)
+            sb.append("RemovePreProvisioningHook: ").append(getRemovePreProvisioningHook());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +434,14 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getProvisioningRoleArn() != null && other.getProvisioningRoleArn().equals(this.getProvisioningRoleArn()) == false)
             return false;
+        if (other.getPreProvisioningHook() == null ^ this.getPreProvisioningHook() == null)
+            return false;
+        if (other.getPreProvisioningHook() != null && other.getPreProvisioningHook().equals(this.getPreProvisioningHook()) == false)
+            return false;
+        if (other.getRemovePreProvisioningHook() == null ^ this.getRemovePreProvisioningHook() == null)
+            return false;
+        if (other.getRemovePreProvisioningHook() != null && other.getRemovePreProvisioningHook().equals(this.getRemovePreProvisioningHook()) == false)
+            return false;
         return true;
     }
 
@@ -339,6 +455,8 @@ public class UpdateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getDefaultVersionId() == null) ? 0 : getDefaultVersionId().hashCode());
         hashCode = prime * hashCode + ((getProvisioningRoleArn() == null) ? 0 : getProvisioningRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getPreProvisioningHook() == null) ? 0 : getPreProvisioningHook().hashCode());
+        hashCode = prime * hashCode + ((getRemovePreProvisioningHook() == null) ? 0 : getRemovePreProvisioningHook().hashCode());
         return hashCode;
     }
 

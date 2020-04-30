@@ -26,33 +26,33 @@ import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UnlockServiceLinkedRoleRequest Marshaller
+ * GetResourcePolicyRequest Marshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class UnlockServiceLinkedRoleRequestProtocolMarshaller implements Marshaller<Request<UnlockServiceLinkedRoleRequest>, UnlockServiceLinkedRoleRequest> {
+public class GetResourcePolicyRequestProtocolMarshaller implements Marshaller<Request<GetResourcePolicyRequest>, GetResourcePolicyRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/slr-deletion/unlock")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSSchemas").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/policy")
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSSchemas").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 
-    public UnlockServiceLinkedRoleRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+    public GetResourcePolicyRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<UnlockServiceLinkedRoleRequest> marshall(UnlockServiceLinkedRoleRequest unlockServiceLinkedRoleRequest) {
+    public Request<GetResourcePolicyRequest> marshall(GetResourcePolicyRequest getResourcePolicyRequest) {
 
-        if (unlockServiceLinkedRoleRequest == null) {
+        if (getResourcePolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final ProtocolRequestMarshaller<UnlockServiceLinkedRoleRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(
-                    SDK_OPERATION_BINDING, unlockServiceLinkedRoleRequest);
+            final ProtocolRequestMarshaller<GetResourcePolicyRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
+                    getResourcePolicyRequest);
 
             protocolMarshaller.startMarshalling();
-            UnlockServiceLinkedRoleRequestMarshaller.getInstance().marshall(unlockServiceLinkedRoleRequest, protocolMarshaller);
+            GetResourcePolicyRequestMarshaller.getInstance().marshall(getResourcePolicyRequest, protocolMarshaller);
             return protocolMarshaller.finishMarshalling();
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

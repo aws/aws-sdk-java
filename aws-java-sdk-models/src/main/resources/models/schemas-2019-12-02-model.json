@@ -22,26 +22,33 @@
         "shape": "CreateDiscovererRequest"
       },
       "output": {
-        "shape": "CreateDiscovererResponse"
+        "shape": "CreateDiscovererResponse",
+        "documentation": "<p>201 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "ConflictException"
+          "shape": "ConflictException",
+          "documentation": "<p>409 response</p>"
         }
       ],
       "documentation": "<p>Creates a discoverer.</p>"
@@ -57,26 +64,33 @@
         "shape": "CreateRegistryRequest"
       },
       "output": {
-        "shape": "CreateRegistryResponse"
+        "shape": "CreateRegistryResponse",
+        "documentation": "<p>201 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "ConflictException"
+          "shape": "ConflictException",
+          "documentation": "<p>409 response</p>"
         }
       ],
       "documentation": "<p>Creates a registry.</p>"
@@ -92,23 +106,28 @@
         "shape": "CreateSchemaRequest"
       },
       "output": {
-        "shape": "CreateSchemaResponse"
+        "shape": "CreateSchemaResponse",
+        "documentation": "<p>201 response</p>"
       },
       "errors": [
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
-      "documentation": "<p>Creates a schema definition.</p>"
+      "documentation": "<p>Creates a schema definition.</p> <note><p>Inactive schemas will be deleted after two years.</p></note>"
     },
     "DeleteDiscoverer": {
       "name": "DeleteDiscoverer",
@@ -122,22 +141,28 @@
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Deletes a discoverer.</p>"
@@ -154,25 +179,69 @@
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Deletes a Registry.</p>"
+    },
+    "DeleteResourcePolicy": {
+      "name": "DeleteResourcePolicy",
+      "http": {
+        "method": "DELETE",
+        "requestUri": "/v1/policy",
+        "responseCode": 204
+      },
+      "input": {
+        "shape": "DeleteResourcePolicyRequest"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
+        }
+      ],
+      "documentation": "<p>Delete the resource-based policy attached to the specified registry.</p>"
     },
     "DeleteSchema": {
       "name": "DeleteSchema",
@@ -186,22 +255,28 @@
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Delete a schema definition.</p>"
@@ -218,22 +293,28 @@
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Delete the schema version definition</p>"
@@ -249,26 +330,33 @@
         "shape": "DescribeCodeBindingRequest"
       },
       "output": {
-        "shape": "DescribeCodeBindingResponse"
+        "shape": "DescribeCodeBindingResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "TooManyRequestsException"
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>429 response</p>"
         }
       ],
       "documentation": "<p>Describe the code binding URI.</p>"
@@ -284,26 +372,33 @@
         "shape": "DescribeDiscovererRequest"
       },
       "output": {
-        "shape": "DescribeDiscovererResponse"
+        "shape": "DescribeDiscovererResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Describes the discoverer.</p>"
@@ -319,26 +414,33 @@
         "shape": "DescribeRegistryRequest"
       },
       "output": {
-        "shape": "DescribeRegistryResponse"
+        "shape": "DescribeRegistryResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Describes the registry.</p>"
@@ -354,26 +456,33 @@
         "shape": "DescribeSchemaRequest"
       },
       "output": {
-        "shape": "DescribeSchemaResponse"
+        "shape": "DescribeSchemaResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Retrieve the schema definition.</p>"
@@ -389,26 +498,33 @@
         "shape": "GetCodeBindingSourceRequest"
       },
       "output": {
-        "shape": "GetCodeBindingSourceResponse"
+        "shape": "GetCodeBindingSourceResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "TooManyRequestsException"
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>429 response</p>"
         }
       ],
       "documentation": "<p>Get the code binding source URI.</p>"
@@ -424,26 +540,74 @@
         "shape": "GetDiscoveredSchemaRequest"
       },
       "output": {
-        "shape": "GetDiscoveredSchemaResponse"
+        "shape": "GetDiscoveredSchemaResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>Get the discovered schema that was generated based on sampled events.</p>"
+    },
+    "GetResourcePolicy": {
+      "name": "GetResourcePolicy",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/policy",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetResourcePolicyRequest"
+      },
+      "output": {
+        "shape": "GetResourcePolicyResponse",
+        "documentation": "<p>Get Resource-Based Policy Response</p>"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
+        }
+      ],
+      "documentation": "<p>Retrieves the resource-based policy attached to a given registry.</p>"
     },
     "ListDiscoverers": {
       "name": "ListDiscoverers",
@@ -456,23 +620,29 @@
         "shape": "ListDiscoverersRequest"
       },
       "output": {
-        "shape": "ListDiscoverersResponse"
+        "shape": "ListDiscoverersResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>List the discoverers.</p>"
@@ -488,23 +658,29 @@
         "shape": "ListRegistriesRequest"
       },
       "output": {
-        "shape": "ListRegistriesResponse"
+        "shape": "ListRegistriesResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>List the registries.</p>"
@@ -520,26 +696,33 @@
         "shape": "ListSchemaVersionsRequest"
       },
       "output": {
-        "shape": "ListSchemaVersionsResponse"
+        "shape": "ListSchemaVersionsResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Provides a list of the schema versions and related information.</p>"
@@ -555,23 +738,29 @@
         "shape": "ListSchemasRequest"
       },
       "output": {
-        "shape": "ListSchemasResponse"
+        "shape": "ListSchemasResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>List the schemas.</p>"
@@ -587,55 +776,28 @@
         "shape": "ListTagsForResourceRequest"
       },
       "output": {
-        "shape": "ListTagsForResourceResponse"
+        "shape": "ListTagsForResourceResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>Get tags for resource.</p>"
-    },
-    "LockServiceLinkedRole": {
-      "name": "LockServiceLinkedRole",
-      "http": {
-        "method": "POST",
-        "requestUri": "/slr-deletion/lock",
-        "responseCode": 200
-      },
-      "input": {
-        "shape": "LockServiceLinkedRoleRequest"
-      },
-      "output": {
-        "shape": "LockServiceLinkedRoleResponse"
-      },
-      "errors": [
-        {
-          "shape": "ServiceUnavailableException"
-        },
-        {
-          "shape": "BadRequestException"
-        },
-        {
-          "shape": "UnauthorizedException"
-        },
-        {
-          "shape": "InternalServerErrorException"
-        },
-        {
-          "shape": "ForbiddenException"
-        }
-      ],
-      "internal": true
     },
     "PutCodeBinding": {
       "name": "PutCodeBinding",
@@ -648,32 +810,86 @@
         "shape": "PutCodeBindingRequest"
       },
       "output": {
-        "shape": "PutCodeBindingResponse"
+        "shape": "PutCodeBindingResponse",
+        "documentation": "<p>202 response</p>"
       },
       "errors": [
         {
-          "shape": "GoneException"
+          "shape": "GoneException",
+          "documentation": "<p>410 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "TooManyRequestsException"
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>429 response</p>"
         }
       ],
       "documentation": "<p>Put code binding URI</p>"
+    },
+    "PutResourcePolicy": {
+      "name": "PutResourcePolicy",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/v1/policy",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "PutResourcePolicyRequest"
+      },
+      "output": {
+        "shape": "PutResourcePolicyResponse",
+        "documentation": "<p>200 response</p>"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
+        },
+        {
+          "shape": "PreconditionFailedException",
+          "documentation": "<p>412 response</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
+        }
+      ],
+      "documentation": "<p>The name of the policy.</p>"
     },
     "SearchSchemas": {
       "name": "SearchSchemas",
@@ -686,23 +902,29 @@
         "shape": "SearchSchemasRequest"
       },
       "output": {
-        "shape": "SearchSchemasResponse"
+        "shape": "SearchSchemasResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>Search the schemas</p>"
@@ -718,26 +940,33 @@
         "shape": "StartDiscovererRequest"
       },
       "output": {
-        "shape": "StartDiscovererResponse"
+        "shape": "StartDiscovererResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Starts the discoverer</p>"
@@ -753,26 +982,33 @@
         "shape": "StopDiscovererRequest"
       },
       "output": {
-        "shape": "StopDiscovererResponse"
+        "shape": "StopDiscovererResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Stops the discoverer</p>"
@@ -789,51 +1025,23 @@
       },
       "errors": [
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>Add tags to a resource.</p>"
-    },
-    "UnlockServiceLinkedRole": {
-      "name": "UnlockServiceLinkedRole",
-      "http": {
-        "method": "POST",
-        "requestUri": "/slr-deletion/unlock",
-        "responseCode": 200
-      },
-      "input": {
-        "shape": "UnlockServiceLinkedRoleRequest"
-      },
-      "output": {
-        "shape": "UnlockServiceLinkedRoleResponse"
-      },
-      "errors": [
-        {
-          "shape": "ServiceUnavailableException"
-        },
-        {
-          "shape": "BadRequestException"
-        },
-        {
-          "shape": "UnauthorizedException"
-        },
-        {
-          "shape": "InternalServerErrorException"
-        },
-        {
-          "shape": "ForbiddenException"
-        }
-      ],
-      "internal": true
     },
     "UntagResource": {
       "name": "UntagResource",
@@ -847,16 +1055,20 @@
       },
       "errors": [
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         }
       ],
       "documentation": "<p>Removes tags from a resource.</p>"
@@ -872,26 +1084,33 @@
         "shape": "UpdateDiscovererRequest"
       },
       "output": {
-        "shape": "UpdateDiscovererResponse"
+        "shape": "UpdateDiscovererResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Updates the discoverer</p>"
@@ -907,26 +1126,33 @@
         "shape": "UpdateRegistryRequest"
       },
       "output": {
-        "shape": "UpdateRegistryResponse"
+        "shape": "UpdateRegistryResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "UnauthorizedException"
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
       "documentation": "<p>Updates a registry.</p>"
@@ -942,26 +1168,32 @@
         "shape": "UpdateSchemaRequest"
       },
       "output": {
-        "shape": "UpdateSchemaResponse"
+        "shape": "UpdateSchemaResponse",
+        "documentation": "<p>200 response</p>"
       },
       "errors": [
         {
-          "shape": "BadRequestException"
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
         },
         {
-          "shape": "InternalServerErrorException"
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
         },
         {
-          "shape": "ForbiddenException"
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
         },
         {
-          "shape": "NotFoundException"
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
         },
         {
-          "shape": "ServiceUnavailableException"
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
         }
       ],
-      "documentation": "<p>Updates the schema definition</p>"
+      "documentation": "<p>Updates the schema definition</p> <note><p>Inactive schemas will be deleted after two years.</p></note>"
     }
   },
   "shapes": {
@@ -1074,6 +1306,7 @@
           "documentation": "<p>Tags associated with the resource.</p>"
         }
       },
+      "documentation": "",
       "required": [
         "SourceArn"
       ]
@@ -1132,7 +1365,8 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "Tags": {
           "shape": "Tags",
@@ -1170,7 +1404,8 @@
       "type": "structure",
       "members": {
         "Content": {
-          "shape": "__stringMin1Max100000"
+          "shape": "__stringMin1Max100000",
+          "documentation": "<p>The source of the schema definition.</p>"
         },
         "Description": {
           "shape": "__stringMin0Max256",
@@ -1182,7 +1417,8 @@
           "documentation": "<p>Tags associated with the schema.</p>"
         },
         "Type": {
-          "shape": "Type"
+          "shape": "Type",
+          "documentation": "<p>The type of schema.</p>"
         }
       },
       "required": [
@@ -1194,7 +1430,8 @@
       "type": "structure",
       "members": {
         "Content": {
-          "shape": "__stringMin1Max100000"
+          "shape": "__stringMin1Max100000",
+          "documentation": "<p>The source of the schema definition.</p>"
         },
         "Description": {
           "shape": "__stringMin0Max256",
@@ -1203,12 +1440,14 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "Tags": {
           "shape": "Tags",
@@ -1216,7 +1455,8 @@
           "documentation": "<p>Tags associated with the schema.</p>"
         },
         "Type": {
-          "shape": "Type"
+          "shape": "Type",
+          "documentation": "<p>The type of schema.</p>"
         }
       },
       "required": [
@@ -1269,7 +1509,8 @@
         "DiscovererId": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "discovererId"
+          "locationName": "discovererId",
+          "documentation": "<p>The ID of the discoverer.</p>"
         }
       },
       "required": [
@@ -1282,12 +1523,24 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         }
       },
       "required": [
         "RegistryName"
       ]
+    },
+    "DeleteResourcePolicyRequest": {
+      "type": "structure",
+      "members": {
+        "RegistryName": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
+        }
+      }
     },
     "DeleteSchemaRequest": {
       "type": "structure",
@@ -1295,12 +1548,14 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         }
       },
       "required": [
@@ -1314,17 +1569,20 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "SchemaVersion": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaVersion"
+          "locationName": "schemaVersion",
+          "documentation": "The version number of the schema"
         }
       },
       "required": [
@@ -1339,22 +1597,26 @@
         "Language": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "language"
+          "locationName": "language",
+          "documentation": "<p>The language of the code binding.</p>"
         },
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "SchemaVersion": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "schemaVersion"
+          "locationName": "schemaVersion",
+          "documentation": "<p>Specifying this limits the results to only this schema version.</p>"
         }
       },
       "required": [
@@ -1390,7 +1652,8 @@
         "DiscovererId": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "discovererId"
+          "locationName": "discovererId",
+          "documentation": "<p>The ID of the discoverer.</p>"
         }
       },
       "required": [
@@ -1433,7 +1696,8 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         }
       },
       "required": [
@@ -1466,7 +1730,8 @@
       "type": "structure",
       "members": {
         "Content": {
-          "shape": "__string"
+          "shape": "__string",
+          "documentation": "<p>The source of the schema definition.</p>"
         },
         "Description": {
           "shape": "__string",
@@ -1509,17 +1774,20 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "SchemaVersion": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "schemaVersion"
+          "locationName": "schemaVersion",
+          "documentation": "<p>Specifying this limits the results to only this schema version.</p>"
         }
       },
       "required": [
@@ -1531,7 +1799,8 @@
       "type": "structure",
       "members": {
         "Content": {
-          "shape": "__string"
+          "shape": "__string",
+          "documentation": "<p>The source of the schema definition.</p>"
         },
         "Description": {
           "shape": "__string",
@@ -1634,7 +1903,8 @@
           "documentation": "<p>The ARN of the event bus.</p>"
         },
         "State": {
-          "shape": "DiscovererState"
+          "shape": "DiscovererState",
+          "documentation": "<p>The state of the discoverer.</p>"
         },
         "Tags": {
           "shape": "Tags",
@@ -1690,22 +1960,26 @@
         "Language": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "language"
+          "locationName": "language",
+          "documentation": "<p>The language of the code binding.</p>"
         },
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "SchemaVersion": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "schemaVersion"
+          "locationName": "schemaVersion",
+          "documentation": "<p>Specifying this limits the results to only this schema version.</p>"
         }
       },
       "required": [
@@ -1728,7 +2002,7 @@
       "members": {
         "Events": {
           "shape": "__listOfGetDiscoveredSchemaVersionItemInput",
-          "documentation": "<p>An array of strings that</p>"
+          "documentation": "<p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>"
         },
         "Type": {
           "shape": "Type",
@@ -1744,16 +2018,18 @@
       "type": "structure",
       "members": {
         "Content": {
-          "shape": "__string"
+          "shape": "__string",
+          "documentation": "<p>The source of the schema definition.</p>"
         }
-      }
+      },
+      "documentation": "<p></p>"
     },
     "GetDiscoveredSchemaRequest": {
       "type": "structure",
       "members": {
         "Events": {
           "shape": "__listOfGetDiscoveredSchemaVersionItemInput",
-          "documentation": "<p>An array of strings that</p>"
+          "documentation": "<p>An array of strings where each string is a JSON event. These are the events that were used to generate the schema. The array includes a single type of event and has a maximum size of 10 events.</p>"
         },
         "Type": {
           "shape": "Type",
@@ -1769,7 +2045,8 @@
       "type": "structure",
       "members": {
         "Content": {
-          "shape": "__string"
+          "shape": "__string",
+          "documentation": "<p>The source of the schema definition.</p>"
         }
       }
     },
@@ -1777,6 +2054,46 @@
       "type": "string",
       "min": 1,
       "max": 100000
+    },
+    "GetResourcePolicyOutput": {
+      "type": "structure",
+      "members": {
+        "Policy": {
+          "shape": "__string",
+          "documentation": "<p>The resource-based policy.</p>",
+          "jsonvalue": true
+        },
+        "RevisionId": {
+          "shape": "__string",
+          "documentation": "<p>The revision ID.</p>"
+        }
+      },
+      "documentation": "<p>Information about the policy.</p>"
+    },
+    "GetResourcePolicyRequest": {
+      "type": "structure",
+      "members": {
+        "RegistryName": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
+        }
+      }
+    },
+    "GetResourcePolicyResponse": {
+      "type": "structure",
+      "members": {
+        "Policy": {
+          "shape": "__string",
+          "documentation": "<p>The resource-based policy.</p>",
+          "jsonvalue": true
+        },
+        "RevisionId": {
+          "shape": "__string",
+          "documentation": "<p>The revision ID.</p>"
+        }
+      }
     },
     "GoneException": {
       "type": "structure",
@@ -1844,7 +2161,8 @@
         "DiscovererIdPrefix": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "discovererIdPrefix"
+          "locationName": "discovererIdPrefix",
+          "documentation": "<p>Specifying this limits the results to only those discoverer IDs that start with the specified prefix.</p>"
         },
         "Limit": {
           "shape": "__integer",
@@ -1854,12 +2172,14 @@
         "NextToken": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "nextToken"
+          "locationName": "nextToken",
+          "documentation": "<p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>"
         },
         "SourceArnPrefix": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "sourceArnPrefix"
+          "locationName": "sourceArnPrefix",
+          "documentation": "<p>Specifying this limits the results to only those ARNs that start with the specified prefix.</p>"
         }
       }
     },
@@ -1901,17 +2221,20 @@
         "NextToken": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "nextToken"
+          "locationName": "nextToken",
+          "documentation": "<p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>"
         },
         "RegistryNamePrefix": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "registryNamePrefix"
+          "locationName": "registryNamePrefix",
+          "documentation": "<p>Specifying this limits the results to only those registry names that start with the specified prefix.</p>"
         },
         "Scope": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "scope"
+          "locationName": "scope",
+          "documentation": "<p>Can be set to Local or AWS to limit responses to your custom registries, or the ones provided by AWS.</p>"
         }
       }
     },
@@ -1952,17 +2275,20 @@
         "NextToken": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "nextToken"
+          "locationName": "nextToken",
+          "documentation": "<p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>"
         },
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         }
       },
       "required": [
@@ -2007,17 +2333,20 @@
         "NextToken": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "nextToken"
+          "locationName": "nextToken",
+          "documentation": "<p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>"
         },
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaNamePrefix": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "schemaNamePrefix"
+          "locationName": "schemaNamePrefix",
+          "documentation": "<p>Specifying this limits the results to only those schema names that start with the specified prefix.</p>"
         }
       },
       "required": [
@@ -2037,13 +2366,23 @@
         }
       }
     },
+    "ListTagsForResourceOutput": {
+      "type": "structure",
+      "members": {
+        "Tags": {
+          "shape": "Tags",
+          "locationName": "tags"
+        }
+      }
+    },
     "ListTagsForResourceRequest": {
       "type": "structure",
       "members": {
         "ResourceArn": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "resource-arn"
+          "locationName": "resource-arn",
+          "documentation": "<p>The ARN of the resource.</p>"
         }
       },
       "required": [
@@ -2054,12 +2393,10 @@
       "type": "structure",
       "members": {
         "Tags": {
-          "shape": "Tags"
+          "shape": "Tags",
+          "locationName": "tags"
         }
-      },
-      "required": [
-        "Tags"
-      ]
+      }
     },
     "LockServiceLinkedRoleInput": {
       "type": "structure",
@@ -2100,6 +2437,7 @@
           "shape": "__integerMin1Max29000"
         }
       },
+      "documentation": "",
       "required": [
         "Timeout",
         "RoleArn"
@@ -2140,28 +2478,53 @@
         "httpStatusCode": 404
       }
     },
+    "PreconditionFailedException": {
+      "type": "structure",
+      "members": {
+        "Code": {
+          "shape": "__string",
+          "documentation": "<p>The error code.</p>"
+        },
+        "Message": {
+          "shape": "__string",
+          "documentation": "<p>The message string of the error output.</p>"
+        }
+      },
+      "required": [
+        "Message",
+        "Code"
+      ],
+      "exception": true,
+      "error": {
+        "httpStatusCode": 412
+      }
+    },
     "PutCodeBindingRequest": {
       "type": "structure",
       "members": {
         "Language": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "language"
+          "locationName": "language",
+          "documentation": "<p>The language of the code binding.</p>"
         },
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "SchemaVersion": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "schemaVersion"
+          "locationName": "schemaVersion",
+          "documentation": "<p>Specifying this limits the results to only this schema version.</p>"
         }
       },
       "required": [
@@ -2188,6 +2551,77 @@
         "Status": {
           "shape": "CodeGenerationStatus",
           "documentation": "<p>The current status of code binding generation.</p>"
+        }
+      }
+    },
+    "PutResourcePolicyInput": {
+      "type": "structure",
+      "members": {
+        "Policy": {
+          "shape": "__string",
+          "documentation": "<p>The resource-based policy.</p>",
+          "jsonvalue": true
+        },
+        "RevisionId": {
+          "shape": "__string",
+          "documentation": "<p>The revision ID of the policy.</p>"
+        }
+      },
+      "documentation": "<p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>",
+      "required": [
+        "Policy"
+      ]
+    },
+    "PutResourcePolicyOutput": {
+      "type": "structure",
+      "members": {
+        "Policy": {
+          "shape": "__string",
+          "documentation": "<p>The resource-based policy.</p>",
+          "jsonvalue": true
+        },
+        "RevisionId": {
+          "shape": "__string",
+          "documentation": "<p>The revision ID of the policy.</p>"
+        }
+      },
+      "documentation": "<p>The resource-based policy.</p>"
+    },
+    "PutResourcePolicyRequest": {
+      "type": "structure",
+      "members": {
+        "Policy": {
+          "shape": "__string",
+          "documentation": "<p>The resource-based policy.</p>",
+          "jsonvalue": true
+        },
+        "RegistryName": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
+        },
+        "RevisionId": {
+          "shape": "__string",
+          "documentation": "<p>The revision ID of the policy.</p>"
+        }
+      },
+      "documentation": "<p>The name of the policy.</p>",
+      "required": [
+        "Policy"
+      ]
+    },
+    "PutResourcePolicyResponse": {
+      "type": "structure",
+      "members": {
+        "Policy": {
+          "shape": "__string",
+          "documentation": "<p>The resource-based policy.</p>",
+          "jsonvalue": true
+        },
+        "RevisionId": {
+          "shape": "__string",
+          "documentation": "<p>The revision ID of the policy.</p>"
         }
       }
     },
@@ -2337,7 +2771,8 @@
       "type": "structure",
       "members": {
         "CreatedDate": {
-          "shape": "__timestampIso8601"
+          "shape": "__timestampIso8601",
+          "documentation": "<p>The date the schema version was created.</p>"
         },
         "SchemaVersion": {
           "shape": "__string",
@@ -2364,7 +2799,8 @@
         "Keywords": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "keywords"
+          "locationName": "keywords",
+          "documentation": "<p>Specifying this limits the results to only schemas that include the provided keywords.</p>"
         },
         "Limit": {
           "shape": "__integer",
@@ -2374,12 +2810,14 @@
         "NextToken": {
           "shape": "__string",
           "location": "querystring",
-          "locationName": "nextToken"
+          "locationName": "nextToken",
+          "documentation": "<p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>"
         },
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         }
       },
       "required": [
@@ -2427,7 +2865,8 @@
         "DiscovererId": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "discovererId"
+          "locationName": "discovererId",
+          "documentation": "<p>The ID of the discoverer.</p>"
         }
       },
       "required": [
@@ -2453,7 +2892,8 @@
         "DiscovererId": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "discovererId"
+          "locationName": "discovererId",
+          "documentation": "<p>The ID of the discoverer.</p>"
         }
       },
       "required": [
@@ -2478,7 +2918,8 @@
       "members": {
         "Tags": {
           "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "documentation": "<p>Tags associated with the resource.</p>"
         }
       },
       "required": [
@@ -2491,13 +2932,16 @@
         "ResourceArn": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "resource-arn"
+          "locationName": "resource-arn",
+          "documentation": "<p>The ARN of the resource.</p>"
         },
         "Tags": {
           "shape": "Tags",
-          "locationName": "tags"
+          "locationName": "tags",
+          "documentation": "<p>Tags associated with the resource.</p>"
         }
       },
+      "documentation": "<p></p>",
       "required": [
         "ResourceArn",
         "Tags"
@@ -2593,12 +3037,14 @@
         "ResourceArn": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "resource-arn"
+          "locationName": "resource-arn",
+          "documentation": "<p>The ARN of the resource.</p>"
         },
         "TagKeys": {
           "shape": "__listOf__string",
           "location": "querystring",
-          "locationName": "tagKeys"
+          "locationName": "tagKeys",
+          "documentation": "<p>Keys of key-value pairs.</p>"
         }
       },
       "required": [
@@ -2625,7 +3071,8 @@
         "DiscovererId": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "discovererId"
+          "locationName": "discovererId",
+          "documentation": "<p>The ID of the discoverer.</p>"
         }
       },
       "required": [
@@ -2681,9 +3128,11 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         }
       },
+      "documentation": "<p>Updates the registry.</p>",
       "required": [
         "RegistryName"
       ]
@@ -2751,12 +3200,14 @@
         "RegistryName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "registryName"
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
         },
         "SchemaName": {
           "shape": "__string",
           "location": "uri",
-          "locationName": "schemaName"
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
         },
         "Type": {
           "shape": "Type",
@@ -2912,5 +3363,5 @@
       "type": "blob"
     }
   },
-  "documentation": "<p>AWS EventBridge Schemas</p>"
+  "documentation": "<p>Amazon EventBridge Schema Registry</p>"
 }

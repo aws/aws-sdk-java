@@ -34,7 +34,8 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     private String token;
     /**
      * <p>
-     * The signature made with the token and your custom authentication service's private key.
+     * The signature made with the token and your custom authentication service's private key. This value must be
+     * Base-64-encoded.
      * </p>
      */
     private String tokenSignature;
@@ -139,11 +140,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The signature made with the token and your custom authentication service's private key.
+     * The signature made with the token and your custom authentication service's private key. This value must be
+     * Base-64-encoded.
      * </p>
      * 
      * @param tokenSignature
-     *        The signature made with the token and your custom authentication service's private key.
+     *        The signature made with the token and your custom authentication service's private key. This value must be
+     *        Base-64-encoded.
      */
 
     public void setTokenSignature(String tokenSignature) {
@@ -152,10 +155,12 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The signature made with the token and your custom authentication service's private key.
+     * The signature made with the token and your custom authentication service's private key. This value must be
+     * Base-64-encoded.
      * </p>
      * 
-     * @return The signature made with the token and your custom authentication service's private key.
+     * @return The signature made with the token and your custom authentication service's private key. This value must
+     *         be Base-64-encoded.
      */
 
     public String getTokenSignature() {
@@ -164,11 +169,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The signature made with the token and your custom authentication service's private key.
+     * The signature made with the token and your custom authentication service's private key. This value must be
+     * Base-64-encoded.
      * </p>
      * 
      * @param tokenSignature
-     *        The signature made with the token and your custom authentication service's private key.
+     *        The signature made with the token and your custom authentication service's private key. This value must be
+     *        Base-64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

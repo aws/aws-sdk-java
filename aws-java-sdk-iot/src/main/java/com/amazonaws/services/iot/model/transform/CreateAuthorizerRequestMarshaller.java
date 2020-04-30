@@ -13,7 +13,7 @@
 package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +39,8 @@ public class CreateAuthorizerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tokenSigningPublicKeys").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<Boolean> SIGNINGDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingDisabled").build();
 
@@ -63,6 +65,7 @@ public class CreateAuthorizerRequestMarshaller {
             protocolMarshaller.marshall(createAuthorizerRequest.getTokenKeyName(), TOKENKEYNAME_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getTokenSigningPublicKeys(), TOKENSIGNINGPUBLICKEYS_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getSigningDisabled(), SIGNINGDISABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

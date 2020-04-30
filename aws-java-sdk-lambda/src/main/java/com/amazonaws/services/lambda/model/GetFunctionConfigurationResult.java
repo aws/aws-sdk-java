@@ -70,7 +70,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private String description;
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before stopping it.
+     * The amount of time in seconds that Lambda allows a function to run before stopping it.
      * </p>
      */
     private Integer timeout;
@@ -503,11 +503,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before stopping it.
+     * The amount of time in seconds that Lambda allows a function to run before stopping it.
      * </p>
      * 
      * @param timeout
-     *        The amount of time that Lambda allows a function to run before stopping it.
+     *        The amount of time in seconds that Lambda allows a function to run before stopping it.
      */
 
     public void setTimeout(Integer timeout) {
@@ -516,10 +516,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before stopping it.
+     * The amount of time in seconds that Lambda allows a function to run before stopping it.
      * </p>
      * 
-     * @return The amount of time that Lambda allows a function to run before stopping it.
+     * @return The amount of time in seconds that Lambda allows a function to run before stopping it.
      */
 
     public Integer getTimeout() {
@@ -528,11 +528,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before stopping it.
+     * The amount of time in seconds that Lambda allows a function to run before stopping it.
      * </p>
      * 
      * @param timeout
-     *        The amount of time that Lambda allows a function to run before stopping it.
+     *        The amount of time in seconds that Lambda allows a function to run before stopping it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

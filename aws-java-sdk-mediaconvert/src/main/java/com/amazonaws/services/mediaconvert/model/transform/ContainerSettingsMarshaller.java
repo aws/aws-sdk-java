@@ -43,6 +43,8 @@ public class ContainerSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mp4Settings").build();
     private static final MarshallingInfo<StructuredPojo> MPDSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpdSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MXFSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mxfSettings").build();
 
     private static final ContainerSettingsMarshaller instance = new ContainerSettingsMarshaller();
 
@@ -68,6 +70,7 @@ public class ContainerSettingsMarshaller {
             protocolMarshaller.marshall(containerSettings.getMovSettings(), MOVSETTINGS_BINDING);
             protocolMarshaller.marshall(containerSettings.getMp4Settings(), MP4SETTINGS_BINDING);
             protocolMarshaller.marshall(containerSettings.getMpdSettings(), MPDSETTINGS_BINDING);
+            protocolMarshaller.marshall(containerSettings.getMxfSettings(), MXFSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

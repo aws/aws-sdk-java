@@ -53,6 +53,8 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     private Mp4Settings mp4Settings;
     /** Settings for MP4 segments in DASH */
     private MpdSettings mpdSettings;
+    /** MXF settings */
+    private MxfSettings mxfSettings;
 
     /**
      * Settings for MP4 segments in CMAF
@@ -388,6 +390,40 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * MXF settings
+     * 
+     * @param mxfSettings
+     *        MXF settings
+     */
+
+    public void setMxfSettings(MxfSettings mxfSettings) {
+        this.mxfSettings = mxfSettings;
+    }
+
+    /**
+     * MXF settings
+     * 
+     * @return MXF settings
+     */
+
+    public MxfSettings getMxfSettings() {
+        return this.mxfSettings;
+    }
+
+    /**
+     * MXF settings
+     * 
+     * @param mxfSettings
+     *        MXF settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerSettings withMxfSettings(MxfSettings mxfSettings) {
+        setMxfSettings(mxfSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +450,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
         if (getMp4Settings() != null)
             sb.append("Mp4Settings: ").append(getMp4Settings()).append(",");
         if (getMpdSettings() != null)
-            sb.append("MpdSettings: ").append(getMpdSettings());
+            sb.append("MpdSettings: ").append(getMpdSettings()).append(",");
+        if (getMxfSettings() != null)
+            sb.append("MxfSettings: ").append(getMxfSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -461,6 +499,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMpdSettings() != null && other.getMpdSettings().equals(this.getMpdSettings()) == false)
             return false;
+        if (other.getMxfSettings() == null ^ this.getMxfSettings() == null)
+            return false;
+        if (other.getMxfSettings() != null && other.getMxfSettings().equals(this.getMxfSettings()) == false)
+            return false;
         return true;
     }
 
@@ -477,6 +519,7 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getMovSettings() == null) ? 0 : getMovSettings().hashCode());
         hashCode = prime * hashCode + ((getMp4Settings() == null) ? 0 : getMp4Settings().hashCode());
         hashCode = prime * hashCode + ((getMpdSettings() == null) ? 0 : getMpdSettings().hashCode());
+        hashCode = prime * hashCode + ((getMxfSettings() == null) ? 0 : getMxfSettings().hashCode());
         return hashCode;
     }
 

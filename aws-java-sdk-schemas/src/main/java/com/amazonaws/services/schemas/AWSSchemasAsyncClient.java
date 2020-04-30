@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * AWS EventBridge Schemas
+ * Amazon EventBridge Schema Registry
  * </p>
  */
 @ThreadSafe
@@ -211,6 +211,39 @@ public class AWSSchemasAsyncClient extends AWSSchemasClient implements AWSSchema
 
                 try {
                     result = executeDeleteRegistry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -491,6 +524,39 @@ public class AWSSchemasAsyncClient extends AWSSchemasClient implements AWSSchema
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(final GetResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+        final GetResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcePolicyResult>() {
+            @Override
+            public GetResourcePolicyResult call() throws Exception {
+                GetResourcePolicyResult result = null;
+
+                try {
+                    result = executeGetResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDiscoverersResult> listDiscoverersAsync(ListDiscoverersRequest request) {
 
         return listDiscoverersAsync(request, null);
@@ -656,39 +722,6 @@ public class AWSSchemasAsyncClient extends AWSSchemasClient implements AWSSchema
     }
 
     @Override
-    public java.util.concurrent.Future<LockServiceLinkedRoleResult> lockServiceLinkedRoleAsync(LockServiceLinkedRoleRequest request) {
-
-        return lockServiceLinkedRoleAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<LockServiceLinkedRoleResult> lockServiceLinkedRoleAsync(final LockServiceLinkedRoleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<LockServiceLinkedRoleRequest, LockServiceLinkedRoleResult> asyncHandler) {
-        final LockServiceLinkedRoleRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<LockServiceLinkedRoleResult>() {
-            @Override
-            public LockServiceLinkedRoleResult call() throws Exception {
-                LockServiceLinkedRoleResult result = null;
-
-                try {
-                    result = executeLockServiceLinkedRole(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<PutCodeBindingResult> putCodeBindingAsync(PutCodeBindingRequest request) {
 
         return putCodeBindingAsync(request, null);
@@ -706,6 +739,39 @@ public class AWSSchemasAsyncClient extends AWSSchemasClient implements AWSSchema
 
                 try {
                     result = executePutCodeBinding(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(final PutResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+        final PutResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourcePolicyResult>() {
+            @Override
+            public PutResourcePolicyResult call() throws Exception {
+                PutResourcePolicyResult result = null;
+
+                try {
+                    result = executePutResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -838,39 +904,6 @@ public class AWSSchemasAsyncClient extends AWSSchemasClient implements AWSSchema
 
                 try {
                     result = executeTagResource(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnlockServiceLinkedRoleResult> unlockServiceLinkedRoleAsync(UnlockServiceLinkedRoleRequest request) {
-
-        return unlockServiceLinkedRoleAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnlockServiceLinkedRoleResult> unlockServiceLinkedRoleAsync(final UnlockServiceLinkedRoleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnlockServiceLinkedRoleRequest, UnlockServiceLinkedRoleResult> asyncHandler) {
-        final UnlockServiceLinkedRoleRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<UnlockServiceLinkedRoleResult>() {
-            @Override
-            public UnlockServiceLinkedRoleResult call() throws Exception {
-                UnlockServiceLinkedRoleResult result = null;
-
-                try {
-                    result = executeUnlockServiceLinkedRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

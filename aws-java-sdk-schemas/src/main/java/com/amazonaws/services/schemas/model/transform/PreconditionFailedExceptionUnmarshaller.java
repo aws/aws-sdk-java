@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model.transform;
+package com.amazonaws.services.schemas.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.iotevents.model.*;
+import com.amazonaws.services.schemas.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,18 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * TagrisSweepListItem JSON Unmarshaller
+ * PreconditionFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagrisSweepListItemJsonUnmarshaller implements Unmarshaller<TagrisSweepListItem, JsonUnmarshallerContext> {
+public class PreconditionFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private PreconditionFailedExceptionUnmarshaller() {
+        super(com.amazonaws.services.schemas.model.PreconditionFailedException.class, "PreconditionFailedException");
+    }
 
-    public TagrisSweepListItem unmarshall(JsonUnmarshallerContext context) throws Exception {
-        TagrisSweepListItem tagrisSweepListItem = new TagrisSweepListItem();
+    @Override
+    public com.amazonaws.services.schemas.model.PreconditionFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.schemas.model.PreconditionFailedException preconditionFailedException = new com.amazonaws.services.schemas.model.PreconditionFailedException(
+                null);
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,21 +53,9 @@ public class TagrisSweepListItemJsonUnmarshaller implements Unmarshaller<TagrisS
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("TagrisAccountId", targetDepth)) {
+                if (context.testExpression("Code", targetDepth)) {
                     context.nextToken();
-                    tagrisSweepListItem.setTagrisAccountId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("TagrisAmazonResourceName", targetDepth)) {
-                    context.nextToken();
-                    tagrisSweepListItem.setTagrisAmazonResourceName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("TagrisInternalId", targetDepth)) {
-                    context.nextToken();
-                    tagrisSweepListItem.setTagrisInternalId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("TagrisVersion", targetDepth)) {
-                    context.nextToken();
-                    tagrisSweepListItem.setTagrisVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                    preconditionFailedException.setCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -72,15 +65,14 @@ public class TagrisSweepListItemJsonUnmarshaller implements Unmarshaller<TagrisS
             }
             token = context.nextToken();
         }
-
-        return tagrisSweepListItem;
+        return preconditionFailedException;
     }
 
-    private static TagrisSweepListItemJsonUnmarshaller instance;
+    private static PreconditionFailedExceptionUnmarshaller instance;
 
-    public static TagrisSweepListItemJsonUnmarshaller getInstance() {
+    public static PreconditionFailedExceptionUnmarshaller getInstance() {
         if (instance == null)
-            instance = new TagrisSweepListItemJsonUnmarshaller();
+            instance = new PreconditionFailedExceptionUnmarshaller();
         return instance;
     }
 }

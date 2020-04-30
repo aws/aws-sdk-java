@@ -55,6 +55,23 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private RegistrationConfig registrationConfig;
+    /**
+     * <p>
+     * Metadata which can be used to manage the CA certificate.
+     * </p>
+     * <note>
+     * <p>
+     * For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     * </p>
+     * <p>
+     * For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     * </p>
+     * <p>
+     * For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     * </p>
+     * </note>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -281,6 +298,156 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Metadata which can be used to manage the CA certificate.
+     * </p>
+     * <note>
+     * <p>
+     * For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     * </p>
+     * <p>
+     * For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     * </p>
+     * <p>
+     * For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     * </p>
+     * </note>
+     * 
+     * @return Metadata which can be used to manage the CA certificate.</p> <note>
+     *         <p>
+     *         For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     *         </p>
+     *         <p>
+     *         For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     *         </p>
+     *         <p>
+     *         For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the CA certificate.
+     * </p>
+     * <note>
+     * <p>
+     * For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     * </p>
+     * <p>
+     * For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     * </p>
+     * <p>
+     * For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the CA certificate.</p> <note>
+     *        <p>
+     *        For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     *        </p>
+     *        <p>
+     *        For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     *        </p>
+     *        <p>
+     *        For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the CA certificate.
+     * </p>
+     * <note>
+     * <p>
+     * For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     * </p>
+     * <p>
+     * For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     * </p>
+     * <p>
+     * For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the CA certificate.</p> <note>
+     *        <p>
+     *        For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     *        </p>
+     *        <p>
+     *        For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     *        </p>
+     *        <p>
+     *        For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterCACertificateRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the CA certificate.
+     * </p>
+     * <note>
+     * <p>
+     * For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     * </p>
+     * <p>
+     * For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     * </p>
+     * <p>
+     * For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the CA certificate.</p> <note>
+     *        <p>
+     *        For URI Request parameters use format: ...key1=value1&amp;key2=value2...
+     *        </p>
+     *        <p>
+     *        For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."
+     *        </p>
+     *        <p>
+     *        For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterCACertificateRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,7 +468,9 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
         if (getAllowAutoRegistration() != null)
             sb.append("AllowAutoRegistration: ").append(getAllowAutoRegistration()).append(",");
         if (getRegistrationConfig() != null)
-            sb.append("RegistrationConfig: ").append(getRegistrationConfig());
+            sb.append("RegistrationConfig: ").append(getRegistrationConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +505,10 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getRegistrationConfig() != null && other.getRegistrationConfig().equals(this.getRegistrationConfig()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -349,6 +522,7 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getSetAsActive() == null) ? 0 : getSetAsActive().hashCode());
         hashCode = prime * hashCode + ((getAllowAutoRegistration() == null) ? 0 : getAllowAutoRegistration().hashCode());
         hashCode = prime * hashCode + ((getRegistrationConfig() == null) ? 0 : getRegistrationConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

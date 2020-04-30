@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreatePolicyRequestMarshaller {
             .marshallLocationName("policyName").build();
     private static final MarshallingInfo<String> POLICYDOCUMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("policyDocument").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreatePolicyRequestMarshaller instance = new CreatePolicyRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreatePolicyRequestMarshaller {
         try {
             protocolMarshaller.marshall(createPolicyRequest.getPolicyName(), POLICYNAME_BINDING);
             protocolMarshaller.marshall(createPolicyRequest.getPolicyDocument(), POLICYDOCUMENT_BINDING);
+            protocolMarshaller.marshall(createPolicyRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

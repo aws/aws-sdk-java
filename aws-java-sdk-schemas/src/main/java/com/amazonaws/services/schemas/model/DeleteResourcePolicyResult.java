@@ -17,11 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnlockServiceLinkedRoleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
@@ -46,9 +46,9 @@ public class UnlockServiceLinkedRoleResult extends com.amazonaws.AmazonWebServic
         if (obj == null)
             return false;
 
-        if (obj instanceof UnlockServiceLinkedRoleResult == false)
+        if (obj instanceof DeleteResourcePolicyResult == false)
             return false;
-        UnlockServiceLinkedRoleResult other = (UnlockServiceLinkedRoleResult) obj;
+        DeleteResourcePolicyResult other = (DeleteResourcePolicyResult) obj;
         return true;
     }
 
@@ -61,9 +61,9 @@ public class UnlockServiceLinkedRoleResult extends com.amazonaws.AmazonWebServic
     }
 
     @Override
-    public UnlockServiceLinkedRoleResult clone() {
+    public DeleteResourcePolicyResult clone() {
         try {
-            return (UnlockServiceLinkedRoleResult) super.clone();
+            return (DeleteResourcePolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }

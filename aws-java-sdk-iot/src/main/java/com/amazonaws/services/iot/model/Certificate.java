@@ -48,6 +48,12 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * The mode of the certificate.
+     * </p>
+     */
+    private String certificateMode;
+    /**
+     * <p>
      * The date and time the certificate was created.
      * </p>
      */
@@ -233,6 +239,79 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @see CertificateMode
+     */
+
+    public void setCertificateMode(String certificateMode) {
+        this.certificateMode = certificateMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @return The mode of the certificate.
+     * @see CertificateMode
+     */
+
+    public String getCertificateMode() {
+        return this.certificateMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateMode
+     */
+
+    public Certificate withCertificateMode(String certificateMode) {
+        setCertificateMode(certificateMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @see CertificateMode
+     */
+
+    public void setCertificateMode(CertificateMode certificateMode) {
+        withCertificateMode(certificateMode);
+    }
+
+    /**
+     * <p>
+     * The mode of the certificate.
+     * </p>
+     * 
+     * @param certificateMode
+     *        The mode of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateMode
+     */
+
+    public Certificate withCertificateMode(CertificateMode certificateMode) {
+        this.certificateMode = certificateMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time the certificate was created.
      * </p>
      * 
@@ -289,6 +368,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
             sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getCertificateMode() != null)
+            sb.append("CertificateMode: ").append(getCertificateMode()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
@@ -317,6 +398,10 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCertificateMode() == null ^ this.getCertificateMode() == null)
+            return false;
+        if (other.getCertificateMode() != null && other.getCertificateMode().equals(this.getCertificateMode()) == false)
+            return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
@@ -332,6 +417,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCertificateMode() == null) ? 0 : getCertificateMode().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;
     }

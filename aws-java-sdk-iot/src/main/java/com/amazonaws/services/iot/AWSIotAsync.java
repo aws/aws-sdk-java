@@ -5149,6 +5149,37 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Register a certificate that does not have a certificate authority (CA).
+     * </p>
+     * 
+     * @param registerCertificateWithoutCARequest
+     * @return A Java Future containing the result of the RegisterCertificateWithoutCA operation returned by the
+     *         service.
+     * @sample AWSIotAsync.RegisterCertificateWithoutCA
+     */
+    java.util.concurrent.Future<RegisterCertificateWithoutCAResult> registerCertificateWithoutCAAsync(
+            RegisterCertificateWithoutCARequest registerCertificateWithoutCARequest);
+
+    /**
+     * <p>
+     * Register a certificate that does not have a certificate authority (CA).
+     * </p>
+     * 
+     * @param registerCertificateWithoutCARequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCertificateWithoutCA operation returned by the
+     *         service.
+     * @sample AWSIotAsyncHandler.RegisterCertificateWithoutCA
+     */
+    java.util.concurrent.Future<RegisterCertificateWithoutCAResult> registerCertificateWithoutCAAsync(
+            RegisterCertificateWithoutCARequest registerCertificateWithoutCARequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterCertificateWithoutCARequest, RegisterCertificateWithoutCAResult> asyncHandler);
+
+    /**
+     * <p>
      * Provisions a thing in the device registry. RegisterThing calls other AWS IoT control plane APIs. These calls
      * might exceed your account level <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> AWS IoT Throttling

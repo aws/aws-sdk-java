@@ -52,7 +52,7 @@ import com.amazonaws.services.schemas.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * AWS EventBridge Schemas
+ * Amazon EventBridge Schema Registry
  * </p>
  */
 @ThreadSafe
@@ -95,6 +95,9 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.schemas.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.schemas.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.schemas.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
@@ -163,11 +166,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param createDiscovererRequest
      * @return Result of the CreateDiscoverer operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws ForbiddenException
+     *         403 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws ConflictException
+     *         409 response
      * @sample AWSSchemas.CreateDiscoverer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateDiscoverer" target="_top">AWS API
      *      Documentation</a>
@@ -222,11 +231,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param createRegistryRequest
      * @return Result of the CreateRegistry operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws ForbiddenException
+     *         403 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws ConflictException
+     *         409 response
      * @sample AWSSchemas.CreateRegistry
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateRegistry" target="_top">AWS API
      *      Documentation</a>
@@ -277,13 +292,22 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * <p>
      * Creates a schema definition.
      * </p>
+     * <note>
+     * <p>
+     * Inactive schemas will be deleted after two years.
+     * </p>
+     * </note>
      * 
      * @param createSchemaRequest
      * @return Result of the CreateSchema operation returned by the service.
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.CreateSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/CreateSchema" target="_top">AWS API
      *      Documentation</a>
@@ -338,11 +362,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param deleteDiscovererRequest
      * @return Result of the DeleteDiscoverer operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DeleteDiscoverer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteDiscoverer" target="_top">AWS API
      *      Documentation</a>
@@ -397,11 +427,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param deleteRegistryRequest
      * @return Result of the DeleteRegistry operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DeleteRegistry
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteRegistry" target="_top">AWS API
      *      Documentation</a>
@@ -450,17 +486,88 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
 
     /**
      * <p>
+     * Delete the resource-based policy attached to the specified registry.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @sample AWSSchemas.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Delete a schema definition.
      * </p>
      * 
      * @param deleteSchemaRequest
      * @return Result of the DeleteSchema operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DeleteSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchema" target="_top">AWS API
      *      Documentation</a>
@@ -515,11 +622,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param deleteSchemaVersionRequest
      * @return Result of the DeleteSchemaVersion operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DeleteSchemaVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchemaVersion" target="_top">AWS
      *      API Documentation</a>
@@ -574,11 +687,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param describeCodeBindingRequest
      * @return Result of the DescribeCodeBinding operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws TooManyRequestsException
+     *         429 response
      * @sample AWSSchemas.DescribeCodeBinding
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeCodeBinding" target="_top">AWS
      *      API Documentation</a>
@@ -633,11 +752,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param describeDiscovererRequest
      * @return Result of the DescribeDiscoverer operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DescribeDiscoverer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeDiscoverer" target="_top">AWS API
      *      Documentation</a>
@@ -692,11 +817,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param describeRegistryRequest
      * @return Result of the DescribeRegistry operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DescribeRegistry
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeRegistry" target="_top">AWS API
      *      Documentation</a>
@@ -751,11 +882,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param describeSchemaRequest
      * @return Result of the DescribeSchema operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.DescribeSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DescribeSchema" target="_top">AWS API
      *      Documentation</a>
@@ -810,11 +947,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param getCodeBindingSourceRequest
      * @return Result of the GetCodeBindingSource operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws TooManyRequestsException
+     *         429 response
      * @sample AWSSchemas.GetCodeBindingSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetCodeBindingSource" target="_top">AWS
      *      API Documentation</a>
@@ -870,10 +1013,15 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param getDiscoveredSchemaRequest
      * @return Result of the GetDiscoveredSchema operation returned by the service.
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.GetDiscoveredSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetDiscoveredSchema" target="_top">AWS
      *      API Documentation</a>
@@ -922,16 +1070,86 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
 
     /**
      * <p>
+     * Retrieves the resource-based policy attached to a given registry.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @sample AWSSchemas.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePolicyResult executeGetResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePolicyRequest> request = null;
+        Response<GetResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the discoverers.
      * </p>
      * 
      * @param listDiscoverersRequest
      * @return Result of the ListDiscoverers operation returned by the service.
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.ListDiscoverers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListDiscoverers" target="_top">AWS API
      *      Documentation</a>
@@ -986,10 +1204,15 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param listRegistriesRequest
      * @return Result of the ListRegistries operation returned by the service.
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.ListRegistries
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListRegistries" target="_top">AWS API
      *      Documentation</a>
@@ -1044,11 +1267,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param listSchemaVersionsRequest
      * @return Result of the ListSchemaVersions operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.ListSchemaVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemaVersions" target="_top">AWS API
      *      Documentation</a>
@@ -1103,10 +1332,15 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param listSchemasRequest
      * @return Result of the ListSchemas operation returned by the service.
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.ListSchemas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListSchemas" target="_top">AWS API
      *      Documentation</a>
@@ -1161,9 +1395,13 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws NotFoundException
+     *         404 response
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -1211,61 +1449,6 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
     }
 
     /**
-     * @param lockServiceLinkedRoleRequest
-     * @return Result of the LockServiceLinkedRole operation returned by the service.
-     * @throws ServiceUnavailableException
-     * @throws BadRequestException
-     * @throws UnauthorizedException
-     * @throws InternalServerErrorException
-     * @throws ForbiddenException
-     * @sample AWSSchemas.LockServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/LockServiceLinkedRole" target="_top">AWS
-     *      API Documentation</a>
-     */
-    @Override
-    public LockServiceLinkedRoleResult lockServiceLinkedRole(LockServiceLinkedRoleRequest request) {
-        request = beforeClientExecution(request);
-        return executeLockServiceLinkedRole(request);
-    }
-
-    @SdkInternalApi
-    final LockServiceLinkedRoleResult executeLockServiceLinkedRole(LockServiceLinkedRoleRequest lockServiceLinkedRoleRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(lockServiceLinkedRoleRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<LockServiceLinkedRoleRequest> request = null;
-        Response<LockServiceLinkedRoleResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new LockServiceLinkedRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(lockServiceLinkedRoleRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LockServiceLinkedRole");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<LockServiceLinkedRoleResult>> responseHandler = protocolFactory
-                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                            new LockServiceLinkedRoleResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
      * <p>
      * Put code binding URI
      * </p>
@@ -1273,12 +1456,19 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param putCodeBindingRequest
      * @return Result of the PutCodeBinding operation returned by the service.
      * @throws GoneException
+     *         410 response
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws TooManyRequestsException
+     *         429 response
      * @sample AWSSchemas.PutCodeBinding
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutCodeBinding" target="_top">AWS API
      *      Documentation</a>
@@ -1327,16 +1517,89 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
 
     /**
      * <p>
+     * The name of the policy.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     *        The name of the policy.
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws PreconditionFailedException
+     *         412 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @sample AWSSchemas.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Search the schemas
      * </p>
      * 
      * @param searchSchemasRequest
      * @return Result of the SearchSchemas operation returned by the service.
      * @throws ServiceUnavailableException
+     *         503 response
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.SearchSchemas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SearchSchemas" target="_top">AWS API
      *      Documentation</a>
@@ -1391,11 +1654,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param startDiscovererRequest
      * @return Result of the StartDiscoverer operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.StartDiscoverer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StartDiscoverer" target="_top">AWS API
      *      Documentation</a>
@@ -1450,11 +1719,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param stopDiscovererRequest
      * @return Result of the StopDiscoverer operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.StopDiscoverer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StopDiscoverer" target="_top">AWS API
      *      Documentation</a>
@@ -1509,9 +1784,13 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws NotFoundException
+     *         404 response
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1559,62 +1838,6 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
     }
 
     /**
-     * @param unlockServiceLinkedRoleRequest
-     * @return Result of the UnlockServiceLinkedRole operation returned by the service.
-     * @throws ServiceUnavailableException
-     * @throws BadRequestException
-     * @throws UnauthorizedException
-     * @throws InternalServerErrorException
-     * @throws ForbiddenException
-     * @sample AWSSchemas.UnlockServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UnlockServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public UnlockServiceLinkedRoleResult unlockServiceLinkedRole(UnlockServiceLinkedRoleRequest request) {
-        request = beforeClientExecution(request);
-        return executeUnlockServiceLinkedRole(request);
-    }
-
-    @SdkInternalApi
-    final UnlockServiceLinkedRoleResult executeUnlockServiceLinkedRole(UnlockServiceLinkedRoleRequest unlockServiceLinkedRoleRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(unlockServiceLinkedRoleRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UnlockServiceLinkedRoleRequest> request = null;
-        Response<UnlockServiceLinkedRoleResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UnlockServiceLinkedRoleRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(unlockServiceLinkedRoleRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlockServiceLinkedRole");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<UnlockServiceLinkedRoleResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new UnlockServiceLinkedRoleResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
      * <p>
      * Removes tags from a resource.
      * </p>
@@ -1622,9 +1845,13 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws NotFoundException
+     *         404 response
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @sample AWSSchemas.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1679,11 +1906,17 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * @param updateDiscovererRequest
      * @return Result of the UpdateDiscoverer operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.UpdateDiscoverer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateDiscoverer" target="_top">AWS API
      *      Documentation</a>
@@ -1736,13 +1969,20 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * </p>
      * 
      * @param updateRegistryRequest
+     *        Updates the registry.
      * @return Result of the UpdateRegistry operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws UnauthorizedException
+     *         401 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.UpdateRegistry
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistry" target="_top">AWS API
      *      Documentation</a>
@@ -1793,14 +2033,24 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
      * <p>
      * Updates the schema definition
      * </p>
+     * <note>
+     * <p>
+     * Inactive schemas will be deleted after two years.
+     * </p>
+     * </note>
      * 
      * @param updateSchemaRequest
      * @return Result of the UpdateSchema operation returned by the service.
      * @throws BadRequestException
+     *         400 response
      * @throws InternalServerErrorException
+     *         500 response
      * @throws ForbiddenException
+     *         403 response
      * @throws NotFoundException
+     *         404 response
      * @throws ServiceUnavailableException
+     *         503 response
      * @sample AWSSchemas.UpdateSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateSchema" target="_top">AWS API
      *      Documentation</a>

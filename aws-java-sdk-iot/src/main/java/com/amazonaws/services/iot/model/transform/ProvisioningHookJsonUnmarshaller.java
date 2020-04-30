@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.iotevents.model.*;
+import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,18 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * TagrisThrottledException JSON Unmarshaller
+ * ProvisioningHook JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagrisThrottledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
-    private TagrisThrottledExceptionUnmarshaller() {
-        super(com.amazonaws.services.iotevents.model.TagrisThrottledException.class, "TagrisThrottledException");
-    }
+public class ProvisioningHookJsonUnmarshaller implements Unmarshaller<ProvisioningHook, JsonUnmarshallerContext> {
 
-    @Override
-    public com.amazonaws.services.iotevents.model.TagrisThrottledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
-        com.amazonaws.services.iotevents.model.TagrisThrottledException tagrisThrottledException = new com.amazonaws.services.iotevents.model.TagrisThrottledException(
-                null);
+    public ProvisioningHook unmarshall(JsonUnmarshallerContext context) throws Exception {
+        ProvisioningHook provisioningHook = new ProvisioningHook();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -53,6 +48,14 @@ public class TagrisThrottledExceptionUnmarshaller extends EnhancedJsonErrorUnmar
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("payloadVersion", targetDepth)) {
+                    context.nextToken();
+                    provisioningHook.setPayloadVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("targetArn", targetDepth)) {
+                    context.nextToken();
+                    provisioningHook.setTargetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
@@ -61,14 +64,15 @@ public class TagrisThrottledExceptionUnmarshaller extends EnhancedJsonErrorUnmar
             }
             token = context.nextToken();
         }
-        return tagrisThrottledException;
+
+        return provisioningHook;
     }
 
-    private static TagrisThrottledExceptionUnmarshaller instance;
+    private static ProvisioningHookJsonUnmarshaller instance;
 
-    public static TagrisThrottledExceptionUnmarshaller getInstance() {
+    public static ProvisioningHookJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new TagrisThrottledExceptionUnmarshaller();
+            instance = new ProvisioningHookJsonUnmarshaller();
         return instance;
     }
 }

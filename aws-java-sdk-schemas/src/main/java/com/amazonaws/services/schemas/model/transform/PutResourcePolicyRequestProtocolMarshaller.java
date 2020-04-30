@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.iotevents.model.transform;
+package com.amazonaws.services.schemas.model.transform;
 
 import javax.annotation.Generated;
 
@@ -18,7 +18,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 
 import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.services.iotevents.model.*;
+import com.amazonaws.services.schemas.model.*;
 import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.protocol.*;
@@ -26,35 +26,33 @@ import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * VerifyResourcesExistForTagrisRequest Marshaller
+ * PutResourcePolicyRequest Marshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class VerifyResourcesExistForTagrisRequestProtocolMarshaller implements
-        Marshaller<Request<VerifyResourcesExistForTagrisRequest>, VerifyResourcesExistForTagrisRequest> {
+public class PutResourcePolicyRequestProtocolMarshaller implements Marshaller<Request<PutResourcePolicyRequest>, PutResourcePolicyRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/internal/tags/resource-status").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(true)
-            .serviceName("AWSIoTEvents").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/v1/policy")
+            .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSSchemas").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 
-    public VerifyResourcesExistForTagrisRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+    public PutResourcePolicyRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<VerifyResourcesExistForTagrisRequest> marshall(VerifyResourcesExistForTagrisRequest verifyResourcesExistForTagrisRequest) {
+    public Request<PutResourcePolicyRequest> marshall(PutResourcePolicyRequest putResourcePolicyRequest) {
 
-        if (verifyResourcesExistForTagrisRequest == null) {
+        if (putResourcePolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final ProtocolRequestMarshaller<VerifyResourcesExistForTagrisRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(
-                    SDK_OPERATION_BINDING, verifyResourcesExistForTagrisRequest);
+            final ProtocolRequestMarshaller<PutResourcePolicyRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
+                    putResourcePolicyRequest);
 
             protocolMarshaller.startMarshalling();
-            VerifyResourcesExistForTagrisRequestMarshaller.getInstance().marshall(verifyResourcesExistForTagrisRequest, protocolMarshaller);
+            PutResourcePolicyRequestMarshaller.getInstance().marshall(putResourcePolicyRequest, protocolMarshaller);
             return protocolMarshaller.finishMarshalling();
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSchemaResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     */
     private String content;
     /**
      * <p>
@@ -74,7 +79,12 @@ public class DescribeSchemaResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date versionCreatedDate;
 
     /**
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     * 
      * @param content
+     *        The source of the schema definition.
      */
 
     public void setContent(String content) {
@@ -82,7 +92,11 @@ public class DescribeSchemaResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     * 
+     * @return The source of the schema definition.
      */
 
     public String getContent() {
@@ -90,7 +104,12 @@ public class DescribeSchemaResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The source of the schema definition.
+     * </p>
+     * 
      * @param content
+     *        The source of the schema definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

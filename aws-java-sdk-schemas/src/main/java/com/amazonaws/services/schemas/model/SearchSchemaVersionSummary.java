@@ -25,6 +25,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SearchSchemaVersionSummary implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The date the schema version was created.
+     * </p>
+     */
     private java.util.Date createdDate;
     /**
      * <p>
@@ -34,7 +39,12 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
     private String schemaVersion;
 
     /**
+     * <p>
+     * The date the schema version was created.
+     * </p>
+     * 
      * @param createdDate
+     *        The date the schema version was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -42,7 +52,11 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The date the schema version was created.
+     * </p>
+     * 
+     * @return The date the schema version was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -50,7 +64,12 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The date the schema version was created.
+     * </p>
+     * 
      * @param createdDate
+     *        The date the schema version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,22 +23,22 @@ import com.amazonaws.transform.*;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * UnlockServiceLinkedRoleResult JSON Unmarshaller
+ * DeleteResourcePolicyResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnlockServiceLinkedRoleResultJsonUnmarshaller implements Unmarshaller<UnlockServiceLinkedRoleResult, JsonUnmarshallerContext> {
+public class DeleteResourcePolicyResultJsonUnmarshaller implements Unmarshaller<DeleteResourcePolicyResult, JsonUnmarshallerContext> {
 
-    public UnlockServiceLinkedRoleResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        UnlockServiceLinkedRoleResult unlockServiceLinkedRoleResult = new UnlockServiceLinkedRoleResult();
+    public DeleteResourcePolicyResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        DeleteResourcePolicyResult deleteResourcePolicyResult = new DeleteResourcePolicyResult();
 
-        return unlockServiceLinkedRoleResult;
+        return deleteResourcePolicyResult;
     }
 
-    private static UnlockServiceLinkedRoleResultJsonUnmarshaller instance;
+    private static DeleteResourcePolicyResultJsonUnmarshaller instance;
 
-    public static UnlockServiceLinkedRoleResultJsonUnmarshaller getInstance() {
+    public static DeleteResourcePolicyResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new UnlockServiceLinkedRoleResultJsonUnmarshaller();
+            instance = new DeleteResourcePolicyResultJsonUnmarshaller();
         return instance;
     }
 }

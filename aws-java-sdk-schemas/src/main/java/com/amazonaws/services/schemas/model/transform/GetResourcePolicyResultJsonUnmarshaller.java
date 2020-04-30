@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * LockServiceLinkedRoleResult JSON Unmarshaller
+ * GetResourcePolicyResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LockServiceLinkedRoleResultJsonUnmarshaller implements Unmarshaller<LockServiceLinkedRoleResult, JsonUnmarshallerContext> {
+public class GetResourcePolicyResultJsonUnmarshaller implements Unmarshaller<GetResourcePolicyResult, JsonUnmarshallerContext> {
 
-    public LockServiceLinkedRoleResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        LockServiceLinkedRoleResult lockServiceLinkedRoleResult = new LockServiceLinkedRoleResult();
+    public GetResourcePolicyResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        GetResourcePolicyResult getResourcePolicyResult = new GetResourcePolicyResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class LockServiceLinkedRoleResultJsonUnmarshaller implements Unmarshaller
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return lockServiceLinkedRoleResult;
+            return getResourcePolicyResult;
         }
 
         while (true) {
@@ -48,18 +48,14 @@ public class LockServiceLinkedRoleResultJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("CanBeDeleted", targetDepth)) {
+                if (context.testExpression("Policy", targetDepth)) {
                     context.nextToken();
-                    lockServiceLinkedRoleResult.setCanBeDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    getResourcePolicyResult.setPolicy(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(
+                            context));
                 }
-                if (context.testExpression("ReasonOfFailure", targetDepth)) {
+                if (context.testExpression("RevisionId", targetDepth)) {
                     context.nextToken();
-                    lockServiceLinkedRoleResult.setReasonOfFailure(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("RelatedResources", targetDepth)) {
-                    context.nextToken();
-                    lockServiceLinkedRoleResult.setRelatedResources(new ListUnmarshaller<DiscovererSummary>(DiscovererSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    getResourcePolicyResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -70,14 +66,14 @@ public class LockServiceLinkedRoleResultJsonUnmarshaller implements Unmarshaller
             token = context.nextToken();
         }
 
-        return lockServiceLinkedRoleResult;
+        return getResourcePolicyResult;
     }
 
-    private static LockServiceLinkedRoleResultJsonUnmarshaller instance;
+    private static GetResourcePolicyResultJsonUnmarshaller instance;
 
-    public static LockServiceLinkedRoleResultJsonUnmarshaller getInstance() {
+    public static GetResourcePolicyResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new LockServiceLinkedRoleResultJsonUnmarshaller();
+            instance = new GetResourcePolicyResultJsonUnmarshaller();
         return instance;
     }
 }
