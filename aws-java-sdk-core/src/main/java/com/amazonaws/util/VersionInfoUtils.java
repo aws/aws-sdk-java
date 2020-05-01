@@ -237,6 +237,8 @@ public class VersionInfoUtils {
             concat(kotlinVersion, version, "/");
         } catch (ClassNotFoundException e) {
             //ignore
+        } catch (LinkageError e) {
+            // Ignore
         } catch (Exception e) {
             if (log.isTraceEnabled()){
                 log.trace("Exception attempting to get Kotlin version.", e);
@@ -257,6 +259,8 @@ public class VersionInfoUtils {
             concat(kotlinVersion, version, "/");
         } catch (ClassNotFoundException e) {
             //Ignore
+        } catch (LinkageError e) {
+            // Ignore
         } catch (Exception e) {
             if (log.isTraceEnabled()) {
                 log.trace("Exception attempting to get Kotlin version.", e);
@@ -284,6 +288,8 @@ public class VersionInfoUtils {
             concat(sb, version, "/");
         } catch (ClassNotFoundException e) {
             //Ignore
+        } catch (LinkageError e) {
+            // Ignore
         } catch (Exception e) {
             if (log.isTraceEnabled()){
                 log.trace("Exception attempting to get " + language + " version.", e);
