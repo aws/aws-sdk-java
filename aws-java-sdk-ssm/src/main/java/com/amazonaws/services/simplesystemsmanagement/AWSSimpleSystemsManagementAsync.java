@@ -68,11 +68,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
      * set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based
-     * on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of
-     * characters.
+     * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string
+     * of characters.
      * </p>
      * <p>
-     * For more information about using tags with EC2 instances, see <a
+     * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -100,11 +100,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
      * set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based
-     * on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of
-     * characters.
+     * on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string
+     * of characters.
      * </p>
      * <p>
-     * For more information about using tags with EC2 instances, see <a
+     * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>

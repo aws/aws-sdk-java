@@ -25,7 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * For keys, you can specify one or more tags that have been applied to a document.
  * </p>
  * <p>
- * Other valid values include Owner, Name, PlatformTypes, and DocumentType.
+ * Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
+ * <code>DocumentType</code>, and <code>TargetType</code>.
  * </p>
  * <p>
  * Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.

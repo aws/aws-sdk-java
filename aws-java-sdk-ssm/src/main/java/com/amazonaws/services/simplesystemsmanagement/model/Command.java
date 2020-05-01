@@ -236,6 +236,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CloudWatchOutputConfig cloudWatchOutputConfig;
+    /**
+     * <p>
+     * The <code>TimeoutSeconds</code> value specified for a command.
+     * </p>
+     */
+    private Integer timeoutSeconds;
 
     /**
      * <p>
@@ -1722,6 +1728,46 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The <code>TimeoutSeconds</code> value specified for a command.
+     * </p>
+     * 
+     * @param timeoutSeconds
+     *        The <code>TimeoutSeconds</code> value specified for a command.
+     */
+
+    public void setTimeoutSeconds(Integer timeoutSeconds) {
+        this.timeoutSeconds = timeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * The <code>TimeoutSeconds</code> value specified for a command.
+     * </p>
+     * 
+     * @return The <code>TimeoutSeconds</code> value specified for a command.
+     */
+
+    public Integer getTimeoutSeconds() {
+        return this.timeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * The <code>TimeoutSeconds</code> value specified for a command.
+     * </p>
+     * 
+     * @param timeoutSeconds
+     *        The <code>TimeoutSeconds</code> value specified for a command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withTimeoutSeconds(Integer timeoutSeconds) {
+        setTimeoutSeconds(timeoutSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1778,7 +1824,9 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
         if (getNotificationConfig() != null)
             sb.append("NotificationConfig: ").append(getNotificationConfig()).append(",");
         if (getCloudWatchOutputConfig() != null)
-            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig());
+            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig()).append(",");
+        if (getTimeoutSeconds() != null)
+            sb.append("TimeoutSeconds: ").append(getTimeoutSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -1885,6 +1933,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCloudWatchOutputConfig() != null && other.getCloudWatchOutputConfig().equals(this.getCloudWatchOutputConfig()) == false)
             return false;
+        if (other.getTimeoutSeconds() == null ^ this.getTimeoutSeconds() == null)
+            return false;
+        if (other.getTimeoutSeconds() != null && other.getTimeoutSeconds().equals(this.getTimeoutSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -1916,6 +1968,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchOutputConfig() == null) ? 0 : getCloudWatchOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutSeconds() == null) ? 0 : getTimeoutSeconds().hashCode());
         return hashCode;
     }
 

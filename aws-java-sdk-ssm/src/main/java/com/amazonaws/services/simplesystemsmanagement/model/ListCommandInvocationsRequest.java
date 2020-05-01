@@ -52,8 +52,7 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     private String nextToken;
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     * <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
@@ -233,12 +232,10 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     * <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * 
-     * @return (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     *         <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     * @return (Optional) One or more filters. Use a filter to return a more specific list of results.
      */
 
     public java.util.List<CommandFilter> getFilters() {
@@ -250,13 +247,11 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     * <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * 
      * @param filters
-     *        (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     *        <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     *        (Optional) One or more filters. Use a filter to return a more specific list of results.
      */
 
     public void setFilters(java.util.Collection<CommandFilter> filters) {
@@ -270,8 +265,7 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     * <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -280,8 +274,7 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param filters
-     *        (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     *        <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     *        (Optional) One or more filters. Use a filter to return a more specific list of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,13 +290,11 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     * <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     * (Optional) One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * 
      * @param filters
-     *        (Optional) One or more filters. Use a filter to return a more specific list of results. Note that the
-     *        <code>DocumentName</code> filter is not supported for ListCommandInvocations.
+     *        (Optional) One or more filters. Use a filter to return a more specific list of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

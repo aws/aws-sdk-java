@@ -1,3 +1,12 @@
+# __1.11.774__ __2020-05-01__
+## __Amazon Elastic File System__
+  - ### Features
+    - Change the TagKeys argument for UntagResource to a URL parameter to address an issue with the Java and .NET SDKs.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added TimeoutSeconds as part of ListCommands API response.
+
 # __1.11.773__ __2020-04-30__
 ## __AWS Elemental MediaConvert__
   - ### Features

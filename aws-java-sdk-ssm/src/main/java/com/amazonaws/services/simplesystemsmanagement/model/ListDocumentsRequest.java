@@ -35,9 +35,9 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For keys,
      * you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and <code>DocumentType</code>. For example, to
-     * return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the
-     * format <code>Key=tag:tagName,Values=valueName</code>.
+     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and
+     * <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+     * specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentKeyValuesFilter> filters;
@@ -132,15 +132,15 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For keys,
      * you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and <code>DocumentType</code>. For example, to
-     * return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the
-     * format <code>Key=tag:tagName,Values=valueName</code>.
+     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and
+     * <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+     * specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
      * </p>
      * 
      * @return One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For
      *         keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid
-     *         keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and
-     *         <code>DocumentType</code>. For example, to return documents you own use
+     *         keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>
+     *         , and <code>TargetType</code>. For example, to return documents you own use
      *         <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
      *         <code>Key=tag:tagName,Values=valueName</code>.
      */
@@ -156,17 +156,18 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For keys,
      * you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and <code>DocumentType</code>. For example, to
-     * return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the
-     * format <code>Key=tag:tagName,Values=valueName</code>.
+     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and
+     * <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+     * specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
      * </p>
      * 
      * @param filters
      *        One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For
      *        keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid
-     *        keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and
-     *        <code>DocumentType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>
-     *        . To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+     *        keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>,
+     *        and <code>TargetType</code>. For example, to return documents you own use
+     *        <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
+     *        <code>Key=tag:tagName,Values=valueName</code>.
      */
 
     public void setFilters(java.util.Collection<DocumentKeyValuesFilter> filters) {
@@ -182,9 +183,9 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For keys,
      * you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and <code>DocumentType</code>. For example, to
-     * return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the
-     * format <code>Key=tag:tagName,Values=valueName</code>.
+     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and
+     * <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+     * specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,9 +196,10 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param filters
      *        One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For
      *        keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid
-     *        keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and
-     *        <code>DocumentType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>
-     *        . To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+     *        keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>,
+     *        and <code>TargetType</code>. For example, to return documents you own use
+     *        <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
+     *        <code>Key=tag:tagName,Values=valueName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,17 +217,18 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For keys,
      * you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include
-     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and <code>DocumentType</code>. For example, to
-     * return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the
-     * format <code>Key=tag:tagName,Values=valueName</code>.
+     * <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and
+     * <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To
+     * specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
      * </p>
      * 
      * @param filters
      *        One or more DocumentKeyValuesFilter objects. Use a filter to return a more specific list of results. For
      *        keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid
-     *        keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, and
-     *        <code>DocumentType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>
-     *        . To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+     *        keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>,
+     *        and <code>TargetType</code>. For example, to return documents you own use
+     *        <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format
+     *        <code>Key=tag:tagName,Values=valueName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
