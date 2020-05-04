@@ -63,6 +63,11 @@ public final class EndpointHandler extends RequestHandler2 {
             throw new SdkClientException("Cannot use both Dual-Stack endpoints and FIPS endpoints");
         }
         String host = request.getEndpoint().getHost();
+
+        if (host == null) {
+            throw new SdkClientException("Endpoint does not contain a valid host name: " + request.getEndpoint());
+        }
+
         if (isDualstackEnabled(request)) {
             if (!host.contains(ENDPOINT_PREFIX)) {
                 throw new SdkClientException(String.format("The Dual-Stack option cannot be used with custom endpoints (%s)",

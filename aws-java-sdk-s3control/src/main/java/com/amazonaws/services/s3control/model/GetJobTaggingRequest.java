@@ -27,27 +27,24 @@ public class GetJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * retrieve tags for.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The ID for the job whose tags you want to retrieve.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * retrieve tags for.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you
-     *        want to retrieve tags for.
+     *        The AWS account ID associated with the Amazon S3 Batch Operations job.
      */
 
     public void setAccountId(String accountId) {
@@ -56,12 +53,10 @@ public class GetJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * retrieve tags for.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      * 
-     * @return The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you
-     *         want to retrieve tags for.
+     * @return The AWS account ID associated with the Amazon S3 Batch Operations job.
      */
 
     public String getAccountId() {
@@ -70,13 +65,11 @@ public class GetJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * retrieve tags for.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you
-     *        want to retrieve tags for.
+     *        The AWS account ID associated with the Amazon S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +80,11 @@ public class GetJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the job whose tags you want to retrieve.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      * </p>
      * 
      * @param jobId
-     *        The ID for the job whose tags you want to retrieve.
+     *        The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      */
 
     public void setJobId(String jobId) {
@@ -100,10 +93,10 @@ public class GetJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the job whose tags you want to retrieve.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      * </p>
      * 
-     * @return The ID for the job whose tags you want to retrieve.
+     * @return The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      */
 
     public String getJobId() {
@@ -112,11 +105,11 @@ public class GetJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the job whose tags you want to retrieve.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      * </p>
      * 
      * @param jobId
-     *        The ID for the job whose tags you want to retrieve.
+     *        The ID for the Amazon S3 Batch Operations job whose tags you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

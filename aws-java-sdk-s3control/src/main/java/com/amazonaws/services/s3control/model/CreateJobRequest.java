@@ -77,14 +77,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer priority;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations will use
-     * to execute this job's operation on each object in the manifest.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
+     * use to execute this job's operation on each object in the manifest.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * An optional set of tags to associate with the job when it is created.
+     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * </p>
      */
     private java.util.List<S3Tag> tags;
@@ -453,12 +453,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations will use
-     * to execute this job's operation on each object in the manifest.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
+     * use to execute this job's operation on each object in the manifest.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations
+     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
      *        will use to execute this job's operation on each object in the manifest.
      */
 
@@ -468,12 +468,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations will use
-     * to execute this job's operation on each object in the manifest.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
+     * use to execute this job's operation on each object in the manifest.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations
-     *         will use to execute this job's operation on each object in the manifest.
+     * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch
+     *         Operations will use to execute this job's operation on each object in the manifest.
      */
 
     public String getRoleArn() {
@@ -482,12 +482,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations will use
-     * to execute this job's operation on each object in the manifest.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
+     * use to execute this job's operation on each object in the manifest.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that batch operations
+     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
      *        will use to execute this job's operation on each object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -499,10 +499,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An optional set of tags to associate with the job when it is created.
+     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * </p>
      * 
-     * @return An optional set of tags to associate with the job when it is created.
+     * @return A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      */
 
     public java.util.List<S3Tag> getTags() {
@@ -511,11 +511,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An optional set of tags to associate with the job when it is created.
+     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * </p>
      * 
      * @param tags
-     *        An optional set of tags to associate with the job when it is created.
+     *        A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      */
 
     public void setTags(java.util.Collection<S3Tag> tags) {
@@ -529,7 +529,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An optional set of tags to associate with the job when it is created.
+     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -538,7 +538,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tags
-     *        An optional set of tags to associate with the job when it is created.
+     *        A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,11 +554,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An optional set of tags to associate with the job when it is created.
+     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * </p>
      * 
      * @param tags
-     *        An optional set of tags to associate with the job when it is created.
+     *        A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

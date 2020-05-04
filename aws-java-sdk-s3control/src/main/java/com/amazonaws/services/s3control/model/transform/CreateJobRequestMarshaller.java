@@ -390,6 +390,54 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 xmlWriter.endElement();
                             }
                         }
+
+                        {
+                            S3SetObjectLegalHoldOperation s3PutObjectLegalHold = operation.getS3PutObjectLegalHold();
+                            if (s3PutObjectLegalHold != null) {
+                                xmlWriter.startElement("S3PutObjectLegalHold");
+
+                                {
+                                    S3ObjectLockLegalHold legalHold = s3PutObjectLegalHold.getLegalHold();
+                                    if (legalHold != null) {
+                                        xmlWriter.startElement("LegalHold");
+
+                                        if (legalHold.getStatus() != null) {
+                                            xmlWriter.startElement("Status").value(legalHold.getStatus()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        {
+                            S3SetObjectRetentionOperation s3PutObjectRetention = operation.getS3PutObjectRetention();
+                            if (s3PutObjectRetention != null) {
+                                xmlWriter.startElement("S3PutObjectRetention");
+
+                                if (s3PutObjectRetention.getBypassGovernanceRetention() != null) {
+                                    xmlWriter.startElement("BypassGovernanceRetention").value(s3PutObjectRetention.getBypassGovernanceRetention()).endElement();
+                                }
+
+                                {
+                                    S3Retention retention = s3PutObjectRetention.getRetention();
+                                    if (retention != null) {
+                                        xmlWriter.startElement("Retention");
+
+                                        if (retention.getRetainUntilDate() != null) {
+                                            xmlWriter.startElement("RetainUntilDate").value(retention.getRetainUntilDate()).endElement();
+                                        }
+
+                                        if (retention.getMode() != null) {
+                                            xmlWriter.startElement("Mode").value(retention.getMode()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
                         xmlWriter.endElement();
                     }
                 }

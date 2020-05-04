@@ -24,7 +24,9 @@ public enum OperationName {
     S3PutObjectCopy("S3PutObjectCopy"),
     S3PutObjectAcl("S3PutObjectAcl"),
     S3PutObjectTagging("S3PutObjectTagging"),
-    S3InitiateRestoreObject("S3InitiateRestoreObject");
+    S3InitiateRestoreObject("S3InitiateRestoreObject"),
+    S3PutObjectLegalHold("S3PutObjectLegalHold"),
+    S3PutObjectRetention("S3PutObjectRetention");
 
     private String value;
 

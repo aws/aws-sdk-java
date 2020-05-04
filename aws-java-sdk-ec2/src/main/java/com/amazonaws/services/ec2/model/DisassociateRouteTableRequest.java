@@ -28,18 +28,18 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The association ID representing the current association between the route table and subnet.
+     * The association ID representing the current association between the route table and subnet or gateway.
      * </p>
      */
     private String associationId;
 
     /**
      * <p>
-     * The association ID representing the current association between the route table and subnet.
+     * The association ID representing the current association between the route table and subnet or gateway.
      * </p>
      * 
      * @param associationId
-     *        The association ID representing the current association between the route table and subnet.
+     *        The association ID representing the current association between the route table and subnet or gateway.
      */
 
     public void setAssociationId(String associationId) {
@@ -48,10 +48,10 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The association ID representing the current association between the route table and subnet.
+     * The association ID representing the current association between the route table and subnet or gateway.
      * </p>
      * 
-     * @return The association ID representing the current association between the route table and subnet.
+     * @return The association ID representing the current association between the route table and subnet or gateway.
      */
 
     public String getAssociationId() {
@@ -60,11 +60,11 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The association ID representing the current association between the route table and subnet.
+     * The association ID representing the current association between the route table and subnet or gateway.
      * </p>
      * 
      * @param associationId
-     *        The association ID representing the current association between the route table and subnet.
+     *        The association ID representing the current association between the route table and subnet or gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

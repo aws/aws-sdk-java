@@ -111,6 +111,9 @@ public class S3RequestEndpointResolver {
             endpointBuilder.withRegion(r);
         }
         final URI endpoint = endpointBuilder.getServiceEndpoint();
+        if (endpoint.getHost() == null) {
+            throw new IllegalArgumentException("Endpoint does not contain a valid host name: " + request.getEndpoint());
+        }
         if (shouldUseVirtualAddressing(endpoint)) {
             request.setEndpoint(convertToVirtualHostEndpoint(endpoint, bucketName));
             request.setResourcePath(SdkHttpUtils.urlEncode(getHostStyleResourcePath(), true));

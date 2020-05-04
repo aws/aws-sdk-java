@@ -45,8 +45,8 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
     private String bucket;
     /**
      * <p>
-     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified Virtual
-     * Private Cloud (VPC).
+     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
+     * private cloud (VPC).
      * </p>
      */
     private VpcConfiguration vpcConfiguration;
@@ -175,13 +175,13 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified Virtual
-     * Private Cloud (VPC).
+     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
+     * private cloud (VPC).
      * </p>
      * 
      * @param vpcConfiguration
      *        If you include this field, Amazon S3 restricts access to this access point to requests from the specified
-     *        Virtual Private Cloud (VPC).
+     *        virtual private cloud (VPC).
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -190,12 +190,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified Virtual
-     * Private Cloud (VPC).
+     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
+     * private cloud (VPC).
      * </p>
      * 
      * @return If you include this field, Amazon S3 restricts access to this access point to requests from the specified
-     *         Virtual Private Cloud (VPC).
+     *         virtual private cloud (VPC).
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -204,13 +204,13 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified Virtual
-     * Private Cloud (VPC).
+     * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
+     * private cloud (VPC).
      * </p>
      * 
      * @param vpcConfiguration
      *        If you include this field, Amazon S3 restricts access to this access point to requests from the specified
-     *        Virtual Private Cloud (VPC).
+     *        virtual private cloud (VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

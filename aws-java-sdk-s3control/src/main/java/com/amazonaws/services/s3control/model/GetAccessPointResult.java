@@ -38,17 +38,17 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
     private String bucket;
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      */
     private String networkOrigin;
     /**
      * <p>
-     * Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
      */
     private VpcConfiguration vpcConfiguration;
@@ -143,19 +143,19 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
      * @param networkOrigin
-     *        Indicates whether this access point allows access from the public Internet. If
+     *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *        <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        Internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.
      * @see NetworkOrigin
      */
 
@@ -165,18 +165,18 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
-     * @return Indicates whether this access point allows access from the public Internet. If
+     * @return Indicates whether this access point allows access from the public internet. If
      *         <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *         <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *         <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *         <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *         Internet, subject to the access point and bucket access policies.
+     *         internet, subject to the access point and bucket access policies.
      * @see NetworkOrigin
      */
 
@@ -186,19 +186,19 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
      * @param networkOrigin
-     *        Indicates whether this access point allows access from the public Internet. If
+     *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *        <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        Internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkOrigin
      */
@@ -210,19 +210,19 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
      * @param networkOrigin
-     *        Indicates whether this access point allows access from the public Internet. If
+     *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *        <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        Internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkOrigin
      */
@@ -234,11 +234,11 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
      * 
      * @param vpcConfiguration
-     *        Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     *        Contains the virtual private cloud (VPC) configuration for the specified access point.
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -247,10 +247,10 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
      * 
-     * @return Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     * @return Contains the virtual private cloud (VPC) configuration for the specified access point.
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -259,11 +259,11 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
      * 
      * @param vpcConfiguration
-     *        Contains the Virtual Private Cloud (VPC) configuration for the specified access point.
+     *        Contains the virtual private cloud (VPC) configuration for the specified access point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

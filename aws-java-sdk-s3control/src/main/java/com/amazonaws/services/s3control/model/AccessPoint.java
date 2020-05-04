@@ -34,17 +34,17 @@ public class AccessPoint implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      */
     private String networkOrigin;
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
      */
     private VpcConfiguration vpcConfiguration;
@@ -97,19 +97,19 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
      * @param networkOrigin
-     *        Indicates whether this access point allows access from the public Internet. If
+     *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *        <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        Internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.
      * @see NetworkOrigin
      */
 
@@ -119,18 +119,18 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
-     * @return Indicates whether this access point allows access from the public Internet. If
+     * @return Indicates whether this access point allows access from the public internet. If
      *         <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *         <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *         <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *         <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *         Internet, subject to the access point and bucket access policies.
+     *         internet, subject to the access point and bucket access policies.
      * @see NetworkOrigin
      */
 
@@ -140,19 +140,19 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
      * @param networkOrigin
-     *        Indicates whether this access point allows access from the public Internet. If
+     *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *        <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        Internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkOrigin
      */
@@ -164,19 +164,19 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this access point allows access from the public Internet. If <code>VpcConfiguration</code> is
+     * Indicates whether this access point allows access from the public internet. If <code>VpcConfiguration</code> is
      * specified for this access point, then <code>NetworkOrigin</code> is <code>VPC</code>, and the access point
-     * doesn't allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
-     * and the access point allows access from the public Internet, subject to the access point and bucket access
+     * doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is <code>Internet</code>,
+     * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
      * 
      * @param networkOrigin
-     *        Indicates whether this access point allows access from the public Internet. If
+     *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
-     *        <code>VPC</code>, and the access point doesn't allow access from the public Internet. Otherwise,
+     *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        Internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkOrigin
      */
@@ -188,11 +188,11 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
      * 
      * @param vpcConfiguration
-     *        The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     *        The virtual private cloud (VPC) configuration for this access point, if one exists.
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -201,10 +201,10 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
      * 
-     * @return The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     * @return The virtual private cloud (VPC) configuration for this access point, if one exists.
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -213,11 +213,11 @@ public class AccessPoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
      * 
      * @param vpcConfiguration
-     *        The Virtual Private Cloud (VPC) configuration for this access point, if one exists.
+     *        The virtual private cloud (VPC) configuration for this access point, if one exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

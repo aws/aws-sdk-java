@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 batch operations passes each
+ * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each
  * value through to the underlying POST Object restore API. For more information about the parameters for this
  * operation, see <a href=
  * "https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request"

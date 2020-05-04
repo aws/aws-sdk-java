@@ -123,9 +123,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
      * quotation marks (' ') to surround the parameter value.
      * </p>
-     * <p>
-     * Only applicable to flow logs that are published to an Amazon S3 bucket.
-     * </p>
      */
     private String logFormat;
     /**
@@ -879,9 +876,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
      * quotation marks (' ') to surround the parameter value.
      * </p>
-     * <p>
-     * Only applicable to flow logs that are published to an Amazon S3 bucket.
-     * </p>
      * 
      * @param logFormat
      *        The fields to include in the flow log record, in the order in which they should appear. For a list of
@@ -892,9 +886,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        <p>
      *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use
      *        single quotation marks (' ') to surround the parameter value.
-     *        </p>
-     *        <p>
-     *        Only applicable to flow logs that are published to an Amazon S3 bucket.
      */
 
     public void setLogFormat(String logFormat) {
@@ -912,9 +903,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
      * quotation marks (' ') to surround the parameter value.
      * </p>
-     * <p>
-     * Only applicable to flow logs that are published to an Amazon S3 bucket.
-     * </p>
      * 
      * @return The fields to include in the flow log record, in the order in which they should appear. For a list of
      *         available fields, see <a
@@ -924,9 +912,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *         <p>
      *         Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use
      *         single quotation marks (' ') to surround the parameter value.
-     *         </p>
-     *         <p>
-     *         Only applicable to flow logs that are published to an Amazon S3 bucket.
      */
 
     public String getLogFormat() {
@@ -944,9 +929,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
      * quotation marks (' ') to surround the parameter value.
      * </p>
-     * <p>
-     * Only applicable to flow logs that are published to an Amazon S3 bucket.
-     * </p>
      * 
      * @param logFormat
      *        The fields to include in the flow log record, in the order in which they should appear. For a list of
@@ -957,9 +939,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        <p>
      *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use
      *        single quotation marks (' ') to surround the parameter value.
-     *        </p>
-     *        <p>
-     *        Only applicable to flow logs that are published to an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

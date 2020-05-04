@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Virtual Private Cloud (VPC) configuration for an access point.
+ * The virtual private cloud (VPC) configuration for an access point.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/VpcConfiguration" target="_top">AWS API

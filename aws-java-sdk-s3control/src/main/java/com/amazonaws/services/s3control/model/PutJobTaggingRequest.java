@@ -27,33 +27,30 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * replace tags on.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The ID for the job whose tags you want to replace.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * The set of tags to associate with the job.
+     * The set of tags to associate with the Amazon S3 Batch Operations job.
      * </p>
      */
     private java.util.List<S3Tag> tags;
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * replace tags on.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you
-     *        want to replace tags on.
+     *        The AWS account ID associated with the Amazon S3 Batch Operations job.
      */
 
     public void setAccountId(String accountId) {
@@ -62,12 +59,10 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * replace tags on.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      * 
-     * @return The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you
-     *         want to replace tags on.
+     * @return The AWS account ID associated with the Amazon S3 Batch Operations job.
      */
 
     public String getAccountId() {
@@ -76,13 +71,11 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you want to
-     * replace tags on.
+     * The AWS account ID associated with the Amazon S3 Batch Operations job.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the Amazon Web Services account associated with the Amazon S3 batch operations job you
-     *        want to replace tags on.
+     *        The AWS account ID associated with the Amazon S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +86,11 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the job whose tags you want to replace.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      * </p>
      * 
      * @param jobId
-     *        The ID for the job whose tags you want to replace.
+     *        The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      */
 
     public void setJobId(String jobId) {
@@ -106,10 +99,10 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the job whose tags you want to replace.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      * </p>
      * 
-     * @return The ID for the job whose tags you want to replace.
+     * @return The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      */
 
     public String getJobId() {
@@ -118,11 +111,11 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the job whose tags you want to replace.
+     * The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      * </p>
      * 
      * @param jobId
-     *        The ID for the job whose tags you want to replace.
+     *        The ID for the Amazon S3 Batch Operations job whose tags you want to replace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +126,10 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The set of tags to associate with the job.
+     * The set of tags to associate with the Amazon S3 Batch Operations job.
      * </p>
      * 
-     * @return The set of tags to associate with the job.
+     * @return The set of tags to associate with the Amazon S3 Batch Operations job.
      */
 
     public java.util.List<S3Tag> getTags() {
@@ -145,11 +138,11 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The set of tags to associate with the job.
+     * The set of tags to associate with the Amazon S3 Batch Operations job.
      * </p>
      * 
      * @param tags
-     *        The set of tags to associate with the job.
+     *        The set of tags to associate with the Amazon S3 Batch Operations job.
      */
 
     public void setTags(java.util.Collection<S3Tag> tags) {
@@ -163,7 +156,7 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The set of tags to associate with the job.
+     * The set of tags to associate with the Amazon S3 Batch Operations job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,7 +165,7 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        The set of tags to associate with the job.
+     *        The set of tags to associate with the Amazon S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +181,11 @@ public class PutJobTaggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The set of tags to associate with the job.
+     * The set of tags to associate with the Amazon S3 Batch Operations job.
      * </p>
      * 
      * @param tags
-     *        The set of tags to associate with the job.
+     *        The set of tags to associate with the Amazon S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

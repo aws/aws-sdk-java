@@ -60,6 +60,10 @@ public class JobOperation implements Serializable, Cloneable {
      */
     private S3InitiateRestoreObjectOperation s3InitiateRestoreObject;
 
+    private S3SetObjectLegalHoldOperation s3PutObjectLegalHold;
+
+    private S3SetObjectRetentionOperation s3PutObjectRetention;
+
     /**
      * <p>
      * Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
@@ -261,6 +265,58 @@ public class JobOperation implements Serializable, Cloneable {
     }
 
     /**
+     * @param s3PutObjectLegalHold
+     */
+
+    public void setS3PutObjectLegalHold(S3SetObjectLegalHoldOperation s3PutObjectLegalHold) {
+        this.s3PutObjectLegalHold = s3PutObjectLegalHold;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3SetObjectLegalHoldOperation getS3PutObjectLegalHold() {
+        return this.s3PutObjectLegalHold;
+    }
+
+    /**
+     * @param s3PutObjectLegalHold
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobOperation withS3PutObjectLegalHold(S3SetObjectLegalHoldOperation s3PutObjectLegalHold) {
+        setS3PutObjectLegalHold(s3PutObjectLegalHold);
+        return this;
+    }
+
+    /**
+     * @param s3PutObjectRetention
+     */
+
+    public void setS3PutObjectRetention(S3SetObjectRetentionOperation s3PutObjectRetention) {
+        this.s3PutObjectRetention = s3PutObjectRetention;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3SetObjectRetentionOperation getS3PutObjectRetention() {
+        return this.s3PutObjectRetention;
+    }
+
+    /**
+     * @param s3PutObjectRetention
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobOperation withS3PutObjectRetention(S3SetObjectRetentionOperation s3PutObjectRetention) {
+        setS3PutObjectRetention(s3PutObjectRetention);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +337,11 @@ public class JobOperation implements Serializable, Cloneable {
         if (getS3PutObjectTagging() != null)
             sb.append("S3PutObjectTagging: ").append(getS3PutObjectTagging()).append(",");
         if (getS3InitiateRestoreObject() != null)
-            sb.append("S3InitiateRestoreObject: ").append(getS3InitiateRestoreObject());
+            sb.append("S3InitiateRestoreObject: ").append(getS3InitiateRestoreObject()).append(",");
+        if (getS3PutObjectLegalHold() != null)
+            sb.append("S3PutObjectLegalHold: ").append(getS3PutObjectLegalHold()).append(",");
+        if (getS3PutObjectRetention() != null)
+            sb.append("S3PutObjectRetention: ").append(getS3PutObjectRetention());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +376,14 @@ public class JobOperation implements Serializable, Cloneable {
             return false;
         if (other.getS3InitiateRestoreObject() != null && other.getS3InitiateRestoreObject().equals(this.getS3InitiateRestoreObject()) == false)
             return false;
+        if (other.getS3PutObjectLegalHold() == null ^ this.getS3PutObjectLegalHold() == null)
+            return false;
+        if (other.getS3PutObjectLegalHold() != null && other.getS3PutObjectLegalHold().equals(this.getS3PutObjectLegalHold()) == false)
+            return false;
+        if (other.getS3PutObjectRetention() == null ^ this.getS3PutObjectRetention() == null)
+            return false;
+        if (other.getS3PutObjectRetention() != null && other.getS3PutObjectRetention().equals(this.getS3PutObjectRetention()) == false)
+            return false;
         return true;
     }
 
@@ -329,6 +397,8 @@ public class JobOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getS3PutObjectAcl() == null) ? 0 : getS3PutObjectAcl().hashCode());
         hashCode = prime * hashCode + ((getS3PutObjectTagging() == null) ? 0 : getS3PutObjectTagging().hashCode());
         hashCode = prime * hashCode + ((getS3InitiateRestoreObject() == null) ? 0 : getS3InitiateRestoreObject().hashCode());
+        hashCode = prime * hashCode + ((getS3PutObjectLegalHold() == null) ? 0 : getS3PutObjectLegalHold().hashCode());
+        hashCode = prime * hashCode + ((getS3PutObjectRetention() == null) ? 0 : getS3PutObjectRetention().hashCode());
         return hashCode;
     }
 

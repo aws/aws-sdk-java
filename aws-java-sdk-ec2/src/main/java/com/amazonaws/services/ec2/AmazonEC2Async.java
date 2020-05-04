@@ -13001,6 +13001,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You must specify a VPC ID in the request.
+     * </p>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
      * @return A Java Future containing the result of the DisableVpcClassicLinkDnsSupport operation returned by the
@@ -13019,6 +13022,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You must specify a VPC ID in the request.
      * </p>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
@@ -13207,7 +13213,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Disassociates a subnet from a route table.
+     * Disassociates a subnet or gateway from a route table.
      * </p>
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
@@ -13226,7 +13232,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Disassociates a subnet from a route table.
+     * Disassociates a subnet or gateway from a route table.
      * </p>
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
@@ -13677,6 +13683,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You must specify a VPC ID in the request.
+     * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
      * @return A Java Future containing the result of the EnableVpcClassicLinkDnsSupport operation returned by the
@@ -13696,6 +13705,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * from a linked EC2-Classic instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You must specify a VPC ID in the request.
      * </p>
      * 
      * @param enableVpcClassicLinkDnsSupportRequest
