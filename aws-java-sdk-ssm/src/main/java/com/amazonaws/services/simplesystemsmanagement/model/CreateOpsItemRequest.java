@@ -81,7 +81,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<RelatedOpsItem> relatedOpsItems;
     /**
      * <p>
-     * The origin of the OpsItem, such as EC2 or Systems Manager.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager.
      * </p>
      * <note>
      * <p>
@@ -574,7 +574,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The origin of the OpsItem, such as EC2 or Systems Manager.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager.
      * </p>
      * <note>
      * <p>
@@ -583,7 +583,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @param source
-     *        The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note>
+     *        The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
      *        <p>
      *        The source name can't contain the following strings: aws, amazon, and amzn.
      *        </p>
@@ -595,7 +595,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The origin of the OpsItem, such as EC2 or Systems Manager.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager.
      * </p>
      * <note>
      * <p>
@@ -603,7 +603,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * 
-     * @return The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note>
+     * @return The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
      *         <p>
      *         The source name can't contain the following strings: aws, amazon, and amzn.
      *         </p>
@@ -615,7 +615,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The origin of the OpsItem, such as EC2 or Systems Manager.
+     * The origin of the OpsItem, such as Amazon EC2 or Systems Manager.
      * </p>
      * <note>
      * <p>
@@ -624,7 +624,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @param source
-     *        The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note>
+     *        The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
      *        <p>
      *        The source name can't contain the following strings: aws, amazon, and amzn.
      *        </p>

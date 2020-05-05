@@ -97,6 +97,10 @@ public class ParameterHistoryJsonUnmarshaller implements Unmarshaller<ParameterH
                     parameterHistory.setPolicies(new ListUnmarshaller<ParameterInlinePolicy>(ParameterInlinePolicyJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("DataType", targetDepth)) {
+                    context.nextToken();
+                    parameterHistory.setDataType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

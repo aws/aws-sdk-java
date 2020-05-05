@@ -52,6 +52,14 @@ public class ModifySubnetAttributeRequestMarshaller implements Marshaller<Reques
             request.addParameter("SubnetId", StringUtils.fromString(modifySubnetAttributeRequest.getSubnetId()));
         }
 
+        if (modifySubnetAttributeRequest.getMapCustomerOwnedIpOnLaunch() != null) {
+            request.addParameter("MapCustomerOwnedIpOnLaunch.Value", StringUtils.fromBoolean(modifySubnetAttributeRequest.getMapCustomerOwnedIpOnLaunch()));
+        }
+
+        if (modifySubnetAttributeRequest.getCustomerOwnedIpv4Pool() != null) {
+            request.addParameter("CustomerOwnedIpv4Pool", StringUtils.fromString(modifySubnetAttributeRequest.getCustomerOwnedIpv4Pool()));
+        }
+
         return request;
     }
 

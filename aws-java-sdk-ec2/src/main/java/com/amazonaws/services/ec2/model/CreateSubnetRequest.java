@@ -39,6 +39,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
+     * ARN.
+     * </p>
      */
     private String availabilityZone;
     /**
@@ -107,6 +111,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
+     * ARN.
+     * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone or Local Zone for the subnet.</p>
@@ -119,6 +127,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
+     *        <p>
+     *        To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
+     *        Outpost ARN.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -139,6 +151,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
+     * ARN.
+     * </p>
      * 
      * @return The Availability Zone or Local Zone for the subnet.</p>
      *         <p>
@@ -150,6 +166,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *         <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      *         >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         </p>
+     *         <p>
+     *         To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
+     *         Outpost ARN.
      */
 
     public String getAvailabilityZone() {
@@ -170,6 +190,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
+     * ARN.
+     * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone or Local Zone for the subnet.</p>
@@ -182,6 +206,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
      *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        </p>
+     *        <p>
+     *        To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
+     *        Outpost ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

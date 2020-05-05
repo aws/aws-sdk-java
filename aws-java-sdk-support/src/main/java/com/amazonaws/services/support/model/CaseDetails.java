@@ -73,10 +73,40 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <b>status.</b> The status of the case in the AWS Support Center. The possible values are: <code>resolved</code>,
- * <code>pending-customer-action</code>, <code>opened</code>, <code>unassigned</code>, and <code>work-in-progress</code>
- * .
+ * <b>status.</b> The status of the case in the AWS Support Center. Valid values:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>opened</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>pending-customer-action</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>reopened</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>resolved</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>unassigned</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>work-in-progress</code>
+ * </p>
+ * </li>
+ * </ul>
  * </li>
  * <li>
  * <p>
@@ -122,9 +152,43 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
     private String subject;
     /**
      * <p>
-     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     * The status of the case.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>opened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-customer-action</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reopened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resolved</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unassigned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>work-in-progress</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -307,13 +371,80 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     * The status of the case.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>opened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-customer-action</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reopened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resolved</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unassigned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>work-in-progress</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     *        <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     *        The status of the case.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>opened</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending-customer-action</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>reopened</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resolved</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unassigned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>work-in-progress</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -322,12 +453,79 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     * The status of the case.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>opened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-customer-action</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reopened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resolved</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unassigned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>work-in-progress</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     *         <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     * @return The status of the case.</p>
+     *         <p>
+     *         Valid values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>opened</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending-customer-action</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>reopened</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>resolved</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unassigned</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>work-in-progress</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -336,13 +534,80 @@ public class CaseDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     * <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     * The status of the case.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>opened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending-customer-action</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>reopened</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>resolved</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unassigned</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>work-in-progress</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the case. Valid values: <code>resolved</code> | <code>pending-customer-action</code> |
-     *        <code>opened</code> | <code>unassigned</code> | <code>work-in-progress</code>.
+     *        The status of the case.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>opened</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending-customer-action</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>reopened</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>resolved</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unassigned</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>work-in-progress</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

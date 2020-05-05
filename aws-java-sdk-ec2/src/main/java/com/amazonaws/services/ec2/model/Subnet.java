@@ -64,6 +64,19 @@ public class Subnet implements Serializable, Cloneable {
     private Boolean mapPublicIpOnLaunch;
     /**
      * <p>
+     * Indicates whether a network interface created in this subnet (including a network interface created by
+     * <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     * </p>
+     */
+    private Boolean mapCustomerOwnedIpOnLaunch;
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     */
+    private String customerOwnedIpv4Pool;
+    /**
+     * <p>
      * The current state of the subnet.
      * </p>
      */
@@ -386,6 +399,106 @@ public class Subnet implements Serializable, Cloneable {
 
     public Boolean isMapPublicIpOnLaunch() {
         return this.mapPublicIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a network interface created in this subnet (including a network interface created by
+     * <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     * </p>
+     * 
+     * @param mapCustomerOwnedIpOnLaunch
+     *        Indicates whether a network interface created in this subnet (including a network interface created by
+     *        <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     */
+
+    public void setMapCustomerOwnedIpOnLaunch(Boolean mapCustomerOwnedIpOnLaunch) {
+        this.mapCustomerOwnedIpOnLaunch = mapCustomerOwnedIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a network interface created in this subnet (including a network interface created by
+     * <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     * </p>
+     * 
+     * @return Indicates whether a network interface created in this subnet (including a network interface created by
+     *         <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     */
+
+    public Boolean getMapCustomerOwnedIpOnLaunch() {
+        return this.mapCustomerOwnedIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a network interface created in this subnet (including a network interface created by
+     * <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     * </p>
+     * 
+     * @param mapCustomerOwnedIpOnLaunch
+     *        Indicates whether a network interface created in this subnet (including a network interface created by
+     *        <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subnet withMapCustomerOwnedIpOnLaunch(Boolean mapCustomerOwnedIpOnLaunch) {
+        setMapCustomerOwnedIpOnLaunch(mapCustomerOwnedIpOnLaunch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a network interface created in this subnet (including a network interface created by
+     * <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     * </p>
+     * 
+     * @return Indicates whether a network interface created in this subnet (including a network interface created by
+     *         <a>RunInstances</a>) receives a customer-owned IPv4 address.
+     */
+
+    public Boolean isMapCustomerOwnedIpOnLaunch() {
+        return this.mapCustomerOwnedIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        The customer-owned IPv4 address pool associated with the subnet.
+     */
+
+    public void setCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        this.customerOwnedIpv4Pool = customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * 
+     * @return The customer-owned IPv4 address pool associated with the subnet.
+     */
+
+    public String getCustomerOwnedIpv4Pool() {
+        return this.customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        The customer-owned IPv4 address pool associated with the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subnet withCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        setCustomerOwnedIpv4Pool(customerOwnedIpv4Pool);
+        return this;
     }
 
     /**
@@ -891,6 +1004,10 @@ public class Subnet implements Serializable, Cloneable {
             sb.append("DefaultForAz: ").append(getDefaultForAz()).append(",");
         if (getMapPublicIpOnLaunch() != null)
             sb.append("MapPublicIpOnLaunch: ").append(getMapPublicIpOnLaunch()).append(",");
+        if (getMapCustomerOwnedIpOnLaunch() != null)
+            sb.append("MapCustomerOwnedIpOnLaunch: ").append(getMapCustomerOwnedIpOnLaunch()).append(",");
+        if (getCustomerOwnedIpv4Pool() != null)
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getSubnetId() != null)
@@ -947,6 +1064,14 @@ public class Subnet implements Serializable, Cloneable {
             return false;
         if (other.getMapPublicIpOnLaunch() != null && other.getMapPublicIpOnLaunch().equals(this.getMapPublicIpOnLaunch()) == false)
             return false;
+        if (other.getMapCustomerOwnedIpOnLaunch() == null ^ this.getMapCustomerOwnedIpOnLaunch() == null)
+            return false;
+        if (other.getMapCustomerOwnedIpOnLaunch() != null && other.getMapCustomerOwnedIpOnLaunch().equals(this.getMapCustomerOwnedIpOnLaunch()) == false)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() == null ^ this.getCustomerOwnedIpv4Pool() == null)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -997,6 +1122,8 @@ public class Subnet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDefaultForAz() == null) ? 0 : getDefaultForAz().hashCode());
         hashCode = prime * hashCode + ((getMapPublicIpOnLaunch() == null) ? 0 : getMapPublicIpOnLaunch().hashCode());
+        hashCode = prime * hashCode + ((getMapCustomerOwnedIpOnLaunch() == null) ? 0 : getMapCustomerOwnedIpOnLaunch().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());

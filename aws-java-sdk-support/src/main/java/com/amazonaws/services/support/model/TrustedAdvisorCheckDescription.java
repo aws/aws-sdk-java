@@ -42,8 +42,8 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable, 
     private String name;
     /**
      * <p>
-     * The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains
-     * HTML markup).
+     * The description of the Trusted Advisor check, which includes the alert criteria and recommended operations
+     * (contains HTML markup).
      * </p>
      */
     private String description;
@@ -145,12 +145,12 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains
-     * HTML markup).
+     * The description of the Trusted Advisor check, which includes the alert criteria and recommended operations
+     * (contains HTML markup).
      * </p>
      * 
      * @param description
-     *        The description of the Trusted Advisor check, which includes the alert criteria and recommended actions
+     *        The description of the Trusted Advisor check, which includes the alert criteria and recommended operations
      *        (contains HTML markup).
      */
 
@@ -160,12 +160,12 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains
-     * HTML markup).
+     * The description of the Trusted Advisor check, which includes the alert criteria and recommended operations
+     * (contains HTML markup).
      * </p>
      * 
-     * @return The description of the Trusted Advisor check, which includes the alert criteria and recommended actions
-     *         (contains HTML markup).
+     * @return The description of the Trusted Advisor check, which includes the alert criteria and recommended
+     *         operations (contains HTML markup).
      */
 
     public String getDescription() {
@@ -174,12 +174,12 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains
-     * HTML markup).
+     * The description of the Trusted Advisor check, which includes the alert criteria and recommended operations
+     * (contains HTML markup).
      * </p>
      * 
      * @param description
-     *        The description of the Trusted Advisor check, which includes the alert criteria and recommended actions
+     *        The description of the Trusted Advisor check, which includes the alert criteria and recommended operations
      *        (contains HTML markup).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSet" target="_top">AWS API
  *      Documentation</a>
@@ -36,8 +35,14 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
     private String attachmentSetId;
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
-     * attachment.
+     * One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB
+     * per attachment.
+     * </p>
+     * <p>
+     * In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     * attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
@@ -96,12 +101,23 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
-     * attachment.
+     * One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB
+     * per attachment.
+     * </p>
+     * <p>
+     * In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     * attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * 
-     * @return One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
-     *         per attachment.
+     * @return One or more attachments to add to the set. You can add up to three attachments per set. The size limit is
+     *         5 MB per attachment.</p>
+     *         <p>
+     *         In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     *         attachment file. In the previous request syntax, the value for <code>data</code> appear as
+     *         <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code>
+     *         is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      */
 
     public java.util.List<Attachment> getAttachments() {
@@ -113,13 +129,24 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
-     * attachment.
+     * One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB
+     * per attachment.
+     * </p>
+     * <p>
+     * In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     * attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * 
      * @param attachments
-     *        One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
-     *        per attachment.
+     *        One or more attachments to add to the set. You can add up to three attachments per set. The size limit is
+     *        5 MB per attachment.</p>
+     *        <p>
+     *        In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     *        attachment file. In the previous request syntax, the value for <code>data</code> appear as
+     *        <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is
+     *        the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      */
 
     public void setAttachments(java.util.Collection<Attachment> attachments) {
@@ -133,8 +160,14 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
-     * attachment.
+     * One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB
+     * per attachment.
+     * </p>
+     * <p>
+     * In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     * attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,8 +176,13 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param attachments
-     *        One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
-     *        per attachment.
+     *        One or more attachments to add to the set. You can add up to three attachments per set. The size limit is
+     *        5 MB per attachment.</p>
+     *        <p>
+     *        In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     *        attachment file. In the previous request syntax, the value for <code>data</code> appear as
+     *        <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is
+     *        the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,13 +198,24 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per
-     * attachment.
+     * One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB
+     * per attachment.
+     * </p>
+     * <p>
+     * In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     * attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * 
      * @param attachments
-     *        One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB
-     *        per attachment.
+     *        One or more attachments to add to the set. You can add up to three attachments per set. The size limit is
+     *        5 MB per attachment.</p>
+     *        <p>
+     *        In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the
+     *        attachment file. In the previous request syntax, the value for <code>data</code> appear as
+     *        <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is
+     *        the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

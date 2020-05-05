@@ -92,6 +92,13 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ParameterInlinePolicy> policies;
+    /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     */
+    private String dataType;
 
     /**
      * <p>
@@ -618,6 +625,52 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     *        <code>text</code>.
+     */
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     * 
+     * @return The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     *         <code>text</code>.
+     */
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     *        <code>text</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withDataType(String dataType) {
+        setDataType(dataType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -648,7 +701,9 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getPolicies() != null)
-            sb.append("Policies: ").append(getPolicies());
+            sb.append("Policies: ").append(getPolicies()).append(",");
+        if (getDataType() != null)
+            sb.append("DataType: ").append(getDataType());
         sb.append("}");
         return sb.toString();
     }
@@ -703,6 +758,10 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
             return false;
+        if (other.getDataType() == null ^ this.getDataType() == null)
+            return false;
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
+            return false;
         return true;
     }
 
@@ -721,6 +780,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
         return hashCode;
     }
 

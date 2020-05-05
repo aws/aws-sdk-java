@@ -43,6 +43,8 @@ public class ParameterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ARN").build();
+    private static final MarshallingInfo<String> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DataType").build();
 
     private static final ParameterMarshaller instance = new ParameterMarshaller();
 
@@ -68,6 +70,7 @@ public class ParameterMarshaller {
             protocolMarshaller.marshall(parameter.getSourceResult(), SOURCERESULT_BINDING);
             protocolMarshaller.marshall(parameter.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(parameter.getARN(), ARN_BINDING);
+            protocolMarshaller.marshall(parameter.getDataType(), DATATYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

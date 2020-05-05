@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The estimated cost savings that might be realized if the recommended actions are taken.
+ * The estimated cost savings that might be realized if the recommended operations are taken.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCostOptimizingSummary"
@@ -30,24 +30,24 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
 
     /**
      * <p>
-     * The estimated monthly savings that might be realized if the recommended actions are taken.
+     * The estimated monthly savings that might be realized if the recommended operations are taken.
      * </p>
      */
     private Double estimatedMonthlySavings;
     /**
      * <p>
-     * The estimated percentage of savings that might be realized if the recommended actions are taken.
+     * The estimated percentage of savings that might be realized if the recommended operations are taken.
      * </p>
      */
     private Double estimatedPercentMonthlySavings;
 
     /**
      * <p>
-     * The estimated monthly savings that might be realized if the recommended actions are taken.
+     * The estimated monthly savings that might be realized if the recommended operations are taken.
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        The estimated monthly savings that might be realized if the recommended actions are taken.
+     *        The estimated monthly savings that might be realized if the recommended operations are taken.
      */
 
     public void setEstimatedMonthlySavings(Double estimatedMonthlySavings) {
@@ -56,10 +56,10 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
 
     /**
      * <p>
-     * The estimated monthly savings that might be realized if the recommended actions are taken.
+     * The estimated monthly savings that might be realized if the recommended operations are taken.
      * </p>
      * 
-     * @return The estimated monthly savings that might be realized if the recommended actions are taken.
+     * @return The estimated monthly savings that might be realized if the recommended operations are taken.
      */
 
     public Double getEstimatedMonthlySavings() {
@@ -68,11 +68,11 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
 
     /**
      * <p>
-     * The estimated monthly savings that might be realized if the recommended actions are taken.
+     * The estimated monthly savings that might be realized if the recommended operations are taken.
      * </p>
      * 
      * @param estimatedMonthlySavings
-     *        The estimated monthly savings that might be realized if the recommended actions are taken.
+     *        The estimated monthly savings that might be realized if the recommended operations are taken.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
 
     /**
      * <p>
-     * The estimated percentage of savings that might be realized if the recommended actions are taken.
+     * The estimated percentage of savings that might be realized if the recommended operations are taken.
      * </p>
      * 
      * @param estimatedPercentMonthlySavings
-     *        The estimated percentage of savings that might be realized if the recommended actions are taken.
+     *        The estimated percentage of savings that might be realized if the recommended operations are taken.
      */
 
     public void setEstimatedPercentMonthlySavings(Double estimatedPercentMonthlySavings) {
@@ -96,10 +96,10 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
 
     /**
      * <p>
-     * The estimated percentage of savings that might be realized if the recommended actions are taken.
+     * The estimated percentage of savings that might be realized if the recommended operations are taken.
      * </p>
      * 
-     * @return The estimated percentage of savings that might be realized if the recommended actions are taken.
+     * @return The estimated percentage of savings that might be realized if the recommended operations are taken.
      */
 
     public Double getEstimatedPercentMonthlySavings() {
@@ -108,11 +108,11 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
 
     /**
      * <p>
-     * The estimated percentage of savings that might be realized if the recommended actions are taken.
+     * The estimated percentage of savings that might be realized if the recommended operations are taken.
      * </p>
      * 
      * @param estimatedPercentMonthlySavings
-     *        The estimated percentage of savings that might be realized if the recommended actions are taken.
+     *        The estimated percentage of savings that might be realized if the recommended operations are taken.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

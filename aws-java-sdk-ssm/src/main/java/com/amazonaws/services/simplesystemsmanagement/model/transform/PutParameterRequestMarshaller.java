@@ -48,6 +48,8 @@ public class PutParameterRequestMarshaller {
             .marshallLocationName("Tier").build();
     private static final MarshallingInfo<String> POLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policies").build();
+    private static final MarshallingInfo<String> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DataType").build();
 
     private static final PutParameterRequestMarshaller instance = new PutParameterRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class PutParameterRequestMarshaller {
             protocolMarshaller.marshall(putParameterRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(putParameterRequest.getTier(), TIER_BINDING);
             protocolMarshaller.marshall(putParameterRequest.getPolicies(), POLICIES_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getDataType(), DATATYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -75,6 +75,16 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("mapCustomerOwnedIpOnLaunch", targetDepth)) {
+                    subnet.setMapCustomerOwnedIpOnLaunch(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("customerOwnedIpv4Pool", targetDepth)) {
+                    subnet.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("state", targetDepth)) {
                     subnet.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

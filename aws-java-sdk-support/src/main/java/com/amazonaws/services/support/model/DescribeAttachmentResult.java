@@ -28,18 +28,32 @@ public class DescribeAttachmentResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The attachment content and file name.
+     * This object includes the attachment content and file name.
+     * </p>
+     * <p>
+     * In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      */
     private Attachment attachment;
 
     /**
      * <p>
-     * The attachment content and file name.
+     * This object includes the attachment content and file name.
+     * </p>
+     * <p>
+     * In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * 
      * @param attachment
-     *        The attachment content and file name.
+     *        This object includes the attachment content and file name.</p>
+     *        <p>
+     *        In the previous response syntax, the value for the <code>data</code> parameter appears as
+     *        <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is
+     *        the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      */
 
     public void setAttachment(Attachment attachment) {
@@ -48,10 +62,19 @@ public class DescribeAttachmentResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The attachment content and file name.
+     * This object includes the attachment content and file name.
+     * </p>
+     * <p>
+     * In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * 
-     * @return The attachment content and file name.
+     * @return This object includes the attachment content and file name.</p>
+     *         <p>
+     *         In the previous response syntax, the value for the <code>data</code> parameter appears as
+     *         <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code>
+     *         is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      */
 
     public Attachment getAttachment() {
@@ -60,11 +83,20 @@ public class DescribeAttachmentResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The attachment content and file name.
+     * This object includes the attachment content and file name.
+     * </p>
+     * <p>
+     * In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>,
+     * which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.
      * </p>
      * 
      * @param attachment
-     *        The attachment content and file name.
+     *        This object includes the attachment content and file name.</p>
+     *        <p>
+     *        In the previous response syntax, the value for the <code>data</code> parameter appears as
+     *        <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is
+     *        the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

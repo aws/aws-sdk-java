@@ -85,6 +85,13 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     */
+    private String dataType;
 
     /**
      * <p>
@@ -495,6 +502,52 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     *        <code>text</code>.
+     */
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     * 
+     * @return The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     *         <code>text</code>.
+     */
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    /**
+     * <p>
+     * The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     * <code>text</code>.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is
+     *        <code>text</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withDataType(String dataType) {
+        setDataType(dataType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -521,7 +574,9 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         if (getLastModifiedDate() != null)
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getDataType() != null)
+            sb.append("DataType: ").append(getDataType());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +623,10 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
+        if (other.getDataType() == null ^ this.getDataType() == null)
+            return false;
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +643,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSourceResult() == null) ? 0 : getSourceResult().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
         return hashCode;
     }
 

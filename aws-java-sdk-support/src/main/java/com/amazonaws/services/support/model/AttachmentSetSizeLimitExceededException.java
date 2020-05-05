@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A limit for the size of an attachment set has been exceeded. The limits are 3 attachments and 5 MB per attachment.
+ * A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per
+ * attachment.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

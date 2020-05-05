@@ -1,3 +1,16 @@
+# __1.11.776__ __2020-05-05__
+## __AWS Support__
+  - ### Features
+    - Documentation updates for support
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - With this release, you can call ModifySubnetAttribute with two new parameters: MapCustomerOwnedIpOnLaunch and CustomerOwnedIpv4Pool, to map a customerOwnedIpv4Pool to a subnet. You will also see these two new fields in the DescribeSubnets response. If your subnet has a customerOwnedIpv4Pool mapped, your network interface will get an auto assigned customerOwnedIpv4 address when placed onto an instance.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager Parameter Store launches new data type to support aliases in EC2 APIs
+
 # __1.11.775__ __2020-05-04__
 ## __AWS S3 Control__
   - ### Features

@@ -18,6 +18,22 @@
  * operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP
  * methods that return results in JSON format.
  * </p>
+ * <important>
+ * <ul>
+ * <li>
+ * <p>
+ * You must have a Business or Enterprise support plan to use the AWS Support API.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If you call the AWS Support API from an account that doesn't have a Business or Enterprise support plan, the
+ * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan,
+ * see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+ * </p>
+ * </li>
+ * </ul>
+ * </important>
  * <p>
  * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
  * Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify checks to

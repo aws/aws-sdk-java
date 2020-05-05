@@ -27,79 +27,90 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case.
+     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      */
     private String subject;
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     * <code>serviceCode</code> values.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
+     * A value that indicates the urgency of the case. This value determines the response time according to your service
+     * level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible
+     * values for <code>severityCode</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>SeverityLevel</a> and <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on the support plan for the account.
+     * The availability of severity levels depends on the support plan for the AWS account.
      * </p>
      * </note>
      */
     private String severityCode;
     /**
      * <p>
-     * The category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      */
     private String categoryCode;
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     * The communication body text that describes the issue. This text appears in the <b>Description</b> field on the
+     * AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      */
     private String communicationBody;
     /**
      * <p>
-     * A list of email addresses that AWS Support copies on case correspondence.
+     * A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the account that
+     * creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     * href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ccEmailAddresses;
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
-     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese
+     * ("ja") are supported.
      * </p>
      */
     private String language;
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
-     * a value, the default is "technical."
+     * The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you
+     * don't specify a value, the default is <code>technical</code>.
      * </p>
-     * <note>
-     * <p>
-     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
-     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     * </p>
-     * </note>
      */
     private String issueType;
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using the <a>AddAttachmentsToSet</a>
+     * operation.
      * </p>
      */
     private String attachmentSetId;
 
     /**
      * <p>
-     * The title of the AWS Support case.
+     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
      * @param subject
-     *        The title of the AWS Support case.
+     *        The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center
+     *        <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      */
 
     public void setSubject(String subject) {
@@ -108,10 +119,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case.
+     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
-     * @return The title of the AWS Support case.
+     * @return The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support
+     *         Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      */
 
     public String getSubject() {
@@ -120,11 +133,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case.
+     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
      * @param subject
-     *        The title of the AWS Support case.
+     *        The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center
+     *        <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +150,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     * <code>serviceCode</code> values.
      * </p>
      * 
      * @param serviceCode
-     *        The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     *        The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     *        <code>serviceCode</code> values.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -148,10 +165,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     * <code>serviceCode</code> values.
      * </p>
      * 
-     * @return The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * @return The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     *         <code>serviceCode</code> values.
      */
 
     public String getServiceCode() {
@@ -160,11 +179,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     * The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     * <code>serviceCode</code> values.
      * </p>
      * 
      * @param serviceCode
-     *        The code for the AWS service returned by the call to <a>DescribeServices</a>.
+     *        The code for the AWS service. You can use the <a>DescribeServices</a> operation to get the possible
+     *        <code>serviceCode</code> values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,18 +196,33 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
+     * A value that indicates the urgency of the case. This value determines the response time according to your service
+     * level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible
+     * values for <code>severityCode</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>SeverityLevel</a> and <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on the support plan for the account.
+     * The availability of severity levels depends on the support plan for the AWS account.
      * </p>
      * </note>
      * 
      * @param severityCode
-     *        The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
+     *        A value that indicates the urgency of the case. This value determines the response time according to your
+     *        service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get
+     *        the possible values for <code>severityCode</code>. </p>
      *        <p>
-     *        The availability of severity levels depends on the support plan for the account.
+     *        For more information, see <a>SeverityLevel</a> and <a
+     *        href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+     *        a Severity</a> in the <i>AWS Support User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The availability of severity levels depends on the support plan for the AWS account.
      *        </p>
      */
 
@@ -196,17 +232,32 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
+     * A value that indicates the urgency of the case. This value determines the response time according to your service
+     * level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible
+     * values for <code>severityCode</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>SeverityLevel</a> and <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on the support plan for the account.
+     * The availability of severity levels depends on the support plan for the AWS account.
      * </p>
      * </note>
      * 
-     * @return The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
+     * @return A value that indicates the urgency of the case. This value determines the response time according to your
+     *         service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get
+     *         the possible values for <code>severityCode</code>. </p>
      *         <p>
-     *         The availability of severity levels depends on the support plan for the account.
+     *         For more information, see <a>SeverityLevel</a> and <a
+     *         href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+     *         a Severity</a> in the <i>AWS Support User Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The availability of severity levels depends on the support plan for the AWS account.
      *         </p>
      */
 
@@ -216,18 +267,33 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
+     * A value that indicates the urgency of the case. This value determines the response time according to your service
+     * level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get the possible
+     * values for <code>severityCode</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>SeverityLevel</a> and <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a
+     * Severity</a> in the <i>AWS Support User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * The availability of severity levels depends on the support plan for the account.
+     * The availability of severity levels depends on the support plan for the AWS account.
      * </p>
      * </note>
      * 
      * @param severityCode
-     *        The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note>
+     *        A value that indicates the urgency of the case. This value determines the response time according to your
+     *        service level agreement with AWS Support. You can use the <a>DescribeSeverityLevels</a> operation to get
+     *        the possible values for <code>severityCode</code>. </p>
      *        <p>
-     *        The availability of severity levels depends on the support plan for the account.
+     *        For more information, see <a>SeverityLevel</a> and <a
+     *        href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+     *        a Severity</a> in the <i>AWS Support User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The availability of severity levels depends on the support plan for the AWS account.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -239,11 +305,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      * 
      * @param categoryCode
-     *        The category of problem for the AWS Support case.
+     *        The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to
+     *        get the category code for a service. Each AWS service defines its own set of category codes.
      */
 
     public void setCategoryCode(String categoryCode) {
@@ -252,10 +320,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      * 
-     * @return The category of problem for the AWS Support case.
+     * @return The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to
+     *         get the category code for a service. Each AWS service defines its own set of category codes.
      */
 
     public String getCategoryCode() {
@@ -264,11 +334,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The category of problem for the AWS Support case.
+     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      * 
      * @param categoryCode
-     *        The category of problem for the AWS Support case.
+     *        The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to
+     *        get the category code for a service. Each AWS service defines its own set of category codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +351,14 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     * The communication body text that describes the issue. This text appears in the <b>Description</b> field on the
+     * AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
      * @param communicationBody
-     *        The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     *        The communication body text that describes the issue. This text appears in the <b>Description</b> field on
+     *        the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
+     *        page.
      */
 
     public void setCommunicationBody(String communicationBody) {
@@ -292,10 +367,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     * The communication body text that describes the issue. This text appears in the <b>Description</b> field on the
+     * AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
-     * @return The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     * @return The communication body text that describes the issue. This text appears in the <b>Description</b> field
+     *         on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+     *         Case</a> page.
      */
 
     public String getCommunicationBody() {
@@ -304,11 +382,14 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     * The communication body text that describes the issue. This text appears in the <b>Description</b> field on the
+     * AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
      * @param communicationBody
-     *        The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
+     *        The communication body text that describes the issue. This text appears in the <b>Description</b> field on
+     *        the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
+     *        page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,10 +400,14 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of email addresses that AWS Support copies on case correspondence.
+     * A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the account that
+     * creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     * href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * </p>
      * 
-     * @return A list of email addresses that AWS Support copies on case correspondence.
+     * @return A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the
+     *         account that creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     *         href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      */
 
     public java.util.List<String> getCcEmailAddresses() {
@@ -334,11 +419,15 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of email addresses that AWS Support copies on case correspondence.
+     * A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the account that
+     * creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     * href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * </p>
      * 
      * @param ccEmailAddresses
-     *        A list of email addresses that AWS Support copies on case correspondence.
+     *        A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the
+     *        account that creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     *        href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      */
 
     public void setCcEmailAddresses(java.util.Collection<String> ccEmailAddresses) {
@@ -352,7 +441,9 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of email addresses that AWS Support copies on case correspondence.
+     * A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the account that
+     * creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     * href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -361,7 +452,9 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param ccEmailAddresses
-     *        A list of email addresses that AWS Support copies on case correspondence.
+     *        A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the
+     *        account that creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     *        href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,11 +470,15 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of email addresses that AWS Support copies on case correspondence.
+     * A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the account that
+     * creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     * href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * </p>
      * 
      * @param ccEmailAddresses
-     *        A list of email addresses that AWS Support copies on case correspondence.
+     *        A list of email addresses that AWS Support copies on case correspondence. AWS Support identifies the
+     *        account that creates the case when you specify your AWS credentials in an HTTP POST method or use the <a
+     *        href="http://aws.amazon.com/tools/">AWS SDKs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,13 +489,15 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
-     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese
+     * ("ja") are supported.
      * </p>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
-     *        ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     *        The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     *        <code>language</code> parameter if you want support in that language. Currently, English ("en") and
+     *        Japanese ("ja") are supported.
      */
 
     public void setLanguage(String language) {
@@ -407,12 +506,14 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
-     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese
+     * ("ja") are supported.
      * </p>
      * 
-     * @return The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
-     *         ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * @return The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     *         <code>language</code> parameter if you want support in that language. Currently, English ("en") and
+     *         Japanese ("ja") are supported.
      */
 
     public String getLanguage() {
@@ -421,13 +522,15 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en")
-     * and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     * The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     * <code>language</code> parameter if you want support in that language. Currently, English ("en") and Japanese
+     * ("ja") are supported.
      * </p>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
-     *        ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.
+     *        The language in which AWS Support handles the case. You must specify the ISO 639-1 code for the
+     *        <code>language</code> parameter if you want support in that language. Currently, English ("en") and
+     *        Japanese ("ja") are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,23 +541,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
-     * a value, the default is "technical."
+     * The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you
+     * don't specify a value, the default is <code>technical</code>.
      * </p>
-     * <note>
-     * <p>
-     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
-     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     * </p>
-     * </note>
      * 
      * @param issueType
-     *        The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
-     *        indicate a value, the default is "technical."</p> <note>
-     *        <p>
-     *        Service limit increases are not supported by the Support API; you must submit service limit increase
-     *        requests in <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     *        </p>
+     *        The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.
+     *        If you don't specify a value, the default is <code>technical</code>.
      */
 
     public void setIssueType(String issueType) {
@@ -463,22 +556,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
-     * a value, the default is "technical."
+     * The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you
+     * don't specify a value, the default is <code>technical</code>.
      * </p>
-     * <note>
-     * <p>
-     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
-     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     * </p>
-     * </note>
      * 
-     * @return The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
-     *         indicate a value, the default is "technical."</p> <note>
-     *         <p>
-     *         Service limit increases are not supported by the Support API; you must submit service limit increase
-     *         requests in <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     *         </p>
+     * @return The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.
+     *         If you don't specify a value, the default is <code>technical</code>.
      */
 
     public String getIssueType() {
@@ -487,23 +570,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate
-     * a value, the default is "technical."
+     * The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you
+     * don't specify a value, the default is <code>technical</code>.
      * </p>
-     * <note>
-     * <p>
-     * Service limit increases are not supported by the Support API; you must submit service limit increase requests in
-     * <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     * </p>
-     * </note>
      * 
      * @param issueType
-     *        The type of issue for the case. You can specify either "customer-service" or "technical." If you do not
-     *        indicate a value, the default is "technical."</p> <note>
-     *        <p>
-     *        Service limit increases are not supported by the Support API; you must submit service limit increase
-     *        requests in <a href="https://console.aws.amazon.com/support">Support Center</a>.
-     *        </p>
+     *        The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.
+     *        If you don't specify a value, the default is <code>technical</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,12 +587,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using the <a>AddAttachmentsToSet</a>
+     * operation.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of a set of one or more attachments for the case. Create the set by using
-     *        <a>AddAttachmentsToSet</a>.
+     *        The ID of a set of one or more attachments for the case. Create the set by using the
+     *        <a>AddAttachmentsToSet</a> operation.
      */
 
     public void setAttachmentSetId(String attachmentSetId) {
@@ -528,11 +602,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using the <a>AddAttachmentsToSet</a>
+     * operation.
      * </p>
      * 
-     * @return The ID of a set of one or more attachments for the case. Create the set by using
-     *         <a>AddAttachmentsToSet</a>.
+     * @return The ID of a set of one or more attachments for the case. Create the set by using the
+     *         <a>AddAttachmentsToSet</a> operation.
      */
 
     public String getAttachmentSetId() {
@@ -541,12 +616,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.
+     * The ID of a set of one or more attachments for the case. Create the set by using the <a>AddAttachmentsToSet</a>
+     * operation.
      * </p>
      * 
      * @param attachmentSetId
-     *        The ID of a set of one or more attachments for the case. Create the set by using
-     *        <a>AddAttachmentsToSet</a>.
+     *        The ID of a set of one or more attachments for the case. Create the set by using the
+     *        <a>AddAttachmentsToSet</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

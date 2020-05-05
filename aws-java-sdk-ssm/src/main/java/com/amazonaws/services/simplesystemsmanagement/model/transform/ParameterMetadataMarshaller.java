@@ -48,6 +48,8 @@ public class ParameterMetadataMarshaller {
             .marshallLocationName("Tier").build();
     private static final MarshallingInfo<List> POLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Policies").build();
+    private static final MarshallingInfo<String> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DataType").build();
 
     private static final ParameterMetadataMarshaller instance = new ParameterMetadataMarshaller();
 
@@ -75,6 +77,7 @@ public class ParameterMetadataMarshaller {
             protocolMarshaller.marshall(parameterMetadata.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getTier(), TIER_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getPolicies(), POLICIES_BINDING);
+            protocolMarshaller.marshall(parameterMetadata.getDataType(), DATATYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
