@@ -38,6 +38,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String connectionName;
+    /**
+     * <p>
+     * The key-value pair to use when tagging the resource.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -147,6 +153,76 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The key-value pair to use when tagging the resource.
+     * </p>
+     * 
+     * @return The key-value pair to use when tagging the resource.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The key-value pair to use when tagging the resource.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value pair to use when tagging the resource.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The key-value pair to use when tagging the resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value pair to use when tagging the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pair to use when tagging the resource.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value pair to use when tagging the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,7 +237,9 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getProviderType() != null)
             sb.append("ProviderType: ").append(getProviderType()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: ").append(getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +262,10 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +276,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getProviderType() == null) ? 0 : getProviderType().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

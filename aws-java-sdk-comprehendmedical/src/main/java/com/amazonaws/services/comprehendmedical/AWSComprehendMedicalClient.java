@@ -218,6 +218,73 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference
+     * job.
+     * </p>
+     * 
+     * @param describeICD10CMInferenceJobRequest
+     * @return Result of the DescribeICD10CMInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.DescribeICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeICD10CMInferenceJobResult describeICD10CMInferenceJob(DescribeICD10CMInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeICD10CMInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeICD10CMInferenceJobResult executeDescribeICD10CMInferenceJob(DescribeICD10CMInferenceJobRequest describeICD10CMInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeICD10CMInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeICD10CMInferenceJobRequest> request = null;
+        Response<DescribeICD10CMInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeICD10CMInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeICD10CMInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeICD10CMInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeICD10CMInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeICD10CMInferenceJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get
      * the status of a detection job.
      * </p>
@@ -273,6 +340,72 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<DescribePHIDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribePHIDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job.
+     * </p>
+     * 
+     * @param describeRxNormInferenceJobRequest
+     * @return Result of the DescribeRxNormInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.DescribeRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRxNormInferenceJobResult describeRxNormInferenceJob(DescribeRxNormInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRxNormInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRxNormInferenceJobResult executeDescribeRxNormInferenceJob(DescribeRxNormInferenceJobRequest describeRxNormInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRxNormInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRxNormInferenceJobRequest> request = null;
+        Response<DescribeRxNormInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRxNormInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRxNormInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRxNormInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRxNormInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRxNormInferenceJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -719,6 +852,72 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Gets a list of InferICD10CM jobs that you have submitted.
+     * </p>
+     * 
+     * @param listICD10CMInferenceJobsRequest
+     * @return Result of the ListICD10CMInferenceJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ValidationException
+     *         The filter that you specified for the operation is invalid. Check the filter values that you entered and
+     *         try your request again.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.ListICD10CMInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListICD10CMInferenceJobsResult listICD10CMInferenceJobs(ListICD10CMInferenceJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListICD10CMInferenceJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListICD10CMInferenceJobsResult executeListICD10CMInferenceJobs(ListICD10CMInferenceJobsRequest listICD10CMInferenceJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listICD10CMInferenceJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListICD10CMInferenceJobsRequest> request = null;
+        Response<ListICD10CMInferenceJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListICD10CMInferenceJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listICD10CMInferenceJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListICD10CMInferenceJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListICD10CMInferenceJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListICD10CMInferenceJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of protected health information (PHI) detection jobs that you have submitted.
      * </p>
      * 
@@ -771,6 +970,72 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPHIDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPHIDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of InferRxNorm jobs that you have submitted.
+     * </p>
+     * 
+     * @param listRxNormInferenceJobsRequest
+     * @return Result of the ListRxNormInferenceJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ValidationException
+     *         The filter that you specified for the operation is invalid. Check the filter values that you entered and
+     *         try your request again.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.ListRxNormInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRxNormInferenceJobsResult listRxNormInferenceJobs(ListRxNormInferenceJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRxNormInferenceJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListRxNormInferenceJobsResult executeListRxNormInferenceJobs(ListRxNormInferenceJobsRequest listRxNormInferenceJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRxNormInferenceJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRxNormInferenceJobsRequest> request = null;
+        Response<ListRxNormInferenceJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRxNormInferenceJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRxNormInferenceJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRxNormInferenceJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRxNormInferenceJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRxNormInferenceJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -850,6 +1115,73 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the
+     * <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startICD10CMInferenceJobRequest
+     * @return Result of the StartICD10CMInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StartICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartICD10CMInferenceJobResult startICD10CMInferenceJob(StartICD10CMInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartICD10CMInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final StartICD10CMInferenceJobResult executeStartICD10CMInferenceJob(StartICD10CMInferenceJobRequest startICD10CMInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startICD10CMInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartICD10CMInferenceJobRequest> request = null;
+        Response<StartICD10CMInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartICD10CMInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startICD10CMInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartICD10CMInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartICD10CMInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartICD10CMInferenceJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an asynchronous job to detect protected health information (PHI). Use the
      * <code>DescribePHIDetectionJob</code> operation to track the status of a job.
      * </p>
@@ -903,6 +1235,73 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<StartPHIDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartPHIDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the
+     * <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startRxNormInferenceJobRequest
+     * @return Result of the StartRxNormInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StartRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartRxNormInferenceJobResult startRxNormInferenceJob(StartRxNormInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartRxNormInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final StartRxNormInferenceJobResult executeStartRxNormInferenceJob(StartRxNormInferenceJobRequest startRxNormInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startRxNormInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartRxNormInferenceJobRequest> request = null;
+        Response<StartRxNormInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartRxNormInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startRxNormInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRxNormInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartRxNormInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartRxNormInferenceJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -978,6 +1377,69 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Stops an InferICD10CM inference job in progress.
+     * </p>
+     * 
+     * @param stopICD10CMInferenceJobRequest
+     * @return Result of the StopICD10CMInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StopICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopICD10CMInferenceJobResult stopICD10CMInferenceJob(StopICD10CMInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopICD10CMInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final StopICD10CMInferenceJobResult executeStopICD10CMInferenceJob(StopICD10CMInferenceJobRequest stopICD10CMInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopICD10CMInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopICD10CMInferenceJobRequest> request = null;
+        Response<StopICD10CMInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopICD10CMInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopICD10CMInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopICD10CMInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopICD10CMInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopICD10CMInferenceJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops a protected health information (PHI) detection job in progress.
      * </p>
      * 
@@ -1027,6 +1489,68 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<StopPHIDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopPHIDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops an InferRxNorm inference job in progress.
+     * </p>
+     * 
+     * @param stopRxNormInferenceJobRequest
+     * @return Result of the StopRxNormInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StopRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopRxNormInferenceJobResult stopRxNormInferenceJob(StopRxNormInferenceJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopRxNormInferenceJob(request);
+    }
+
+    @SdkInternalApi
+    final StopRxNormInferenceJobResult executeStopRxNormInferenceJob(StopRxNormInferenceJobRequest stopRxNormInferenceJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopRxNormInferenceJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopRxNormInferenceJobRequest> request = null;
+        Response<StopRxNormInferenceJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopRxNormInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopRxNormInferenceJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRxNormInferenceJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopRxNormInferenceJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopRxNormInferenceJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -72,6 +72,41 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
 
     /**
      * <p>
+     * Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference
+     * job.
+     * </p>
+     * 
+     * @param describeICD10CMInferenceJobRequest
+     * @return A Java Future containing the result of the DescribeICD10CMInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.DescribeICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeICD10CMInferenceJobResult> describeICD10CMInferenceJobAsync(
+            DescribeICD10CMInferenceJobRequest describeICD10CMInferenceJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference
+     * job.
+     * </p>
+     * 
+     * @param describeICD10CMInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeICD10CMInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.DescribeICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeICD10CMInferenceJobResult> describeICD10CMInferenceJobAsync(
+            DescribeICD10CMInferenceJobRequest describeICD10CMInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeICD10CMInferenceJobRequest, DescribeICD10CMInferenceJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get
      * the status of a detection job.
      * </p>
@@ -102,6 +137,39 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
      */
     java.util.concurrent.Future<DescribePHIDetectionJobResult> describePHIDetectionJobAsync(DescribePHIDetectionJobRequest describePHIDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePHIDetectionJobRequest, DescribePHIDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job.
+     * </p>
+     * 
+     * @param describeRxNormInferenceJobRequest
+     * @return A Java Future containing the result of the DescribeRxNormInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.DescribeRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRxNormInferenceJobResult> describeRxNormInferenceJobAsync(
+            DescribeRxNormInferenceJobRequest describeRxNormInferenceJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job.
+     * </p>
+     * 
+     * @param describeRxNormInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRxNormInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.DescribeRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRxNormInferenceJobResult> describeRxNormInferenceJobAsync(
+            DescribeRxNormInferenceJobRequest describeRxNormInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRxNormInferenceJobRequest, DescribeRxNormInferenceJobResult> asyncHandler);
 
     /**
      * <p>
@@ -339,6 +407,37 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
 
     /**
      * <p>
+     * Gets a list of InferICD10CM jobs that you have submitted.
+     * </p>
+     * 
+     * @param listICD10CMInferenceJobsRequest
+     * @return A Java Future containing the result of the ListICD10CMInferenceJobs operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.ListICD10CMInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListICD10CMInferenceJobsResult> listICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest listICD10CMInferenceJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of InferICD10CM jobs that you have submitted.
+     * </p>
+     * 
+     * @param listICD10CMInferenceJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListICD10CMInferenceJobs operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.ListICD10CMInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListICD10CMInferenceJobsResult> listICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest listICD10CMInferenceJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListICD10CMInferenceJobsRequest, ListICD10CMInferenceJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of protected health information (PHI) detection jobs that you have submitted.
      * </p>
      * 
@@ -367,6 +466,37 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
      */
     java.util.concurrent.Future<ListPHIDetectionJobsResult> listPHIDetectionJobsAsync(ListPHIDetectionJobsRequest listPHIDetectionJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPHIDetectionJobsRequest, ListPHIDetectionJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of InferRxNorm jobs that you have submitted.
+     * </p>
+     * 
+     * @param listRxNormInferenceJobsRequest
+     * @return A Java Future containing the result of the ListRxNormInferenceJobs operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.ListRxNormInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRxNormInferenceJobsResult> listRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest listRxNormInferenceJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of InferRxNorm jobs that you have submitted.
+     * </p>
+     * 
+     * @param listRxNormInferenceJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRxNormInferenceJobs operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.ListRxNormInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRxNormInferenceJobsResult> listRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest listRxNormInferenceJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRxNormInferenceJobsRequest, ListRxNormInferenceJobsResult> asyncHandler);
 
     /**
      * <p>
@@ -405,6 +535,39 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
 
     /**
      * <p>
+     * Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the
+     * <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startICD10CMInferenceJobRequest
+     * @return A Java Future containing the result of the StartICD10CMInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.StartICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartICD10CMInferenceJobResult> startICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest startICD10CMInferenceJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the
+     * <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startICD10CMInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartICD10CMInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.StartICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartICD10CMInferenceJobResult> startICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest startICD10CMInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartICD10CMInferenceJobRequest, StartICD10CMInferenceJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts an asynchronous job to detect protected health information (PHI). Use the
      * <code>DescribePHIDetectionJob</code> operation to track the status of a job.
      * </p>
@@ -435,6 +598,39 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
      */
     java.util.concurrent.Future<StartPHIDetectionJobResult> startPHIDetectionJobAsync(StartPHIDetectionJobRequest startPHIDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StartPHIDetectionJobRequest, StartPHIDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the
+     * <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startRxNormInferenceJobRequest
+     * @return A Java Future containing the result of the StartRxNormInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.StartRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRxNormInferenceJobResult> startRxNormInferenceJobAsync(StartRxNormInferenceJobRequest startRxNormInferenceJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the
+     * <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startRxNormInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartRxNormInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.StartRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRxNormInferenceJobResult> startRxNormInferenceJobAsync(StartRxNormInferenceJobRequest startRxNormInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartRxNormInferenceJobRequest, StartRxNormInferenceJobResult> asyncHandler);
 
     /**
      * <p>
@@ -471,6 +667,37 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
 
     /**
      * <p>
+     * Stops an InferICD10CM inference job in progress.
+     * </p>
+     * 
+     * @param stopICD10CMInferenceJobRequest
+     * @return A Java Future containing the result of the StopICD10CMInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.StopICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopICD10CMInferenceJobResult> stopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest stopICD10CMInferenceJobRequest);
+
+    /**
+     * <p>
+     * Stops an InferICD10CM inference job in progress.
+     * </p>
+     * 
+     * @param stopICD10CMInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopICD10CMInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.StopICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopICD10CMInferenceJobResult> stopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest stopICD10CMInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopICD10CMInferenceJobRequest, StopICD10CMInferenceJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops a protected health information (PHI) detection job in progress.
      * </p>
      * 
@@ -499,5 +726,36 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
      */
     java.util.concurrent.Future<StopPHIDetectionJobResult> stopPHIDetectionJobAsync(StopPHIDetectionJobRequest stopPHIDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopPHIDetectionJobRequest, StopPHIDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops an InferRxNorm inference job in progress.
+     * </p>
+     * 
+     * @param stopRxNormInferenceJobRequest
+     * @return A Java Future containing the result of the StopRxNormInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsync.StopRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRxNormInferenceJobResult> stopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest stopRxNormInferenceJobRequest);
+
+    /**
+     * <p>
+     * Stops an InferRxNorm inference job in progress.
+     * </p>
+     * 
+     * @param stopRxNormInferenceJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopRxNormInferenceJob operation returned by the service.
+     * @sample AWSComprehendMedicalAsyncHandler.StopRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRxNormInferenceJobResult> stopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest stopRxNormInferenceJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopRxNormInferenceJobRequest, StopRxNormInferenceJobResult> asyncHandler);
 
 }

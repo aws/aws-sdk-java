@@ -98,6 +98,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeICD10CMInferenceJobResult> describeICD10CMInferenceJobAsync(DescribeICD10CMInferenceJobRequest request) {
+
+        return describeICD10CMInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeICD10CMInferenceJobResult> describeICD10CMInferenceJobAsync(final DescribeICD10CMInferenceJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeICD10CMInferenceJobRequest, DescribeICD10CMInferenceJobResult> asyncHandler) {
+        final DescribeICD10CMInferenceJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeICD10CMInferenceJobResult>() {
+            @Override
+            public DescribeICD10CMInferenceJobResult call() throws Exception {
+                DescribeICD10CMInferenceJobResult result = null;
+
+                try {
+                    result = executeDescribeICD10CMInferenceJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePHIDetectionJobResult> describePHIDetectionJobAsync(DescribePHIDetectionJobRequest request) {
 
         return describePHIDetectionJobAsync(request, null);
@@ -115,6 +148,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
 
                 try {
                     result = executeDescribePHIDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRxNormInferenceJobResult> describeRxNormInferenceJobAsync(DescribeRxNormInferenceJobRequest request) {
+
+        return describeRxNormInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRxNormInferenceJobResult> describeRxNormInferenceJobAsync(final DescribeRxNormInferenceJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRxNormInferenceJobRequest, DescribeRxNormInferenceJobResult> asyncHandler) {
+        final DescribeRxNormInferenceJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRxNormInferenceJobResult>() {
+            @Override
+            public DescribeRxNormInferenceJobResult call() throws Exception {
+                DescribeRxNormInferenceJobResult result = null;
+
+                try {
+                    result = executeDescribeRxNormInferenceJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -331,6 +397,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListICD10CMInferenceJobsResult> listICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest request) {
+
+        return listICD10CMInferenceJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListICD10CMInferenceJobsResult> listICD10CMInferenceJobsAsync(final ListICD10CMInferenceJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListICD10CMInferenceJobsRequest, ListICD10CMInferenceJobsResult> asyncHandler) {
+        final ListICD10CMInferenceJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListICD10CMInferenceJobsResult>() {
+            @Override
+            public ListICD10CMInferenceJobsResult call() throws Exception {
+                ListICD10CMInferenceJobsResult result = null;
+
+                try {
+                    result = executeListICD10CMInferenceJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPHIDetectionJobsResult> listPHIDetectionJobsAsync(ListPHIDetectionJobsRequest request) {
 
         return listPHIDetectionJobsAsync(request, null);
@@ -348,6 +447,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
 
                 try {
                     result = executeListPHIDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRxNormInferenceJobsResult> listRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest request) {
+
+        return listRxNormInferenceJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRxNormInferenceJobsResult> listRxNormInferenceJobsAsync(final ListRxNormInferenceJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRxNormInferenceJobsRequest, ListRxNormInferenceJobsResult> asyncHandler) {
+        final ListRxNormInferenceJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRxNormInferenceJobsResult>() {
+            @Override
+            public ListRxNormInferenceJobsResult call() throws Exception {
+                ListRxNormInferenceJobsResult result = null;
+
+                try {
+                    result = executeListRxNormInferenceJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -397,6 +529,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
     }
 
     @Override
+    public java.util.concurrent.Future<StartICD10CMInferenceJobResult> startICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest request) {
+
+        return startICD10CMInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartICD10CMInferenceJobResult> startICD10CMInferenceJobAsync(final StartICD10CMInferenceJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartICD10CMInferenceJobRequest, StartICD10CMInferenceJobResult> asyncHandler) {
+        final StartICD10CMInferenceJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartICD10CMInferenceJobResult>() {
+            @Override
+            public StartICD10CMInferenceJobResult call() throws Exception {
+                StartICD10CMInferenceJobResult result = null;
+
+                try {
+                    result = executeStartICD10CMInferenceJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartPHIDetectionJobResult> startPHIDetectionJobAsync(StartPHIDetectionJobRequest request) {
 
         return startPHIDetectionJobAsync(request, null);
@@ -414,6 +579,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
 
                 try {
                     result = executeStartPHIDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartRxNormInferenceJobResult> startRxNormInferenceJobAsync(StartRxNormInferenceJobRequest request) {
+
+        return startRxNormInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartRxNormInferenceJobResult> startRxNormInferenceJobAsync(final StartRxNormInferenceJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartRxNormInferenceJobRequest, StartRxNormInferenceJobResult> asyncHandler) {
+        final StartRxNormInferenceJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartRxNormInferenceJobResult>() {
+            @Override
+            public StartRxNormInferenceJobResult call() throws Exception {
+                StartRxNormInferenceJobResult result = null;
+
+                try {
+                    result = executeStartRxNormInferenceJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -463,6 +661,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
     }
 
     @Override
+    public java.util.concurrent.Future<StopICD10CMInferenceJobResult> stopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest request) {
+
+        return stopICD10CMInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopICD10CMInferenceJobResult> stopICD10CMInferenceJobAsync(final StopICD10CMInferenceJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopICD10CMInferenceJobRequest, StopICD10CMInferenceJobResult> asyncHandler) {
+        final StopICD10CMInferenceJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopICD10CMInferenceJobResult>() {
+            @Override
+            public StopICD10CMInferenceJobResult call() throws Exception {
+                StopICD10CMInferenceJobResult result = null;
+
+                try {
+                    result = executeStopICD10CMInferenceJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopPHIDetectionJobResult> stopPHIDetectionJobAsync(StopPHIDetectionJobRequest request) {
 
         return stopPHIDetectionJobAsync(request, null);
@@ -480,6 +711,39 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
 
                 try {
                     result = executeStopPHIDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRxNormInferenceJobResult> stopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest request) {
+
+        return stopRxNormInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRxNormInferenceJobResult> stopRxNormInferenceJobAsync(final StopRxNormInferenceJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopRxNormInferenceJobRequest, StopRxNormInferenceJobResult> asyncHandler) {
+        final StopRxNormInferenceJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopRxNormInferenceJobResult>() {
+            @Override
+            public StopRxNormInferenceJobResult call() throws Exception {
+                StopRxNormInferenceJobResult result = null;
+
+                try {
+                    result = executeStopRxNormInferenceJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

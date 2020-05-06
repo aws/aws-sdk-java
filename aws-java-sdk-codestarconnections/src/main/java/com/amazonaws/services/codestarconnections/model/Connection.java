@@ -19,7 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration that allows a service such as CodePipeline to connect to a third-party code repository.
+ * The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like
+ * AWS CodePipeline.
+ * </p>
+ * <p>
+ * Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status
+ * `AVAILABLE` by editing the connection in the CodePipeline console.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Connection" target="_top">AWS
@@ -55,8 +60,8 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String providerType;
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. For Bitbucket, this is
-     * the account ID of the owner of the Bitbucket repository.
+     * The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this
+     * is the account ID of the owner of the Bitbucket repository.
      * </p>
      */
     private String ownerAccountId;
@@ -246,13 +251,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. For Bitbucket, this is
-     * the account ID of the owner of the Bitbucket repository.
+     * The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this
+     * is the account ID of the owner of the Bitbucket repository.
      * </p>
      * 
      * @param ownerAccountId
-     *        The name of the external provider where your third-party code repository is configured. For Bitbucket,
-     *        this is the account ID of the owner of the Bitbucket repository.
+     *        The identifier of the external provider where your third-party code repository is configured. For
+     *        Bitbucket, this is the account ID of the owner of the Bitbucket repository.
      */
 
     public void setOwnerAccountId(String ownerAccountId) {
@@ -261,12 +266,12 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. For Bitbucket, this is
-     * the account ID of the owner of the Bitbucket repository.
+     * The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this
+     * is the account ID of the owner of the Bitbucket repository.
      * </p>
      * 
-     * @return The name of the external provider where your third-party code repository is configured. For Bitbucket,
-     *         this is the account ID of the owner of the Bitbucket repository.
+     * @return The identifier of the external provider where your third-party code repository is configured. For
+     *         Bitbucket, this is the account ID of the owner of the Bitbucket repository.
      */
 
     public String getOwnerAccountId() {
@@ -275,13 +280,13 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the external provider where your third-party code repository is configured. For Bitbucket, this is
-     * the account ID of the owner of the Bitbucket repository.
+     * The identifier of the external provider where your third-party code repository is configured. For Bitbucket, this
+     * is the account ID of the owner of the Bitbucket repository.
      * </p>
      * 
      * @param ownerAccountId
-     *        The name of the external provider where your third-party code repository is configured. For Bitbucket,
-     *        this is the account ID of the owner of the Bitbucket repository.
+     *        The identifier of the external provider where your third-party code repository is configured. For
+     *        Bitbucket, this is the account ID of the owner of the Bitbucket repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The input properties for an entities detection job.
+ * The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files
+ * to be analyzed. See <a>batch-manifest</a> for more information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InputDataConfig" target="_top">AWS

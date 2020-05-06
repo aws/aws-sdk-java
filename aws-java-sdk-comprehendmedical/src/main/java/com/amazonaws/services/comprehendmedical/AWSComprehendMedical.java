@@ -69,6 +69,31 @@ public interface AWSComprehendMedical {
 
     /**
      * <p>
+     * Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference
+     * job.
+     * </p>
+     * 
+     * @param describeICD10CMInferenceJobRequest
+     * @return Result of the DescribeICD10CMInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.DescribeICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeICD10CMInferenceJobResult describeICD10CMInferenceJob(DescribeICD10CMInferenceJobRequest describeICD10CMInferenceJobRequest);
+
+    /**
+     * <p>
      * Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get
      * the status of a detection job.
      * </p>
@@ -91,6 +116,30 @@ public interface AWSComprehendMedical {
      *      target="_top">AWS API Documentation</a>
      */
     DescribePHIDetectionJobResult describePHIDetectionJob(DescribePHIDetectionJobRequest describePHIDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job.
+     * </p>
+     * 
+     * @param describeRxNormInferenceJobRequest
+     * @return Result of the DescribeRxNormInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.DescribeRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DescribeRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRxNormInferenceJobResult describeRxNormInferenceJob(DescribeRxNormInferenceJobRequest describeRxNormInferenceJobRequest);
 
     /**
      * <p>
@@ -286,6 +335,30 @@ public interface AWSComprehendMedical {
 
     /**
      * <p>
+     * Gets a list of InferICD10CM jobs that you have submitted.
+     * </p>
+     * 
+     * @param listICD10CMInferenceJobsRequest
+     * @return Result of the ListICD10CMInferenceJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ValidationException
+     *         The filter that you specified for the operation is invalid. Check the filter values that you entered and
+     *         try your request again.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.ListICD10CMInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListICD10CMInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListICD10CMInferenceJobsResult listICD10CMInferenceJobs(ListICD10CMInferenceJobsRequest listICD10CMInferenceJobsRequest);
+
+    /**
+     * <p>
      * Gets a list of protected health information (PHI) detection jobs that you have submitted.
      * </p>
      * 
@@ -307,6 +380,30 @@ public interface AWSComprehendMedical {
      *      target="_top">AWS API Documentation</a>
      */
     ListPHIDetectionJobsResult listPHIDetectionJobs(ListPHIDetectionJobsRequest listPHIDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of InferRxNorm jobs that you have submitted.
+     * </p>
+     * 
+     * @param listRxNormInferenceJobsRequest
+     * @return Result of the ListRxNormInferenceJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ValidationException
+     *         The filter that you specified for the operation is invalid. Check the filter values that you entered and
+     *         try your request again.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.ListRxNormInferenceJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListRxNormInferenceJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRxNormInferenceJobsResult listRxNormInferenceJobs(ListRxNormInferenceJobsRequest listRxNormInferenceJobsRequest);
 
     /**
      * <p>
@@ -335,6 +432,31 @@ public interface AWSComprehendMedical {
 
     /**
      * <p>
+     * Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the
+     * <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startICD10CMInferenceJobRequest
+     * @return Result of the StartICD10CMInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StartICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartICD10CMInferenceJobResult startICD10CMInferenceJob(StartICD10CMInferenceJobRequest startICD10CMInferenceJobRequest);
+
+    /**
+     * <p>
      * Starts an asynchronous job to detect protected health information (PHI). Use the
      * <code>DescribePHIDetectionJob</code> operation to track the status of a job.
      * </p>
@@ -360,6 +482,31 @@ public interface AWSComprehendMedical {
 
     /**
      * <p>
+     * Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the
+     * <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.
+     * </p>
+     * 
+     * @param startRxNormInferenceJobRequest
+     * @return Result of the StartRxNormInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again. Contact customer support for more information about a service limit increase.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StartRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StartRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartRxNormInferenceJobResult startRxNormInferenceJob(StartRxNormInferenceJobRequest startRxNormInferenceJobRequest);
+
+    /**
+     * <p>
      * Stops a medical entities detection job in progress.
      * </p>
      * 
@@ -381,6 +528,27 @@ public interface AWSComprehendMedical {
 
     /**
      * <p>
+     * Stops an InferICD10CM inference job in progress.
+     * </p>
+     * 
+     * @param stopICD10CMInferenceJobRequest
+     * @return Result of the StopICD10CMInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StopICD10CMInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopICD10CMInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopICD10CMInferenceJobResult stopICD10CMInferenceJob(StopICD10CMInferenceJobRequest stopICD10CMInferenceJobRequest);
+
+    /**
+     * <p>
      * Stops a protected health information (PHI) detection job in progress.
      * </p>
      * 
@@ -399,6 +567,27 @@ public interface AWSComprehendMedical {
      *      target="_top">AWS API Documentation</a>
      */
     StopPHIDetectionJobResult stopPHIDetectionJob(StopPHIDetectionJobRequest stopPHIDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops an InferRxNorm inference job in progress.
+     * </p>
+     * 
+     * @param stopRxNormInferenceJobRequest
+     * @return Result of the StopRxNormInferenceJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try
+     *         your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AWSComprehendMedical.StopRxNormInferenceJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/StopRxNormInferenceJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopRxNormInferenceJobResult stopRxNormInferenceJob(StopRxNormInferenceJobRequest stopRxNormInferenceJobRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

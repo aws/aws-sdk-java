@@ -33,7 +33,17 @@ public class AbstractAWSComprehendMedical implements AWSComprehendMedical {
     }
 
     @Override
+    public DescribeICD10CMInferenceJobResult describeICD10CMInferenceJob(DescribeICD10CMInferenceJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePHIDetectionJobResult describePHIDetectionJob(DescribePHIDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRxNormInferenceJobResult describeRxNormInferenceJob(DescribeRxNormInferenceJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,7 +79,17 @@ public class AbstractAWSComprehendMedical implements AWSComprehendMedical {
     }
 
     @Override
+    public ListICD10CMInferenceJobsResult listICD10CMInferenceJobs(ListICD10CMInferenceJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPHIDetectionJobsResult listPHIDetectionJobs(ListPHIDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRxNormInferenceJobsResult listRxNormInferenceJobs(ListRxNormInferenceJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,7 +99,17 @@ public class AbstractAWSComprehendMedical implements AWSComprehendMedical {
     }
 
     @Override
+    public StartICD10CMInferenceJobResult startICD10CMInferenceJob(StartICD10CMInferenceJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartPHIDetectionJobResult startPHIDetectionJob(StartPHIDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartRxNormInferenceJobResult startRxNormInferenceJob(StartRxNormInferenceJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,7 +119,17 @@ public class AbstractAWSComprehendMedical implements AWSComprehendMedical {
     }
 
     @Override
+    public StopICD10CMInferenceJobResult stopICD10CMInferenceJob(StopICD10CMInferenceJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopPHIDetectionJobResult stopPHIDetectionJob(StopPHIDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopRxNormInferenceJobResult stopRxNormInferenceJob(StopRxNormInferenceJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

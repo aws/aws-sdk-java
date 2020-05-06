@@ -145,6 +145,53 @@ public interface AWSCodeStarconnections {
     ListConnectionsResult listConnections(ListConnectionsRequest listConnectionsRequest);
 
     /**
+     * <p>
+     * Gets the set of key-value pairs (metadata) that are used to manage the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @sample AWSCodeStarconnections.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @sample AWSCodeStarconnections.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an AWS resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @sample AWSCodeStarconnections.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

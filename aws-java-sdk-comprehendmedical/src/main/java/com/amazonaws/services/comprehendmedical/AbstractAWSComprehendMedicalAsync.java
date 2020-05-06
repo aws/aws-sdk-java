@@ -41,6 +41,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeICD10CMInferenceJobResult> describeICD10CMInferenceJobAsync(DescribeICD10CMInferenceJobRequest request) {
+
+        return describeICD10CMInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeICD10CMInferenceJobResult> describeICD10CMInferenceJobAsync(DescribeICD10CMInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeICD10CMInferenceJobRequest, DescribeICD10CMInferenceJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePHIDetectionJobResult> describePHIDetectionJobAsync(DescribePHIDetectionJobRequest request) {
 
         return describePHIDetectionJobAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     @Override
     public java.util.concurrent.Future<DescribePHIDetectionJobResult> describePHIDetectionJobAsync(DescribePHIDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePHIDetectionJobRequest, DescribePHIDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRxNormInferenceJobResult> describeRxNormInferenceJobAsync(DescribeRxNormInferenceJobRequest request) {
+
+        return describeRxNormInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRxNormInferenceJobResult> describeRxNormInferenceJobAsync(DescribeRxNormInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRxNormInferenceJobRequest, DescribeRxNormInferenceJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +160,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     }
 
     @Override
+    public java.util.concurrent.Future<ListICD10CMInferenceJobsResult> listICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest request) {
+
+        return listICD10CMInferenceJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListICD10CMInferenceJobsResult> listICD10CMInferenceJobsAsync(ListICD10CMInferenceJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListICD10CMInferenceJobsRequest, ListICD10CMInferenceJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPHIDetectionJobsResult> listPHIDetectionJobsAsync(ListPHIDetectionJobsRequest request) {
 
         return listPHIDetectionJobsAsync(request, null);
@@ -142,6 +181,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     @Override
     public java.util.concurrent.Future<ListPHIDetectionJobsResult> listPHIDetectionJobsAsync(ListPHIDetectionJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPHIDetectionJobsRequest, ListPHIDetectionJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRxNormInferenceJobsResult> listRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest request) {
+
+        return listRxNormInferenceJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRxNormInferenceJobsResult> listRxNormInferenceJobsAsync(ListRxNormInferenceJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRxNormInferenceJobsRequest, ListRxNormInferenceJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +212,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     }
 
     @Override
+    public java.util.concurrent.Future<StartICD10CMInferenceJobResult> startICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest request) {
+
+        return startICD10CMInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartICD10CMInferenceJobResult> startICD10CMInferenceJobAsync(StartICD10CMInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartICD10CMInferenceJobRequest, StartICD10CMInferenceJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartPHIDetectionJobResult> startPHIDetectionJobAsync(StartPHIDetectionJobRequest request) {
 
         return startPHIDetectionJobAsync(request, null);
@@ -168,6 +233,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     @Override
     public java.util.concurrent.Future<StartPHIDetectionJobResult> startPHIDetectionJobAsync(StartPHIDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<StartPHIDetectionJobRequest, StartPHIDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartRxNormInferenceJobResult> startRxNormInferenceJobAsync(StartRxNormInferenceJobRequest request) {
+
+        return startRxNormInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartRxNormInferenceJobResult> startRxNormInferenceJobAsync(StartRxNormInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartRxNormInferenceJobRequest, StartRxNormInferenceJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -186,6 +264,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     }
 
     @Override
+    public java.util.concurrent.Future<StopICD10CMInferenceJobResult> stopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest request) {
+
+        return stopICD10CMInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopICD10CMInferenceJobResult> stopICD10CMInferenceJobAsync(StopICD10CMInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopICD10CMInferenceJobRequest, StopICD10CMInferenceJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopPHIDetectionJobResult> stopPHIDetectionJobAsync(StopPHIDetectionJobRequest request) {
 
         return stopPHIDetectionJobAsync(request, null);
@@ -194,6 +285,19 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     @Override
     public java.util.concurrent.Future<StopPHIDetectionJobResult> stopPHIDetectionJobAsync(StopPHIDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<StopPHIDetectionJobRequest, StopPHIDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRxNormInferenceJobResult> stopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest request) {
+
+        return stopRxNormInferenceJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopRxNormInferenceJobResult> stopRxNormInferenceJobAsync(StopRxNormInferenceJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopRxNormInferenceJobRequest, StopRxNormInferenceJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

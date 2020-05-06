@@ -35,6 +35,12 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * </note>
      */
     private String connectionArn;
+    /**
+     * <p>
+     * Specifies the tags applied to the resource.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -107,6 +113,76 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Specifies the tags applied to the resource.
+     * </p>
+     * 
+     * @return Specifies the tags applied to the resource.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the resource.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the resource.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the resource.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -119,7 +195,9 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionArn() != null)
-            sb.append("ConnectionArn: ").append(getConnectionArn());
+            sb.append("ConnectionArn: ").append(getConnectionArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -138,6 +216,10 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getConnectionArn() != null && other.getConnectionArn().equals(this.getConnectionArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -147,6 +229,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConnectionArn() == null) ? 0 : getConnectionArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

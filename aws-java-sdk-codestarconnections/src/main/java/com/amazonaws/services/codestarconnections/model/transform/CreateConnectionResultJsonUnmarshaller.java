@@ -52,6 +52,10 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createConnectionResult.setConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
