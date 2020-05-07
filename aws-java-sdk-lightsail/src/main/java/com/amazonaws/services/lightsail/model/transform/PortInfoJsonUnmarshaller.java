@@ -60,6 +60,14 @@ public class PortInfoJsonUnmarshaller implements Unmarshaller<PortInfo, JsonUnma
                     context.nextToken();
                     portInfo.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cidrs", targetDepth)) {
+                    context.nextToken();
+                    portInfo.setCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("cidrListAliases", targetDepth)) {
+                    context.nextToken();
+                    portInfo.setCidrListAliases(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

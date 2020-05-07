@@ -42,7 +42,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
      * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
      * core.
@@ -56,7 +56,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This
      * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
      * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
      * number by 300 to find Bytes/second.
@@ -70,7 +70,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This
      * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
      * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
      * by 300 to find Bytes/second.
@@ -84,7 +84,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status
      * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.
      * </p>
@@ -97,7 +97,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance
      * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
      * seconds) granularity.
      * </p>
@@ -110,7 +110,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status
      * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.
      * </p>
@@ -149,8 +149,8 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
     private java.util.Date endTime;
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
-     * with each available metric, see the <code>metricName</code> parameter.
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
+     * to specify with each available metric, see the <code>metricName</code> parameter.
      * </p>
      */
     private String unit;
@@ -164,25 +164,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -190,7 +190,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -248,7 +248,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
      * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
      * core.
@@ -262,7 +262,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This
      * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
      * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
      * number by 300 to find Bytes/second.
@@ -276,7 +276,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This
      * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
      * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
      * by 300 to find Bytes/second.
@@ -290,7 +290,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status
      * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.
      * </p>
@@ -303,7 +303,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance
      * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
      * seconds) granularity.
      * </p>
@@ -316,7 +316,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status
      * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.
      * </p>
@@ -338,7 +338,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use
      *        on the instance. This metric identifies the processing power to run the applications on the instance.
      *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
      *        allocated a full processor core.
@@ -352,7 +352,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance.
      *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
      *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -366,7 +366,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance.
      *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
      *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -380,7 +380,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance
      *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
      *        data is available in 1-minute (60 seconds) granularity.
      *        </p>
@@ -393,7 +393,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the
      *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
      *        in 1-minute (60 seconds) granularity.
      *        </p>
@@ -406,7 +406,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
      *        </p>
@@ -435,7 +435,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
      * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
      * core.
@@ -449,7 +449,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This
      * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
      * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
      * number by 300 to find Bytes/second.
@@ -463,7 +463,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This
      * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
      * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
      * by 300 to find Bytes/second.
@@ -477,7 +477,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status
      * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.
      * </p>
@@ -490,7 +490,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance
      * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
      * seconds) granularity.
      * </p>
@@ -503,7 +503,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status
      * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.
      * </p>
@@ -524,7 +524,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in
+     *         <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in
      *         use on the instance. This metric identifies the processing power to run the applications on the instance.
      *         Tools in your operating system can show a lower percentage than Lightsail when the instance is not
      *         allocated a full processor core.
@@ -538,7 +538,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *         <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance.
      *         This metric identifies the volume of incoming network traffic to the instance. The number reported is the
      *         number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
      *         the reported number by 300 to find Bytes/second.
@@ -552,7 +552,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the
+     *         <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the
      *         instance. This metric identifies the volume of outgoing network traffic from the instance. The number
      *         reported is the number of bytes sent during the period. Because this metric is reported in 5-minute
      *         intervals, divide the reported number by 300 to find Bytes/second.
@@ -566,7 +566,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *         <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance
      *         status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
      *         data is available in 1-minute (60 seconds) granularity.
      *         </p>
@@ -579,7 +579,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *         <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the
      *         instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
      *         in 1-minute (60 seconds) granularity.
      *         </p>
@@ -592,7 +592,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *         <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *         status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *         1-minute (60 seconds) granularity.
      *         </p>
@@ -621,7 +621,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
      * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
      * core.
@@ -635,7 +635,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This
      * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
      * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
      * number by 300 to find Bytes/second.
@@ -649,7 +649,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This
      * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
      * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
      * by 300 to find Bytes/second.
@@ -663,7 +663,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status
      * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.
      * </p>
@@ -676,7 +676,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance
      * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
      * seconds) granularity.
      * </p>
@@ -689,7 +689,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status
      * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.
      * </p>
@@ -711,7 +711,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use
      *        on the instance. This metric identifies the processing power to run the applications on the instance.
      *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
      *        allocated a full processor core.
@@ -725,7 +725,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance.
      *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
      *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -739,7 +739,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance.
      *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
      *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -753,7 +753,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance
      *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
      *        data is available in 1-minute (60 seconds) granularity.
      *        </p>
@@ -766,7 +766,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the
      *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
      *        in 1-minute (60 seconds) granularity.
      *        </p>
@@ -779,7 +779,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
      *        </p>
@@ -810,7 +810,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
      * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
      * core.
@@ -824,7 +824,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This
      * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
      * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
      * number by 300 to find Bytes/second.
@@ -838,7 +838,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This
      * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
      * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
      * by 300 to find Bytes/second.
@@ -852,7 +852,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status
      * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.
      * </p>
@@ -865,7 +865,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance
      * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
      * seconds) granularity.
      * </p>
@@ -878,7 +878,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status
      * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.
      * </p>
@@ -900,7 +900,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use
      *        on the instance. This metric identifies the processing power to run the applications on the instance.
      *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
      *        allocated a full processor core.
@@ -914,7 +914,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance.
      *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
      *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -928,7 +928,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance.
      *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
      *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -942,7 +942,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance
      *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
      *        data is available in 1-minute (60 seconds) granularity.
      *        </p>
@@ -955,7 +955,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the
      *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
      *        in 1-minute (60 seconds) granularity.
      *        </p>
@@ -968,7 +968,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
      *        </p>
@@ -997,7 +997,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
      * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
      * core.
@@ -1011,7 +1011,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance. This
      * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
      * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
      * number by 300 to find Bytes/second.
@@ -1025,7 +1025,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance. This
      * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
      * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
      * by 300 to find Bytes/second.
@@ -1039,7 +1039,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance status
      * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.
      * </p>
@@ -1052,7 +1052,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the instance
      * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
      * seconds) granularity.
      * </p>
@@ -1065,7 +1065,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system status
      * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.
      * </p>
@@ -1087,7 +1087,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of allocated compute units that are currently in use
      *        on the instance. This metric identifies the processing power to run the applications on the instance.
      *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
      *        allocated a full processor core.
@@ -1101,7 +1101,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        <b> <code>NetworkIn</code> </b> - The number of bytes received on all network interfaces by the instance.
      *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
      *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -1115,7 +1115,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        <b> <code>NetworkOut</code> </b> - The number of bytes sent out on all network interfaces by the instance.
      *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
      *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
      *        the reported number by 300 to find Bytes/second.
@@ -1129,7 +1129,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        <b> <code>StatusCheckFailed</code> </b> - Reports whether the instance passed or failed both the instance
      *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
      *        data is available in 1-minute (60 seconds) granularity.
      *        </p>
@@ -1142,7 +1142,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance passed or failed the
      *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
      *        in 1-minute (60 seconds) granularity.
      *        </p>
@@ -1155,7 +1155,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        <b> <code>StatusCheckFailed_System</code> </b> - Reports whether the instance passed or failed the system
      *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
      *        1-minute (60 seconds) granularity.
      *        </p>
@@ -1324,13 +1324,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
-     * with each available metric, see the <code>metricName</code> parameter.
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
+     * to specify with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *        units with each available metric, see the <code>metricName</code> parameter.
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
+     *        units to specify with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -1340,12 +1340,12 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
-     * with each available metric, see the <code>metricName</code> parameter.
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
+     * to specify with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
-     * @return The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *         units with each available metric, see the <code>metricName</code> parameter.
+     * @return The unit for the metric data request. Valid units depend on the metric data being requested. For the
+     *         valid units to specify with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -1355,13 +1355,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
-     * with each available metric, see the <code>metricName</code> parameter.
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
+     * to specify with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *        units with each available metric, see the <code>metricName</code> parameter.
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
+     *        units to specify with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit
      */
@@ -1373,13 +1373,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
-     * with each available metric, see the <code>metricName</code> parameter.
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
+     * to specify with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *        units with each available metric, see the <code>metricName</code> parameter.
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
+     *        units to specify with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -1389,13 +1389,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
-     * with each available metric, see the <code>metricName</code> parameter.
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
+     * to specify with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *        units with each available metric, see the <code>metricName</code> parameter.
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
+     *        units to specify with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit
      */
@@ -1415,25 +1415,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1441,7 +1441,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1453,25 +1453,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *         <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *         low volumes of activity for your application.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Maximum</code> — The highest value observed during the specified period. Use this value to
+     *         <code>Maximum</code> - The highest value observed during the specified period. Use this value to
      *         determine high volumes of activity for your application.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Sum</code> — All values submitted for the matching metric added together. You can use this
+     *         <code>Sum</code> - All values submitted for the matching metric added together. You can use this
      *         statistic to determine the total volume of a metric.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *         <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *         statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *         the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *         or decrease your resources.
@@ -1479,7 +1479,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *         <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *         </p>
      *         </li>
      * @see MetricStatistic
@@ -1499,25 +1499,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1525,7 +1525,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1538,25 +1538,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1564,7 +1564,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @see MetricStatistic
@@ -1589,25 +1589,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1615,7 +1615,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1633,25 +1633,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1659,7 +1659,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1686,25 +1686,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1712,7 +1712,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1725,25 +1725,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1751,7 +1751,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1773,25 +1773,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1799,7 +1799,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1812,25 +1812,25 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1838,7 +1838,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

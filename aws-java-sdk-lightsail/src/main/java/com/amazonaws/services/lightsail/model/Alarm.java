@@ -116,24 +116,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -149,25 +149,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -175,7 +175,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -197,18 +197,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -773,24 +773,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -803,24 +803,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *        <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *        the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *        <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *        towards the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *        <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>missing</code> — Missing data is treated as missing.
+     *        <code>missing</code> - Missing data is treated as missing.
      *        </p>
      *        </li>
      * @see TreatMissingData
@@ -840,24 +840,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -869,24 +869,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *         <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *         the number of times the metric is not within the threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *         <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *         towards the number of times the metric is not within the threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *         <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>missing</code> — Missing data is treated as missing.
+     *         <code>missing</code> - Missing data is treated as missing.
      *         </p>
      *         </li>
      * @see TreatMissingData
@@ -906,24 +906,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -936,24 +936,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *        <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *        the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *        <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *        towards the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *        <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>missing</code> — Missing data is treated as missing.
+     *        <code>missing</code> - Missing data is treated as missing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -975,24 +975,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -1005,24 +1005,24 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *        <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *        the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *        <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *        towards the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *        <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>missing</code> — Missing data is treated as missing.
+     *        <code>missing</code> - Missing data is treated as missing.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1044,25 +1044,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1070,7 +1070,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1083,25 +1083,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1109,7 +1109,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @see MetricStatistic
@@ -1129,25 +1129,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1155,7 +1155,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1167,25 +1167,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *         <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *         low volumes of activity for your application.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Maximum</code> — The highest value observed during the specified period. Use this value to
+     *         <code>Maximum</code> - The highest value observed during the specified period. Use this value to
      *         determine high volumes of activity for your application.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Sum</code> — All values submitted for the matching metric added together. You can use this
+     *         <code>Sum</code> - All values submitted for the matching metric added together. You can use this
      *         statistic to determine the total volume of a metric.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *         <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *         statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *         the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *         or decrease your resources.
@@ -1193,7 +1193,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *         <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *         </p>
      *         </li>
      * @see MetricStatistic
@@ -1213,25 +1213,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1239,7 +1239,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1252,25 +1252,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1278,7 +1278,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1300,25 +1300,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1326,7 +1326,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1339,25 +1339,25 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1365,7 +1365,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1446,18 +1446,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1470,18 +1470,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      * @see AlarmState
@@ -1501,18 +1501,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1524,18 +1524,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ALARM</code> — The metric is outside of the defined threshold.
+     *         <code>ALARM</code> - The metric is outside of the defined threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *         <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *         data is available for the metric to determine the alarm state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OK</code> — The metric is within the defined threshold.
+     *         <code>OK</code> - The metric is within the defined threshold.
      *         </p>
      *         </li>
      * @see AlarmState
@@ -1555,18 +1555,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1579,18 +1579,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1612,18 +1612,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1636,18 +1636,18 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

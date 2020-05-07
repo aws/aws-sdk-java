@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For
- * more information, see .
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html"
+ * >QueryCompileError</a>"/&gt;.
  * </p>
  * <p>
  * For more information about valid query syntax, see <a

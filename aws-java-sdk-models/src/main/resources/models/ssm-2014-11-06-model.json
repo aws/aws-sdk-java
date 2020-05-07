@@ -10023,7 +10023,9 @@
         "UBUNTU",
         "REDHAT_ENTERPRISE_LINUX",
         "SUSE",
-        "CENTOS"
+        "CENTOS",
+        "ORACLE_LINUX",
+        "DEBIAN"
       ]
     },
     "OpsAggregator":{

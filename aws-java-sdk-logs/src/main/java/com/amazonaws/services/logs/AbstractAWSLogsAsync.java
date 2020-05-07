@@ -144,6 +144,19 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQueryDefinitionResult> deleteQueryDefinitionAsync(DeleteQueryDefinitionRequest request) {
+
+        return deleteQueryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueryDefinitionResult> deleteQueryDefinitionAsync(DeleteQueryDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueryDefinitionRequest, DeleteQueryDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
 
         return deleteResourcePolicyAsync(request, null);
@@ -302,6 +315,19 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Override
     public java.util.concurrent.Future<DescribeQueriesResult> describeQueriesAsync(DescribeQueriesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeQueriesRequest, DescribeQueriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueryDefinitionsResult> describeQueryDefinitionsAsync(DescribeQueryDefinitionsRequest request) {
+
+        return describeQueryDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueryDefinitionsResult> describeQueryDefinitionsAsync(DescribeQueryDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeQueryDefinitionsRequest, DescribeQueryDefinitionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -471,6 +497,19 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements AWSLogsAsyn
     @Override
     public java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(PutMetricFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutQueryDefinitionResult> putQueryDefinitionAsync(PutQueryDefinitionRequest request) {
+
+        return putQueryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutQueryDefinitionResult> putQueryDefinitionAsync(PutQueryDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutQueryDefinitionRequest, PutQueryDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

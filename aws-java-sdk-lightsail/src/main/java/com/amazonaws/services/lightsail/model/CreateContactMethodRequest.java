@@ -86,7 +86,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      * used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits,
      * and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164
      * format would be specified as +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      * </p>
      */
     private String contactEndpoint;
@@ -523,7 +523,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      * used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits,
      * and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164
      * format would be specified as +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      * </p>
      * 
      * @param contactEndpoint
@@ -533,7 +533,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      *        structure used for international telecommunication. Phone numbers that follow this format can have a
      *        maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example,
      *        a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a
-     *        href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     *        href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      */
 
     public void setContactEndpoint(String contactEndpoint) {
@@ -549,7 +549,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      * used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits,
      * and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164
      * format would be specified as +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      * </p>
      * 
      * @return The destination of the contact method, such as an email address or a mobile phone number.</p>
@@ -558,7 +558,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      *         structure used for international telecommunication. Phone numbers that follow this format can have a
      *         maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For
      *         example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information,
-     *         see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     *         see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      */
 
     public String getContactEndpoint() {
@@ -574,7 +574,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      * used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits,
      * and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164
      * format would be specified as +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      * </p>
      * 
      * @param contactEndpoint
@@ -584,7 +584,7 @@ public class CreateContactMethodRequest extends com.amazonaws.AmazonWebServiceRe
      *        structure used for international telecommunication. Phone numbers that follow this format can have a
      *        maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example,
      *        a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a
-     *        href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.
+     *        href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

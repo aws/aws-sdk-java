@@ -35,7 +35,9 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
      * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
-     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
+     * To find the name of the filter currently associated with a log group, use <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     * >DescribeSubscriptionFilters</a>.
      * </p>
      */
     private String filterName;
@@ -135,14 +137,17 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
      * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
-     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
+     * To find the name of the filter currently associated with a log group, use <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     * >DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
      *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
      *        name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
-     *        with a log group. To find the name of the filter currently associated with a log group, use
-     *        <a>DescribeSubscriptionFilters</a>.
+     *        with a log group. To find the name of the filter currently associated with a log group, use <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     *        >DescribeSubscriptionFilters</a>.
      */
 
     public void setFilterName(String filterName) {
@@ -153,13 +158,16 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
      * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
-     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
+     * To find the name of the filter currently associated with a log group, use <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     * >DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @return A name for the subscription filter. If you are updating an existing filter, you must specify the correct
      *         name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
-     *         with a log group. To find the name of the filter currently associated with a log group, use
-     *         <a>DescribeSubscriptionFilters</a>.
+     *         with a log group. To find the name of the filter currently associated with a log group, use <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     *         >DescribeSubscriptionFilters</a>.
      */
 
     public String getFilterName() {
@@ -170,14 +178,17 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
      * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
-     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
+     * To find the name of the filter currently associated with a log group, use <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     * >DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
      *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
      *        name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
-     *        with a log group. To find the name of the filter currently associated with a log group, use
-     *        <a>DescribeSubscriptionFilters</a>.
+     *        with a log group. To find the name of the filter currently associated with a log group, use <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html"
+     *        >DescribeSubscriptionFilters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

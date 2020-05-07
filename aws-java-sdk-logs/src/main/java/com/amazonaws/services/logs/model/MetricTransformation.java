@@ -36,7 +36,10 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
     private String metricName;
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are
+     * similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     * >Namespaces</a>.
      * </p>
      */
     private String metricNamespace;
@@ -95,11 +98,17 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are
+     * similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     * >Namespaces</a>.
      * </p>
      * 
      * @param metricNamespace
-     *        The namespace of the CloudWatch metric.
+     *        A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are
+     *        similar. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     *        >Namespaces</a>.
      */
 
     public void setMetricNamespace(String metricNamespace) {
@@ -108,10 +117,16 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are
+     * similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     * >Namespaces</a>.
      * </p>
      * 
-     * @return The namespace of the CloudWatch metric.
+     * @return A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that
+     *         are similar. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     *         >Namespaces</a>.
      */
 
     public String getMetricNamespace() {
@@ -120,11 +135,17 @@ public class MetricTransformation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The namespace of the CloudWatch metric.
+     * A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are
+     * similar. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     * >Namespaces</a>.
      * </p>
      * 
      * @param metricNamespace
-     *        The namespace of the CloudWatch metric.
+     *        A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are
+     *        similar. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace"
+     *        >Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

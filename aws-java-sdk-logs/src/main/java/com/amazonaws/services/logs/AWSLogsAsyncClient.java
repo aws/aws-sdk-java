@@ -574,6 +574,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQueryDefinitionResult> deleteQueryDefinitionAsync(DeleteQueryDefinitionRequest request) {
+
+        return deleteQueryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueryDefinitionResult> deleteQueryDefinitionAsync(final DeleteQueryDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteQueryDefinitionRequest, DeleteQueryDefinitionResult> asyncHandler) {
+        final DeleteQueryDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteQueryDefinitionResult>() {
+            @Override
+            public DeleteQueryDefinitionResult call() throws Exception {
+                DeleteQueryDefinitionResult result = null;
+
+                try {
+                    result = executeDeleteQueryDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
 
         return deleteResourcePolicyAsync(request, null);
@@ -901,6 +934,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeDescribeQueries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueryDefinitionsResult> describeQueryDefinitionsAsync(DescribeQueryDefinitionsRequest request) {
+
+        return describeQueryDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueryDefinitionsResult> describeQueryDefinitionsAsync(final DescribeQueryDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeQueryDefinitionsRequest, DescribeQueryDefinitionsResult> asyncHandler) {
+        final DescribeQueryDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeQueryDefinitionsResult>() {
+            @Override
+            public DescribeQueryDefinitionsResult call() throws Exception {
+                DescribeQueryDefinitionsResult result = null;
+
+                try {
+                    result = executeDescribeQueryDefinitions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1330,6 +1396,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executePutMetricFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutQueryDefinitionResult> putQueryDefinitionAsync(PutQueryDefinitionRequest request) {
+
+        return putQueryDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutQueryDefinitionResult> putQueryDefinitionAsync(final PutQueryDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutQueryDefinitionRequest, PutQueryDefinitionResult> asyncHandler) {
+        final PutQueryDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutQueryDefinitionResult>() {
+            @Override
+            public PutQueryDefinitionResult call() throws Exception {
+                PutQueryDefinitionResult result = null;
+
+                try {
+                    result = executePutQueryDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

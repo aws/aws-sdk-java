@@ -25,7 +25,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
      * the request, and the resources affected by the request.
      * </p>
      */
@@ -46,12 +46,12 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
      * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of objects that describe the result of the action, such as the status of the request, the time
-     *         stamp of the request, and the resources affected by the request.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the
+     *         timestamp of the request, and the resources affected by the request.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -60,13 +60,13 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
      * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of objects that describe the result of the action, such as the status of the request, the time
-     *        stamp of the request, and the resources affected by the request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the
+     *        timestamp of the request, and the resources affected by the request.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -80,7 +80,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
      * the request, and the resources affected by the request.
      * </p>
      * <p>
@@ -90,8 +90,8 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param operations
-     *        An array of objects that describe the result of the action, such as the status of the request, the time
-     *        stamp of the request, and the resources affected by the request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the
+     *        timestamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +107,13 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
      * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of objects that describe the result of the action, such as the status of the request, the time
-     *        stamp of the request, and the resources affected by the request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the
+     *        timestamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

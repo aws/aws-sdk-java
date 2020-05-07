@@ -1,3 +1,32 @@
+# __1.11.778__ __2020-05-07__
+## __AWS CodeBuild__
+  - ### Features
+    - Add COMMIT_MESSAGE enum for webhook filter types
+
+## __Amazon AppConfig__
+  - ### Features
+    - The description of the AWS AppConfig GetConfiguration API action was amended to include important information about calling ClientConfigurationVersion when you configure clients to call GetConfiguration.
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Amazon CloudWatch Logs now offers the ability to interact with Logs Insights queries via the new PutQueryDefinition, DescribeQueryDefinitions, and DeleteQueryDefinition APIs.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 now adds warnings to identify issues when creating a launch template or launch template version.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds support for the following options in instance public ports: Specify source IP addresses, specify ICMP protocol like PING, and enable/disable the Lightsail browser-based SSH and RDP clients' access to your instance.
+
+## __Amazon Route 53__
+  - ### Features
+    - Amazon Route 53 now supports the EU (Milan) Region (eu-south-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This Patch Manager release supports creating patch baselines for Oracle Linux and Debian
+
 # __1.11.777__ __2020-05-06__
 ## __AWS CodeStar connections__
   - ### Features

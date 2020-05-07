@@ -1414,7 +1414,9 @@ public interface AmazonEC2 {
      * <p>
      * Creates a launch template. A launch template contains the parameters to launch an instance. When you launch an
      * instance using <a>RunInstances</a>, you can specify a launch template instead of providing the launch parameters
-     * in the request.
+     * in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launching an instance from a
+     * launch template</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createLaunchTemplateRequest
@@ -1433,6 +1435,11 @@ public interface AmazonEC2 {
      * <p>
      * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
      * replace the numbering of launch template versions.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions"
+     * >Managing launch template versions</a>in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createLaunchTemplateVersionRequest

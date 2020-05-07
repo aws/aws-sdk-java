@@ -43,7 +43,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     * <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -54,7 +54,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     * <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -65,7 +65,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are waiting to
+     * <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to
      * access the disk.
      * </p>
      * <p>
@@ -77,7 +77,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     * <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -88,7 +88,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     * <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -100,7 +100,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     * <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -189,25 +189,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -215,7 +215,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -274,7 +274,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     * <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -285,7 +285,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     * <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -296,7 +296,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are waiting to
+     * <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to
      * access the disk.
      * </p>
      * <p>
@@ -308,7 +308,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     * <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -319,7 +319,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     * <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -331,7 +331,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     * <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -353,7 +353,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -364,7 +364,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     *        <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -375,7 +375,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are
+     *        <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are
      *        waiting to access the disk.
      *        </p>
      *        <p>
@@ -387,7 +387,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     *        <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -398,7 +398,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     *        <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      *        including both customer database traffic and AWS traffic used for monitoring and replication.
      *        </p>
      *        <p>
@@ -410,7 +410,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     *        <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      *        including both customer database traffic and AWS traffic used for monitoring and replication.
      *        </p>
      *        <p>
@@ -439,7 +439,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     * <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -450,7 +450,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     * <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -461,7 +461,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are waiting to
+     * <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to
      * access the disk.
      * </p>
      * <p>
@@ -473,7 +473,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     * <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -484,7 +484,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     * <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -496,7 +496,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     * <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -517,7 +517,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the
+     *         <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the
      *         database.
      *         </p>
      *         <p>
@@ -529,7 +529,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     *         <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      *         </p>
      *         <p>
      *         <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -540,7 +540,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are
+     *         <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are
      *         waiting to access the disk.
      *         </p>
      *         <p>
@@ -552,7 +552,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     *         <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      *         </p>
      *         <p>
      *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -563,7 +563,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     *         <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      *         including both customer database traffic and AWS traffic used for monitoring and replication.
      *         </p>
      *         <p>
@@ -575,7 +575,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the
+     *         <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the
      *         database, including both customer database traffic and AWS traffic used for monitoring and replication.
      *         </p>
      *         <p>
@@ -604,7 +604,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     * <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -615,7 +615,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     * <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -626,7 +626,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are waiting to
+     * <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to
      * access the disk.
      * </p>
      * <p>
@@ -638,7 +638,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     * <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -649,7 +649,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     * <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -661,7 +661,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     * <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -683,7 +683,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -694,7 +694,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     *        <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -705,7 +705,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are
+     *        <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are
      *        waiting to access the disk.
      *        </p>
      *        <p>
@@ -717,7 +717,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     *        <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -728,7 +728,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     *        <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      *        including both customer database traffic and AWS traffic used for monitoring and replication.
      *        </p>
      *        <p>
@@ -740,7 +740,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     *        <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      *        including both customer database traffic and AWS traffic used for monitoring and replication.
      *        </p>
      *        <p>
@@ -771,7 +771,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     * <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -782,7 +782,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     * <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -793,7 +793,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are waiting to
+     * <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are waiting to
      * access the disk.
      * </p>
      * <p>
@@ -805,7 +805,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     * <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      * </p>
      * <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -816,7 +816,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     * <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -828,7 +828,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     * <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      * including both customer database traffic and AWS traffic used for monitoring and replication.
      * </p>
      * <p>
@@ -850,7 +850,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>CPUUtilization</code> </b> — The percentage of CPU utilization currently in use on the database.
+     *        <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently in use on the database.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
@@ -861,7 +861,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DatabaseConnections</code> </b> — The number of database connections in use.
+     *        <b> <code>DatabaseConnections</code> </b> - The number of database connections in use.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Sum</code>.
@@ -872,7 +872,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>DiskQueueDepth</code> </b> — The number of outstanding IOs (read/write requests) that are
+     *        <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write requests) that are
      *        waiting to access the disk.
      *        </p>
      *        <p>
@@ -884,7 +884,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>FreeStorageSpace</code> </b> — The amount of available storage space.
+     *        <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
      *        </p>
      *        <p>
      *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
@@ -895,7 +895,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkReceiveThroughput</code> </b> — The incoming (Receive) network traffic on the database,
+     *        <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic on the database,
      *        including both customer database traffic and AWS traffic used for monitoring and replication.
      *        </p>
      *        <p>
@@ -907,7 +907,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <b> <code>NetworkTransmitThroughput</code> </b> — The outgoing (Transmit) network traffic on the database,
+     *        <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network traffic on the database,
      *        including both customer database traffic and AWS traffic used for monitoring and replication.
      *        </p>
      *        <p>
@@ -1360,25 +1360,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1386,7 +1386,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1398,25 +1398,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *         <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *         low volumes of activity for your application.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Maximum</code> — The highest value observed during the specified period. Use this value to
+     *         <code>Maximum</code> - The highest value observed during the specified period. Use this value to
      *         determine high volumes of activity for your application.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Sum</code> — All values submitted for the matching metric added together. You can use this
+     *         <code>Sum</code> - All values submitted for the matching metric added together. You can use this
      *         statistic to determine the total volume of a metric.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *         <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *         statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *         the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *         or decrease your resources.
@@ -1424,7 +1424,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *         <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *         </p>
      *         </li>
      * @see MetricStatistic
@@ -1444,25 +1444,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1470,7 +1470,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1483,25 +1483,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1509,7 +1509,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @see MetricStatistic
@@ -1534,25 +1534,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1560,7 +1560,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1578,25 +1578,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1604,7 +1604,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1631,25 +1631,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1657,7 +1657,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1670,25 +1670,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1696,7 +1696,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1718,25 +1718,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine low
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine high
      * volumes of activity for your application.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic to
      * determine the total volume of a metric.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this statistic
      * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
      * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
      * resources.
@@ -1744,7 +1744,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
-     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      * </p>
      * </li>
      * </ul>
@@ -1757,25 +1757,25 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        <code>Minimum</code> - The lowest value observed during the specified period. Use this value to determine
      *        low volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        <code>Maximum</code> - The highest value observed during the specified period. Use this value to determine
      *        high volumes of activity for your application.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        <code>Sum</code> - All values submitted for the matching metric added together. You can use this statistic
      *        to determine the total volume of a metric.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        <code>Average</code> - The value of Sum / SampleCount during the specified period. By comparing this
      *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
      *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
      *        or decrease your resources.
@@ -1783,7 +1783,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        <code>SampleCount</code> - The count, or number, of data points used for the statistical calculation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

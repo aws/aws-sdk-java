@@ -29,6 +29,13 @@ public class CreateLaunchTemplateVersionResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private LaunchTemplateVersion launchTemplateVersion;
+    /**
+     * <p>
+     * If the new version of the launch template contains parameters or parameter combinations that are not valid, an
+     * error code and an error message are returned for each issue that's found.
+     * </p>
+     */
+    private ValidationWarning warning;
 
     /**
      * <p>
@@ -71,6 +78,52 @@ public class CreateLaunchTemplateVersionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * If the new version of the launch template contains parameters or parameter combinations that are not valid, an
+     * error code and an error message are returned for each issue that's found.
+     * </p>
+     * 
+     * @param warning
+     *        If the new version of the launch template contains parameters or parameter combinations that are not
+     *        valid, an error code and an error message are returned for each issue that's found.
+     */
+
+    public void setWarning(ValidationWarning warning) {
+        this.warning = warning;
+    }
+
+    /**
+     * <p>
+     * If the new version of the launch template contains parameters or parameter combinations that are not valid, an
+     * error code and an error message are returned for each issue that's found.
+     * </p>
+     * 
+     * @return If the new version of the launch template contains parameters or parameter combinations that are not
+     *         valid, an error code and an error message are returned for each issue that's found.
+     */
+
+    public ValidationWarning getWarning() {
+        return this.warning;
+    }
+
+    /**
+     * <p>
+     * If the new version of the launch template contains parameters or parameter combinations that are not valid, an
+     * error code and an error message are returned for each issue that's found.
+     * </p>
+     * 
+     * @param warning
+     *        If the new version of the launch template contains parameters or parameter combinations that are not
+     *        valid, an error code and an error message are returned for each issue that's found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLaunchTemplateVersionResult withWarning(ValidationWarning warning) {
+        setWarning(warning);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +136,9 @@ public class CreateLaunchTemplateVersionResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchTemplateVersion() != null)
-            sb.append("LaunchTemplateVersion: ").append(getLaunchTemplateVersion());
+            sb.append("LaunchTemplateVersion: ").append(getLaunchTemplateVersion()).append(",");
+        if (getWarning() != null)
+            sb.append("Warning: ").append(getWarning());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +157,10 @@ public class CreateLaunchTemplateVersionResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getLaunchTemplateVersion() != null && other.getLaunchTemplateVersion().equals(this.getLaunchTemplateVersion()) == false)
             return false;
+        if (other.getWarning() == null ^ this.getWarning() == null)
+            return false;
+        if (other.getWarning() != null && other.getWarning().equals(this.getWarning()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +170,7 @@ public class CreateLaunchTemplateVersionResult extends com.amazonaws.AmazonWebSe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLaunchTemplateVersion() == null) ? 0 : getLaunchTemplateVersion().hashCode());
+        hashCode = prime * hashCode + ((getWarning() == null) ? 0 : getWarning().hashCode());
         return hashCode;
     }
 

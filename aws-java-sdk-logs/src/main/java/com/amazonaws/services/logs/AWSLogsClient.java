@@ -495,9 +495,12 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * This is an asynchronous call. If all the required information is provided, this operation initiates an export
-     * task and responds with the ID of the task. After the task has started, you can use <a>DescribeExportTasks</a> to
-     * get the status of the export task. Each account can only have one active (<code>RUNNING</code> or
-     * <code>PENDING</code>) export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
+     * task and responds with the ID of the task. After the task has started, you can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html"
+     * >DescribeExportTasks</a> to get the status of the export task. Each account can only have one active (
+     * <code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel an export task, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html"
+     * >CancelExportTask</a>.
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
@@ -995,6 +998,62 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteMetricFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMetricFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param deleteQueryDefinitionRequest
+     * @return Result of the DeleteQueryDefinition operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.DeleteQueryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteQueryDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteQueryDefinitionResult deleteQueryDefinition(DeleteQueryDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQueryDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQueryDefinitionResult executeDeleteQueryDefinition(DeleteQueryDefinitionRequest deleteQueryDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteQueryDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteQueryDefinitionRequest> request = null;
+        Response<DeleteQueryDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteQueryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteQueryDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueryDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteQueryDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteQueryDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1562,6 +1621,61 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     /**
+     * @param describeQueryDefinitionsRequest
+     * @return Result of the DescribeQueryDefinitions operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.DescribeQueryDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeQueryDefinitionsResult describeQueryDefinitions(DescribeQueryDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeQueryDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeQueryDefinitionsResult executeDescribeQueryDefinitions(DescribeQueryDefinitionsRequest describeQueryDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeQueryDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeQueryDefinitionsRequest> request = null;
+        Response<DescribeQueryDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeQueryDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeQueryDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeQueryDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeQueryDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeQueryDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Lists the resource policies in this account.
      * </p>
@@ -1887,7 +2001,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * In the results, fields that start with @ are fields generated by CloudWatch Logs. For example,
-     * <code>@timestamp</code> is the timestamp of each log event.
+     * <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are
+     * generated by CloudWatch logs, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html"
+     * >Supported Logs and Discovered Fields</a>.
      * </p>
      * <p>
      * The response results are sorted by the frequency percentage, starting with the highest percentage.
@@ -2021,10 +2138,13 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
-     * for the log record. You can use the value of <code>@ptr</code> in a operation to get the full log record.
+     * for the log record. You can use the value of <code>@ptr</code> in a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html"
+     * >GetLogRecord</a> operation to get the full log record.
      * </p>
      * <p>
-     * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
+     * <code>GetQueryResults</code> does not start a query execution. To run a query, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
      * </p>
      * <p>
      * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
@@ -2150,13 +2270,17 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to
-     * a real-time stream of log events for a different account, ingested using <a>PutLogEvents</a>.
+     * a real-time stream of log events for a different account, ingested using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a>.
      * </p>
      * <p>
      * Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code>
-     * does not set any access policy with the destination, which means a cross-account user cannot call
-     * <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call
-     * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
+     * does not set any access policy with the destination, which means a cross-account user cannot call <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html"
+     * >PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html"
+     * >PutDestinationPolicy</a> after <code>PutDestination</code>.
      * </p>
      * 
      * @param putDestinationRequest
@@ -2400,7 +2524,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to
-     * configure rules to extract metric data from log events ingested through <a>PutLogEvents</a>.
+     * configure rules to extract metric data from log events ingested through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a>.
      * </p>
      * <p>
      * The maximum number of metric filters that can be associated with a log group is 100.
@@ -2454,6 +2580,61 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
             HttpResponseHandler<AmazonWebServiceResponse<PutMetricFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutMetricFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param putQueryDefinitionRequest
+     * @return Result of the PutQueryDefinition operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.PutQueryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutQueryDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutQueryDefinitionResult putQueryDefinition(PutQueryDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutQueryDefinition(request);
+    }
+
+    @SdkInternalApi
+    final PutQueryDefinitionResult executePutQueryDefinition(PutQueryDefinitionRequest putQueryDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putQueryDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutQueryDefinitionRequest> request = null;
+        Response<PutQueryDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutQueryDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putQueryDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Logs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutQueryDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutQueryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutQueryDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2589,8 +2770,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Creates or updates a subscription filter and associates it with the specified log group. Subscription filters
-     * allow you to subscribe to a real-time stream of log events ingested through <a>PutLogEvents</a> and have them
-     * delivered to a specific destination. Currently, the supported destinations are:
+     * allow you to subscribe to a real-time stream of log events ingested through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a> and have them delivered to a specific destination. Currently, the supported destinations are:
      * </p>
      * <ul>
      * <li>
@@ -2699,7 +2881,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @return Result of the StartQuery operation returned by the service.
      * @throws MalformedQueryException
      *         The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code>
-     *         object. For more information, see .</p>
+     *         object. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html"
+     *         >QueryCompileError</a>"/&gt;.</p>
      *         <p>
      *         For more information about valid query syntax, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
@@ -2823,12 +3007,16 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
-     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * To list the tags for a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+     * >ListTagsLogGroup</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
+     * >UntagLogGroup</a>.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
-     * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+     * For more information about tags, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging"
+     * >Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
      * </p>
      * 
      * @param tagLogGroupRequest
@@ -2946,7 +3134,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
-     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+     * To list the tags for a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+     * >ListTagsLogGroup</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
      * </p>
      * 
      * @param untagLogGroupRequest

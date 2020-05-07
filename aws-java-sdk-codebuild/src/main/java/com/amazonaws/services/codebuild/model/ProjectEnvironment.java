@@ -43,7 +43,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
      * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
      * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
@@ -51,9 +51,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
-     * (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * </ul>
@@ -226,7 +225,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
      * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
      * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
@@ -234,9 +233,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
-     * (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * </ul>
@@ -254,15 +252,15 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada
-     *        (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     *        Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
+     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
+     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
-     *        US East (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
+     *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
      *        </p>
@@ -289,7 +287,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
      * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
      * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
@@ -297,9 +295,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
-     * (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * </ul>
@@ -316,17 +313,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         <li>
      *         <p>
      *         The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code>
-     *         is available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada
-     *         (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     *         Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *         is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central),
+     *         EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
+     *         (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
-     *         US East (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt),
-     *         Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
-     *         (Beijing), and China (Ningxia).
+     *         US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
+     *         Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
+     *         and China (Ningxia).
      *         </p>
      *         </li>
      * @see EnvironmentType
@@ -351,7 +348,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
      * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
      * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
@@ -359,9 +356,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
-     * (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * </ul>
@@ -379,15 +375,15 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada
-     *        (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     *        Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
+     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
+     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
-     *        US East (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
+     *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
      *        </p>
@@ -416,7 +412,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
      * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
      * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
@@ -424,9 +420,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
-     * (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * </ul>
@@ -444,15 +439,15 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada
-     *        (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     *        Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
+     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
+     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
-     *        US East (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
+     *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
      *        </p>
@@ -479,7 +474,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     * available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
      * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore),
      * Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
@@ -487,9 +482,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
-     * (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific
-     * (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
-     * (Ningxia).
+     * (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).
      * </p>
      * </li>
      * </ul>
@@ -507,15 +501,15 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is
-     *        available only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada
-     *        (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
-     *        Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
+     *        available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU
+     *        (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
+     *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
-     *        US East (N. Virginia), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
+     *        US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia
      *        Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing),
      *        and China (Ningxia).
      *        </p>

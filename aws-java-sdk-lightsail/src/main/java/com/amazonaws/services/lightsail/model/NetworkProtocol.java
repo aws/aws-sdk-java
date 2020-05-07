@@ -22,7 +22,8 @@ public enum NetworkProtocol {
 
     Tcp("tcp"),
     All("all"),
-    Udp("udp");
+    Udp("udp"),
+    Icmp("icmp");
 
     private String value;
 

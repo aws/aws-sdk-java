@@ -47,6 +47,11 @@ public class CreateLaunchTemplateResultStaxUnmarshaller implements Unmarshaller<
                     createLaunchTemplateResult.setLaunchTemplate(LaunchTemplateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("warning", targetDepth)) {
+                    createLaunchTemplateResult.setWarning(ValidationWarningStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createLaunchTemplateResult;

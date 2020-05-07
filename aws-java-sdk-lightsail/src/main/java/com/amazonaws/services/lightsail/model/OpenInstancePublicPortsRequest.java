@@ -27,24 +27,24 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the port mappings.
+     * An object to describe the ports to open for the specified instance.
      * </p>
      */
     private PortInfo portInfo;
     /**
      * <p>
-     * The name of the instance for which you want to open the public ports.
+     * The name of the instance for which to open ports.
      * </p>
      */
     private String instanceName;
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the port mappings.
+     * An object to describe the ports to open for the specified instance.
      * </p>
      * 
      * @param portInfo
-     *        An array of key-value pairs containing information about the port mappings.
+     *        An object to describe the ports to open for the specified instance.
      */
 
     public void setPortInfo(PortInfo portInfo) {
@@ -53,10 +53,10 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the port mappings.
+     * An object to describe the ports to open for the specified instance.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the port mappings.
+     * @return An object to describe the ports to open for the specified instance.
      */
 
     public PortInfo getPortInfo() {
@@ -65,11 +65,11 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the port mappings.
+     * An object to describe the ports to open for the specified instance.
      * </p>
      * 
      * @param portInfo
-     *        An array of key-value pairs containing information about the port mappings.
+     *        An object to describe the ports to open for the specified instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the instance for which you want to open the public ports.
+     * The name of the instance for which to open ports.
      * </p>
      * 
      * @param instanceName
-     *        The name of the instance for which you want to open the public ports.
+     *        The name of the instance for which to open ports.
      */
 
     public void setInstanceName(String instanceName) {
@@ -93,10 +93,10 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the instance for which you want to open the public ports.
+     * The name of the instance for which to open ports.
      * </p>
      * 
-     * @return The name of the instance for which you want to open the public ports.
+     * @return The name of the instance for which to open ports.
      */
 
     public String getInstanceName() {
@@ -105,11 +105,11 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the instance for which you want to open the public ports.
+     * The name of the instance for which to open ports.
      * </p>
      * 
      * @param instanceName
-     *        The name of the instance for which you want to open the public ports.
+     *        The name of the instance for which to open ports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

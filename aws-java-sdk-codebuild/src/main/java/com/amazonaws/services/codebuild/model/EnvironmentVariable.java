@@ -56,7 +56,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
+     * learn how to specify a parameter store environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     * parameter store reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * <li>
@@ -66,7 +69,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * secrets manager environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     * secrets manager reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * </ul>
@@ -208,7 +214,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
+     * learn how to specify a parameter store environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     * parameter store reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * <li>
@@ -218,7 +227,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * secrets manager environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     * secrets manager reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * </ul>
@@ -229,7 +241,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *        Store.
+     *        Store. To learn how to specify a parameter store environment variable, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     *        parameter store reference-key in the buildspec file</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -239,7 +253,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
+     *        specify a secrets manager environment variable, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     *        secrets manager reference-key in the buildspec file</a>.
      *        </p>
      *        </li>
      * @see EnvironmentVariableType
@@ -256,7 +273,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
+     * learn how to specify a parameter store environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     * parameter store reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * <li>
@@ -266,7 +286,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * secrets manager environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     * secrets manager reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * </ul>
@@ -276,7 +299,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *         <li>
      *         <p>
      *         <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *         Store.
+     *         Store. To learn how to specify a parameter store environment variable, see <a href=
+     *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     *         parameter store reference-key in the buildspec file</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -286,7 +311,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     *         <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
+     *         specify a secrets manager environment variable, see <a href=
+     *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     *         secrets manager reference-key in the buildspec file</a>.
      *         </p>
      *         </li>
      * @see EnvironmentVariableType
@@ -303,7 +331,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
+     * learn how to specify a parameter store environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     * parameter store reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * <li>
@@ -313,7 +344,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * secrets manager environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     * secrets manager reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * </ul>
@@ -324,7 +358,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *        Store.
+     *        Store. To learn how to specify a parameter store environment variable, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     *        parameter store reference-key in the buildspec file</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -334,7 +370,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
+     *        specify a secrets manager environment variable, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     *        secrets manager reference-key in the buildspec file</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -353,7 +392,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store. To
+     * learn how to specify a parameter store environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     * parameter store reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * <li>
@@ -363,7 +405,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to specify a
+     * secrets manager environment variable, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     * secrets manager reference-key in the buildspec file</a>.
      * </p>
      * </li>
      * </ul>
@@ -374,7 +419,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
-     *        Store.
+     *        Store. To learn how to specify a parameter store environment variable, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec">
+     *        parameter store reference-key in the buildspec file</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -384,7 +431,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager.
+     *        <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets Manager. To learn how to
+     *        specify a secrets manager environment variable, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec">
+     *        secrets manager reference-key in the buildspec file</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

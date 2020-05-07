@@ -41,18 +41,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -109,18 +109,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -133,18 +133,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      * @see AlarmState
@@ -164,18 +164,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -187,18 +187,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ALARM</code> — The metric is outside of the defined threshold.
+     *         <code>ALARM</code> - The metric is outside of the defined threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *         <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *         data is available for the metric to determine the alarm state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OK</code> — The metric is within the defined threshold.
+     *         <code>OK</code> - The metric is within the defined threshold.
      *         </p>
      *         </li>
      * @see AlarmState
@@ -218,18 +218,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -242,18 +242,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -275,18 +275,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -299,18 +299,18 @@ public class TestAlarmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

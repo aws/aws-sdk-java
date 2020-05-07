@@ -26,7 +26,9 @@ public enum OperatingSystem {
     UBUNTU("UBUNTU"),
     REDHAT_ENTERPRISE_LINUX("REDHAT_ENTERPRISE_LINUX"),
     SUSE("SUSE"),
-    CENTOS("CENTOS");
+    CENTOS("CENTOS"),
+    ORACLE_LINUX("ORACLE_LINUX"),
+    DEBIAN("DEBIAN");
 
     private String value;
 

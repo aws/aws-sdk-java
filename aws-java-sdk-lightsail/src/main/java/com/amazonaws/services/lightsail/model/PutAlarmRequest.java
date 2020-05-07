@@ -127,24 +127,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -182,18 +182,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -917,24 +917,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -950,24 +950,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *        <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *        the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *        <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *        towards the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *        <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>missing</code> — Missing data is treated as missing.
+     *        <code>missing</code> - Missing data is treated as missing.
      *        </p>
      *        </li>
      *        </ul>
@@ -990,24 +990,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -1022,24 +1022,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *         <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *         the number of times the metric is not within the threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *         <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *         towards the number of times the metric is not within the threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *         <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>missing</code> — Missing data is treated as missing.
+     *         <code>missing</code> - Missing data is treated as missing.
      *         </p>
      *         </li>
      *         </ul>
@@ -1062,24 +1062,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -1095,24 +1095,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *        <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *        the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *        <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *        towards the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *        <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>missing</code> — Missing data is treated as missing.
+     *        <code>missing</code> - Missing data is treated as missing.
      *        </p>
      *        </li>
      *        </ul>
@@ -1137,24 +1137,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards the
+     * <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards the
      * number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count towards
+     * <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count towards
      * the number of times the metric is not within the threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>missing</code> — Missing data is treated as missing.
+     * <code>missing</code> - Missing data is treated as missing.
      * </p>
      * </li>
      * </ul>
@@ -1170,24 +1170,24 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>breaching</code> — Assume the missing data is not within the threshold. Missing data counts towards
+     *        <code>breaching</code> - Assume the missing data is not within the threshold. Missing data counts towards
      *        the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>notBreaching</code> — Assume the missing data is within the threshold. Missing data does not count
+     *        <code>notBreaching</code> - Assume the missing data is within the threshold. Missing data does not count
      *        towards the number of times the metric is not within the threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ignore</code> — Ignore the missing data. Maintains the current alarm state.
+     *        <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>missing</code> — Missing data is treated as missing.
+     *        <code>missing</code> - Missing data is treated as missing.
      *        </p>
      *        </li>
      *        </ul>
@@ -1435,18 +1435,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1481,18 +1481,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ALARM</code> — The metric is outside of the defined threshold.
+     *         <code>ALARM</code> - The metric is outside of the defined threshold.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *         <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *         data is available for the metric to determine the alarm state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OK</code> — The metric is within the defined threshold.
+     *         <code>OK</code> - The metric is within the defined threshold.
      *         </p>
      *         </li>
      *         </ul>
@@ -1536,18 +1536,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1583,18 +1583,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      *        </ul>
@@ -1643,18 +1643,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1695,18 +1695,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      *        </ul>
@@ -1757,18 +1757,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1804,18 +1804,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      *        </ul>
@@ -1861,18 +1861,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <code>ALARM</code> — The metric is outside of the defined threshold.
+     * <code>ALARM</code> - The metric is outside of the defined threshold.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough data is
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is
      * available for the metric to determine the alarm state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OK</code> — The metric is within the defined threshold.
+     * <code>OK</code> - The metric is within the defined threshold.
      * </p>
      * </li>
      * </ul>
@@ -1908,18 +1908,18 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ALARM</code> — The metric is outside of the defined threshold.
+     *        <code>ALARM</code> - The metric is outside of the defined threshold.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not available, or not enough
+     *        <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough
      *        data is available for the metric to determine the alarm state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OK</code> — The metric is within the defined threshold.
+     *        <code>OK</code> - The metric is within the defined threshold.
      *        </p>
      *        </li>
      *        </ul>

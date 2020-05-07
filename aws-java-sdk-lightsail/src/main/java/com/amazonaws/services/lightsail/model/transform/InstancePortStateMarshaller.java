@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,10 @@ public class InstancePortStateMarshaller {
             .marshallLocationName("protocol").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<List> CIDRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cidrs").build();
+    private static final MarshallingInfo<List> CIDRLISTALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cidrListAliases").build();
 
     private static final InstancePortStateMarshaller instance = new InstancePortStateMarshaller();
 
@@ -56,6 +61,8 @@ public class InstancePortStateMarshaller {
             protocolMarshaller.marshall(instancePortState.getToPort(), TOPORT_BINDING);
             protocolMarshaller.marshall(instancePortState.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(instancePortState.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(instancePortState.getCidrs(), CIDRS_BINDING);
+            protocolMarshaller.marshall(instancePortState.getCidrListAliases(), CIDRLISTALIASES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

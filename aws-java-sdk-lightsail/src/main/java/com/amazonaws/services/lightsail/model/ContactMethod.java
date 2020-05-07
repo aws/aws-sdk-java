@@ -49,18 +49,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has not yet
+     * <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Valid</code> — The contact method has been verified.
+     * <code>Valid</code> - The contact method has been verified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     * <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      * </p>
      * </li>
      * </ul>
@@ -156,18 +156,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has not yet
+     * <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Valid</code> — The contact method has been verified.
+     * <code>Valid</code> - The contact method has been verified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     * <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      * </p>
      * </li>
      * </ul>
@@ -180,18 +180,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has
+     *        <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has
      *        not yet expired.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Valid</code> — The contact method has been verified.
+     *        <code>Valid</code> - The contact method has been verified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     *        <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      *        </p>
      *        </li>
      * @see ContactMethodStatus
@@ -211,18 +211,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has not yet
+     * <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Valid</code> — The contact method has been verified.
+     * <code>Valid</code> - The contact method has been verified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     * <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      * </p>
      * </li>
      * </ul>
@@ -234,18 +234,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has
+     *         <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has
      *         not yet expired.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Valid</code> — The contact method has been verified.
+     *         <code>Valid</code> - The contact method has been verified.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>InValid</code> — An attempt was made to verify the contact method, but the verification has
+     *         <code>InValid</code> - An attempt was made to verify the contact method, but the verification has
      *         expired.
      *         </p>
      *         </li>
@@ -266,18 +266,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has not yet
+     * <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Valid</code> — The contact method has been verified.
+     * <code>Valid</code> - The contact method has been verified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     * <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      * </p>
      * </li>
      * </ul>
@@ -290,18 +290,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has
+     *        <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has
      *        not yet expired.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Valid</code> — The contact method has been verified.
+     *        <code>Valid</code> - The contact method has been verified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     *        <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -323,18 +323,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has not yet
+     * <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet
      * expired.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Valid</code> — The contact method has been verified.
+     * <code>Valid</code> - The contact method has been verified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     * <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      * </p>
      * </li>
      * </ul>
@@ -347,18 +347,18 @@ public class ContactMethod implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PendingVerification</code> — The contact method has not yet been verified, and the verification has
+     *        <code>PendingVerification</code> - The contact method has not yet been verified, and the verification has
      *        not yet expired.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Valid</code> — The contact method has been verified.
+     *        <code>Valid</code> - The contact method has been verified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InValid</code> — An attempt was made to verify the contact method, but the verification has expired.
+     *        <code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

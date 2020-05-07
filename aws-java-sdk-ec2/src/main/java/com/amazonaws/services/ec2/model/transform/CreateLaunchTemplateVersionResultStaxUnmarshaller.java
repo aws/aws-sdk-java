@@ -47,6 +47,11 @@ public class CreateLaunchTemplateVersionResultStaxUnmarshaller implements Unmars
                     createLaunchTemplateVersionResult.setLaunchTemplateVersion(LaunchTemplateVersionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("warning", targetDepth)) {
+                    createLaunchTemplateVersionResult.setWarning(ValidationWarningStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createLaunchTemplateVersionResult;

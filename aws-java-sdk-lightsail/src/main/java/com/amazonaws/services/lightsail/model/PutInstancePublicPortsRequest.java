@@ -27,23 +27,23 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies information about the public port(s).
+     * An array of objects to describe the ports to open for the specified instance.
      * </p>
      */
     private java.util.List<PortInfo> portInfos;
     /**
      * <p>
-     * The Lightsail instance name of the public port(s) you are setting.
+     * The name of the instance for which to open ports.
      * </p>
      */
     private String instanceName;
 
     /**
      * <p>
-     * Specifies information about the public port(s).
+     * An array of objects to describe the ports to open for the specified instance.
      * </p>
      * 
-     * @return Specifies information about the public port(s).
+     * @return An array of objects to describe the ports to open for the specified instance.
      */
 
     public java.util.List<PortInfo> getPortInfos() {
@@ -52,11 +52,11 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies information about the public port(s).
+     * An array of objects to describe the ports to open for the specified instance.
      * </p>
      * 
      * @param portInfos
-     *        Specifies information about the public port(s).
+     *        An array of objects to describe the ports to open for the specified instance.
      */
 
     public void setPortInfos(java.util.Collection<PortInfo> portInfos) {
@@ -70,7 +70,7 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies information about the public port(s).
+     * An array of objects to describe the ports to open for the specified instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param portInfos
-     *        Specifies information about the public port(s).
+     *        An array of objects to describe the ports to open for the specified instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies information about the public port(s).
+     * An array of objects to describe the ports to open for the specified instance.
      * </p>
      * 
      * @param portInfos
-     *        Specifies information about the public port(s).
+     *        An array of objects to describe the ports to open for the specified instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +110,11 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Lightsail instance name of the public port(s) you are setting.
+     * The name of the instance for which to open ports.
      * </p>
      * 
      * @param instanceName
-     *        The Lightsail instance name of the public port(s) you are setting.
+     *        The name of the instance for which to open ports.
      */
 
     public void setInstanceName(String instanceName) {
@@ -123,10 +123,10 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Lightsail instance name of the public port(s) you are setting.
+     * The name of the instance for which to open ports.
      * </p>
      * 
-     * @return The Lightsail instance name of the public port(s) you are setting.
+     * @return The name of the instance for which to open ports.
      */
 
     public String getInstanceName() {
@@ -135,11 +135,11 @@ public class PutInstancePublicPortsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Lightsail instance name of the public port(s) you are setting.
+     * The name of the instance for which to open ports.
      * </p>
      * 
      * @param instanceName
-     *        The Lightsail instance name of the public port(s) you are setting.
+     *        The name of the instance for which to open ports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

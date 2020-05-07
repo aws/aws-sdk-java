@@ -29,6 +29,13 @@ public class CreateLaunchTemplateResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private LaunchTemplate launchTemplate;
+    /**
+     * <p>
+     * If the launch template contains parameters or parameter combinations that are not valid, an error code and an
+     * error message are returned for each issue that's found.
+     * </p>
+     */
+    private ValidationWarning warning;
 
     /**
      * <p>
@@ -71,6 +78,52 @@ public class CreateLaunchTemplateResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * If the launch template contains parameters or parameter combinations that are not valid, an error code and an
+     * error message are returned for each issue that's found.
+     * </p>
+     * 
+     * @param warning
+     *        If the launch template contains parameters or parameter combinations that are not valid, an error code and
+     *        an error message are returned for each issue that's found.
+     */
+
+    public void setWarning(ValidationWarning warning) {
+        this.warning = warning;
+    }
+
+    /**
+     * <p>
+     * If the launch template contains parameters or parameter combinations that are not valid, an error code and an
+     * error message are returned for each issue that's found.
+     * </p>
+     * 
+     * @return If the launch template contains parameters or parameter combinations that are not valid, an error code
+     *         and an error message are returned for each issue that's found.
+     */
+
+    public ValidationWarning getWarning() {
+        return this.warning;
+    }
+
+    /**
+     * <p>
+     * If the launch template contains parameters or parameter combinations that are not valid, an error code and an
+     * error message are returned for each issue that's found.
+     * </p>
+     * 
+     * @param warning
+     *        If the launch template contains parameters or parameter combinations that are not valid, an error code and
+     *        an error message are returned for each issue that's found.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLaunchTemplateResult withWarning(ValidationWarning warning) {
+        setWarning(warning);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +136,9 @@ public class CreateLaunchTemplateResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchTemplate() != null)
-            sb.append("LaunchTemplate: ").append(getLaunchTemplate());
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getWarning() != null)
+            sb.append("Warning: ").append(getWarning());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +157,10 @@ public class CreateLaunchTemplateResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
+        if (other.getWarning() == null ^ this.getWarning() == null)
+            return false;
+        if (other.getWarning() != null && other.getWarning().equals(this.getWarning()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +170,7 @@ public class CreateLaunchTemplateResult extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getWarning() == null) ? 0 : getWarning().hashCode());
         return hashCode;
     }
 

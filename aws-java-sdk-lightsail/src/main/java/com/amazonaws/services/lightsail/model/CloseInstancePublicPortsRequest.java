@@ -27,24 +27,24 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the public port you are trying to close.
+     * An object to describe the ports to close for the specified instance.
      * </p>
      */
     private PortInfo portInfo;
     /**
      * <p>
-     * The name of the instance on which you're attempting to close the public ports.
+     * The name of the instance for which to close ports.
      * </p>
      */
     private String instanceName;
 
     /**
      * <p>
-     * Information about the public port you are trying to close.
+     * An object to describe the ports to close for the specified instance.
      * </p>
      * 
      * @param portInfo
-     *        Information about the public port you are trying to close.
+     *        An object to describe the ports to close for the specified instance.
      */
 
     public void setPortInfo(PortInfo portInfo) {
@@ -53,10 +53,10 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the public port you are trying to close.
+     * An object to describe the ports to close for the specified instance.
      * </p>
      * 
-     * @return Information about the public port you are trying to close.
+     * @return An object to describe the ports to close for the specified instance.
      */
 
     public PortInfo getPortInfo() {
@@ -65,11 +65,11 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the public port you are trying to close.
+     * An object to describe the ports to close for the specified instance.
      * </p>
      * 
      * @param portInfo
-     *        Information about the public port you are trying to close.
+     *        An object to describe the ports to close for the specified instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the instance on which you're attempting to close the public ports.
+     * The name of the instance for which to close ports.
      * </p>
      * 
      * @param instanceName
-     *        The name of the instance on which you're attempting to close the public ports.
+     *        The name of the instance for which to close ports.
      */
 
     public void setInstanceName(String instanceName) {
@@ -93,10 +93,10 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the instance on which you're attempting to close the public ports.
+     * The name of the instance for which to close ports.
      * </p>
      * 
-     * @return The name of the instance on which you're attempting to close the public ports.
+     * @return The name of the instance for which to close ports.
      */
 
     public String getInstanceName() {
@@ -105,11 +105,11 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the instance on which you're attempting to close the public ports.
+     * The name of the instance for which to close ports.
      * </p>
      * 
      * @param instanceName
-     *        The name of the instance on which you're attempting to close the public ports.
+     *        The name of the instance for which to close ports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

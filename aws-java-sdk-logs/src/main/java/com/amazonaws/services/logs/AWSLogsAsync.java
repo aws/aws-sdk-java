@@ -182,9 +182,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * This is an asynchronous call. If all the required information is provided, this operation initiates an export
-     * task and responds with the ID of the task. After the task has started, you can use <a>DescribeExportTasks</a> to
-     * get the status of the export task. Each account can only have one active (<code>RUNNING</code> or
-     * <code>PENDING</code>) export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
+     * task and responds with the ID of the task. After the task has started, you can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html"
+     * >DescribeExportTasks</a> to get the status of the export task. Each account can only have one active (
+     * <code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel an export task, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html"
+     * >CancelExportTask</a>.
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
@@ -210,9 +213,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * This is an asynchronous call. If all the required information is provided, this operation initiates an export
-     * task and responds with the ID of the task. After the task has started, you can use <a>DescribeExportTasks</a> to
-     * get the status of the export task. Each account can only have one active (<code>RUNNING</code> or
-     * <code>PENDING</code>) export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
+     * task and responds with the ID of the task. After the task has started, you can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html"
+     * >DescribeExportTasks</a> to get the status of the export task. Each account can only have one active (
+     * <code>RUNNING</code> or <code>PENDING</code>) export task at a time. To cancel an export task, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html"
+     * >CancelExportTask</a>.
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
@@ -560,6 +566,29 @@ public interface AWSLogsAsync extends AWSLogs {
             com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult> asyncHandler);
 
     /**
+     * @param deleteQueryDefinitionRequest
+     * @return A Java Future containing the result of the DeleteQueryDefinition operation returned by the service.
+     * @sample AWSLogsAsync.DeleteQueryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteQueryDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQueryDefinitionResult> deleteQueryDefinitionAsync(DeleteQueryDefinitionRequest deleteQueryDefinitionRequest);
+
+    /**
+     * @param deleteQueryDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteQueryDefinition operation returned by the service.
+     * @sample AWSLogsAsyncHandler.DeleteQueryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteQueryDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQueryDefinitionResult> deleteQueryDefinitionAsync(DeleteQueryDefinitionRequest deleteQueryDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueryDefinitionRequest, DeleteQueryDefinitionResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes a resource policy from this account. This revokes the access of the identities in that policy to put log
      * events to this account.
@@ -895,6 +924,29 @@ public interface AWSLogsAsync extends AWSLogs {
             com.amazonaws.handlers.AsyncHandler<DescribeQueriesRequest, DescribeQueriesResult> asyncHandler);
 
     /**
+     * @param describeQueryDefinitionsRequest
+     * @return A Java Future containing the result of the DescribeQueryDefinitions operation returned by the service.
+     * @sample AWSLogsAsync.DescribeQueryDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQueryDefinitionsResult> describeQueryDefinitionsAsync(DescribeQueryDefinitionsRequest describeQueryDefinitionsRequest);
+
+    /**
+     * @param describeQueryDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeQueryDefinitions operation returned by the service.
+     * @sample AWSLogsAsyncHandler.DescribeQueryDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueryDefinitions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQueryDefinitionsResult> describeQueryDefinitionsAsync(DescribeQueryDefinitionsRequest describeQueryDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeQueryDefinitionsRequest, DescribeQueryDefinitionsResult> asyncHandler);
+
+    /**
      * <p>
      * Lists the resource policies in this account.
      * </p>
@@ -1098,7 +1150,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * In the results, fields that start with @ are fields generated by CloudWatch Logs. For example,
-     * <code>@timestamp</code> is the timestamp of each log event.
+     * <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are
+     * generated by CloudWatch logs, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html"
+     * >Supported Logs and Discovered Fields</a>.
      * </p>
      * <p>
      * The response results are sorted by the frequency percentage, starting with the highest percentage.
@@ -1119,7 +1174,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * In the results, fields that start with @ are fields generated by CloudWatch Logs. For example,
-     * <code>@timestamp</code> is the timestamp of each log event.
+     * <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are
+     * generated by CloudWatch logs, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html"
+     * >Supported Logs and Discovered Fields</a>.
      * </p>
      * <p>
      * The response results are sorted by the frequency percentage, starting with the highest percentage.
@@ -1185,10 +1243,13 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
-     * for the log record. You can use the value of <code>@ptr</code> in a operation to get the full log record.
+     * for the log record. You can use the value of <code>@ptr</code> in a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html"
+     * >GetLogRecord</a> operation to get the full log record.
      * </p>
      * <p>
-     * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
+     * <code>GetQueryResults</code> does not start a query execution. To run a query, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
      * </p>
      * <p>
      * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
@@ -1210,10 +1271,13 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
-     * for the log record. You can use the value of <code>@ptr</code> in a operation to get the full log record.
+     * for the log record. You can use the value of <code>@ptr</code> in a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html"
+     * >GetLogRecord</a> operation to get the full log record.
      * </p>
      * <p>
-     * <code>GetQueryResults</code> does not start a query execution. To run a query, use .
+     * <code>GetQueryResults</code> does not start a query execution. To run a query, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
      * </p>
      * <p>
      * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
@@ -1272,13 +1336,17 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to
-     * a real-time stream of log events for a different account, ingested using <a>PutLogEvents</a>.
+     * a real-time stream of log events for a different account, ingested using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a>.
      * </p>
      * <p>
      * Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code>
-     * does not set any access policy with the destination, which means a cross-account user cannot call
-     * <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call
-     * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
+     * does not set any access policy with the destination, which means a cross-account user cannot call <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html"
+     * >PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html"
+     * >PutDestinationPolicy</a> after <code>PutDestination</code>.
      * </p>
      * 
      * @param putDestinationRequest
@@ -1296,13 +1364,17 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to
-     * a real-time stream of log events for a different account, ingested using <a>PutLogEvents</a>.
+     * a real-time stream of log events for a different account, ingested using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a>.
      * </p>
      * <p>
      * Through an access policy, a destination controls what is written to it. By default, <code>PutDestination</code>
-     * does not set any access policy with the destination, which means a cross-account user cannot call
-     * <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call
-     * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
+     * does not set any access policy with the destination, which means a cross-account user cannot call <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html"
+     * >PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must call <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html"
+     * >PutDestinationPolicy</a> after <code>PutDestination</code>.
      * </p>
      * 
      * @param putDestinationRequest
@@ -1501,7 +1573,9 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to
-     * configure rules to extract metric data from log events ingested through <a>PutLogEvents</a>.
+     * configure rules to extract metric data from log events ingested through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a>.
      * </p>
      * <p>
      * The maximum number of metric filters that can be associated with a log group is 100.
@@ -1518,7 +1592,9 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to
-     * configure rules to extract metric data from log events ingested through <a>PutLogEvents</a>.
+     * configure rules to extract metric data from log events ingested through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a>.
      * </p>
      * <p>
      * The maximum number of metric filters that can be associated with a log group is 100.
@@ -1536,6 +1612,29 @@ public interface AWSLogsAsync extends AWSLogs {
      */
     java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(PutMetricFilterRequest putMetricFilterRequest,
             com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler);
+
+    /**
+     * @param putQueryDefinitionRequest
+     * @return A Java Future containing the result of the PutQueryDefinition operation returned by the service.
+     * @sample AWSLogsAsync.PutQueryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutQueryDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutQueryDefinitionResult> putQueryDefinitionAsync(PutQueryDefinitionRequest putQueryDefinitionRequest);
+
+    /**
+     * @param putQueryDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutQueryDefinition operation returned by the service.
+     * @sample AWSLogsAsyncHandler.PutQueryDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutQueryDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutQueryDefinitionResult> putQueryDefinitionAsync(PutQueryDefinitionRequest putQueryDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutQueryDefinitionRequest, PutQueryDefinitionResult> asyncHandler);
 
     /**
      * <p>
@@ -1606,8 +1705,9 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a subscription filter and associates it with the specified log group. Subscription filters
-     * allow you to subscribe to a real-time stream of log events ingested through <a>PutLogEvents</a> and have them
-     * delivered to a specific destination. Currently, the supported destinations are:
+     * allow you to subscribe to a real-time stream of log events ingested through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a> and have them delivered to a specific destination. Currently, the supported destinations are:
      * </p>
      * <ul>
      * <li>
@@ -1649,8 +1749,9 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a subscription filter and associates it with the specified log group. Subscription filters
-     * allow you to subscribe to a real-time stream of log events ingested through <a>PutLogEvents</a> and have them
-     * delivered to a specific destination. Currently, the supported destinations are:
+     * allow you to subscribe to a real-time stream of log events ingested through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
+     * >PutLogEvents</a> and have them delivered to a specific destination. Currently, the supported destinations are:
      * </p>
      * <ul>
      * <li>
@@ -1783,12 +1884,16 @@ public interface AWSLogsAsync extends AWSLogs {
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
-     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * To list the tags for a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+     * >ListTagsLogGroup</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
+     * >UntagLogGroup</a>.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
-     * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+     * For more information about tags, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging"
+     * >Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
      * </p>
      * 
      * @param tagLogGroupRequest
@@ -1804,12 +1909,16 @@ public interface AWSLogsAsync extends AWSLogs {
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
-     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * To list the tags for a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+     * >ListTagsLogGroup</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
+     * >UntagLogGroup</a>.
      * </p>
      * <p>
-     * For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
-     * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+     * For more information about tags, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging"
+     * >Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
      * </p>
      * 
      * @param tagLogGroupRequest
@@ -1863,7 +1972,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
-     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+     * To list the tags for a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+     * >ListTagsLogGroup</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
      * </p>
      * 
      * @param untagLogGroupRequest
@@ -1879,7 +1991,10 @@ public interface AWSLogsAsync extends AWSLogs {
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
-     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+     * To list the tags for a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
+     * >ListTagsLogGroup</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
      * </p>
      * 
      * @param untagLogGroupRequest

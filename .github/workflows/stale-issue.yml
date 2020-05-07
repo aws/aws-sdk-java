@@ -3,7 +3,7 @@ name: "Close stale issues"
 # Controls when the action will run.
 on:
   schedule:
-  - cron: "0/15 * * * *"
+  - cron: "0/30 * * * *"
 
 jobs:
   cleanup:
@@ -52,5 +52,5 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         loglevel: DEBUG
         # Set dry-run to true to not perform label or close actions.
-        dry-run: true
+        #dry-run: true
 

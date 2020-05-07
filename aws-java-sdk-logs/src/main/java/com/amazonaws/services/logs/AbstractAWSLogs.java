@@ -83,6 +83,11 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public DeleteQueryDefinitionResult deleteQueryDefinition(DeleteQueryDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +139,11 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public DescribeQueriesResult describeQueries(DescribeQueriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeQueryDefinitionsResult describeQueryDefinitions(DescribeQueryDefinitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +209,11 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public PutMetricFilterResult putMetricFilter(PutMetricFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutQueryDefinitionResult putQueryDefinition(PutQueryDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
