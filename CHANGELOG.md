@@ -1,3 +1,16 @@
+# __1.11.779__ __2020-05-08__
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - Documentation updates for resourcegroupstaggingapi
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Documentation updates for GuardDuty
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release adds a new parameter (EnableInterContainerTrafficEncryption) to CreateProcessingJob API to allow for enabling inter-container traffic encryption on processing jobs.
+
 # __1.11.778__ __2020-05-07__
 ## __AWS CodeBuild__
   - ### Features

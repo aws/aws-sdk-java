@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retention policy.
+ * The retention policy for data stored on an Amazon Elastic File System (EFS) volume.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetentionPolicy" target="_top">AWS API
@@ -30,18 +30,26 @@ public class RetentionPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS).
+     * The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.
+     * </p>
+     * <p>
+     * Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * </p>
      */
     private String homeEfsFileSystem;
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS).
+     * The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.
+     * </p>
+     * <p>
+     * Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * </p>
      * 
      * @param homeEfsFileSystem
-     *        The home Amazon Elastic File System (EFS).
+     *        The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
+     *        <p>
+     *        Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * @see RetentionType
      */
 
@@ -51,10 +59,15 @@ public class RetentionPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS).
+     * The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.
+     * </p>
+     * <p>
+     * Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * </p>
      * 
-     * @return The home Amazon Elastic File System (EFS).
+     * @return The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
+     *         <p>
+     *         Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * @see RetentionType
      */
 
@@ -64,11 +77,16 @@ public class RetentionPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS).
+     * The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.
+     * </p>
+     * <p>
+     * Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * </p>
      * 
      * @param homeEfsFileSystem
-     *        The home Amazon Elastic File System (EFS).
+     *        The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
+     *        <p>
+     *        Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionType
      */
@@ -80,11 +98,16 @@ public class RetentionPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS).
+     * The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.
+     * </p>
+     * <p>
+     * Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * </p>
      * 
      * @param homeEfsFileSystem
-     *        The home Amazon Elastic File System (EFS).
+     *        The default is <code>Retain</code>, which specifies to keep the data stored on the EFS volume.</p>
+     *        <p>
+     *        Specify <code>Delete</code> to delete the data stored on the EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RetentionType
      */

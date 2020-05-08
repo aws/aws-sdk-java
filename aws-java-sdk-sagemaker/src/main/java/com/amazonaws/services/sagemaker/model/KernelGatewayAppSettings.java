@@ -30,18 +30,19 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      */
     private ResourceSpec defaultResourceSpec;
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
      * @param defaultResourceSpec
-     *        The instance type and quantity.
+     *        The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
+     *        instance.
      */
 
     public void setDefaultResourceSpec(ResourceSpec defaultResourceSpec) {
@@ -50,10 +51,11 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
-     * @return The instance type and quantity.
+     * @return The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
+     *         instance.
      */
 
     public ResourceSpec getDefaultResourceSpec() {
@@ -62,11 +64,12 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
      * @param defaultResourceSpec
-     *        The instance type and quantity.
+     *        The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

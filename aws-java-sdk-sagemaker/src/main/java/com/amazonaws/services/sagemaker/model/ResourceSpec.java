@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The instance type and the Amazon Resource Name (ARN) of the image created on the instance. The ARN is stored as
- * metadata in Amazon SageMaker Studio notebooks.
+ * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance. The ARN is
+ * stored as metadata in Amazon SageMaker Studio notebooks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec" target="_top">AWS API
@@ -31,7 +31,7 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image created on the instance.
+     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      */
     private String sageMakerImageArn;
@@ -44,11 +44,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image created on the instance.
+     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
      * @param sageMakerImageArn
-     *        The Amazon Resource Name (ARN) of the image created on the instance.
+     *        The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      */
 
     public void setSageMakerImageArn(String sageMakerImageArn) {
@@ -57,10 +57,10 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image created on the instance.
+     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image created on the instance.
+     * @return The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      */
 
     public String getSageMakerImageArn() {
@@ -69,11 +69,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image created on the instance.
+     * The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
      * @param sageMakerImageArn
-     *        The Amazon Resource Name (ARN) of the image created on the instance.
+     *        The Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String domainId;
     /**
      * <p>
-     * The retention policy for this domain, which specifies which resources will be retained after the Domain is
+     * The retention policy for this domain, which specifies whether resources will be retained after the Domain is
      * deleted. By default, all resources are retained (not automatically deleted).
      * </p>
      */
@@ -81,13 +81,13 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The retention policy for this domain, which specifies which resources will be retained after the Domain is
+     * The retention policy for this domain, which specifies whether resources will be retained after the Domain is
      * deleted. By default, all resources are retained (not automatically deleted).
      * </p>
      * 
      * @param retentionPolicy
-     *        The retention policy for this domain, which specifies which resources will be retained after the Domain is
-     *        deleted. By default, all resources are retained (not automatically deleted).
+     *        The retention policy for this domain, which specifies whether resources will be retained after the Domain
+     *        is deleted. By default, all resources are retained (not automatically deleted).
      */
 
     public void setRetentionPolicy(RetentionPolicy retentionPolicy) {
@@ -96,11 +96,11 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The retention policy for this domain, which specifies which resources will be retained after the Domain is
+     * The retention policy for this domain, which specifies whether resources will be retained after the Domain is
      * deleted. By default, all resources are retained (not automatically deleted).
      * </p>
      * 
-     * @return The retention policy for this domain, which specifies which resources will be retained after the Domain
+     * @return The retention policy for this domain, which specifies whether resources will be retained after the Domain
      *         is deleted. By default, all resources are retained (not automatically deleted).
      */
 
@@ -110,13 +110,13 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The retention policy for this domain, which specifies which resources will be retained after the Domain is
+     * The retention policy for this domain, which specifies whether resources will be retained after the Domain is
      * deleted. By default, all resources are retained (not automatically deleted).
      * </p>
      * 
      * @param retentionPolicy
-     *        The retention policy for this domain, which specifies which resources will be retained after the Domain is
-     *        deleted. By default, all resources are retained (not automatically deleted).
+     *        The retention policy for this domain, which specifies whether resources will be retained after the Domain
+     *        is deleted. By default, all resources are retained (not automatically deleted).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

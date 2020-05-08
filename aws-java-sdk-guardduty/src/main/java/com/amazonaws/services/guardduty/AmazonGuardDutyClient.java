@@ -1256,7 +1256,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disables GuardDuty administrator permissions for an AWS account within the Organization.
+     * Disables an AWS account within the Organization as the GuardDuty delegated administrator.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -1432,7 +1432,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Enables GuardDuty administrator permissions for an AWS account within the organization.
+     * Enables an AWS account within the organization as the GuardDuty delegated administrator.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -2408,7 +2408,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the accounts configured as AWS Organization delegated administrators.
+     * Lists the accounts configured as GuardDuty delegated administrators.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest

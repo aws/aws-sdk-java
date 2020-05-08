@@ -43,7 +43,7 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
     private String userProfileName;
     /**
      * <p>
-     * The homa Amazon Elastic File System (EFS) Uid.
+     * The home Amazon Elastic File System (EFS) Uid.
      * </p>
      */
     private String homeEfsFileSystemUid;
@@ -212,11 +212,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The homa Amazon Elastic File System (EFS) Uid.
+     * The home Amazon Elastic File System (EFS) Uid.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The homa Amazon Elastic File System (EFS) Uid.
+     *        The home Amazon Elastic File System (EFS) Uid.
      */
 
     public void setHomeEfsFileSystemUid(String homeEfsFileSystemUid) {
@@ -225,10 +225,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The homa Amazon Elastic File System (EFS) Uid.
+     * The home Amazon Elastic File System (EFS) Uid.
      * </p>
      * 
-     * @return The homa Amazon Elastic File System (EFS) Uid.
+     * @return The home Amazon Elastic File System (EFS) Uid.
      */
 
     public String getHomeEfsFileSystemUid() {
@@ -237,11 +237,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The homa Amazon Elastic File System (EFS) Uid.
+     * The home Amazon Elastic File System (EFS) Uid.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The homa Amazon Elastic File System (EFS) Uid.
+     *        The home Amazon Elastic File System (EFS) Uid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

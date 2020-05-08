@@ -37,8 +37,8 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
-     * (key).
+     * One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The
+     * value can be empty or null.
      * </p>
      */
     private java.util.List<String> values;
@@ -91,12 +91,12 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
-     * (key).
+     * One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The
+     * value can be empty or null.
      * </p>
      * 
-     * @return The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
-     *         category (key).
+     * @return One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
+     *         (key). The value can be empty or null.
      */
 
     public java.util.List<String> getValues() {
@@ -105,13 +105,13 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
-     * (key).
+     * One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The
+     * value can be empty or null.
      * </p>
      * 
      * @param values
-     *        The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
-     *        category (key).
+     *        One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).
+     *        The value can be empty or null.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -125,8 +125,8 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
-     * (key).
+     * One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The
+     * value can be empty or null.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,8 +135,8 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
-     *        category (key).
+     *        One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).
+     *        The value can be empty or null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,13 +152,13 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
-     * (key).
+     * One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The
+     * value can be empty or null.
      * </p>
      * 
      * @param values
-     *        The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
-     *        category (key).
+     *        One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).
+     *        The value can be empty or null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -395,6 +395,11 @@
  * </li>
  * <li>
  * <p>
+ * AWS IoT Things Graph
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * AWS Key Management Service
  * </p>
  * </li>
@@ -520,6 +525,11 @@
  * </li>
  * <li>
  * <p>
+ * Amazon Simple Email Service (SES)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Amazon Simple Notification Service (SNS)
  * </p>
  * </li>
@@ -551,6 +561,11 @@
  * <li>
  * <p>
  * AWS Transfer for SFTP
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS WAF Regional
  * </p>
  * </li>
  * <li>

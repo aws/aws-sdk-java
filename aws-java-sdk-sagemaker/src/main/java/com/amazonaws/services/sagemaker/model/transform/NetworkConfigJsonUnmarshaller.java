@@ -48,6 +48,10 @@ public class NetworkConfigJsonUnmarshaller implements Unmarshaller<NetworkConfig
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("EnableInterContainerTrafficEncryption", targetDepth)) {
+                    context.nextToken();
+                    networkConfig.setEnableInterContainerTrafficEncryption(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("EnableNetworkIsolation", targetDepth)) {
                     context.nextToken();
                     networkConfig.setEnableNetworkIsolation(context.getUnmarshaller(Boolean.class).unmarshall(context));

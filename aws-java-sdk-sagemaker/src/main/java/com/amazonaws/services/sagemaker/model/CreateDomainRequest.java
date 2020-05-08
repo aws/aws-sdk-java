@@ -63,7 +63,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
      * </p>
      */
     private String homeEfsFileSystemKmsKeyId;
@@ -389,11 +390,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service encryption key ID.
+     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     *        supported.
      */
 
     public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
@@ -402,10 +405,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
      * </p>
      * 
-     * @return The AWS Key Management Service encryption key ID.
+     * @return The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is
+     *         not supported.
      */
 
     public String getHomeEfsFileSystemKmsKeyId() {
@@ -414,11 +419,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     * supported.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service encryption key ID.
+     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
+     *        supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

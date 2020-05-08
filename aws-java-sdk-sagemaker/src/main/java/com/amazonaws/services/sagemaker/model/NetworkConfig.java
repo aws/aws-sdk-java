@@ -31,12 +31,88 @@ public class NetworkConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt
+     * communications. Encryption provides greater security for distributed processing jobs, but the processing might
+     * take longer.
+     * </p>
+     */
+    private Boolean enableInterContainerTrafficEncryption;
+    /**
+     * <p>
      * Whether to allow inbound and outbound network calls to and from the containers used for the processing job.
      * </p>
      */
     private Boolean enableNetworkIsolation;
 
     private VpcConfig vpcConfig;
+
+    /**
+     * <p>
+     * Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt
+     * communications. Encryption provides greater security for distributed processing jobs, but the processing might
+     * take longer.
+     * </p>
+     * 
+     * @param enableInterContainerTrafficEncryption
+     *        Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to
+     *        encrypt communications. Encryption provides greater security for distributed processing jobs, but the
+     *        processing might take longer.
+     */
+
+    public void setEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
+        this.enableInterContainerTrafficEncryption = enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
+     * Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt
+     * communications. Encryption provides greater security for distributed processing jobs, but the processing might
+     * take longer.
+     * </p>
+     * 
+     * @return Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to
+     *         encrypt communications. Encryption provides greater security for distributed processing jobs, but the
+     *         processing might take longer.
+     */
+
+    public Boolean getEnableInterContainerTrafficEncryption() {
+        return this.enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
+     * Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt
+     * communications. Encryption provides greater security for distributed processing jobs, but the processing might
+     * take longer.
+     * </p>
+     * 
+     * @param enableInterContainerTrafficEncryption
+     *        Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to
+     *        encrypt communications. Encryption provides greater security for distributed processing jobs, but the
+     *        processing might take longer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkConfig withEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
+        setEnableInterContainerTrafficEncryption(enableInterContainerTrafficEncryption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to encrypt
+     * communications. Encryption provides greater security for distributed processing jobs, but the processing might
+     * take longer.
+     * </p>
+     * 
+     * @return Whether to encrypt all communications between distributed processing jobs. Choose <code>True</code> to
+     *         encrypt communications. Encryption provides greater security for distributed processing jobs, but the
+     *         processing might take longer.
+     */
+
+    public Boolean isEnableInterContainerTrafficEncryption() {
+        return this.enableInterContainerTrafficEncryption;
+    }
 
     /**
      * <p>
@@ -132,6 +208,8 @@ public class NetworkConfig implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEnableInterContainerTrafficEncryption() != null)
+            sb.append("EnableInterContainerTrafficEncryption: ").append(getEnableInterContainerTrafficEncryption()).append(",");
         if (getEnableNetworkIsolation() != null)
             sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
         if (getVpcConfig() != null)
@@ -150,6 +228,11 @@ public class NetworkConfig implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof NetworkConfig == false)
             return false;
         NetworkConfig other = (NetworkConfig) obj;
+        if (other.getEnableInterContainerTrafficEncryption() == null ^ this.getEnableInterContainerTrafficEncryption() == null)
+            return false;
+        if (other.getEnableInterContainerTrafficEncryption() != null
+                && other.getEnableInterContainerTrafficEncryption().equals(this.getEnableInterContainerTrafficEncryption()) == false)
+            return false;
         if (other.getEnableNetworkIsolation() == null ^ this.getEnableNetworkIsolation() == null)
             return false;
         if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
@@ -166,6 +249,7 @@ public class NetworkConfig implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEnableInterContainerTrafficEncryption() == null) ? 0 : getEnableInterContainerTrafficEncryption().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;

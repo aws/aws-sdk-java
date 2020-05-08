@@ -342,11 +342,12 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a running App for the specified UserProfile. Supported Apps are JupyterServer and KernelGateway. This
-     * operation is automatically invoked by Amazon SageMaker Amazon SageMaker Studio (Studio) upon access to the
-     * associated Studio Domain, and when new kernel configurations are selected by the user. A user may have multiple
-     * Apps active simultaneously. Apps will automatically terminate and be deleted when stopped from within Studio, or
-     * when the DeleteApp API is manually called. UserProfiles are limited to 5 concurrently running Apps at a time.
+     * Creates a running App for the specified UserProfile. Supported Apps are <code>JupyterServer</code>,
+     * <code>KernelGateway</code>, and <code>TensorBoard</code>. This operation is automatically invoked by Amazon
+     * SageMaker Studio upon access to the associated Studio Domain, and when new kernel configurations are selected by
+     * the user. A user may have multiple Apps active simultaneously. Apps will automatically terminate and be deleted
+     * when stopped from within Studio, or when the DeleteApp API is manually called. UserProfiles are limited to 5
+     * concurrently running Apps at a time.
      * </p>
      * 
      * @param createAppRequest
@@ -632,12 +633,12 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a Domain for Amazon SageMaker Amazon SageMaker Studio (Studio), which can be accessed by end-users in a
-     * web browser. A Domain has an associated directory, list of authorized users, and a variety of security,
-     * application, policies, and Amazon Virtual Private Cloud configurations. An AWS account is limited to one Domain,
-     * per region. Users within a domain can share notebook files and other artifacts with each other. When a Domain is
-     * created, an Amazon Elastic File System (EFS) is also created for use by all of the users within the Domain. Each
-     * user receives a private home directory within the EFS for notebooks, Git repositories, and data files.
+     * Creates a Domain for Amazon SageMaker Studio, which can be accessed by end-users in a web browser. A Domain has
+     * an associated directory, list of authorized users, and a variety of security, application, policies, and Amazon
+     * Virtual Private Cloud configurations. An AWS account is limited to one Domain, per region. Users within a domain
+     * can share notebook files and other artifacts with each other. When a Domain is created, an Amazon Elastic File
+     * System (EFS) is also created for use by all of the users within the Domain. Each user receives a private home
+     * directory within the EFS for notebooks, Git repositories, and data files.
      * </p>
      * 
      * @param createDomainRequest
@@ -1619,9 +1620,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
-     * automatically signed in to Amazon SageMaker Amazon SageMaker Studio (Studio), and granted access to all of the
-     * Apps and files associated with that Amazon Elastic File System (EFS). This operation can only be called when
-     * AuthMode equals IAM.
+     * automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated
+     * with that Amazon Elastic File System (EFS). This operation can only be called when AuthMode equals IAM.
      * </p>
      * 
      * @param createPresignedDomainUrlRequest
@@ -2189,11 +2189,14 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a new user profile. A user profile represents a single user within a Domain, and is the main way to
-     * reference a "person" for the purposes of sharing, reporting and other user-oriented features. This entity is
-     * created during on-boarding. If an administrator invites a person by email or imports them from SSO, a new
-     * UserProfile is automatically created. This entity is the primary holder of settings for an individual user and
-     * has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * Creates a user profile. A user profile represents a single user within a Domain, and is the main way to reference
+     * a "person" for the purposes of sharing, reporting and other user-oriented features. This entity is created during
+     * on-boarding to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from SSO, a
+     * UserProfile is automatically created.
+     * </p>
+     * <p>
+     * This entity is the primary holder of settings for an individual user and, through the domain, has a reference to
+     * the user's private Amazon Elastic File System (EFS) home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -2476,9 +2479,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Used to delete a domain. If you on-boarded with IAM mode, you will need to delete your domain to on-board again
-     * using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including
-     * data, notebooks, and other artifacts.
+     * Used to delete a domain. Use with caution. If <code>RetentionPolicy</code> is set to <code>Delete</code>, all of
+     * the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts.
      * </p>
      * 
      * @param deleteDomainRequest

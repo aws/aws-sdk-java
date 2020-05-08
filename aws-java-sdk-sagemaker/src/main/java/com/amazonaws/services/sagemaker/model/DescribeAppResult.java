@@ -85,7 +85,7 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String failureReason;
     /**
      * <p>
-     * The instance type and quantity.
+     * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      */
     private ResourceSpec resourceSpec;
@@ -530,11 +530,11 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
      * @param resourceSpec
-     *        The instance type and quantity.
+     *        The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      */
 
     public void setResourceSpec(ResourceSpec resourceSpec) {
@@ -543,10 +543,10 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
-     * @return The instance type and quantity.
+     * @return The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      */
 
     public ResourceSpec getResourceSpec() {
@@ -555,11 +555,11 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The instance type and quantity.
+     * The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * </p>
      * 
      * @param resourceSpec
-     *        The instance type and quantity.
+     *        The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
