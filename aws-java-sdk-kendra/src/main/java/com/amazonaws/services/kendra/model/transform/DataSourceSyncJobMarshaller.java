@@ -41,6 +41,8 @@ public class DataSourceSyncJobMarshaller {
             .marshallLocationName("ErrorCode").build();
     private static final MarshallingInfo<String> DATASOURCEERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceErrorCode").build();
+    private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Metrics").build();
 
     private static final DataSourceSyncJobMarshaller instance = new DataSourceSyncJobMarshaller();
 
@@ -65,6 +67,7 @@ public class DataSourceSyncJobMarshaller {
             protocolMarshaller.marshall(dataSourceSyncJob.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJob.getErrorCode(), ERRORCODE_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJob.getDataSourceErrorCode(), DATASOURCEERRORCODE_BINDING);
+            protocolMarshaller.marshall(dataSourceSyncJob.getMetrics(), METRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

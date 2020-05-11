@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ProviderType {
 
     CodeCommit("CodeCommit"),
-    GitHub("GitHub");
+    GitHub("GitHub"),
+    Bitbucket("Bitbucket");
 
     private String value;
 

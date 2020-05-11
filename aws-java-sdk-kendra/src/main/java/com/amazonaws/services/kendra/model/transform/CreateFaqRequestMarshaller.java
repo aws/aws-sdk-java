@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kendra.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class CreateFaqRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Path").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateFaqRequestMarshaller instance = new CreateFaqRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class CreateFaqRequestMarshaller {
             protocolMarshaller.marshall(createFaqRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createFaqRequest.getS3Path(), S3PATH_BINDING);
             protocolMarshaller.marshall(createFaqRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createFaqRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

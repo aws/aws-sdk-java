@@ -29,6 +29,8 @@ public class TextDocumentStatisticsMarshaller {
 
     private static final MarshallingInfo<Integer> INDEXEDTEXTDOCUMENTSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IndexedTextDocumentsCount").build();
+    private static final MarshallingInfo<Long> INDEXEDTEXTBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IndexedTextBytes").build();
 
     private static final TextDocumentStatisticsMarshaller instance = new TextDocumentStatisticsMarshaller();
 
@@ -47,6 +49,7 @@ public class TextDocumentStatisticsMarshaller {
 
         try {
             protocolMarshaller.marshall(textDocumentStatistics.getIndexedTextDocumentsCount(), INDEXEDTEXTDOCUMENTSCOUNT_BINDING);
+            protocolMarshaller.marshall(textDocumentStatistics.getIndexedTextBytes(), INDEXEDTEXTBYTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

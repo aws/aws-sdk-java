@@ -60,6 +60,18 @@ public class DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<Dat
                     context.nextToken();
                     dataSourceConfiguration.setDatabaseConfiguration(DatabaseConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SalesforceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataSourceConfiguration.setSalesforceConfiguration(SalesforceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OneDriveConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataSourceConfiguration.setOneDriveConfiguration(OneDriveConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ServiceNowConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataSourceConfiguration.setServiceNowConfiguration(ServiceNowConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

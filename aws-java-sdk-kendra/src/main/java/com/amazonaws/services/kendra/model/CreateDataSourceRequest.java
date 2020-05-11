@@ -71,6 +71,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
+     * resources and to control access to resources.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -397,6 +404,84 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
+     * resources and to control access to resources.
+     * </p>
+     * 
+     * @return A list of key-value pairs that identify the data source. You can use the tags to identify and organize
+     *         your resources and to control access to resources.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
+     * resources and to control access to resources.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs that identify the data source. You can use the tags to identify and organize
+     *        your resources and to control access to resources.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
+     * resources and to control access to resources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs that identify the data source. You can use the tags to identify and organize
+     *        your resources and to control access to resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that identify the data source. You can use the tags to identify and organize your
+     * resources and to control access to resources.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs that identify the data source. You can use the tags to identify and organize
+     *        your resources and to control access to resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -421,7 +506,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -464,6 +551,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +570,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -52,6 +52,10 @@ public class TextDocumentStatisticsJsonUnmarshaller implements Unmarshaller<Text
                     context.nextToken();
                     textDocumentStatistics.setIndexedTextDocumentsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("IndexedTextBytes", targetDepth)) {
+                    context.nextToken();
+                    textDocumentStatistics.setIndexedTextBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

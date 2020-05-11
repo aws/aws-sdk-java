@@ -56,6 +56,10 @@ public class IndexConfigurationSummaryJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     indexConfigurationSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Edition", targetDepth)) {
+                    context.nextToken();
+                    indexConfigurationSummary.setEdition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     indexConfigurationSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

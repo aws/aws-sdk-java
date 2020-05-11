@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kendra.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateIndexRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> EDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Edition").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -40,6 +43,8 @@ public class CreateIndexRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateIndexRequestMarshaller instance = new CreateIndexRequestMarshaller();
 
@@ -58,10 +63,12 @@ public class CreateIndexRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createIndexRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getEdition(), EDITION_BINDING);
             protocolMarshaller.marshall(createIndexRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createIndexRequest.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createIndexRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createIndexRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

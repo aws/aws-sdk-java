@@ -290,7 +290,16 @@ public enum InstanceType {
     Inf1Xlarge("inf1.xlarge"),
     Inf12xlarge("inf1.2xlarge"),
     Inf16xlarge("inf1.6xlarge"),
-    Inf124xlarge("inf1.24xlarge");
+    Inf124xlarge("inf1.24xlarge"),
+    M6gMetal("m6g.metal"),
+    M6gMedium("m6g.medium"),
+    M6gLarge("m6g.large"),
+    M6gXlarge("m6g.xlarge"),
+    M6g2xlarge("m6g.2xlarge"),
+    M6g4xlarge("m6g.4xlarge"),
+    M6g8xlarge("m6g.8xlarge"),
+    M6g12xlarge("m6g.12xlarge"),
+    M6g16xlarge("m6g.16xlarge");
 
     private String value;
 

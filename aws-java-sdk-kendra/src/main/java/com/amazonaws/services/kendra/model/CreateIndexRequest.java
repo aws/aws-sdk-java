@@ -33,6 +33,14 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
+     * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
+     * Once you set the edition for an index, it can't be changed.
+     * </p>
+     */
+    private String edition;
+    /**
+     * <p>
      * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
      * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
      * bucket.
@@ -59,6 +67,13 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
+     * and to control access to resources.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -97,6 +112,81 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public CreateIndexRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
+     * Once you set the edition for an index, it can't be changed.
+     * </p>
+     * 
+     * @param edition
+     *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
+     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     *        databases. Once you set the edition for an index, it can't be changed.
+     * @see IndexEdition
+     */
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
+     * Once you set the edition for an index, it can't be changed.
+     * </p>
+     * 
+     * @return The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes
+     *         intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
+     *         production databases. Once you set the edition for an index, it can't be changed.
+     * @see IndexEdition
+     */
+
+    public String getEdition() {
+        return this.edition;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
+     * Once you set the edition for an index, it can't be changed.
+     * </p>
+     * 
+     * @param edition
+     *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
+     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     *        databases. Once you set the edition for an index, it can't be changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexEdition
+     */
+
+    public CreateIndexRequest withEdition(String edition) {
+        setEdition(edition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for
+     * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
+     * Once you set the edition for an index, it can't be changed.
+     * </p>
+     * 
+     * @param edition
+     *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
+     *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     *        databases. Once you set the edition for an index, it can't be changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexEdition
+     */
+
+    public CreateIndexRequest withEdition(IndexEdition edition) {
+        this.edition = edition.toString();
         return this;
     }
 
@@ -285,6 +375,84 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
+     * and to control access to resources.
+     * </p>
+     * 
+     * @return A list of key-value pairs that identify the index. You can use the tags to identify and organize your
+     *         resources and to control access to resources.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
+     * and to control access to resources.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs that identify the index. You can use the tags to identify and organize your
+     *        resources and to control access to resources.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
+     * and to control access to resources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs that identify the index. You can use the tags to identify and organize your
+     *        resources and to control access to resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources
+     * and to control access to resources.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs that identify the index. You can use the tags to identify and organize your
+     *        resources and to control access to resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -298,6 +466,8 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getEdition() != null)
+            sb.append("Edition: ").append(getEdition()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
@@ -305,7 +475,9 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -324,6 +496,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getEdition() == null ^ this.getEdition() == null)
+            return false;
+        if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -341,6 +517,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -350,10 +530,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

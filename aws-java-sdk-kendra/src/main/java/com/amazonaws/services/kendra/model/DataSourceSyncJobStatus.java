@@ -25,7 +25,8 @@ public enum DataSourceSyncJobStatus {
     SYNCING("SYNCING"),
     INCOMPLETE("INCOMPLETE"),
     STOPPING("STOPPING"),
-    ABORTED("ABORTED");
+    ABORTED("ABORTED"),
+    SYNCING_INDEXING("SYNCING_INDEXING");
 
     private String value;
 

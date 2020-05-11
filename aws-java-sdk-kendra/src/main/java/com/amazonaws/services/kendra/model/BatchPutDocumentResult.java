@@ -29,7 +29,9 @@ public class BatchPutDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * document contains an error message that indicates why the document couldn't be added to the index.
      * </p>
      * <p>
-     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon
+     * Kendra with Amazon CloudWatch Logs</a>
      * </p>
      */
     private java.util.List<BatchPutDocumentResponseFailedDocument> failedDocuments;
@@ -40,13 +42,18 @@ public class BatchPutDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * document contains an error message that indicates why the document couldn't be added to the index.
      * </p>
      * <p>
-     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon
+     * Kendra with Amazon CloudWatch Logs</a>
      * </p>
      * 
      * @return A list of documents that were not added to the index because the document failed a validation check. Each
      *         document contains an error message that indicates why the document couldn't be added to the index.</p>
      *         <p>
-     *         If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     *         If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with
+     *         Amazon CloudWatch Logs</a>
      */
 
     public java.util.List<BatchPutDocumentResponseFailedDocument> getFailedDocuments() {
@@ -59,14 +66,19 @@ public class BatchPutDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * document contains an error message that indicates why the document couldn't be added to the index.
      * </p>
      * <p>
-     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon
+     * Kendra with Amazon CloudWatch Logs</a>
      * </p>
      * 
      * @param failedDocuments
      *        A list of documents that were not added to the index because the document failed a validation check. Each
      *        document contains an error message that indicates why the document couldn't be added to the index.</p>
      *        <p>
-     *        If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     *        If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with
+     *        Amazon CloudWatch Logs</a>
      */
 
     public void setFailedDocuments(java.util.Collection<BatchPutDocumentResponseFailedDocument> failedDocuments) {
@@ -84,7 +96,9 @@ public class BatchPutDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * document contains an error message that indicates why the document couldn't be added to the index.
      * </p>
      * <p>
-     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon
+     * Kendra with Amazon CloudWatch Logs</a>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,7 +110,10 @@ public class BatchPutDocumentResult extends com.amazonaws.AmazonWebServiceResult
      *        A list of documents that were not added to the index because the document failed a validation check. Each
      *        document contains an error message that indicates why the document couldn't be added to the index.</p>
      *        <p>
-     *        If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     *        If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with
+     *        Amazon CloudWatch Logs</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,14 +133,19 @@ public class BatchPutDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * document contains an error message that indicates why the document couldn't be added to the index.
      * </p>
      * <p>
-     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     * If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For more
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon
+     * Kendra with Amazon CloudWatch Logs</a>
      * </p>
      * 
      * @param failedDocuments
      *        A list of documents that were not added to the index because the document failed a validation check. Each
      *        document contains an error message that indicates why the document couldn't be added to the index.</p>
      *        <p>
-     *        If there was an error adding a document to an index the error is reported in your AWS CloudWatch log.
+     *        If there was an error adding a document to an index the error is reported in your AWS CloudWatch log. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with
+     *        Amazon CloudWatch Logs</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

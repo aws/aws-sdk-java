@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * An attribute returned from an index query.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AdditionalResultAttribute" target="_top">AWS
  *      API Documentation</a>
@@ -26,17 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AdditionalResultAttribute implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The key that identifies the attribute.
+     * </p>
+     */
     private String key;
-    /** <p/> */
+    /**
+     * <p>
+     * The data type of the <code>Value</code> property.
+     * </p>
+     */
     private String valueType;
-    /** <p/> */
+    /**
+     * <p>
+     * An object that contains the attribute value.
+     * </p>
+     */
     private AdditionalResultAttributeValue value;
 
     /**
-     * <p/>
+     * <p>
+     * The key that identifies the attribute.
+     * </p>
      * 
      * @param key
+     *        The key that identifies the attribute.
      */
 
     public void setKey(String key) {
@@ -44,9 +61,11 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The key that identifies the attribute.
+     * </p>
      * 
-     * @return
+     * @return The key that identifies the attribute.
      */
 
     public String getKey() {
@@ -54,9 +73,12 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The key that identifies the attribute.
+     * </p>
      * 
      * @param key
+     *        The key that identifies the attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +88,12 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The data type of the <code>Value</code> property.
+     * </p>
      * 
      * @param valueType
+     *        The data type of the <code>Value</code> property.
      * @see AdditionalResultAttributeValueType
      */
 
@@ -77,9 +102,11 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The data type of the <code>Value</code> property.
+     * </p>
      * 
-     * @return
+     * @return The data type of the <code>Value</code> property.
      * @see AdditionalResultAttributeValueType
      */
 
@@ -88,9 +115,12 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The data type of the <code>Value</code> property.
+     * </p>
      * 
      * @param valueType
+     *        The data type of the <code>Value</code> property.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalResultAttributeValueType
      */
@@ -101,9 +131,12 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * The data type of the <code>Value</code> property.
+     * </p>
      * 
      * @param valueType
+     *        The data type of the <code>Value</code> property.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalResultAttributeValueType
      */
@@ -114,9 +147,12 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * An object that contains the attribute value.
+     * </p>
      * 
      * @param value
+     *        An object that contains the attribute value.
      */
 
     public void setValue(AdditionalResultAttributeValue value) {
@@ -124,9 +160,11 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * An object that contains the attribute value.
+     * </p>
      * 
-     * @return
+     * @return An object that contains the attribute value.
      */
 
     public AdditionalResultAttributeValue getValue() {
@@ -134,9 +172,12 @@ public class AdditionalResultAttribute implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p/>
+     * <p>
+     * An object that contains the attribute value.
+     * </p>
      * 
      * @param value
+     *        An object that contains the attribute value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

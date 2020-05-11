@@ -34,6 +34,12 @@ public class TextDocumentStatistics implements Serializable, Cloneable, Structur
      * </p>
      */
     private Integer indexedTextDocumentsCount;
+    /**
+     * <p>
+     * The total size, in bytes, of the indexed documents.
+     * </p>
+     */
+    private Long indexedTextBytes;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class TextDocumentStatistics implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The total size, in bytes, of the indexed documents.
+     * </p>
+     * 
+     * @param indexedTextBytes
+     *        The total size, in bytes, of the indexed documents.
+     */
+
+    public void setIndexedTextBytes(Long indexedTextBytes) {
+        this.indexedTextBytes = indexedTextBytes;
+    }
+
+    /**
+     * <p>
+     * The total size, in bytes, of the indexed documents.
+     * </p>
+     * 
+     * @return The total size, in bytes, of the indexed documents.
+     */
+
+    public Long getIndexedTextBytes() {
+        return this.indexedTextBytes;
+    }
+
+    /**
+     * <p>
+     * The total size, in bytes, of the indexed documents.
+     * </p>
+     * 
+     * @param indexedTextBytes
+     *        The total size, in bytes, of the indexed documents.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TextDocumentStatistics withIndexedTextBytes(Long indexedTextBytes) {
+        setIndexedTextBytes(indexedTextBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class TextDocumentStatistics implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexedTextDocumentsCount() != null)
-            sb.append("IndexedTextDocumentsCount: ").append(getIndexedTextDocumentsCount());
+            sb.append("IndexedTextDocumentsCount: ").append(getIndexedTextDocumentsCount()).append(",");
+        if (getIndexedTextBytes() != null)
+            sb.append("IndexedTextBytes: ").append(getIndexedTextBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class TextDocumentStatistics implements Serializable, Cloneable, Structur
             return false;
         if (other.getIndexedTextDocumentsCount() != null && other.getIndexedTextDocumentsCount().equals(this.getIndexedTextDocumentsCount()) == false)
             return false;
+        if (other.getIndexedTextBytes() == null ^ this.getIndexedTextBytes() == null)
+            return false;
+        if (other.getIndexedTextBytes() != null && other.getIndexedTextBytes().equals(this.getIndexedTextBytes()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class TextDocumentStatistics implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIndexedTextDocumentsCount() == null) ? 0 : getIndexedTextDocumentsCount().hashCode());
+        hashCode = prime * hashCode + ((getIndexedTextBytes() == null) ? 0 : getIndexedTextBytes().hashCode());
         return hashCode;
     }
 

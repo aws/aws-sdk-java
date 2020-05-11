@@ -37,6 +37,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String id;
     /**
      * <p>
+     * The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * </p>
+     */
+    private String edition;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon
      * Cloudwatch logs.
      * </p>
@@ -94,6 +100,14 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
+     * that the index is using the default capacity for the index.
+     * </p>
+     */
+    private CapacityUnitsConfiguration capacityUnits;
 
     /**
      * <p>
@@ -172,6 +186,65 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeIndexResult withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * </p>
+     * 
+     * @param edition
+     *        The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * @see IndexEdition
+     */
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * </p>
+     * 
+     * @return The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * @see IndexEdition
+     */
+
+    public String getEdition() {
+        return this.edition;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * </p>
+     * 
+     * @param edition
+     *        The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexEdition
+     */
+
+    public DescribeIndexResult withEdition(String edition) {
+        setEdition(edition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * </p>
+     * 
+     * @param edition
+     *        The Amazon Kendra edition used for the index. You decide the edition when you create the index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexEdition
+     */
+
+    public DescribeIndexResult withEdition(IndexEdition edition) {
+        this.edition = edition.toString();
         return this;
     }
 
@@ -622,6 +695,58 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
+     * that the index is using the default capacity for the index.
+     * </p>
+     * 
+     * @param capacityUnits
+     *        For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *        application. This contains the capacity units used for the index. A 0 for the query capacity or the
+     *        storage capacity indicates that the index is using the default capacity for the index.
+     */
+
+    public void setCapacityUnits(CapacityUnitsConfiguration capacityUnits) {
+        this.capacityUnits = capacityUnits;
+    }
+
+    /**
+     * <p>
+     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
+     * that the index is using the default capacity for the index.
+     * </p>
+     * 
+     * @return For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *         application. This contains the capacity units used for the index. A 0 for the query capacity or the
+     *         storage capacity indicates that the index is using the default capacity for the index.
+     */
+
+    public CapacityUnitsConfiguration getCapacityUnits() {
+        return this.capacityUnits;
+    }
+
+    /**
+     * <p>
+     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
+     * that the index is using the default capacity for the index.
+     * </p>
+     * 
+     * @param capacityUnits
+     *        For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *        application. This contains the capacity units used for the index. A 0 for the query capacity or the
+     *        storage capacity indicates that the index is using the default capacity for the index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeIndexResult withCapacityUnits(CapacityUnitsConfiguration capacityUnits) {
+        setCapacityUnits(capacityUnits);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -637,6 +762,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("Name: ").append(getName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getEdition() != null)
+            sb.append("Edition: ").append(getEdition()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
@@ -654,7 +781,9 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getIndexStatistics() != null)
             sb.append("IndexStatistics: ").append(getIndexStatistics()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getCapacityUnits() != null)
+            sb.append("CapacityUnits: ").append(getCapacityUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -676,6 +805,10 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getEdition() == null ^ this.getEdition() == null)
+            return false;
+        if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
@@ -715,6 +848,10 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getCapacityUnits() == null ^ this.getCapacityUnits() == null)
+            return false;
+        if (other.getCapacityUnits() != null && other.getCapacityUnits().equals(this.getCapacityUnits()) == false)
+            return false;
         return true;
     }
 
@@ -725,6 +862,7 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -734,6 +872,7 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getDocumentMetadataConfigurations() == null) ? 0 : getDocumentMetadataConfigurations().hashCode());
         hashCode = prime * hashCode + ((getIndexStatistics() == null) ? 0 : getIndexStatistics().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getCapacityUnits() == null) ? 0 : getCapacityUnits().hashCode());
         return hashCode;
     }
 

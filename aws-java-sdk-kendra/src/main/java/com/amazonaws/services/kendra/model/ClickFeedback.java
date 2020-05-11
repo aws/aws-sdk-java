@@ -37,7 +37,7 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
     private String resultId;
     /**
      * <p>
-     * The Unix timestamp of the data and time that the result was clicked.
+     * The Unix timestamp of the date and time that the result was clicked.
      * </p>
      */
     private java.util.Date clickTime;
@@ -84,11 +84,11 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp of the data and time that the result was clicked.
+     * The Unix timestamp of the date and time that the result was clicked.
      * </p>
      * 
      * @param clickTime
-     *        The Unix timestamp of the data and time that the result was clicked.
+     *        The Unix timestamp of the date and time that the result was clicked.
      */
 
     public void setClickTime(java.util.Date clickTime) {
@@ -97,10 +97,10 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp of the data and time that the result was clicked.
+     * The Unix timestamp of the date and time that the result was clicked.
      * </p>
      * 
-     * @return The Unix timestamp of the data and time that the result was clicked.
+     * @return The Unix timestamp of the date and time that the result was clicked.
      */
 
     public java.util.Date getClickTime() {
@@ -109,11 +109,11 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp of the data and time that the result was clicked.
+     * The Unix timestamp of the date and time that the result was clicked.
      * </p>
      * 
      * @param clickTime
-     *        The Unix timestamp of the data and time that the result was clicked.
+     *        The Unix timestamp of the date and time that the result was clicked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

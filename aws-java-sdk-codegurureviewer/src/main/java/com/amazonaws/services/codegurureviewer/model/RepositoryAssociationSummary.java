@@ -36,6 +36,12 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
     private String associationArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * </p>
+     */
+    private String connectionArn;
+    /**
+     * <p>
      * The time, in milliseconds since the epoch, since the repository association was last updated.
      * </p>
      */
@@ -134,6 +140,46 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
 
     public RepositoryAssociationSummary withAssociationArn(String associationArn) {
         setAssociationArn(associationArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * </p>
+     * 
+     * @param connectionArn
+     *        The Amazon Resource Name (ARN) identifying the repository connection.
+     */
+
+    public void setConnectionArn(String connectionArn) {
+        this.connectionArn = connectionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) identifying the repository connection.
+     */
+
+    public String getConnectionArn() {
+        return this.connectionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * </p>
+     * 
+     * @param connectionArn
+     *        The Amazon Resource Name (ARN) identifying the repository connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryAssociationSummary withConnectionArn(String connectionArn) {
+        setConnectionArn(connectionArn);
         return this;
     }
 
@@ -633,6 +679,8 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
         sb.append("{");
         if (getAssociationArn() != null)
             sb.append("AssociationArn: ").append(getAssociationArn()).append(",");
+        if (getConnectionArn() != null)
+            sb.append("ConnectionArn: ").append(getConnectionArn()).append(",");
         if (getLastUpdatedTimeStamp() != null)
             sb.append("LastUpdatedTimeStamp: ").append(getLastUpdatedTimeStamp()).append(",");
         if (getAssociationId() != null)
@@ -662,6 +710,10 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
         if (other.getAssociationArn() == null ^ this.getAssociationArn() == null)
             return false;
         if (other.getAssociationArn() != null && other.getAssociationArn().equals(this.getAssociationArn()) == false)
+            return false;
+        if (other.getConnectionArn() == null ^ this.getConnectionArn() == null)
+            return false;
+        if (other.getConnectionArn() != null && other.getConnectionArn().equals(this.getConnectionArn()) == false)
             return false;
         if (other.getLastUpdatedTimeStamp() == null ^ this.getLastUpdatedTimeStamp() == null)
             return false;
@@ -696,6 +748,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAssociationArn() == null) ? 0 : getAssociationArn().hashCode());
+        hashCode = prime * hashCode + ((getConnectionArn() == null) ? 0 : getConnectionArn().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTimeStamp() == null) ? 0 : getLastUpdatedTimeStamp().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

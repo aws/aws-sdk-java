@@ -34,6 +34,12 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CodeCommitRepository codeCommit;
+    /**
+     * <p>
+     * Information about a Bitbucket Cloud repository.
+     * </p>
+     */
+    private ThirdPartySourceRepository bitbucket;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about a Bitbucket Cloud repository.
+     * </p>
+     * 
+     * @param bitbucket
+     *        Information about a Bitbucket Cloud repository.
+     */
+
+    public void setBitbucket(ThirdPartySourceRepository bitbucket) {
+        this.bitbucket = bitbucket;
+    }
+
+    /**
+     * <p>
+     * Information about a Bitbucket Cloud repository.
+     * </p>
+     * 
+     * @return Information about a Bitbucket Cloud repository.
+     */
+
+    public ThirdPartySourceRepository getBitbucket() {
+        return this.bitbucket;
+    }
+
+    /**
+     * <p>
+     * Information about a Bitbucket Cloud repository.
+     * </p>
+     * 
+     * @param bitbucket
+     *        Information about a Bitbucket Cloud repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Repository withBitbucket(ThirdPartySourceRepository bitbucket) {
+        setBitbucket(bitbucket);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCodeCommit() != null)
-            sb.append("CodeCommit: ").append(getCodeCommit());
+            sb.append("CodeCommit: ").append(getCodeCommit()).append(",");
+        if (getBitbucket() != null)
+            sb.append("Bitbucket: ").append(getBitbucket());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCodeCommit() != null && other.getCodeCommit().equals(this.getCodeCommit()) == false)
             return false;
+        if (other.getBitbucket() == null ^ this.getBitbucket() == null)
+            return false;
+        if (other.getBitbucket() != null && other.getBitbucket().equals(this.getBitbucket()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCodeCommit() == null) ? 0 : getCodeCommit().hashCode());
+        hashCode = prime * hashCode + ((getBitbucket() == null) ? 0 : getBitbucket().hashCode());
         return hashCode;
     }
 

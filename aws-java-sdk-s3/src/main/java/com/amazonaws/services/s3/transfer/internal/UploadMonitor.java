@@ -16,27 +16,24 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicReference;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.PauseResult;
 import com.amazonaws.services.s3.transfer.PauseStatus;
 import com.amazonaws.services.s3.transfer.PersistableUpload;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManager;
+import com.amazonaws.services.s3.transfer.internal.future.CompletedFuture;
+import com.amazonaws.services.s3.transfer.internal.future.FailedFuture;
+import com.amazonaws.services.s3.transfer.internal.future.DelegatingFuture;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 /**
  * Manages an upload by periodically checking to see if the upload is done, and
@@ -45,9 +42,7 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
  * Future object, clients must call {@link UploadMonitor#isDone()} and
  * {@link UploadMonitor#getFuture()}
  */
-public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
-
-
+public class UploadMonitor implements Callable<Void>, TransferMonitor {
     private final AmazonS3 s3;
     private final PutObjectRequest origReq;
     private final ProgressListenerChain listener;
@@ -55,32 +50,15 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     private final UploadImpl transfer;
     private final ExecutorService threadPool;
 
-    /*
-     * Futures of threads that upload the parts.
-     */
-    private final List<Future<PartETag>> futures = Collections
-            .synchronizedList(new ArrayList<Future<PartETag>>());
-
-    /*
-     * State for clients wishing to poll for completion
-     */
-    private boolean isUploadDone = false;
-    private AtomicReference<Future<UploadResult>> futureReference = new AtomicReference<Future<UploadResult>>(null);
+    private final DelegatingFuture<UploadResult> resultFuture = new DelegatingFuture<UploadResult>();
+    private final DelegatingFuture<Void> initiateUploadFuture = new DelegatingFuture<Void>();
 
     public Future<UploadResult> getFuture() {
-        return futureReference.get();
-    }
-
-    private synchronized void cancelFuture() {
-        futureReference.get().cancel(true);
+        return resultFuture;
     }
 
     public synchronized boolean isDone() {
-        return isUploadDone;
-    }
-
-    private synchronized void markAllDone() {
-        isUploadDone = true;
+        return resultFuture.isDone();
     }
 
     /**
@@ -110,25 +88,18 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
             UploadCallable multipartUploadCallable,
             PutObjectRequest putObjectRequest,
             ProgressListenerChain progressListenerChain) {
-
         UploadMonitor uploadMonitor = new UploadMonitor(manager, transfer,
                 threadPool, multipartUploadCallable, putObjectRequest,
                 progressListenerChain);
-        Future<UploadResult> thisFuture = threadPool.submit(uploadMonitor);
-        // Use an atomic compareAndSet to prevent a possible race between the
-        // setting of the UploadMonitor's futureReference, and setting the
-        // CompleteMultipartUpload's futureReference within the call() method.
-        // We only want to set the futureReference to UploadMonitor's futureReference if the
-        // current value is null, otherwise the futureReference that's set is
-        // CompleteMultipartUpload's which is ultimately what we want.
-        uploadMonitor.futureReference.compareAndSet(null, thisFuture);
+
+        uploadMonitor.initiateUploadFuture.setDelegate(threadPool.submit(uploadMonitor));
+
         return uploadMonitor;
     }
 
     private UploadMonitor(TransferManager manager, UploadImpl transfer, ExecutorService threadPool,
             UploadCallable multipartUploadCallable, PutObjectRequest putObjectRequest,
             ProgressListenerChain progressListenerChain) {
-
         this.s3 = manager.getAmazonS3Client();
         this.multipartUploadCallable = multipartUploadCallable;
         this.origReq = putObjectRequest;
@@ -137,38 +108,43 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.threadPool = threadPool;
     }
 
+
     @Override
-    public UploadResult call() throws Exception {
+    public Void call() {
         try {
             UploadResult result = multipartUploadCallable.call();
 
-            /**
-             * If the result is null, it is a mutli part parellel upload. So, an
-             * new task is submitted for initiating a complete multi part upload
-             * request.
-             */
+            // If the result is null, it is a multi-part parallel upload. So, a new task is submitted for initiating a complete
+            // multi part upload request.
             if (result == null) {
-                futures.addAll(multipartUploadCallable.getFutures());
-                futureReference.set(threadPool.submit(new CompleteMultipartUpload(
-                        multipartUploadCallable.getMultipartUploadId(), s3,
-                        origReq, futures, multipartUploadCallable
-                                .getETags(), listener, this)));
+                CompleteMultipartUpload completeTask =
+                    new CompleteMultipartUpload(multipartUploadCallable.getMultipartUploadId(),
+                                                s3,
+                                                origReq,
+                                                multipartUploadCallable.getFutures(),
+                                                multipartUploadCallable.getETags(),
+                                                listener,
+                                                this);
+
+                resultFuture.setDelegate(threadPool.submit(completeTask));
             } else {
-                uploadComplete();
+                setTransferStateToCompleted();
+                resultFuture.setDelegate(new CompletedFuture<UploadResult>(result));
             }
-            return result;
         } catch (CancellationException e) {
             transfer.setState(TransferState.Canceled);
             publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
-            throw new SdkClientException("Upload canceled");
-        } catch (Exception e) {
+            SdkClientException exception = new SdkClientException("Upload canceled");
+            resultFuture.setDelegate(new FailedFuture<UploadResult>(exception));
+        } catch (Throwable e) {
             transfer.setState(TransferState.Failed);
-            throw e;
+            resultFuture.setDelegate(new FailedFuture<UploadResult>(e));
         }
+
+        return null;
     }
 
-    void uploadComplete() {
-        markAllDone();
+    void setTransferStateToCompleted() {
         transfer.setState(TransferState.Completed);
 
         // AmazonS3Client takes care of all the events for single part uploads,
@@ -178,10 +154,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         }
     }
 
-    /**
-     * Marks the upload as a failure.
-     */
-    void uploadFailure() {
+    void setTransferStateToFailed() {
         transfer.setState(TransferState.Failed);
     }
 
@@ -195,32 +168,26 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      */
     PauseResult<PersistableUpload> pause(boolean forceCancel) {
 
-        PersistableUpload persistableUpload = multipartUploadCallable
-                .getPersistableUpload();
+        PersistableUpload persistableUpload = multipartUploadCallable.getPersistableUpload();
         if (persistableUpload == null) {
-            PauseStatus pauseStatus = TransferManagerUtils
-                    .determinePauseStatus(transfer.getState(), forceCancel);
+            PauseStatus pauseStatus = TransferManagerUtils.determinePauseStatus(transfer.getState(), forceCancel);
             if (forceCancel) {
-                cancelFutures();
-                multipartUploadCallable.performAbortMultipartUpload();
+                cancelTransferFutures();
+                multipartUploadCallable.safelyAbortMultipartUpload(initiateUploadFuture);
             }
             return new PauseResult<PersistableUpload>(pauseStatus);
         }
-        cancelFutures();
-        return new PauseResult<PersistableUpload>(PauseStatus.SUCCESS,
-                persistableUpload);
+        initiateUploadFuture.cancel(true);
+        cancelTransferFutures();
+        return new PauseResult<PersistableUpload>(PauseStatus.SUCCESS, persistableUpload);
     }
 
     /**
      * Cancels the inflight transfers if they are not completed.
      */
-    private void cancelFutures() {
-        cancelFuture();
-        for (Future<PartETag> f : futures) {
-            f.cancel(true);
-        }
-        multipartUploadCallable.getFutures().clear();
-        futures.clear();
+    private void cancelTransferFutures() {
+        resultFuture.cancel(true);
+        multipartUploadCallable.getFutures().cancel(true);
     }
 
     /**
@@ -229,8 +196,8 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      * multi-part upload operation.
      */
     void performAbort() {
-        cancelFutures();
-        multipartUploadCallable.performAbortMultipartUpload();
+        cancelTransferFutures();
+        multipartUploadCallable.safelyAbortMultipartUpload(initiateUploadFuture);
         publishProgress(listener, ProgressEventType.TRANSFER_CANCELED_EVENT);
     }
 }

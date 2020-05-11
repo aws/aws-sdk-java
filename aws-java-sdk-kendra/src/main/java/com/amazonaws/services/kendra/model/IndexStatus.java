@@ -24,6 +24,7 @@ public enum IndexStatus {
     ACTIVE("ACTIVE"),
     DELETING("DELETING"),
     FAILED("FAILED"),
+    UPDATING("UPDATING"),
     SYSTEM_UPDATING("SYSTEM_UPDATING");
 
     private String value;

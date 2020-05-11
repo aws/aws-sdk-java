@@ -45,7 +45,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String type;
-    /** <p/> */
+    /**
+     * <p>
+     * One or more additional attribues associated with the query result.
+     * </p>
+     */
     private java.util.List<AdditionalResultAttribute> additionalAttributes;
     /**
      * <p>
@@ -181,9 +185,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * One or more additional attribues associated with the query result.
+     * </p>
      * 
-     * @return
+     * @return One or more additional attribues associated with the query result.
      */
 
     public java.util.List<AdditionalResultAttribute> getAdditionalAttributes() {
@@ -191,9 +197,12 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * One or more additional attribues associated with the query result.
+     * </p>
      * 
      * @param additionalAttributes
+     *        One or more additional attribues associated with the query result.
      */
 
     public void setAdditionalAttributes(java.util.Collection<AdditionalResultAttribute> additionalAttributes) {
@@ -206,7 +215,9 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * One or more additional attribues associated with the query result.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalAttributes(java.util.Collection)} or {@link #withAdditionalAttributes(java.util.Collection)}
@@ -214,6 +225,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param additionalAttributes
+     *        One or more additional attribues associated with the query result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,9 +240,12 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * One or more additional attribues associated with the query result.
+     * </p>
      * 
      * @param additionalAttributes
+     *        One or more additional attribues associated with the query result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

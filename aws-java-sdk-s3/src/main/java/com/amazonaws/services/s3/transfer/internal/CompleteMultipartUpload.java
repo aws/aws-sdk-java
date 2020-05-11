@@ -16,11 +16,6 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
@@ -30,6 +25,10 @@ import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 
 /**
  * Initiates a complete multi-part upload request for a
@@ -50,7 +49,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
     private final PutObjectRequest origReq;
 
     /** The futures of threads that upload individual parts. */
-    private final List<Future<PartETag>> futures;
+    private final Future<List<PartETag>> partFutures;
 
     /**
      * The eTags of the parts that had been successfully uploaded before
@@ -65,13 +64,15 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
     private final ProgressListenerChain listener;
 
     public CompleteMultipartUpload(String uploadId, AmazonS3 s3,
-                                   PutObjectRequest putObjectRequest, List<Future<PartETag>> futures,
-                                   List<PartETag> eTagsBeforeResume, ProgressListenerChain progressListenerChain,
+                                   PutObjectRequest putObjectRequest,
+                                   Future<List<PartETag>> partFutures,
+                                   List<PartETag> eTagsBeforeResume,
+                                   ProgressListenerChain progressListenerChain,
                                    UploadMonitor monitor) {
         this.uploadId = uploadId;
         this.s3 = s3;
         this.origReq = putObjectRequest;
-        this.futures = futures;
+        this.partFutures = partFutures;
         this.eTagsBeforeResume = eTagsBeforeResume;
         this.listener = progressListenerChain;
         this.monitor = monitor;
@@ -92,11 +93,9 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
                 ;
             res = s3.completeMultipartUpload(req);
         } catch (Exception e) {
-            monitor.uploadFailure();
+            monitor.setTransferStateToFailed();
             publishProgress(listener, ProgressEventType.TRANSFER_FAILED_EVENT);
-            for (Future<PartETag> future : futures) {
-                future.cancel(false);
-            }
+            partFutures.cancel(false);
             throw e;
         }
 
@@ -107,7 +106,7 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
         uploadResult.setETag(res.getETag());
         uploadResult.setVersionId(res.getVersionId());
 
-        monitor.uploadComplete();
+        monitor.setTransferStateToCompleted();
 
         return uploadResult;
     }
@@ -118,18 +117,12 @@ public class CompleteMultipartUpload implements Callable<UploadResult> {
      * complete.
      */
     private List<PartETag> collectPartETags() {
-
-        final List<PartETag> partETags = new ArrayList<PartETag>();
-        partETags.addAll(eTagsBeforeResume);
-        for (Future<PartETag> future : futures) {
-            try {
-                partETags.add(future.get());
-            } catch (Exception e) {
-                throw new SdkClientException(
-                    "Unable to complete multi-part upload. Individual part upload failed : "
-                    + e.getCause().getMessage(), e.getCause());
-
-            }
+        List<PartETag> partETags = new ArrayList<PartETag>(eTagsBeforeResume);
+        try {
+            partETags.addAll(partFutures.get());
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to complete multi-part upload. Individual part upload failed: "
+                                         + e.getCause().getMessage(), e.getCause());
         }
         return partETags;
     }

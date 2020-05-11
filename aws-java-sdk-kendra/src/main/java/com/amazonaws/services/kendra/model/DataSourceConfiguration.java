@@ -46,6 +46,24 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private DatabaseConfiguration databaseConfiguration;
+    /**
+     * <p>
+     * Provides configuration information for data sources that connect to a Salesforce site.
+     * </p>
+     */
+    private SalesforceConfiguration salesforceConfiguration;
+    /**
+     * <p>
+     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * </p>
+     */
+    private OneDriveConfiguration oneDriveConfiguration;
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to ServiceNow instances.
+     * </p>
+     */
+    private ServiceNowConfiguration serviceNowConfiguration;
 
     /**
      * <p>
@@ -168,6 +186,126 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides configuration information for data sources that connect to a Salesforce site.
+     * </p>
+     * 
+     * @param salesforceConfiguration
+     *        Provides configuration information for data sources that connect to a Salesforce site.
+     */
+
+    public void setSalesforceConfiguration(SalesforceConfiguration salesforceConfiguration) {
+        this.salesforceConfiguration = salesforceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration information for data sources that connect to a Salesforce site.
+     * </p>
+     * 
+     * @return Provides configuration information for data sources that connect to a Salesforce site.
+     */
+
+    public SalesforceConfiguration getSalesforceConfiguration() {
+        return this.salesforceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration information for data sources that connect to a Salesforce site.
+     * </p>
+     * 
+     * @param salesforceConfiguration
+     *        Provides configuration information for data sources that connect to a Salesforce site.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withSalesforceConfiguration(SalesforceConfiguration salesforceConfiguration) {
+        setSalesforceConfiguration(salesforceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * </p>
+     * 
+     * @param oneDriveConfiguration
+     *        Provided configuration for data sources that connect to Microsoft OneDrive.
+     */
+
+    public void setOneDriveConfiguration(OneDriveConfiguration oneDriveConfiguration) {
+        this.oneDriveConfiguration = oneDriveConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * </p>
+     * 
+     * @return Provided configuration for data sources that connect to Microsoft OneDrive.
+     */
+
+    public OneDriveConfiguration getOneDriveConfiguration() {
+        return this.oneDriveConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * </p>
+     * 
+     * @param oneDriveConfiguration
+     *        Provided configuration for data sources that connect to Microsoft OneDrive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withOneDriveConfiguration(OneDriveConfiguration oneDriveConfiguration) {
+        setOneDriveConfiguration(oneDriveConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to ServiceNow instances.
+     * </p>
+     * 
+     * @param serviceNowConfiguration
+     *        Provides configuration for data sources that connect to ServiceNow instances.
+     */
+
+    public void setServiceNowConfiguration(ServiceNowConfiguration serviceNowConfiguration) {
+        this.serviceNowConfiguration = serviceNowConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to ServiceNow instances.
+     * </p>
+     * 
+     * @return Provides configuration for data sources that connect to ServiceNow instances.
+     */
+
+    public ServiceNowConfiguration getServiceNowConfiguration() {
+        return this.serviceNowConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to ServiceNow instances.
+     * </p>
+     * 
+     * @param serviceNowConfiguration
+     *        Provides configuration for data sources that connect to ServiceNow instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withServiceNowConfiguration(ServiceNowConfiguration serviceNowConfiguration) {
+        setServiceNowConfiguration(serviceNowConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +322,13 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getSharePointConfiguration() != null)
             sb.append("SharePointConfiguration: ").append(getSharePointConfiguration()).append(",");
         if (getDatabaseConfiguration() != null)
-            sb.append("DatabaseConfiguration: ").append(getDatabaseConfiguration());
+            sb.append("DatabaseConfiguration: ").append(getDatabaseConfiguration()).append(",");
+        if (getSalesforceConfiguration() != null)
+            sb.append("SalesforceConfiguration: ").append(getSalesforceConfiguration()).append(",");
+        if (getOneDriveConfiguration() != null)
+            sb.append("OneDriveConfiguration: ").append(getOneDriveConfiguration()).append(",");
+        if (getServiceNowConfiguration() != null)
+            sb.append("ServiceNowConfiguration: ").append(getServiceNowConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +355,18 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getDatabaseConfiguration() != null && other.getDatabaseConfiguration().equals(this.getDatabaseConfiguration()) == false)
             return false;
+        if (other.getSalesforceConfiguration() == null ^ this.getSalesforceConfiguration() == null)
+            return false;
+        if (other.getSalesforceConfiguration() != null && other.getSalesforceConfiguration().equals(this.getSalesforceConfiguration()) == false)
+            return false;
+        if (other.getOneDriveConfiguration() == null ^ this.getOneDriveConfiguration() == null)
+            return false;
+        if (other.getOneDriveConfiguration() != null && other.getOneDriveConfiguration().equals(this.getOneDriveConfiguration()) == false)
+            return false;
+        if (other.getServiceNowConfiguration() == null ^ this.getServiceNowConfiguration() == null)
+            return false;
+        if (other.getServiceNowConfiguration() != null && other.getServiceNowConfiguration().equals(this.getServiceNowConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +378,9 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getS3Configuration() == null) ? 0 : getS3Configuration().hashCode());
         hashCode = prime * hashCode + ((getSharePointConfiguration() == null) ? 0 : getSharePointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDatabaseConfiguration() == null) ? 0 : getDatabaseConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSalesforceConfiguration() == null) ? 0 : getSalesforceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getOneDriveConfiguration() == null) ? 0 : getOneDriveConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getServiceNowConfiguration() == null) ? 0 : getServiceNowConfiguration().hashCode());
         return hashCode;
     }
 

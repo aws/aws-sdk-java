@@ -38,6 +38,8 @@ public class UpdateIndexRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<List> DOCUMENTMETADATACONFIGURATIONUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentMetadataConfigurationUpdates").build();
+    private static final MarshallingInfo<StructuredPojo> CAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityUnits").build();
 
     private static final UpdateIndexRequestMarshaller instance = new UpdateIndexRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class UpdateIndexRequestMarshaller {
             protocolMarshaller.marshall(updateIndexRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateIndexRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateIndexRequest.getDocumentMetadataConfigurationUpdates(), DOCUMENTMETADATACONFIGURATIONUPDATES_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getCapacityUnits(), CAPACITYUNITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

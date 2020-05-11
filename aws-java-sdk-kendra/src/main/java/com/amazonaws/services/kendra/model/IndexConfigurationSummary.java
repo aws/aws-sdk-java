@@ -43,6 +43,12 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
     private String id;
     /**
      * <p>
+     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * </p>
+     */
+    private String edition;
+    /**
+     * <p>
      * The Unix timestamp when the index was created.
      * </p>
      */
@@ -143,6 +149,65 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     public IndexConfigurationSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * </p>
+     * 
+     * @param edition
+     *        Indicates whether the index is a enterprise edition index or a developer edition index.
+     * @see IndexEdition
+     */
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * </p>
+     * 
+     * @return Indicates whether the index is a enterprise edition index or a developer edition index.
+     * @see IndexEdition
+     */
+
+    public String getEdition() {
+        return this.edition;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * </p>
+     * 
+     * @param edition
+     *        Indicates whether the index is a enterprise edition index or a developer edition index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexEdition
+     */
+
+    public IndexConfigurationSummary withEdition(String edition) {
+        setEdition(edition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * </p>
+     * 
+     * @param edition
+     *        Indicates whether the index is a enterprise edition index or a developer edition index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexEdition
+     */
+
+    public IndexConfigurationSummary withEdition(IndexEdition edition) {
+        this.edition = edition.toString();
         return this;
     }
 
@@ -301,6 +366,8 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
             sb.append("Name: ").append(getName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getEdition() != null)
+            sb.append("Edition: ").append(getEdition()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
@@ -329,6 +396,10 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getEdition() == null ^ this.getEdition() == null)
+            return false;
+        if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -351,6 +422,7 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

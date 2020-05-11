@@ -45,7 +45,28 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
-     * Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     * Documents have the following file size limits.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 5 MB total size for inline documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 50 MB total size for files from an S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 MB extracted text for any file
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      */
     private java.util.List<Document> documents;
@@ -153,12 +174,54 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
-     * Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     * Documents have the following file size limits.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 5 MB total size for inline documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 50 MB total size for files from an S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 MB extracted text for any file
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @return One or more documents to add to the index. </p>
      *         <p>
-     *         Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     *         Documents have the following file size limits.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         5 MB total size for inline documents
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         50 MB total size for files from an S3 bucket
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         5 MB extracted text for any file
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about file size and transaction per second quotas, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      */
 
     public java.util.List<Document> getDocuments() {
@@ -170,13 +233,55 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
-     * Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     * Documents have the following file size limits.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 5 MB total size for inline documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 50 MB total size for files from an S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 MB extracted text for any file
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param documents
      *        One or more documents to add to the index. </p>
      *        <p>
-     *        Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     *        Documents have the following file size limits.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        5 MB total size for inline documents
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        50 MB total size for files from an S3 bucket
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        5 MB extracted text for any file
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about file size and transaction per second quotas, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      */
 
     public void setDocuments(java.util.Collection<Document> documents) {
@@ -193,7 +298,28 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
-     * Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     * Documents have the following file size limits.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 5 MB total size for inline documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 50 MB total size for files from an S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 MB extracted text for any file
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,7 +330,28 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * @param documents
      *        One or more documents to add to the index. </p>
      *        <p>
-     *        Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     *        Documents have the following file size limits.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        5 MB total size for inline documents
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        50 MB total size for files from an S3 bucket
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        5 MB extracted text for any file
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about file size and transaction per second quotas, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,13 +370,55 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
-     * Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     * Documents have the following file size limits.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 5 MB total size for inline documents
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 50 MB total size for files from an S3 bucket
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 MB extracted text for any file
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about file size and transaction per second quotas, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
      * @param documents
      *        One or more documents to add to the index. </p>
      *        <p>
-     *        Each document is limited to 5 Mb, the total size of the list is limited to 50 Mb.
+     *        Documents have the following file size limits.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        5 MB total size for inline documents
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        50 MB total size for files from an S3 bucket
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        5 MB extracted text for any file
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about file size and transaction per second quotas, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

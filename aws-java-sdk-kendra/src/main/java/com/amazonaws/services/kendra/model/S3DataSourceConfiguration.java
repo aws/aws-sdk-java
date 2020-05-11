@@ -46,7 +46,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="http://wikipedia.org/wiki/Glob_%28programming%29">glob
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
      * (programming)</a> in <i>Wikipedia</i>.
      * </p>
      */
@@ -176,7 +176,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="http://wikipedia.org/wiki/Glob_%28programming%29">glob
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
      * (programming)</a> in <i>Wikipedia</i>.
      * </p>
      * 
@@ -184,7 +184,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      *         prefix also matches an exclusion pattern, the document is not indexed.</p>
      *         <p>
      *         For more information about glob patterns, see <a
-     *         href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a> in <i>Wikipedia</i>.
+     *         href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
      */
 
     public java.util.List<String> getExclusionPatterns() {
@@ -197,7 +197,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="http://wikipedia.org/wiki/Glob_%28programming%29">glob
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
      * (programming)</a> in <i>Wikipedia</i>.
      * </p>
      * 
@@ -206,7 +206,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      *        prefix also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
      *        For more information about glob patterns, see <a
-     *        href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a> in <i>Wikipedia</i>.
+     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
      */
 
     public void setExclusionPatterns(java.util.Collection<String> exclusionPatterns) {
@@ -224,7 +224,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="http://wikipedia.org/wiki/Glob_%28programming%29">glob
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
      * (programming)</a> in <i>Wikipedia</i>.
      * </p>
      * <p>
@@ -238,7 +238,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      *        prefix also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
      *        For more information about glob patterns, see <a
-     *        href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a> in <i>Wikipedia</i>.
+     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +258,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="http://wikipedia.org/wiki/Glob_%28programming%29">glob
+     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
      * (programming)</a> in <i>Wikipedia</i>.
      * </p>
      * 
@@ -267,7 +267,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      *        prefix also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
      *        For more information about glob patterns, see <a
-     *        href="http://wikipedia.org/wiki/Glob_%28programming%29">glob (programming)</a> in <i>Wikipedia</i>.
+     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

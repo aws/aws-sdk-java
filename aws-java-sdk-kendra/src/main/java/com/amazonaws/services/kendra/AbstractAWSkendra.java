@@ -53,6 +53,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteFaqResult deleteFaq(DeleteFaqRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -98,6 +103,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public QueryResult query(QueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +124,16 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public SubmitFeedbackResult submitFeedback(SubmitFeedbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

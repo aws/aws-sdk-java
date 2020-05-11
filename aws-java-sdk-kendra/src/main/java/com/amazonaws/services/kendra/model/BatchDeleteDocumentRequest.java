@@ -38,6 +38,8 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
      */
     private java.util.List<String> documentIdList;
 
+    private DataSourceSyncJobMetricTarget dataSourceSyncJobMetricTarget;
+
     /**
      * <p>
      * The identifier of the index that contains the documents to delete.
@@ -149,6 +151,32 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * @param dataSourceSyncJobMetricTarget
+     */
+
+    public void setDataSourceSyncJobMetricTarget(DataSourceSyncJobMetricTarget dataSourceSyncJobMetricTarget) {
+        this.dataSourceSyncJobMetricTarget = dataSourceSyncJobMetricTarget;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataSourceSyncJobMetricTarget getDataSourceSyncJobMetricTarget() {
+        return this.dataSourceSyncJobMetricTarget;
+    }
+
+    /**
+     * @param dataSourceSyncJobMetricTarget
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchDeleteDocumentRequest withDataSourceSyncJobMetricTarget(DataSourceSyncJobMetricTarget dataSourceSyncJobMetricTarget) {
+        setDataSourceSyncJobMetricTarget(dataSourceSyncJobMetricTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +191,9 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getDocumentIdList() != null)
-            sb.append("DocumentIdList: ").append(getDocumentIdList());
+            sb.append("DocumentIdList: ").append(getDocumentIdList()).append(",");
+        if (getDataSourceSyncJobMetricTarget() != null)
+            sb.append("DataSourceSyncJobMetricTarget: ").append(getDataSourceSyncJobMetricTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +216,11 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getDocumentIdList() != null && other.getDocumentIdList().equals(this.getDocumentIdList()) == false)
             return false;
+        if (other.getDataSourceSyncJobMetricTarget() == null ^ this.getDataSourceSyncJobMetricTarget() == null)
+            return false;
+        if (other.getDataSourceSyncJobMetricTarget() != null
+                && other.getDataSourceSyncJobMetricTarget().equals(this.getDataSourceSyncJobMetricTarget()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +231,7 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
         hashCode = prime * hashCode + ((getDocumentIdList() == null) ? 0 : getDocumentIdList().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceSyncJobMetricTarget() == null) ? 0 : getDataSourceSyncJobMetricTarget().hashCode());
         return hashCode;
     }
 

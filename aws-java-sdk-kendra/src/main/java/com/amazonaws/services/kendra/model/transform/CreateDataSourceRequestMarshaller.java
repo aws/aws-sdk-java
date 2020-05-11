@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.kendra.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,8 @@ public class CreateDataSourceRequestMarshaller {
             .marshallLocationName("Schedule").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDataSourceRequestMarshaller instance = new CreateDataSourceRequestMarshaller();
 
@@ -65,6 +68,7 @@ public class CreateDataSourceRequestMarshaller {
             protocolMarshaller.marshall(createDataSourceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createDataSourceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

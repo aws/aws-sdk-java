@@ -33,6 +33,12 @@ public class DataSourceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharePointConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> DATABASECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SALESFORCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SalesforceConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> ONEDRIVECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OneDriveConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICENOWCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceNowConfiguration").build();
 
     private static final DataSourceConfigurationMarshaller instance = new DataSourceConfigurationMarshaller();
 
@@ -53,6 +59,9 @@ public class DataSourceConfigurationMarshaller {
             protocolMarshaller.marshall(dataSourceConfiguration.getS3Configuration(), S3CONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getSharePointConfiguration(), SHAREPOINTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getDatabaseConfiguration(), DATABASECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getSalesforceConfiguration(), SALESFORCECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getOneDriveConfiguration(), ONEDRIVECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getServiceNowConfiguration(), SERVICENOWCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

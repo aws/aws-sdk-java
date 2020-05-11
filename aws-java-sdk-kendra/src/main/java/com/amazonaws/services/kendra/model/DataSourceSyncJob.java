@@ -75,6 +75,13 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String dataSourceErrorCode;
+    /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a connector.
+     * </p>
+     */
+    private DataSourceSyncJobMetrics metrics;
 
     /**
      * <p>
@@ -431,6 +438,52 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a connector.
+     * </p>
+     * 
+     * @param metrics
+     *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
+     *        be supplied when documents are deleted by a connector.
+     */
+
+    public void setMetrics(DataSourceSyncJobMetrics metrics) {
+        this.metrics = metrics;
+    }
+
+    /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a connector.
+     * </p>
+     * 
+     * @return Maps a batch delete document request to a specific data source sync job. This is optional and should only
+     *         be supplied when documents are deleted by a connector.
+     */
+
+    public DataSourceSyncJobMetrics getMetrics() {
+        return this.metrics;
+    }
+
+    /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a connector.
+     * </p>
+     * 
+     * @param metrics
+     *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
+     *        be supplied when documents are deleted by a connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceSyncJob withMetrics(DataSourceSyncJobMetrics metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -455,7 +508,9 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getDataSourceErrorCode() != null)
-            sb.append("DataSourceErrorCode: ").append(getDataSourceErrorCode());
+            sb.append("DataSourceErrorCode: ").append(getDataSourceErrorCode()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -498,6 +553,10 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDataSourceErrorCode() != null && other.getDataSourceErrorCode().equals(this.getDataSourceErrorCode()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -513,6 +572,7 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getDataSourceErrorCode() == null) ? 0 : getDataSourceErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 

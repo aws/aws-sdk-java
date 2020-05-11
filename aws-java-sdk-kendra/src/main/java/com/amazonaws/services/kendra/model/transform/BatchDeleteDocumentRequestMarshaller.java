@@ -32,6 +32,8 @@ public class BatchDeleteDocumentRequestMarshaller {
             .marshallLocationName("IndexId").build();
     private static final MarshallingInfo<List> DOCUMENTIDLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentIdList").build();
+    private static final MarshallingInfo<StructuredPojo> DATASOURCESYNCJOBMETRICTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceSyncJobMetricTarget").build();
 
     private static final BatchDeleteDocumentRequestMarshaller instance = new BatchDeleteDocumentRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class BatchDeleteDocumentRequestMarshaller {
         try {
             protocolMarshaller.marshall(batchDeleteDocumentRequest.getIndexId(), INDEXID_BINDING);
             protocolMarshaller.marshall(batchDeleteDocumentRequest.getDocumentIdList(), DOCUMENTIDLIST_BINDING);
+            protocolMarshaller.marshall(batchDeleteDocumentRequest.getDataSourceSyncJobMetricTarget(), DATASOURCESYNCJOBMETRICTARGET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

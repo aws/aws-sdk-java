@@ -56,6 +56,10 @@ public class RepositoryAssociationJsonUnmarshaller implements Unmarshaller<Repos
                     context.nextToken();
                     repositoryAssociation.setAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConnectionArn", targetDepth)) {
+                    context.nextToken();
+                    repositoryAssociation.setConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     repositoryAssociation.setName(context.getUnmarshaller(String.class).unmarshall(context));

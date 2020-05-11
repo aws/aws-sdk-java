@@ -76,6 +76,10 @@ public class DataSourceSyncJobJsonUnmarshaller implements Unmarshaller<DataSourc
                     context.nextToken();
                     dataSourceSyncJob.setDataSourceErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Metrics", targetDepth)) {
+                    context.nextToken();
+                    dataSourceSyncJob.setMetrics(DataSourceSyncJobMetricsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

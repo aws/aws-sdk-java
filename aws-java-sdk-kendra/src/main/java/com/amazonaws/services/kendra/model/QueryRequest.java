@@ -77,7 +77,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     private Integer pageNumber;
     /**
      * <p>
-     * Sets the number of results that are returned in each page of results. The default page size is 100.
+     * Sets the number of results that are returned in each page of results. The default page size is 10. The maximum
+     * number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      * </p>
      */
     private Integer pageSize;
@@ -501,11 +502,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Sets the number of results that are returned in each page of results. The default page size is 100.
+     * Sets the number of results that are returned in each page of results. The default page size is 10. The maximum
+     * number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      * </p>
      * 
      * @param pageSize
-     *        Sets the number of results that are returned in each page of results. The default page size is 100.
+     *        Sets the number of results that are returned in each page of results. The default page size is 10. The
+     *        maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -514,10 +517,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Sets the number of results that are returned in each page of results. The default page size is 100.
+     * Sets the number of results that are returned in each page of results. The default page size is 10. The maximum
+     * number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      * </p>
      * 
-     * @return Sets the number of results that are returned in each page of results. The default page size is 100.
+     * @return Sets the number of results that are returned in each page of results. The default page size is 10. The
+     *         maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      */
 
     public Integer getPageSize() {
@@ -526,11 +531,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Sets the number of results that are returned in each page of results. The default page size is 100.
+     * Sets the number of results that are returned in each page of results. The default page size is 10. The maximum
+     * number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      * </p>
      * 
      * @param pageSize
-     *        Sets the number of results that are returned in each page of results. The default page size is 100.
+     *        Sets the number of results that are returned in each page of results. The default page size is 10. The
+     *        maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

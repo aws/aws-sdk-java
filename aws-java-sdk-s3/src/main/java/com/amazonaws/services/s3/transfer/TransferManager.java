@@ -1175,7 +1175,7 @@ public class TransferManager {
     }
 
     private DownloadImpl submitDownload(PreparedDownloadContext preparedDownloadContext) {
-        Future<?> future = executorService.submit(preparedDownloadContext.getCallable());
+        Future<File> future = executorService.submit(preparedDownloadContext.getCallable());
         DownloadImpl transfer = preparedDownloadContext.getTransfer();
         transfer.setMonitor(new DownloadMonitor(transfer, future));
         preparedDownloadContext.getLatch().countDown();
@@ -1273,7 +1273,7 @@ public class TransferManager {
         }
 
         final CountDownLatch latch = new CountDownLatch(1);
-        Future<?> future = executorService.submit(
+        Future<File> future = executorService.submit(
             new PresignUrlDownloadCallable(executorService, destFile, latch, download, isDownloadParallel, timedThreadPool,
                                            downloadContext.getTimeoutMillis(), s3, request, perRequestDownloadSize,
                                            startByte, endByte, downloadContext.isResumeOnRetry()));

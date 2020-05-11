@@ -56,6 +56,10 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeIndexResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Edition", targetDepth)) {
+                    context.nextToken();
+                    describeIndexResult.setEdition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
                     describeIndexResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -93,6 +97,10 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
                     describeIndexResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CapacityUnits", targetDepth)) {
+                    context.nextToken();
+                    describeIndexResult.setCapacityUnits(CapacityUnitsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

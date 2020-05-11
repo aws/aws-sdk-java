@@ -22,7 +22,10 @@ public enum DataSourceType {
 
     S3("S3"),
     SHAREPOINT("SHAREPOINT"),
-    DATABASE("DATABASE");
+    DATABASE("DATABASE"),
+    SALESFORCE("SALESFORCE"),
+    ONEDRIVE("ONEDRIVE"),
+    SERVICENOW("SERVICENOW");
 
     private String value;
 

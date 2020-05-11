@@ -29,6 +29,8 @@ public class RepositoryAssociationSummaryMarshaller {
 
     private static final MarshallingInfo<String> ASSOCIATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationArn").build();
+    private static final MarshallingInfo<String> CONNECTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionArn").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTimeStamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,7 @@ public class RepositoryAssociationSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(repositoryAssociationSummary.getAssociationArn(), ASSOCIATIONARN_BINDING);
+            protocolMarshaller.marshall(repositoryAssociationSummary.getConnectionArn(), CONNECTIONARN_BINDING);
             protocolMarshaller.marshall(repositoryAssociationSummary.getLastUpdatedTimeStamp(), LASTUPDATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(repositoryAssociationSummary.getAssociationId(), ASSOCIATIONID_BINDING);
             protocolMarshaller.marshall(repositoryAssociationSummary.getName(), NAME_BINDING);

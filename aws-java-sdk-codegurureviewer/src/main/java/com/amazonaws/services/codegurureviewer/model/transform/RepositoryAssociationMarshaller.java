@@ -31,6 +31,8 @@ public class RepositoryAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationId").build();
     private static final MarshallingInfo<String> ASSOCIATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationArn").build();
+    private static final MarshallingInfo<String> CONNECTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class RepositoryAssociationMarshaller {
         try {
             protocolMarshaller.marshall(repositoryAssociation.getAssociationId(), ASSOCIATIONID_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getAssociationArn(), ASSOCIATIONARN_BINDING);
+            protocolMarshaller.marshall(repositoryAssociation.getConnectionArn(), CONNECTIONARN_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getName(), NAME_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getProviderType(), PROVIDERTYPE_BINDING);

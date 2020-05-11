@@ -1,3 +1,20 @@
+# __1.11.780__ __2020-05-11__
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra is now generally available. As part of general availability, we are launching * Developer edition * Ability to scale your Amazon Kendra index with capacity units * Support for new connectors * Support for new tagging API's * Support for Deleting data source * Metrics for data source sync operations * Metrics for query & storage utilization
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - Add Bitbucket integration APIs
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - M6g instances are our next-generation general purpose instances powered by AWS Graviton2 processors
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fixed an issue where cancelling or waiting on a transfer manager upload too quickly after its initiation could result in inconsistent behavior.
+
 # __1.11.779__ __2020-05-08__
 ## __AWS Resource Groups Tagging API__
   - ### Features

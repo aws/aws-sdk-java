@@ -52,6 +52,10 @@ public class RepositoryAssociationSummaryJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     repositoryAssociationSummary.setAssociationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConnectionArn", targetDepth)) {
+                    context.nextToken();
+                    repositoryAssociationSummary.setConnectionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LastUpdatedTimeStamp", targetDepth)) {
                     context.nextToken();
                     repositoryAssociationSummary.setLastUpdatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

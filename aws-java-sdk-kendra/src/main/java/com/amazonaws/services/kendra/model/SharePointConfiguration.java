@@ -79,7 +79,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     private java.util.List<String> inclusionPatterns;
     /**
      * <p>
-     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -545,7 +545,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -553,7 +553,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * The regex is applied to the display URL of the SharePoint document.
      * </p>
      * 
-     * @return A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     * @return A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
      *         Documents that don't match the patterns are included in the index. If a document matches both an
      *         exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
      *         <p>
@@ -566,7 +566,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -575,7 +575,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
      *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
      *        pattern and an inclusion pattern, the document is not included in the index.</p>
      *        <p>
@@ -593,7 +593,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -607,7 +607,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
      *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
      *        pattern and an inclusion pattern, the document is not included in the index.</p>
      *        <p>
@@ -627,7 +627,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -636,7 +636,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
      *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
      *        pattern and an inclusion pattern, the document is not included in the index.</p>
      *        <p>

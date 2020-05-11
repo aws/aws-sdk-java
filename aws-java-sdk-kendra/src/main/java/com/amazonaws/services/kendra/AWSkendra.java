@@ -175,6 +175,28 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
+     * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
+     * to <code>DELETING</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
+     * </p>
+     * 
+     * @param deleteDataSourceRequest
+     * @return Result of the DeleteDataSource operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteDataSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest deleteDataSourceRequest);
+
+    /**
+     * <p>
      * Removes an FAQ from an index.
      * </p>
      * 
@@ -341,6 +363,25 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Gets a list of tags associated with a specified resource. Indexes, FAQs, and data sources can have tags
+     * associated with them.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceUnavailableException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Searches an active index. Use this API to search your documents using query. The <code>Query</code> operation
      * enables to do faceted search and to filter results based on document attributes.
      * </p>
@@ -381,6 +422,7 @@ public interface AWSkendra {
      * @throws ResourceNotFoundException
      * @throws ThrottlingException
      * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
      * @throws InternalServerException
      * @sample AWSkendra.Query
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query" target="_top">AWS API
@@ -448,6 +490,43 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Adds the specified tag to the specified index, FAQ, or data source resource. If the tag already exists, the
+     * existing value is replaced with the new value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceUnavailableException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag from an index, FAQ, or a data source.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceUnavailableException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates an existing Amazon Kendra data source.
      * </p>
      * 
@@ -477,6 +556,7 @@ public interface AWSkendra {
      * @throws ResourceNotFoundException
      * @throws ThrottlingException
      * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
      * @throws InternalServerException
      * @sample AWSkendra.UpdateIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex" target="_top">AWS API

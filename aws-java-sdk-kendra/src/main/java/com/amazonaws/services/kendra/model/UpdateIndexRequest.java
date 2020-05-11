@@ -55,6 +55,17 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<DocumentMetadataConfiguration> documentMetadataConfigurationUpdates;
+    /**
+     * <p>
+     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * the capacity of the index up to 5 times per day.
+     * </p>
+     * <p>
+     * If you are using extra storage units, you can't reduce the storage capacity below that required to meet the
+     * storage needs for your index.
+     * </p>
+     */
+    private CapacityUnitsConfiguration capacityUnits;
 
     /**
      * <p>
@@ -288,6 +299,73 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * the capacity of the index up to 5 times per day.
+     * </p>
+     * <p>
+     * If you are using extra storage units, you can't reduce the storage capacity below that required to meet the
+     * storage needs for your index.
+     * </p>
+     * 
+     * @param capacityUnits
+     *        Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *        change the capacity of the index up to 5 times per day.</p>
+     *        <p>
+     *        If you are using extra storage units, you can't reduce the storage capacity below that required to meet
+     *        the storage needs for your index.
+     */
+
+    public void setCapacityUnits(CapacityUnitsConfiguration capacityUnits) {
+        this.capacityUnits = capacityUnits;
+    }
+
+    /**
+     * <p>
+     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * the capacity of the index up to 5 times per day.
+     * </p>
+     * <p>
+     * If you are using extra storage units, you can't reduce the storage capacity below that required to meet the
+     * storage needs for your index.
+     * </p>
+     * 
+     * @return Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *         change the capacity of the index up to 5 times per day.</p>
+     *         <p>
+     *         If you are using extra storage units, you can't reduce the storage capacity below that required to meet
+     *         the storage needs for your index.
+     */
+
+    public CapacityUnitsConfiguration getCapacityUnits() {
+        return this.capacityUnits;
+    }
+
+    /**
+     * <p>
+     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * the capacity of the index up to 5 times per day.
+     * </p>
+     * <p>
+     * If you are using extra storage units, you can't reduce the storage capacity below that required to meet the
+     * storage needs for your index.
+     * </p>
+     * 
+     * @param capacityUnits
+     *        Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *        change the capacity of the index up to 5 times per day.</p>
+     *        <p>
+     *        If you are using extra storage units, you can't reduce the storage capacity below that required to meet
+     *        the storage needs for your index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexRequest withCapacityUnits(CapacityUnitsConfiguration capacityUnits) {
+        setCapacityUnits(capacityUnits);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -308,7 +386,9 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDocumentMetadataConfigurationUpdates() != null)
-            sb.append("DocumentMetadataConfigurationUpdates: ").append(getDocumentMetadataConfigurationUpdates());
+            sb.append("DocumentMetadataConfigurationUpdates: ").append(getDocumentMetadataConfigurationUpdates()).append(",");
+        if (getCapacityUnits() != null)
+            sb.append("CapacityUnits: ").append(getCapacityUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +424,10 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getDocumentMetadataConfigurationUpdates() != null
                 && other.getDocumentMetadataConfigurationUpdates().equals(this.getDocumentMetadataConfigurationUpdates()) == false)
             return false;
+        if (other.getCapacityUnits() == null ^ this.getCapacityUnits() == null)
+            return false;
+        if (other.getCapacityUnits() != null && other.getCapacityUnits().equals(this.getCapacityUnits()) == false)
+            return false;
         return true;
     }
 
@@ -357,6 +441,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDocumentMetadataConfigurationUpdates() == null) ? 0 : getDocumentMetadataConfigurationUpdates().hashCode());
+        hashCode = prime * hashCode + ((getCapacityUnits() == null) ? 0 : getCapacityUnits().hashCode());
         return hashCode;
     }
 

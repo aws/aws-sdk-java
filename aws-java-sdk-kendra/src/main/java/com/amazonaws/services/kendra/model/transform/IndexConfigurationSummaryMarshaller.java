@@ -31,6 +31,8 @@ public class IndexConfigurationSummaryMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> EDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Edition").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -56,6 +58,7 @@ public class IndexConfigurationSummaryMarshaller {
         try {
             protocolMarshaller.marshall(indexConfigurationSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(indexConfigurationSummary.getId(), ID_BINDING);
+            protocolMarshaller.marshall(indexConfigurationSummary.getEdition(), EDITION_BINDING);
             protocolMarshaller.marshall(indexConfigurationSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(indexConfigurationSummary.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(indexConfigurationSummary.getStatus(), STATUS_BINDING);
