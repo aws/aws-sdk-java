@@ -493,7 +493,7 @@
       "errors":[
         {"shape":"InvalidParameterException"}
       ],
-      "documentation":"<p>Returns summaries of the customer's non-deleted organizations.</p>",
+      "documentation":"<p>Returns summaries of the customer's organizations.</p>",
       "idempotent":true
     },
     "ListResourceDelegates":{
@@ -1051,7 +1051,10 @@
     },
     "DeleteAccessControlRuleRequest":{
       "type":"structure",
-      "required":["Name"],
+      "required":[
+        "OrganizationId",
+        "Name"
+      ],
       "members":{
         "OrganizationId":{
           "shape":"OrganizationId",

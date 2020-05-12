@@ -743,7 +743,7 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
-     * Returns summaries of the customer's non-deleted organizations.
+     * Returns summaries of the customer's organizations.
      * </p>
      * 
      * @param listOrganizationsRequest

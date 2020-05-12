@@ -1236,6 +1236,26 @@ public interface AWSIoTSiteWise {
      * <p>
      * Retrieves a paginated list of asset summaries.
      * </p>
+     * <p>
+     * You can use this operation to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List assets based on a specific asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List top-level assets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't use this operation to list all assets. To retrieve summaries for all of your assets, use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+     * to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model.
+     * </p>
      * 
      * @param listAssetsRequest
      * @return Result of the ListAssets operation returned by the service.
@@ -1600,8 +1620,8 @@ public interface AWSIoTSiteWise {
      * <important>
      * <p>
      * This action overwrites the existing model with the provided model. To avoid deleting your asset model's
-     * properties or hierarchies, you must include their definitions in the updated asset model payload. For more
-     * information, see <a
+     * properties or hierarchies, you must include their IDs and definitions in the updated asset model payload. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html"
      * >DescribeAssetModel</a>.
      * </p>
@@ -1653,6 +1673,15 @@ public interface AWSIoTSiteWise {
      * <p>
      * Updates an asset property's alias and notification state.
      * </p>
+     * <important>
+     * <p>
+     * This operation overwrites the property's existing alias and notification state. To keep your existing property's
+     * alias or notification state, you must include the existing values in the UpdateAssetProperty request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html"
+     * >DescribeAssetProperty</a>.
+     * </p>
+     * </important>
      * 
      * @param updateAssetPropertyRequest
      * @return Result of the UpdateAssetProperty operation returned by the service.

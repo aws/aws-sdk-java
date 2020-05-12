@@ -28,9 +28,6 @@ public class BatchPutAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
      * </p>
      */
     private java.util.List<PutAssetPropertyValueEntry> entries;
@@ -38,15 +35,10 @@ public class BatchPutAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
      * </p>
      * 
      * @return The list of asset property value entries for the batch put request. You can specify up to 10 entries per
-     *         request. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *         SiteWise User Guide</i>.
+     *         request.
      */
 
     public java.util.List<PutAssetPropertyValueEntry> getEntries() {
@@ -56,16 +48,11 @@ public class BatchPutAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
      * </p>
      * 
      * @param entries
      *        The list of asset property value entries for the batch put request. You can specify up to 10 entries per
-     *        request. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *        SiteWise User Guide</i>.
+     *        request.
      */
 
     public void setEntries(java.util.Collection<PutAssetPropertyValueEntry> entries) {
@@ -80,9 +67,6 @@ public class BatchPutAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,9 +76,7 @@ public class BatchPutAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param entries
      *        The list of asset property value entries for the batch put request. You can specify up to 10 entries per
-     *        request. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *        SiteWise User Guide</i>.
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,16 +93,11 @@ public class BatchPutAssetPropertyValueRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
      * </p>
      * 
      * @param entries
      *        The list of asset property value entries for the batch put request. You can specify up to 10 entries per
-     *        request. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *        SiteWise User Guide</i>.
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

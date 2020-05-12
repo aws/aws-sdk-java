@@ -39,15 +39,28 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maxResults;
     /**
      * <p>
-     * The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to list all
-     * assets (of all models).
+     * The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     * <code>ALL</code> for <code>filter</code>.
      * </p>
      */
     private String assetModelId;
     /**
      * <p>
-     * The hierarchy level by which to filter the requested list of assets.
+     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     * parameter is required if you filter by <code>ALL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String filter;
 
@@ -133,13 +146,13 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to list all
-     * assets (of all models).
+     * The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     * <code>ALL</code> for <code>filter</code>.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to
-     *        list all assets (of all models).
+     *        The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     *        <code>ALL</code> for <code>filter</code>.
      */
 
     public void setAssetModelId(String assetModelId) {
@@ -148,12 +161,12 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to list all
-     * assets (of all models).
+     * The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     * <code>ALL</code> for <code>filter</code>.
      * </p>
      * 
-     * @return The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to
-     *         list all assets (of all models).
+     * @return The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     *         <code>ALL</code> for <code>filter</code>.
      */
 
     public String getAssetModelId() {
@@ -162,13 +175,13 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to list all
-     * assets (of all models).
+     * The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     * <code>ALL</code> for <code>filter</code>.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model by which to filter the list of assets. Omit the <code>assetModelId</code> to
-     *        list all assets (of all models).
+     *        The ID of the asset model by which to filter the list of assets. This parameter is required if you choose
+     *        <code>ALL</code> for <code>filter</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +192,37 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The hierarchy level by which to filter the requested list of assets.
+     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     * parameter is required if you filter by <code>ALL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The hierarchy level by which to filter the requested list of assets.
+     *        The filter for the requested list of assets. Choose one of the following options. Defaults to
+     *        <code>ALL</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     *        parameter is required if you filter by <code>ALL</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     *        </p>
+     *        </li>
      * @see ListAssetsFilter
      */
 
@@ -193,10 +232,36 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The hierarchy level by which to filter the requested list of assets.
+     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     * parameter is required if you filter by <code>ALL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The hierarchy level by which to filter the requested list of assets.
+     * @return The filter for the requested list of assets. Choose one of the following options. Defaults to
+     *         <code>ALL</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     *         parameter is required if you filter by <code>ALL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     *         </p>
+     *         </li>
      * @see ListAssetsFilter
      */
 
@@ -206,11 +271,37 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The hierarchy level by which to filter the requested list of assets.
+     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     * parameter is required if you filter by <code>ALL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The hierarchy level by which to filter the requested list of assets.
+     *        The filter for the requested list of assets. Choose one of the following options. Defaults to
+     *        <code>ALL</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     *        parameter is required if you filter by <code>ALL</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListAssetsFilter
      */
@@ -222,11 +313,37 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The hierarchy level by which to filter the requested list of assets.
+     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     * parameter is required if you filter by <code>ALL</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filter
-     *        The hierarchy level by which to filter the requested list of assets.
+     *        The filter for the requested list of assets. Choose one of the following options. Defaults to
+     *        <code>ALL</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
+     *        parameter is required if you filter by <code>ALL</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListAssetsFilter
      */

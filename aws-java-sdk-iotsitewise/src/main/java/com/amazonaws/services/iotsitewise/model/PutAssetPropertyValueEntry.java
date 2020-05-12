@@ -61,11 +61,6 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
      * <p>
      * The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
-     * </p>
      */
     private java.util.List<AssetPropertyValue> propertyValues;
 
@@ -251,18 +246,9 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
      * <p>
      * The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
-     * </p>
      * 
      * @return The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array
-     *         elements. </p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *         SiteWise User Guide</i>.
+     *         elements.
      */
 
     public java.util.List<AssetPropertyValue> getPropertyValues() {
@@ -273,19 +259,10 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
      * <p>
      * The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
-     * </p>
      * 
      * @param propertyValues
      *        The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array
-     *        elements. </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *        SiteWise User Guide</i>.
+     *        elements.
      */
 
     public void setPropertyValues(java.util.Collection<AssetPropertyValue> propertyValues) {
@@ -302,11 +279,6 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
      * The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPropertyValues(java.util.Collection)} or {@link #withPropertyValues(java.util.Collection)} if you want
      * to override the existing values.
@@ -314,11 +286,7 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
      * 
      * @param propertyValues
      *        The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array
-     *        elements. </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *        SiteWise User Guide</i>.
+     *        elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,19 +304,10 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
      * <p>
      * The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array elements.
      * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     * SiteWise User Guide</i>.
-     * </p>
      * 
      * @param propertyValues
      *        The list of property values to upload. You can specify up to 10 <code>propertyValues</code> array
-     *        elements. </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
-     *        SiteWise User Guide</i>.
+     *        elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

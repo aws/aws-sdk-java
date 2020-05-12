@@ -1,3 +1,12 @@
+# __1.11.781__ __2020-05-12__
+## __AWS IoT SiteWise__
+  - ### Features
+    - Documentation updates for iot-bifrost
+
+## __Amazon WorkMail__
+  - ### Features
+    - Minor API fixes and updates to the documentation.
+
 # __1.11.780__ __2020-05-11__
 ## __AWSKendraFrontendService__
   - ### Features
