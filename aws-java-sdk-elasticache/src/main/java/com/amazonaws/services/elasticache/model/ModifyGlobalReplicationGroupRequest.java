@@ -33,10 +33,9 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
     private String globalReplicationGroupId;
     /**
      * <p>
-     * If true, this parameter causes the modifications in this request and any pending modifications to be applied,
-     * asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for the replication
-     * group. If false, changes to the nodes in the replication group are applied on the next maintenance reboot, or the
-     * next failure reboot, whichever occurs first.
+     * This parameter causes the modifications in this request and any pending modifications to be applied,
+     * asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be
+     * applied in PreferredMaintenceWindow.
      * </p>
      */
     private Boolean applyImmediately;
@@ -108,17 +107,15 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If true, this parameter causes the modifications in this request and any pending modifications to be applied,
-     * asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for the replication
-     * group. If false, changes to the nodes in the replication group are applied on the next maintenance reboot, or the
-     * next failure reboot, whichever occurs first.
+     * This parameter causes the modifications in this request and any pending modifications to be applied,
+     * asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be
+     * applied in PreferredMaintenceWindow.
      * </p>
      * 
      * @param applyImmediately
-     *        If true, this parameter causes the modifications in this request and any pending modifications to be
-     *        applied, asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for
-     *        the replication group. If false, changes to the nodes in the replication group are applied on the next
-     *        maintenance reboot, or the next failure reboot, whichever occurs first.
+     *        This parameter causes the modifications in this request and any pending modifications to be applied,
+     *        asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to
+     *        be applied in PreferredMaintenceWindow.
      */
 
     public void setApplyImmediately(Boolean applyImmediately) {
@@ -127,16 +124,14 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If true, this parameter causes the modifications in this request and any pending modifications to be applied,
-     * asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for the replication
-     * group. If false, changes to the nodes in the replication group are applied on the next maintenance reboot, or the
-     * next failure reboot, whichever occurs first.
+     * This parameter causes the modifications in this request and any pending modifications to be applied,
+     * asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be
+     * applied in PreferredMaintenceWindow.
      * </p>
      * 
-     * @return If true, this parameter causes the modifications in this request and any pending modifications to be
-     *         applied, asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for
-     *         the replication group. If false, changes to the nodes in the replication group are applied on the next
-     *         maintenance reboot, or the next failure reboot, whichever occurs first.
+     * @return This parameter causes the modifications in this request and any pending modifications to be applied,
+     *         asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to
+     *         be applied in PreferredMaintenceWindow.
      */
 
     public Boolean getApplyImmediately() {
@@ -145,17 +140,15 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If true, this parameter causes the modifications in this request and any pending modifications to be applied,
-     * asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for the replication
-     * group. If false, changes to the nodes in the replication group are applied on the next maintenance reboot, or the
-     * next failure reboot, whichever occurs first.
+     * This parameter causes the modifications in this request and any pending modifications to be applied,
+     * asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be
+     * applied in PreferredMaintenceWindow.
      * </p>
      * 
      * @param applyImmediately
-     *        If true, this parameter causes the modifications in this request and any pending modifications to be
-     *        applied, asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for
-     *        the replication group. If false, changes to the nodes in the replication group are applied on the next
-     *        maintenance reboot, or the next failure reboot, whichever occurs first.
+     *        This parameter causes the modifications in this request and any pending modifications to be applied,
+     *        asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to
+     *        be applied in PreferredMaintenceWindow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,16 +159,14 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If true, this parameter causes the modifications in this request and any pending modifications to be applied,
-     * asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for the replication
-     * group. If false, changes to the nodes in the replication group are applied on the next maintenance reboot, or the
-     * next failure reboot, whichever occurs first.
+     * This parameter causes the modifications in this request and any pending modifications to be applied,
+     * asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be
+     * applied in PreferredMaintenceWindow.
      * </p>
      * 
-     * @return If true, this parameter causes the modifications in this request and any pending modifications to be
-     *         applied, asynchronously and as soon as possible, regardless of the PreferredMaintenanceWindow setting for
-     *         the replication group. If false, changes to the nodes in the replication group are applied on the next
-     *         maintenance reboot, or the next failure reboot, whichever occurs first.
+     * @return This parameter causes the modifications in this request and any pending modifications to be applied,
+     *         asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to
+     *         be applied in PreferredMaintenceWindow.
      */
 
     public Boolean isApplyImmediately() {

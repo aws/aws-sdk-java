@@ -517,7 +517,7 @@ public interface AmazonElastiCache {
      * <ul>
      * <li>
      * <p>
-     * The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
      * </p>
      * </li>
      * <li>
@@ -618,7 +618,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -690,7 +690,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -919,18 +919,13 @@ public interface AmazonElastiCache {
      * When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the
      * selected resources; you cannot cancel or revert this operation.
      * </p>
-     * <note>
-     * <p>
-     * This operation is valid for Redis only.
-     * </p>
-     * </note>
      * 
      * @param deleteGlobalReplicationGroupRequest
      * @return Result of the DeleteGlobalReplicationGroup operation returned by the service.
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @sample AmazonElastiCache.DeleteGlobalReplicationGroup
@@ -1432,7 +1427,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1445,7 +1440,8 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Used to failover the primary region to a selected secondary region.
+     * Used to failover the primary region to a selected secondary region. The selected secondary region will be come
+     * primary, and all other clusters will become secondary.
      * </p>
      * 
      * @param failoverGlobalReplicationGroupRequest
@@ -1453,7 +1449,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1474,7 +1470,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @sample AmazonElastiCache.IncreaseNodeGroupsInGlobalReplicationGroup
@@ -1650,7 +1646,7 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @sample AmazonElastiCache.ModifyCacheParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1690,7 +1686,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @sample AmazonElastiCache.ModifyGlobalReplicationGroup
@@ -1702,10 +1698,6 @@ public interface AmazonElastiCache {
     /**
      * <p>
      * Modifies the settings for a replication group.
-     * </p>
-     * <p>
-     * For Redis (cluster mode enabled) clusters, this operation cannot be used to change a cluster's node type or
-     * engine version. For more information, see:
      * </p>
      * <ul>
      * <li>
@@ -1835,7 +1827,7 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+     * Redistribute slots to ensure uniform distribution across existing shards in the cluster.
      * </p>
      * 
      * @param rebalanceSlotsInGlobalReplicationGroupRequest
@@ -1843,7 +1835,7 @@ public interface AmazonElastiCache {
      * @throws GlobalReplicationGroupNotFoundException
      *         The Global Datastore does not exist
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @sample AmazonElastiCache.RebalanceSlotsInGlobalReplicationGroup
@@ -1930,7 +1922,7 @@ public interface AmazonElastiCache {
      * @throws InvalidParameterCombinationException
      *         Two or more incompatible parameters were specified.
      * @throws InvalidGlobalReplicationGroupStateException
-     *         The Global Datastore is not available
+     *         The Global Datastore is not available or in primary-only state.
      * @sample AmazonElastiCache.ResetCacheParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup"
      *      target="_top">AWS API Documentation</a>

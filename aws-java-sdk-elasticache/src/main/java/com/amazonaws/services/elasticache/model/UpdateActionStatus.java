@@ -25,7 +25,10 @@ public enum UpdateActionStatus {
     InProgress("in-progress"),
     Stopping("stopping"),
     Stopped("stopped"),
-    Complete("complete");
+    Complete("complete"),
+    Scheduling("scheduling"),
+    Scheduled("scheduled"),
+    NotApplicable("not-applicable");
 
     private String value;
 

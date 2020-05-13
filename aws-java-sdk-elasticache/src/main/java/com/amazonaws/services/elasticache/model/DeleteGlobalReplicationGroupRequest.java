@@ -33,7 +33,7 @@ public class DeleteGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
     private String globalReplicationGroupId;
     /**
      * <p>
-     * If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * The primary replication group is retained as a standalone replication group.
      * </p>
      */
     private Boolean retainPrimaryReplicationGroup;
@@ -80,11 +80,11 @@ public class DeleteGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * The primary replication group is retained as a standalone replication group.
      * </p>
      * 
      * @param retainPrimaryReplicationGroup
-     *        If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     *        The primary replication group is retained as a standalone replication group.
      */
 
     public void setRetainPrimaryReplicationGroup(Boolean retainPrimaryReplicationGroup) {
@@ -93,10 +93,10 @@ public class DeleteGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * The primary replication group is retained as a standalone replication group.
      * </p>
      * 
-     * @return If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * @return The primary replication group is retained as a standalone replication group.
      */
 
     public Boolean getRetainPrimaryReplicationGroup() {
@@ -105,11 +105,11 @@ public class DeleteGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * The primary replication group is retained as a standalone replication group.
      * </p>
      * 
      * @param retainPrimaryReplicationGroup
-     *        If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     *        The primary replication group is retained as a standalone replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class DeleteGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * The primary replication group is retained as a standalone replication group.
      * </p>
      * 
-     * @return If set to <code>true</code>, the primary replication is retained as a standalone replication group.
+     * @return The primary replication group is retained as a standalone replication group.
      */
 
     public Boolean isRetainPrimaryReplicationGroup() {

@@ -27,7 +27,7 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
+     * The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
      * multiple regions.
      * </p>
      */
@@ -47,12 +47,12 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
+     * The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
      * multiple regions.
      * </p>
      * 
      * @param globalReplicationGroupIdSuffix
-     *        The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name
+     *        The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name
      *        across multiple regions.
      */
 
@@ -62,11 +62,11 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
+     * The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
      * multiple regions.
      * </p>
      * 
-     * @return The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name
+     * @return The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name
      *         across multiple regions.
      */
 
@@ -76,12 +76,12 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
+     * The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name across
      * multiple regions.
      * </p>
      * 
      * @param globalReplicationGroupIdSuffix
-     *        The suffix for name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name
+     *        The suffix name of a Global Datastore. The suffix guarantees uniqueness of the Global Datastore name
      *        across multiple regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

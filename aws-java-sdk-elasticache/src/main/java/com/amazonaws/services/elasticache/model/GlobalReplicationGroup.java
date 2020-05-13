@@ -24,8 +24,8 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * The <b>GlobalReplicationGroupId</b> represents the name of the Global Datastore, which is what you use to associate a
- * secondary cluster.
+ * The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to
+ * associate a secondary cluster.
  * </p>
  * </li>
  * </ul>
@@ -62,7 +62,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
     private String cacheNodeType;
     /**
      * <p>
-     * The Elasticache engine. For preview, it is Redis only.
+     * The Elasticache engine. For Redis only.
      * </p>
      */
     private String engine;
@@ -285,11 +285,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elasticache engine. For preview, it is Redis only.
+     * The Elasticache engine. For Redis only.
      * </p>
      * 
      * @param engine
-     *        The Elasticache engine. For preview, it is Redis only.
+     *        The Elasticache engine. For Redis only.
      */
 
     public void setEngine(String engine) {
@@ -298,10 +298,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elasticache engine. For preview, it is Redis only.
+     * The Elasticache engine. For Redis only.
      * </p>
      * 
-     * @return The Elasticache engine. For preview, it is Redis only.
+     * @return The Elasticache engine. For Redis only.
      */
 
     public String getEngine() {
@@ -310,11 +310,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elasticache engine. For preview, it is Redis only.
+     * The Elasticache engine. For Redis only.
      * </p>
      * 
      * @param engine
-     *        The Elasticache engine. For preview, it is Redis only.
+     *        The Elasticache engine. For Redis only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

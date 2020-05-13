@@ -700,7 +700,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <ul>
      * <li>
      * <p>
-     * The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
      * </p>
      * </li>
      * <li>
@@ -732,7 +732,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <ul>
      * <li>
      * <p>
-     * The <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.
+     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
      * </p>
      * </li>
      * <li>
@@ -1210,11 +1210,6 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the
      * selected resources; you cannot cancel or revert this operation.
      * </p>
-     * <note>
-     * <p>
-     * This operation is valid for Redis only.
-     * </p>
-     * </note>
      * 
      * @param deleteGlobalReplicationGroupRequest
      * @return A Java Future containing the result of the DeleteGlobalReplicationGroup operation returned by the
@@ -1252,11 +1247,6 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the
      * selected resources; you cannot cancel or revert this operation.
      * </p>
-     * <note>
-     * <p>
-     * This operation is valid for Redis only.
-     * </p>
-     * </note>
      * 
      * @param deleteGlobalReplicationGroupRequest
      * @param asyncHandler
@@ -2172,7 +2162,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Used to failover the primary region to a selected secondary region.
+     * Used to failover the primary region to a selected secondary region. The selected secondary region will be come
+     * primary, and all other clusters will become secondary.
      * </p>
      * 
      * @param failoverGlobalReplicationGroupRequest
@@ -2187,7 +2178,8 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Used to failover the primary region to a selected secondary region.
+     * Used to failover the primary region to a selected secondary region. The selected secondary region will be come
+     * primary, and all other clusters will become secondary.
      * </p>
      * 
      * @param failoverGlobalReplicationGroupRequest
@@ -2535,10 +2527,6 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <p>
      * Modifies the settings for a replication group.
      * </p>
-     * <p>
-     * For Redis (cluster mode enabled) clusters, this operation cannot be used to change a cluster's node type or
-     * engine version. For more information, see:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2572,10 +2560,6 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     /**
      * <p>
      * Modifies the settings for a replication group.
-     * </p>
-     * <p>
-     * For Redis (cluster mode enabled) clusters, this operation cannot be used to change a cluster's node type or
-     * engine version. For more information, see:
      * </p>
      * <ul>
      * <li>
@@ -2692,7 +2676,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+     * Redistribute slots to ensure uniform distribution across existing shards in the cluster.
      * </p>
      * 
      * @param rebalanceSlotsInGlobalReplicationGroupRequest
@@ -2708,7 +2692,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Redistribute slots to ensure unifirom distribution across existing shards in the cluster.
+     * Redistribute slots to ensure uniform distribution across existing shards in the cluster.
      * </p>
      * 
      * @param rebalanceSlotsInGlobalReplicationGroupRequest

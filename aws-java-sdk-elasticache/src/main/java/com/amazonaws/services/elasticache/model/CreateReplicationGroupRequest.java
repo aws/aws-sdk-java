@@ -181,9 +181,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However,
-     * when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must configure each node group
-     * (shard) using this parameter because you must specify the slots for each node group.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it
+     * is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node
+     * group (shard) using this parameter because you must specify the slots for each node group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration> nodeGroupConfiguration;
@@ -1667,9 +1667,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However,
-     * when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must configure each node group
-     * (shard) using this parameter because you must specify the slots for each node group.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it
+     * is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node
+     * group (shard) using this parameter because you must specify the slots for each node group.
      * </p>
      * 
      * @return A list of node group (shard) configuration options. Each node group (shard) configuration has the
@@ -1678,9 +1678,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
      *         you can use this parameter to individually configure each node group (shard), or you can omit this
-     *         parameter. However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must
-     *         configure each node group (shard) using this parameter because you must specify the slots for each node
-     *         group.
+     *         parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb
+     *         file. You must configure each node group (shard) using this parameter because you must specify the slots
+     *         for each node group.
      */
 
     public java.util.List<NodeGroupConfiguration> getNodeGroupConfiguration() {
@@ -1698,9 +1698,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However,
-     * when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must configure each node group
-     * (shard) using this parameter because you must specify the slots for each node group.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it
+     * is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node
+     * group (shard) using this parameter because you must specify the slots for each node group.
      * </p>
      * 
      * @param nodeGroupConfiguration
@@ -1710,9 +1710,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
      *        you can use this parameter to individually configure each node group (shard), or you can omit this
-     *        parameter. However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must
-     *        configure each node group (shard) using this parameter because you must specify the slots for each node
-     *        group.
+     *        parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file.
+     *        You must configure each node group (shard) using this parameter because you must specify the slots for
+     *        each node group.
      */
 
     public void setNodeGroupConfiguration(java.util.Collection<NodeGroupConfiguration> nodeGroupConfiguration) {
@@ -1732,9 +1732,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However,
-     * when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must configure each node group
-     * (shard) using this parameter because you must specify the slots for each node group.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it
+     * is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node
+     * group (shard) using this parameter because you must specify the slots for each node group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1749,9 +1749,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
      *        you can use this parameter to individually configure each node group (shard), or you can omit this
-     *        parameter. However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must
-     *        configure each node group (shard) using this parameter because you must specify the slots for each node
-     *        group.
+     *        parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file.
+     *        You must configure each node group (shard) using this parameter because you must specify the slots for
+     *        each node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1773,9 +1773,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However,
-     * when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must configure each node group
-     * (shard) using this parameter because you must specify the slots for each node group.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it
+     * is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node
+     * group (shard) using this parameter because you must specify the slots for each node group.
      * </p>
      * 
      * @param nodeGroupConfiguration
@@ -1785,9 +1785,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
      *        you can use this parameter to individually configure each node group (shard), or you can omit this
-     *        parameter. However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file, you must
-     *        configure each node group (shard) using this parameter because you must specify the slots for each node
-     *        group.
+     *        parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file.
+     *        You must configure each node group (shard) using this parameter because you must specify the slots for
+     *        each node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

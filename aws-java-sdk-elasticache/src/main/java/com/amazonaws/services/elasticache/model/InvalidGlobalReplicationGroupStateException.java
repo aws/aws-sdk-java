@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Global Datastore is not available
+ * The Global Datastore is not available or in primary-only state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
