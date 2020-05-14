@@ -49,7 +49,7 @@ public class PrimaryKey {
     public PrimaryKey(String hashKeyName, Object hashKeyValue,
             String rangeKeyName, Object rangeKeyValue) {
         if (hashKeyName.equals(rangeKeyName))
-            throw new IllegalArgumentException("hashKyeName must not be the same as the rangeKeyName");
+            throw new IllegalArgumentException("hashKeyName must not be the same as the rangeKeyName");
         addComponent(hashKeyName, hashKeyValue);
         addComponent(rangeKeyName, rangeKeyValue);
     }
