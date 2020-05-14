@@ -59,6 +59,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String platform;
     /**
      * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     */
+    private java.util.List<String> supportedOsVersions;
+    /**
+     * <p>
      * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
      * used to specify the data within the component.
      * </p>
@@ -319,6 +326,84 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateComponentRequest withPlatform(Platform platform) {
         this.platform = platform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * 
+     * @return The operating system (OS) version supported by the component. If the OS information is available, a
+     *         prefix match is performed against the parent image OS version during image recipe creation.
+     */
+
+    public java.util.List<String> getSupportedOsVersions() {
+        return supportedOsVersions;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * 
+     * @param supportedOsVersions
+     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
+     *        match is performed against the parent image OS version during image recipe creation.
+     */
+
+    public void setSupportedOsVersions(java.util.Collection<String> supportedOsVersions) {
+        if (supportedOsVersions == null) {
+            this.supportedOsVersions = null;
+            return;
+        }
+
+        this.supportedOsVersions = new java.util.ArrayList<String>(supportedOsVersions);
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedOsVersions(java.util.Collection)} or {@link #withSupportedOsVersions(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedOsVersions
+     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
+     *        match is performed against the parent image OS version during image recipe creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComponentRequest withSupportedOsVersions(String... supportedOsVersions) {
+        if (this.supportedOsVersions == null) {
+            setSupportedOsVersions(new java.util.ArrayList<String>(supportedOsVersions.length));
+        }
+        for (String ele : supportedOsVersions) {
+            this.supportedOsVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * 
+     * @param supportedOsVersions
+     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
+     *        match is performed against the parent image OS version during image recipe creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComponentRequest withSupportedOsVersions(java.util.Collection<String> supportedOsVersions) {
+        setSupportedOsVersions(supportedOsVersions);
         return this;
     }
 
@@ -590,6 +675,8 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ChangeDescription: ").append(getChangeDescription()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getSupportedOsVersions() != null)
+            sb.append("SupportedOsVersions: ").append(getSupportedOsVersions()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
         if (getUri() != null)
@@ -634,6 +721,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
+        if (other.getSupportedOsVersions() == null ^ this.getSupportedOsVersions() == null)
+            return false;
+        if (other.getSupportedOsVersions() != null && other.getSupportedOsVersions().equals(this.getSupportedOsVersions()) == false)
+            return false;
         if (other.getData() == null ^ this.getData() == null)
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
@@ -667,6 +758,7 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getChangeDescription() == null) ? 0 : getChangeDescription().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getSupportedOsVersions() == null) ? 0 : getSupportedOsVersions().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getUri() == null) ? 0 : getUri().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());

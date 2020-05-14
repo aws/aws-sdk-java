@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +41,8 @@ public class CreateComponentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("changeDescription").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("platform").build();
+    private static final MarshallingInfo<List> SUPPORTEDOSVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedOsVersions").build();
     private static final MarshallingInfo<String> DATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("data").build();
     private static final MarshallingInfo<String> URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,6 +76,7 @@ public class CreateComponentRequestMarshaller {
             protocolMarshaller.marshall(createComponentRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createComponentRequest.getChangeDescription(), CHANGEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(createComponentRequest.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(createComponentRequest.getSupportedOsVersions(), SUPPORTEDOSVERSIONS_BINDING);
             protocolMarshaller.marshall(createComponentRequest.getData(), DATA_BINDING);
             protocolMarshaller.marshall(createComponentRequest.getUri(), URI_BINDING);
             protocolMarshaller.marshall(createComponentRequest.getKmsKeyId(), KMSKEYID_BINDING);

@@ -1,3 +1,20 @@
+# __1.11.783__ __2020-05-14__
+## __AWS S3__
+  - ### Features
+    - Add `eu-south-1` region to Region enum
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add `eu-south-1` region to Regions enum
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 now supports adding AWS resource tags for associations between VPCs and local gateways, at creation time.
+
+## __EC2 Image Builder__
+  - ### Features
+    - This release adds a new parameter (SupportedOsVersions) to the Components API. This parameter lists the OS versions supported by a component.
+
 # __1.11.782__ __2020-05-13__
 ## __Amazon ElastiCache__
   - ### Features

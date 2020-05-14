@@ -52,6 +52,42 @@ public class CreateLocalGatewayRouteTableVpcAssociationRequestMarshaller impleme
             request.addParameter("VpcId", StringUtils.fromString(createLocalGatewayRouteTableVpcAssociationRequest.getVpcId()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createLocalGatewayRouteTableVpcAssociationRequest
+                .getTagSpecifications();
+        if (!createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsList.isEmpty()
+                || !createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsListValue : createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsList) {
+
+                if (createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createLocalGatewayRouteTableVpcAssociationRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

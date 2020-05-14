@@ -72,6 +72,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     */
+    private java.util.List<String> supportedOsVersions;
+    /**
+     * <p>
      * The owner of the component.
      * </p>
      */
@@ -427,6 +434,84 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * 
+     * @return The operating system (OS) version supported by the component. If the OS information is available, a
+     *         prefix match is performed against the parent image OS version during image recipe creation.
+     */
+
+    public java.util.List<String> getSupportedOsVersions() {
+        return supportedOsVersions;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * 
+     * @param supportedOsVersions
+     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
+     *        match is performed against the parent image OS version during image recipe creation.
+     */
+
+    public void setSupportedOsVersions(java.util.Collection<String> supportedOsVersions) {
+        if (supportedOsVersions == null) {
+            this.supportedOsVersions = null;
+            return;
+        }
+
+        this.supportedOsVersions = new java.util.ArrayList<String>(supportedOsVersions);
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedOsVersions(java.util.Collection)} or {@link #withSupportedOsVersions(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedOsVersions
+     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
+     *        match is performed against the parent image OS version during image recipe creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Component withSupportedOsVersions(String... supportedOsVersions) {
+        if (this.supportedOsVersions == null) {
+            setSupportedOsVersions(new java.util.ArrayList<String>(supportedOsVersions.length));
+        }
+        for (String ele : supportedOsVersions) {
+            this.supportedOsVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system (OS) version supported by the component. If the OS information is available, a prefix match
+     * is performed against the parent image OS version during image recipe creation.
+     * </p>
+     * 
+     * @param supportedOsVersions
+     *        The operating system (OS) version supported by the component. If the OS information is available, a prefix
+     *        match is performed against the parent image OS version during image recipe creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Component withSupportedOsVersions(java.util.Collection<String> supportedOsVersions) {
+        setSupportedOsVersions(supportedOsVersions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The owner of the component.
      * </p>
      * 
@@ -731,6 +816,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
             sb.append("Type: ").append(getType()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getSupportedOsVersions() != null)
+            sb.append("SupportedOsVersions: ").append(getSupportedOsVersions()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getData() != null)
@@ -785,6 +872,10 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
+        if (other.getSupportedOsVersions() == null ^ this.getSupportedOsVersions() == null)
+            return false;
+        if (other.getSupportedOsVersions() != null && other.getSupportedOsVersions().equals(this.getSupportedOsVersions()) == false)
+            return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
@@ -824,6 +915,7 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getChangeDescription() == null) ? 0 : getChangeDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getSupportedOsVersions() == null) ? 0 : getSupportedOsVersions().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());

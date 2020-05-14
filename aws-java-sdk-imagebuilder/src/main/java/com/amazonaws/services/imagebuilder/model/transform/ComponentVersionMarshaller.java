@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.imagebuilder.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class ComponentVersionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("platform").build();
+    private static final MarshallingInfo<List> SUPPORTEDOSVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedOsVersions").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +68,7 @@ public class ComponentVersionMarshaller {
             protocolMarshaller.marshall(componentVersion.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(componentVersion.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(componentVersion.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(componentVersion.getSupportedOsVersions(), SUPPORTEDOSVERSIONS_BINDING);
             protocolMarshaller.marshall(componentVersion.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(componentVersion.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(componentVersion.getDateCreated(), DATECREATED_BINDING);

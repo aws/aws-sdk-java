@@ -36,6 +36,33 @@ public class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequ
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the association.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -135,8 +162,63 @@ public class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequ
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the association.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters.
+     * @return One or more filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-id</code> - The ID of a local gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the
+     *         association.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface
+     *         group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>state</code> - The state of the association.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -150,9 +232,62 @@ public class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequ
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the association.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-id</code> - The ID of a local gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the association.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -168,6 +303,33 @@ public class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequ
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the association.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -175,7 +337,33 @@ public class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequ
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-id</code> - The ID of a local gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the association.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,9 +381,62 @@ public class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequ
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the association.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-id</code> - The ID of a local gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-virtual-interface-group-association-id</code> - The ID of the association.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the association.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

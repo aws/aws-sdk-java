@@ -76,6 +76,10 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                     context.nextToken();
                     component.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("supportedOsVersions", targetDepth)) {
+                    context.nextToken();
+                    component.setSupportedOsVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("owner", targetDepth)) {
                     context.nextToken();
                     component.setOwner(context.getUnmarshaller(String.class).unmarshall(context));

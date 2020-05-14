@@ -36,6 +36,23 @@ public class DescribeLocalGatewayVirtualInterfaceGroupsRequest extends AmazonWeb
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -131,8 +148,41 @@ public class DescribeLocalGatewayVirtualInterfaceGroupsRequest extends AmazonWeb
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters.
+     * @return One or more filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-id</code> - The ID of a local gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -146,9 +196,42 @@ public class DescribeLocalGatewayVirtualInterfaceGroupsRequest extends AmazonWeb
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-id</code> - The ID of a local gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -164,6 +247,23 @@ public class DescribeLocalGatewayVirtualInterfaceGroupsRequest extends AmazonWeb
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -171,7 +271,23 @@ public class DescribeLocalGatewayVirtualInterfaceGroupsRequest extends AmazonWeb
      * </p>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-id</code> - The ID of a local gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,9 +305,42 @@ public class DescribeLocalGatewayVirtualInterfaceGroupsRequest extends AmazonWeb
      * <p>
      * One or more filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>local-gateway-id</code> - The ID of a local gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters.
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-id</code> - The ID of a local gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>local-gateway-virtual-interface-group-id</code> - The ID of the virtual interface group.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

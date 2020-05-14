@@ -1,0 +1,243 @@
+/*
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.macie2.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each
+ * bucket.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BucketCountByEffectivePermission"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class BucketCountByEffectivePermission implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private Long publiclyAccessible;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private Long publiclyReadable;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private Long publiclyWritable;
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param publiclyAccessible
+     *        Reserved for future use.
+     */
+
+    public void setPubliclyAccessible(Long publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public Long getPubliclyAccessible() {
+        return this.publiclyAccessible;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param publiclyAccessible
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketCountByEffectivePermission withPubliclyAccessible(Long publiclyAccessible) {
+        setPubliclyAccessible(publiclyAccessible);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param publiclyReadable
+     *        Reserved for future use.
+     */
+
+    public void setPubliclyReadable(Long publiclyReadable) {
+        this.publiclyReadable = publiclyReadable;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public Long getPubliclyReadable() {
+        return this.publiclyReadable;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param publiclyReadable
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketCountByEffectivePermission withPubliclyReadable(Long publiclyReadable) {
+        setPubliclyReadable(publiclyReadable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param publiclyWritable
+     *        Reserved for future use.
+     */
+
+    public void setPubliclyWritable(Long publiclyWritable) {
+        this.publiclyWritable = publiclyWritable;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public Long getPubliclyWritable() {
+        return this.publiclyWritable;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param publiclyWritable
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketCountByEffectivePermission withPubliclyWritable(Long publiclyWritable) {
+        setPubliclyWritable(publiclyWritable);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getPubliclyAccessible() != null)
+            sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
+        if (getPubliclyReadable() != null)
+            sb.append("PubliclyReadable: ").append(getPubliclyReadable()).append(",");
+        if (getPubliclyWritable() != null)
+            sb.append("PubliclyWritable: ").append(getPubliclyWritable());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof BucketCountByEffectivePermission == false)
+            return false;
+        BucketCountByEffectivePermission other = (BucketCountByEffectivePermission) obj;
+        if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
+            return false;
+        if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
+            return false;
+        if (other.getPubliclyReadable() == null ^ this.getPubliclyReadable() == null)
+            return false;
+        if (other.getPubliclyReadable() != null && other.getPubliclyReadable().equals(this.getPubliclyReadable()) == false)
+            return false;
+        if (other.getPubliclyWritable() == null ^ this.getPubliclyWritable() == null)
+            return false;
+        if (other.getPubliclyWritable() != null && other.getPubliclyWritable().equals(this.getPubliclyWritable()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
+        hashCode = prime * hashCode + ((getPubliclyReadable() == null) ? 0 : getPubliclyReadable().hashCode());
+        hashCode = prime * hashCode + ((getPubliclyWritable() == null) ? 0 : getPubliclyWritable().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public BucketCountByEffectivePermission clone() {
+        try {
+            return (BucketCountByEffectivePermission) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.macie2.model.transform.BucketCountByEffectivePermissionMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

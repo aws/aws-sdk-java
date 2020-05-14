@@ -973,6 +973,10 @@
           "shape":"Platform",
           "documentation":"<p>The platform of the component.</p>"
         },
+        "supportedOsVersions":{
+          "shape":"OsVersionList",
+          "documentation":"<p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the parent image OS version during image recipe creation. </p>"
+        },
         "owner":{
           "shape":"NonEmptyString",
           "documentation":"<p>The owner of the component.</p>"
@@ -1044,6 +1048,10 @@
           "shape":"Platform",
           "documentation":"<p>The platform of the component.</p>"
         },
+        "supportedOsVersions":{
+          "shape":"OsVersionList",
+          "documentation":"<p>The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the parent image OS version during image recipe creation. </p>"
+        },
         "type":{
           "shape":"ComponentType",
           "documentation":"<p>The type of the component denotes whether the component is used to build the image or only to test it.</p>"
@@ -1105,6 +1113,10 @@
           "shape":"Platform",
           "documentation":"<p>The platform of the component.</p>"
         },
+        "supportedOsVersions":{
+          "shape":"OsVersionList",
+          "documentation":"<p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the parent image OS version during image recipe creation. </p>"
+        },
         "type":{
           "shape":"ComponentType",
           "documentation":"<p>The type of the component denotes whether the component is used to build the image or only to test it.</p>"
@@ -1160,6 +1172,10 @@
         "platform":{
           "shape":"Platform",
           "documentation":"<p>The platform of the component.</p>"
+        },
+        "supportedOsVersions":{
+          "shape":"OsVersionList",
+          "documentation":"<p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the parent image OS version during image recipe creation. </p>"
         },
         "data":{
           "shape":"InlineComponentData",
@@ -3160,6 +3176,12 @@
     "NullableBoolean":{"type":"boolean"},
     "OsVersion":{
       "type":"string",
+      "min":1
+    },
+    "OsVersionList":{
+      "type":"list",
+      "member":{"shape":"OsVersion"},
+      "max":25,
       "min":1
     },
     "OutputResources":{

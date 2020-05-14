@@ -65,7 +65,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     private String ipv6CidrBlock;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost.
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     * Availability Zone of the Outpost subnet.
      * </p>
      */
     private String outpostArn;
@@ -340,11 +341,13 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost.
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     * Availability Zone of the Outpost subnet.
      * </p>
      * 
      * @param outpostArn
-     *        The Amazon Resource Name (ARN) of the Outpost.
+     *        The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     *        Availability Zone of the Outpost subnet.
      */
 
     public void setOutpostArn(String outpostArn) {
@@ -353,10 +356,12 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost.
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     * Availability Zone of the Outpost subnet.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Outpost.
+     * @return The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     *         Availability Zone of the Outpost subnet.
      */
 
     public String getOutpostArn() {
@@ -365,11 +370,13 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost.
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     * Availability Zone of the Outpost subnet.
      * </p>
      * 
      * @param outpostArn
-     *        The Amazon Resource Name (ARN) of the Outpost.
+     *        The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the
+     *        Availability Zone of the Outpost subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

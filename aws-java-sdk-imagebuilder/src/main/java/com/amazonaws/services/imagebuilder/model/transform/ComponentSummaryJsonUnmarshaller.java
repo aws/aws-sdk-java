@@ -64,6 +64,10 @@ public class ComponentSummaryJsonUnmarshaller implements Unmarshaller<ComponentS
                     context.nextToken();
                     componentSummary.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("supportedOsVersions", targetDepth)) {
+                    context.nextToken();
+                    componentSummary.setSupportedOsVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     componentSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
