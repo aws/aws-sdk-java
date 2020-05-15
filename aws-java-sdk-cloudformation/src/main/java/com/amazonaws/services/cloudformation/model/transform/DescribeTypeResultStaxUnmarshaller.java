@@ -63,6 +63,11 @@ public class DescribeTypeResultStaxUnmarshaller implements Unmarshaller<Describe
                     continue;
                 }
 
+                if (context.testExpression("IsDefaultVersion", targetDepth)) {
+                    describeTypeResult.setIsDefaultVersion(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Description", targetDepth)) {
                     describeTypeResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

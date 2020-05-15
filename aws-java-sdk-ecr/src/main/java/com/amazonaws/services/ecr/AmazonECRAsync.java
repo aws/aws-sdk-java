@@ -958,7 +958,7 @@ public interface AmazonECRAsync extends AmazonECR {
     /**
      * <p>
      * Applies a repository policy to the specified repository to control access permissions. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository
      * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
@@ -973,7 +973,7 @@ public interface AmazonECRAsync extends AmazonECR {
     /**
      * <p>
      * Applies a repository policy to the specified repository to control access permissions. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository
      * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 

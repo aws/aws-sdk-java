@@ -55,6 +55,12 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     private String defaultVersionId;
     /**
      * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     */
+    private Boolean isDefaultVersion;
+    /**
+     * <p>
      * The description of the registered type.
      * </p>
      */
@@ -417,6 +423,58 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
     public DescribeTypeResult withDefaultVersionId(String defaultVersionId) {
         setDefaultVersionId(defaultVersionId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @param isDefaultVersion
+     *        Whether the specified type version is set as the default version.
+     */
+
+    public void setIsDefaultVersion(Boolean isDefaultVersion) {
+        this.isDefaultVersion = isDefaultVersion;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @return Whether the specified type version is set as the default version.
+     */
+
+    public Boolean getIsDefaultVersion() {
+        return this.isDefaultVersion;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @param isDefaultVersion
+     *        Whether the specified type version is set as the default version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTypeResult withIsDefaultVersion(Boolean isDefaultVersion) {
+        setIsDefaultVersion(isDefaultVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @return Whether the specified type version is set as the default version.
+     */
+
+    public Boolean isDefaultVersion() {
+        return this.isDefaultVersion;
     }
 
     /**
@@ -1566,6 +1624,8 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("TypeName: ").append(getTypeName()).append(",");
         if (getDefaultVersionId() != null)
             sb.append("DefaultVersionId: ").append(getDefaultVersionId()).append(",");
+        if (getIsDefaultVersion() != null)
+            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSchema() != null)
@@ -1617,6 +1677,10 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
         if (other.getDefaultVersionId() == null ^ this.getDefaultVersionId() == null)
             return false;
         if (other.getDefaultVersionId() != null && other.getDefaultVersionId().equals(this.getDefaultVersionId()) == false)
+            return false;
+        if (other.getIsDefaultVersion() == null ^ this.getIsDefaultVersion() == null)
+            return false;
+        if (other.getIsDefaultVersion() != null && other.getIsDefaultVersion().equals(this.getIsDefaultVersion()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -1674,6 +1738,7 @@ public class DescribeTypeResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getDefaultVersionId() == null) ? 0 : getDefaultVersionId().hashCode());
+        hashCode = prime * hashCode + ((getIsDefaultVersion() == null) ? 0 : getIsDefaultVersion().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getProvisioningType() == null) ? 0 : getProvisioningType().hashCode());

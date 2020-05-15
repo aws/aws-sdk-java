@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum WorkflowRunStatus {
 
     RUNNING("RUNNING"),
-    COMPLETED("COMPLETED");
+    COMPLETED("COMPLETED"),
+    STOPPING("STOPPING"),
+    STOPPED("STOPPED");
 
     private String value;
 

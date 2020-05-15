@@ -21,8 +21,9 @@ import javax.annotation.Generated;
 public enum CrawlState {
 
     RUNNING("RUNNING"),
-    SUCCEEDED("SUCCEEDED"),
+    CANCELLING("CANCELLING"),
     CANCELLED("CANCELLED"),
+    SUCCEEDED("SUCCEEDED"),
     FAILED("FAILED");
 
     private String value;

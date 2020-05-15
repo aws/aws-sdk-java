@@ -58,6 +58,11 @@ public class TypeVersionSummaryStaxUnmarshaller implements Unmarshaller<TypeVers
                     continue;
                 }
 
+                if (context.testExpression("IsDefaultVersion", targetDepth)) {
+                    typeVersionSummary.setIsDefaultVersion(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Arn", targetDepth)) {
                     typeVersionSummary.setArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

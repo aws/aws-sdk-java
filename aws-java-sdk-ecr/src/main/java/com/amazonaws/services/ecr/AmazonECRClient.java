@@ -674,8 +674,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
+     *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository" target="_top">AWS API
      *      Documentation</a>
@@ -1672,8 +1672,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
+     *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
      * @throws ImageTagAlreadyExistsException
      *         The specified image is tagged with a tag that already exists. The repository is configured for tag
      *         immutability.
@@ -1913,7 +1913,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
     /**
      * <p>
      * Applies a repository policy to the specified repository to control access permissions. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository
      * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
@@ -1991,8 +1991,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
+     *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
@@ -2276,8 +2276,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service_limits.html">Amazon ECR Default
-     *         Service Limits</a> in the Amazon Elastic Container Registry User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
+     *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
      * @sample AmazonECR.UploadLayerPart
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API
      *      Documentation</a>

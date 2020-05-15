@@ -3666,6 +3666,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StopWorkflowRunResult> stopWorkflowRunAsync(StopWorkflowRunRequest request) {
+
+        return stopWorkflowRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopWorkflowRunResult> stopWorkflowRunAsync(final StopWorkflowRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopWorkflowRunRequest, StopWorkflowRunResult> asyncHandler) {
+        final StopWorkflowRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopWorkflowRunResult>() {
+            @Override
+            public StopWorkflowRunResult call() throws Exception {
+                StopWorkflowRunResult result = null;
+
+                try {
+                    result = executeStopWorkflowRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

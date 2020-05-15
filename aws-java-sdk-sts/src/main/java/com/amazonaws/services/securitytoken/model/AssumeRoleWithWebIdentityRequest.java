@@ -1015,7 +1015,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
         if (getRoleSessionName() != null)
             sb.append("RoleSessionName: ").append(getRoleSessionName()).append(",");
         if (getWebIdentityToken() != null)
-            sb.append("WebIdentityToken: ").append(getWebIdentityToken()).append(",");
+            sb.append("WebIdentityToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getProviderId() != null)
             sb.append("ProviderId: ").append(getProviderId()).append(",");
         if (getPolicyArns() != null)

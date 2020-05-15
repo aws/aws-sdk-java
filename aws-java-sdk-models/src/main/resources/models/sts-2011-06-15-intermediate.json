@@ -3119,7 +3119,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SAMLAssertion",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html\">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. </p>\n@param sAMLAssertion The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html\">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>.*/",
         "setterMethodName" : "setSAMLAssertion",
         "setterModel" : {
@@ -3904,7 +3904,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SAMLAssertion",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html\">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. </p>\n@param sAMLAssertion The base-64 encoded SAML authentication response provided by the IdP.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html\">Configuring a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>.*/",
           "setterMethodName" : "setSAMLAssertion",
           "setterModel" : {
@@ -5293,7 +5293,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "WebIdentityToken",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>\n@param webIdentityToken The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call.*/",
         "setterMethodName" : "setWebIdentityToken",
         "setterModel" : {
@@ -6215,7 +6215,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "WebIdentityToken",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. </p>\n@param webIdentityToken The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application must get this token by authenticating the user who is using your application with a web identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call.*/",
           "setterMethodName" : "setWebIdentityToken",
           "setterModel" : {

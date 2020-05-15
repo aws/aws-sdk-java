@@ -902,7 +902,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
         if (getPrincipalArn() != null)
             sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
         if (getSAMLAssertion() != null)
-            sb.append("SAMLAssertion: ").append(getSAMLAssertion()).append(",");
+            sb.append("SAMLAssertion: ").append("***Sensitive Data Redacted***").append(",");
         if (getPolicyArns() != null)
             sb.append("PolicyArns: ").append(getPolicyArns()).append(",");
         if (getPolicy() != null)

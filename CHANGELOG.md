@@ -1,3 +1,20 @@
+# __1.11.784__ __2020-05-15__
+## __AWS CloudFormation__
+  - ### Features
+    - This release adds support for the following features: 1. DescribeType and ListTypeVersions APIs now output a field IsDefaultVersion, indicating if a version is the default version for its type; 2. Add StackRollbackComplete waiter feature to wait until stack status is UPDATE_ROLLBACK_COMPLETE; 3. Add paginators in DescribeAccountLimits, ListChangeSets, ListStackInstances, ListStackSetOperationResults, ListStackSetOperations, ListStackSets APIs.
+
+## __AWS Glue__
+  - ### Features
+    - Starting today, you can stop the execution of Glue workflows that are running. AWS Glue workflows are directed acyclic graphs (DAGs) of Glue triggers, crawlers and jobs. Using a workflow, you can design a complex multi-job extract, transform, and load (ETL) activity that AWS Glue can execute and track as single entity. 
+
+## __AWS Security Token Service__
+  - ### Features
+    - API updates for STS
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release adds support for specifying an image manifest media type when pushing a manifest to Amazon ECR.
+
 # __1.11.783__ __2020-05-14__
 ## __AWS S3__
   - ### Features

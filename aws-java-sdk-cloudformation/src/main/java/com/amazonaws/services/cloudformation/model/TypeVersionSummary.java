@@ -47,6 +47,12 @@ public class TypeVersionSummary implements Serializable, Cloneable {
     private String versionId;
     /**
      * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     */
+    private Boolean isDefaultVersion;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the type version.
      * </p>
      */
@@ -211,6 +217,58 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @param isDefaultVersion
+     *        Whether the specified type version is set as the default version.
+     */
+
+    public void setIsDefaultVersion(Boolean isDefaultVersion) {
+        this.isDefaultVersion = isDefaultVersion;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @return Whether the specified type version is set as the default version.
+     */
+
+    public Boolean getIsDefaultVersion() {
+        return this.isDefaultVersion;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @param isDefaultVersion
+     *        Whether the specified type version is set as the default version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TypeVersionSummary withIsDefaultVersion(Boolean isDefaultVersion) {
+        setIsDefaultVersion(isDefaultVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the specified type version is set as the default version.
+     * </p>
+     * 
+     * @return Whether the specified type version is set as the default version.
+     */
+
+    public Boolean isDefaultVersion() {
+        return this.isDefaultVersion;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the type version.
      * </p>
      * 
@@ -347,6 +405,8 @@ public class TypeVersionSummary implements Serializable, Cloneable {
             sb.append("TypeName: ").append(getTypeName()).append(",");
         if (getVersionId() != null)
             sb.append("VersionId: ").append(getVersionId()).append(",");
+        if (getIsDefaultVersion() != null)
+            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getTimeCreated() != null)
@@ -379,6 +439,10 @@ public class TypeVersionSummary implements Serializable, Cloneable {
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
             return false;
+        if (other.getIsDefaultVersion() == null ^ this.getIsDefaultVersion() == null)
+            return false;
+        if (other.getIsDefaultVersion() != null && other.getIsDefaultVersion().equals(this.getIsDefaultVersion()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -402,6 +466,7 @@ public class TypeVersionSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime * hashCode + ((getIsDefaultVersion() == null) ? 0 : getIsDefaultVersion().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

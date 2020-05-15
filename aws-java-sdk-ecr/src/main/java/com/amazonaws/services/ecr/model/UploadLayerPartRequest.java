@@ -46,13 +46,13 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
     private String uploadId;
     /**
      * <p>
-     * The integer value of the first byte of the layer part.
+     * The position of the first byte of the layer part witin the overall image layer.
      * </p>
      */
     private Long partFirstByte;
     /**
      * <p>
-     * The integer value of the last byte of the layer part.
+     * The position of the last byte of the layer part within the overall image layer.
      * </p>
      */
     private Long partLastByte;
@@ -194,11 +194,11 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The integer value of the first byte of the layer part.
+     * The position of the first byte of the layer part witin the overall image layer.
      * </p>
      * 
      * @param partFirstByte
-     *        The integer value of the first byte of the layer part.
+     *        The position of the first byte of the layer part witin the overall image layer.
      */
 
     public void setPartFirstByte(Long partFirstByte) {
@@ -207,10 +207,10 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The integer value of the first byte of the layer part.
+     * The position of the first byte of the layer part witin the overall image layer.
      * </p>
      * 
-     * @return The integer value of the first byte of the layer part.
+     * @return The position of the first byte of the layer part witin the overall image layer.
      */
 
     public Long getPartFirstByte() {
@@ -219,11 +219,11 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The integer value of the first byte of the layer part.
+     * The position of the first byte of the layer part witin the overall image layer.
      * </p>
      * 
      * @param partFirstByte
-     *        The integer value of the first byte of the layer part.
+     *        The position of the first byte of the layer part witin the overall image layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +234,11 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The integer value of the last byte of the layer part.
+     * The position of the last byte of the layer part within the overall image layer.
      * </p>
      * 
      * @param partLastByte
-     *        The integer value of the last byte of the layer part.
+     *        The position of the last byte of the layer part within the overall image layer.
      */
 
     public void setPartLastByte(Long partLastByte) {
@@ -247,10 +247,10 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The integer value of the last byte of the layer part.
+     * The position of the last byte of the layer part within the overall image layer.
      * </p>
      * 
-     * @return The integer value of the last byte of the layer part.
+     * @return The position of the last byte of the layer part within the overall image layer.
      */
 
     public Long getPartLastByte() {
@@ -259,11 +259,11 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The integer value of the last byte of the layer part.
+     * The position of the last byte of the layer part within the overall image layer.
      * </p>
      * 
      * @param partLastByte
-     *        The integer value of the last byte of the layer part.
+     *        The position of the last byte of the layer part within the overall image layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

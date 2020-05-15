@@ -2566,6 +2566,29 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Stops the execution of the specified workflow run.
+     * </p>
+     * 
+     * @param stopWorkflowRunRequest
+     * @return Result of the StopWorkflowRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws IllegalWorkflowStateException
+     *         The workflow is in an invalid state to perform a requested operation.
+     * @sample AWSGlue.StopWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopWorkflowRunResult stopWorkflowRun(StopWorkflowRunRequest stopWorkflowRunRequest);
+
+    /**
+     * <p>
      * Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS Glue, you can tag only
      * certain resources. For information about what resources you can tag, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.

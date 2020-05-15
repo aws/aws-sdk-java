@@ -90,6 +90,22 @@ public class AmazonCloudFormationWaiters {
     }
 
     /**
+     * Builds a StackRollbackComplete waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeStacksRequest> stackRollbackComplete() {
+
+        return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
+                .withSdkFunction(new DescribeStacksFunction(client))
+                .withAcceptors(new StackRollbackComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher(), new StackRollbackComplete.IsUPDATE_FAILEDMatcher(),
+                        new StackRollbackComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(), new StackRollbackComplete.IsDELETE_FAILEDMatcher(),
+                        new StackRollbackComplete.IsValidationErrorMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a StackUpdateComplete waiter by using custom parameters waiterParameters and other parameters defined in
      * the waiters specification, and then polls until it determines whether the resource entered the desired state or
      * not, where polling criteria is bound by either default polling strategy or custom polling strategy.

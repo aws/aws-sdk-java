@@ -51,6 +51,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String imageManifest;
+    /**
+     * <p>
+     * The media type associated with the image manifest.
+     * </p>
+     */
+    private String imageManifestMediaType;
 
     /**
      * <p>
@@ -213,6 +219,46 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The media type associated with the image manifest.
+     * </p>
+     * 
+     * @param imageManifestMediaType
+     *        The media type associated with the image manifest.
+     */
+
+    public void setImageManifestMediaType(String imageManifestMediaType) {
+        this.imageManifestMediaType = imageManifestMediaType;
+    }
+
+    /**
+     * <p>
+     * The media type associated with the image manifest.
+     * </p>
+     * 
+     * @return The media type associated with the image manifest.
+     */
+
+    public String getImageManifestMediaType() {
+        return this.imageManifestMediaType;
+    }
+
+    /**
+     * <p>
+     * The media type associated with the image manifest.
+     * </p>
+     * 
+     * @param imageManifestMediaType
+     *        The media type associated with the image manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withImageManifestMediaType(String imageManifestMediaType) {
+        setImageManifestMediaType(imageManifestMediaType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -231,7 +277,9 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getImageId() != null)
             sb.append("ImageId: ").append(getImageId()).append(",");
         if (getImageManifest() != null)
-            sb.append("ImageManifest: ").append(getImageManifest());
+            sb.append("ImageManifest: ").append(getImageManifest()).append(",");
+        if (getImageManifestMediaType() != null)
+            sb.append("ImageManifestMediaType: ").append(getImageManifestMediaType());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +310,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageManifest() != null && other.getImageManifest().equals(this.getImageManifest()) == false)
             return false;
+        if (other.getImageManifestMediaType() == null ^ this.getImageManifestMediaType() == null)
+            return false;
+        if (other.getImageManifestMediaType() != null && other.getImageManifestMediaType().equals(this.getImageManifestMediaType()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +326,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getImageManifest() == null) ? 0 : getImageManifest().hashCode());
+        hashCode = prime * hashCode + ((getImageManifestMediaType() == null) ? 0 : getImageManifestMediaType().hashCode());
         return hashCode;
     }
 

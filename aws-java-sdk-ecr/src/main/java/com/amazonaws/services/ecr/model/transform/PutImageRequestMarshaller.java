@@ -33,6 +33,8 @@ public class PutImageRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
     private static final MarshallingInfo<String> IMAGEMANIFEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageManifest").build();
+    private static final MarshallingInfo<String> IMAGEMANIFESTMEDIATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageManifestMediaType").build();
     private static final MarshallingInfo<String> IMAGETAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("imageTag").build();
 
@@ -55,6 +57,7 @@ public class PutImageRequestMarshaller {
             protocolMarshaller.marshall(putImageRequest.getRegistryId(), REGISTRYID_BINDING);
             protocolMarshaller.marshall(putImageRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
             protocolMarshaller.marshall(putImageRequest.getImageManifest(), IMAGEMANIFEST_BINDING);
+            protocolMarshaller.marshall(putImageRequest.getImageManifestMediaType(), IMAGEMANIFESTMEDIATYPE_BINDING);
             protocolMarshaller.marshall(putImageRequest.getImageTag(), IMAGETAG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

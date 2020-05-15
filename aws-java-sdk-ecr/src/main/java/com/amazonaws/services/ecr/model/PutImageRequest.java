@@ -45,6 +45,13 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String imageManifest;
     /**
      * <p>
+     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     * </p>
+     */
+    private String imageManifestMediaType;
+    /**
+     * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
      * Schema 2 or OCI formats.
      * </p>
@@ -179,6 +186,52 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
+     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     * </p>
+     * 
+     * @param imageManifestMediaType
+     *        The media type of the image manifest. If you push an image manifest that does not contain the
+     *        <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     */
+
+    public void setImageManifestMediaType(String imageManifestMediaType) {
+        this.imageManifestMediaType = imageManifestMediaType;
+    }
+
+    /**
+     * <p>
+     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     * </p>
+     * 
+     * @return The media type of the image manifest. If you push an image manifest that does not contain the
+     *         <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     */
+
+    public String getImageManifestMediaType() {
+        return this.imageManifestMediaType;
+    }
+
+    /**
+     * <p>
+     * The media type of the image manifest. If you push an image manifest that does not contain the
+     * <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     * </p>
+     * 
+     * @param imageManifestMediaType
+     *        The media type of the image manifest. If you push an image manifest that does not contain the
+     *        <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutImageRequest withImageManifestMediaType(String imageManifestMediaType) {
+        setImageManifestMediaType(imageManifestMediaType);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
      * Schema 2 or OCI formats.
      * </p>
@@ -241,6 +294,8 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
             sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageManifest() != null)
             sb.append("ImageManifest: ").append(getImageManifest()).append(",");
+        if (getImageManifestMediaType() != null)
+            sb.append("ImageManifestMediaType: ").append(getImageManifestMediaType()).append(",");
         if (getImageTag() != null)
             sb.append("ImageTag: ").append(getImageTag());
         sb.append("}");
@@ -269,6 +324,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getImageManifest() != null && other.getImageManifest().equals(this.getImageManifest()) == false)
             return false;
+        if (other.getImageManifestMediaType() == null ^ this.getImageManifestMediaType() == null)
+            return false;
+        if (other.getImageManifestMediaType() != null && other.getImageManifestMediaType().equals(this.getImageManifestMediaType()) == false)
+            return false;
         if (other.getImageTag() == null ^ this.getImageTag() == null)
             return false;
         if (other.getImageTag() != null && other.getImageTag().equals(this.getImageTag()) == false)
@@ -284,6 +343,7 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getImageManifest() == null) ? 0 : getImageManifest().hashCode());
+        hashCode = prime * hashCode + ((getImageManifestMediaType() == null) ? 0 : getImageManifestMediaType().hashCode());
         hashCode = prime * hashCode + ((getImageTag() == null) ? 0 : getImageTag().hashCode());
         return hashCode;
     }

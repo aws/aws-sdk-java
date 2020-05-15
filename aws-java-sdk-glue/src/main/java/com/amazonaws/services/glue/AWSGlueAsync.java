@@ -3828,6 +3828,37 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Stops the execution of the specified workflow run.
+     * </p>
+     * 
+     * @param stopWorkflowRunRequest
+     * @return A Java Future containing the result of the StopWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsync.StopWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopWorkflowRunResult> stopWorkflowRunAsync(StopWorkflowRunRequest stopWorkflowRunRequest);
+
+    /**
+     * <p>
+     * Stops the execution of the specified workflow run.
+     * </p>
+     * 
+     * @param stopWorkflowRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsyncHandler.StopWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopWorkflowRunResult> stopWorkflowRunAsync(StopWorkflowRunRequest stopWorkflowRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StopWorkflowRunRequest, StopWorkflowRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds tags to a resource. A tag is a label you can assign to an AWS resource. In AWS Glue, you can tag only
      * certain resources. For information about what resources you can tag, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in AWS Glue</a>.
