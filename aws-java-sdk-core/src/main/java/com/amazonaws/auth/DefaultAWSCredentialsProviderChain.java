@@ -34,7 +34,7 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider;
  *
  * @see EnvironmentVariableCredentialsProvider
  * @see SystemPropertiesCredentialsProvider
- * @See WebIdentityTokenCredentialsProvider
+ * @see WebIdentityTokenCredentialsProvider
  * @see ProfileCredentialsProvider
  * @see EC2ContainerCredentialsProviderWrapper
  */
