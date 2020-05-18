@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * security credentials.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/SessionContext" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SessionContext" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SessionContext implements Serializable, Cloneable, StructuredPojo {

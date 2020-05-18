@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides quota and aggregated usage data for an account.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UsageRecord" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageRecord" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

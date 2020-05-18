@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides information about the context in which temporary security credentials were issued to an entity.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/SessionContextAttributes"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SessionContextAttributes" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SessionContextAttributes implements Serializable, Cloneable, StructuredPojo {

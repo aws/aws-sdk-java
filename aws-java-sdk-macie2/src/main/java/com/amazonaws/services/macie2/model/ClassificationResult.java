@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * data that was found.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ClassificationResult"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResult" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClassificationResult implements Serializable, Cloneable, StructuredPojo {

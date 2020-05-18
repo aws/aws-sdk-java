@@ -42,7 +42,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     * The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are also
+     * using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      * </p>
      * </note>
      * <p>
@@ -76,7 +77,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     * The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are also
+     * using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      * </p>
      * </note>
      * <p>
@@ -91,7 +93,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      *         <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
-     *         If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     *         The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they
+     *         are also using platform version 1.4.0. The other capabilities are not supported for any platform
+     *         versions.
      *         </p>
      *         </note>
      *         <p>
@@ -116,7 +120,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     * The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are also
+     * using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      * </p>
      * </note>
      * <p>
@@ -132,7 +137,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     *        The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are
+     *        also using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      *        </p>
      *        </note>
      *        <p>
@@ -159,7 +165,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     * The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are also
+     * using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      * </p>
      * </note>
      * <p>
@@ -180,7 +187,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     *        The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are
+     *        also using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      *        </p>
      *        </note>
      *        <p>
@@ -209,7 +217,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     * The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are also
+     * using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      * </p>
      * </note>
      * <p>
@@ -225,7 +234,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
+     *        The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate launch type if they are
+     *        also using platform version 1.4.0. The other capabilities are not supported for any platform versions.
      *        </p>
      *        </note>
      *        <p>

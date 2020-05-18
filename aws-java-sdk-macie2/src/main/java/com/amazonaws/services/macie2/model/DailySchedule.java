@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Run the job once a day, every day. If specified, this is an empty object.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DailySchedule" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DailySchedule" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -2718,6 +2718,62 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Redacts the specified message from the specified Amazon Chime conversation.
+     * </p>
+     * 
+     * @param redactConversationMessageRequest
+     * @return Result of the RedactConversationMessage operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.RedactConversationMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RedactConversationMessageResult redactConversationMessage(RedactConversationMessageRequest redactConversationMessageRequest);
+
+    /**
+     * <p>
+     * Redacts the specified message from the specified Amazon Chime chat room.
+     * </p>
+     * 
+     * @param redactRoomMessageRequest
+     * @return Result of the RedactRoomMessage operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.RedactRoomMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RedactRoomMessageResult redactRoomMessage(RedactRoomMessageRequest redactRoomMessageRequest);
+
+    /**
+     * <p>
      * Regenerates the security token for a bot.
      * </p>
      * 

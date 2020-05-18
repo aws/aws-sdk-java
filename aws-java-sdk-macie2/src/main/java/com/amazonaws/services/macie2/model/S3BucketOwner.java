@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides information about the user who owns an S3 bucket.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/S3BucketOwner" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketOwner" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

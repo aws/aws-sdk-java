@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * occurrences of the data that it detected for the finding.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CustomDetection" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDetection" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CustomDetection implements Serializable, Cloneable, StructuredPojo {

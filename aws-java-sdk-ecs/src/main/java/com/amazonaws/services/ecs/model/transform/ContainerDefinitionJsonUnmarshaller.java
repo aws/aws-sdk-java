@@ -96,6 +96,11 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("environmentFiles", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setEnvironmentFiles(new ListUnmarshaller<EnvironmentFile>(EnvironmentFileJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("mountPoints", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setMountPoints(new ListUnmarshaller<MountPoint>(MountPointJsonUnmarshaller.getInstance()).unmarshall(context));

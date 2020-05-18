@@ -35,8 +35,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     * <code>add</code> parameter is not supported.
+     * For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but
+     * the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      * </p>
      * </note>
      */
@@ -134,8 +134,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     * <code>add</code> parameter is not supported.
+     * For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but
+     * the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      * </p>
      * </note>
      * 
@@ -143,8 +143,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        The Linux capabilities for the container that are added to or dropped from the default configuration
      *        provided by Docker.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     *        <code>add</code> parameter is not supported.
+     *        For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform
+     *        versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      *        </p>
      */
 
@@ -159,16 +159,16 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     * <code>add</code> parameter is not supported.
+     * For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but
+     * the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      * </p>
      * </note>
      * 
      * @return The Linux capabilities for the container that are added to or dropped from the default configuration
      *         provided by Docker.</p> <note>
      *         <p>
-     *         If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     *         <code>add</code> parameter is not supported.
+     *         For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform
+     *         versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      *         </p>
      */
 
@@ -183,8 +183,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     * <code>add</code> parameter is not supported.
+     * For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform versions but
+     * the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      * </p>
      * </note>
      * 
@@ -192,8 +192,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        The Linux capabilities for the container that are added to or dropped from the default configuration
      *        provided by Docker.</p> <note>
      *        <p>
-     *        If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
-     *        <code>add</code> parameter is not supported.
+     *        For tasks that use the Fargate launch type, <code>capabilities</code> is supported for all platform
+     *        versions but the <code>add</code> parameter is only supported if using platform version 1.4.0 or later.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -64,8 +64,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.AcceptInvitation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation" target="_top">AWS API
+     *      Documentation</a>
      */
     AcceptInvitationResult acceptInvitation(AcceptInvitationRequest acceptInvitationRequest);
 
@@ -92,8 +92,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     ArchiveFindingsResult archiveFindings(ArchiveFindingsRequest archiveFindingsRequest);
 
@@ -120,7 +120,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.BatchGetCustomDataIdentifiers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers"
      *      target="_top">AWS API Documentation</a>
      */
     BatchGetCustomDataIdentifiersResult batchGetCustomDataIdentifiers(BatchGetCustomDataIdentifiersRequest batchGetCustomDataIdentifiersRequest);
@@ -148,8 +148,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateClassificationJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateClassificationJobResult createClassificationJob(CreateClassificationJobRequest createClassificationJobRequest);
 
@@ -176,7 +176,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier"
      *      target="_top">AWS API Documentation</a>
      */
     CreateCustomDataIdentifierResult createCustomDataIdentifier(CreateCustomDataIdentifierRequest createCustomDataIdentifierRequest);
@@ -204,8 +204,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateFindingsFilterResult createFindingsFilter(CreateFindingsFilterRequest createFindingsFilterRequest);
 
@@ -232,8 +232,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateInvitationsResult createInvitations(CreateInvitationsRequest createInvitationsRequest);
 
@@ -260,8 +260,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateMemberResult createMember(CreateMemberRequest createMemberRequest);
 
@@ -288,8 +288,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateSampleFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings" target="_top">AWS
+     *      API Documentation</a>
      */
     CreateSampleFindingsResult createSampleFindings(CreateSampleFindingsRequest createSampleFindingsRequest);
 
@@ -316,8 +316,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeclineInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     DeclineInvitationsResult declineInvitations(DeclineInvitationsRequest declineInvitationsRequest);
 
@@ -344,7 +344,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteCustomDataIdentifierResult deleteCustomDataIdentifier(DeleteCustomDataIdentifierRequest deleteCustomDataIdentifierRequest);
@@ -372,8 +372,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteFindingsFilterResult deleteFindingsFilter(DeleteFindingsFilterRequest deleteFindingsFilterRequest);
 
@@ -400,8 +400,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteInvitationsResult deleteInvitations(DeleteInvitationsRequest deleteInvitationsRequest);
 
@@ -428,8 +428,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteMemberResult deleteMember(DeleteMemberRequest deleteMemberRequest);
 
@@ -457,8 +457,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DescribeBuckets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets" target="_top">AWS API
+     *      Documentation</a>
      */
     DescribeBucketsResult describeBuckets(DescribeBucketsRequest describeBucketsRequest);
 
@@ -485,7 +485,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DescribeClassificationJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob"
      *      target="_top">AWS API Documentation</a>
      */
     DescribeClassificationJobResult describeClassificationJob(DescribeClassificationJobRequest describeClassificationJobRequest);
@@ -513,8 +513,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DescribeOrganizationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     DescribeOrganizationConfigurationResult describeOrganizationConfiguration(DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest);
@@ -542,8 +541,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisableMacie
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie" target="_top">AWS API
+     *      Documentation</a>
      */
     DisableMacieResult disableMacie(DisableMacieRequest disableMacieRequest);
 
@@ -570,7 +569,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisableOrganizationAdminAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount"
      *      target="_top">AWS API Documentation</a>
      */
     DisableOrganizationAdminAccountResult disableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest);
@@ -598,7 +597,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisassociateFromMasterAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount"
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest disassociateFromMasterAccountRequest);
@@ -626,8 +625,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisassociateMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember" target="_top">AWS API
+     *      Documentation</a>
      */
     DisassociateMemberResult disassociateMember(DisassociateMemberRequest disassociateMemberRequest);
 
@@ -654,8 +653,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.EnableMacie
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie" target="_top">AWS API
+     *      Documentation</a>
      */
     EnableMacieResult enableMacie(EnableMacieRequest enableMacieRequest);
 
@@ -682,7 +681,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.EnableOrganizationAdminAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount"
      *      target="_top">AWS API Documentation</a>
      */
     EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest);
@@ -710,8 +709,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetBucketStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics" target="_top">AWS API
+     *      Documentation</a>
      */
     GetBucketStatisticsResult getBucketStatistics(GetBucketStatisticsRequest getBucketStatisticsRequest);
 
@@ -738,8 +737,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetClassificationExportConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     GetClassificationExportConfigurationResult getClassificationExportConfiguration(
@@ -768,8 +766,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier" target="_top">AWS
+     *      API Documentation</a>
      */
     GetCustomDataIdentifierResult getCustomDataIdentifier(GetCustomDataIdentifierRequest getCustomDataIdentifierRequest);
 
@@ -796,8 +794,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetFindingStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics" target="_top">AWS
+     *      API Documentation</a>
      */
     GetFindingStatisticsResult getFindingStatistics(GetFindingStatisticsRequest getFindingStatisticsRequest);
 
@@ -824,8 +822,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     GetFindingsResult getFindings(GetFindingsRequest getFindingsRequest);
 
@@ -852,8 +850,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter" target="_top">AWS API
+     *      Documentation</a>
      */
     GetFindingsFilterResult getFindingsFilter(GetFindingsFilterRequest getFindingsFilterRequest);
 
@@ -880,8 +878,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetInvitationsCount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount" target="_top">AWS API
+     *      Documentation</a>
      */
     GetInvitationsCountResult getInvitationsCount(GetInvitationsCountRequest getInvitationsCountRequest);
 
@@ -908,8 +906,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetMacieSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession" target="_top">AWS API
+     *      Documentation</a>
      */
     GetMacieSessionResult getMacieSession(GetMacieSessionRequest getMacieSessionRequest);
 
@@ -936,8 +934,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetMasterAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount" target="_top">AWS API
+     *      Documentation</a>
      */
     GetMasterAccountResult getMasterAccount(GetMasterAccountRequest getMasterAccountRequest);
 
@@ -964,7 +962,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember" target="_top">AWS API
      *      Documentation</a>
      */
     GetMemberResult getMember(GetMemberRequest getMemberRequest);
@@ -992,8 +990,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetUsageStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics" target="_top">AWS API
+     *      Documentation</a>
      */
     GetUsageStatisticsResult getUsageStatistics(GetUsageStatisticsRequest getUsageStatisticsRequest);
 
@@ -1020,8 +1018,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetUsageTotals
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals" target="_top">AWS API
+     *      Documentation</a>
      */
     GetUsageTotalsResult getUsageTotals(GetUsageTotalsRequest getUsageTotalsRequest);
 
@@ -1048,8 +1046,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListClassificationJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs" target="_top">AWS
+     *      API Documentation</a>
      */
     ListClassificationJobsResult listClassificationJobs(ListClassificationJobsRequest listClassificationJobsRequest);
 
@@ -1076,7 +1074,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListCustomDataIdentifiers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers"
      *      target="_top">AWS API Documentation</a>
      */
     ListCustomDataIdentifiersResult listCustomDataIdentifiers(ListCustomDataIdentifiersRequest listCustomDataIdentifiersRequest);
@@ -1104,8 +1102,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest);
 
@@ -1132,8 +1130,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListFindingsFilters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters" target="_top">AWS API
+     *      Documentation</a>
      */
     ListFindingsFiltersResult listFindingsFilters(ListFindingsFiltersRequest listFindingsFiltersRequest);
 
@@ -1160,8 +1158,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     ListInvitationsResult listInvitations(ListInvitationsRequest listInvitationsRequest);
 
@@ -1188,8 +1186,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListMembers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers" target="_top">AWS API
+     *      Documentation</a>
      */
     ListMembersResult listMembers(ListMembersRequest listMembersRequest);
 
@@ -1217,7 +1215,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListOrganizationAdminAccounts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts"
      *      target="_top">AWS API Documentation</a>
      */
     ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest);
@@ -1231,8 +1229,8 @@ public interface AmazonMacie2 {
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @sample AmazonMacie2.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
@@ -1259,8 +1257,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.PutClassificationExportConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     PutClassificationExportConfigurationResult putClassificationExportConfiguration(
@@ -1275,8 +1272,8 @@ public interface AmazonMacie2 {
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @sample AmazonMacie2.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
@@ -1303,7 +1300,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.TestCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier"
      *      target="_top">AWS API Documentation</a>
      */
     TestCustomDataIdentifierResult testCustomDataIdentifier(TestCustomDataIdentifierRequest testCustomDataIdentifierRequest);
@@ -1331,8 +1328,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest unarchiveFindingsRequest);
 
@@ -1345,8 +1342,8 @@ public interface AmazonMacie2 {
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @sample AmazonMacie2.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
@@ -1373,8 +1370,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateClassificationJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateClassificationJobResult updateClassificationJob(UpdateClassificationJobRequest updateClassificationJobRequest);
 
@@ -1401,8 +1398,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateFindingsFilterResult updateFindingsFilter(UpdateFindingsFilterRequest updateFindingsFilterRequest);
 
@@ -1429,8 +1426,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateMacieSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateMacieSessionResult updateMacieSession(UpdateMacieSessionRequest updateMacieSessionRequest);
 
@@ -1457,8 +1454,8 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateMemberSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateMemberSessionResult updateMemberSession(UpdateMemberSessionRequest updateMemberSessionRequest);
 
@@ -1485,7 +1482,7 @@ public interface AmazonMacie2 {
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateOrganizationConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateOrganizationConfigurationResult updateOrganizationConfiguration(UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest);

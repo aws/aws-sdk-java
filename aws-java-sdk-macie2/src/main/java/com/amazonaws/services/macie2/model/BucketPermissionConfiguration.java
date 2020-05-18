@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The account-level and bucket-level permissions settings for an S3 bucket, or the bucket that contains an object.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BucketPermissionConfiguration"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPermissionConfiguration"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * that reports the total number of objects that aren't encrypted.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ObjectCountByEncryptionType"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ObjectCountByEncryptionType" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ObjectCountByEncryptionType implements Serializable, Cloneable, StructuredPojo {

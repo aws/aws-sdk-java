@@ -329,6 +329,31 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> environment;
     /**
      * <p>
+     * A list of files containing the environment variables to pass to a container. This parameter maps to the
+     * <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in
+     * an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning
+     * with <code>#</code> are treated as comments and are ignored. For more information on the environment variable
+     * file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in
+     * file</a>.
+     * </p>
+     * <p>
+     * If there are environment variables specified using the <code>environment</code> parameter in a container
+     * definition, they take precedence over the variables contained within an environment file. If multiple environment
+     * files are specified that contain the same variable, they are processed from the top down. It is recommended to
+     * use unique variable names. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+     * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This field is not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EnvironmentFile> environmentFiles;
+    /**
+     * <p>
      * The mount points for data volumes in your container.
      * </p>
      * <p>
@@ -2964,6 +2989,231 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     public ContainerDefinition withEnvironment(java.util.Collection<KeyValuePair> environment) {
         setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container. This parameter maps to the
+     * <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in
+     * an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning
+     * with <code>#</code> are treated as comments and are ignored. For more information on the environment variable
+     * file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in
+     * file</a>.
+     * </p>
+     * <p>
+     * If there are environment variables specified using the <code>environment</code> parameter in a container
+     * definition, they take precedence over the variables contained within an environment file. If multiple environment
+     * files are specified that contain the same variable, they are processed from the top down. It is recommended to
+     * use unique variable names. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+     * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This field is not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * 
+     * @return A list of files containing the environment variables to pass to a container. This parameter maps to the
+     *         <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p>
+     *         <p>
+     *         You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each
+     *         line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format.
+     *         Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the
+     *         environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+     *         environment variables in file</a>.
+     *         </p>
+     *         <p>
+     *         If there are environment variables specified using the <code>environment</code> parameter in a container
+     *         definition, they take precedence over the variables contained within an environment file. If multiple
+     *         environment files are specified that contain the same variable, they are processed from the top down. It
+     *         is recommended to use unique variable names. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
+     *         Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         This field is not valid for containers in tasks using the Fargate launch type.
+     */
+
+    public java.util.List<EnvironmentFile> getEnvironmentFiles() {
+        if (environmentFiles == null) {
+            environmentFiles = new com.amazonaws.internal.SdkInternalList<EnvironmentFile>();
+        }
+        return environmentFiles;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container. This parameter maps to the
+     * <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in
+     * an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning
+     * with <code>#</code> are treated as comments and are ignored. For more information on the environment variable
+     * file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in
+     * file</a>.
+     * </p>
+     * <p>
+     * If there are environment variables specified using the <code>environment</code> parameter in a container
+     * definition, they take precedence over the variables contained within an environment file. If multiple environment
+     * files are specified that contain the same variable, they are processed from the top down. It is recommended to
+     * use unique variable names. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+     * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This field is not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container. This parameter maps to the
+     *        <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each
+     *        line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format.
+     *        Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the
+     *        environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+     *        environment variables in file</a>.
+     *        </p>
+     *        <p>
+     *        If there are environment variables specified using the <code>environment</code> parameter in a container
+     *        definition, they take precedence over the variables contained within an environment file. If multiple
+     *        environment files are specified that contain the same variable, they are processed from the top down. It
+     *        is recommended to use unique variable names. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
+     *        Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        This field is not valid for containers in tasks using the Fargate launch type.
+     */
+
+    public void setEnvironmentFiles(java.util.Collection<EnvironmentFile> environmentFiles) {
+        if (environmentFiles == null) {
+            this.environmentFiles = null;
+            return;
+        }
+
+        this.environmentFiles = new com.amazonaws.internal.SdkInternalList<EnvironmentFile>(environmentFiles);
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container. This parameter maps to the
+     * <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in
+     * an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning
+     * with <code>#</code> are treated as comments and are ignored. For more information on the environment variable
+     * file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in
+     * file</a>.
+     * </p>
+     * <p>
+     * If there are environment variables specified using the <code>environment</code> parameter in a container
+     * definition, they take precedence over the variables contained within an environment file. If multiple environment
+     * files are specified that contain the same variable, they are processed from the top down. It is recommended to
+     * use unique variable names. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+     * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This field is not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnvironmentFiles(java.util.Collection)} or {@link #withEnvironmentFiles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container. This parameter maps to the
+     *        <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each
+     *        line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format.
+     *        Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the
+     *        environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+     *        environment variables in file</a>.
+     *        </p>
+     *        <p>
+     *        If there are environment variables specified using the <code>environment</code> parameter in a container
+     *        definition, they take precedence over the variables contained within an environment file. If multiple
+     *        environment files are specified that contain the same variable, they are processed from the top down. It
+     *        is recommended to use unique variable names. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
+     *        Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        This field is not valid for containers in tasks using the Fargate launch type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withEnvironmentFiles(EnvironmentFile... environmentFiles) {
+        if (this.environmentFiles == null) {
+            setEnvironmentFiles(new com.amazonaws.internal.SdkInternalList<EnvironmentFile>(environmentFiles.length));
+        }
+        for (EnvironmentFile ele : environmentFiles) {
+            this.environmentFiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container. This parameter maps to the
+     * <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in
+     * an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning
+     * with <code>#</code> are treated as comments and are ignored. For more information on the environment variable
+     * file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in
+     * file</a>.
+     * </p>
+     * <p>
+     * If there are environment variables specified using the <code>environment</code> parameter in a container
+     * definition, they take precedence over the variables contained within an environment file. If multiple environment
+     * files are specified that contain the same variable, they are processed from the top down. It is recommended to
+     * use unique variable names. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
+     * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This field is not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container. This parameter maps to the
+     *        <code>--env-file</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each
+     *        line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format.
+     *        Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the
+     *        environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default
+     *        environment variables in file</a>.
+     *        </p>
+     *        <p>
+     *        If there are environment variables specified using the <code>environment</code> parameter in a container
+     *        definition, they take precedence over the variables contained within an environment file. If multiple
+     *        environment files are specified that contain the same variable, they are processed from the top down. It
+     *        is recommended to use unique variable names. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
+     *        Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        This field is not valid for containers in tasks using the Fargate launch type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withEnvironmentFiles(java.util.Collection<EnvironmentFile> environmentFiles) {
+        setEnvironmentFiles(environmentFiles);
         return this;
     }
 
@@ -6485,6 +6735,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("Command: ").append(getCommand()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getEnvironmentFiles() != null)
+            sb.append("EnvironmentFiles: ").append(getEnvironmentFiles()).append(",");
         if (getMountPoints() != null)
             sb.append("MountPoints: ").append(getMountPoints()).append(",");
         if (getVolumesFrom() != null)
@@ -6598,6 +6850,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getEnvironmentFiles() == null ^ this.getEnvironmentFiles() == null)
+            return false;
+        if (other.getEnvironmentFiles() != null && other.getEnvironmentFiles().equals(this.getEnvironmentFiles()) == false)
             return false;
         if (other.getMountPoints() == null ^ this.getMountPoints() == null)
             return false;
@@ -6723,6 +6979,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEntryPoint() == null) ? 0 : getEntryPoint().hashCode());
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentFiles() == null) ? 0 : getEnvironmentFiles().hashCode());
         hashCode = prime * hashCode + ((getMountPoints() == null) ? 0 : getMountPoints().hashCode());
         hashCode = prime * hashCode + ((getVolumesFrom() == null) ? 0 : getVolumesFrom().hashCode());
         hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());

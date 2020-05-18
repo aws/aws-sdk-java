@@ -28,12 +28,22 @@ public class AbstractAmazonQLDB implements AmazonQLDB {
     }
 
     @Override
+    public CancelJournalKinesisStreamResult cancelJournalKinesisStream(CancelJournalKinesisStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateLedgerResult createLedger(CreateLedgerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteLedgerResult deleteLedger(DeleteLedgerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeJournalKinesisStreamResult describeJournalKinesisStream(DescribeJournalKinesisStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +78,11 @@ public class AbstractAmazonQLDB implements AmazonQLDB {
     }
 
     @Override
+    public ListJournalKinesisStreamsForLedgerResult listJournalKinesisStreamsForLedger(ListJournalKinesisStreamsForLedgerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListJournalS3ExportsResult listJournalS3Exports(ListJournalS3ExportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +99,11 @@ public class AbstractAmazonQLDB implements AmazonQLDB {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StreamJournalToKinesisResult streamJournalToKinesis(StreamJournalToKinesisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

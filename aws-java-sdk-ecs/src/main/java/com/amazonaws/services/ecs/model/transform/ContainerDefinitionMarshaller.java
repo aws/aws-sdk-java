@@ -53,6 +53,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocationName("command").build();
     private static final MarshallingInfo<List> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("environment").build();
+    private static final MarshallingInfo<List> ENVIRONMENTFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentFiles").build();
     private static final MarshallingInfo<List> MOUNTPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("mountPoints").build();
     private static final MarshallingInfo<List> VOLUMESFROM_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -134,6 +136,7 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getEntryPoint(), ENTRYPOINT_BINDING);
             protocolMarshaller.marshall(containerDefinition.getCommand(), COMMAND_BINDING);
             protocolMarshaller.marshall(containerDefinition.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getEnvironmentFiles(), ENVIRONMENTFILES_BINDING);
             protocolMarshaller.marshall(containerDefinition.getMountPoints(), MOUNTPOINTS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getVolumesFrom(), VOLUMESFROM_BINDING);
             protocolMarshaller.marshall(containerDefinition.getLinuxParameters(), LINUXPARAMETERS_BINDING);

@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * provides information such as the owner and geographical location for the IP address.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/IpAddressDetails" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpAddressDetails" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo {

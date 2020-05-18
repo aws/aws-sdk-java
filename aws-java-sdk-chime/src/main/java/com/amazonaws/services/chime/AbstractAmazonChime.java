@@ -471,6 +471,16 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public RedactConversationMessageResult redactConversationMessage(RedactConversationMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RedactRoomMessageResult redactRoomMessage(RedactRoomMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegenerateSecurityTokenResult regenerateSecurityToken(RegenerateSecurityTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

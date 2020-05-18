@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides the numeric score and textual representation of a severity value.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/Severity" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Severity" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

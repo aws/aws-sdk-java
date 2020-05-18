@@ -60,6 +60,11 @@ public class ContainerOverrideJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerOverride.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("environmentFiles", targetDepth)) {
+                    context.nextToken();
+                    containerOverride.setEnvironmentFiles(new ListUnmarshaller<EnvironmentFile>(EnvironmentFileJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
                     containerOverride.setCpu(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -49,6 +49,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
+     * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a
+     * length greater than zero if the attribute is used as a key attribute for a table or index.
+     * </p>
+     * <p>
      * For more information about primary keys, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -272,6 +276,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        match those of the schema in the table's attribute definition.
      *        </p>
      *        <p>
+     *        Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have
+     *        a length greater than zero if the attribute is used as a key attribute for a table or index.
+     *        </p>
+     *        <p>
      *        For more information about primary keys, see <a href=
      *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -301,6 +309,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
      *        match those of the schema in the table's attribute definition.
+     *        </p>
+     *        <p>
+     *        Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have
+     *        a length greater than zero if the attribute is used as a key attribute for a table or index.
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
@@ -356,6 +368,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
      *        match those of the schema in the table's attribute definition.
+     *        </p>
+     *        <p>
+     *        Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have
+     *        a length greater than zero if the attribute is used as a key attribute for a table or index.
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
@@ -449,6 +465,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
+     * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a
+     * length greater than zero if the attribute is used as a key attribute for a table or index.
+     * </p>
+     * <p>
      * For more information about primary keys, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -467,6 +487,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         <p>
      *         If you specify any attributes that are part of an index key, then the data types for those attributes
      *         must match those of the schema in the table's attribute definition.
+     *         </p>
+     *         <p>
+     *         Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must
+     *         have a length greater than zero if the attribute is used as a key attribute for a table or index.
      *         </p>
      *         <p>
      *         For more information about primary keys, see <a href=
@@ -496,6 +520,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
+     * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a
+     * length greater than zero if the attribute is used as a key attribute for a table or index.
+     * </p>
+     * <p>
      * For more information about primary keys, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -515,6 +543,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
      *        match those of the schema in the table's attribute definition.
+     *        </p>
+     *        <p>
+     *        Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have
+     *        a length greater than zero if the attribute is used as a key attribute for a table or index.
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=
@@ -544,6 +576,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * those of the schema in the table's attribute definition.
      * </p>
      * <p>
+     * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a
+     * length greater than zero if the attribute is used as a key attribute for a table or index.
+     * </p>
+     * <p>
      * For more information about primary keys, see <a href=
      * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey"
      * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -563,6 +599,10 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        <p>
      *        If you specify any attributes that are part of an index key, then the data types for those attributes must
      *        match those of the schema in the table's attribute definition.
+     *        </p>
+     *        <p>
+     *        Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have
+     *        a length greater than zero if the attribute is used as a key attribute for a table or index.
      *        </p>
      *        <p>
      *        For more information about primary keys, see <a href=

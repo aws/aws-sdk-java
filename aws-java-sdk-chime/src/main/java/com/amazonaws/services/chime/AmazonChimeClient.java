@@ -6429,6 +6429,144 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Redacts the specified message from the specified Amazon Chime conversation.
+     * </p>
+     * 
+     * @param redactConversationMessageRequest
+     * @return Result of the RedactConversationMessage operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.RedactConversationMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RedactConversationMessageResult redactConversationMessage(RedactConversationMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeRedactConversationMessage(request);
+    }
+
+    @SdkInternalApi
+    final RedactConversationMessageResult executeRedactConversationMessage(RedactConversationMessageRequest redactConversationMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(redactConversationMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RedactConversationMessageRequest> request = null;
+        Response<RedactConversationMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RedactConversationMessageRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(redactConversationMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RedactConversationMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RedactConversationMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RedactConversationMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Redacts the specified message from the specified Amazon Chime chat room.
+     * </p>
+     * 
+     * @param redactRoomMessageRequest
+     * @return Result of the RedactRoomMessage operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.RedactRoomMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RedactRoomMessageResult redactRoomMessage(RedactRoomMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeRedactRoomMessage(request);
+    }
+
+    @SdkInternalApi
+    final RedactRoomMessageResult executeRedactRoomMessage(RedactRoomMessageRequest redactRoomMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(redactRoomMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RedactRoomMessageRequest> request = null;
+        Response<RedactRoomMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RedactRoomMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(redactRoomMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RedactRoomMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RedactRoomMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RedactRoomMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Regenerates the security token for a bot.
      * </p>
      * 

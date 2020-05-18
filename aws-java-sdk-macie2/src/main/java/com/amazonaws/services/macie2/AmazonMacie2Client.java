@@ -169,8 +169,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.AcceptInvitation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public AcceptInvitationResult acceptInvitation(AcceptInvitationRequest request) {
@@ -237,8 +237,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ArchiveFindingsResult archiveFindings(ArchiveFindingsRequest request) {
@@ -305,7 +305,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.BatchGetCustomDataIdentifiers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -375,8 +375,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateClassificationJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateClassificationJobResult createClassificationJob(CreateClassificationJobRequest request) {
@@ -445,7 +445,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -515,8 +515,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateFindingsFilterResult createFindingsFilter(CreateFindingsFilterRequest request) {
@@ -583,8 +583,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateInvitationsResult createInvitations(CreateInvitationsRequest request) {
@@ -651,8 +651,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public CreateMemberResult createMember(CreateMemberRequest request) {
@@ -719,8 +719,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.CreateSampleFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public CreateSampleFindingsResult createSampleFindings(CreateSampleFindingsRequest request) {
@@ -787,8 +787,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeclineInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeclineInvitationsResult declineInvitations(DeclineInvitationsRequest request) {
@@ -855,7 +855,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -925,8 +925,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public DeleteFindingsFilterResult deleteFindingsFilter(DeleteFindingsFilterRequest request) {
@@ -993,8 +993,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteInvitationsResult deleteInvitations(DeleteInvitationsRequest request) {
@@ -1061,8 +1061,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DeleteMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DeleteMemberResult deleteMember(DeleteMemberRequest request) {
@@ -1130,8 +1130,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DescribeBuckets
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DescribeBucketsResult describeBuckets(DescribeBucketsRequest request) {
@@ -1198,7 +1198,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DescribeClassificationJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1268,8 +1268,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DescribeOrganizationConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1340,8 +1339,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisableMacie
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DisableMacieResult disableMacie(DisableMacieRequest request) {
@@ -1408,7 +1407,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisableOrganizationAdminAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1479,7 +1478,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisassociateFromMasterAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1549,8 +1548,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.DisassociateMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public DisassociateMemberResult disassociateMember(DisassociateMemberRequest request) {
@@ -1617,8 +1616,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.EnableMacie
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public EnableMacieResult enableMacie(EnableMacieRequest request) {
@@ -1685,7 +1684,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.EnableOrganizationAdminAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1755,8 +1754,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetBucketStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetBucketStatisticsResult getBucketStatistics(GetBucketStatisticsRequest request) {
@@ -1823,8 +1822,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetClassificationExportConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1895,8 +1893,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetCustomDataIdentifierResult getCustomDataIdentifier(GetCustomDataIdentifierRequest request) {
@@ -1965,8 +1963,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetFindingStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public GetFindingStatisticsResult getFindingStatistics(GetFindingStatisticsRequest request) {
@@ -2033,8 +2031,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetFindingsResult getFindings(GetFindingsRequest request) {
@@ -2101,8 +2099,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetFindingsFilterResult getFindingsFilter(GetFindingsFilterRequest request) {
@@ -2169,8 +2167,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetInvitationsCount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetInvitationsCountResult getInvitationsCount(GetInvitationsCountRequest request) {
@@ -2237,8 +2235,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetMacieSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetMacieSessionResult getMacieSession(GetMacieSessionRequest request) {
@@ -2305,8 +2303,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetMasterAccount
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetMasterAccountResult getMasterAccount(GetMasterAccountRequest request) {
@@ -2373,7 +2371,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetMember
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2441,8 +2439,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetUsageStatistics
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetUsageStatisticsResult getUsageStatistics(GetUsageStatisticsRequest request) {
@@ -2509,8 +2507,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.GetUsageTotals
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public GetUsageTotalsResult getUsageTotals(GetUsageTotalsRequest request) {
@@ -2577,8 +2575,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListClassificationJobs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public ListClassificationJobsResult listClassificationJobs(ListClassificationJobsRequest request) {
@@ -2646,7 +2644,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListCustomDataIdentifiers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2716,8 +2714,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListFindingsResult listFindings(ListFindingsRequest request) {
@@ -2784,8 +2782,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListFindingsFilters
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListFindingsFiltersResult listFindingsFilters(ListFindingsFiltersRequest request) {
@@ -2852,8 +2850,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListInvitations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListInvitationsResult listInvitations(ListInvitationsRequest request) {
@@ -2920,8 +2918,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListMembers
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListMembersResult listMembers(ListMembersRequest request) {
@@ -2989,7 +2987,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.ListOrganizationAdminAccounts
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3045,8 +3043,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @sample AmazonMacie2.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
@@ -3113,8 +3111,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.PutClassificationExportConfiguration
-     * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3171,8 +3168,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @sample AmazonMacie2.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
@@ -3239,7 +3236,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.TestCustomDataIdentifier
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3309,8 +3306,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest request) {
@@ -3363,8 +3360,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @sample AmazonMacie2.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource" target="_top">AWS
-     *      API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
@@ -3431,8 +3428,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateClassificationJob
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateClassificationJobResult updateClassificationJob(UpdateClassificationJobRequest request) {
@@ -3501,8 +3498,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateFindingsFilter
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter" target="_top">AWS
+     *      API Documentation</a>
      */
     @Override
     public UpdateFindingsFilterResult updateFindingsFilter(UpdateFindingsFilterRequest request) {
@@ -3569,8 +3566,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateMacieSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateMacieSessionResult updateMacieSession(UpdateMacieSessionRequest request) {
@@ -3637,8 +3634,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateMemberSession
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession"
-     *      target="_top">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession" target="_top">AWS API
+     *      Documentation</a>
      */
     @Override
     public UpdateMemberSessionResult updateMemberSession(UpdateMemberSessionRequest request) {
@@ -3705,7 +3702,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ConflictException
      *         The request failed because it conflicts with the current state of the specified resource.
      * @sample AmazonMacie2.UpdateOrganizationConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
     @Override

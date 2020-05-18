@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * aggregated value that reports usage during the past 30 days.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UsageByAccount" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageByAccount" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UsageByAccount implements Serializable, Cloneable, StructuredPojo {

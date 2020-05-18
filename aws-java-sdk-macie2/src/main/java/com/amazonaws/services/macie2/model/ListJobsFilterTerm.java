@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * consists of a property, an operator, and one or more values.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListJobsFilterTerm"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListJobsFilterTerm" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListJobsFilterTerm implements Serializable, Cloneable, StructuredPojo {

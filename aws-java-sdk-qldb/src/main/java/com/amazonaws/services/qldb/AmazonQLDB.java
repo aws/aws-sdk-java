@@ -43,6 +43,30 @@ public interface AmazonQLDB {
 
     /**
      * <p>
+     * Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be
+     * <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention
+     * period, so they are automatically deleted after this limit expires.
+     * </p>
+     * 
+     * @param cancelJournalKinesisStreamRequest
+     * @return Result of the CancelJournalKinesisStream operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ResourcePreconditionNotMetException
+     *         The operation failed because a condition wasn't satisfied in advance.
+     * @sample AmazonQLDB.CancelJournalKinesisStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelJournalKinesisStreamResult cancelJournalKinesisStream(CancelJournalKinesisStreamRequest cancelJournalKinesisStreamRequest);
+
+    /**
+     * <p>
      * Creates a new ledger in your AWS account.
      * </p>
      * 
@@ -91,8 +115,34 @@ public interface AmazonQLDB {
 
     /**
      * <p>
+     * Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource
+     * Name (ARN), stream name, current status, creation time, and the parameters of your original stream creation
+     * request.
+     * </p>
+     * 
+     * @param describeJournalKinesisStreamRequest
+     * @return Result of the DescribeJournalKinesisStream operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ResourcePreconditionNotMetException
+     *         The operation failed because a condition wasn't satisfied in advance.
+     * @sample AmazonQLDB.DescribeJournalKinesisStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeJournalKinesisStreamResult describeJournalKinesisStream(DescribeJournalKinesisStreamRequest describeJournalKinesisStreamRequest);
+
+    /**
+     * <p>
      * Returns information about a journal export job, including the ledger name, export ID, when it was created,
      * current status, and its start and end time export parameters.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -231,12 +281,42 @@ public interface AmazonQLDB {
 
     /**
      * <p>
+     * Returns an array of all Amazon QLDB journal stream descriptors for a given ledger. The output of each stream
+     * descriptor includes the same details that are returned by <code>DescribeJournalKinesisStream</code>.
+     * </p>
+     * <p>
+     * This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the
+     * items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.
+     * </p>
+     * 
+     * @param listJournalKinesisStreamsForLedgerRequest
+     * @return Result of the ListJournalKinesisStreamsForLedger operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ResourcePreconditionNotMetException
+     *         The operation failed because a condition wasn't satisfied in advance.
+     * @sample AmazonQLDB.ListJournalKinesisStreamsForLedger
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListJournalKinesisStreamsForLedgerResult listJournalKinesisStreamsForLedger(
+            ListJournalKinesisStreamsForLedgerRequest listJournalKinesisStreamsForLedgerRequest);
+
+    /**
+     * <p>
      * Returns an array of journal export job descriptions for all ledgers that are associated with the current AWS
      * account and Region.
      * </p>
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
      * items by calling <code>ListJournalS3Exports</code> multiple times.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsRequest
@@ -254,6 +334,11 @@ public interface AmazonQLDB {
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
      * items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsForLedgerRequest
@@ -297,6 +382,27 @@ public interface AmazonQLDB {
      *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Creates a stream for a given Amazon QLDB ledger that delivers the journal data to a specified Amazon Kinesis Data
+     * Streams resource. The stream captures every document revision that is committed to your journal and sends it to
+     * the Kinesis data stream.
+     * </p>
+     * 
+     * @param streamJournalToKinesisRequest
+     * @return Result of the StreamJournalToKinesis operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ResourcePreconditionNotMetException
+     *         The operation failed because a condition wasn't satisfied in advance.
+     * @sample AmazonQLDB.StreamJournalToKinesis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StreamJournalToKinesisResult streamJournalToKinesis(StreamJournalToKinesisRequest streamJournalToKinesisRequest);
 
     /**
      * <p>

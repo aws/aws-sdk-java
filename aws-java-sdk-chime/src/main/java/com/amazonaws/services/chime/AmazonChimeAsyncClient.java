@@ -3050,6 +3050,72 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(RedactConversationMessageRequest request) {
+
+        return redactConversationMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(final RedactConversationMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RedactConversationMessageRequest, RedactConversationMessageResult> asyncHandler) {
+        final RedactConversationMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RedactConversationMessageResult>() {
+            @Override
+            public RedactConversationMessageResult call() throws Exception {
+                RedactConversationMessageResult result = null;
+
+                try {
+                    result = executeRedactConversationMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactRoomMessageResult> redactRoomMessageAsync(RedactRoomMessageRequest request) {
+
+        return redactRoomMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactRoomMessageResult> redactRoomMessageAsync(final RedactRoomMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RedactRoomMessageRequest, RedactRoomMessageResult> asyncHandler) {
+        final RedactRoomMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RedactRoomMessageResult>() {
+            @Override
+            public RedactRoomMessageResult call() throws Exception {
+                RedactRoomMessageResult result = null;
+
+                try {
+                    result = executeRedactRoomMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest request) {
 
         return regenerateSecurityTokenAsync(request, null);

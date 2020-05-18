@@ -62,6 +62,39 @@ public class AmazonQLDBAsyncClient extends AmazonQLDBClient implements AmazonQLD
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJournalKinesisStreamResult> cancelJournalKinesisStreamAsync(CancelJournalKinesisStreamRequest request) {
+
+        return cancelJournalKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelJournalKinesisStreamResult> cancelJournalKinesisStreamAsync(final CancelJournalKinesisStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelJournalKinesisStreamRequest, CancelJournalKinesisStreamResult> asyncHandler) {
+        final CancelJournalKinesisStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelJournalKinesisStreamResult>() {
+            @Override
+            public CancelJournalKinesisStreamResult call() throws Exception {
+                CancelJournalKinesisStreamResult result = null;
+
+                try {
+                    result = executeCancelJournalKinesisStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLedgerResult> createLedgerAsync(CreateLedgerRequest request) {
 
         return createLedgerAsync(request, null);
@@ -112,6 +145,39 @@ public class AmazonQLDBAsyncClient extends AmazonQLDBClient implements AmazonQLD
 
                 try {
                     result = executeDeleteLedger(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJournalKinesisStreamResult> describeJournalKinesisStreamAsync(DescribeJournalKinesisStreamRequest request) {
+
+        return describeJournalKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJournalKinesisStreamResult> describeJournalKinesisStreamAsync(final DescribeJournalKinesisStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeJournalKinesisStreamRequest, DescribeJournalKinesisStreamResult> asyncHandler) {
+        final DescribeJournalKinesisStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeJournalKinesisStreamResult>() {
+            @Override
+            public DescribeJournalKinesisStreamResult call() throws Exception {
+                DescribeJournalKinesisStreamResult result = null;
+
+                try {
+                    result = executeDescribeJournalKinesisStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -326,6 +392,41 @@ public class AmazonQLDBAsyncClient extends AmazonQLDBClient implements AmazonQLD
     }
 
     @Override
+    public java.util.concurrent.Future<ListJournalKinesisStreamsForLedgerResult> listJournalKinesisStreamsForLedgerAsync(
+            ListJournalKinesisStreamsForLedgerRequest request) {
+
+        return listJournalKinesisStreamsForLedgerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJournalKinesisStreamsForLedgerResult> listJournalKinesisStreamsForLedgerAsync(
+            final ListJournalKinesisStreamsForLedgerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListJournalKinesisStreamsForLedgerRequest, ListJournalKinesisStreamsForLedgerResult> asyncHandler) {
+        final ListJournalKinesisStreamsForLedgerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListJournalKinesisStreamsForLedgerResult>() {
+            @Override
+            public ListJournalKinesisStreamsForLedgerResult call() throws Exception {
+                ListJournalKinesisStreamsForLedgerResult result = null;
+
+                try {
+                    result = executeListJournalKinesisStreamsForLedger(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJournalS3ExportsResult> listJournalS3ExportsAsync(ListJournalS3ExportsRequest request) {
 
         return listJournalS3ExportsAsync(request, null);
@@ -443,6 +544,39 @@ public class AmazonQLDBAsyncClient extends AmazonQLDBClient implements AmazonQLD
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StreamJournalToKinesisResult> streamJournalToKinesisAsync(StreamJournalToKinesisRequest request) {
+
+        return streamJournalToKinesisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StreamJournalToKinesisResult> streamJournalToKinesisAsync(final StreamJournalToKinesisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StreamJournalToKinesisRequest, StreamJournalToKinesisResult> asyncHandler) {
+        final StreamJournalToKinesisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StreamJournalToKinesisResult>() {
+            @Override
+            public StreamJournalToKinesisResult call() throws Exception {
+                StreamJournalToKinesisResult result = null;
+
+                try {
+                    result = executeStreamJournalToKinesis(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

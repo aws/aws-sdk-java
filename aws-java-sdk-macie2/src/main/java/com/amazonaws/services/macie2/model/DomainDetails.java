@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The DNS name of the entity that performed the action on the affected resource.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DomainDetails" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DomainDetails" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

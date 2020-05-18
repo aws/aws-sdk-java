@@ -1208,6 +1208,32 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(RedactConversationMessageRequest request) {
+
+        return redactConversationMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(RedactConversationMessageRequest request,
+            com.amazonaws.handlers.AsyncHandler<RedactConversationMessageRequest, RedactConversationMessageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactRoomMessageResult> redactRoomMessageAsync(RedactRoomMessageRequest request) {
+
+        return redactRoomMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedactRoomMessageResult> redactRoomMessageAsync(RedactRoomMessageRequest request,
+            com.amazonaws.handlers.AsyncHandler<RedactRoomMessageRequest, RedactRoomMessageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RegenerateSecurityTokenResult> regenerateSecurityTokenAsync(RegenerateSecurityTokenRequest request) {
 
         return regenerateSecurityTokenAsync(request, null);

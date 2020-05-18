@@ -53,6 +53,13 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> environment;
     /**
      * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EnvironmentFile> environmentFiles;
+    /**
+     * <p>
      * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
      * definition. You must also specify a container name.
      * </p>
@@ -291,6 +298,87 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
 
     public ContainerOverride withEnvironment(java.util.Collection<KeyValuePair> environment) {
         setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * 
+     * @return A list of files containing the environment variables to pass to a container, instead of the value from
+     *         the container definition.
+     */
+
+    public java.util.List<EnvironmentFile> getEnvironmentFiles() {
+        if (environmentFiles == null) {
+            environmentFiles = new com.amazonaws.internal.SdkInternalList<EnvironmentFile>();
+        }
+        return environmentFiles;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container, instead of the value from the
+     *        container definition.
+     */
+
+    public void setEnvironmentFiles(java.util.Collection<EnvironmentFile> environmentFiles) {
+        if (environmentFiles == null) {
+            this.environmentFiles = null;
+            return;
+        }
+
+        this.environmentFiles = new com.amazonaws.internal.SdkInternalList<EnvironmentFile>(environmentFiles);
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnvironmentFiles(java.util.Collection)} or {@link #withEnvironmentFiles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container, instead of the value from the
+     *        container definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withEnvironmentFiles(EnvironmentFile... environmentFiles) {
+        if (this.environmentFiles == null) {
+            setEnvironmentFiles(new com.amazonaws.internal.SdkInternalList<EnvironmentFile>(environmentFiles.length));
+        }
+        for (EnvironmentFile ele : environmentFiles) {
+            this.environmentFiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of files containing the environment variables to pass to a container, instead of the value from the
+     * container definition.
+     * </p>
+     * 
+     * @param environmentFiles
+     *        A list of files containing the environment variables to pass to a container, instead of the value from the
+     *        container definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withEnvironmentFiles(java.util.Collection<EnvironmentFile> environmentFiles) {
+        setEnvironmentFiles(environmentFiles);
         return this;
     }
 
@@ -537,6 +625,8 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
             sb.append("Command: ").append(getCommand()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getEnvironmentFiles() != null)
+            sb.append("EnvironmentFiles: ").append(getEnvironmentFiles()).append(",");
         if (getCpu() != null)
             sb.append("Cpu: ").append(getCpu()).append(",");
         if (getMemory() != null)
@@ -571,6 +661,10 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
+        if (other.getEnvironmentFiles() == null ^ this.getEnvironmentFiles() == null)
+            return false;
+        if (other.getEnvironmentFiles() != null && other.getEnvironmentFiles().equals(this.getEnvironmentFiles()) == false)
+            return false;
         if (other.getCpu() == null ^ this.getCpu() == null)
             return false;
         if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
@@ -598,6 +692,7 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentFiles() == null) ? 0 : getEnvironmentFiles().hashCode());
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());

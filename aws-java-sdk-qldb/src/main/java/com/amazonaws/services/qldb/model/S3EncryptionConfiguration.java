@@ -42,7 +42,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
     private String objectEncryptionType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * Amazon QLDB does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -152,7 +153,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * Amazon QLDB does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -164,8 +166,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS
-     *        KMS).</p>
+     *        The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service
+     *        (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
      *        <p>
      *        You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *        <code>ObjectEncryptionType</code>.
@@ -181,7 +183,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * Amazon QLDB does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -192,8 +195,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * <code>ObjectEncryptionType</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS
-     *         KMS).</p>
+     * @return The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service
+     *         (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
      *         <p>
      *         You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *         <code>ObjectEncryptionType</code>.
@@ -209,7 +212,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
+     * Amazon QLDB does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -221,8 +225,8 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management Service (AWS
-     *        KMS).</p>
+     *        The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service
+     *        (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
      *        <p>
      *        You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *        <code>ObjectEncryptionType</code>.

@@ -34,6 +34,49 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
 
     /**
      * <p>
+     * Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be
+     * <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention
+     * period, so they are automatically deleted after this limit expires.
+     * </p>
+     * 
+     * @param cancelJournalKinesisStreamRequest
+     * @return A Java Future containing the result of the CancelJournalKinesisStream operation returned by the service.
+     * @sample AmazonQLDBAsync.CancelJournalKinesisStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelJournalKinesisStreamResult> cancelJournalKinesisStreamAsync(
+            CancelJournalKinesisStreamRequest cancelJournalKinesisStreamRequest);
+
+    /**
+     * <p>
+     * Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be
+     * <code>ACTIVE</code>.
+     * </p>
+     * <p>
+     * You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention
+     * period, so they are automatically deleted after this limit expires.
+     * </p>
+     * 
+     * @param cancelJournalKinesisStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelJournalKinesisStream operation returned by the service.
+     * @sample AmazonQLDBAsyncHandler.CancelJournalKinesisStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelJournalKinesisStreamResult> cancelJournalKinesisStreamAsync(
+            CancelJournalKinesisStreamRequest cancelJournalKinesisStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelJournalKinesisStreamRequest, CancelJournalKinesisStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new ledger in your AWS account.
      * </p>
      * 
@@ -108,8 +151,52 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
 
     /**
      * <p>
+     * Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource
+     * Name (ARN), stream name, current status, creation time, and the parameters of your original stream creation
+     * request.
+     * </p>
+     * 
+     * @param describeJournalKinesisStreamRequest
+     * @return A Java Future containing the result of the DescribeJournalKinesisStream operation returned by the
+     *         service.
+     * @sample AmazonQLDBAsync.DescribeJournalKinesisStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJournalKinesisStreamResult> describeJournalKinesisStreamAsync(
+            DescribeJournalKinesisStreamRequest describeJournalKinesisStreamRequest);
+
+    /**
+     * <p>
+     * Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource
+     * Name (ARN), stream name, current status, creation time, and the parameters of your original stream creation
+     * request.
+     * </p>
+     * 
+     * @param describeJournalKinesisStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJournalKinesisStream operation returned by the
+     *         service.
+     * @sample AmazonQLDBAsyncHandler.DescribeJournalKinesisStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJournalKinesisStreamResult> describeJournalKinesisStreamAsync(
+            DescribeJournalKinesisStreamRequest describeJournalKinesisStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJournalKinesisStreamRequest, DescribeJournalKinesisStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a journal export job, including the ledger name, export ID, when it was created,
      * current status, and its start and end time export parameters.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -131,6 +218,11 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
      * <p>
      * Returns information about a journal export job, including the ledger name, export ID, when it was created,
      * current status, and its start and end time export parameters.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -362,12 +454,62 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
 
     /**
      * <p>
+     * Returns an array of all Amazon QLDB journal stream descriptors for a given ledger. The output of each stream
+     * descriptor includes the same details that are returned by <code>DescribeJournalKinesisStream</code>.
+     * </p>
+     * <p>
+     * This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the
+     * items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.
+     * </p>
+     * 
+     * @param listJournalKinesisStreamsForLedgerRequest
+     * @return A Java Future containing the result of the ListJournalKinesisStreamsForLedger operation returned by the
+     *         service.
+     * @sample AmazonQLDBAsync.ListJournalKinesisStreamsForLedger
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListJournalKinesisStreamsForLedgerResult> listJournalKinesisStreamsForLedgerAsync(
+            ListJournalKinesisStreamsForLedgerRequest listJournalKinesisStreamsForLedgerRequest);
+
+    /**
+     * <p>
+     * Returns an array of all Amazon QLDB journal stream descriptors for a given ledger. The output of each stream
+     * descriptor includes the same details that are returned by <code>DescribeJournalKinesisStream</code>.
+     * </p>
+     * <p>
+     * This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the
+     * items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.
+     * </p>
+     * 
+     * @param listJournalKinesisStreamsForLedgerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJournalKinesisStreamsForLedger operation returned by the
+     *         service.
+     * @sample AmazonQLDBAsyncHandler.ListJournalKinesisStreamsForLedger
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListJournalKinesisStreamsForLedgerResult> listJournalKinesisStreamsForLedgerAsync(
+            ListJournalKinesisStreamsForLedgerRequest listJournalKinesisStreamsForLedgerRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJournalKinesisStreamsForLedgerRequest, ListJournalKinesisStreamsForLedgerResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of journal export job descriptions for all ledgers that are associated with the current AWS
      * account and Region.
      * </p>
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
      * items by calling <code>ListJournalS3Exports</code> multiple times.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsRequest
@@ -386,6 +528,11 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
      * items by calling <code>ListJournalS3Exports</code> multiple times.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsRequest
@@ -409,6 +556,11 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
      * items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.
      * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
      * 
      * @param listJournalS3ExportsForLedgerRequest
      * @return A Java Future containing the result of the ListJournalS3ExportsForLedger operation returned by the
@@ -427,6 +579,11 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the
      * items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.
+     * </p>
+     * <p>
+     * This action does not return any expired export jobs. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
+     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsForLedgerRequest
@@ -513,6 +670,41 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a stream for a given Amazon QLDB ledger that delivers the journal data to a specified Amazon Kinesis Data
+     * Streams resource. The stream captures every document revision that is committed to your journal and sends it to
+     * the Kinesis data stream.
+     * </p>
+     * 
+     * @param streamJournalToKinesisRequest
+     * @return A Java Future containing the result of the StreamJournalToKinesis operation returned by the service.
+     * @sample AmazonQLDBAsync.StreamJournalToKinesis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StreamJournalToKinesisResult> streamJournalToKinesisAsync(StreamJournalToKinesisRequest streamJournalToKinesisRequest);
+
+    /**
+     * <p>
+     * Creates a stream for a given Amazon QLDB ledger that delivers the journal data to a specified Amazon Kinesis Data
+     * Streams resource. The stream captures every document revision that is committed to your journal and sends it to
+     * the Kinesis data stream.
+     * </p>
+     * 
+     * @param streamJournalToKinesisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StreamJournalToKinesis operation returned by the service.
+     * @sample AmazonQLDBAsyncHandler.StreamJournalToKinesis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StreamJournalToKinesisResult> streamJournalToKinesisAsync(StreamJournalToKinesisRequest streamJournalToKinesisRequest,
+            com.amazonaws.handlers.AsyncHandler<StreamJournalToKinesisRequest, StreamJournalToKinesisResult> asyncHandler);
 
     /**
      * <p>

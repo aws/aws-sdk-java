@@ -3172,6 +3172,70 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Redacts the specified message from the specified Amazon Chime conversation.
+     * </p>
+     * 
+     * @param redactConversationMessageRequest
+     * @return A Java Future containing the result of the RedactConversationMessage operation returned by the service.
+     * @sample AmazonChimeAsync.RedactConversationMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(
+            RedactConversationMessageRequest redactConversationMessageRequest);
+
+    /**
+     * <p>
+     * Redacts the specified message from the specified Amazon Chime conversation.
+     * </p>
+     * 
+     * @param redactConversationMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RedactConversationMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.RedactConversationMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RedactConversationMessageResult> redactConversationMessageAsync(
+            RedactConversationMessageRequest redactConversationMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<RedactConversationMessageRequest, RedactConversationMessageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Redacts the specified message from the specified Amazon Chime chat room.
+     * </p>
+     * 
+     * @param redactRoomMessageRequest
+     * @return A Java Future containing the result of the RedactRoomMessage operation returned by the service.
+     * @sample AmazonChimeAsync.RedactRoomMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RedactRoomMessageResult> redactRoomMessageAsync(RedactRoomMessageRequest redactRoomMessageRequest);
+
+    /**
+     * <p>
+     * Redacts the specified message from the specified Amazon Chime chat room.
+     * </p>
+     * 
+     * @param redactRoomMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RedactRoomMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.RedactRoomMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RedactRoomMessageResult> redactRoomMessageAsync(RedactRoomMessageRequest redactRoomMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<RedactRoomMessageRequest, RedactRoomMessageResult> asyncHandler);
+
+    /**
+     * <p>
      * Regenerates the security token for a bot.
      * </p>
      * 

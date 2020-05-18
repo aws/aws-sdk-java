@@ -436,7 +436,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * This method only applies to <a
+     * This operation only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
      * 2017.11.29</a> of global tables.
      * </p>
@@ -479,6 +479,21 @@ public interface AmazonDynamoDB {
      * <li>
      * <p>
      * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If local secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The local secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The local secondary indexes must have the same hash key and sort key (if present).
      * </p>
      * </li>
      * </ul>
@@ -836,9 +851,13 @@ public interface AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * This method only applies to <a
+     * This operation only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
-     * 2017.11.29</a> of global tables.
+     * 2017.11.29</a> of global tables. If you are using global tables <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> you can use <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+     * instead.
      * </p>
      * </note>
      * 
@@ -860,7 +879,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * This method only applies to <a
+     * This operation only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
      * 2017.11.29</a> of global tables.
      * </p>
@@ -1023,7 +1042,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * This method only applies to <a
+     * This operation only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
      * 2019.11.21</a> of global tables.
      * </p>
@@ -1157,7 +1176,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * This method only applies to <a
+     * This operation only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
      * 2017.11.29</a> of global tables.
      * </p>
@@ -1317,8 +1336,15 @@ public interface AmazonDynamoDB {
      * </important>
      * <p>
      * When you add an item, the primary key attributes are the only required attributes. Attribute values cannot be
-     * null. String and Binary type attributes must have lengths greater than zero. Set type attributes cannot be empty.
-     * Requests with empty values will be rejected with a <code>ValidationException</code> exception.
+     * null.
+     * </p>
+     * <p>
+     * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a
+     * length greater than zero if the attribute is used as a key attribute for a table or index. Set type attributes
+     * cannot be empty.
+     * </p>
+     * <p>
+     * Invalid Requests with empty values will be rejected with a <code>ValidationException</code> exception.
      * </p>
      * <note>
      * <p>
@@ -2858,7 +2884,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * This method only applies to <a
+     * This operation only applies to <a
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
      * 2019.11.21</a> of global tables.
      * </p>

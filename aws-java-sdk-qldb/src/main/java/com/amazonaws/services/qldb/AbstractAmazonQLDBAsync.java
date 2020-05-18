@@ -28,6 +28,19 @@ public class AbstractAmazonQLDBAsync extends AbstractAmazonQLDB implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJournalKinesisStreamResult> cancelJournalKinesisStreamAsync(CancelJournalKinesisStreamRequest request) {
+
+        return cancelJournalKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelJournalKinesisStreamResult> cancelJournalKinesisStreamAsync(CancelJournalKinesisStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelJournalKinesisStreamRequest, CancelJournalKinesisStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLedgerResult> createLedgerAsync(CreateLedgerRequest request) {
 
         return createLedgerAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAmazonQLDBAsync extends AbstractAmazonQLDB implements Amazo
     @Override
     public java.util.concurrent.Future<DeleteLedgerResult> deleteLedgerAsync(DeleteLedgerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLedgerRequest, DeleteLedgerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJournalKinesisStreamResult> describeJournalKinesisStreamAsync(DescribeJournalKinesisStreamRequest request) {
+
+        return describeJournalKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJournalKinesisStreamResult> describeJournalKinesisStreamAsync(DescribeJournalKinesisStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeJournalKinesisStreamRequest, DescribeJournalKinesisStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +158,21 @@ public class AbstractAmazonQLDBAsync extends AbstractAmazonQLDB implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<ListJournalKinesisStreamsForLedgerResult> listJournalKinesisStreamsForLedgerAsync(
+            ListJournalKinesisStreamsForLedgerRequest request) {
+
+        return listJournalKinesisStreamsForLedgerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJournalKinesisStreamsForLedgerResult> listJournalKinesisStreamsForLedgerAsync(
+            ListJournalKinesisStreamsForLedgerRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListJournalKinesisStreamsForLedgerRequest, ListJournalKinesisStreamsForLedgerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJournalS3ExportsResult> listJournalS3ExportsAsync(ListJournalS3ExportsRequest request) {
 
         return listJournalS3ExportsAsync(request, null);
@@ -179,6 +220,19 @@ public class AbstractAmazonQLDBAsync extends AbstractAmazonQLDB implements Amazo
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StreamJournalToKinesisResult> streamJournalToKinesisAsync(StreamJournalToKinesisRequest request) {
+
+        return streamJournalToKinesisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StreamJournalToKinesisResult> streamJournalToKinesisAsync(StreamJournalToKinesisRequest request,
+            com.amazonaws.handlers.AsyncHandler<StreamJournalToKinesisRequest, StreamJournalToKinesisResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
