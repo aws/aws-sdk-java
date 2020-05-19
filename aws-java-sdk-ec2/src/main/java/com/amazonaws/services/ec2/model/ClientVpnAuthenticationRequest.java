@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the authentication method to be used by a Client VPN endpoint. Client VPN supports Active Directory and
- * mutual authentication. For more information, see <a href=
+ * Describes the authentication method to be used by a Client VPN endpoint. For more information, see <a href=
  * "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication"
  * >Authentication</a> in the <i>AWS Client VPN Administrator Guide</i>.
  * </p>
@@ -31,9 +30,7 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     * certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.
+     * The type of client authentication to be used.
      * </p>
      */
     private String type;
@@ -51,18 +48,21 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
      * </p>
      */
     private CertificateAuthenticationRequest mutualAuthentication;
+    /**
+     * <p>
+     * Information about the IAM SAML identity provider to be used, if applicable. You must provide this information if
+     * <b>Type</b> is <code>federated-authentication</code>.
+     * </p>
+     */
+    private FederatedAuthenticationRequest federatedAuthentication;
 
     /**
      * <p>
-     * The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     * certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.
+     * The type of client authentication to be used.
      * </p>
      * 
      * @param type
-     *        The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     *        certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     *        authentication.
+     *        The type of client authentication to be used.
      * @see ClientVpnAuthenticationType
      */
 
@@ -72,14 +72,10 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     * certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.
+     * The type of client authentication to be used.
      * </p>
      * 
-     * @return The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     *         certificate-based authentication, or <code>directory-service-authentication</code> to use Active
-     *         Directory authentication.
+     * @return The type of client authentication to be used.
      * @see ClientVpnAuthenticationType
      */
 
@@ -89,15 +85,11 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     * certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.
+     * The type of client authentication to be used.
      * </p>
      * 
      * @param type
-     *        The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     *        certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     *        authentication.
+     *        The type of client authentication to be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClientVpnAuthenticationType
      */
@@ -109,15 +101,11 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     * certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.
+     * The type of client authentication to be used.
      * </p>
      * 
      * @param type
-     *        The type of client authentication to be used. Specify <code>certificate-authentication</code> to use
-     *        certificate-based authentication, or <code>directory-service-authentication</code> to use Active Directory
-     *        authentication.
+     *        The type of client authentication to be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClientVpnAuthenticationType
      */
@@ -220,6 +208,52 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the IAM SAML identity provider to be used, if applicable. You must provide this information if
+     * <b>Type</b> is <code>federated-authentication</code>.
+     * </p>
+     * 
+     * @param federatedAuthentication
+     *        Information about the IAM SAML identity provider to be used, if applicable. You must provide this
+     *        information if <b>Type</b> is <code>federated-authentication</code>.
+     */
+
+    public void setFederatedAuthentication(FederatedAuthenticationRequest federatedAuthentication) {
+        this.federatedAuthentication = federatedAuthentication;
+    }
+
+    /**
+     * <p>
+     * Information about the IAM SAML identity provider to be used, if applicable. You must provide this information if
+     * <b>Type</b> is <code>federated-authentication</code>.
+     * </p>
+     * 
+     * @return Information about the IAM SAML identity provider to be used, if applicable. You must provide this
+     *         information if <b>Type</b> is <code>federated-authentication</code>.
+     */
+
+    public FederatedAuthenticationRequest getFederatedAuthentication() {
+        return this.federatedAuthentication;
+    }
+
+    /**
+     * <p>
+     * Information about the IAM SAML identity provider to be used, if applicable. You must provide this information if
+     * <b>Type</b> is <code>federated-authentication</code>.
+     * </p>
+     * 
+     * @param federatedAuthentication
+     *        Information about the IAM SAML identity provider to be used, if applicable. You must provide this
+     *        information if <b>Type</b> is <code>federated-authentication</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnAuthenticationRequest withFederatedAuthentication(FederatedAuthenticationRequest federatedAuthentication) {
+        setFederatedAuthentication(federatedAuthentication);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +270,9 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
         if (getActiveDirectory() != null)
             sb.append("ActiveDirectory: ").append(getActiveDirectory()).append(",");
         if (getMutualAuthentication() != null)
-            sb.append("MutualAuthentication: ").append(getMutualAuthentication());
+            sb.append("MutualAuthentication: ").append(getMutualAuthentication()).append(",");
+        if (getFederatedAuthentication() != null)
+            sb.append("FederatedAuthentication: ").append(getFederatedAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +299,10 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
             return false;
         if (other.getMutualAuthentication() != null && other.getMutualAuthentication().equals(this.getMutualAuthentication()) == false)
             return false;
+        if (other.getFederatedAuthentication() == null ^ this.getFederatedAuthentication() == null)
+            return false;
+        if (other.getFederatedAuthentication() != null && other.getFederatedAuthentication().equals(this.getFederatedAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +314,7 @@ public class ClientVpnAuthenticationRequest implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getActiveDirectory() == null) ? 0 : getActiveDirectory().hashCode());
         hashCode = prime * hashCode + ((getMutualAuthentication() == null) ? 0 : getMutualAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getFederatedAuthentication() == null) ? 0 : getFederatedAuthentication().hashCode());
         return hashCode;
     }
 

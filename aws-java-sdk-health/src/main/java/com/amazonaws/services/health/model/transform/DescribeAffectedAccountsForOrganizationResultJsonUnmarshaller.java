@@ -54,6 +54,10 @@ public class DescribeAffectedAccountsForOrganizationResultJsonUnmarshaller imple
                     describeAffectedAccountsForOrganizationResult.setAffectedAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("eventScopeCode", targetDepth)) {
+                    context.nextToken();
+                    describeAffectedAccountsForOrganizationResult.setEventScopeCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
                     describeAffectedAccountsForOrganizationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));

@@ -40,7 +40,7 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
     private String targetNetworkCidr;
     /**
      * <p>
-     * The ID of the Active Directory group to grant access.
+     * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
      * </p>
      */
     private String accessGroupId;
@@ -149,11 +149,12 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Active Directory group to grant access.
+     * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
      * </p>
      * 
      * @param accessGroupId
-     *        The ID of the Active Directory group to grant access.
+     *        The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP)
+     *        group.
      */
 
     public void setAccessGroupId(String accessGroupId) {
@@ -162,10 +163,11 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Active Directory group to grant access.
+     * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
      * </p>
      * 
-     * @return The ID of the Active Directory group to grant access.
+     * @return The ID of the group to grant access to, for example, the Active Directory group or identity provider
+     *         (IdP) group.
      */
 
     public String getAccessGroupId() {
@@ -174,11 +176,12 @@ public class AuthorizeClientVpnIngressRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Active Directory group to grant access.
+     * The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP) group.
      * </p>
      * 
      * @param accessGroupId
-     *        The ID of the Active Directory group to grant access.
+     *        The ID of the group to grant access to, for example, the Active Directory group or identity provider (IdP)
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

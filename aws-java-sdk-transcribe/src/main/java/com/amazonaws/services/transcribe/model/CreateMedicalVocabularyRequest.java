@@ -54,7 +54,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * This is an example of a vocabulary file uri location in Amazon S3:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -209,7 +209,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * This is an example of a vocabulary file uri location in Amazon S3:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -233,7 +233,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      *        This is an example of a vocabulary file uri location in Amazon S3:
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     *        <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      *        </p>
      *        <p>
      *        For more information about S3 object names, see <a
@@ -263,7 +263,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * This is an example of a vocabulary file uri location in Amazon S3:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -286,7 +286,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      *         This is an example of a vocabulary file uri location in Amazon S3:
      *         </p>
      *         <p>
-     *         <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     *         <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      *         </p>
      *         <p>
      *         For more information about S3 object names, see <a
@@ -316,7 +316,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * This is an example of a vocabulary file uri location in Amazon S3:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -340,7 +340,7 @@ public class CreateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      *        This is an example of a vocabulary file uri location in Amazon S3:
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     *        <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      *        </p>
      *        <p>
      *        For more information about S3 object names, see <a

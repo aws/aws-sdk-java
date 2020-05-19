@@ -64,6 +64,10 @@ public class OrganizationEventJsonUnmarshaller implements Unmarshaller<Organizat
                     context.nextToken();
                     organizationEvent.setEventTypeCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("eventScopeCode", targetDepth)) {
+                    context.nextToken();
+                    organizationEvent.setEventScopeCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
                     organizationEvent.setRegion(context.getUnmarshaller(String.class).unmarshall(context));

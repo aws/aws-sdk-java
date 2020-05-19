@@ -30,6 +30,8 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
      * </p>
      */
     private java.util.List<String> affectedAccounts;
+
+    private String eventScopeCode;
     /**
      * <p>
      * If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code>
@@ -111,6 +113,46 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
     }
 
     /**
+     * @param eventScopeCode
+     * @see EventScopeCode
+     */
+
+    public void setEventScopeCode(String eventScopeCode) {
+        this.eventScopeCode = eventScopeCode;
+    }
+
+    /**
+     * @return
+     * @see EventScopeCode
+     */
+
+    public String getEventScopeCode() {
+        return this.eventScopeCode;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventScopeCode
+     */
+
+    public DescribeAffectedAccountsForOrganizationResult withEventScopeCode(String eventScopeCode) {
+        setEventScopeCode(eventScopeCode);
+        return this;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventScopeCode
+     */
+
+    public DescribeAffectedAccountsForOrganizationResult withEventScopeCode(EventScopeCode eventScopeCode) {
+        this.eventScopeCode = eventScopeCode.toString();
+        return this;
+    }
+
+    /**
      * <p>
      * If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code>
      * pagination token is returned in the response. To retrieve the next batch of results, reissue the search request
@@ -182,6 +224,8 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
         sb.append("{");
         if (getAffectedAccounts() != null)
             sb.append("AffectedAccounts: ").append(getAffectedAccounts()).append(",");
+        if (getEventScopeCode() != null)
+            sb.append("EventScopeCode: ").append(getEventScopeCode()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -202,6 +246,10 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
             return false;
         if (other.getAffectedAccounts() != null && other.getAffectedAccounts().equals(this.getAffectedAccounts()) == false)
             return false;
+        if (other.getEventScopeCode() == null ^ this.getEventScopeCode() == null)
+            return false;
+        if (other.getEventScopeCode() != null && other.getEventScopeCode().equals(this.getEventScopeCode()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -215,6 +263,7 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAffectedAccounts() == null) ? 0 : getAffectedAccounts().hashCode());
+        hashCode = prime * hashCode + ((getEventScopeCode() == null) ? 0 : getEventScopeCode().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

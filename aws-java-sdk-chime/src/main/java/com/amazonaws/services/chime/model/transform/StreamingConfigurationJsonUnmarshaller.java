@@ -56,6 +56,11 @@ public class StreamingConfigurationJsonUnmarshaller implements Unmarshaller<Stre
                     context.nextToken();
                     streamingConfiguration.setDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("StreamingNotificationTargets", targetDepth)) {
+                    context.nextToken();
+                    streamingConfiguration.setStreamingNotificationTargets(new ListUnmarshaller<StreamingNotificationTarget>(
+                            StreamingNotificationTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

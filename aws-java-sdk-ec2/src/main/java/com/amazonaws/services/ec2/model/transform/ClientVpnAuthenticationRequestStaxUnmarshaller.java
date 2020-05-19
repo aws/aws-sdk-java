@@ -57,6 +57,11 @@ public class ClientVpnAuthenticationRequestStaxUnmarshaller implements Unmarshal
                     clientVpnAuthenticationRequest.setMutualAuthentication(CertificateAuthenticationRequestStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("FederatedAuthentication", targetDepth)) {
+                    clientVpnAuthenticationRequest.setFederatedAuthentication(FederatedAuthenticationRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clientVpnAuthenticationRequest;

@@ -41,6 +41,12 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private Boolean disabled;
+    /**
+     * <p>
+     * The streaming notification targets.
+     * </p>
+     */
+    private java.util.List<StreamingNotificationTarget> streamingNotificationTargets;
 
     /**
      * <p>
@@ -135,6 +141,76 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The streaming notification targets.
+     * </p>
+     * 
+     * @return The streaming notification targets.
+     */
+
+    public java.util.List<StreamingNotificationTarget> getStreamingNotificationTargets() {
+        return streamingNotificationTargets;
+    }
+
+    /**
+     * <p>
+     * The streaming notification targets.
+     * </p>
+     * 
+     * @param streamingNotificationTargets
+     *        The streaming notification targets.
+     */
+
+    public void setStreamingNotificationTargets(java.util.Collection<StreamingNotificationTarget> streamingNotificationTargets) {
+        if (streamingNotificationTargets == null) {
+            this.streamingNotificationTargets = null;
+            return;
+        }
+
+        this.streamingNotificationTargets = new java.util.ArrayList<StreamingNotificationTarget>(streamingNotificationTargets);
+    }
+
+    /**
+     * <p>
+     * The streaming notification targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStreamingNotificationTargets(java.util.Collection)} or
+     * {@link #withStreamingNotificationTargets(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param streamingNotificationTargets
+     *        The streaming notification targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingConfiguration withStreamingNotificationTargets(StreamingNotificationTarget... streamingNotificationTargets) {
+        if (this.streamingNotificationTargets == null) {
+            setStreamingNotificationTargets(new java.util.ArrayList<StreamingNotificationTarget>(streamingNotificationTargets.length));
+        }
+        for (StreamingNotificationTarget ele : streamingNotificationTargets) {
+            this.streamingNotificationTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The streaming notification targets.
+     * </p>
+     * 
+     * @param streamingNotificationTargets
+     *        The streaming notification targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingConfiguration withStreamingNotificationTargets(java.util.Collection<StreamingNotificationTarget> streamingNotificationTargets) {
+        setStreamingNotificationTargets(streamingNotificationTargets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -149,7 +225,9 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
         if (getDataRetentionInHours() != null)
             sb.append("DataRetentionInHours: ").append(getDataRetentionInHours()).append(",");
         if (getDisabled() != null)
-            sb.append("Disabled: ").append(getDisabled());
+            sb.append("Disabled: ").append(getDisabled()).append(",");
+        if (getStreamingNotificationTargets() != null)
+            sb.append("StreamingNotificationTargets: ").append(getStreamingNotificationTargets());
         sb.append("}");
         return sb.toString();
     }
@@ -172,6 +250,10 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getDisabled() != null && other.getDisabled().equals(this.getDisabled()) == false)
             return false;
+        if (other.getStreamingNotificationTargets() == null ^ this.getStreamingNotificationTargets() == null)
+            return false;
+        if (other.getStreamingNotificationTargets() != null && other.getStreamingNotificationTargets().equals(this.getStreamingNotificationTargets()) == false)
+            return false;
         return true;
     }
 
@@ -182,6 +264,7 @@ public class StreamingConfiguration implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getDataRetentionInHours() == null) ? 0 : getDataRetentionInHours().hashCode());
         hashCode = prime * hashCode + ((getDisabled() == null) ? 0 : getDisabled().hashCode());
+        hashCode = prime * hashCode + ((getStreamingNotificationTargets() == null) ? 0 : getStreamingNotificationTargets().hashCode());
         return hashCode;
     }
 

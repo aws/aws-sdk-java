@@ -56,6 +56,8 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String eventTypeCategory;
+
+    private String eventScopeCode;
     /**
      * <p>
      * The AWS Region name of the event.
@@ -288,6 +290,46 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     public OrganizationEvent withEventTypeCategory(EventTypeCategory eventTypeCategory) {
         this.eventTypeCategory = eventTypeCategory.toString();
+        return this;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @see EventScopeCode
+     */
+
+    public void setEventScopeCode(String eventScopeCode) {
+        this.eventScopeCode = eventScopeCode;
+    }
+
+    /**
+     * @return
+     * @see EventScopeCode
+     */
+
+    public String getEventScopeCode() {
+        return this.eventScopeCode;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventScopeCode
+     */
+
+    public OrganizationEvent withEventScopeCode(String eventScopeCode) {
+        setEventScopeCode(eventScopeCode);
+        return this;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventScopeCode
+     */
+
+    public OrganizationEvent withEventScopeCode(EventScopeCode eventScopeCode) {
+        this.eventScopeCode = eventScopeCode.toString();
         return this;
     }
 
@@ -538,6 +580,8 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
             sb.append("EventTypeCode: ").append(getEventTypeCode()).append(",");
         if (getEventTypeCategory() != null)
             sb.append("EventTypeCategory: ").append(getEventTypeCategory()).append(",");
+        if (getEventScopeCode() != null)
+            sb.append("EventScopeCode: ").append(getEventScopeCode()).append(",");
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
         if (getStartTime() != null)
@@ -578,6 +622,10 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEventTypeCategory() != null && other.getEventTypeCategory().equals(this.getEventTypeCategory()) == false)
             return false;
+        if (other.getEventScopeCode() == null ^ this.getEventScopeCode() == null)
+            return false;
+        if (other.getEventScopeCode() != null && other.getEventScopeCode().equals(this.getEventScopeCode()) == false)
+            return false;
         if (other.getRegion() == null ^ this.getRegion() == null)
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
@@ -610,6 +658,7 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime * hashCode + ((getEventTypeCode() == null) ? 0 : getEventTypeCode().hashCode());
         hashCode = prime * hashCode + ((getEventTypeCategory() == null) ? 0 : getEventTypeCategory().hashCode());
+        hashCode = prime * hashCode + ((getEventScopeCode() == null) ? 0 : getEventScopeCode().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());

@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the authentication methods used by a Client VPN endpoint. Client VPN supports Active Directory and mutual
- * authentication. For more information, see <a href=
+ * Describes the authentication methods used by a Client VPN endpoint. For more information, see <a href=
  * "https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication"
  * >Authentication</a> in the <i>AWS Client VPN Administrator Guide</i>.
  * </p>
@@ -47,6 +46,12 @@ public class ClientVpnAuthentication implements Serializable, Cloneable {
      * </p>
      */
     private CertificateAuthentication mutualAuthentication;
+    /**
+     * <p>
+     * Information about the IAM SAML identity provider, if applicable.
+     * </p>
+     */
+    private FederatedAuthentication federatedAuthentication;
 
     /**
      * <p>
@@ -188,6 +193,46 @@ public class ClientVpnAuthentication implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the IAM SAML identity provider, if applicable.
+     * </p>
+     * 
+     * @param federatedAuthentication
+     *        Information about the IAM SAML identity provider, if applicable.
+     */
+
+    public void setFederatedAuthentication(FederatedAuthentication federatedAuthentication) {
+        this.federatedAuthentication = federatedAuthentication;
+    }
+
+    /**
+     * <p>
+     * Information about the IAM SAML identity provider, if applicable.
+     * </p>
+     * 
+     * @return Information about the IAM SAML identity provider, if applicable.
+     */
+
+    public FederatedAuthentication getFederatedAuthentication() {
+        return this.federatedAuthentication;
+    }
+
+    /**
+     * <p>
+     * Information about the IAM SAML identity provider, if applicable.
+     * </p>
+     * 
+     * @param federatedAuthentication
+     *        Information about the IAM SAML identity provider, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnAuthentication withFederatedAuthentication(FederatedAuthentication federatedAuthentication) {
+        setFederatedAuthentication(federatedAuthentication);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,7 +249,9 @@ public class ClientVpnAuthentication implements Serializable, Cloneable {
         if (getActiveDirectory() != null)
             sb.append("ActiveDirectory: ").append(getActiveDirectory()).append(",");
         if (getMutualAuthentication() != null)
-            sb.append("MutualAuthentication: ").append(getMutualAuthentication());
+            sb.append("MutualAuthentication: ").append(getMutualAuthentication()).append(",");
+        if (getFederatedAuthentication() != null)
+            sb.append("FederatedAuthentication: ").append(getFederatedAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +278,10 @@ public class ClientVpnAuthentication implements Serializable, Cloneable {
             return false;
         if (other.getMutualAuthentication() != null && other.getMutualAuthentication().equals(this.getMutualAuthentication()) == false)
             return false;
+        if (other.getFederatedAuthentication() == null ^ this.getFederatedAuthentication() == null)
+            return false;
+        if (other.getFederatedAuthentication() != null && other.getFederatedAuthentication().equals(this.getFederatedAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -242,6 +293,7 @@ public class ClientVpnAuthentication implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getActiveDirectory() == null) ? 0 : getActiveDirectory().hashCode());
         hashCode = prime * hashCode + ((getMutualAuthentication() == null) ? 0 : getMutualAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getFederatedAuthentication() == null) ? 0 : getFederatedAuthentication().hashCode());
         return hashCode;
     }
 

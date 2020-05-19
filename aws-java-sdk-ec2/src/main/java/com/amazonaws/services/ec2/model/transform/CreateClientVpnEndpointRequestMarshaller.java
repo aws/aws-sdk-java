@@ -78,6 +78,16 @@ public class CreateClientVpnEndpointRequestMarshaller implements Marshaller<Requ
                                 StringUtils.fromString(mutualAuthentication.getClientRootCertificateChainArn()));
                     }
                 }
+
+                FederatedAuthenticationRequest federatedAuthentication = createClientVpnEndpointRequestAuthenticationOptionsListValue
+                        .getFederatedAuthentication();
+                if (federatedAuthentication != null) {
+
+                    if (federatedAuthentication.getSAMLProviderArn() != null) {
+                        request.addParameter("Authentication." + authenticationOptionsListIndex + ".FederatedAuthentication.SAMLProviderArn",
+                                StringUtils.fromString(federatedAuthentication.getSAMLProviderArn()));
+                    }
+                }
                 authenticationOptionsListIndex++;
             }
         }

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.chime.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class StreamingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataRetentionInHours").build();
     private static final MarshallingInfo<Boolean> DISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Disabled").build();
+    private static final MarshallingInfo<List> STREAMINGNOTIFICATIONTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamingNotificationTargets").build();
 
     private static final StreamingConfigurationMarshaller instance = new StreamingConfigurationMarshaller();
 
@@ -50,6 +53,7 @@ public class StreamingConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(streamingConfiguration.getDataRetentionInHours(), DATARETENTIONINHOURS_BINDING);
             protocolMarshaller.marshall(streamingConfiguration.getDisabled(), DISABLED_BINDING);
+            protocolMarshaller.marshall(streamingConfiguration.getStreamingNotificationTargets(), STREAMINGNOTIFICATIONTARGETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

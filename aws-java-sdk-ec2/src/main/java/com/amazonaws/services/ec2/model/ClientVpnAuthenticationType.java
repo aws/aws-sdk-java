@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ClientVpnAuthenticationType {
 
     CertificateAuthentication("certificate-authentication"),
-    DirectoryServiceAuthentication("directory-service-authentication");
+    DirectoryServiceAuthentication("directory-service-authentication"),
+    FederatedAuthentication("federated-authentication");
 
     private String value;
 

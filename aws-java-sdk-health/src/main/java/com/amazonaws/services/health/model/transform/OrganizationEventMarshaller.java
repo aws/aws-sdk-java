@@ -35,6 +35,8 @@ public class OrganizationEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeCode").build();
     private static final MarshallingInfo<String> EVENTTYPECATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeCategory").build();
+    private static final MarshallingInfo<String> EVENTSCOPECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventScopeCode").build();
     private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("region").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -66,6 +68,7 @@ public class OrganizationEventMarshaller {
             protocolMarshaller.marshall(organizationEvent.getService(), SERVICE_BINDING);
             protocolMarshaller.marshall(organizationEvent.getEventTypeCode(), EVENTTYPECODE_BINDING);
             protocolMarshaller.marshall(organizationEvent.getEventTypeCategory(), EVENTTYPECATEGORY_BINDING);
+            protocolMarshaller.marshall(organizationEvent.getEventScopeCode(), EVENTSCOPECODE_BINDING);
             protocolMarshaller.marshall(organizationEvent.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(organizationEvent.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(organizationEvent.getEndTime(), ENDTIME_BINDING);

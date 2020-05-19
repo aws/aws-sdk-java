@@ -94,6 +94,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
     private String statusCode;
 
+    private String eventScopeCode;
+
     /**
      * <p>
      * The unique identifier for the event. Format:
@@ -608,6 +610,55 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param eventScopeCode
+     * @see EventScopeCode
+     */
+
+    public void setEventScopeCode(String eventScopeCode) {
+        this.eventScopeCode = eventScopeCode;
+    }
+
+    /**
+     * @return
+     * @see EventScopeCode
+     */
+
+    public String getEventScopeCode() {
+        return this.eventScopeCode;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventScopeCode
+     */
+
+    public Event withEventScopeCode(String eventScopeCode) {
+        setEventScopeCode(eventScopeCode);
+        return this;
+    }
+
+    /**
+     * @param eventScopeCode
+     * @see EventScopeCode
+     */
+
+    public void setEventScopeCode(EventScopeCode eventScopeCode) {
+        withEventScopeCode(eventScopeCode);
+    }
+
+    /**
+     * @param eventScopeCode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventScopeCode
+     */
+
+    public Event withEventScopeCode(EventScopeCode eventScopeCode) {
+        this.eventScopeCode = eventScopeCode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -638,7 +689,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: ").append(getStatusCode());
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
+        if (getEventScopeCode() != null)
+            sb.append("EventScopeCode: ").append(getEventScopeCode());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +746,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
             return false;
+        if (other.getEventScopeCode() == null ^ this.getEventScopeCode() == null)
+            return false;
+        if (other.getEventScopeCode() != null && other.getEventScopeCode().equals(this.getEventScopeCode()) == false)
+            return false;
         return true;
     }
 
@@ -711,6 +768,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getEventScopeCode() == null) ? 0 : getEventScopeCode().hashCode());
         return hashCode;
     }
 

@@ -52,7 +52,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -193,7 +193,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -217,7 +217,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      *        For example:
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     *        <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      *        </p>
      *        <p>
      *        For more information about S3 object names, see <a
@@ -247,7 +247,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -270,7 +270,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      *         For example:
      *         </p>
      *         <p>
-     *         <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     *         <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      *         </p>
      *         <p>
      *         For more information about S3 object names, see <a
@@ -300,7 +300,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -324,7 +324,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
      *        For example:
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code>
+     *        <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
      *        </p>
      *        <p>
      *        For more information about S3 object names, see <a

@@ -8731,8 +8731,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * gateway from the VPC and delete the VPC before deleting the VPN connection. If you believe that the tunnel
      * credentials for your VPN connection have been compromised, you can delete the VPN connection and create a new one
      * that has new keys, without needing to delete the VPC or virtual private gateway. If you create a new VPN
-     * connection, you must reconfigure the customer gateway using the new configuration information returned with the
-     * new VPN connection ID.
+     * connection, you must reconfigure the customer gateway device using the new configuration information returned
+     * with the new VPN connection ID.
+     * </p>
+     * <p>
+     * For certificate-based authentication, delete all AWS Certificate Manager (ACM) private certificates used for the
+     * AWS-side tunnel endpoints for the VPN connection before deleting the VPN connection.
      * </p>
      * 
      * @param deleteVpnConnectionRequest
@@ -21366,7 +21370,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration options are available:
+     * Modifies the customer gateway or the target gateway of an AWS Site-to-Site VPN connection. To modify the target
+     * gateway, the following migration options are available:
      * </p>
      * <ul>
      * <li>
