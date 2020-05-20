@@ -76,6 +76,10 @@ public class InputSettingsJsonUnmarshaller implements Unmarshaller<InputSettings
                     context.nextToken();
                     inputSettings.setNetworkInputSettings(NetworkInputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("smpte2038DataPreference", targetDepth)) {
+                    context.nextToken();
+                    inputSettings.setSmpte2038DataPreference(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceEndBehavior", targetDepth)) {
                     context.nextToken();
                     inputSettings.setSourceEndBehavior(context.getUnmarshaller(String.class).unmarshall(context));

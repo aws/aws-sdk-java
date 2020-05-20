@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a BatchGetApplications operation.
+ * Represents the input of a <code>BatchGetApplications</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications" target="_top">AWS
@@ -30,18 +30,18 @@ public class BatchGetApplicationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of application names separated by spaces. The maximum number of application names you can specify is 25.
+     * A list of application names separated by spaces. The maximum number of application names you can specify is 100.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> applicationNames;
 
     /**
      * <p>
-     * A list of application names separated by spaces. The maximum number of application names you can specify is 25.
+     * A list of application names separated by spaces. The maximum number of application names you can specify is 100.
      * </p>
      * 
      * @return A list of application names separated by spaces. The maximum number of application names you can specify
-     *         is 25.
+     *         is 100.
      */
 
     public java.util.List<String> getApplicationNames() {
@@ -53,12 +53,12 @@ public class BatchGetApplicationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of application names separated by spaces. The maximum number of application names you can specify is 25.
+     * A list of application names separated by spaces. The maximum number of application names you can specify is 100.
      * </p>
      * 
      * @param applicationNames
      *        A list of application names separated by spaces. The maximum number of application names you can specify
-     *        is 25.
+     *        is 100.
      */
 
     public void setApplicationNames(java.util.Collection<String> applicationNames) {
@@ -72,7 +72,7 @@ public class BatchGetApplicationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of application names separated by spaces. The maximum number of application names you can specify is 25.
+     * A list of application names separated by spaces. The maximum number of application names you can specify is 100.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class BatchGetApplicationsRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param applicationNames
      *        A list of application names separated by spaces. The maximum number of application names you can specify
-     *        is 25.
+     *        is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +98,12 @@ public class BatchGetApplicationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of application names separated by spaces. The maximum number of application names you can specify is 25.
+     * A list of application names separated by spaces. The maximum number of application names you can specify is 100.
      * </p>
      * 
      * @param applicationNames
      *        A list of application names separated by spaces. The maximum number of application names you can specify
-     *        is 25.
+     *        is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

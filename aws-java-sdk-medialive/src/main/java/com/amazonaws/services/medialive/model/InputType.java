@@ -26,7 +26,8 @@ public enum InputType {
     RTMP_PULL("RTMP_PULL"),
     URL_PULL("URL_PULL"),
     MP4_FILE("MP4_FILE"),
-    MEDIACONNECT("MEDIACONNECT");
+    MEDIACONNECT("MEDIACONNECT"),
+    INPUT_DEVICE("INPUT_DEVICE");
 
     private String value;
 

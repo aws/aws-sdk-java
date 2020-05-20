@@ -36,8 +36,8 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     private String triggerName;
     /**
      * <p>
-     * The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or instance
-     * events are sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about
+     * deployment or instance events are sent.
      * </p>
      */
     private String triggerTargetArn;
@@ -90,13 +90,13 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or instance
-     * events are sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about
+     * deployment or instance events are sent.
      * </p>
      * 
      * @param triggerTargetArn
-     *        The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or
-     *        instance events are sent.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications
+     *        about deployment or instance events are sent.
      */
 
     public void setTriggerTargetArn(String triggerTargetArn) {
@@ -105,12 +105,12 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or instance
-     * events are sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about
+     * deployment or instance events are sent.
      * </p>
      * 
-     * @return The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or
-     *         instance events are sent.
+     * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which
+     *         notifications about deployment or instance events are sent.
      */
 
     public String getTriggerTargetArn() {
@@ -119,13 +119,13 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or instance
-     * events are sent.
+     * The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about
+     * deployment or instance events are sent.
      * </p>
      * 
      * @param triggerTargetArn
-     *        The ARN of the Amazon Simple Notification Service topic through which notifications about deployment or
-     *        instance events are sent.
+     *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications
+     *        about deployment or instance events are sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

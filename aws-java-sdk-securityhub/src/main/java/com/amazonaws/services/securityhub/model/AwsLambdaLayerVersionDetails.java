@@ -36,7 +36,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
     private Long version;
     /**
      * <p>
-     * The layer's compatible runtimes. Maximum number of 5 items.
+     * The layer's compatible runtimes. Maximum number of five items.
      * </p>
      * <p>
      * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
@@ -95,7 +95,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The layer's compatible runtimes. Maximum number of 5 items.
+     * The layer's compatible runtimes. Maximum number of five items.
      * </p>
      * <p>
      * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
@@ -104,7 +104,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * <code>provided</code>
      * </p>
      * 
-     * @return The layer's compatible runtimes. Maximum number of 5 items.</p>
+     * @return The layer's compatible runtimes. Maximum number of five items.</p>
      *         <p>
      *         Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      *         <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
@@ -118,7 +118,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The layer's compatible runtimes. Maximum number of 5 items.
+     * The layer's compatible runtimes. Maximum number of five items.
      * </p>
      * <p>
      * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
@@ -128,7 +128,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes. Maximum number of 5 items.</p>
+     *        The layer's compatible runtimes. Maximum number of five items.</p>
      *        <p>
      *        Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code>
      *        | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
@@ -147,7 +147,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The layer's compatible runtimes. Maximum number of 5 items.
+     * The layer's compatible runtimes. Maximum number of five items.
      * </p>
      * <p>
      * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
@@ -162,7 +162,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes. Maximum number of 5 items.</p>
+     *        The layer's compatible runtimes. Maximum number of five items.</p>
      *        <p>
      *        Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code>
      *        | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
@@ -183,7 +183,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The layer's compatible runtimes. Maximum number of 5 items.
+     * The layer's compatible runtimes. Maximum number of five items.
      * </p>
      * <p>
      * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
@@ -193,7 +193,7 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * </p>
      * 
      * @param compatibleRuntimes
-     *        The layer's compatible runtimes. Maximum number of 5 items.</p>
+     *        The layer's compatible runtimes. Maximum number of five items.</p>
      *        <p>
      *        Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code>
      *        | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |

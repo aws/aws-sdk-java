@@ -30,7 +30,7 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the Rule.
+     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
      * </p>
      */
     private WafAction action;
@@ -64,15 +64,15 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
     private WafOverrideAction overrideAction;
     /**
      * <p>
-     * Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority are
-     * evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple Rules to a
-     * WebACL, the values do not need to be consecutive.
+     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
+     * add multiple rules to a WebACL, the values do not need to be consecutive.
      * </p>
      */
     private Integer priority;
     /**
      * <p>
-     * The identifier for a Rule.
+     * The identifier for a rule.
      * </p>
      */
     private String ruleId;
@@ -91,12 +91,12 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the Rule.
+     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
      * </p>
      * 
      * @param action
      *        Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
-     *        Rule.
+     *        rule.
      */
 
     public void setAction(WafAction action) {
@@ -105,11 +105,11 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the Rule.
+     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
      * </p>
      * 
      * @return Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
-     *         Rule.
+     *         rule.
      */
 
     public WafAction getAction() {
@@ -118,12 +118,12 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the Rule.
+     * Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
      * </p>
      * 
      * @param action
      *        Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
-     *        Rule.
+     *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,15 +337,15 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority are
-     * evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple Rules to a
-     * WebACL, the values do not need to be consecutive.
+     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
+     * add multiple rules to a WebACL, the values do not need to be consecutive.
      * </p>
      * 
      * @param priority
-     *        Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority
-     *        are evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple
-     *        Rules to a WebACL, the values do not need to be consecutive.
+     *        Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     *        <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer.
+     *        If you add multiple rules to a WebACL, the values do not need to be consecutive.
      */
 
     public void setPriority(Integer priority) {
@@ -354,14 +354,14 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority are
-     * evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple Rules to a
-     * WebACL, the values do not need to be consecutive.
+     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
+     * add multiple rules to a WebACL, the values do not need to be consecutive.
      * </p>
      * 
-     * @return Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority
-     *         are evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple
-     *         Rules to a WebACL, the values do not need to be consecutive.
+     * @return Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     *         <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer.
+     *         If you add multiple rules to a WebACL, the values do not need to be consecutive.
      */
 
     public Integer getPriority() {
@@ -370,15 +370,15 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority are
-     * evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple Rules to a
-     * WebACL, the values do not need to be consecutive.
+     * Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     * <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer. If you
+     * add multiple rules to a WebACL, the values do not need to be consecutive.
      * </p>
      * 
      * @param priority
-     *        Specifies the order in which the Rules in a WebACL are evaluated. Rules with a lower value for Priority
-     *        are evaluated before Rules with a higher value. The value must be a unique integer. If you add multiple
-     *        Rules to a WebACL, the values do not need to be consecutive.
+     *        Specifies the order in which the rules in a WebACL are evaluated. Rules with a lower value for
+     *        <code>Priority</code> are evaluated before rules with a higher value. The value must be a unique integer.
+     *        If you add multiple rules to a WebACL, the values do not need to be consecutive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +389,11 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier for a Rule.
+     * The identifier for a rule.
      * </p>
      * 
      * @param ruleId
-     *        The identifier for a Rule.
+     *        The identifier for a rule.
      */
 
     public void setRuleId(String ruleId) {
@@ -402,10 +402,10 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier for a Rule.
+     * The identifier for a rule.
      * </p>
      * 
-     * @return The identifier for a Rule.
+     * @return The identifier for a rule.
      */
 
     public String getRuleId() {
@@ -414,11 +414,11 @@ public class AwsWafWebAclRule implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier for a Rule.
+     * The identifier for a rule.
      * </p>
      * 
      * @param ruleId
-     *        The identifier for a Rule.
+     *        The identifier for a rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

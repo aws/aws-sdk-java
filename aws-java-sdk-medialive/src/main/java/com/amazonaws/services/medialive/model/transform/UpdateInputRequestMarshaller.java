@@ -30,6 +30,8 @@ public class UpdateInputRequestMarshaller {
 
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("destinations").build();
+    private static final MarshallingInfo<List> INPUTDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("inputDevices").build();
     private static final MarshallingInfo<String> INPUTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("inputId").build();
     private static final MarshallingInfo<List> INPUTSECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -60,6 +62,7 @@ public class UpdateInputRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateInputRequest.getDestinations(), DESTINATIONS_BINDING);
+            protocolMarshaller.marshall(updateInputRequest.getInputDevices(), INPUTDEVICES_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getInputId(), INPUTID_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getInputSecurityGroups(), INPUTSECURITYGROUPS_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getMediaConnectFlows(), MEDIACONNECTFLOWS_BINDING);

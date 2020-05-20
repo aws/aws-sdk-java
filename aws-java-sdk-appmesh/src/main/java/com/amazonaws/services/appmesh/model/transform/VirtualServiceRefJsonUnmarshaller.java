@@ -52,6 +52,14 @@ public class VirtualServiceRefJsonUnmarshaller implements Unmarshaller<VirtualSe
                     context.nextToken();
                     virtualServiceRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    virtualServiceRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    virtualServiceRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("meshName", targetDepth)) {
                     context.nextToken();
                     virtualServiceRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +71,10 @@ public class VirtualServiceRefJsonUnmarshaller implements Unmarshaller<VirtualSe
                 if (context.testExpression("resourceOwner", targetDepth)) {
                     context.nextToken();
                     virtualServiceRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    virtualServiceRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualServiceName", targetDepth)) {
                     context.nextToken();

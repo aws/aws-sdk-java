@@ -52,6 +52,14 @@ public class VirtualRouterRefJsonUnmarshaller implements Unmarshaller<VirtualRou
                     context.nextToken();
                     virtualRouterRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    virtualRouterRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    virtualRouterRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("meshName", targetDepth)) {
                     context.nextToken();
                     virtualRouterRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +71,10 @@ public class VirtualRouterRefJsonUnmarshaller implements Unmarshaller<VirtualRou
                 if (context.testExpression("resourceOwner", targetDepth)) {
                     context.nextToken();
                     virtualRouterRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    virtualRouterRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualRouterName", targetDepth)) {
                     context.nextToken();

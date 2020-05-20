@@ -50,7 +50,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private H264ColorSpaceSettings colorSpaceSettings;
     /** Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc. */
     private String entropyEncoding;
-    /** Settings associated with the specified filter. */
+    /** Optional filters that you can apply to an encode. */
     private H264FilterSettings filterSettings;
     /**
      * Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to
@@ -138,8 +138,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     /** H.264 Profile. */
     private String profile;
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     * channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an
+     * effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value
+     * must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      */
     private String qualityLevel;
     /**
@@ -569,10 +571,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      * 
      * @param filterSettings
-     *        Settings associated with the specified filter.
+     *        Optional filters that you can apply to an encode.
      */
 
     public void setFilterSettings(H264FilterSettings filterSettings) {
@@ -580,9 +582,9 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      * 
-     * @return Settings associated with the specified filter.
+     * @return Optional filters that you can apply to an encode.
      */
 
     public H264FilterSettings getFilterSettings() {
@@ -590,10 +592,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      * 
      * @param filterSettings
-     *        Settings associated with the specified filter.
+     *        Optional filters that you can apply to an encode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1622,12 +1624,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     * channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an
+     * effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value
+     * must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * 
      * @param qualityLevel
-     *        If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     *        delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     *        Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     *        channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate.
+     *        Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex,
+     *        the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * @see H264QualityLevel
      */
 
@@ -1636,11 +1642,15 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     * channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an
+     * effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value
+     * must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * 
-     * @return If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     *         delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * @return Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     *         channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the
+     *         bitrate. Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     *         multiplex, the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * @see H264QualityLevel
      */
 
@@ -1649,12 +1659,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     * channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an
+     * effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value
+     * must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * 
      * @param qualityLevel
-     *        If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     *        delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     *        Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     *        channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate.
+     *        Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex,
+     *        the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264QualityLevel
      */
@@ -1665,12 +1679,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     * delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     * channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate. Has an
+     * effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex, the value
+     * must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * 
      * @param qualityLevel
-     *        If set to "ENHANCEDQUALITY," improves visual quality at an increased output cost. If this video is being
-     *        delivered to a MediaLive Multiplex, "ENHANCEDQUALITY" is always used.
+     *        Leave as STANDARD_QUALITY or choose a different value (which might result in additional costs to run the
+     *        channel). - ENHANCED_QUALITY: Produces a slightly better video quality without an increase in the bitrate.
+     *        Has an effect only when the Rate control mode is QVBR or CBR. If this channel is in a MediaLive multiplex,
+     *        the value must be ENHANCED_QUALITY. - STANDARD_QUALITY: Valid for any Rate control mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264QualityLevel
      */

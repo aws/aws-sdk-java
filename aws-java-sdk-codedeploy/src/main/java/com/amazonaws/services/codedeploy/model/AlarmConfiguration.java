@@ -42,12 +42,13 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     * CloudWatch.
      * </p>
      * </li>
      * <li>
      * <p>
-     * false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
      * </p>
      * </li>
      * </ul>
@@ -120,12 +121,13 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     * CloudWatch.
      * </p>
      * </li>
      * <li>
      * <p>
-     * false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
      * </p>
      * </li>
      * </ul>
@@ -136,12 +138,14 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     *        <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     *        CloudWatch.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     *        <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon
+     *        CloudWatch.
      *        </p>
      *        </li>
      */
@@ -158,12 +162,13 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     * CloudWatch.
      * </p>
      * </li>
      * <li>
      * <p>
-     * false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
      * </p>
      * </li>
      * </ul>
@@ -173,12 +178,14 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     *         <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from
+     *         Amazon CloudWatch.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     *         <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon
+     *         CloudWatch.
      *         </p>
      *         </li>
      */
@@ -195,12 +202,13 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     * CloudWatch.
      * </p>
      * </li>
      * <li>
      * <p>
-     * false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
      * </p>
      * </li>
      * </ul>
@@ -211,12 +219,14 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     *        <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     *        CloudWatch.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     *        <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon
+     *        CloudWatch.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -235,12 +245,13 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from Amazon
+     * CloudWatch.
      * </p>
      * </li>
      * <li>
      * <p>
-     * false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     * <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
      * </p>
      * </li>
      * </ul>
@@ -250,12 +261,14 @@ public class AlarmConfiguration implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         true: The deployment proceeds even if alarm status information can't be retrieved from Amazon CloudWatch.
+     *         <code>true</code>: The deployment proceeds even if alarm status information can't be retrieved from
+     *         Amazon CloudWatch.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         false: The deployment stops if alarm status information can't be retrieved from Amazon CloudWatch.
+     *         <code>false</code>: The deployment stops if alarm status information can't be retrieved from Amazon
+     *         CloudWatch.
      *         </p>
      *         </li>
      */

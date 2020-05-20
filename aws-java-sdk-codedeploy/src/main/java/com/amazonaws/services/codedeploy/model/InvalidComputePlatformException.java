@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
+ * The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or
+ * <code>ECS</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

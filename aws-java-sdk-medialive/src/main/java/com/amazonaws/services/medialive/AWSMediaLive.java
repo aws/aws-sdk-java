@@ -487,6 +487,32 @@ public interface AWSMediaLive {
     DescribeInputResult describeInput(DescribeInputRequest describeInputRequest);
 
     /**
+     * Gets the details for the input device
+     * 
+     * @param describeInputDeviceRequest
+     *        Placeholder documentation for DescribeInputDeviceRequest
+     * @return Result of the DescribeInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         The input device you're requesting to describe does not exist. Check the ID.
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe calls to the input device service.
+     * @sample AWSMediaLive.DescribeInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeInputDeviceResult describeInputDevice(DescribeInputDeviceRequest describeInputDeviceRequest);
+
+    /**
      * Produces a summary of an Input Security Group
      * 
      * @param describeInputSecurityGroupRequest
@@ -666,6 +692,30 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     ListChannelsResult listChannels(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * List input devices
+     * 
+     * @param listInputDevicesRequest
+     *        Placeholder documentation for ListInputDevicesRequest
+     * @return Result of the ListInputDevices operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list input devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list devices calls to the input device service.
+     * @sample AWSMediaLive.ListInputDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListInputDevicesResult listInputDevices(ListInputDevicesRequest listInputDevicesRequest);
 
     /**
      * Produces a list of Input Security Groups for an account
@@ -1060,6 +1110,34 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     UpdateInputResult updateInput(UpdateInputRequest updateInputRequest);
+
+    /**
+     * Updates the parameters for the input device.
+     * 
+     * @param updateInputDeviceRequest
+     *        A request to update an input device.
+     * @return Result of the UpdateInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Input device failed validation and could not be created.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         The input device you're requesting to does not exist. Check the ID.
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update calls to the input device service.
+     * @sample AWSMediaLive.UpdateInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateInputDeviceResult updateInputDevice(UpdateInputDeviceRequest updateInputDeviceRequest);
 
     /**
      * Update an Input Security Group's Whilelists.

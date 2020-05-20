@@ -90,7 +90,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the buildspec file (for example,
+     * code and the build spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      * </p>
      * </li>
@@ -116,13 +116,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * </ul>
@@ -424,7 +424,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the buildspec file (for example,
+     * code and the build spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      * </p>
      * </li>
@@ -450,13 +450,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * </ul>
@@ -477,7 +477,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
-     *        source code and the buildspec file (for example,
+     *        source code and the build spec file (for example,
      *        <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      *        </p>
      *        </li>
@@ -503,13 +503,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
-     *        the buildspec file.
+     *        the build spec file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *        and the buildspec file.
+     *        and the build spec file.
      *        </p>
      *        </li>
      */
@@ -536,7 +536,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the buildspec file (for example,
+     * code and the build spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      * </p>
      * </li>
@@ -562,13 +562,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * </ul>
@@ -588,7 +588,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
-     *         source code and the buildspec file (for example,
+     *         source code and the build spec file (for example,
      *         <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      *         </p>
      *         </li>
@@ -614,13 +614,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      *         <li>
      *         <p>
      *         For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source
-     *         and the buildspec file.
+     *         and the build spec file.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *         and the buildspec file.
+     *         and the build spec file.
      *         </p>
      *         </li>
      */
@@ -647,7 +647,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the buildspec file (for example,
+     * code and the build spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      * </p>
      * </li>
@@ -673,13 +673,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * buildspec file.
+     * build spec file.
      * </p>
      * </li>
      * </ul>
@@ -700,7 +700,7 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
-     *        source code and the buildspec file (for example,
+     *        source code and the build spec file (for example,
      *        <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).
      *        </p>
      *        </li>
@@ -726,13 +726,13 @@ public class AwsCodeBuildProjectSource implements Serializable, Cloneable, Struc
      *        <li>
      *        <p>
      *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
-     *        the buildspec file.
+     *        the build spec file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *        and the buildspec file.
+     *        and the build spec file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

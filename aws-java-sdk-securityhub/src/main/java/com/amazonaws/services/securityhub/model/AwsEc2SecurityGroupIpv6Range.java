@@ -30,21 +30,21 @@ public class AwsEc2SecurityGroupIpv6Range implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv6 address, use the /128 prefix length.
+     * The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      */
     private String cidrIpv6;
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv6 address, use the /128 prefix length.
+     * The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
-     *        The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both.
-     *        To specify a single IPv6 address, use the /128 prefix length.
+     *        The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To
+     *        specify a single IPv6 address, use the /128 prefix length.
      */
 
     public void setCidrIpv6(String cidrIpv6) {
@@ -53,12 +53,12 @@ public class AwsEc2SecurityGroupIpv6Range implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv6 address, use the /128 prefix length.
+     * The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
-     * @return The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both.
-     *         To specify a single IPv6 address, use the /128 prefix length.
+     * @return The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To
+     *         specify a single IPv6 address, use the /128 prefix length.
      */
 
     public String getCidrIpv6() {
@@ -67,13 +67,13 @@ public class AwsEc2SecurityGroupIpv6Range implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv6 address, use the /128 prefix length.
+     * The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
-     *        The IPv6 CIDR range. You can either specify either a CIDR range or a source security group, but not both.
-     *        To specify a single IPv6 address, use the /128 prefix length.
+     *        The IPv6 CIDR range. You can specify either a CIDR range or a source security group, but not both. To
+     *        specify a single IPv6 address, use the /128 prefix length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

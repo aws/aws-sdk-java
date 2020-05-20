@@ -64,6 +64,10 @@ public class DeploymentTargetJsonUnmarshaller implements Unmarshaller<Deployment
                     context.nextToken();
                     deploymentTarget.setEcsTarget(ECSTargetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("cloudFormationTarget", targetDepth)) {
+                    context.nextToken();
+                    deploymentTarget.setCloudFormationTarget(CloudFormationTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

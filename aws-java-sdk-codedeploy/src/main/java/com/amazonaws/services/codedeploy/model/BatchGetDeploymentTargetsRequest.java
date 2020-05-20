@@ -56,6 +56,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * <code>ecsTarget</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> targetIds;
@@ -125,6 +131,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * <code>ecsTarget</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The unique IDs of the deployment targets. The compute platform of the deployment determines the type of
@@ -147,6 +159,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      *         For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters
      *         and services specified using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their
      *         target type is <code>ecsTarget</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs.
+     *         Their target type is <code>cloudFormationTarget</code>.
      *         </p>
      *         </li>
      */
@@ -183,6 +201,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * <code>ecsTarget</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param targetIds
@@ -206,6 +230,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      *        For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters
      *        and services specified using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target
      *        type is <code>ecsTarget</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs.
+     *        Their target type is <code>cloudFormationTarget</code>.
      *        </p>
      *        </li>
      */
@@ -244,6 +274,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * <code>ecsTarget</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -272,6 +308,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      *        For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters
      *        and services specified using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target
      *        type is <code>ecsTarget</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs.
+     *        Their target type is <code>cloudFormationTarget</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -312,6 +354,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      * <code>ecsTarget</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param targetIds
@@ -335,6 +383,12 @@ public class BatchGetDeploymentTargetsRequest extends com.amazonaws.AmazonWebSer
      *        For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters
      *        and services specified using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target
      *        type is <code>ecsTarget</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs.
+     *        Their target type is <code>cloudFormationTarget</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

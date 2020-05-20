@@ -27,7 +27,7 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to add to the Hub resource when you enable Security Hub.
+     * The tags to add to the hub resource when you enable Security Hub.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -42,10 +42,10 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to add to the Hub resource when you enable Security Hub.
+     * The tags to add to the hub resource when you enable Security Hub.
      * </p>
      * 
-     * @return The tags to add to the Hub resource when you enable Security Hub.
+     * @return The tags to add to the hub resource when you enable Security Hub.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -54,11 +54,11 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to add to the Hub resource when you enable Security Hub.
+     * The tags to add to the hub resource when you enable Security Hub.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the Hub resource when you enable Security Hub.
+     *        The tags to add to the hub resource when you enable Security Hub.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -67,11 +67,11 @@ public class EnableSecurityHubRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to add to the Hub resource when you enable Security Hub.
+     * The tags to add to the hub resource when you enable Security Hub.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the Hub resource when you enable Security Hub.
+     *        The tags to add to the hub resource when you enable Security Hub.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

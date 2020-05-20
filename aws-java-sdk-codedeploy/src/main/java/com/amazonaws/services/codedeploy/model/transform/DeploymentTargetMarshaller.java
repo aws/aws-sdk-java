@@ -35,6 +35,8 @@ public class DeploymentTargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaTarget").build();
     private static final MarshallingInfo<StructuredPojo> ECSTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecsTarget").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDFORMATIONTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudFormationTarget").build();
 
     private static final DeploymentTargetMarshaller instance = new DeploymentTargetMarshaller();
 
@@ -56,6 +58,7 @@ public class DeploymentTargetMarshaller {
             protocolMarshaller.marshall(deploymentTarget.getInstanceTarget(), INSTANCETARGET_BINDING);
             protocolMarshaller.marshall(deploymentTarget.getLambdaTarget(), LAMBDATARGET_BINDING);
             protocolMarshaller.marshall(deploymentTarget.getEcsTarget(), ECSTARGET_BINDING);
+            protocolMarshaller.marshall(deploymentTarget.getCloudFormationTarget(), CLOUDFORMATIONTARGET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

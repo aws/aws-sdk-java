@@ -34,6 +34,10 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String arn;
+
+    private java.util.Date createdAt;
+
+    private java.util.Date lastUpdatedAt;
     /**
      * <p>
      * The name of the service mesh that the virtual router resides in.
@@ -51,11 +55,13 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
-     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
      * </p>
      */
     private String resourceOwner;
+
+    private Long version;
     /**
      * <p>
      * The name of the virtual router.
@@ -100,6 +106,58 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
 
     public VirtualRouterRef withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param createdAt
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * @param createdAt
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualRouterRef withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * @param lastUpdatedAt
+     */
+
+    public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getLastUpdatedAt() {
+        return this.lastUpdatedAt;
+    }
+
+    /**
+     * @param lastUpdatedAt
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualRouterRef withLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        setLastUpdatedAt(lastUpdatedAt);
         return this;
     }
 
@@ -198,14 +256,14 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
-     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
      * </p>
      * 
      * @param resourceOwner
      *        The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
-     *        mesh owner, or another account that the mesh is shared with. For more information about mesh sharing, see
-     *        <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
+     *        mesh owner or of another account that the mesh is shared with. For more information about mesh sharing,
+     *        see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
      *        Meshes</a>.
      */
 
@@ -216,13 +274,13 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
-     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
      * </p>
      * 
      * @return The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
-     *         mesh owner, or another account that the mesh is shared with. For more information about mesh sharing, see
-     *         <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
+     *         mesh owner or of another account that the mesh is shared with. For more information about mesh sharing,
+     *         see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
      *         Meshes</a>.
      */
 
@@ -233,20 +291,46 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh
-     * owner, or another account that the mesh is shared with. For more information about mesh sharing, see <a
+     * owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared Meshes</a>.
      * </p>
      * 
      * @param resourceOwner
      *        The AWS IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the
-     *        mesh owner, or another account that the mesh is shared with. For more information about mesh sharing, see
-     *        <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
+     *        mesh owner or of another account that the mesh is shared with. For more information about mesh sharing,
+     *        see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with Shared
      *        Meshes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VirtualRouterRef withResourceOwner(String resourceOwner) {
         setResourceOwner(resourceOwner);
+        return this;
+    }
+
+    /**
+     * @param version
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * @param version
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualRouterRef withVersion(Long version) {
+        setVersion(version);
         return this;
     }
 
@@ -304,12 +388,18 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getLastUpdatedAt() != null)
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getMeshName() != null)
             sb.append("MeshName: ").append(getMeshName()).append(",");
         if (getMeshOwner() != null)
             sb.append("MeshOwner: ").append(getMeshOwner()).append(",");
         if (getResourceOwner() != null)
             sb.append("ResourceOwner: ").append(getResourceOwner()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getVirtualRouterName() != null)
             sb.append("VirtualRouterName: ").append(getVirtualRouterName());
         sb.append("}");
@@ -330,6 +420,14 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
+            return false;
+        if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
+            return false;
         if (other.getMeshName() == null ^ this.getMeshName() == null)
             return false;
         if (other.getMeshName() != null && other.getMeshName().equals(this.getMeshName()) == false)
@@ -341,6 +439,10 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
         if (other.getResourceOwner() == null ^ this.getResourceOwner() == null)
             return false;
         if (other.getResourceOwner() != null && other.getResourceOwner().equals(this.getResourceOwner()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         if (other.getVirtualRouterName() == null ^ this.getVirtualRouterName() == null)
             return false;
@@ -355,9 +457,12 @@ public class VirtualRouterRef implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getMeshName() == null) ? 0 : getMeshName().hashCode());
         hashCode = prime * hashCode + ((getMeshOwner() == null) ? 0 : getMeshOwner().hashCode());
         hashCode = prime * hashCode + ((getResourceOwner() == null) ? 0 : getResourceOwner().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getVirtualRouterName() == null) ? 0 : getVirtualRouterName().hashCode());
         return hashCode;
     }

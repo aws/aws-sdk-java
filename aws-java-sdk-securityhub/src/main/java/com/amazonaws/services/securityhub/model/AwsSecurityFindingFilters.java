@@ -52,7 +52,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      */
     private java.util.List<StringFilter> generatorId;
@@ -802,12 +802,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * 
      * @return The identifier for the solution-specific component (a discrete unit of logic) that generated a finding.
      *         In various security-findings providers' solutions, this generator can be called a rule, a check, a
-     *         detector, a plug-in, etc.
+     *         detector, a plugin, etc.
      */
 
     public java.util.List<StringFilter> getGeneratorId() {
@@ -818,13 +818,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
-     *        a plug-in, etc.
+     *        a plugin, etc.
      */
 
     public void setGeneratorId(java.util.Collection<StringFilter> generatorId) {
@@ -840,7 +840,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -851,7 +851,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
-     *        a plug-in, etc.
+     *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -869,13 +869,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
-     *        a plug-in, etc.
+     *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

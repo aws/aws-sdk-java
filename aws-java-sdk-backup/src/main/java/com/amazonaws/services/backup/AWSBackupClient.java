@@ -966,7 +966,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
+     * Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
      * 
@@ -1080,6 +1080,65 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRecoveryPointResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeRecoveryPointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param describeRegionSettingsRequest
+     * @return Result of the DescribeRegionSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DescribeRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeRegionSettingsResult describeRegionSettings(DescribeRegionSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegionSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegionSettingsResult executeDescribeRegionSettings(DescribeRegionSettingsRequest describeRegionSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegionSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegionSettingsRequest> request = null;
+        Response<DescribeRegionSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRegionSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegionSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRegionSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2396,6 +2455,11 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.
      * </p>
+     * <note>
+     * <p>
+     * <code>ListTags</code> are currently only supported with Amazon EFS backups.
+     * </p>
+     * </note>
      * 
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
@@ -3085,6 +3149,68 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRecoveryPointLifecycleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateRecoveryPointLifecycleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param updateRegionSettingsRequest
+     * @return Result of the UpdateRegionSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @sample AWSBackup.UpdateRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateRegionSettingsResult updateRegionSettings(UpdateRegionSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRegionSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRegionSettingsResult executeUpdateRegionSettings(UpdateRegionSettingsRequest updateRegionSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRegionSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRegionSettingsRequest> request = null;
+        Response<UpdateRegionSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRegionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRegionSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegionSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRegionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRegionSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

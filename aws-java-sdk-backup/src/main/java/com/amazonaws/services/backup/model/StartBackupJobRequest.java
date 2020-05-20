@@ -55,13 +55,15 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     private String idempotencyToken;
     /**
      * <p>
-     * The amount of time in minutes before beginning a backup.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      */
     private Long startWindowMinutes;
     /**
      * <p>
-     * The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      */
     private Long completeWindowMinutes;
@@ -271,11 +273,13 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of time in minutes before beginning a backup.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      * 
      * @param startWindowMinutes
-     *        The amount of time in minutes before beginning a backup.
+     *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
+     *        successfully. This value is optional.
      */
 
     public void setStartWindowMinutes(Long startWindowMinutes) {
@@ -284,10 +288,12 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of time in minutes before beginning a backup.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      * 
-     * @return The amount of time in minutes before beginning a backup.
+     * @return A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
+     *         successfully. This value is optional.
      */
 
     public Long getStartWindowMinutes() {
@@ -296,11 +302,13 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of time in minutes before beginning a backup.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      * 
      * @param startWindowMinutes
-     *        The amount of time in minutes before beginning a backup.
+     *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
+     *        successfully. This value is optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,11 +319,13 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      * 
      * @param completeWindowMinutes
-     *        The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
+     *        canceled by AWS Backup. This value is optional.
      */
 
     public void setCompleteWindowMinutes(Long completeWindowMinutes) {
@@ -324,10 +334,12 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      * 
-     * @return The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     * @return A value in minutes after a backup job is successfully started before it must be completed or it will be
+     *         canceled by AWS Backup. This value is optional.
      */
 
     public Long getCompleteWindowMinutes() {
@@ -336,11 +348,13 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      * 
      * @param completeWindowMinutes
-     *        The amount of time AWS Backup attempts a backup before canceling the job and returning an error.
+     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
+     *        canceled by AWS Backup. This value is optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,14 @@ public class RouteRefJsonUnmarshaller implements Unmarshaller<RouteRef, JsonUnma
                     context.nextToken();
                     routeRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    routeRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    routeRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("meshName", targetDepth)) {
                     context.nextToken();
                     routeRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +75,10 @@ public class RouteRefJsonUnmarshaller implements Unmarshaller<RouteRef, JsonUnma
                 if (context.testExpression("routeName", targetDepth)) {
                     context.nextToken();
                     routeRef.setRouteName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    routeRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualRouterName", targetDepth)) {
                     context.nextToken();

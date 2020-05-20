@@ -51,7 +51,19 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
      *        Object providing client parameters.
      */
     AWSBackupAsyncClient(AwsAsyncClientParams asyncClientParams) {
-        super(asyncClientParams);
+        this(asyncClientParams, false);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on AWS Backup using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     * @param endpointDiscoveryEnabled
+     *        true will enable endpoint discovery if the service supports it.
+     */
+    AWSBackupAsyncClient(AwsAsyncClientParams asyncClientParams, boolean endpointDiscoveryEnabled) {
+        super(asyncClientParams, endpointDiscoveryEnabled);
         this.executorService = asyncClientParams.getExecutor();
     }
 
@@ -513,6 +525,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
 
                 try {
                     result = executeDescribeRecoveryPoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegionSettingsResult> describeRegionSettingsAsync(DescribeRegionSettingsRequest request) {
+
+        return describeRegionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegionSettingsResult> describeRegionSettingsAsync(final DescribeRegionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegionSettingsRequest, DescribeRegionSettingsResult> asyncHandler) {
+        final DescribeRegionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegionSettingsResult>() {
+            @Override
+            public DescribeRegionSettingsResult call() throws Exception {
+                DescribeRegionSettingsResult result = null;
+
+                try {
+                    result = executeDescribeRegionSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1573,6 +1618,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
 
                 try {
                     result = executeUpdateRecoveryPointLifecycle(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegionSettingsResult> updateRegionSettingsAsync(UpdateRegionSettingsRequest request) {
+
+        return updateRegionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegionSettingsResult> updateRegionSettingsAsync(final UpdateRegionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRegionSettingsRequest, UpdateRegionSettingsResult> asyncHandler) {
+        final UpdateRegionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRegionSettingsResult>() {
+            @Override
+            public UpdateRegionSettingsResult call() throws Exception {
+                UpdateRegionSettingsResult result = null;
+
+                try {
+                    result = executeUpdateRegionSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

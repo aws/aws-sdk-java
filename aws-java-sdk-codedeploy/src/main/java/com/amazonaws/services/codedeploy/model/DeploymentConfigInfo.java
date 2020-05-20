@@ -60,8 +60,8 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
     private String computePlatform;
     /**
      * <p>
-     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
-     * platform can specify this.
+     * The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS
+     * compute platform only.
      * </p>
      */
     private TrafficRoutingConfig trafficRoutingConfig;
@@ -291,13 +291,13 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
-     * platform can specify this.
+     * The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS
+     * compute platform only.
      * </p>
      * 
      * @param trafficRoutingConfig
-     *        The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda
-     *        compute platform can specify this.
+     *        The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda
+     *        or ECS compute platform only.
      */
 
     public void setTrafficRoutingConfig(TrafficRoutingConfig trafficRoutingConfig) {
@@ -306,12 +306,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
-     * platform can specify this.
+     * The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS
+     * compute platform only.
      * </p>
      * 
-     * @return The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda
-     *         compute platform can specify this.
+     * @return The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda
+     *         or ECS compute platform only.
      */
 
     public TrafficRoutingConfig getTrafficRoutingConfig() {
@@ -320,13 +320,13 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
-     * platform can specify this.
+     * The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or ECS
+     * compute platform only.
      * </p>
      * 
      * @param trafficRoutingConfig
-     *        The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda
-     *        compute platform can specify this.
+     *        The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda
+     *        or ECS compute platform only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

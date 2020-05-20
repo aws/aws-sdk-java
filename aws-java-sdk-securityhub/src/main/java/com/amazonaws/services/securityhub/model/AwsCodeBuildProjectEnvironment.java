@@ -71,20 +71,20 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * The type of build environment to use for related builds.
      * </p>
      * <p>
-     * The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney),
      * and Europe (Frankfurt).
      * </p>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in
-     * regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
+     * Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
      * Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia
      * Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * <p>
-     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia
-     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
      * China (Ningxia).
      * </p>
      * <p>
@@ -337,20 +337,20 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * The type of build environment to use for related builds.
      * </p>
      * <p>
-     * The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney),
      * and Europe (Frankfurt).
      * </p>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in
-     * regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
+     * Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
      * Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia
      * Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * <p>
-     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia
-     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
      * China (Ningxia).
      * </p>
      * <p>
@@ -361,20 +361,20 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * @param type
      *        The type of build environment to use for related builds.</p>
      *        <p>
-     *        The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *        The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US
      *        East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific
      *        (Sydney), and Europe (Frankfurt).
      *        </p>
      *        <p>
      *        The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available
-     *        only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
+     *        only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      *        (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
      *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *        </p>
      *        <p>
-     *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
+     *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia),
      *        US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe
-     *        (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) ,
+     *        (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney),
      *        China (Beijing), and China (Ningxia).
      *        </p>
      *        <p>
@@ -391,20 +391,20 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * The type of build environment to use for related builds.
      * </p>
      * <p>
-     * The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney),
      * and Europe (Frankfurt).
      * </p>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in
-     * regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
+     * Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
      * Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia
      * Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * <p>
-     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia
-     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
      * China (Ningxia).
      * </p>
      * <p>
@@ -414,21 +414,21 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * 
      * @return The type of build environment to use for related builds.</p>
      *         <p>
-     *         The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *         The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US
      *         East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia
      *         Pacific (Sydney), and Europe (Frankfurt).
      *         </p>
      *         <p>
      *         The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available
-     *         only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
+     *         only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      *         (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
      *         (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *         </p>
      *         <p>
-     *         The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
+     *         The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia),
      *         US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe
-     *         (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney)
-     *         , China (Beijing), and China (Ningxia).
+     *         (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     *         China (Beijing), and China (Ningxia).
      *         </p>
      *         <p>
      *         Valid values: <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
@@ -444,20 +444,20 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * The type of build environment to use for related builds.
      * </p>
      * <p>
-     * The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney),
      * and Europe (Frankfurt).
      * </p>
      * <p>
      * The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available only in
-     * regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
+     * Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland),
      * Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia
      * Pacific (Sydney), China (Beijing), and China (Ningxia).
      * </p>
      * <p>
-     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East
+     * The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia), US East
      * (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe (Frankfurt), Asia
-     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
      * China (Ningxia).
      * </p>
      * <p>
@@ -468,20 +468,20 @@ public class AwsCodeBuildProjectEnvironment implements Serializable, Cloneable, 
      * @param type
      *        The type of build environment to use for related builds.</p>
      *        <p>
-     *        The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US
+     *        The environment type <code>ARM_CONTAINER</code> is available only in Regions US East (N. Virginia), US
      *        East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific
      *        (Sydney), and Europe (Frankfurt).
      *        </p>
      *        <p>
      *        The environment type <code>LINUX_CONTAINER</code> with compute type build.general1.2xlarge is available
-     *        only in regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
+     *        only in Regions US East (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      *        (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific
      *        (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).
      *        </p>
      *        <p>
-     *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia),
+     *        The environment type <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N. Virginia),
      *        US East (N. Virginia), US West (Oregon), Canada (Central), Europe (Ireland), Europe (London), Europe
-     *        (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) ,
+     *        (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney),
      *        China (Beijing), and China (Ningxia).
      *        </p>
      *        <p>

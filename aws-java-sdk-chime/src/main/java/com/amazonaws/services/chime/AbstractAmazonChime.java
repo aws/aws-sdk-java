@@ -291,6 +291,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public GetRetentionSettingsResult getRetentionSettings(GetRetentionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRoomResult getRoom(GetRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -437,6 +442,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public PutEventsConfigurationResult putEventsConfiguration(PutEventsConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRetentionSettingsResult putRetentionSettings(PutRetentionSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

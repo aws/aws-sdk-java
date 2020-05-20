@@ -98,6 +98,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public DescribeRegionSettingsResult describeRegionSettings(DescribeRegionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRestoreJobResult describeRestoreJob(DescribeRestoreJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -254,6 +259,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public UpdateRecoveryPointLifecycleResult updateRecoveryPointLifecycle(UpdateRecoveryPointLifecycleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRegionSettingsResult updateRegionSettings(UpdateRegionSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

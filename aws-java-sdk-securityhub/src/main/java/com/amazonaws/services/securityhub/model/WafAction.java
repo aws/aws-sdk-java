@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the Rule.
+ * Details about the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/WafAction" target="_top">AWS API
@@ -30,7 +30,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.
+     * Specifies how you want AWS WAF to respond to requests that match the settings in a rule.
      * </p>
      * <p>
      * Valid settings include the following:
@@ -59,7 +59,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.
+     * Specifies how you want AWS WAF to respond to requests that match the settings in a rule.
      * </p>
      * <p>
      * Valid settings include the following:
@@ -85,7 +85,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.</p>
+     *        Specifies how you want AWS WAF to respond to requests that match the settings in a rule.</p>
      *        <p>
      *        Valid settings include the following:
      *        </p>
@@ -115,7 +115,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.
+     * Specifies how you want AWS WAF to respond to requests that match the settings in a rule.
      * </p>
      * <p>
      * Valid settings include the following:
@@ -140,7 +140,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.</p>
+     * @return Specifies how you want AWS WAF to respond to requests that match the settings in a rule.</p>
      *         <p>
      *         Valid settings include the following:
      *         </p>
@@ -170,7 +170,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.
+     * Specifies how you want AWS WAF to respond to requests that match the settings in a rule.
      * </p>
      * <p>
      * Valid settings include the following:
@@ -196,7 +196,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        Specifies how you want AWS WAF to respond to requests that match the settings in a Rule.</p>
+     *        Specifies how you want AWS WAF to respond to requests that match the settings in a rule.</p>
      *        <p>
      *        Valid settings include the following:
      *        </p>

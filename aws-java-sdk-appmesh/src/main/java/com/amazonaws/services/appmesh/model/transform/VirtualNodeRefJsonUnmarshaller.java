@@ -52,6 +52,14 @@ public class VirtualNodeRefJsonUnmarshaller implements Unmarshaller<VirtualNodeR
                     context.nextToken();
                     virtualNodeRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("meshName", targetDepth)) {
                     context.nextToken();
                     virtualNodeRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +71,10 @@ public class VirtualNodeRefJsonUnmarshaller implements Unmarshaller<VirtualNodeR
                 if (context.testExpression("resourceOwner", targetDepth)) {
                     context.nextToken();
                     virtualNodeRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("virtualNodeName", targetDepth)) {
                     context.nextToken();

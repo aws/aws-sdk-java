@@ -529,7 +529,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
+     * Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
      * 
@@ -544,7 +544,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
+     * Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
      * 
@@ -592,6 +592,43 @@ public interface AWSBackupAsync extends AWSBackup {
      */
     java.util.concurrent.Future<DescribeRecoveryPointResult> describeRecoveryPointAsync(DescribeRecoveryPointRequest describeRecoveryPointRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRecoveryPointRequest, DescribeRecoveryPointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param describeRegionSettingsRequest
+     * @return A Java Future containing the result of the DescribeRegionSettings operation returned by the service.
+     * @sample AWSBackupAsync.DescribeRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegionSettingsResult> describeRegionSettingsAsync(DescribeRegionSettingsRequest describeRegionSettingsRequest);
+
+    /**
+     * <p>
+     * Returns the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param describeRegionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegionSettings operation returned by the service.
+     * @sample AWSBackupAsyncHandler.DescribeRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegionSettingsResult> describeRegionSettingsAsync(DescribeRegionSettingsRequest describeRegionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegionSettingsRequest, DescribeRegionSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -1282,6 +1319,11 @@ public interface AWSBackupAsync extends AWSBackup {
      * <p>
      * Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.
      * </p>
+     * <note>
+     * <p>
+     * <code>ListTags</code> are currently only supported with Amazon EFS backups.
+     * </p>
+     * </note>
      * 
      * @param listTagsRequest
      * @return A Java Future containing the result of the ListTags operation returned by the service.
@@ -1295,6 +1337,11 @@ public interface AWSBackupAsync extends AWSBackup {
      * <p>
      * Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.
      * </p>
+     * <note>
+     * <p>
+     * <code>ListTags</code> are currently only supported with Amazon EFS backups.
+     * </p>
+     * </note>
      * 
      * @param listTagsRequest
      * @param asyncHandler
@@ -1660,5 +1707,42 @@ public interface AWSBackupAsync extends AWSBackup {
     java.util.concurrent.Future<UpdateRecoveryPointLifecycleResult> updateRecoveryPointLifecycleAsync(
             UpdateRecoveryPointLifecycleRequest updateRecoveryPointLifecycleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRecoveryPointLifecycleRequest, UpdateRecoveryPointLifecycleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param updateRegionSettingsRequest
+     * @return A Java Future containing the result of the UpdateRegionSettings operation returned by the service.
+     * @sample AWSBackupAsync.UpdateRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRegionSettingsResult> updateRegionSettingsAsync(UpdateRegionSettingsRequest updateRegionSettingsRequest);
+
+    /**
+     * <p>
+     * Updates the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param updateRegionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRegionSettings operation returned by the service.
+     * @sample AWSBackupAsyncHandler.UpdateRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRegionSettingsResult> updateRegionSettingsAsync(UpdateRegionSettingsRequest updateRegionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRegionSettingsRequest, UpdateRegionSettingsResult> asyncHandler);
 
 }

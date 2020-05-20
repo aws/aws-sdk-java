@@ -32,6 +32,8 @@ public class ListDeploymentsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
     private static final MarshallingInfo<String> DEPLOYMENTGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentGroupName").build();
+    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalId").build();
     private static final MarshallingInfo<List> INCLUDEONLYSTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeOnlyStatuses").build();
     private static final MarshallingInfo<StructuredPojo> CREATETIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class ListDeploymentsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listDeploymentsRequest.getApplicationName(), APPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getDeploymentGroupName(), DEPLOYMENTGROUPNAME_BINDING);
+            protocolMarshaller.marshall(listDeploymentsRequest.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getIncludeOnlyStatuses(), INCLUDEONLYSTATUSES_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getCreateTimeRange(), CREATETIMERANGE_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getNextToken(), NEXTTOKEN_BINDING);

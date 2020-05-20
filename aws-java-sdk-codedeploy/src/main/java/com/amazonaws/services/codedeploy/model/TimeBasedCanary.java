@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A configuration that shifts traffic from one version of a Lambda function to another in two increments. The original
- * and target Lambda function versions are specified in the deployment's AppSpec file.
+ * A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two
+ * increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's
+ * AppSpec file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TimeBasedCanary" target="_top">AWS API

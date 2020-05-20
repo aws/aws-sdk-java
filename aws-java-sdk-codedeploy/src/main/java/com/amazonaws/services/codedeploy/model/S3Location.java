@@ -47,17 +47,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * tar: A tar archive file.
+     * <code>tar</code>: A tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * tgz: A compressed tar archive file.
+     * <code>tgz</code>: A compressed tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * zip: A zip archive file.
+     * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
      * </ul>
@@ -169,17 +169,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * tar: A tar archive file.
+     * <code>tar</code>: A tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * tgz: A compressed tar archive file.
+     * <code>tgz</code>: A compressed tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * zip: A zip archive file.
+     * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
      * </ul>
@@ -189,17 +189,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        tar: A tar archive file.
+     *        <code>tar</code>: A tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        tgz: A compressed tar archive file.
+     *        <code>tgz</code>: A compressed tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        zip: A zip archive file.
+     *        <code>zip</code>: A zip archive file.
      *        </p>
      *        </li>
      * @see BundleType
@@ -216,17 +216,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * tar: A tar archive file.
+     * <code>tar</code>: A tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * tgz: A compressed tar archive file.
+     * <code>tgz</code>: A compressed tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * zip: A zip archive file.
+     * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
      * </ul>
@@ -235,17 +235,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         tar: A tar archive file.
+     *         <code>tar</code>: A tar archive file.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         tgz: A compressed tar archive file.
+     *         <code>tgz</code>: A compressed tar archive file.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         zip: A zip archive file.
+     *         <code>zip</code>: A zip archive file.
      *         </p>
      *         </li>
      * @see BundleType
@@ -262,17 +262,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * tar: A tar archive file.
+     * <code>tar</code>: A tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * tgz: A compressed tar archive file.
+     * <code>tgz</code>: A compressed tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * zip: A zip archive file.
+     * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
      * </ul>
@@ -282,17 +282,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        tar: A tar archive file.
+     *        <code>tar</code>: A tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        tgz: A compressed tar archive file.
+     *        <code>tgz</code>: A compressed tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        zip: A zip archive file.
+     *        <code>zip</code>: A zip archive file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -311,17 +311,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * tar: A tar archive file.
+     * <code>tar</code>: A tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * tgz: A compressed tar archive file.
+     * <code>tgz</code>: A compressed tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * zip: A zip archive file.
+     * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
      * </ul>
@@ -331,17 +331,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        tar: A tar archive file.
+     *        <code>tar</code>: A tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        tgz: A compressed tar archive file.
+     *        <code>tgz</code>: A compressed tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        zip: A zip archive file.
+     *        <code>zip</code>: A zip archive file.
      *        </p>
      *        </li>
      * @see BundleType
@@ -358,17 +358,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * tar: A tar archive file.
+     * <code>tar</code>: A tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * tgz: A compressed tar archive file.
+     * <code>tgz</code>: A compressed tar archive file.
      * </p>
      * </li>
      * <li>
      * <p>
-     * zip: A zip archive file.
+     * <code>zip</code>: A zip archive file.
      * </p>
      * </li>
      * </ul>
@@ -378,17 +378,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        tar: A tar archive file.
+     *        <code>tar</code>: A tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        tgz: A compressed tar archive file.
+     *        <code>tgz</code>: A compressed tar archive file.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        zip: A zip archive file.
+     *        <code>zip</code>: A zip archive file.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

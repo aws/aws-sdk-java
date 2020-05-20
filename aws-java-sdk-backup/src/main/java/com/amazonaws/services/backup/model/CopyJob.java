@@ -30,42 +30,42 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      */
     private String copyJobId;
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      */
     private String sourceBackupVaultArn;
     /**
      * <p>
      * An ARN that uniquely identifies a source recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      */
     private String sourceRecoveryPointArn;
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      */
     private String destinationBackupVaultArn;
     /**
      * <p>
      * An ARN that uniquely identifies a destination recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      */
     private String destinationRecoveryPointArn;
     /**
      * <p>
-     * The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.
      * </p>
      */
     private String resourceArn;
@@ -79,21 +79,21 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationDate;
     /**
      * <p>
-     * The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time (UTC).
-     * The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
+     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
+     * 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date completionDate;
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a copy job.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * A detailed message explaining the status of the job that to copy a resource.
+     * A detailed message explaining the status of the job to copy a resource.
      * </p>
      */
     private String statusMessage;
@@ -106,7 +106,7 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      */
     private String iamRoleArn;
@@ -122,11 +122,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
      * @param copyJobId
-     *        Uniquely identifies a request to AWS Backup to copy a resource.
+     *        Uniquely identifies a copy job.
      */
 
     public void setCopyJobId(String copyJobId) {
@@ -135,10 +135,10 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
-     * @return Uniquely identifies a request to AWS Backup to copy a resource.
+     * @return Uniquely identifies a copy job.
      */
 
     public String getCopyJobId() {
@@ -147,11 +147,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
      * @param copyJobId
-     *        Uniquely identifies a request to AWS Backup to copy a resource.
+     *        Uniquely identifies a copy job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,12 +163,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param sourceBackupVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     *        arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public void setSourceBackupVaultArn(String sourceBackupVaultArn) {
@@ -178,11 +178,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @return An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     *         arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *         <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public String getSourceBackupVaultArn() {
@@ -192,12 +192,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param sourceBackupVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-     *        arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,12 +209,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ARN that uniquely identifies a source recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      * 
      * @param sourceRecoveryPointArn
      *        An ARN that uniquely identifies a source recovery point; for example,
-     *        arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     *        <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      */
 
     public void setSourceRecoveryPointArn(String sourceRecoveryPointArn) {
@@ -224,11 +224,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ARN that uniquely identifies a source recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      * 
      * @return An ARN that uniquely identifies a source recovery point; for example,
-     *         arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     *         <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      */
 
     public String getSourceRecoveryPointArn() {
@@ -238,12 +238,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ARN that uniquely identifies a source recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      * 
      * @param sourceRecoveryPointArn
      *        An ARN that uniquely identifies a source recovery point; for example,
-     *        arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     *        <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,12 +255,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param destinationBackupVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     *        arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public void setDestinationBackupVaultArn(String destinationBackupVaultArn) {
@@ -270,11 +270,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @return An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     *         arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *         <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public String getDestinationBackupVaultArn() {
@@ -284,12 +284,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param destinationBackupVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for example,
-     *        arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,12 +301,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ARN that uniquely identifies a destination recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      * 
      * @param destinationRecoveryPointArn
      *        An ARN that uniquely identifies a destination recovery point; for example,
-     *        arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     *        <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      */
 
     public void setDestinationRecoveryPointArn(String destinationRecoveryPointArn) {
@@ -316,11 +316,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ARN that uniquely identifies a destination recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      * 
      * @return An ARN that uniquely identifies a destination recovery point; for example,
-     *         arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     *         <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      */
 
     public String getDestinationRecoveryPointArn() {
@@ -330,12 +330,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ARN that uniquely identifies a destination recovery point; for example,
-     * arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * </p>
      * 
      * @param destinationRecoveryPointArn
      *        An ARN that uniquely identifies a destination recovery point; for example,
-     *        arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+     *        <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,13 +346,13 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.
      * </p>
      * 
      * @param resourceArn
-     *        The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
-     *        an Amazon Relational Database Service (Amazon RDS) database.
+     *        The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     *        Relational Database Service (Amazon RDS) database.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -361,12 +361,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.
      * </p>
      * 
-     * @return The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
-     *         an Amazon Relational Database Service (Amazon RDS) database.
+     * @return The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
+     *         Amazon Relational Database Service (Amazon RDS) database.
      */
 
     public String getResourceArn() {
@@ -375,13 +375,13 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     * Relational Database Service (Amazon RDS) database.
      * </p>
      * 
      * @param resourceArn
-     *        The type of AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
-     *        an Amazon Relational Database Service (Amazon RDS) database.
+     *        The AWS resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
+     *        Relational Database Service (Amazon RDS) database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,15 +444,15 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time (UTC).
-     * The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
+     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
+     * 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
-     *        The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time
-     *        (UTC). The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087
-     *        represents Friday, January 26, 2018 12:11:30.087 AM.
+     *        The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value
+     *        of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     *        January 26, 2018 12:11:30.087 AM.
      */
 
     public void setCompletionDate(java.util.Date completionDate) {
@@ -461,14 +461,14 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time (UTC).
-     * The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
+     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
+     * 2018 12:11:30.087 AM.
      * </p>
      * 
-     * @return The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time
-     *         (UTC). The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087
-     *         represents Friday, January 26, 2018 12:11:30.087 AM.
+     * @return The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value
+     *         of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     *         January 26, 2018 12:11:30.087 AM.
      */
 
     public java.util.Date getCompletionDate() {
@@ -477,15 +477,15 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time (UTC).
-     * The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
+     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
+     * 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
-     *        The date and time a job to create a copy job is completed, in Unix format and Coordinated Universal Time
-     *        (UTC). The value of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087
-     *        represents Friday, January 26, 2018 12:11:30.087 AM.
+     *        The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value
+     *        of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     *        January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,11 +496,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a copy job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a copy job.
      * @see CopyJobState
      */
 
@@ -510,10 +510,10 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a copy job.
      * </p>
      * 
-     * @return The current state of a resource recovery point.
+     * @return The current state of a copy job.
      * @see CopyJobState
      */
 
@@ -523,11 +523,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a copy job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a copy job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CopyJobState
      */
@@ -539,11 +539,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of a resource recovery point.
+     * The current state of a copy job.
      * </p>
      * 
      * @param state
-     *        The current state of a resource recovery point.
+     *        The current state of a copy job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CopyJobState
      */
@@ -555,11 +555,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed message explaining the status of the job that to copy a resource.
+     * A detailed message explaining the status of the job to copy a resource.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed message explaining the status of the job that to copy a resource.
+     *        A detailed message explaining the status of the job to copy a resource.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -568,10 +568,10 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed message explaining the status of the job that to copy a resource.
+     * A detailed message explaining the status of the job to copy a resource.
      * </p>
      * 
-     * @return A detailed message explaining the status of the job that to copy a resource.
+     * @return A detailed message explaining the status of the job to copy a resource.
      */
 
     public String getStatusMessage() {
@@ -580,11 +580,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed message explaining the status of the job that to copy a resource.
+     * A detailed message explaining the status of the job to copy a resource.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed message explaining the status of the job that to copy a resource.
+     *        A detailed message explaining the status of the job to copy a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -636,12 +636,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
      *        Specifies the IAM role ARN used to copy the target recovery point; for example,
-     *        arn:aws:iam::123456789012:role/S3Access.
+     *        <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -651,11 +651,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @return Specifies the IAM role ARN used to copy the target recovery point; for example,
-     *         arn:aws:iam::123456789012:role/S3Access.
+     *         <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public String getIamRoleArn() {
@@ -665,12 +665,12 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
      *        Specifies the IAM role ARN used to copy the target recovery point; for example,
-     *        arn:aws:iam::123456789012:role/S3Access.
+     *        <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

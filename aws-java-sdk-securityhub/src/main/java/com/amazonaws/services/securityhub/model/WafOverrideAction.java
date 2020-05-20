@@ -30,7 +30,7 @@ public class WafOverrideAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .
+     * <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .
      * </p>
      * <p>
      * If set to <code>NONE</code>, the rule's action takes place.
@@ -40,14 +40,15 @@ public class WafOverrideAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .
+     * <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .
      * </p>
      * <p>
      * If set to <code>NONE</code>, the rule's action takes place.
      * </p>
      * 
      * @param type
-     *        <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .</p>
+     *        <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code>
+     *        .</p>
      *        <p>
      *        If set to <code>NONE</code>, the rule's action takes place.
      */
@@ -58,13 +59,14 @@ public class WafOverrideAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .
+     * <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .
      * </p>
      * <p>
      * If set to <code>NONE</code>, the rule's action takes place.
      * </p>
      * 
-     * @return <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .</p>
+     * @return <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code>
+     *         .</p>
      *         <p>
      *         If set to <code>NONE</code>, the rule's action takes place.
      */
@@ -75,14 +77,15 @@ public class WafOverrideAction implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .
+     * <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> .
      * </p>
      * <p>
      * If set to <code>NONE</code>, the rule's action takes place.
      * </p>
      * 
      * @param type
-     *        <code>COUNT</code> overrides the action specified by the individual rule within a RuleGroup .</p>
+     *        <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code>
+     *        .</p>
      *        <p>
      *        If set to <code>NONE</code>, the rule's action takes place.
      * @return Returns a reference to this object so that method calls can be chained together.

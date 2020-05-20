@@ -320,6 +320,19 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcesByExternalIdResult> deleteResourcesByExternalIdAsync(DeleteResourcesByExternalIdRequest request) {
+
+        return deleteResourcesByExternalIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcesByExternalIdResult> deleteResourcesByExternalIdAsync(DeleteResourcesByExternalIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcesByExternalIdRequest, DeleteResourcesByExternalIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterOnPremisesInstanceResult> deregisterOnPremisesInstanceAsync(DeregisterOnPremisesInstanceRequest request) {
 
         return deregisterOnPremisesInstanceAsync(request, null);

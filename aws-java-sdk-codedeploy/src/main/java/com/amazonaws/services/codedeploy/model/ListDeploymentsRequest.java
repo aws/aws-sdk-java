@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a ListDeployments operation.
+ * Represents the input of a <code>ListDeployments</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments" target="_top">AWS API
@@ -54,37 +54,43 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
     private String deploymentGroupName;
     /**
      * <p>
+     * The unique ID of an external resource for returning deployments linked to the external resource.
+     * </p>
+     */
+    private String externalId;
+    /**
+     * <p>
      * A subset of deployments to list by status:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Created: Include created deployments in the resulting list.
+     * <code>Created</code>: Include created deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Queued: Include queued deployments in the resulting list.
+     * <code>Queued</code>: Include queued deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: Include in-progress deployments in the resulting list.
+     * <code>In Progress</code>: Include in-progress deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include successful deployments in the resulting list.
+     * <code>Succeeded</code>: Include successful deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include failed deployments in the resulting list.
+     * <code>Failed</code>: Include failed deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped: Include stopped deployments in the resulting list.
+     * <code>Stopped</code>: Include stopped deployments in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -246,37 +252,77 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The unique ID of an external resource for returning deployments linked to the external resource.
+     * </p>
+     * 
+     * @param externalId
+     *        The unique ID of an external resource for returning deployments linked to the external resource.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of an external resource for returning deployments linked to the external resource.
+     * </p>
+     * 
+     * @return The unique ID of an external resource for returning deployments linked to the external resource.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The unique ID of an external resource for returning deployments linked to the external resource.
+     * </p>
+     * 
+     * @param externalId
+     *        The unique ID of an external resource for returning deployments linked to the external resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDeploymentsRequest withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A subset of deployments to list by status:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Created: Include created deployments in the resulting list.
+     * <code>Created</code>: Include created deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Queued: Include queued deployments in the resulting list.
+     * <code>Queued</code>: Include queued deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: Include in-progress deployments in the resulting list.
+     * <code>In Progress</code>: Include in-progress deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include successful deployments in the resulting list.
+     * <code>Succeeded</code>: Include successful deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include failed deployments in the resulting list.
+     * <code>Failed</code>: Include failed deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped: Include stopped deployments in the resulting list.
+     * <code>Stopped</code>: Include stopped deployments in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -285,32 +331,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Created: Include created deployments in the resulting list.
+     *         <code>Created</code>: Include created deployments in the resulting list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Queued: Include queued deployments in the resulting list.
+     *         <code>Queued</code>: Include queued deployments in the resulting list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress: Include in-progress deployments in the resulting list.
+     *         <code>In Progress</code>: Include in-progress deployments in the resulting list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Succeeded: Include successful deployments in the resulting list.
+     *         <code>Succeeded</code>: Include successful deployments in the resulting list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: Include failed deployments in the resulting list.
+     *         <code>Failed</code>: Include failed deployments in the resulting list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Stopped: Include stopped deployments in the resulting list.
+     *         <code>Stopped</code>: Include stopped deployments in the resulting list.
      *         </p>
      *         </li>
      * @see DeploymentStatus
@@ -330,32 +376,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Created: Include created deployments in the resulting list.
+     * <code>Created</code>: Include created deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Queued: Include queued deployments in the resulting list.
+     * <code>Queued</code>: Include queued deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: Include in-progress deployments in the resulting list.
+     * <code>In Progress</code>: Include in-progress deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include successful deployments in the resulting list.
+     * <code>Succeeded</code>: Include successful deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include failed deployments in the resulting list.
+     * <code>Failed</code>: Include failed deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped: Include stopped deployments in the resulting list.
+     * <code>Stopped</code>: Include stopped deployments in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -365,32 +411,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Created: Include created deployments in the resulting list.
+     *        <code>Created</code>: Include created deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Queued: Include queued deployments in the resulting list.
+     *        <code>Queued</code>: Include queued deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting list.
+     *        <code>In Progress</code>: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include successful deployments in the resulting list.
+     *        <code>Succeeded</code>: Include successful deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include failed deployments in the resulting list.
+     *        <code>Failed</code>: Include failed deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped: Include stopped deployments in the resulting list.
+     *        <code>Stopped</code>: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
      * @see DeploymentStatus
@@ -412,32 +458,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Created: Include created deployments in the resulting list.
+     * <code>Created</code>: Include created deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Queued: Include queued deployments in the resulting list.
+     * <code>Queued</code>: Include queued deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: Include in-progress deployments in the resulting list.
+     * <code>In Progress</code>: Include in-progress deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include successful deployments in the resulting list.
+     * <code>Succeeded</code>: Include successful deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include failed deployments in the resulting list.
+     * <code>Failed</code>: Include failed deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped: Include stopped deployments in the resulting list.
+     * <code>Stopped</code>: Include stopped deployments in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -452,32 +498,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Created: Include created deployments in the resulting list.
+     *        <code>Created</code>: Include created deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Queued: Include queued deployments in the resulting list.
+     *        <code>Queued</code>: Include queued deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting list.
+     *        <code>In Progress</code>: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include successful deployments in the resulting list.
+     *        <code>Succeeded</code>: Include successful deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include failed deployments in the resulting list.
+     *        <code>Failed</code>: Include failed deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped: Include stopped deployments in the resulting list.
+     *        <code>Stopped</code>: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -501,32 +547,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Created: Include created deployments in the resulting list.
+     * <code>Created</code>: Include created deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Queued: Include queued deployments in the resulting list.
+     * <code>Queued</code>: Include queued deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: Include in-progress deployments in the resulting list.
+     * <code>In Progress</code>: Include in-progress deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include successful deployments in the resulting list.
+     * <code>Succeeded</code>: Include successful deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include failed deployments in the resulting list.
+     * <code>Failed</code>: Include failed deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped: Include stopped deployments in the resulting list.
+     * <code>Stopped</code>: Include stopped deployments in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -536,32 +582,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Created: Include created deployments in the resulting list.
+     *        <code>Created</code>: Include created deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Queued: Include queued deployments in the resulting list.
+     *        <code>Queued</code>: Include queued deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting list.
+     *        <code>In Progress</code>: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include successful deployments in the resulting list.
+     *        <code>Succeeded</code>: Include successful deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include failed deployments in the resulting list.
+     *        <code>Failed</code>: Include failed deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped: Include stopped deployments in the resulting list.
+     *        <code>Stopped</code>: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -580,32 +626,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Created: Include created deployments in the resulting list.
+     * <code>Created</code>: Include created deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Queued: Include queued deployments in the resulting list.
+     * <code>Queued</code>: Include queued deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: Include in-progress deployments in the resulting list.
+     * <code>In Progress</code>: Include in-progress deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include successful deployments in the resulting list.
+     * <code>Succeeded</code>: Include successful deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include failed deployments in the resulting list.
+     * <code>Failed</code>: Include failed deployments in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Stopped: Include stopped deployments in the resulting list.
+     * <code>Stopped</code>: Include stopped deployments in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -615,32 +661,32 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Created: Include created deployments in the resulting list.
+     *        <code>Created</code>: Include created deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Queued: Include queued deployments in the resulting list.
+     *        <code>Queued</code>: Include queued deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: Include in-progress deployments in the resulting list.
+     *        <code>In Progress</code>: Include in-progress deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include successful deployments in the resulting list.
+     *        <code>Succeeded</code>: Include successful deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include failed deployments in the resulting list.
+     *        <code>Failed</code>: Include failed deployments in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Stopped: Include stopped deployments in the resulting list.
+     *        <code>Stopped</code>: Include stopped deployments in the resulting list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -762,6 +808,8 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupName() != null)
             sb.append("DeploymentGroupName: ").append(getDeploymentGroupName()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getIncludeOnlyStatuses() != null)
             sb.append("IncludeOnlyStatuses: ").append(getIncludeOnlyStatuses()).append(",");
         if (getCreateTimeRange() != null)
@@ -790,6 +838,10 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDeploymentGroupName() != null && other.getDeploymentGroupName().equals(this.getDeploymentGroupName()) == false)
             return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         if (other.getIncludeOnlyStatuses() == null ^ this.getIncludeOnlyStatuses() == null)
             return false;
         if (other.getIncludeOnlyStatuses() != null && other.getIncludeOnlyStatuses().equals(this.getIncludeOnlyStatuses()) == false)
@@ -812,6 +864,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getIncludeOnlyStatuses() == null) ? 0 : getIncludeOnlyStatuses().hashCode());
         hashCode = prime * hashCode + ((getCreateTimeRange() == null) ? 0 : getCreateTimeRange().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());

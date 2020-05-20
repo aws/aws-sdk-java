@@ -103,6 +103,21 @@ public class AWSMediaLiveWaiters {
     }
 
     /**
+     * Builds a InputAttached waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeInputRequest> inputAttached() {
+
+        return new WaiterBuilder<DescribeInputRequest, DescribeInputResult>()
+                .withSdkFunction(new DescribeInputFunction(client))
+                .withAcceptors(new InputAttached.IsATTACHEDMatcher(), new InputAttached.IsDETACHEDMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a ChannelCreated waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -148,6 +163,21 @@ public class AWSMediaLiveWaiters {
     }
 
     /**
+     * Builds a InputDetached waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeInputRequest> inputDetached() {
+
+        return new WaiterBuilder<DescribeInputRequest, DescribeInputResult>()
+                .withSdkFunction(new DescribeInputFunction(client))
+                .withAcceptors(new InputDetached.IsDETACHEDMatcher(), new InputDetached.IsCREATINGMatcher(), new InputDetached.IsATTACHEDMatcher(),
+                        new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(84), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a MultiplexDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -158,6 +188,20 @@ public class AWSMediaLiveWaiters {
                 .withSdkFunction(new DescribeMultiplexFunction(client))
                 .withAcceptors(new MultiplexDeleted.IsDELETEDMatcher(), new MultiplexDeleted.IsDELETINGMatcher(),
                         new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a InputDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeInputRequest> inputDeleted() {
+
+        return new WaiterBuilder<DescribeInputRequest, DescribeInputResult>()
+                .withSdkFunction(new DescribeInputFunction(client))
+                .withAcceptors(new InputDeleted.IsDELETEDMatcher(), new InputDeleted.IsDELETINGMatcher(), new HttpFailureStatusAcceptor(500, WaiterState.RETRY))
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }

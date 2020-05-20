@@ -42,6 +42,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * this value is not valid because the channel requires two sources in the input.
      */
     private String inputClass;
+    /** Settings for the input devices. */
+    private java.util.List<InputDeviceSettings> inputDevices;
     /**
      * Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes during
      * input switch actions. Presently, this functionality only works with MP4_FILE inputs.
@@ -344,6 +346,68 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withInputClass(InputClass inputClass) {
         this.inputClass = inputClass.toString();
+        return this;
+    }
+
+    /**
+     * Settings for the input devices.
+     * 
+     * @return Settings for the input devices.
+     */
+
+    public java.util.List<InputDeviceSettings> getInputDevices() {
+        return inputDevices;
+    }
+
+    /**
+     * Settings for the input devices.
+     * 
+     * @param inputDevices
+     *        Settings for the input devices.
+     */
+
+    public void setInputDevices(java.util.Collection<InputDeviceSettings> inputDevices) {
+        if (inputDevices == null) {
+            this.inputDevices = null;
+            return;
+        }
+
+        this.inputDevices = new java.util.ArrayList<InputDeviceSettings>(inputDevices);
+    }
+
+    /**
+     * Settings for the input devices.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputDevices(java.util.Collection)} or {@link #withInputDevices(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param inputDevices
+     *        Settings for the input devices.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withInputDevices(InputDeviceSettings... inputDevices) {
+        if (this.inputDevices == null) {
+            setInputDevices(new java.util.ArrayList<InputDeviceSettings>(inputDevices.length));
+        }
+        for (InputDeviceSettings ele : inputDevices) {
+            this.inputDevices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Settings for the input devices.
+     * 
+     * @param inputDevices
+     *        Settings for the input devices.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withInputDevices(java.util.Collection<InputDeviceSettings> inputDevices) {
+        setInputDevices(inputDevices);
         return this;
     }
 
@@ -824,6 +888,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getInputClass() != null)
             sb.append("InputClass: ").append(getInputClass()).append(",");
+        if (getInputDevices() != null)
+            sb.append("InputDevices: ").append(getInputDevices()).append(",");
         if (getInputSourceType() != null)
             sb.append("InputSourceType: ").append(getInputSourceType()).append(",");
         if (getMediaConnectFlows() != null)
@@ -876,6 +942,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputClass() != null && other.getInputClass().equals(this.getInputClass()) == false)
             return false;
+        if (other.getInputDevices() == null ^ this.getInputDevices() == null)
+            return false;
+        if (other.getInputDevices() != null && other.getInputDevices().equals(this.getInputDevices()) == false)
+            return false;
         if (other.getInputSourceType() == null ^ this.getInputSourceType() == null)
             return false;
         if (other.getInputSourceType() != null && other.getInputSourceType().equals(this.getInputSourceType()) == false)
@@ -925,6 +995,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getInputClass() == null) ? 0 : getInputClass().hashCode());
+        hashCode = prime * hashCode + ((getInputDevices() == null) ? 0 : getInputDevices().hashCode());
         hashCode = prime * hashCode + ((getInputSourceType() == null) ? 0 : getInputSourceType().hashCode());
         hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

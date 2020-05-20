@@ -321,7 +321,19 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
      *        Object providing client parameters.
      */
     AmazonCodeDeployAsyncClient(AwsAsyncClientParams asyncClientParams) {
-        super(asyncClientParams);
+        this(asyncClientParams, false);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on CodeDeploy using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     * @param endpointDiscoveryEnabled
+     *        true will enable endpoint discovery if the service supports it.
+     */
+    AmazonCodeDeployAsyncClient(AwsAsyncClientParams asyncClientParams, boolean endpointDiscoveryEnabled) {
+        super(asyncClientParams, endpointDiscoveryEnabled);
         this.executorService = asyncClientParams.getExecutor();
     }
 
@@ -951,6 +963,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeDeleteGitHubAccountToken(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcesByExternalIdResult> deleteResourcesByExternalIdAsync(DeleteResourcesByExternalIdRequest request) {
+
+        return deleteResourcesByExternalIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcesByExternalIdResult> deleteResourcesByExternalIdAsync(final DeleteResourcesByExternalIdRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcesByExternalIdRequest, DeleteResourcesByExternalIdResult> asyncHandler) {
+        final DeleteResourcesByExternalIdRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcesByExternalIdResult>() {
+            @Override
+            public DeleteResourcesByExternalIdResult call() throws Exception {
+                DeleteResourcesByExternalIdResult result = null;
+
+                try {
+                    result = executeDeleteResourcesByExternalId(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -36,7 +36,7 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * The action to perform if none of the Rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the WebACL match.
      * </p>
      */
     private String defaultAction;
@@ -95,11 +95,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action to perform if none of the Rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the WebACL match.
      * </p>
      * 
      * @param defaultAction
-     *        The action to perform if none of the Rules contained in the WebACL match.
+     *        The action to perform if none of the rules contained in the WebACL match.
      */
 
     public void setDefaultAction(String defaultAction) {
@@ -108,10 +108,10 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action to perform if none of the Rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the WebACL match.
      * </p>
      * 
-     * @return The action to perform if none of the Rules contained in the WebACL match.
+     * @return The action to perform if none of the rules contained in the WebACL match.
      */
 
     public String getDefaultAction() {
@@ -120,11 +120,11 @@ public class AwsWafWebAclDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action to perform if none of the Rules contained in the WebACL match.
+     * The action to perform if none of the rules contained in the WebACL match.
      * </p>
      * 
      * @param defaultAction
-     *        The action to perform if none of the Rules contained in the WebACL match.
+     *        The action to perform if none of the rules contained in the WebACL match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

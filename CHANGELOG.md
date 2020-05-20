@@ -1,7 +1,44 @@
+# __1.11.787__ __2020-05-20__
+## __AWS App Mesh__
+  - ### Features
+    - List APIs for all resources now contain additional information: when a resource was created, last updated, and its current version number.
+
+## __AWS Backup__
+  - ### Features
+    - This release allows customers to enable or disable AWS Backup support for an AWS resource type. This release also includes new APIs, update-region-settings and describe-region-settings, which can be used to opt in to a specific resource type. For all current AWS Backup customers, the default settings enable support for EBS, EC2, StorageGateway, EFS, DDB and RDS resource types. 
+
+## __AWS CodeDeploy__
+  - ### Features
+    - Amazon ECS customers using application and network load balancers can use CodeDeploy BlueGreen hook to invoke a CloudFormation stack update. With this update you can view CloudFormation deployment and target details via existing APIs and use your stack Id to list or delete all deployments associated with the stack.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports the ability to ingest the content that is streaming from an AWS Elemental Link device: https://aws.amazon.com/medialive/features/link/. This release also adds support for SMPTE-2038 and input state waiters.
+
+## __AWS SecurityHub__
+  - ### Features
+    - For findings related to controls, the finding information now includes the reason behind the current status of the control. A new field for the findings original severity allows finding providers to use the severity values from the system they use to assign severity.
+
+## __Amazon Chime__
+  - ### Features
+    - Amazon Chime enterprise account administrators can now set custom retention policies on chat data in the Amazon Chime application.
+
+## __Amazon Transcribe Streaming Service__
+  - ### Features
+    - This release adds support for vocabulary filtering in streaming with which you can filter unwanted words from the real-time transcription results. Visit https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html  to learn more.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for Application Auto Scaling
+
 # __1.11.786__ __2020-05-19__
 ## __AWS Health APIs and Notifications__
   - ### Features
     - Feature: Health: AWS Health added a new field to differentiate Public events from Account-Specific events in the API request and response. Visit https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html to learn more.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Added support for endpoint discovery in async client implementations for services that support endpoint discovery. This feature was already available for sync clients.
 
 ## __Amazon Chime__
   - ### Features

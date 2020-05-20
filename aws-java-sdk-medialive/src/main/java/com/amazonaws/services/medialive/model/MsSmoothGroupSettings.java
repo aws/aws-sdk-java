@@ -26,10 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MsSmoothGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * The value of the "Acquisition Point Identity" element used in each message placed in the sparse track. Only
-     * enabled if sparseTrackType is not "none".
-     */
+    /** The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE. */
     private String acquisitionPointId;
     /**
      * If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current
@@ -85,9 +82,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     /** Number of milliseconds to delay the output from the second pipeline. */
     private Integer sendDelayMs;
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
-     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
-     * will still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source
+     * content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. -
+     * NONE: Don't generate a sparse track for any outputs in this output group.
      */
     private String sparseTrackType;
     /** When set to send, send stream manifest so publishing point doesn't start until all streams start. */
@@ -101,12 +99,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     private String timestampOffsetMode;
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message placed in the sparse track. Only
-     * enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
      * 
      * @param acquisitionPointId
-     *        The value of the "Acquisition Point Identity" element used in each message placed in the sparse track.
-     *        Only enabled if sparseTrackType is not "none".
+     *        The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
      */
 
     public void setAcquisitionPointId(String acquisitionPointId) {
@@ -114,11 +110,9 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message placed in the sparse track. Only
-     * enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
      * 
-     * @return The value of the "Acquisition Point Identity" element used in each message placed in the sparse track.
-     *         Only enabled if sparseTrackType is not "none".
+     * @return The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
      */
 
     public String getAcquisitionPointId() {
@@ -126,12 +120,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message placed in the sparse track. Only
-     * enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
      * 
      * @param acquisitionPointId
-     *        The value of the "Acquisition Point Identity" element used in each message placed in the sparse track.
-     *        Only enabled if sparseTrackType is not "none".
+     *        The ID to include in each message in the sparse track. Ignored if sparseTrackType is NONE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -801,14 +793,17 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
-     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
-     * will still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source
+     * content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. -
+     * NONE: Don't generate a sparse track for any outputs in this output group.
      * 
      * @param sparseTrackType
-     *        If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *        outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
-     *        SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
+     *        Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the
+     *        source content. With each message, insert an IDR frame to start a new segment. -
+     *        SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an
+     *        IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this
+     *        output group.
      * @see SmoothGroupSparseTrackType
      */
 
@@ -817,13 +812,16 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
-     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
-     * will still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source
+     * content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. -
+     * NONE: Don't generate a sparse track for any outputs in this output group.
      * 
-     * @return If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *         outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
-     *         SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
+     * @return Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the
+     *         source content. With each message, insert an IDR frame to start a new segment. -
+     *         SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert
+     *         an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this
+     *         output group.
      * @see SmoothGroupSparseTrackType
      */
 
@@ -832,14 +830,17 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
-     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
-     * will still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source
+     * content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. -
+     * NONE: Don't generate a sparse track for any outputs in this output group.
      * 
      * @param sparseTrackType
-     *        If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *        outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
-     *        SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
+     *        Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the
+     *        source content. With each message, insert an IDR frame to start a new segment. -
+     *        SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an
+     *        IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this
+     *        output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmoothGroupSparseTrackType
      */
@@ -850,14 +851,17 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.
-     * scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a SCTE-35 marker. It
-     * will still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source
+     * content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. -
+     * NONE: Don't generate a sparse track for any outputs in this output group.
      * 
      * @param sparseTrackType
-     *        If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth
-     *        outputs. scte35WithoutSegmentation is the same as scte35, except EML will not start a new segment at a
-     *        SCTE-35 marker. It will still encode an IDR frame at a SCTE-35 marker.
+     *        Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the
+     *        source content. With each message, insert an IDR frame to start a new segment. -
+     *        SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an
+     *        IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this
+     *        output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmoothGroupSparseTrackType
      */

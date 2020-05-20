@@ -40,8 +40,8 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * Indicates how MediaLive pipelines are synchronized.
      * 
-     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
-     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING
+     * - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      */
     private String outputLockingMode;
     /**
@@ -206,14 +206,14 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * Indicates how MediaLive pipelines are synchronized.
      * 
-     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
-     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING
+     * - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * 
      * @param outputLockingMode
      *        Indicates how MediaLive pipelines are synchronized.
      * 
-     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     *        PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * @see GlobalConfigurationOutputLockingMode
      */
 
@@ -224,13 +224,13 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * Indicates how MediaLive pipelines are synchronized.
      * 
-     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
-     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING
+     * - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * 
      * @return Indicates how MediaLive pipelines are synchronized.
      * 
-     *         PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-     *         EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     *         PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *         EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * @see GlobalConfigurationOutputLockingMode
      */
 
@@ -241,14 +241,14 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * Indicates how MediaLive pipelines are synchronized.
      * 
-     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
-     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING
+     * - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * 
      * @param outputLockingMode
      *        Indicates how MediaLive pipelines are synchronized.
      * 
-     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     *        PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalConfigurationOutputLockingMode
      */
@@ -261,14 +261,14 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * Indicates how MediaLive pipelines are synchronized.
      * 
-     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
-     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING
+     * - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * 
      * @param outputLockingMode
      *        Indicates how MediaLive pipelines are synchronized.
      * 
-     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
-     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     *        PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalConfigurationOutputLockingMode
      */

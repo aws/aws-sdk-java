@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a ListDeploymentConfigs operation.
+ * Represents the output of a <code>ListDeploymentConfigs</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs" target="_top">AWS
@@ -28,7 +28,8 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as
+     * <code>CodeDeployDefault.OneAtATime</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentConfigsList;
@@ -42,11 +43,12 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as
+     * <code>CodeDeployDefault.OneAtATime</code>.
      * </p>
      * 
      * @return A list of deployment configurations, including built-in configurations such as
-     *         CodeDeployDefault.OneAtATime.
+     *         <code>CodeDeployDefault.OneAtATime</code>.
      */
 
     public java.util.List<String> getDeploymentConfigsList() {
@@ -58,12 +60,13 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as
+     * <code>CodeDeployDefault.OneAtATime</code>.
      * </p>
      * 
      * @param deploymentConfigsList
      *        A list of deployment configurations, including built-in configurations such as
-     *        CodeDeployDefault.OneAtATime.
+     *        <code>CodeDeployDefault.OneAtATime</code>.
      */
 
     public void setDeploymentConfigsList(java.util.Collection<String> deploymentConfigsList) {
@@ -77,7 +80,8 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as
+     * <code>CodeDeployDefault.OneAtATime</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,7 +91,7 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @param deploymentConfigsList
      *        A list of deployment configurations, including built-in configurations such as
-     *        CodeDeployDefault.OneAtATime.
+     *        <code>CodeDeployDefault.OneAtATime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,12 +107,13 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of deployment configurations, including built-in configurations such as CodeDeployDefault.OneAtATime.
+     * A list of deployment configurations, including built-in configurations such as
+     * <code>CodeDeployDefault.OneAtATime</code>.
      * </p>
      * 
      * @param deploymentConfigsList
      *        A list of deployment configurations, including built-in configurations such as
-     *        CodeDeployDefault.OneAtATime.
+     *        <code>CodeDeployDefault.OneAtATime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

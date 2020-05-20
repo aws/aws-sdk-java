@@ -372,7 +372,7 @@ public interface AWSBackup {
 
     /**
      * <p>
-     * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
+     * Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
      * 
@@ -412,6 +412,24 @@ public interface AWSBackup {
      *      API Documentation</a>
      */
     DescribeRecoveryPointResult describeRecoveryPoint(DescribeRecoveryPointRequest describeRecoveryPointRequest);
+
+    /**
+     * <p>
+     * Returns the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param describeRegionSettingsRequest
+     * @return Result of the DescribeRegionSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DescribeRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeRegionSettingsResult describeRegionSettings(DescribeRegionSettingsRequest describeRegionSettingsRequest);
 
     /**
      * <p>
@@ -856,6 +874,11 @@ public interface AWSBackup {
      * <p>
      * Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.
      * </p>
+     * <note>
+     * <p>
+     * <code>ListTags</code> are currently only supported with Amazon EFS backups.
+     * </p>
+     * </note>
      * 
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
@@ -1108,6 +1131,28 @@ public interface AWSBackup {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateRecoveryPointLifecycleResult updateRecoveryPointLifecycle(UpdateRecoveryPointLifecycleRequest updateRecoveryPointLifecycleRequest);
+
+    /**
+     * <p>
+     * Updates the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
+     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
+     * service's resources in this region.
+     * </p>
+     * 
+     * @param updateRegionSettingsRequest
+     * @return Result of the UpdateRegionSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @sample AWSBackup.UpdateRegionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateRegionSettingsResult updateRegionSettings(UpdateRegionSettingsRequest updateRegionSettingsRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

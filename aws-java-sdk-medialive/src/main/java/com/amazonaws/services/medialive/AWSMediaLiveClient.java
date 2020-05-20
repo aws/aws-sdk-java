@@ -1286,6 +1286,72 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Gets the details for the input device
+     * 
+     * @param describeInputDeviceRequest
+     *        Placeholder documentation for DescribeInputDeviceRequest
+     * @return Result of the DescribeInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         The input device you're requesting to describe does not exist. Check the ID.
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe calls to the input device service.
+     * @sample AWSMediaLive.DescribeInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeInputDeviceResult describeInputDevice(DescribeInputDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInputDevice(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInputDeviceResult executeDescribeInputDevice(DescribeInputDeviceRequest describeInputDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInputDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInputDeviceRequest> request = null;
+        Response<DescribeInputDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInputDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeInputDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Produces a summary of an Input Security Group
      * 
      * @param describeInputSecurityGroupRequest
@@ -1740,6 +1806,70 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<ListChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * List input devices
+     * 
+     * @param listInputDevicesRequest
+     *        Placeholder documentation for ListInputDevicesRequest
+     * @return Result of the ListInputDevices operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list input devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list devices calls to the input device service.
+     * @sample AWSMediaLive.ListInputDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListInputDevicesResult listInputDevices(ListInputDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInputDevices(request);
+    }
+
+    @SdkInternalApi
+    final ListInputDevicesResult executeListInputDevices(ListInputDevicesRequest listInputDevicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInputDevicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInputDevicesRequest> request = null;
+        Response<ListInputDevicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInputDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputDevicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputDevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInputDevicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInputDevicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2737,6 +2867,74 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInputResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates the parameters for the input device.
+     * 
+     * @param updateInputDeviceRequest
+     *        A request to update an input device.
+     * @return Result of the UpdateInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Input device failed validation and could not be created.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the input device.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         The input device you're requesting to does not exist. Check the ID.
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error.
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update calls to the input device service.
+     * @sample AWSMediaLive.UpdateInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateInputDeviceResult updateInputDevice(UpdateInputDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInputDevice(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInputDeviceResult executeUpdateInputDevice(UpdateInputDeviceRequest updateInputDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInputDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInputDeviceRequest> request = null;
+        Response<UpdateInputDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInputDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInputDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -41,21 +41,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the
-     * deployment.
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     * instances in the deployment.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
+     * In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
      * The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment
-     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is
+     * successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.
      * </p>
      * <note>
      * <p>
@@ -123,21 +123,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the
-     * deployment.
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     * instances in the deployment.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
+     * In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
      * The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment
-     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is
+     * successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.
      * </p>
      * <note>
      * <p>
@@ -161,21 +161,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     *        <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in
-     *        the deployment.
+     *        <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     *        instances in the deployment.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a
+     *        In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a
      *        time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the
-     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The
-     *        deployment is successful if four or more instance are deployed to successfully. Otherwise, the deployment
+     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     *        deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment
      *        fails.
      *        </p>
      *        <note>
@@ -207,21 +207,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the
-     * deployment.
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     * instances in the deployment.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
+     * In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
      * The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment
-     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is
+     * successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.
      * </p>
      * <note>
      * <p>
@@ -244,22 +244,22 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     *         <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in
-     *         the deployment.
+     *         <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number
+     *         of instances in the deployment.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a
-     *         time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the
-     *         deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The
-     *         deployment is successful if four or more instance are deployed to successfully. Otherwise, the deployment
-     *         fails.
+     *         In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at
+     *         a time. The deployment is successful if six or more instances are deployed to successfully. Otherwise,
+     *         the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time.
+     *         The deployment is successful if four or more instances are deployed to successfully. Otherwise, the
+     *         deployment fails.
      *         </p>
      *         <note>
      *         <p>
@@ -290,21 +290,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the
-     * deployment.
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     * instances in the deployment.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
+     * In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
      * The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment
-     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is
+     * successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.
      * </p>
      * <note>
      * <p>
@@ -328,21 +328,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     *        <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in
-     *        the deployment.
+     *        <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     *        instances in the deployment.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a
+     *        In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a
      *        time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the
-     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The
-     *        deployment is successful if four or more instance are deployed to successfully. Otherwise, the deployment
+     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     *        deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment
      *        fails.
      *        </p>
      *        <note>
@@ -376,21 +376,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the
-     * deployment.
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     * instances in the deployment.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
+     * In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
      * The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment
-     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is
+     * successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.
      * </p>
      * <note>
      * <p>
@@ -414,21 +414,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     *        <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in
-     *        the deployment.
+     *        <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     *        instances in the deployment.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a
+     *        In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a
      *        time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the
-     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The
-     *        deployment is successful if four or more instance are deployed to successfully. Otherwise, the deployment
+     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     *        deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment
      *        fails.
      *        </p>
      *        <note>
@@ -460,21 +460,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     * <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the
-     * deployment.
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     * instances in the deployment.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
+     * In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a time.
      * The deployment is successful if six or more instances are deployed to successfully. Otherwise, the deployment
-     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the deployment fails.
+     * fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The deployment is
+     * successful if four or more instances are deployed to successfully. Otherwise, the deployment fails.
      * </p>
      * <note>
      * <p>
@@ -498,21 +498,21 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        HOST_COUNT: The minimum number of healthy instance as an absolute value.
+     *        <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in
-     *        the deployment.
+     *        <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage of the total number of
+     *        instances in the deployment.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a
+     *        In an example of nine instances, if a HOST_COUNT of six is specified, deploy to up to three instances at a
      *        time. The deployment is successful if six or more instances are deployed to successfully. Otherwise, the
-     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The
-     *        deployment is successful if four or more instance are deployed to successfully. Otherwise, the deployment
+     *        deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     *        deployment is successful if four or more instances are deployed to successfully. Otherwise, the deployment
      *        fails.
      *        </p>
      *        <note>

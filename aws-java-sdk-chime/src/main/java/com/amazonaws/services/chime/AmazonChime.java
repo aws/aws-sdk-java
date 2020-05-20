@@ -1685,6 +1685,36 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
+     * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * 
+     * @param getRetentionSettingsRequest
+     * @return Result of the GetRetentionSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetRetentionSettingsResult getRetentionSettings(GetRetentionSettingsRequest getRetentionSettingsRequest);
+
+    /**
+     * <p>
      * Retrieves room details, such as the room name, for a room in an Amazon Chime Enterprise account.
      * </p>
      * 
@@ -2537,6 +2567,45 @@ public interface AmazonChime {
      *      API Documentation</a>
      */
     PutEventsConfigurationResult putEventsConfiguration(PutEventsConfigurationRequest putEventsConfigurationRequest);
+
+    /**
+     * <p>
+     * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
+     * monitor usage of this API for your account. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * <p>
+     * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
+     * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
+     * the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * 
+     * @param putRetentionSettingsRequest
+     * @return Result of the PutRetentionSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutRetentionSettingsResult putRetentionSettings(PutRetentionSettingsRequest putRetentionSettingsRequest);
 
     /**
      * <p>

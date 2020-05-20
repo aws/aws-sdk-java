@@ -36,7 +36,7 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
     private Boolean enforce;
     /**
      * <p>
-     * The range of ports that the policy is enforced for.
+     * One or more ports that the policy is enforced for.
      * </p>
      */
     private java.util.List<Integer> ports;
@@ -101,10 +101,10 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The range of ports that the policy is enforced for.
+     * One or more ports that the policy is enforced for.
      * </p>
      * 
-     * @return The range of ports that the policy is enforced for.
+     * @return One or more ports that the policy is enforced for.
      */
 
     public java.util.List<Integer> getPorts() {
@@ -113,11 +113,11 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The range of ports that the policy is enforced for.
+     * One or more ports that the policy is enforced for.
      * </p>
      * 
      * @param ports
-     *        The range of ports that the policy is enforced for.
+     *        One or more ports that the policy is enforced for.
      */
 
     public void setPorts(java.util.Collection<Integer> ports) {
@@ -131,7 +131,7 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The range of ports that the policy is enforced for.
+     * One or more ports that the policy is enforced for.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,7 +140,7 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param ports
-     *        The range of ports that the policy is enforced for.
+     *        One or more ports that the policy is enforced for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +156,11 @@ public class ClientPolicyTls implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The range of ports that the policy is enforced for.
+     * One or more ports that the policy is enforced for.
      * </p>
      * 
      * @param ports
-     *        The range of ports that the policy is enforced for.
+     *        One or more ports that the policy is enforced for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

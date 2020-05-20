@@ -23,6 +23,7 @@ public enum DeploymentStatus {
     Created("Created"),
     Queued("Queued"),
     InProgress("InProgress"),
+    Baking("Baking"),
     Succeeded("Succeeded"),
     Failed("Failed"),
     Stopped("Stopped"),

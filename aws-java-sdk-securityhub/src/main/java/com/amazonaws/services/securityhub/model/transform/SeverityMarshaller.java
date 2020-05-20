@@ -33,6 +33,8 @@ public class SeverityMarshaller {
             .marshallLocationName("Label").build();
     private static final MarshallingInfo<Integer> NORMALIZED_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Normalized").build();
+    private static final MarshallingInfo<String> ORIGINAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Original").build();
 
     private static final SeverityMarshaller instance = new SeverityMarshaller();
 
@@ -53,6 +55,7 @@ public class SeverityMarshaller {
             protocolMarshaller.marshall(severity.getProduct(), PRODUCT_BINDING);
             protocolMarshaller.marshall(severity.getLabel(), LABEL_BINDING);
             protocolMarshaller.marshall(severity.getNormalized(), NORMALIZED_BINDING);
+            protocolMarshaller.marshall(severity.getOriginal(), ORIGINAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

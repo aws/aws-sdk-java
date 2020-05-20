@@ -30,7 +30,7 @@ public class AwsS3BucketServerSideEncryptionRule implements Serializable, Clonea
 
     /**
      * <p>
-     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> Object
+     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> object
      * request doesn't specify any server-side encryption, this default encryption is applied.
      * </p>
      */
@@ -38,13 +38,13 @@ public class AwsS3BucketServerSideEncryptionRule implements Serializable, Clonea
 
     /**
      * <p>
-     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> Object
+     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> object
      * request doesn't specify any server-side encryption, this default encryption is applied.
      * </p>
      * 
      * @param applyServerSideEncryptionByDefault
      *        Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code>
-     *        Object request doesn't specify any server-side encryption, this default encryption is applied.
+     *        object request doesn't specify any server-side encryption, this default encryption is applied.
      */
 
     public void setApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault applyServerSideEncryptionByDefault) {
@@ -53,12 +53,12 @@ public class AwsS3BucketServerSideEncryptionRule implements Serializable, Clonea
 
     /**
      * <p>
-     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> Object
+     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> object
      * request doesn't specify any server-side encryption, this default encryption is applied.
      * </p>
      * 
      * @return Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code>
-     *         Object request doesn't specify any server-side encryption, this default encryption is applied.
+     *         object request doesn't specify any server-side encryption, this default encryption is applied.
      */
 
     public AwsS3BucketServerSideEncryptionByDefault getApplyServerSideEncryptionByDefault() {
@@ -67,13 +67,13 @@ public class AwsS3BucketServerSideEncryptionRule implements Serializable, Clonea
 
     /**
      * <p>
-     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> Object
+     * Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code> object
      * request doesn't specify any server-side encryption, this default encryption is applied.
      * </p>
      * 
      * @param applyServerSideEncryptionByDefault
      *        Specifies the default server-side encryption to apply to new objects in the bucket. If a <code>PUT</code>
-     *        Object request doesn't specify any server-side encryption, this default encryption is applied.
+     *        object request doesn't specify any server-side encryption, this default encryption is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -211,13 +211,13 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
     private String scalableDimension;
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event.
+     * The minimum value to scale to in response to a scale-in activity.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event.
+     * The maximum value to scale to in response to a scale-out activity.
      * </p>
      */
     private Integer maxCapacity;
@@ -1741,11 +1741,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event.
+     * The minimum value to scale to in response to a scale-in activity.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value to scale to in response to a scale-in event.
+     *        The minimum value to scale to in response to a scale-in activity.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -1754,10 +1754,10 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event.
+     * The minimum value to scale to in response to a scale-in activity.
      * </p>
      * 
-     * @return The minimum value to scale to in response to a scale-in event.
+     * @return The minimum value to scale to in response to a scale-in activity.
      */
 
     public Integer getMinCapacity() {
@@ -1766,11 +1766,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale-in event.
+     * The minimum value to scale to in response to a scale-in activity.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value to scale to in response to a scale-in event.
+     *        The minimum value to scale to in response to a scale-in activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1781,11 +1781,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event.
+     * The maximum value to scale to in response to a scale-out activity.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value to scale to in response to a scale-out event.
+     *        The maximum value to scale to in response to a scale-out activity.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -1794,10 +1794,10 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event.
+     * The maximum value to scale to in response to a scale-out activity.
      * </p>
      * 
-     * @return The maximum value to scale to in response to a scale-out event.
+     * @return The maximum value to scale to in response to a scale-out activity.
      */
 
     public Integer getMaxCapacity() {
@@ -1806,11 +1806,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale-out event.
+     * The maximum value to scale to in response to a scale-out activity.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value to scale to in response to a scale-out event.
+     *        The maximum value to scale to in response to a scale-out activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

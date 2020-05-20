@@ -38,7 +38,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * point.
      * </p>
      * <p>
-     * You can get configuration metadata about a resource at the time it was backed-up by calling
+     * You can get configuration metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      * <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need
      * to provide a new resource name if the original already exists.
@@ -182,7 +182,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * point.
      * </p>
      * <p>
-     * You can get configuration metadata about a resource at the time it was backed-up by calling
+     * You can get configuration metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      * <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need
      * to provide a new resource name if the original already exists.
@@ -229,7 +229,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * @return A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a
      *         recovery point.</p>
      *         <p>
-     *         You can get configuration metadata about a resource at the time it was backed-up by calling
+     *         You can get configuration metadata about a resource at the time it was backed up by calling
      *         <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      *         <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you
      *         might need to provide a new resource name if the original already exists.
@@ -284,7 +284,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * point.
      * </p>
      * <p>
-     * You can get configuration metadata about a resource at the time it was backed-up by calling
+     * You can get configuration metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      * <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need
      * to provide a new resource name if the original already exists.
@@ -332,7 +332,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a
      *        recovery point.</p>
      *        <p>
-     *        You can get configuration metadata about a resource at the time it was backed-up by calling
+     *        You can get configuration metadata about a resource at the time it was backed up by calling
      *        <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      *        <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you
      *        might need to provide a new resource name if the original already exists.
@@ -387,7 +387,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * point.
      * </p>
      * <p>
-     * You can get configuration metadata about a resource at the time it was backed-up by calling
+     * You can get configuration metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      * <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need
      * to provide a new resource name if the original already exists.
@@ -435,7 +435,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a
      *        recovery point.</p>
      *        <p>
-     *        You can get configuration metadata about a resource at the time it was backed-up by calling
+     *        You can get configuration metadata about a resource at the time it was backed up by calling
      *        <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by
      *        <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you
      *        might need to provide a new resource name if the original already exists.

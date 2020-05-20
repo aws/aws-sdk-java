@@ -30,8 +30,8 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
-     * ValidateService.
+     * The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     * <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      * </p>
      */
     private String lifecycleEventName;
@@ -94,13 +94,13 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
-     * ValidateService.
+     * The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     * <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      * </p>
      * 
      * @param lifecycleEventName
-     *        The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
-     *        ApplicationStart, or ValidateService.
+     *        The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     *        <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      */
 
     public void setLifecycleEventName(String lifecycleEventName) {
@@ -109,12 +109,12 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
-     * ValidateService.
+     * The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     * <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      * </p>
      * 
-     * @return The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
-     *         ApplicationStart, or ValidateService.
+     * @return The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     *         <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      */
 
     public String getLifecycleEventName() {
@@ -123,13 +123,13 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, or
-     * ValidateService.
+     * The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     * <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      * </p>
      * 
      * @param lifecycleEventName
-     *        The deployment lifecycle event name, such as ApplicationStop, BeforeInstall, AfterInstall,
-     *        ApplicationStart, or ValidateService.
+     *        The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
+     *        <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -46,7 +46,7 @@ public class CreateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date creationDate;
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot be
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be
      * edited.
      * </p>
      */
@@ -192,12 +192,12 @@ public class CreateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot be
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be
      * edited.
      * </p>
      * 
      * @param versionId
-     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot
+     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot
      *        be edited.
      */
 
@@ -207,11 +207,11 @@ public class CreateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot be
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be
      * edited.
      * </p>
      * 
-     * @return Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot
+     * @return Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot
      *         be edited.
      */
 
@@ -221,12 +221,12 @@ public class CreateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot be
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be
      * edited.
      * </p>
      * 
      * @param versionId
-     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1024 bytes long. They cannot
+     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot
      *        be edited.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

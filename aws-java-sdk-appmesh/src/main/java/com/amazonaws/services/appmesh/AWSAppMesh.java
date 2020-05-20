@@ -39,9 +39,9 @@ import com.amazonaws.services.appmesh.model.*;
  * <p>
  * App Mesh supports microservice applications that use service discovery naming for their components. For more
  * information about service discovery on Amazon ECS, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
- * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and <code>coredns</code>
- * are supported. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in
+ * the <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> and
+ * <code>coredns</code> are supported. For more information, see <a
  * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services and Pods</a> in the
  * Kubernetes documentation.
  * </p>
@@ -60,12 +60,16 @@ public interface AWSAppMesh {
 
     /**
      * <p>
-     * Creates a service mesh. A service mesh is a logical boundary for network traffic between the services that reside
-     * within it.
+     * Creates a service mesh.
      * </p>
      * <p>
-     * After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes
-     * to distribute traffic between the applications in your mesh.
+     * A service mesh is a logical boundary for network traffic between services that are represented by resources
+     * within the mesh. After you create your service mesh, you can create virtual services, virtual nodes, virtual
+     * routers, and routes to distribute traffic between the applications in your mesh.
+     * </p>
+     * <p>
+     * For more information about service meshes, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service meshes</a>.
      * </p>
      * 
      * @param createMeshRequest
@@ -81,7 +85,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -101,13 +105,8 @@ public interface AWSAppMesh {
      * Creates a route that is associated with a virtual router.
      * </p>
      * <p>
-     * You can use the <code>prefix</code> parameter in your route specification for path-based routing of requests. For
-     * example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests
-     * to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.
-     * </p>
-     * <p>
-     * If your route matches a request, you can distribute traffic to one or more target virtual nodes with relative
-     * weighting.
+     * You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or
+     * more virtual nodes.
      * </p>
      * <p>
      * For more information about routes, see <a
@@ -127,7 +126,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -149,11 +148,12 @@ public interface AWSAppMesh {
      * <p>
      * A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a
      * Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your
-     * task group.
+     * task group, and whether the proxy running in a task group will communicate with other proxies using Transport
+     * Layer Security (TLS).
      * </p>
      * <p>
-     * Any inbound traffic that your virtual node expects should be specified as a <code>listener</code>. Any outbound
-     * traffic that your virtual node expects to reach should be specified as a <code>backend</code>.
+     * You define a <code>listener</code> for any inbound traffic that your virtual node expects. Any virtual service
+     * that your virtual node expects to communicate to is specified as a <code>backend</code>.
      * </p>
      * <p>
      * The response metadata for your new virtual node contains the <code>arn</code> that is associated with the virtual
@@ -171,7 +171,7 @@ public interface AWSAppMesh {
      * </note>
      * <p>
      * For more information about virtual nodes, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual Nodes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>.
      * </p>
      * 
      * @param createVirtualNodeRequest
@@ -187,7 +187,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -207,16 +207,14 @@ public interface AWSAppMesh {
      * Creates a virtual router within a service mesh.
      * </p>
      * <p>
-     * Any inbound traffic that your virtual router expects should be specified as a <code>listener</code>.
-     * </p>
-     * <p>
-     * Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual
-     * router, create and associate routes for your virtual router that direct incoming requests to different virtual
-     * nodes.
+     * Specify a <code>listener</code> for any inbound traffic that your virtual router receives. Create a virtual
+     * router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual
+     * services within your mesh. After you create your virtual router, create and associate routes for your virtual
+     * router that direct incoming requests to different virtual nodes.
      * </p>
      * <p>
      * For more information about virtual routers, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual Routers</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual routers</a>.
      * </p>
      * 
      * @param createVirtualRouterRequest
@@ -232,7 +230,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -259,7 +257,7 @@ public interface AWSAppMesh {
      * </p>
      * <p>
      * For more information about virtual services, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual Services</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual services</a>.
      * </p>
      * 
      * @param createVirtualServiceRequest
@@ -275,7 +273,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -428,6 +426,8 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws ResourceInUseException
+     *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
@@ -830,7 +830,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -863,7 +863,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -896,7 +896,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
@@ -929,7 +929,7 @@ public interface AWSAppMesh {
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.

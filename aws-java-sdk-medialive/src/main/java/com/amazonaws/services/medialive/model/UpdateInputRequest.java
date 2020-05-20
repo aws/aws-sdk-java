@@ -28,6 +28,8 @@ public class UpdateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /** Destination settings for PUSH type inputs. */
     private java.util.List<InputDestinationRequest> destinations;
+    /** Settings for the devices. */
+    private java.util.List<InputDeviceRequest> inputDevices;
     /** Unique ID of the input. */
     private String inputId;
     /** A list of security groups referenced by IDs to attach to the input. */
@@ -107,6 +109,68 @@ public class UpdateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public UpdateInputRequest withDestinations(java.util.Collection<InputDestinationRequest> destinations) {
         setDestinations(destinations);
+        return this;
+    }
+
+    /**
+     * Settings for the devices.
+     * 
+     * @return Settings for the devices.
+     */
+
+    public java.util.List<InputDeviceRequest> getInputDevices() {
+        return inputDevices;
+    }
+
+    /**
+     * Settings for the devices.
+     * 
+     * @param inputDevices
+     *        Settings for the devices.
+     */
+
+    public void setInputDevices(java.util.Collection<InputDeviceRequest> inputDevices) {
+        if (inputDevices == null) {
+            this.inputDevices = null;
+            return;
+        }
+
+        this.inputDevices = new java.util.ArrayList<InputDeviceRequest>(inputDevices);
+    }
+
+    /**
+     * Settings for the devices.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputDevices(java.util.Collection)} or {@link #withInputDevices(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param inputDevices
+     *        Settings for the devices.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInputRequest withInputDevices(InputDeviceRequest... inputDevices) {
+        if (this.inputDevices == null) {
+            setInputDevices(new java.util.ArrayList<InputDeviceRequest>(inputDevices.length));
+        }
+        for (InputDeviceRequest ele : inputDevices) {
+            this.inputDevices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Settings for the devices.
+     * 
+     * @param inputDevices
+     *        Settings for the devices.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInputRequest withInputDevices(java.util.Collection<InputDeviceRequest> inputDevices) {
+        setInputDevices(inputDevices);
         return this;
     }
 
@@ -439,6 +503,8 @@ public class UpdateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getDestinations() != null)
             sb.append("Destinations: ").append(getDestinations()).append(",");
+        if (getInputDevices() != null)
+            sb.append("InputDevices: ").append(getInputDevices()).append(",");
         if (getInputId() != null)
             sb.append("InputId: ").append(getInputId()).append(",");
         if (getInputSecurityGroups() != null)
@@ -468,6 +534,10 @@ public class UpdateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getDestinations() == null ^ this.getDestinations() == null)
             return false;
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
+            return false;
+        if (other.getInputDevices() == null ^ this.getInputDevices() == null)
+            return false;
+        if (other.getInputDevices() != null && other.getInputDevices().equals(this.getInputDevices()) == false)
             return false;
         if (other.getInputId() == null ^ this.getInputId() == null)
             return false;
@@ -502,6 +572,7 @@ public class UpdateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
+        hashCode = prime * hashCode + ((getInputDevices() == null) ? 0 : getInputDevices().hashCode());
         hashCode = prime * hashCode + ((getInputId() == null) ? 0 : getInputId().hashCode());
         hashCode = prime * hashCode + ((getInputSecurityGroups() == null) ? 0 : getInputSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());

@@ -32,6 +32,8 @@ public class ComplianceMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<List> RELATEDREQUIREMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedRequirements").build();
+    private static final MarshallingInfo<List> STATUSREASONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StatusReasons").build();
 
     private static final ComplianceMarshaller instance = new ComplianceMarshaller();
 
@@ -51,6 +53,7 @@ public class ComplianceMarshaller {
         try {
             protocolMarshaller.marshall(compliance.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(compliance.getRelatedRequirements(), RELATEDREQUIREMENTS_BINDING);
+            protocolMarshaller.marshall(compliance.getStatusReasons(), STATUSREASONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

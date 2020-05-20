@@ -68,6 +68,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                     context.nextToken();
                     input.setInputClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputDevices", targetDepth)) {
+                    context.nextToken();
+                    input.setInputDevices(new ListUnmarshaller<InputDeviceSettings>(InputDeviceSettingsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("inputSourceType", targetDepth)) {
                     context.nextToken();
                     input.setInputSourceType(context.getUnmarshaller(String.class).unmarshall(context));

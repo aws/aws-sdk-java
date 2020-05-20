@@ -30,6 +30,10 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * <code>Original</code>.
+     * </p>
+     * <p>
      * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      */
@@ -105,13 +109,26 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private Integer normalized;
+    /**
+     * <p>
+     * The native severity from the finding product that generated the finding.
+     * </p>
+     */
+    private String original;
 
     /**
+     * <p>
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * <code>Original</code>.
+     * </p>
      * <p>
      * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      * 
      * @param product
+     *        Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     *        <code>Original</code>.</p>
+     *        <p>
      *        The native severity as defined by the AWS service or integrated partner product that generated the
      *        finding.
      */
@@ -122,10 +139,17 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * <code>Original</code>.
+     * </p>
+     * <p>
      * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      * 
-     * @return The native severity as defined by the AWS service or integrated partner product that generated the
+     * @return Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     *         <code>Original</code>.</p>
+     *         <p>
+     *         The native severity as defined by the AWS service or integrated partner product that generated the
      *         finding.
      */
 
@@ -135,10 +159,17 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * <code>Original</code>.
+     * </p>
+     * <p>
      * The native severity as defined by the AWS service or integrated partner product that generated the finding.
      * </p>
      * 
      * @param product
+     *        Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     *        <code>Original</code>.</p>
+     *        <p>
      *        The native severity as defined by the AWS service or integrated partner product that generated the
      *        finding.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -650,6 +681,46 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The native severity from the finding product that generated the finding.
+     * </p>
+     * 
+     * @param original
+     *        The native severity from the finding product that generated the finding.
+     */
+
+    public void setOriginal(String original) {
+        this.original = original;
+    }
+
+    /**
+     * <p>
+     * The native severity from the finding product that generated the finding.
+     * </p>
+     * 
+     * @return The native severity from the finding product that generated the finding.
+     */
+
+    public String getOriginal() {
+        return this.original;
+    }
+
+    /**
+     * <p>
+     * The native severity from the finding product that generated the finding.
+     * </p>
+     * 
+     * @param original
+     *        The native severity from the finding product that generated the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Severity withOriginal(String original) {
+        setOriginal(original);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -666,7 +737,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
         if (getLabel() != null)
             sb.append("Label: ").append(getLabel()).append(",");
         if (getNormalized() != null)
-            sb.append("Normalized: ").append(getNormalized());
+            sb.append("Normalized: ").append(getNormalized()).append(",");
+        if (getOriginal() != null)
+            sb.append("Original: ").append(getOriginal());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +766,10 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNormalized() != null && other.getNormalized().equals(this.getNormalized()) == false)
             return false;
+        if (other.getOriginal() == null ^ this.getOriginal() == null)
+            return false;
+        if (other.getOriginal() != null && other.getOriginal().equals(this.getOriginal()) == false)
+            return false;
         return true;
     }
 
@@ -704,6 +781,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProduct() == null) ? 0 : getProduct().hashCode());
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         hashCode = prime * hashCode + ((getNormalized() == null) ? 0 : getNormalized().hashCode());
+        hashCode = prime * hashCode + ((getOriginal() == null) ? 0 : getOriginal().hashCode());
         return hashCode;
     }
 

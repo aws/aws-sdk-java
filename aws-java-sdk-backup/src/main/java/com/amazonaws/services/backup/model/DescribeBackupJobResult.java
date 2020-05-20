@@ -114,7 +114,7 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     private RecoveryPointCreator createdBy;
     /**
      * <p>
-     * The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
+     * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
      * Amazon Relational Database Service (Amazon RDS) database.
      * </p>
      */
@@ -751,12 +751,12 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
+     * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
      * Amazon Relational Database Service (Amazon RDS) database.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
+     *        The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
      *        or an Amazon Relational Database Service (Amazon RDS) database.
      */
 
@@ -766,11 +766,11 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
+     * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
      * Amazon Relational Database Service (Amazon RDS) database.
      * </p>
      * 
-     * @return The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
+     * @return The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
      *         or an Amazon Relational Database Service (Amazon RDS) database.
      */
 
@@ -780,12 +780,12 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
+     * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
      * Amazon Relational Database Service (Amazon RDS) database.
      * </p>
      * 
      * @param resourceType
-     *        The type of AWS resource to be backed-up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
+     *        The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
      *        or an Amazon Relational Database Service (Amazon RDS) database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

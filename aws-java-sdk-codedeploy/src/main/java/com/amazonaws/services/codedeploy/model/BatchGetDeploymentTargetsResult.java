@@ -44,6 +44,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <b>Amazon ECS</b>: The target object is an Amazon ECS service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<DeploymentTarget> deploymentTargets;
@@ -69,6 +74,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <b>Amazon ECS</b>: The target object is an Amazon ECS service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A list of target objects for a deployment. Each target object contains details about the target, such as
@@ -88,6 +98,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <b>Amazon ECS</b>: The target object is an Amazon ECS service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
      *         </p>
      *         </li>
      */
@@ -120,6 +135,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <b>Amazon ECS</b>: The target object is an Amazon ECS service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deploymentTargets
@@ -140,6 +160,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon ECS</b>: The target object is an Amazon ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
      *        </p>
      *        </li>
      */
@@ -174,6 +199,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <b>Amazon ECS</b>: The target object is an Amazon ECS service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -199,6 +229,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon ECS</b>: The target object is an Amazon ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -235,6 +270,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      * <b>Amazon ECS</b>: The target object is an Amazon ECS service.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param deploymentTargets
@@ -255,6 +295,11 @@ public class BatchGetDeploymentTargetsResult extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon ECS</b>: The target object is an Amazon ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

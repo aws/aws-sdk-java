@@ -223,8 +223,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      * </p>
      * <p>
-     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for Apache
-     * Cassandra.
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
+     * Cassandra).
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1814,8 +1814,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      * </p>
      * <p>
-     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for Apache
-     * Cassandra.
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
+     * Cassandra).
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1834,8 +1834,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      *        </p>
      *        <p>
-     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for
-     *        Apache Cassandra.
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for
+     *        Apache Cassandra).
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -1861,8 +1861,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      * </p>
      * <p>
-     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for Apache
-     * Cassandra.
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
+     * Cassandra).
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1880,8 +1880,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      *         </p>
      *         <p>
-     *         <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for
-     *         Apache Cassandra.
+     *         <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for
+     *         Apache Cassandra).
      *         </p>
      *         <p>
      *         For more information, see <a href=
@@ -1907,8 +1907,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      * </p>
      * <p>
-     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for Apache
-     * Cassandra.
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
+     * Cassandra).
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1927,8 +1927,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      *        </p>
      *        <p>
-     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for
-     *        Apache Cassandra.
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for
+     *        Apache Cassandra).
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -1956,8 +1956,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      * </p>
      * <p>
-     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for Apache
-     * Cassandra.
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
+     * Cassandra).
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1976,8 +1976,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      *        </p>
      *        <p>
-     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for
-     *        Apache Cassandra.
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for
+     *        Apache Cassandra).
      *        </p>
      *        <p>
      *        For more information, see <a href=
@@ -2003,8 +2003,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      * </p>
      * <p>
-     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for Apache
-     * Cassandra.
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for Apache
+     * Cassandra).
      * </p>
      * <p>
      * For more information, see <a href=
@@ -2023,8 +2023,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
      *        </p>
      *        <p>
-     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces for
-     *        Apache Cassandra.
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, or Amazon Keyspaces (for
+     *        Apache Cassandra).
      *        </p>
      *        <p>
      *        For more information, see <a href=

@@ -28,7 +28,7 @@ public class DeleteBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique
-     * to the account used to create them and theAWS Region where they are created. They consist of lowercase letters,
+     * to the account used to create them and the AWS Region where they are created. They consist of lowercase letters,
      * numbers, and hyphens.
      * </p>
      */
@@ -37,13 +37,13 @@ public class DeleteBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique
-     * to the account used to create them and theAWS Region where they are created. They consist of lowercase letters,
+     * to the account used to create them and the AWS Region where they are created. They consist of lowercase letters,
      * numbers, and hyphens.
      * </p>
      * 
      * @param backupVaultName
      *        The name of a logical container where backups are stored. Backup vaults are identified by names that are
-     *        unique to the account used to create them and theAWS Region where they are created. They consist of
+     *        unique to the account used to create them and the AWS Region where they are created. They consist of
      *        lowercase letters, numbers, and hyphens.
      */
 
@@ -54,12 +54,12 @@ public class DeleteBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique
-     * to the account used to create them and theAWS Region where they are created. They consist of lowercase letters,
+     * to the account used to create them and the AWS Region where they are created. They consist of lowercase letters,
      * numbers, and hyphens.
      * </p>
      * 
      * @return The name of a logical container where backups are stored. Backup vaults are identified by names that are
-     *         unique to the account used to create them and theAWS Region where they are created. They consist of
+     *         unique to the account used to create them and the AWS Region where they are created. They consist of
      *         lowercase letters, numbers, and hyphens.
      */
 
@@ -70,13 +70,13 @@ public class DeleteBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique
-     * to the account used to create them and theAWS Region where they are created. They consist of lowercase letters,
+     * to the account used to create them and the AWS Region where they are created. They consist of lowercase letters,
      * numbers, and hyphens.
      * </p>
      * 
      * @param backupVaultName
      *        The name of a logical container where backups are stored. Backup vaults are identified by names that are
-     *        unique to the account used to create them and theAWS Region where they are created. They consist of
+     *        unique to the account used to create them and the AWS Region where they are created. They consist of
      *        lowercase letters, numbers, and hyphens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -18,6 +18,9 @@ import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.client.builder.AwsAsyncClientBuilder;
 import com.amazonaws.client.AwsAsyncClientParams;
+import com.amazonaws.endpointdiscovery.EndpointDiscoveryProviderChain;
+import com.amazonaws.endpointdiscovery.DefaultEndpointDiscoveryProviderChain;
+import com.amazonaws.internal.config.InternalConfig;
 
 /**
  * Fluent builder for {@link com.amazonaws.services.dynamodbv2.AmazonDynamoDBAsync}. Use of the builder is preferred
@@ -28,6 +31,11 @@ import com.amazonaws.client.AwsAsyncClientParams;
 public final class AmazonDynamoDBAsyncClientBuilder extends AwsAsyncClientBuilder<AmazonDynamoDBAsyncClientBuilder, AmazonDynamoDBAsync> {
 
     private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientConfigurationFactory();;
+
+    private static final EndpointDiscoveryProviderChain DEFAULT_ENDPOINT_DISCOVERY_PROVIDER = new DefaultEndpointDiscoveryProviderChain();
+
+    private boolean endpointDiscoveryEnabled = false;
+    private boolean endpointDiscoveryDisabled = false;
 
     /**
      * @return Create new instance of builder with all defaults set.
@@ -48,6 +56,43 @@ public final class AmazonDynamoDBAsyncClientBuilder extends AwsAsyncClientBuilde
         super(CLIENT_CONFIG_FACTORY);
     }
 
+    public AmazonDynamoDBAsyncClientBuilder enableEndpointDiscovery() {
+        this.endpointDiscoveryEnabled = true;
+        return this;
+    }
+
+    public AmazonDynamoDBAsyncClientBuilder disableEndpointDiscovery() {
+        this.endpointDiscoveryDisabled = true;
+        return this;
+    }
+
+    private boolean endpointDiscoveryEnabled() {
+
+        Boolean endpointDiscoveryChainSetting = DEFAULT_ENDPOINT_DISCOVERY_PROVIDER.endpointDiscoveryEnabled();
+
+        if (endpointDiscoveryDisabled) {
+            return false;
+        }
+
+        if (endpointDiscoveryEnabled) {
+            return true;
+        }
+
+        if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting == false) {
+            return false;
+        }
+
+        if (endpointDiscoveryChainSetting != null && endpointDiscoveryChainSetting) {
+            return true;
+        }
+
+        if (InternalConfig.Factory.getInternalConfig().endpointDiscoveryEnabled()) {
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * Construct an asynchronous implementation of AmazonDynamoDBAsync using the current builder configuration.
      *
@@ -57,6 +102,9 @@ public final class AmazonDynamoDBAsyncClientBuilder extends AwsAsyncClientBuilde
      */
     @Override
     protected AmazonDynamoDBAsync build(AwsAsyncClientParams params) {
+        if (endpointDiscoveryEnabled() && getEndpoint() == null) {
+            return new AmazonDynamoDBAsyncClient(params, true);
+        }
         return new AmazonDynamoDBAsyncClient(params);
     }
 

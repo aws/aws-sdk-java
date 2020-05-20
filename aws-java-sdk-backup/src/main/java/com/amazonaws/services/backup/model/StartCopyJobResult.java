@@ -25,26 +25,26 @@ public class StartCopyJobResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      */
     private String copyJobId;
     /**
      * <p>
-     * The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM. &gt;
+     * The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date creationDate;
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
      * @param copyJobId
-     *        Uniquely identifies a request to AWS Backup to copy a resource.
+     *        Uniquely identifies a copy job.
      */
 
     public void setCopyJobId(String copyJobId) {
@@ -53,10 +53,10 @@ public class StartCopyJobResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
-     * @return Uniquely identifies a request to AWS Backup to copy a resource.
+     * @return Uniquely identifies a copy job.
      */
 
     public String getCopyJobId() {
@@ -65,11 +65,11 @@ public class StartCopyJobResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
      * @param copyJobId
-     *        Uniquely identifies a request to AWS Backup to copy a resource.
+     *        Uniquely identifies a copy job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,15 +80,15 @@ public class StartCopyJobResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM. &gt;
+     * The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param creationDate
-     *        The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The
-     *        value of CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents
-     *        Friday, January 26, 2018 12:11:30.087 AM. &gt;
+     *        The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The
+     *        value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *        represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -97,14 +97,14 @@ public class StartCopyJobResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM. &gt;
+     * The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
-     * @return The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The
-     *         value of CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents
-     *         Friday, January 26, 2018 12:11:30.087 AM. &gt;
+     * @return The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The
+     *         value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *         represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public java.util.Date getCreationDate() {
@@ -113,15 +113,15 @@ public class StartCopyJobResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM. &gt;
+     * The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The value of
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param creationDate
-     *        The date and time that a backup job is started, in Unix format and Coordinated Universal Time (UTC). The
-     *        value of CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents
-     *        Friday, January 26, 2018 12:11:30.087 AM. &gt;
+     *        The date and time that a copy job is started, in Unix format and Coordinated Universal Time (UTC). The
+     *        value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *        represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

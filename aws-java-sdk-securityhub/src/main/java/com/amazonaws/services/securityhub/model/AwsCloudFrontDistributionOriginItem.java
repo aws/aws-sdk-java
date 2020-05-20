@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon MediaStore, or
- * other server from which CloudFront gets your files.
+ * A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web server), Amazon Elemental
+ * MediaStore, or other server from which CloudFront gets your files.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem"

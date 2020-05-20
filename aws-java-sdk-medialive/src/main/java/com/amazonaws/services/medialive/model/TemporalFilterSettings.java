@@ -27,20 +27,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class TemporalFilterSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial when using
-     * a noisy or compressed input source and low output bitrates.
+     * If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive
+     * digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends
+     * to decrease the bitrate, especially when the rate control mode is QVBR.
      */
     private String postFilterSharpening;
-    /** Filter strength. A higher value produces stronger filtering. */
+    /**
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information,
+     * resulting in an image that is overly soft.
+     */
     private String strength;
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial when using
-     * a noisy or compressed input source and low output bitrates.
+     * If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive
+     * digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends
+     * to decrease the bitrate, especially when the rate control mode is QVBR.
      * 
      * @param postFilterSharpening
-     *        If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial
-     *        when using a noisy or compressed input source and low output bitrates.
+     *        If you enable this filter, the results are the following: - If the source content is noisy (it contains
+     *        excessive digital artifacts), the filter cleans up the source. - If the source content is already clean,
+     *        the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
      * @see TemporalFilterPostFilterSharpening
      */
 
@@ -49,11 +55,13 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial when using
-     * a noisy or compressed input source and low output bitrates.
+     * If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive
+     * digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends
+     * to decrease the bitrate, especially when the rate control mode is QVBR.
      * 
-     * @return If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial
-     *         when using a noisy or compressed input source and low output bitrates.
+     * @return If you enable this filter, the results are the following: - If the source content is noisy (it contains
+     *         excessive digital artifacts), the filter cleans up the source. - If the source content is already clean,
+     *         the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
      * @see TemporalFilterPostFilterSharpening
      */
 
@@ -62,12 +70,14 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial when using
-     * a noisy or compressed input source and low output bitrates.
+     * If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive
+     * digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends
+     * to decrease the bitrate, especially when the rate control mode is QVBR.
      * 
      * @param postFilterSharpening
-     *        If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial
-     *        when using a noisy or compressed input source and low output bitrates.
+     *        If you enable this filter, the results are the following: - If the source content is noisy (it contains
+     *        excessive digital artifacts), the filter cleans up the source. - If the source content is already clean,
+     *        the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemporalFilterPostFilterSharpening
      */
@@ -78,12 +88,14 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial when using
-     * a noisy or compressed input source and low output bitrates.
+     * If you enable this filter, the results are the following: - If the source content is noisy (it contains excessive
+     * digital artifacts), the filter cleans up the source. - If the source content is already clean, the filter tends
+     * to decrease the bitrate, especially when the rate control mode is QVBR.
      * 
      * @param postFilterSharpening
-     *        If set to "ENABLED," applies post-filter sharpening to improve visual quality. This is most beneficial
-     *        when using a noisy or compressed input source and low output bitrates.
+     *        If you enable this filter, the results are the following: - If the source content is noisy (it contains
+     *        excessive digital artifacts), the filter cleans up the source. - If the source content is already clean,
+     *        the filter tends to decrease the bitrate, especially when the rate control mode is QVBR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemporalFilterPostFilterSharpening
      */
@@ -94,10 +106,12 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information,
+     * resulting in an image that is overly soft.
      * 
      * @param strength
-     *        Filter strength. A higher value produces stronger filtering.
+     *        Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good
+     *        information, resulting in an image that is overly soft.
      * @see TemporalFilterStrength
      */
 
@@ -106,9 +120,11 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information,
+     * resulting in an image that is overly soft.
      * 
-     * @return Filter strength. A higher value produces stronger filtering.
+     * @return Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good
+     *         information, resulting in an image that is overly soft.
      * @see TemporalFilterStrength
      */
 
@@ -117,10 +133,12 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information,
+     * resulting in an image that is overly soft.
      * 
      * @param strength
-     *        Filter strength. A higher value produces stronger filtering.
+     *        Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good
+     *        information, resulting in an image that is overly soft.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemporalFilterStrength
      */
@@ -131,10 +149,12 @@ public class TemporalFilterSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good information,
+     * resulting in an image that is overly soft.
      * 
      * @param strength
-     *        Filter strength. A higher value produces stronger filtering.
+     *        Choose a filter strength. We recommend a strength of 1 or 2. A higher strength might take out good
+     *        information, resulting in an image that is overly soft.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemporalFilterStrength
      */

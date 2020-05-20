@@ -114,6 +114,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DescribeInputDeviceResult describeInputDevice(DescribeInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInputSecurityGroupResult describeInputSecurityGroup(DescribeInputSecurityGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +150,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public ListChannelsResult listChannels(ListChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListInputDevicesResult listInputDevices(ListInputDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -220,6 +230,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public UpdateInputResult updateInput(UpdateInputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInputDeviceResult updateInputDevice(UpdateInputDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

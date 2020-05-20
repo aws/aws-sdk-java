@@ -82,6 +82,8 @@ public class DeploymentInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStatusMessages").build();
     private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
+    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalId").build();
 
     private static final DeploymentInfoMarshaller instance = new DeploymentInfoMarshaller();
 
@@ -126,6 +128,7 @@ public class DeploymentInfoMarshaller {
             protocolMarshaller.marshall(deploymentInfo.getFileExistsBehavior(), FILEEXISTSBEHAVIOR_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getDeploymentStatusMessages(), DEPLOYMENTSTATUSMESSAGES_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getComputePlatform(), COMPUTEPLATFORM_BINDING);
+            protocolMarshaller.marshall(deploymentInfo.getExternalId(), EXTERNALID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

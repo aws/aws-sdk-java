@@ -31,20 +31,20 @@ public class TrafficRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of one listener. The listener identifies the route between a target group and a load balancer. This is an
-     * array of strings with a maximum size of one.
+     * The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a
+     * load balancer. This is an array of strings with a maximum size of one.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> listenerArns;
 
     /**
      * <p>
-     * The ARN of one listener. The listener identifies the route between a target group and a load balancer. This is an
-     * array of strings with a maximum size of one.
+     * The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a
+     * load balancer. This is an array of strings with a maximum size of one.
      * </p>
      * 
-     * @return The ARN of one listener. The listener identifies the route between a target group and a load balancer.
-     *         This is an array of strings with a maximum size of one.
+     * @return The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group
+     *         and a load balancer. This is an array of strings with a maximum size of one.
      */
 
     public java.util.List<String> getListenerArns() {
@@ -56,13 +56,13 @@ public class TrafficRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of one listener. The listener identifies the route between a target group and a load balancer. This is an
-     * array of strings with a maximum size of one.
+     * The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a
+     * load balancer. This is an array of strings with a maximum size of one.
      * </p>
      * 
      * @param listenerArns
-     *        The ARN of one listener. The listener identifies the route between a target group and a load balancer.
-     *        This is an array of strings with a maximum size of one.
+     *        The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group
+     *        and a load balancer. This is an array of strings with a maximum size of one.
      */
 
     public void setListenerArns(java.util.Collection<String> listenerArns) {
@@ -76,8 +76,8 @@ public class TrafficRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of one listener. The listener identifies the route between a target group and a load balancer. This is an
-     * array of strings with a maximum size of one.
+     * The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a
+     * load balancer. This is an array of strings with a maximum size of one.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -86,8 +86,8 @@ public class TrafficRoute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param listenerArns
-     *        The ARN of one listener. The listener identifies the route between a target group and a load balancer.
-     *        This is an array of strings with a maximum size of one.
+     *        The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group
+     *        and a load balancer. This is an array of strings with a maximum size of one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,13 +103,13 @@ public class TrafficRoute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of one listener. The listener identifies the route between a target group and a load balancer. This is an
-     * array of strings with a maximum size of one.
+     * The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a
+     * load balancer. This is an array of strings with a maximum size of one.
      * </p>
      * 
      * @param listenerArns
-     *        The ARN of one listener. The listener identifies the route between a target group and a load balancer.
-     *        This is an array of strings with a maximum size of one.
+     *        The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group
+     *        and a load balancer. This is an array of strings with a maximum size of one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You have exceeded a service limit for your account. For more information, see <a
- * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service_limits.html">Service Limits</a> in the <i>AWS App
+ * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in the <i>AWS App
  * Mesh User Guide</i>.
  * </p>
  */

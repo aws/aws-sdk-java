@@ -46,7 +46,19 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
      *        Object providing client parameters.
      */
     AWSMediaLiveAsyncClient(AwsAsyncClientParams asyncClientParams) {
-        super(asyncClientParams);
+        this(asyncClientParams, false);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on MediaLive using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     * @param endpointDiscoveryEnabled
+     *        true will enable endpoint discovery if the service supports it.
+     */
+    AWSMediaLiveAsyncClient(AwsAsyncClientParams asyncClientParams, boolean endpointDiscoveryEnabled) {
+        super(asyncClientParams, endpointDiscoveryEnabled);
         this.executorService = asyncClientParams.getExecutor();
     }
 
@@ -621,6 +633,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInputDeviceResult> describeInputDeviceAsync(DescribeInputDeviceRequest request) {
+
+        return describeInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInputDeviceResult> describeInputDeviceAsync(final DescribeInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceRequest, DescribeInputDeviceResult> asyncHandler) {
+        final DescribeInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInputDeviceResult>() {
+            @Override
+            public DescribeInputDeviceResult call() throws Exception {
+                DescribeInputDeviceResult result = null;
+
+                try {
+                    result = executeDescribeInputDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInputSecurityGroupResult> describeInputSecurityGroupAsync(DescribeInputSecurityGroupRequest request) {
 
         return describeInputSecurityGroupAsync(request, null);
@@ -836,6 +881,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeListChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputDevicesResult> listInputDevicesAsync(ListInputDevicesRequest request) {
+
+        return listInputDevicesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputDevicesResult> listInputDevicesAsync(final ListInputDevicesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInputDevicesRequest, ListInputDevicesResult> asyncHandler) {
+        final ListInputDevicesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInputDevicesResult>() {
+            @Override
+            public ListInputDevicesResult call() throws Exception {
+                ListInputDevicesResult result = null;
+
+                try {
+                    result = executeListInputDevices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1331,6 +1409,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeUpdateInput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputDeviceResult> updateInputDeviceAsync(UpdateInputDeviceRequest request) {
+
+        return updateInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputDeviceResult> updateInputDeviceAsync(final UpdateInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInputDeviceRequest, UpdateInputDeviceResult> asyncHandler) {
+        final UpdateInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInputDeviceResult>() {
+            @Override
+            public UpdateInputDeviceResult call() throws Exception {
+                UpdateInputDeviceResult result = null;
+
+                try {
+                    result = executeUpdateInputDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -48,32 +48,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Pending: The deployment is pending for this instance.
+     * <code>Pending</code>: The deployment is pending for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The deployment is in progress for this instance.
+     * <code>In Progress</code>: The deployment is in progress for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: The deployment has succeeded for this instance.
+     * <code>Succeeded</code>: The deployment has succeeded for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The deployment has failed for this instance.
+     * <code>Failed</code>: The deployment has failed for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: The deployment has been skipped for this instance.
+     * <code>Skipped</code>: The deployment has been skipped for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: The deployment status is unknown for this instance.
+     * <code>Unknown</code>: The deployment status is unknown for this instance.
      * </p>
      * </li>
      * </ul>
@@ -81,7 +81,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * A timestamp that indicaties when the instance information was last updated.
+     * A timestamp that indicates when the instance information was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -197,32 +197,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Pending: The deployment is pending for this instance.
+     * <code>Pending</code>: The deployment is pending for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The deployment is in progress for this instance.
+     * <code>In Progress</code>: The deployment is in progress for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: The deployment has succeeded for this instance.
+     * <code>Succeeded</code>: The deployment has succeeded for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The deployment has failed for this instance.
+     * <code>Failed</code>: The deployment has failed for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: The deployment has been skipped for this instance.
+     * <code>Skipped</code>: The deployment has been skipped for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: The deployment status is unknown for this instance.
+     * <code>Unknown</code>: The deployment status is unknown for this instance.
      * </p>
      * </li>
      * </ul>
@@ -232,32 +232,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: The deployment is pending for this instance.
+     *        <code>Pending</code>: The deployment is pending for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: The deployment is in progress for this instance.
+     *        <code>In Progress</code>: The deployment is in progress for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The deployment has succeeded for this instance.
+     *        <code>Succeeded</code>: The deployment has succeeded for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The deployment has failed for this instance.
+     *        <code>Failed</code>: The deployment has failed for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: The deployment has been skipped for this instance.
+     *        <code>Skipped</code>: The deployment has been skipped for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: The deployment status is unknown for this instance.
+     *        <code>Unknown</code>: The deployment status is unknown for this instance.
      *        </p>
      *        </li>
      * @see InstanceStatus
@@ -274,32 +274,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Pending: The deployment is pending for this instance.
+     * <code>Pending</code>: The deployment is pending for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The deployment is in progress for this instance.
+     * <code>In Progress</code>: The deployment is in progress for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: The deployment has succeeded for this instance.
+     * <code>Succeeded</code>: The deployment has succeeded for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The deployment has failed for this instance.
+     * <code>Failed</code>: The deployment has failed for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: The deployment has been skipped for this instance.
+     * <code>Skipped</code>: The deployment has been skipped for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: The deployment status is unknown for this instance.
+     * <code>Unknown</code>: The deployment status is unknown for this instance.
      * </p>
      * </li>
      * </ul>
@@ -308,32 +308,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Pending: The deployment is pending for this instance.
+     *         <code>Pending</code>: The deployment is pending for this instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress: The deployment is in progress for this instance.
+     *         <code>In Progress</code>: The deployment is in progress for this instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Succeeded: The deployment has succeeded for this instance.
+     *         <code>Succeeded</code>: The deployment has succeeded for this instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: The deployment has failed for this instance.
+     *         <code>Failed</code>: The deployment has failed for this instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Skipped: The deployment has been skipped for this instance.
+     *         <code>Skipped</code>: The deployment has been skipped for this instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Unknown: The deployment status is unknown for this instance.
+     *         <code>Unknown</code>: The deployment status is unknown for this instance.
      *         </p>
      *         </li>
      * @see InstanceStatus
@@ -350,32 +350,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Pending: The deployment is pending for this instance.
+     * <code>Pending</code>: The deployment is pending for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The deployment is in progress for this instance.
+     * <code>In Progress</code>: The deployment is in progress for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: The deployment has succeeded for this instance.
+     * <code>Succeeded</code>: The deployment has succeeded for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The deployment has failed for this instance.
+     * <code>Failed</code>: The deployment has failed for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: The deployment has been skipped for this instance.
+     * <code>Skipped</code>: The deployment has been skipped for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: The deployment status is unknown for this instance.
+     * <code>Unknown</code>: The deployment status is unknown for this instance.
      * </p>
      * </li>
      * </ul>
@@ -385,32 +385,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: The deployment is pending for this instance.
+     *        <code>Pending</code>: The deployment is pending for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: The deployment is in progress for this instance.
+     *        <code>In Progress</code>: The deployment is in progress for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The deployment has succeeded for this instance.
+     *        <code>Succeeded</code>: The deployment has succeeded for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The deployment has failed for this instance.
+     *        <code>Failed</code>: The deployment has failed for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: The deployment has been skipped for this instance.
+     *        <code>Skipped</code>: The deployment has been skipped for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: The deployment status is unknown for this instance.
+     *        <code>Unknown</code>: The deployment status is unknown for this instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -429,32 +429,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Pending: The deployment is pending for this instance.
+     * <code>Pending</code>: The deployment is pending for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The deployment is in progress for this instance.
+     * <code>In Progress</code>: The deployment is in progress for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: The deployment has succeeded for this instance.
+     * <code>Succeeded</code>: The deployment has succeeded for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The deployment has failed for this instance.
+     * <code>Failed</code>: The deployment has failed for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: The deployment has been skipped for this instance.
+     * <code>Skipped</code>: The deployment has been skipped for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: The deployment status is unknown for this instance.
+     * <code>Unknown</code>: The deployment status is unknown for this instance.
      * </p>
      * </li>
      * </ul>
@@ -464,32 +464,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: The deployment is pending for this instance.
+     *        <code>Pending</code>: The deployment is pending for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: The deployment is in progress for this instance.
+     *        <code>In Progress</code>: The deployment is in progress for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The deployment has succeeded for this instance.
+     *        <code>Succeeded</code>: The deployment has succeeded for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The deployment has failed for this instance.
+     *        <code>Failed</code>: The deployment has failed for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: The deployment has been skipped for this instance.
+     *        <code>Skipped</code>: The deployment has been skipped for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: The deployment status is unknown for this instance.
+     *        <code>Unknown</code>: The deployment status is unknown for this instance.
      *        </p>
      *        </li>
      * @see InstanceStatus
@@ -506,32 +506,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Pending: The deployment is pending for this instance.
+     * <code>Pending</code>: The deployment is pending for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress: The deployment is in progress for this instance.
+     * <code>In Progress</code>: The deployment is in progress for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: The deployment has succeeded for this instance.
+     * <code>Succeeded</code>: The deployment has succeeded for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: The deployment has failed for this instance.
+     * <code>Failed</code>: The deployment has failed for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: The deployment has been skipped for this instance.
+     * <code>Skipped</code>: The deployment has been skipped for this instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: The deployment status is unknown for this instance.
+     * <code>Unknown</code>: The deployment status is unknown for this instance.
      * </p>
      * </li>
      * </ul>
@@ -541,32 +541,32 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: The deployment is pending for this instance.
+     *        <code>Pending</code>: The deployment is pending for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress: The deployment is in progress for this instance.
+     *        <code>In Progress</code>: The deployment is in progress for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: The deployment has succeeded for this instance.
+     *        <code>Succeeded</code>: The deployment has succeeded for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The deployment has failed for this instance.
+     *        <code>Failed</code>: The deployment has failed for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: The deployment has been skipped for this instance.
+     *        <code>Skipped</code>: The deployment has been skipped for this instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: The deployment status is unknown for this instance.
+     *        <code>Unknown</code>: The deployment status is unknown for this instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -580,11 +580,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp that indicaties when the instance information was last updated.
+     * A timestamp that indicates when the instance information was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        A timestamp that indicaties when the instance information was last updated.
+     *        A timestamp that indicates when the instance information was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -593,10 +593,10 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp that indicaties when the instance information was last updated.
+     * A timestamp that indicates when the instance information was last updated.
      * </p>
      * 
-     * @return A timestamp that indicaties when the instance information was last updated.
+     * @return A timestamp that indicates when the instance information was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -605,11 +605,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp that indicaties when the instance information was last updated.
+     * A timestamp that indicates when the instance information was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        A timestamp that indicaties when the instance information was last updated.
+     *        A timestamp that indicates when the instance information was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

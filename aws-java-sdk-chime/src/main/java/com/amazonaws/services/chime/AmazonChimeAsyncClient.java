@@ -96,7 +96,19 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
      *        Object providing client parameters.
      */
     AmazonChimeAsyncClient(AwsAsyncClientParams asyncClientParams) {
-        super(asyncClientParams);
+        this(asyncClientParams, false);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon Chime using the specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     * @param endpointDiscoveryEnabled
+     *        true will enable endpoint discovery if the service supports it.
+     */
+    AmazonChimeAsyncClient(AwsAsyncClientParams asyncClientParams, boolean endpointDiscoveryEnabled) {
+        super(asyncClientParams, endpointDiscoveryEnabled);
         this.executorService = asyncClientParams.getExecutor();
     }
 
@@ -1848,6 +1860,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<GetRetentionSettingsResult> getRetentionSettingsAsync(GetRetentionSettingsRequest request) {
+
+        return getRetentionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRetentionSettingsResult> getRetentionSettingsAsync(final GetRetentionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRetentionSettingsRequest, GetRetentionSettingsResult> asyncHandler) {
+        final GetRetentionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRetentionSettingsResult>() {
+            @Override
+            public GetRetentionSettingsResult call() throws Exception {
+                GetRetentionSettingsResult result = null;
+
+                try {
+                    result = executeGetRetentionSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest request) {
 
         return getRoomAsync(request, null);
@@ -2830,6 +2875,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executePutEventsConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRetentionSettingsResult> putRetentionSettingsAsync(PutRetentionSettingsRequest request) {
+
+        return putRetentionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRetentionSettingsResult> putRetentionSettingsAsync(final PutRetentionSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRetentionSettingsRequest, PutRetentionSettingsResult> asyncHandler) {
+        final PutRetentionSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRetentionSettingsResult>() {
+            @Override
+            public PutRetentionSettingsResult call() throws Exception {
+                PutRetentionSettingsResult result = null;
+
+                try {
+                    result = executePutRetentionSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

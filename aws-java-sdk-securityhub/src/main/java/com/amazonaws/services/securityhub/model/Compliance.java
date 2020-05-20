@@ -19,43 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported security
- * standard, such as CIS AWS Foundations. Contains security standard-related finding details.
+ * Contains finding details that are specific to control-based findings. Only returned for findings generated from
+ * controls.
  * </p>
- * <p>
- * Values include the following:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Allowed values are the following:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>PASSED</code> - Standards check passed for all evaluated resources.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>WARNING</code> - Some information is missing or this check is not supported given your configuration.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>FAILED</code> - Standards check failed for at least one evaluated resource.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result
- * of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
- * <code> NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
- * </p>
- * </li>
- * </ul>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance" target="_top">AWS API
  *      Documentation</a>
@@ -67,22 +33,125 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The result of a standards check.
      * </p>
+     * <p>
+     * The valid values for <code>Status</code> are as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSED</code> - Standards check passed for all evaluated resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
+     * result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
      * <p>
-     * List of requirements that are related to a standards control.
+     * For a control, the industry or regulatory framework requirements that are related to the control. The check for
+     * that control is aligned with these requirements.
      * </p>
      */
     private java.util.List<String> relatedRequirements;
+    /**
+     * <p>
+     * For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of
+     * status reason codes and their meanings, see <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     * >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * </p>
+     */
+    private java.util.List<StatusReason> statusReasons;
 
     /**
      * <p>
      * The result of a standards check.
      * </p>
+     * <p>
+     * The valid values for <code>Status</code> are as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSED</code> - Standards check passed for all evaluated resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
+     * result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The result of a standards check.
+     *        The result of a standards check.</p>
+     *        <p>
+     *        The valid values for <code>Status</code> are as follows.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PASSED</code> - Standards check passed for all evaluated resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
+     *        the result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation
+     *        result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the
+     *        finding.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @see ComplianceStatus
      */
 
@@ -94,8 +163,70 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The result of a standards check.
      * </p>
+     * <p>
+     * The valid values for <code>Status</code> are as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSED</code> - Standards check passed for all evaluated resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
+     * result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return The result of a standards check.
+     * @return The result of a standards check.</p>
+     *         <p>
+     *         The valid values for <code>Status</code> are as follows.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PASSED</code> - Standards check passed for all evaluated resources.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
+     *         the result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation
+     *         result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the
+     *         finding.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      * @see ComplianceStatus
      */
 
@@ -107,9 +238,71 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The result of a standards check.
      * </p>
+     * <p>
+     * The valid values for <code>Status</code> are as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSED</code> - Standards check passed for all evaluated resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
+     * result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The result of a standards check.
+     *        The result of a standards check.</p>
+     *        <p>
+     *        The valid values for <code>Status</code> are as follows.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PASSED</code> - Standards check passed for all evaluated resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
+     *        the result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation
+     *        result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the
+     *        finding.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -123,9 +316,71 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The result of a standards check.
      * </p>
+     * <p>
+     * The valid values for <code>Status</code> are as follows.
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSED</code> - Standards check passed for all evaluated resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
+     * result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The result of a standards check.
+     *        The result of a standards check.</p>
+     *        <p>
+     *        The valid values for <code>Status</code> are as follows.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PASSED</code> - Standards check passed for all evaluated resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WARNING</code> - Some information is missing or this check is not supported for your configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
+     *        the result of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation
+     *        result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the
+     *        finding.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -137,10 +392,12 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of requirements that are related to a standards control.
+     * For a control, the industry or regulatory framework requirements that are related to the control. The check for
+     * that control is aligned with these requirements.
      * </p>
      * 
-     * @return List of requirements that are related to a standards control.
+     * @return For a control, the industry or regulatory framework requirements that are related to the control. The
+     *         check for that control is aligned with these requirements.
      */
 
     public java.util.List<String> getRelatedRequirements() {
@@ -149,11 +406,13 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of requirements that are related to a standards control.
+     * For a control, the industry or regulatory framework requirements that are related to the control. The check for
+     * that control is aligned with these requirements.
      * </p>
      * 
      * @param relatedRequirements
-     *        List of requirements that are related to a standards control.
+     *        For a control, the industry or regulatory framework requirements that are related to the control. The
+     *        check for that control is aligned with these requirements.
      */
 
     public void setRelatedRequirements(java.util.Collection<String> relatedRequirements) {
@@ -167,7 +426,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of requirements that are related to a standards control.
+     * For a control, the industry or regulatory framework requirements that are related to the control. The check for
+     * that control is aligned with these requirements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +436,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param relatedRequirements
-     *        List of requirements that are related to a standards control.
+     *        For a control, the industry or regulatory framework requirements that are related to the control. The
+     *        check for that control is aligned with these requirements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,16 +453,112 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of requirements that are related to a standards control.
+     * For a control, the industry or regulatory framework requirements that are related to the control. The check for
+     * that control is aligned with these requirements.
      * </p>
      * 
      * @param relatedRequirements
-     *        List of requirements that are related to a standards control.
+     *        For a control, the industry or regulatory framework requirements that are related to the control. The
+     *        check for that control is aligned with these requirements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Compliance withRelatedRequirements(java.util.Collection<String> relatedRequirements) {
         setRelatedRequirements(relatedRequirements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of
+     * status reason codes and their meanings, see <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     * >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * </p>
+     * 
+     * @return For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the
+     *         list of status reason codes and their meanings, see <a href=
+     *         "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     *         >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     */
+
+    public java.util.List<StatusReason> getStatusReasons() {
+        return statusReasons;
+    }
+
+    /**
+     * <p>
+     * For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of
+     * status reason codes and their meanings, see <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     * >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * </p>
+     * 
+     * @param statusReasons
+     *        For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the
+     *        list of status reason codes and their meanings, see <a href=
+     *        "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     *        >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     */
+
+    public void setStatusReasons(java.util.Collection<StatusReason> statusReasons) {
+        if (statusReasons == null) {
+            this.statusReasons = null;
+            return;
+        }
+
+        this.statusReasons = new java.util.ArrayList<StatusReason>(statusReasons);
+    }
+
+    /**
+     * <p>
+     * For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of
+     * status reason codes and their meanings, see <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     * >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatusReasons(java.util.Collection)} or {@link #withStatusReasons(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param statusReasons
+     *        For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the
+     *        list of status reason codes and their meanings, see <a href=
+     *        "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     *        >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Compliance withStatusReasons(StatusReason... statusReasons) {
+        if (this.statusReasons == null) {
+            setStatusReasons(new java.util.ArrayList<StatusReason>(statusReasons.length));
+        }
+        for (StatusReason ele : statusReasons) {
+            this.statusReasons.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the list of
+     * status reason codes and their meanings, see <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     * >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * </p>
+     * 
+     * @param statusReasons
+     *        For findings generated from controls, a list of reasons behind the value of <code>Status</code>. For the
+     *        list of status reason codes and their meanings, see <a href=
+     *        "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff"
+     *        >Standards-related information in the ASFF</a> in the <i>AWS Security Hub User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Compliance withStatusReasons(java.util.Collection<StatusReason> statusReasons) {
+        setStatusReasons(statusReasons);
         return this;
     }
 
@@ -220,7 +577,9 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRelatedRequirements() != null)
-            sb.append("RelatedRequirements: ").append(getRelatedRequirements());
+            sb.append("RelatedRequirements: ").append(getRelatedRequirements()).append(",");
+        if (getStatusReasons() != null)
+            sb.append("StatusReasons: ").append(getStatusReasons());
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +602,10 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRelatedRequirements() != null && other.getRelatedRequirements().equals(this.getRelatedRequirements()) == false)
             return false;
+        if (other.getStatusReasons() == null ^ this.getStatusReasons() == null)
+            return false;
+        if (other.getStatusReasons() != null && other.getStatusReasons().equals(this.getStatusReasons()) == false)
+            return false;
         return true;
     }
 
@@ -253,6 +616,7 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRelatedRequirements() == null) ? 0 : getRelatedRequirements().hashCode());
+        hashCode = prime * hashCode + ((getStatusReasons() == null) ? 0 : getStatusReasons().hashCode());
         return hashCode;
     }
 

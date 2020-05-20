@@ -22,7 +22,8 @@ public enum DeploymentTargetType {
 
     InstanceTarget("InstanceTarget"),
     LambdaTarget("LambdaTarget"),
-    ECSTarget("ECSTarget");
+    ECSTarget("ECSTarget"),
+    CloudFormationTarget("CloudFormationTarget");
 
     private String value;
 

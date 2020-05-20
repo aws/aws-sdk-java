@@ -25,9 +25,9 @@ public class GetDeploymentTargetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A deployment target that contains information about a deployment such as its status, lifecyle events, and when it
-     * was last updated. It also contains metadata about the deployment target. The deployment target metadata depends
-     * on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
+     * A deployment target that contains information about a deployment such as its status, lifecycle events, and when
+     * it was last updated. It also contains metadata about the deployment target. The deployment target metadata
+     * depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
      * <code>ecsTarget</code>).
      * </p>
      */
@@ -35,14 +35,14 @@ public class GetDeploymentTargetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A deployment target that contains information about a deployment such as its status, lifecyle events, and when it
-     * was last updated. It also contains metadata about the deployment target. The deployment target metadata depends
-     * on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
+     * A deployment target that contains information about a deployment such as its status, lifecycle events, and when
+     * it was last updated. It also contains metadata about the deployment target. The deployment target metadata
+     * depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
      * <code>ecsTarget</code>).
      * </p>
      * 
      * @param deploymentTarget
-     *        A deployment target that contains information about a deployment such as its status, lifecyle events, and
+     *        A deployment target that contains information about a deployment such as its status, lifecycle events, and
      *        when it was last updated. It also contains metadata about the deployment target. The deployment target
      *        metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>,
      *        or <code>ecsTarget</code>).
@@ -54,16 +54,16 @@ public class GetDeploymentTargetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A deployment target that contains information about a deployment such as its status, lifecyle events, and when it
-     * was last updated. It also contains metadata about the deployment target. The deployment target metadata depends
-     * on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
+     * A deployment target that contains information about a deployment such as its status, lifecycle events, and when
+     * it was last updated. It also contains metadata about the deployment target. The deployment target metadata
+     * depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
      * <code>ecsTarget</code>).
      * </p>
      * 
-     * @return A deployment target that contains information about a deployment such as its status, lifecyle events, and
-     *         when it was last updated. It also contains metadata about the deployment target. The deployment target
-     *         metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>,
-     *         or <code>ecsTarget</code>).
+     * @return A deployment target that contains information about a deployment such as its status, lifecycle events,
+     *         and when it was last updated. It also contains metadata about the deployment target. The deployment
+     *         target metadata depends on the deployment target's type (<code>instanceTarget</code>,
+     *         <code>lambdaTarget</code>, or <code>ecsTarget</code>).
      */
 
     public DeploymentTarget getDeploymentTarget() {
@@ -72,14 +72,14 @@ public class GetDeploymentTargetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A deployment target that contains information about a deployment such as its status, lifecyle events, and when it
-     * was last updated. It also contains metadata about the deployment target. The deployment target metadata depends
-     * on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
+     * A deployment target that contains information about a deployment such as its status, lifecycle events, and when
+     * it was last updated. It also contains metadata about the deployment target. The deployment target metadata
+     * depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or
      * <code>ecsTarget</code>).
      * </p>
      * 
      * @param deploymentTarget
-     *        A deployment target that contains information about a deployment such as its status, lifecyle events, and
+     *        A deployment target that contains information about a deployment such as its status, lifecycle events, and
      *        when it was last updated. It also contains metadata about the deployment target. The deployment target
      *        metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>,
      *        or <code>ecsTarget</code>).

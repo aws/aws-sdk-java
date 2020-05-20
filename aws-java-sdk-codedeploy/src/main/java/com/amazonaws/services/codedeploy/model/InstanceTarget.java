@@ -42,7 +42,7 @@ public class InstanceTarget implements Serializable, Cloneable, StructuredPojo {
     private String targetId;
     /**
      * <p>
-     * The ARN of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      */
     private String targetArn;
@@ -154,11 +154,11 @@ public class InstanceTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      * 
      * @param targetArn
-     *        The ARN of the target.
+     *        The Amazon Resource Name (ARN) of the target.
      */
 
     public void setTargetArn(String targetArn) {
@@ -167,10 +167,10 @@ public class InstanceTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      * 
-     * @return The ARN of the target.
+     * @return The Amazon Resource Name (ARN) of the target.
      */
 
     public String getTargetArn() {
@@ -179,11 +179,11 @@ public class InstanceTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      * 
      * @param targetArn
-     *        The ARN of the target.
+     *        The Amazon Resource Name (ARN) of the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,13 +35,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     * <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new
-     * Auto Scaling group.
+     * <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create
+     * instances in a new Auto Scaling group.
      * </p>
      * </li>
      * </ul>
@@ -55,13 +55,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     * <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new
-     * Auto Scaling group.
+     * <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create
+     * instances in a new Auto Scaling group.
      * </p>
      * </li>
      * </ul>
@@ -71,13 +71,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     *        <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances
-     *        in a new Auto Scaling group.
+     *        <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and
+     *        create instances in a new Auto Scaling group.
      *        </p>
      *        </li>
      * @see GreenFleetProvisioningAction
@@ -94,13 +94,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     * <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new
-     * Auto Scaling group.
+     * <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create
+     * instances in a new Auto Scaling group.
      * </p>
      * </li>
      * </ul>
@@ -109,13 +109,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      *         <ul>
      *         <li>
      *         <p>
-     *         DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     *         <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances
-     *         in a new Auto Scaling group.
+     *         <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and
+     *         create instances in a new Auto Scaling group.
      *         </p>
      *         </li>
      * @see GreenFleetProvisioningAction
@@ -132,13 +132,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     * <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new
-     * Auto Scaling group.
+     * <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create
+     * instances in a new Auto Scaling group.
      * </p>
      * </li>
      * </ul>
@@ -148,13 +148,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     *        <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances
-     *        in a new Auto Scaling group.
+     *        <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and
+     *        create instances in a new Auto Scaling group.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -173,13 +173,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     * <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new
-     * Auto Scaling group.
+     * <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create
+     * instances in a new Auto Scaling group.
      * </p>
      * </li>
      * </ul>
@@ -189,13 +189,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     *        <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances
-     *        in a new Auto Scaling group.
+     *        <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and
+     *        create instances in a new Auto Scaling group.
      *        </p>
      *        </li>
      * @see GreenFleetProvisioningAction
@@ -212,13 +212,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     * <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances in a new
-     * Auto Scaling group.
+     * <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create
+     * instances in a new Auto Scaling group.
      * </p>
      * </li>
      * </ul>
@@ -228,13 +228,13 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        DISCOVER_EXISTING: Use instances that already exist or will be created manually.
+     *        <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COPY_AUTO_SCALING_GROUP: Use settings from a specified Auto Scaling group to define and create instances
-     *        in a new Auto Scaling group.
+     *        <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and
+     *        create instances in a new Auto Scaling group.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

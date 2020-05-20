@@ -52,6 +52,14 @@ public class MeshRefJsonUnmarshaller implements Unmarshaller<MeshRef, JsonUnmars
                     context.nextToken();
                     meshRef.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    meshRef.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    meshRef.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("meshName", targetDepth)) {
                     context.nextToken();
                     meshRef.setMeshName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +71,10 @@ public class MeshRefJsonUnmarshaller implements Unmarshaller<MeshRef, JsonUnmars
                 if (context.testExpression("resourceOwner", targetDepth)) {
                     context.nextToken();
                     meshRef.setResourceOwner(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("version", targetDepth)) {
+                    context.nextToken();
+                    meshRef.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -524,6 +524,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DescribeInputRequest, DescribeInputResult> asyncHandler);
 
     /**
+     * Gets the details for the input device
+     * 
+     * @param describeInputDeviceRequest
+     *        Placeholder documentation for DescribeInputDeviceRequest
+     * @return A Java Future containing the result of the DescribeInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInputDeviceResult> describeInputDeviceAsync(DescribeInputDeviceRequest describeInputDeviceRequest);
+
+    /**
+     * Gets the details for the input device
+     * 
+     * @param describeInputDeviceRequest
+     *        Placeholder documentation for DescribeInputDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInputDeviceResult> describeInputDeviceAsync(DescribeInputDeviceRequest describeInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceRequest, DescribeInputDeviceResult> asyncHandler);
+
+    /**
      * Produces a summary of an Input Security Group
      * 
      * @param describeInputSecurityGroupRequest
@@ -727,6 +756,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * List input devices
+     * 
+     * @param listInputDevicesRequest
+     *        Placeholder documentation for ListInputDevicesRequest
+     * @return A Java Future containing the result of the ListInputDevices operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListInputDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListInputDevicesResult> listInputDevicesAsync(ListInputDevicesRequest listInputDevicesRequest);
+
+    /**
+     * List input devices
+     * 
+     * @param listInputDevicesRequest
+     *        Placeholder documentation for ListInputDevicesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInputDevices operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListInputDevices
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDevices" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListInputDevicesResult> listInputDevicesAsync(ListInputDevicesRequest listInputDevicesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInputDevicesRequest, ListInputDevicesResult> asyncHandler);
 
     /**
      * Produces a list of Input Security Groups for an account
@@ -1164,6 +1222,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<UpdateInputResult> updateInputAsync(UpdateInputRequest updateInputRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInputRequest, UpdateInputResult> asyncHandler);
+
+    /**
+     * Updates the parameters for the input device.
+     * 
+     * @param updateInputDeviceRequest
+     *        A request to update an input device.
+     * @return A Java Future containing the result of the UpdateInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.UpdateInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInputDeviceResult> updateInputDeviceAsync(UpdateInputDeviceRequest updateInputDeviceRequest);
+
+    /**
+     * Updates the parameters for the input device.
+     * 
+     * @param updateInputDeviceRequest
+     *        A request to update an input device.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.UpdateInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInputDeviceResult> updateInputDeviceAsync(UpdateInputDeviceRequest updateInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInputDeviceRequest, UpdateInputDeviceResult> asyncHandler);
 
     /**
      * Update an Input Security Group's Whilelists.

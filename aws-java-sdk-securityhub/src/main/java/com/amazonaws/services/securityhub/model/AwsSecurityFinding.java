@@ -59,7 +59,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      */
     private String generatorId;
@@ -390,13 +390,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
-     *        a plug-in, etc.
+     *        a plugin, etc.
      */
 
     public void setGeneratorId(String generatorId) {
@@ -407,12 +407,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * 
      * @return The identifier for the solution-specific component (a discrete unit of logic) that generated a finding.
      *         In various security-findings providers' solutions, this generator can be called a rule, a check, a
-     *         detector, a plug-in, etc.
+     *         detector, a plugin, etc.
      */
 
     public String getGeneratorId() {
@@ -423,13 +423,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
-     * plug-in, etc.
+     * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
      *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
-     *        a plug-in, etc.
+     *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

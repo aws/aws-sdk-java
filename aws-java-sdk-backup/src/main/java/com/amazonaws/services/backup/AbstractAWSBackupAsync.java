@@ -209,6 +209,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRegionSettingsResult> describeRegionSettingsAsync(DescribeRegionSettingsRequest request) {
+
+        return describeRegionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegionSettingsResult> describeRegionSettingsAsync(DescribeRegionSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegionSettingsRequest, DescribeRegionSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRestoreJobResult> describeRestoreJobAsync(DescribeRestoreJobRequest request) {
 
         return describeRestoreJobAsync(request, null);
@@ -624,6 +637,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     @Override
     public java.util.concurrent.Future<UpdateRecoveryPointLifecycleResult> updateRecoveryPointLifecycleAsync(UpdateRecoveryPointLifecycleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRecoveryPointLifecycleRequest, UpdateRecoveryPointLifecycleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegionSettingsResult> updateRegionSettingsAsync(UpdateRegionSettingsRequest request) {
+
+        return updateRegionSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegionSettingsResult> updateRegionSettingsAsync(UpdateRegionSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRegionSettingsRequest, UpdateRegionSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -140,6 +140,11 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    public DeleteResourcesByExternalIdResult deleteResourcesByExternalId(DeleteResourcesByExternalIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

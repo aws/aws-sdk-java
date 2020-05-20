@@ -30,21 +30,21 @@ public class AwsEc2SecurityGroupIpRange implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv4 address, use the /32 prefix length.
+     * The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv4 address, use the /32 prefix length.
      * </p>
      */
     private String cidrIp;
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv4 address, use the /32 prefix length.
+     * The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv4 address, use the /32 prefix length.
      * </p>
      * 
      * @param cidrIp
-     *        The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both.
-     *        To specify a single IPv4 address, use the /32 prefix length.
+     *        The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To
+     *        specify a single IPv4 address, use the /32 prefix length.
      */
 
     public void setCidrIp(String cidrIp) {
@@ -53,12 +53,12 @@ public class AwsEc2SecurityGroupIpRange implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv4 address, use the /32 prefix length.
+     * The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv4 address, use the /32 prefix length.
      * </p>
      * 
-     * @return The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both.
-     *         To specify a single IPv4 address, use the /32 prefix length.
+     * @return The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To
+     *         specify a single IPv4 address, use the /32 prefix length.
      */
 
     public String getCidrIp() {
@@ -67,13 +67,13 @@ public class AwsEc2SecurityGroupIpRange implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both. To
-     * specify a single IPv4 address, use the /32 prefix length.
+     * The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a
+     * single IPv4 address, use the /32 prefix length.
      * </p>
      * 
      * @param cidrIp
-     *        The IPv4 CIDR range. You can either specify either a CIDR range or a source security group, but not both.
-     *        To specify a single IPv4 address, use the /32 prefix length.
+     *        The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To
+     *        specify a single IPv4 address, use the /32 prefix length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

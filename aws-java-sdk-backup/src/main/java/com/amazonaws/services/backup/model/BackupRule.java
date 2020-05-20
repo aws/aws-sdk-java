@@ -50,15 +50,15 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     private String scheduleExpression;
     /**
      * <p>
-     * An optional value that specifies a period of time in minutes after a backup is scheduled before a job is canceled
-     * if it doesn't start successfully.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      */
     private Long startWindowMinutes;
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it is canceled by
-     * AWS Backup. This value is optional.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      */
     private Long completionWindowMinutes;
@@ -228,13 +228,13 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional value that specifies a period of time in minutes after a backup is scheduled before a job is canceled
-     * if it doesn't start successfully.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      * 
      * @param startWindowMinutes
-     *        An optional value that specifies a period of time in minutes after a backup is scheduled before a job is
-     *        canceled if it doesn't start successfully.
+     *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
+     *        successfully. This value is optional.
      */
 
     public void setStartWindowMinutes(Long startWindowMinutes) {
@@ -243,12 +243,12 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional value that specifies a period of time in minutes after a backup is scheduled before a job is canceled
-     * if it doesn't start successfully.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      * 
-     * @return An optional value that specifies a period of time in minutes after a backup is scheduled before a job is
-     *         canceled if it doesn't start successfully.
+     * @return A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
+     *         successfully. This value is optional.
      */
 
     public Long getStartWindowMinutes() {
@@ -257,13 +257,13 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An optional value that specifies a period of time in minutes after a backup is scheduled before a job is canceled
-     * if it doesn't start successfully.
+     * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
+     * This value is optional.
      * </p>
      * 
      * @param startWindowMinutes
-     *        An optional value that specifies a period of time in minutes after a backup is scheduled before a job is
-     *        canceled if it doesn't start successfully.
+     *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
+     *        successfully. This value is optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,12 +274,12 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it is canceled by
-     * AWS Backup. This value is optional.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      * 
      * @param completionWindowMinutes
-     *        A value in minutes after a backup job is successfully started before it must be completed or it is
+     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
      *        canceled by AWS Backup. This value is optional.
      */
 
@@ -289,11 +289,11 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it is canceled by
-     * AWS Backup. This value is optional.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      * 
-     * @return A value in minutes after a backup job is successfully started before it must be completed or it is
+     * @return A value in minutes after a backup job is successfully started before it must be completed or it will be
      *         canceled by AWS Backup. This value is optional.
      */
 
@@ -303,12 +303,12 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it is canceled by
-     * AWS Backup. This value is optional.
+     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
+     * by AWS Backup. This value is optional.
      * </p>
      * 
      * @param completionWindowMinutes
-     *        A value in minutes after a backup job is successfully started before it must be completed or it is
+     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
      *        canceled by AWS Backup. This value is optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -70,11 +70,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
@@ -99,7 +94,7 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      */
     private String byDestinationVaultArn;
@@ -382,11 +377,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
@@ -410,11 +400,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param byResourceType
      *        Returns only backup jobs for the specified resources:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>DynamoDB</code> for Amazon DynamoDB
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
@@ -448,11 +433,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
@@ -475,11 +455,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return Returns only backup jobs for the specified resources:</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>DynamoDB</code> for Amazon DynamoDB
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>EBS</code> for Amazon Elastic Block Store
@@ -513,11 +488,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
@@ -541,11 +511,6 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param byResourceType
      *        Returns only backup jobs for the specified resources:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>DynamoDB</code> for Amazon DynamoDB
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
@@ -577,12 +542,12 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param byDestinationVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     *        arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public void setByDestinationVaultArn(String byDestinationVaultArn) {
@@ -592,11 +557,11 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @return An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     *         arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *         <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public String getByDestinationVaultArn() {
@@ -606,12 +571,12 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param byDestinationVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example,
-     *        arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

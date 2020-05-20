@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a ListDeploymentInstances operation.
+ * Represents the input of a <code>ListDeploymentInstances</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances" target="_top">AWS
@@ -48,32 +48,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Pending: Include those instances with pending deployments.
+     * <code>Pending</code>: Include those instances with pending deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress: Include those instances where deployments are still in progress.
+     * <code>InProgress</code>: Include those instances where deployments are still in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include those instances with successful deployments.
+     * <code>Succeeded</code>: Include those instances with successful deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include those instances with failed deployments.
+     * <code>Failed</code>: Include those instances with failed deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: Include those instances with skipped deployments.
+     * <code>Skipped</code>: Include those instances with skipped deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: Include those instances with deployments in an unknown state.
+     * <code>Unknown</code>: Include those instances with deployments in an unknown state.
      * </p>
      * </li>
      * </ul>
@@ -180,32 +180,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Pending: Include those instances with pending deployments.
+     * <code>Pending</code>: Include those instances with pending deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress: Include those instances where deployments are still in progress.
+     * <code>InProgress</code>: Include those instances where deployments are still in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include those instances with successful deployments.
+     * <code>Succeeded</code>: Include those instances with successful deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include those instances with failed deployments.
+     * <code>Failed</code>: Include those instances with failed deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: Include those instances with skipped deployments.
+     * <code>Skipped</code>: Include those instances with skipped deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: Include those instances with deployments in an unknown state.
+     * <code>Unknown</code>: Include those instances with deployments in an unknown state.
      * </p>
      * </li>
      * </ul>
@@ -214,32 +214,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         Pending: Include those instances with pending deployments.
+     *         <code>Pending</code>: Include those instances with pending deployments.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         InProgress: Include those instances where deployments are still in progress.
+     *         <code>InProgress</code>: Include those instances where deployments are still in progress.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Succeeded: Include those instances with successful deployments.
+     *         <code>Succeeded</code>: Include those instances with successful deployments.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: Include those instances with failed deployments.
+     *         <code>Failed</code>: Include those instances with failed deployments.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Skipped: Include those instances with skipped deployments.
+     *         <code>Skipped</code>: Include those instances with skipped deployments.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Unknown: Include those instances with deployments in an unknown state.
+     *         <code>Unknown</code>: Include those instances with deployments in an unknown state.
      *         </p>
      *         </li>
      * @see InstanceStatus
@@ -259,32 +259,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Pending: Include those instances with pending deployments.
+     * <code>Pending</code>: Include those instances with pending deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress: Include those instances where deployments are still in progress.
+     * <code>InProgress</code>: Include those instances where deployments are still in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include those instances with successful deployments.
+     * <code>Succeeded</code>: Include those instances with successful deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include those instances with failed deployments.
+     * <code>Failed</code>: Include those instances with failed deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: Include those instances with skipped deployments.
+     * <code>Skipped</code>: Include those instances with skipped deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: Include those instances with deployments in an unknown state.
+     * <code>Unknown</code>: Include those instances with deployments in an unknown state.
      * </p>
      * </li>
      * </ul>
@@ -294,32 +294,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: Include those instances with pending deployments.
+     *        <code>Pending</code>: Include those instances with pending deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress: Include those instances where deployments are still in progress.
+     *        <code>InProgress</code>: Include those instances where deployments are still in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include those instances with successful deployments.
+     *        <code>Succeeded</code>: Include those instances with successful deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include those instances with failed deployments.
+     *        <code>Failed</code>: Include those instances with failed deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: Include those instances with skipped deployments.
+     *        <code>Skipped</code>: Include those instances with skipped deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: Include those instances with deployments in an unknown state.
+     *        <code>Unknown</code>: Include those instances with deployments in an unknown state.
      *        </p>
      *        </li>
      * @see InstanceStatus
@@ -341,32 +341,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Pending: Include those instances with pending deployments.
+     * <code>Pending</code>: Include those instances with pending deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress: Include those instances where deployments are still in progress.
+     * <code>InProgress</code>: Include those instances where deployments are still in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include those instances with successful deployments.
+     * <code>Succeeded</code>: Include those instances with successful deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include those instances with failed deployments.
+     * <code>Failed</code>: Include those instances with failed deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: Include those instances with skipped deployments.
+     * <code>Skipped</code>: Include those instances with skipped deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: Include those instances with deployments in an unknown state.
+     * <code>Unknown</code>: Include those instances with deployments in an unknown state.
      * </p>
      * </li>
      * </ul>
@@ -381,32 +381,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: Include those instances with pending deployments.
+     *        <code>Pending</code>: Include those instances with pending deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress: Include those instances where deployments are still in progress.
+     *        <code>InProgress</code>: Include those instances where deployments are still in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include those instances with successful deployments.
+     *        <code>Succeeded</code>: Include those instances with successful deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include those instances with failed deployments.
+     *        <code>Failed</code>: Include those instances with failed deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: Include those instances with skipped deployments.
+     *        <code>Skipped</code>: Include those instances with skipped deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: Include those instances with deployments in an unknown state.
+     *        <code>Unknown</code>: Include those instances with deployments in an unknown state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -430,32 +430,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Pending: Include those instances with pending deployments.
+     * <code>Pending</code>: Include those instances with pending deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress: Include those instances where deployments are still in progress.
+     * <code>InProgress</code>: Include those instances where deployments are still in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include those instances with successful deployments.
+     * <code>Succeeded</code>: Include those instances with successful deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include those instances with failed deployments.
+     * <code>Failed</code>: Include those instances with failed deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: Include those instances with skipped deployments.
+     * <code>Skipped</code>: Include those instances with skipped deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: Include those instances with deployments in an unknown state.
+     * <code>Unknown</code>: Include those instances with deployments in an unknown state.
      * </p>
      * </li>
      * </ul>
@@ -465,32 +465,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: Include those instances with pending deployments.
+     *        <code>Pending</code>: Include those instances with pending deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress: Include those instances where deployments are still in progress.
+     *        <code>InProgress</code>: Include those instances where deployments are still in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include those instances with successful deployments.
+     *        <code>Succeeded</code>: Include those instances with successful deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include those instances with failed deployments.
+     *        <code>Failed</code>: Include those instances with failed deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: Include those instances with skipped deployments.
+     *        <code>Skipped</code>: Include those instances with skipped deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: Include those instances with deployments in an unknown state.
+     *        <code>Unknown</code>: Include those instances with deployments in an unknown state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -509,32 +509,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Pending: Include those instances with pending deployments.
+     * <code>Pending</code>: Include those instances with pending deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * InProgress: Include those instances where deployments are still in progress.
+     * <code>InProgress</code>: Include those instances where deployments are still in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Succeeded: Include those instances with successful deployments.
+     * <code>Succeeded</code>: Include those instances with successful deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Failed: Include those instances with failed deployments.
+     * <code>Failed</code>: Include those instances with failed deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Skipped: Include those instances with skipped deployments.
+     * <code>Skipped</code>: Include those instances with skipped deployments.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Unknown: Include those instances with deployments in an unknown state.
+     * <code>Unknown</code>: Include those instances with deployments in an unknown state.
      * </p>
      * </li>
      * </ul>
@@ -544,32 +544,32 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending: Include those instances with pending deployments.
+     *        <code>Pending</code>: Include those instances with pending deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        InProgress: Include those instances where deployments are still in progress.
+     *        <code>InProgress</code>: Include those instances where deployments are still in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Succeeded: Include those instances with successful deployments.
+     *        <code>Succeeded</code>: Include those instances with successful deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: Include those instances with failed deployments.
+     *        <code>Failed</code>: Include those instances with failed deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Skipped: Include those instances with skipped deployments.
+     *        <code>Skipped</code>: Include those instances with skipped deployments.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Unknown: Include those instances with deployments in an unknown state.
+     *        <code>Unknown</code>: Include those instances with deployments in an unknown state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

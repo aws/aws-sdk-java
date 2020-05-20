@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a ListGitHubAccountTokenNames operation.
+ * Represents the input of a <code>ListGitHubAccountTokenNames</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames"
@@ -30,21 +30,21 @@ public class ListGitHubAccountTokenNamesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set
-     * of names in the list.
+     * An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return
+     * the next set of names in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set
-     * of names in the list.
+     * An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return
+     * the next set of names in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the
-     *        next set of names in the list.
+     *        An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to
+     *        return the next set of names in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -53,12 +53,12 @@ public class ListGitHubAccountTokenNamesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set
-     * of names in the list.
+     * An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return
+     * the next set of names in the list.
      * </p>
      * 
-     * @return An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the
-     *         next set of names in the list.
+     * @return An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to
+     *         return the next set of names in the list.
      */
 
     public String getNextToken() {
@@ -67,13 +67,13 @@ public class ListGitHubAccountTokenNamesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set
-     * of names in the list.
+     * An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return
+     * the next set of names in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the
-     *        next set of names in the list.
+     *        An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to
+     *        return the next set of names in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,7 +32,7 @@ public class CopyAction implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For
-     * example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      */
     private String destinationBackupVaultArn;
@@ -66,12 +66,12 @@ public class CopyAction implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For
-     * example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param destinationBackupVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup.
-     *        For example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public void setDestinationBackupVaultArn(String destinationBackupVaultArn) {
@@ -81,11 +81,11 @@ public class CopyAction implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For
-     * example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @return An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied
-     *         backup. For example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *         backup. For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      */
 
     public String getDestinationBackupVaultArn() {
@@ -95,12 +95,12 @@ public class CopyAction implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. For
-     * example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     * example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * </p>
      * 
      * @param destinationBackupVaultArn
      *        An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup.
-     *        For example, arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.
+     *        For example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

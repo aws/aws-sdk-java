@@ -216,7 +216,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * exception to this rule.
      */
     private String segmentationStyle;
-    /** The length in seconds of each segment. Required unless markers is set to None_. */
+    /** The length in seconds of each segment. Required unless markers is set to _none_. */
     private Double segmentationTime;
     /** When set to passthrough, timed metadata will be passed through from input to output. */
     private String timedMetadataBehavior;
@@ -2345,10 +2345,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      * 
      * @param segmentationTime
-     *        The length in seconds of each segment. Required unless markers is set to None_.
+     *        The length in seconds of each segment. Required unless markers is set to _none_.
      */
 
     public void setSegmentationTime(Double segmentationTime) {
@@ -2356,9 +2356,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      * 
-     * @return The length in seconds of each segment. Required unless markers is set to None_.
+     * @return The length in seconds of each segment. Required unless markers is set to _none_.
      */
 
     public Double getSegmentationTime() {
@@ -2366,10 +2366,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      * 
      * @param segmentationTime
-     *        The length in seconds of each segment. Required unless markers is set to None_.
+     *        The length in seconds of each segment. Required unless markers is set to _none_.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,7 +22,10 @@ public enum DeploymentCreator {
 
     User("user"),
     Autoscaling("autoscaling"),
-    CodeDeployRollback("codeDeployRollback");
+    CodeDeployRollback("codeDeployRollback"),
+    CodeDeploy("CodeDeploy"),
+    CloudFormation("CloudFormation"),
+    CloudFormationRollback("CloudFormationRollback");
 
     private String value;
 

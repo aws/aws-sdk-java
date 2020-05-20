@@ -153,12 +153,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String mode;
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
-     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
-     * SEGMENTSONLY: Does not generate any manifests for this output group.
+     * SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     private String outputSelection;
     /**
@@ -203,9 +203,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /** Provides an extra millisecond delta offset to fine tune the timestamps. */
     private Integer timestampDeltaMilliseconds;
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
      * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
      * running is not guaranteed due to HTTP server caching.
@@ -1755,20 +1755,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
-     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
-     * SEGMENTSONLY: Does not generate any manifests for this output group.
+     * SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
-     *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *        MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *        output group.
      * 
-     *        VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     *        VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master
+     *        manifest.
      * 
-     *        SEGMENTSONLY: Does not generate any manifests for this output group.
+     *        SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * @see HlsOutputSelection
      */
 
@@ -1777,19 +1778,20 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
-     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
-     * SEGMENTSONLY: Does not generate any manifests for this output group.
+     * SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * 
-     * @return MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
-     *         output group.
+     * @return MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for
+     *         this output group.
      * 
-     *         VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     *         VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master
+     *         manifest.
      * 
-     *         SEGMENTSONLY: Does not generate any manifests for this output group.
+     *         SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * @see HlsOutputSelection
      */
 
@@ -1798,20 +1800,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
-     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
-     * SEGMENTSONLY: Does not generate any manifests for this output group.
+     * SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
-     *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *        MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *        output group.
      * 
-     *        VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     *        VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master
+     *        manifest.
      * 
-     *        SEGMENTSONLY: Does not generate any manifests for this output group.
+     *        SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOutputSelection
      */
@@ -1822,20 +1825,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this output
      * group.
      * 
-     * VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     * VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master manifest.
      * 
-     * SEGMENTSONLY: Does not generate any manifests for this output group.
+     * SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * 
      * @param outputSelection
-     *        MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
+     *        MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and media manifests) for this
      *        output group.
      * 
-     *        VARIANTMANIFESTSANDSEGMENTS: Generates media manifests for this output group, but not a master manifest.
+     *        VARIANT_MANIFESTS_AND_SEGMENTS: Generates media manifests for this output group, but not a master
+     *        manifest.
      * 
-     *        SEGMENTSONLY: Does not generate any manifests for this output group.
+     *        SEGMENTS_ONLY: Does not generate any manifests for this output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOutputSelection
      */
@@ -2379,17 +2383,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
      * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
      * running is not guaranteed due to HTTP server caching.
      * 
      * @param tsFileMode
-     *        SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     *        SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     *        SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *        SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
      *        manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
      *        when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback
      *        while the channel is running is not guaranteed due to HTTP server caching.
@@ -2401,16 +2405,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
      * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
      * running is not guaranteed due to HTTP server caching.
      * 
-     * @return SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * @return SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     *         SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *         SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
      *         manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
      *         when sending the output to AWS Elemental MediaConvert, which can accept only a single media file.
      *         Playback while the channel is running is not guaranteed due to HTTP server caching.
@@ -2422,17 +2426,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
      * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
      * running is not guaranteed due to HTTP server caching.
      * 
      * @param tsFileMode
-     *        SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     *        SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     *        SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *        SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
      *        manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
      *        when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback
      *        while the channel is running is not guaranteed due to HTTP server caching.
@@ -2446,17 +2450,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     * SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
+     * SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest
      * includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is
      * running is not guaranteed due to HTTP server caching.
      * 
      * @param tsFileMode
-     *        SEGMENTEDFILES: Emit the program as segments - multiple .ts media files.
+     *        SEGMENTED_FILES: Emit the program as segments - multiple .ts media files.
      * 
-     *        SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
+     *        SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media
      *        manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is
      *        when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback
      *        while the channel is running is not guaranteed due to HTTP server caching.

@@ -86,7 +86,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * Amazon Keyspaces for Apache Cassandra tables
+ * Amazon Keyspaces (for Apache Cassandra) tables
  * </p>
  * </li>
  * </ul>
@@ -325,7 +325,20 @@ public class AWSApplicationAutoScalingAsyncClient extends AWSApplicationAutoScal
      *        Object providing client parameters.
      */
     AWSApplicationAutoScalingAsyncClient(AwsAsyncClientParams asyncClientParams) {
-        super(asyncClientParams);
+        this(asyncClientParams, false);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Application Auto Scaling using the specified
+     * parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     * @param endpointDiscoveryEnabled
+     *        true will enable endpoint discovery if the service supports it.
+     */
+    AWSApplicationAutoScalingAsyncClient(AwsAsyncClientParams asyncClientParams, boolean endpointDiscoveryEnabled) {
+        super(asyncClientParams, endpointDiscoveryEnabled);
         this.executorService = asyncClientParams.getExecutor();
     }
 

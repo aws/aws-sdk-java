@@ -68,7 +68,7 @@
  * </li>
  * <li>
  * <p>
- * Amazon Keyspaces for Apache Cassandra tables
+ * Amazon Keyspaces (for Apache Cassandra) tables
  * </p>
  * </li>
  * </ul>

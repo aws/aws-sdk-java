@@ -30,7 +30,7 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * </p>
      */
     private String kmsMasterKeyId;
@@ -55,11 +55,11 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     *        The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      */
 
     public void setKmsMasterKeyId(String kmsMasterKeyId) {
@@ -68,10 +68,10 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * </p>
      * 
-     * @return The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * @return The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      */
 
     public String getKmsMasterKeyId() {
@@ -80,11 +80,11 @@ public class AwsSnsTopicDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     *        The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

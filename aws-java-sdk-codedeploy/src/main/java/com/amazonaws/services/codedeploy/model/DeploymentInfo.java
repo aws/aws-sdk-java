@@ -118,17 +118,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * user: A user created the deployment.
+     * <code>user</code>: A user created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * codeDeployRollback: A rollback process created the deployment.
+     * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
      * </ul>
@@ -228,18 +228,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
-     * already on the instance.
+     * <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces
+     * the version already on the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     * deployment.
      * </p>
      * </li>
      * </ul>
@@ -257,6 +258,13 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String computePlatform;
+    /**
+     * <p>
+     * The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     * deployment.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
@@ -848,17 +856,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * user: A user created the deployment.
+     * <code>user</code>: A user created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * codeDeployRollback: A rollback process created the deployment.
+     * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
      * </ul>
@@ -868,17 +876,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        user: A user created the deployment.
+     *        <code>user</code>: A user created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     *        <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        codeDeployRollback: A rollback process created the deployment.
+     *        <code>codeDeployRollback</code>: A rollback process created the deployment.
      *        </p>
      *        </li>
      * @see DeploymentCreator
@@ -895,17 +903,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * user: A user created the deployment.
+     * <code>user</code>: A user created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * codeDeployRollback: A rollback process created the deployment.
+     * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
      * </ul>
@@ -914,17 +922,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         user: A user created the deployment.
+     *         <code>user</code>: A user created the deployment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     *         <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         codeDeployRollback: A rollback process created the deployment.
+     *         <code>codeDeployRollback</code>: A rollback process created the deployment.
      *         </p>
      *         </li>
      * @see DeploymentCreator
@@ -941,17 +949,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * user: A user created the deployment.
+     * <code>user</code>: A user created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * codeDeployRollback: A rollback process created the deployment.
+     * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
      * </ul>
@@ -961,17 +969,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        user: A user created the deployment.
+     *        <code>user</code>: A user created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     *        <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        codeDeployRollback: A rollback process created the deployment.
+     *        <code>codeDeployRollback</code>: A rollback process created the deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -990,17 +998,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * user: A user created the deployment.
+     * <code>user</code>: A user created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * codeDeployRollback: A rollback process created the deployment.
+     * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
      * </ul>
@@ -1010,17 +1018,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        user: A user created the deployment.
+     *        <code>user</code>: A user created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     *        <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        codeDeployRollback: A rollback process created the deployment.
+     *        <code>codeDeployRollback</code>: A rollback process created the deployment.
      *        </p>
      *        </li>
      * @see DeploymentCreator
@@ -1037,17 +1045,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * user: A user created the deployment.
+     * <code>user</code>: A user created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * codeDeployRollback: A rollback process created the deployment.
+     * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
      * </ul>
@@ -1057,17 +1065,17 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        user: A user created the deployment.
+     *        <code>user</code>: A user created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        autoscaling: Amazon EC2 Auto Scaling created the deployment.
+     *        <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        codeDeployRollback: A rollback process created the deployment.
+     *        <code>codeDeployRollback</code>: A rollback process created the deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1731,18 +1739,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
-     * already on the instance.
+     * <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces
+     * the version already on the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     * deployment.
      * </p>
      * </li>
      * </ul>
@@ -1753,18 +1762,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
-     *        version already on the instance.
+     *        <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed
+     *        replaces the version already on the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     *        deployment.
      *        </p>
      *        </li>
      * @see FileExistsBehavior
@@ -1782,18 +1792,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
-     * already on the instance.
+     * <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces
+     * the version already on the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     * deployment.
      * </p>
      * </li>
      * </ul>
@@ -1803,18 +1814,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *         <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         OVERWRITE: The version of the file from the application revision currently being deployed replaces the
-     *         version already on the instance.
+     *         <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed
+     *         replaces the version already on the instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *         <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     *         deployment.
      *         </p>
      *         </li>
      * @see FileExistsBehavior
@@ -1832,18 +1844,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
-     * already on the instance.
+     * <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces
+     * the version already on the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     * deployment.
      * </p>
      * </li>
      * </ul>
@@ -1854,18 +1867,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
-     *        version already on the instance.
+     *        <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed
+     *        replaces the version already on the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     *        deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1885,18 +1899,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
-     * already on the instance.
+     * <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces
+     * the version already on the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     * deployment.
      * </p>
      * </li>
      * </ul>
@@ -1907,18 +1922,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
-     *        version already on the instance.
+     *        <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed
+     *        replaces the version already on the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     *        deployment.
      *        </p>
      *        </li>
      * @see FileExistsBehavior
@@ -1936,18 +1952,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      * </p>
      * </li>
      * <li>
      * <p>
-     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
-     * already on the instance.
+     * <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed replaces
+     * the version already on the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     * deployment.
      * </p>
      * </li>
      * </ul>
@@ -1958,18 +1975,19 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        <code>DISALLOW</code>: The deployment fails. This is also the default behavior if no option is specified.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
-     *        version already on the instance.
+     *        <code>OVERWRITE</code>: The version of the file from the application revision currently being deployed
+     *        replaces the version already on the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        <code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new
+     *        deployment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2133,6 +2151,52 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     * deployment.
+     * </p>
+     * 
+     * @param externalId
+     *        The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     *        deployment.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     * deployment.
+     * </p>
+     * 
+     * @return The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     *         deployment.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     * deployment.
+     * </p>
+     * 
+     * @param externalId
+     *        The unique ID for an external resource (for example, a CloudFormation stack ID) that is linked to this
+     *        deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentInfo withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2197,7 +2261,9 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getDeploymentStatusMessages() != null)
             sb.append("DeploymentStatusMessages: ").append(getDeploymentStatusMessages()).append(",");
         if (getComputePlatform() != null)
-            sb.append("ComputePlatform: ").append(getComputePlatform());
+            sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -2324,6 +2390,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
             return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -2359,6 +2429,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatusMessages() == null) ? 0 : getDeploymentStatusMessages().hashCode());
         hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

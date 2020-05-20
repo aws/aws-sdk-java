@@ -27,18 +27,18 @@ public class DescribeCopyJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      */
     private String copyJobId;
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
      * @param copyJobId
-     *        Uniquely identifies a request to AWS Backup to copy a resource.
+     *        Uniquely identifies a copy job.
      */
 
     public void setCopyJobId(String copyJobId) {
@@ -47,10 +47,10 @@ public class DescribeCopyJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
-     * @return Uniquely identifies a request to AWS Backup to copy a resource.
+     * @return Uniquely identifies a copy job.
      */
 
     public String getCopyJobId() {
@@ -59,11 +59,11 @@ public class DescribeCopyJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Uniquely identifies a request to AWS Backup to copy a resource.
+     * Uniquely identifies a copy job.
      * </p>
      * 
      * @param copyJobId
-     *        Uniquely identifies a request to AWS Backup to copy a resource.
+     *        Uniquely identifies a copy job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

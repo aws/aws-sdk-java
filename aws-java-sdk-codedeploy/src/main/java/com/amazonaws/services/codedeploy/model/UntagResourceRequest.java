@@ -27,8 +27,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code>
-     * input paramter.
+     * The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the
+     * <code>TagKeys</code> input parameter.
      * </p>
      */
     private String resourceArn;
@@ -42,13 +42,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code>
-     * input paramter.
+     * The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the
+     * <code>TagKeys</code> input parameter.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN that specifies from which resource to disassociate the tags with the keys in the
-     *        <code>TagKeys</code> input paramter.
+     *        The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys
+     *        in the <code>TagKeys</code> input parameter.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -57,12 +57,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code>
-     * input paramter.
+     * The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the
+     * <code>TagKeys</code> input parameter.
      * </p>
      * 
-     * @return The ARN that specifies from which resource to disassociate the tags with the keys in the
-     *         <code>TagKeys</code> input paramter.
+     * @return The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys
+     *         in the <code>TagKeys</code> input parameter.
      */
 
     public String getResourceArn() {
@@ -71,13 +71,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code>
-     * input paramter.
+     * The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the
+     * <code>TagKeys</code> input parameter.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN that specifies from which resource to disassociate the tags with the keys in the
-     *        <code>TagKeys</code> input paramter.
+     *        The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys
+     *        in the <code>TagKeys</code> input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,7 +37,8 @@ public class LambdaFunctionInfo implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the
+     * <i>AWS Lambda Developer Guide</i>.
      * </p>
      */
     private String functionAlias;
@@ -103,13 +104,14 @@ public class LambdaFunctionInfo implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the
+     * <i>AWS Lambda Developer Guide</i>.
      * </p>
      * 
      * @param functionAlias
      *        The alias of a Lambda function. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda
-     *        Aliases</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in
+     *        the <i>AWS Lambda Developer Guide</i>.
      */
 
     public void setFunctionAlias(String functionAlias) {
@@ -119,12 +121,13 @@ public class LambdaFunctionInfo implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the
+     * <i>AWS Lambda Developer Guide</i>.
      * </p>
      * 
      * @return The alias of a Lambda function. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda
-     *         Aliases</a>.
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in
+     *         the <i>AWS Lambda Developer Guide</i>.
      */
 
     public String getFunctionAlias() {
@@ -134,13 +137,14 @@ public class LambdaFunctionInfo implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The alias of a Lambda function. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda Aliases</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in the
+     * <i>AWS Lambda Developer Guide</i>.
      * </p>
      * 
      * @param functionAlias
      *        The alias of a Lambda function. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction to AWS Lambda
-     *        Aliases</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">AWS Lambda Function Aliases</a> in
+     *        the <i>AWS Lambda Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

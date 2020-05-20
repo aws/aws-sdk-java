@@ -29,12 +29,18 @@ public class VirtualRouterRefMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> MESHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("meshName").build();
     private static final MarshallingInfo<String> MESHOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("meshOwner").build();
     private static final MarshallingInfo<String> RESOURCEOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceOwner").build();
+    private static final MarshallingInfo<Long> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
     private static final MarshallingInfo<String> VIRTUALROUTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualRouterName").build();
 
@@ -55,9 +61,12 @@ public class VirtualRouterRefMarshaller {
 
         try {
             protocolMarshaller.marshall(virtualRouterRef.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(virtualRouterRef.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(virtualRouterRef.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(virtualRouterRef.getMeshName(), MESHNAME_BINDING);
             protocolMarshaller.marshall(virtualRouterRef.getMeshOwner(), MESHOWNER_BINDING);
             protocolMarshaller.marshall(virtualRouterRef.getResourceOwner(), RESOURCEOWNER_BINDING);
+            protocolMarshaller.marshall(virtualRouterRef.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(virtualRouterRef.getVirtualRouterName(), VIRTUALROUTERNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

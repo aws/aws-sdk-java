@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a ListOnPremisesInstances operation.
+ * Represents the input of a <code>ListOnPremisesInstances</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances" target="_top">AWS
@@ -35,12 +35,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Registered: Include registered on-premises instances in the resulting list.
+     * <code>Registered</code>: Include registered on-premises instances in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -67,12 +67,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Registered: Include registered on-premises instances in the resulting list.
+     * <code>Registered</code>: Include registered on-premises instances in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -82,12 +82,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Registered: Include registered on-premises instances in the resulting list.
+     *        <code>Registered</code>: Include registered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      * @see RegistrationStatus
@@ -104,12 +104,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Registered: Include registered on-premises instances in the resulting list.
+     * <code>Registered</code>: Include registered on-premises instances in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -118,12 +118,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         Deregistered: Include deregistered on-premises instances in the resulting list.
+     *         <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Registered: Include registered on-premises instances in the resulting list.
+     *         <code>Registered</code>: Include registered on-premises instances in the resulting list.
      *         </p>
      *         </li>
      * @see RegistrationStatus
@@ -140,12 +140,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Registered: Include registered on-premises instances in the resulting list.
+     * <code>Registered</code>: Include registered on-premises instances in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -155,12 +155,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Registered: Include registered on-premises instances in the resulting list.
+     *        <code>Registered</code>: Include registered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -179,12 +179,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Registered: Include registered on-premises instances in the resulting list.
+     * <code>Registered</code>: Include registered on-premises instances in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -194,12 +194,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Registered: Include registered on-premises instances in the resulting list.
+     *        <code>Registered</code>: Include registered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      * @see RegistrationStatus
@@ -216,12 +216,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * Deregistered: Include deregistered on-premises instances in the resulting list.
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Registered: Include registered on-premises instances in the resulting list.
+     * <code>Registered</code>: Include registered on-premises instances in the resulting list.
      * </p>
      * </li>
      * </ul>
@@ -231,12 +231,12 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        Deregistered: Include deregistered on-premises instances in the resulting list.
+     *        <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Registered: Include registered on-premises instances in the resulting list.
+     *        <code>Registered</code>: Include registered on-premises instances in the resulting list.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

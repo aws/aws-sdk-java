@@ -36,7 +36,7 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of a logical source container where backups are stored. Backup vaults are identified by names that are
      * unique to the account used to create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;
+     * letters, numbers, and hyphens.
      * </p>
      */
     private String sourceBackupVaultName;
@@ -50,7 +50,7 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      */
     private String iamRoleArn;
@@ -113,13 +113,13 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of a logical source container where backups are stored. Backup vaults are identified by names that are
      * unique to the account used to create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;
+     * letters, numbers, and hyphens.
      * </p>
      * 
      * @param sourceBackupVaultName
      *        The name of a logical source container where backups are stored. Backup vaults are identified by names
      *        that are unique to the account used to create them and the AWS Region where they are created. They consist
-     *        of lowercase letters, numbers, and hyphens. &gt;
+     *        of lowercase letters, numbers, and hyphens.
      */
 
     public void setSourceBackupVaultName(String sourceBackupVaultName) {
@@ -130,12 +130,12 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of a logical source container where backups are stored. Backup vaults are identified by names that are
      * unique to the account used to create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;
+     * letters, numbers, and hyphens.
      * </p>
      * 
      * @return The name of a logical source container where backups are stored. Backup vaults are identified by names
      *         that are unique to the account used to create them and the AWS Region where they are created. They
-     *         consist of lowercase letters, numbers, and hyphens. &gt;
+     *         consist of lowercase letters, numbers, and hyphens.
      */
 
     public String getSourceBackupVaultName() {
@@ -146,13 +146,13 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of a logical source container where backups are stored. Backup vaults are identified by names that are
      * unique to the account used to create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;
+     * letters, numbers, and hyphens.
      * </p>
      * 
      * @param sourceBackupVaultName
      *        The name of a logical source container where backups are stored. Backup vaults are identified by names
      *        that are unique to the account used to create them and the AWS Region where they are created. They consist
-     *        of lowercase letters, numbers, and hyphens. &gt;
+     *        of lowercase letters, numbers, and hyphens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,12 +210,12 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
      *        Specifies the IAM role ARN used to copy the target recovery point; for example,
-     *        arn:aws:iam::123456789012:role/S3Access.
+     *        <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -225,11 +225,11 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @return Specifies the IAM role ARN used to copy the target recovery point; for example,
-     *         arn:aws:iam::123456789012:role/S3Access.
+     *         <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public String getIamRoleArn() {
@@ -239,12 +239,12 @@ public class StartCopyJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the IAM role ARN used to copy the target recovery point; for example,
-     * arn:aws:iam::123456789012:role/S3Access.
+     * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
      *        Specifies the IAM role ARN used to copy the target recovery point; for example,
-     *        arn:aws:iam::123456789012:role/S3Access.
+     *        <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

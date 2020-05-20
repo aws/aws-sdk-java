@@ -1960,6 +1960,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
+     * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * 
+     * @param getRetentionSettingsRequest
+     * @return A Java Future containing the result of the GetRetentionSettings operation returned by the service.
+     * @sample AmazonChimeAsync.GetRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRetentionSettingsResult> getRetentionSettingsAsync(GetRetentionSettingsRequest getRetentionSettingsRequest);
+
+    /**
+     * <p>
+     * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
+     * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * 
+     * @param getRetentionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRetentionSettings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRetentionSettingsResult> getRetentionSettingsAsync(GetRetentionSettingsRequest getRetentionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRetentionSettingsRequest, GetRetentionSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves room details, such as the room name, for a room in an Amazon Chime Enterprise account.
      * </p>
      * 
@@ -2957,6 +2992,55 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<PutEventsConfigurationResult> putEventsConfigurationAsync(PutEventsConfigurationRequest putEventsConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventsConfigurationRequest, PutEventsConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
+     * monitor usage of this API for your account. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * <p>
+     * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
+     * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
+     * the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * 
+     * @param putRetentionSettingsRequest
+     * @return A Java Future containing the result of the PutRetentionSettings operation returned by the service.
+     * @sample AmazonChimeAsync.PutRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutRetentionSettingsResult> putRetentionSettingsAsync(PutRetentionSettingsRequest putRetentionSettingsRequest);
+
+    /**
+     * <p>
+     * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
+     * monitor usage of this API for your account. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * <p>
+     * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
+     * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
+     * the <i>Amazon Chime Administration Guide</i>.
+     * </p>
+     * 
+     * @param putRetentionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRetentionSettings operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.PutRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutRetentionSettingsResult> putRetentionSettingsAsync(PutRetentionSettingsRequest putRetentionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRetentionSettingsRequest, PutRetentionSettingsResult> asyncHandler);
 
     /**
      * <p>

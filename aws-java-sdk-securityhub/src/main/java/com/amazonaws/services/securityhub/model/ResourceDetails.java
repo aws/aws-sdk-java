@@ -60,7 +60,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsEc2InstanceDetails awsEc2Instance;
     /**
      * <p>
-     * Details for an AWS EC2 network interface.
+     * Details for an Amazon EC2 network interface.
      * </p>
      */
     private AwsEc2NetworkInterfaceDetails awsEc2NetworkInterface;
@@ -84,7 +84,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsElasticsearchDomainDetails awsElasticsearchDomain;
     /**
      * <p>
-     * Details about an Amazon S3 Bucket related to a finding.
+     * Details about an Amazon S3 bucket related to a finding.
      * </p>
      */
     private AwsS3BucketDetails awsS3Bucket;
@@ -126,7 +126,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsLambdaLayerVersionDetails awsLambdaLayerVersion;
     /**
      * <p>
-     * Details for an RDS database instance.
+     * Details for an Amazon RDS database instance.
      * </p>
      */
     private AwsRdsDbInstanceDetails awsRdsDbInstance;
@@ -299,11 +299,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an AWS EC2 network interface.
+     * Details for an Amazon EC2 network interface.
      * </p>
      * 
      * @param awsEc2NetworkInterface
-     *        Details for an AWS EC2 network interface.
+     *        Details for an Amazon EC2 network interface.
      */
 
     public void setAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails awsEc2NetworkInterface) {
@@ -312,10 +312,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an AWS EC2 network interface.
+     * Details for an Amazon EC2 network interface.
      * </p>
      * 
-     * @return Details for an AWS EC2 network interface.
+     * @return Details for an Amazon EC2 network interface.
      */
 
     public AwsEc2NetworkInterfaceDetails getAwsEc2NetworkInterface() {
@@ -324,11 +324,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an AWS EC2 network interface.
+     * Details for an Amazon EC2 network interface.
      * </p>
      * 
      * @param awsEc2NetworkInterface
-     *        Details for an AWS EC2 network interface.
+     *        Details for an Amazon EC2 network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,11 +459,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an Amazon S3 Bucket related to a finding.
+     * Details about an Amazon S3 bucket related to a finding.
      * </p>
      * 
      * @param awsS3Bucket
-     *        Details about an Amazon S3 Bucket related to a finding.
+     *        Details about an Amazon S3 bucket related to a finding.
      */
 
     public void setAwsS3Bucket(AwsS3BucketDetails awsS3Bucket) {
@@ -472,10 +472,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an Amazon S3 Bucket related to a finding.
+     * Details about an Amazon S3 bucket related to a finding.
      * </p>
      * 
-     * @return Details about an Amazon S3 Bucket related to a finding.
+     * @return Details about an Amazon S3 bucket related to a finding.
      */
 
     public AwsS3BucketDetails getAwsS3Bucket() {
@@ -484,11 +484,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about an Amazon S3 Bucket related to a finding.
+     * Details about an Amazon S3 bucket related to a finding.
      * </p>
      * 
      * @param awsS3Bucket
-     *        Details about an Amazon S3 Bucket related to a finding.
+     *        Details about an Amazon S3 bucket related to a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,11 +739,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an RDS database instance.
+     * Details for an Amazon RDS database instance.
      * </p>
      * 
      * @param awsRdsDbInstance
-     *        Details for an RDS database instance.
+     *        Details for an Amazon RDS database instance.
      */
 
     public void setAwsRdsDbInstance(AwsRdsDbInstanceDetails awsRdsDbInstance) {
@@ -752,10 +752,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an RDS database instance.
+     * Details for an Amazon RDS database instance.
      * </p>
      * 
-     * @return Details for an RDS database instance.
+     * @return Details for an Amazon RDS database instance.
      */
 
     public AwsRdsDbInstanceDetails getAwsRdsDbInstance() {
@@ -764,11 +764,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an RDS database instance.
+     * Details for an Amazon RDS database instance.
      * </p>
      * 
      * @param awsRdsDbInstance
-     *        Details for an RDS database instance.
+     *        Details for an Amazon RDS database instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
