@@ -168,7 +168,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String encryptionKey;
     /**
      * <p>
-     * The replacement set of tags for this build project.
+     * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
@@ -1189,13 +1189,13 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement set of tags for this build project.
+     * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
-     * @return The replacement set of tags for this build project.</p>
+     * @return An updated list of tag key and value pairs associated with this build project.</p>
      *         <p>
      *         These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      */
@@ -1206,14 +1206,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement set of tags for this build project.
+     * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
      * @param tags
-     *        The replacement set of tags for this build project.</p>
+     *        An updated list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      */
@@ -1229,7 +1229,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement set of tags for this build project.
+     * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
@@ -1241,7 +1241,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        The replacement set of tags for this build project.</p>
+     *        An updated list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1259,14 +1259,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement set of tags for this build project.
+     * An updated list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
      * @param tags
-     *        The replacement set of tags for this build project.</p>
+     *        An updated list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * @return Returns a reference to this object so that method calls can be chained together.

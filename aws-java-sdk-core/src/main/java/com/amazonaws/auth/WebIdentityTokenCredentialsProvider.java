@@ -26,6 +26,10 @@ public class WebIdentityTokenCredentialsProvider implements AWSCredentialsProvid
     private final AWSCredentialsProvider credentialsProvider;
     private final RuntimeException loadException;
 
+    public WebIdentityTokenCredentialsProvider() {
+        this(new BuilderImpl());
+    }
+
     private WebIdentityTokenCredentialsProvider(BuilderImpl builder) {
         AWSCredentialsProvider credentialsProvider = null;
         RuntimeException loadException = null;

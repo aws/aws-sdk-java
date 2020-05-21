@@ -172,7 +172,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String encryptionKey;
     /**
      * <p>
-     * The tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
@@ -1227,13 +1227,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
-     * @return The tags for this build project.</p>
+     * @return A list of tag key and value pairs associated with this build project.</p>
      *         <p>
      *         These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      */
@@ -1244,14 +1244,14 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
      * @param tags
-     *        The tags for this build project.</p>
+     *        A list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      */
@@ -1267,7 +1267,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
@@ -1279,7 +1279,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        The tags for this build project.</p>
+     *        A list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1297,14 +1297,14 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
      * @param tags
-     *        The tags for this build project.</p>
+     *        A list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * @return Returns a reference to this object so that method calls can be chained together.

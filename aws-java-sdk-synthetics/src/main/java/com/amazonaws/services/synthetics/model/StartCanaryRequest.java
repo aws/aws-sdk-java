@@ -27,18 +27,24 @@ public class StartCanaryRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to run. To find canary names, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to run. To find canary names, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * 
      * @param name
-     *        The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     *        The name of the canary that you want to run. To find canary names, use <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *        >DescribeCanaries</a>.
      */
 
     public void setName(String name) {
@@ -47,10 +53,14 @@ public class StartCanaryRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to run. To find canary names, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * 
-     * @return The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     * @return The name of the canary that you want to run. To find canary names, use <a
+     *         href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *         >DescribeCanaries</a>.
      */
 
     public String getName() {
@@ -59,11 +69,15 @@ public class StartCanaryRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to run. To find canary names, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * 
      * @param name
-     *        The name of the canary that you want to run. To find canary names, use <a>DescribeCanaries</a>.
+     *        The name of the canary that you want to run. To find canary names, use <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *        >DescribeCanaries</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

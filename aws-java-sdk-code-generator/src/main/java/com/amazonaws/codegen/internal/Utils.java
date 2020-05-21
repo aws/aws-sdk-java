@@ -162,6 +162,36 @@ public class Utils {
         }
     }
 
+    public static void deleteDirectoryIfExists(String path) {
+        if (isNullOrEmpty(path)) {
+            throw new IllegalArgumentException(
+                    "Invalid path directory. Path directory cannot be null or empty");
+        }
+        final File dir = new File(path);
+        deleteDirectoryIfExists(dir);
+    }
+
+    public static void deleteDirectoryIfExists(File dir) {
+        if (!dir.exists())
+            return;
+        if (!dir.isDirectory())
+            throw new RuntimeException("Not a directory: " + dir.getAbsolutePath());
+
+        File [] files = dir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory())
+                    deleteDirectoryIfExists(file);
+                else {
+                    if (!file.delete())
+                        throw new RuntimeException("Failed delete: " + file.getAbsolutePath());
+                }
+            }
+        }
+        if (!dir.delete())
+            throw new RuntimeException("Failed directory delete: " + dir.getAbsolutePath());
+    }
+
     public static File createFile(String dir, String fileName) throws IOException {
 
         if (isNullOrEmpty(fileName)) {

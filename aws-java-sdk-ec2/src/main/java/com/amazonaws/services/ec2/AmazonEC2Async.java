@@ -3989,8 +3989,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources. Each resource can have
-     * a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.
+     * Adds or overwrites only the specified tags for the specified Amazon EC2 resource or resources. When you specify
+     * an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags.
+     * Each tag consists of a key and optional value. Tag keys must be unique per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -4011,8 +4012,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources. Each resource can have
-     * a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.
+     * Adds or overwrites only the specified tags for the specified Amazon EC2 resource or resources. When you specify
+     * an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags.
+     * Each tag consists of a key and optional value. Tag keys must be unique per resource.
      * </p>
      * <p>
      * For more information about tags, see <a

@@ -30,7 +30,8 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>.
+     * The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     * <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
      * </p>
      * <dl>
      * <dt>EVENT</dt>
@@ -83,19 +84,7 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
-     * </p>
-     * </note></dd>
-     * <dt>COMMIT_MESSAGE</dt>
-     * <dd>
-     * <p>
-     * A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.
-     * </p>
-     * <note>
-     * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
+     * Works with GitHub and GitHub Enterprise push events only.
      * </p>
      * </note></dd>
      * </dl>
@@ -126,7 +115,8 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>.
+     * The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     * <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
      * </p>
      * <dl>
      * <dt>EVENT</dt>
@@ -179,27 +169,15 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
-     * </p>
-     * </note></dd>
-     * <dt>COMMIT_MESSAGE</dt>
-     * <dd>
-     * <p>
-     * A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.
-     * </p>
-     * <note>
-     * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
+     * Works with GitHub and GitHub Enterprise push events only.
      * </p>
      * </note></dd>
      * </dl>
      * 
      * @param type
-     *        The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
-     *        <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and
-     *        <code>COMMIT_MESSAGE</code>. </p>
+     *        The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     *        <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
+     *        </p>
      *        <dl>
      *        <dt>EVENT</dt>
      *        <dd>
@@ -254,20 +232,7 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *        push events, but does not work with GitHub Enterprise pull request events.
-     *        </p>
-     *        </note></dd>
-     *        <dt>COMMIT_MESSAGE</dt>
-     *        <dd>
-     *        <p>
-     *        A webhook triggers a build when the head commit message matches the regular expression
-     *        <code>pattern</code>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *        push events, but does not work with GitHub Enterprise pull request events.
+     *        Works with GitHub and GitHub Enterprise push events only.
      *        </p>
      *        </note></dd>
      * @see WebhookFilterType
@@ -279,7 +244,8 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>.
+     * The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     * <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
      * </p>
      * <dl>
      * <dt>EVENT</dt>
@@ -332,26 +298,14 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
-     * </p>
-     * </note></dd>
-     * <dt>COMMIT_MESSAGE</dt>
-     * <dd>
-     * <p>
-     * A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.
-     * </p>
-     * <note>
-     * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
+     * Works with GitHub and GitHub Enterprise push events only.
      * </p>
      * </note></dd>
      * </dl>
      * 
-     * @return The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
-     *         <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and
-     *         <code>COMMIT_MESSAGE</code>. </p>
+     * @return The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     *         <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
+     *         </p>
      *         <dl>
      *         <dt>EVENT</dt>
      *         <dd>
@@ -406,20 +360,7 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *         push events, but does not work with GitHub Enterprise pull request events.
-     *         </p>
-     *         </note></dd>
-     *         <dt>COMMIT_MESSAGE</dt>
-     *         <dd>
-     *         <p>
-     *         A webhook triggers a build when the head commit message matches the regular expression
-     *         <code>pattern</code>.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *         push events, but does not work with GitHub Enterprise pull request events.
+     *         Works with GitHub and GitHub Enterprise push events only.
      *         </p>
      *         </note></dd>
      * @see WebhookFilterType
@@ -431,7 +372,8 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>.
+     * The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     * <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
      * </p>
      * <dl>
      * <dt>EVENT</dt>
@@ -484,27 +426,15 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
-     * </p>
-     * </note></dd>
-     * <dt>COMMIT_MESSAGE</dt>
-     * <dd>
-     * <p>
-     * A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.
-     * </p>
-     * <note>
-     * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
+     * Works with GitHub and GitHub Enterprise push events only.
      * </p>
      * </note></dd>
      * </dl>
      * 
      * @param type
-     *        The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
-     *        <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and
-     *        <code>COMMIT_MESSAGE</code>. </p>
+     *        The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     *        <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
+     *        </p>
      *        <dl>
      *        <dt>EVENT</dt>
      *        <dd>
@@ -559,20 +489,7 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *        push events, but does not work with GitHub Enterprise pull request events.
-     *        </p>
-     *        </note></dd>
-     *        <dt>COMMIT_MESSAGE</dt>
-     *        <dd>
-     *        <p>
-     *        A webhook triggers a build when the head commit message matches the regular expression
-     *        <code>pattern</code>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *        push events, but does not work with GitHub Enterprise pull request events.
+     *        Works with GitHub and GitHub Enterprise push events only.
      *        </p>
      *        </note></dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -586,7 +503,8 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>.
+     * The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     * <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
      * </p>
      * <dl>
      * <dt>EVENT</dt>
@@ -639,27 +557,15 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
-     * </p>
-     * </note></dd>
-     * <dt>COMMIT_MESSAGE</dt>
-     * <dd>
-     * <p>
-     * A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.
-     * </p>
-     * <note>
-     * <p>
-     * Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push
-     * events, but does not work with GitHub Enterprise pull request events.
+     * Works with GitHub and GitHub Enterprise push events only.
      * </p>
      * </note></dd>
      * </dl>
      * 
      * @param type
-     *        The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
-     *        <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and
-     *        <code>COMMIT_MESSAGE</code>. </p>
+     *        The type of webhook filter. There are five webhook filter types: <code>EVENT</code>,
+     *        <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, and <code>FILE_PATH</code>.
+     *        </p>
      *        <dl>
      *        <dt>EVENT</dt>
      *        <dd>
@@ -714,20 +620,7 @@ public class WebhookFilter implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *        push events, but does not work with GitHub Enterprise pull request events.
-     *        </p>
-     *        </note></dd>
-     *        <dt>COMMIT_MESSAGE</dt>
-     *        <dd>
-     *        <p>
-     *        A webhook triggers a build when the head commit message matches the regular expression
-     *        <code>pattern</code>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise
-     *        push events, but does not work with GitHub Enterprise pull request events.
+     *        Works with GitHub and GitHub Enterprise push events only.
      *        </p>
      *        </note></dd>
      * @return Returns a reference to this object so that method calls can be chained together.

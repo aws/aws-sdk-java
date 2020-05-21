@@ -20,6 +20,7 @@ import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.internal.auth.SignerProvider;
+import com.amazonaws.regions.EndpointToRegion;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.util.AwsHostNameUtils;
 import org.apache.commons.logging.Log;
@@ -56,8 +57,7 @@ public class S3SignerProvider extends SignerProvider {
             RegionAwareSigner regionSigner = (RegionAwareSigner) signer;
 
             try {
-                regionSigner.setRegionName(AwsHostNameUtils.parseRegionName(
-                        uri.getHost(), "s3"));
+                regionSigner.setRegionName(EndpointToRegion.guessRegionNameForEndpoint(uri.getHost(), "s3"));
 
             } catch (RuntimeException e) {
                 log.warn("Failed to parse the endpoint " + uri +

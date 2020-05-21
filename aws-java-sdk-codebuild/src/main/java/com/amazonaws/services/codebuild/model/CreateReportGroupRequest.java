@@ -44,6 +44,15 @@ public class CreateReportGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private ReportExportConfig exportConfig;
+    /**
+     * <p>
+     * A list of tag key and value pairs associated with this report group.
+     * </p>
+     * <p>
+     * These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -191,6 +200,96 @@ public class CreateReportGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * A list of tag key and value pairs associated with this report group.
+     * </p>
+     * <p>
+     * These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * </p>
+     * 
+     * @return A list of tag key and value pairs associated with this report group. </p>
+     *         <p>
+     *         These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tag key and value pairs associated with this report group.
+     * </p>
+     * <p>
+     * These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tag key and value pairs associated with this report group. </p>
+     *        <p>
+     *        These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tag key and value pairs associated with this report group.
+     * </p>
+     * <p>
+     * These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tag key and value pairs associated with this report group. </p>
+     *        <p>
+     *        These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReportGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tag key and value pairs associated with this report group.
+     * </p>
+     * <p>
+     * These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tag key and value pairs associated with this report group. </p>
+     *        <p>
+     *        These tags are available for use by AWS services that support AWS CodeBuild report group tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReportGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +306,9 @@ public class CreateReportGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getExportConfig() != null)
-            sb.append("ExportConfig: ").append(getExportConfig());
+            sb.append("ExportConfig: ").append(getExportConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +335,10 @@ public class CreateReportGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getExportConfig() != null && other.getExportConfig().equals(this.getExportConfig()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +350,7 @@ public class CreateReportGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getExportConfig() == null) ? 0 : getExportConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

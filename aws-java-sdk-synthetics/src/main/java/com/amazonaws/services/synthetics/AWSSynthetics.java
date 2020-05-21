@@ -61,7 +61,9 @@ public interface AWSSynthetics {
      * data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once.
      * </p>
      * <p>
-     * Do not use <code>CreateCanary</code> to modify an existing canary. Use <a>UpdateCanary</a> instead.
+     * Do not use <code>CreateCanary</code> to modify an existing canary. Use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+     * instead.
      * </p>
      * <p>
      * To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a

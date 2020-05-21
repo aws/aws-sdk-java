@@ -75,6 +75,11 @@ public class PublicIpv4PoolStaxUnmarshaller implements Unmarshaller<PublicIpv4Po
                     continue;
                 }
 
+                if (context.testExpression("networkBorderGroup", targetDepth)) {
+                    publicIpv4Pool.setNetworkBorderGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     publicIpv4Pool.withTags(new ArrayList<Tag>());
                     continue;

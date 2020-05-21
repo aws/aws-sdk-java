@@ -64,6 +64,41 @@ public class ProvisionByoipCidrRequestMarshaller implements Marshaller<Request<P
             request.addParameter("Description", StringUtils.fromString(provisionByoipCidrRequest.getDescription()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> provisionByoipCidrRequestPoolTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) provisionByoipCidrRequest
+                .getPoolTagSpecifications();
+        if (!provisionByoipCidrRequestPoolTagSpecificationsList.isEmpty() || !provisionByoipCidrRequestPoolTagSpecificationsList.isAutoConstruct()) {
+            int poolTagSpecificationsListIndex = 1;
+
+            for (TagSpecification provisionByoipCidrRequestPoolTagSpecificationsListValue : provisionByoipCidrRequestPoolTagSpecificationsList) {
+
+                if (provisionByoipCidrRequestPoolTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("PoolTagSpecification." + poolTagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(provisionByoipCidrRequestPoolTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) provisionByoipCidrRequestPoolTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("PoolTagSpecification." + poolTagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("PoolTagSpecification." + poolTagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                poolTagSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

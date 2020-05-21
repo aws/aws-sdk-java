@@ -22,7 +22,7 @@ labels: guidance, needs-triage
 <!--- If service responses are relevant, please include wirelogs -->
 
 ## Your Environment
-<!--- Include as many relevant details about the environment where the bug was discovered -->
+<!--- Include as many relevant details as possible about your environment -->
 * AWS Java SDK version used:
 * JDK version used:
 * Operating System and version:

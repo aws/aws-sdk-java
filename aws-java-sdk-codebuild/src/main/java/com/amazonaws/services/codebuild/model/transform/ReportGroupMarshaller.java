@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class ReportGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModified").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final ReportGroupMarshaller instance = new ReportGroupMarshaller();
 
@@ -62,6 +65,7 @@ public class ReportGroupMarshaller {
             protocolMarshaller.marshall(reportGroup.getExportConfig(), EXPORTCONFIG_BINDING);
             protocolMarshaller.marshall(reportGroup.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(reportGroup.getLastModified(), LASTMODIFIED_BINDING);
+            protocolMarshaller.marshall(reportGroup.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

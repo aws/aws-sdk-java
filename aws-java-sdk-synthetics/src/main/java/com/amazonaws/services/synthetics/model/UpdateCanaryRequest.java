@@ -27,7 +27,9 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to update. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to update. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * <p>
      * You cannot change the name of a canary that has already been created.
@@ -131,15 +133,18 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to update. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to update. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * <p>
      * You cannot change the name of a canary that has already been created.
      * </p>
      * 
      * @param name
-     *        The name of the canary that you want to update. To find the names of your canaries, use
-     *        <a>DescribeCanaries</a>.</p>
+     *        The name of the canary that you want to update. To find the names of your canaries, use <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *        >DescribeCanaries</a>.</p>
      *        <p>
      *        You cannot change the name of a canary that has already been created.
      */
@@ -150,14 +155,17 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to update. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to update. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * <p>
      * You cannot change the name of a canary that has already been created.
      * </p>
      * 
-     * @return The name of the canary that you want to update. To find the names of your canaries, use
-     *         <a>DescribeCanaries</a>.</p>
+     * @return The name of the canary that you want to update. To find the names of your canaries, use <a
+     *         href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *         >DescribeCanaries</a>.</p>
      *         <p>
      *         You cannot change the name of a canary that has already been created.
      */
@@ -168,15 +176,18 @@ public class UpdateCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to update. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to update. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * <p>
      * You cannot change the name of a canary that has already been created.
      * </p>
      * 
      * @param name
-     *        The name of the canary that you want to update. To find the names of your canaries, use
-     *        <a>DescribeCanaries</a>.</p>
+     *        The name of the canary that you want to update. To find the names of your canaries, use <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *        >DescribeCanaries</a>.</p>
      *        <p>
      *        You cannot change the name of a canary that has already been created.
      * @return Returns a reference to this object so that method calls can be chained together.

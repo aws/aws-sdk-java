@@ -55,6 +55,12 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The tags to apply to the address pool.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> poolTagSpecifications;
 
     /**
      * <p>
@@ -267,6 +273,79 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * <p>
+     * The tags to apply to the address pool.
+     * </p>
+     * 
+     * @return The tags to apply to the address pool.
+     */
+
+    public java.util.List<TagSpecification> getPoolTagSpecifications() {
+        if (poolTagSpecifications == null) {
+            poolTagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return poolTagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the address pool.
+     * </p>
+     * 
+     * @param poolTagSpecifications
+     *        The tags to apply to the address pool.
+     */
+
+    public void setPoolTagSpecifications(java.util.Collection<TagSpecification> poolTagSpecifications) {
+        if (poolTagSpecifications == null) {
+            this.poolTagSpecifications = null;
+            return;
+        }
+
+        this.poolTagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(poolTagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the address pool.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPoolTagSpecifications(java.util.Collection)} or
+     * {@link #withPoolTagSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param poolTagSpecifications
+     *        The tags to apply to the address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionByoipCidrRequest withPoolTagSpecifications(TagSpecification... poolTagSpecifications) {
+        if (this.poolTagSpecifications == null) {
+            setPoolTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(poolTagSpecifications.length));
+        }
+        for (TagSpecification ele : poolTagSpecifications) {
+            this.poolTagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the address pool.
+     * </p>
+     * 
+     * @param poolTagSpecifications
+     *        The tags to apply to the address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionByoipCidrRequest withPoolTagSpecifications(java.util.Collection<TagSpecification> poolTagSpecifications) {
+        setPoolTagSpecifications(poolTagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -296,7 +375,9 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
         if (getPubliclyAdvertisable() != null)
             sb.append("PubliclyAdvertisable: ").append(getPubliclyAdvertisable()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getPoolTagSpecifications() != null)
+            sb.append("PoolTagSpecifications: ").append(getPoolTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +408,10 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getPoolTagSpecifications() == null ^ this.getPoolTagSpecifications() == null)
+            return false;
+        if (other.getPoolTagSpecifications() != null && other.getPoolTagSpecifications().equals(this.getPoolTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -339,6 +424,7 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getCidrAuthorizationContext() == null) ? 0 : getCidrAuthorizationContext().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAdvertisable() == null) ? 0 : getPubliclyAdvertisable().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getPoolTagSpecifications() == null) ? 0 : getPoolTagSpecifications().hashCode());
         return hashCode;
     }
 

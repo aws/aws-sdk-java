@@ -35,6 +35,13 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
      * </p>
      */
     private Integer timeoutInSeconds;
+    /**
+     * <p>
+     * The maximum amount of memory available to the canary while it is running, in MB. The value you specify must be a
+     * multiple of 64.
+     * </p>
+     */
+    private Integer memoryInMB;
 
     /**
      * <p>
@@ -83,6 +90,52 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The maximum amount of memory available to the canary while it is running, in MB. The value you specify must be a
+     * multiple of 64.
+     * </p>
+     * 
+     * @param memoryInMB
+     *        The maximum amount of memory available to the canary while it is running, in MB. The value you specify
+     *        must be a multiple of 64.
+     */
+
+    public void setMemoryInMB(Integer memoryInMB) {
+        this.memoryInMB = memoryInMB;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of memory available to the canary while it is running, in MB. The value you specify must be a
+     * multiple of 64.
+     * </p>
+     * 
+     * @return The maximum amount of memory available to the canary while it is running, in MB. The value you specify
+     *         must be a multiple of 64.
+     */
+
+    public Integer getMemoryInMB() {
+        return this.memoryInMB;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of memory available to the canary while it is running, in MB. The value you specify must be a
+     * multiple of 64.
+     * </p>
+     * 
+     * @param memoryInMB
+     *        The maximum amount of memory available to the canary while it is running, in MB. The value you specify
+     *        must be a multiple of 64.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanaryRunConfigInput withMemoryInMB(Integer memoryInMB) {
+        setMemoryInMB(memoryInMB);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +148,9 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimeoutInSeconds() != null)
-            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds());
+            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
+        if (getMemoryInMB() != null)
+            sb.append("MemoryInMB: ").append(getMemoryInMB());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +169,10 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
             return false;
         if (other.getTimeoutInSeconds() != null && other.getTimeoutInSeconds().equals(this.getTimeoutInSeconds()) == false)
             return false;
+        if (other.getMemoryInMB() == null ^ this.getMemoryInMB() == null)
+            return false;
+        if (other.getMemoryInMB() != null && other.getMemoryInMB().equals(this.getMemoryInMB()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +182,7 @@ public class CanaryRunConfigInput implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getMemoryInMB() == null) ? 0 : getMemoryInMB().hashCode());
         return hashCode;
     }
 

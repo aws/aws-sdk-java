@@ -27,19 +27,24 @@ public class DeleteCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to delete. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to delete. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the canary that you want to delete. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to delete. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * 
      * @param name
-     *        The name of the canary that you want to delete. To find the names of your canaries, use
-     *        <a>DescribeCanaries</a>.
+     *        The name of the canary that you want to delete. To find the names of your canaries, use <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *        >DescribeCanaries</a>.
      */
 
     public void setName(String name) {
@@ -48,11 +53,14 @@ public class DeleteCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to delete. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to delete. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * 
-     * @return The name of the canary that you want to delete. To find the names of your canaries, use
-     *         <a>DescribeCanaries</a>.
+     * @return The name of the canary that you want to delete. To find the names of your canaries, use <a
+     *         href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *         >DescribeCanaries</a>.
      */
 
     public String getName() {
@@ -61,12 +69,15 @@ public class DeleteCanaryRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the canary that you want to delete. To find the names of your canaries, use <a>DescribeCanaries</a>.
+     * The name of the canary that you want to delete. To find the names of your canaries, use <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     * >DescribeCanaries</a>.
      * </p>
      * 
      * @param name
-     *        The name of the canary that you want to delete. To find the names of your canaries, use
-     *        <a>DescribeCanaries</a>.
+     *        The name of the canary that you want to delete. To find the names of your canaries, use <a
+     *        href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html"
+     *        >DescribeCanaries</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

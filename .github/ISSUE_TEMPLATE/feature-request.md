@@ -23,7 +23,7 @@ labels: feature-request, needs-triage
 <!--- Providing context helps us come up with a solution that is most useful in the real world -->
 
 ## Your Environment
-<!--- Include as many relevant details about the environment where the bug was discovered -->
+<!--- Include as many relevant details as possible about your environment -->
 * AWS Java SDK version used:
 * JDK version used:
 * Operating System and version:

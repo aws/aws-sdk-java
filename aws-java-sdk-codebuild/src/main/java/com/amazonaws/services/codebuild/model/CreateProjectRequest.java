@@ -164,7 +164,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String encryptionKey;
     /**
      * <p>
-     * A set of tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
@@ -1165,13 +1165,13 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
-     * @return A set of tags for this build project.</p>
+     * @return A list of tag key and value pairs associated with this build project.</p>
      *         <p>
      *         These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      */
@@ -1182,14 +1182,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
      * @param tags
-     *        A set of tags for this build project.</p>
+     *        A list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      */
@@ -1205,7 +1205,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
@@ -1217,7 +1217,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        A set of tags for this build project.</p>
+     *        A list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1235,14 +1235,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A set of tags for this build project.
+     * A list of tag key and value pairs associated with this build project.
      * </p>
      * <p>
      * These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * </p>
      * 
      * @param tags
-     *        A set of tags for this build project.</p>
+     *        A list of tag key and value pairs associated with this build project.</p>
      *        <p>
      *        These tags are available for use by AWS services that support AWS CodeBuild build project tags.
      * @return Returns a reference to this object so that method calls can be chained together.

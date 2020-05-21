@@ -253,7 +253,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      */
@@ -1962,13 +1962,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
-     *        token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
+     *        token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild
      *        request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      */
 
@@ -1979,12 +1979,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @return A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
-     *         token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
+     *         token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild
      *         request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      */
 
@@ -1995,13 +1995,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
-     * included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same
+     * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * </p>
      * 
      * @param idempotencyToken
      *        A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The
-     *        token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild
+     *        token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild
      *        request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

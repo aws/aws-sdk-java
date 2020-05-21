@@ -1,3 +1,20 @@
+# __1.11.788__ __2020-05-21__
+## __AWS CodeBuild__
+  - ### Features
+    - CodeBuild adds support for tagging with report groups
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - From this release onwards ProvisionByoipCidr publicly supports IPv6. Updated ProvisionByoipCidr API to support tags for public IPv4 and IPv6 pools. Added NetworkBorderGroup to the DescribePublicIpv4Pools response.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Deprecates unusable input members bound to Content-MD5 header. Updates example and documentation.
+
+## __Synthetics__
+  - ### Features
+    - AWS CloudWatch Synthetics now supports configuration of allocated memory for a canary.
+
 # __1.11.787__ __2020-05-20__
 ## __AWS App Mesh__
   - ### Features
@@ -15,6 +32,10 @@
   - ### Features
     - AWS Elemental MediaLive now supports the ability to ingest the content that is streaming from an AWS Elemental Link device: https://aws.amazon.com/medialive/features/link/. This release also adds support for SMPTE-2038 and input state waiters.
 
+## __AWS SDK for Java__
+  - ### Features
+    - Add a public constructor in `WebIdentityTokenCredentialProvider` so that it can be used in other 3rd libraries that expect public constructors. See [#2121](https://github.com/aws/aws-sdk-java/issues/2121)
+
 ## __AWS SecurityHub__
   - ### Features
     - For findings related to controls, the finding information now includes the reason behind the current status of the control. A new field for the findings original severity allows finding providers to use the severity values from the system they use to assign severity.
@@ -22,6 +43,10 @@
 ## __Amazon Chime__
   - ### Features
     - Amazon Chime enterprise account administrators can now set custom retention policies on chat data in the Amazon Chime application.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fixed the signing region determination logic for endpoints with known suffixes. For example, "s3.dualstack.cn-north-1.amazonaws.com.cn" will now have a region of "cn-north-1", not "dualstack".
 
 ## __Amazon Transcribe Streaming Service__
   - ### Features

@@ -52,6 +52,10 @@ public class CanaryRunConfigInputJsonUnmarshaller implements Unmarshaller<Canary
                     context.nextToken();
                     canaryRunConfigInput.setTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MemoryInMB", targetDepth)) {
+                    context.nextToken();
+                    canaryRunConfigInput.setMemoryInMB(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

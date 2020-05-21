@@ -58,6 +58,13 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
     private Integer totalAvailableAddressCount;
     /**
      * <p>
+     * The name of the location from which the address pool is advertised. A network border group is a unique set of
+     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * </p>
+     */
+    private String networkBorderGroup;
+    /**
+     * <p>
      * Any tags for the address pool.
      * </p>
      */
@@ -298,6 +305,52 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the location from which the address pool is advertised. A network border group is a unique set of
+     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * </p>
+     * 
+     * @param networkBorderGroup
+     *        The name of the location from which the address pool is advertised. A network border group is a unique set
+     *        of Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     */
+
+    public void setNetworkBorderGroup(String networkBorderGroup) {
+        this.networkBorderGroup = networkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which the address pool is advertised. A network border group is a unique set of
+     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * </p>
+     * 
+     * @return The name of the location from which the address pool is advertised. A network border group is a unique
+     *         set of Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     */
+
+    public String getNetworkBorderGroup() {
+        return this.networkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which the address pool is advertised. A network border group is a unique set of
+     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * </p>
+     * 
+     * @param networkBorderGroup
+     *        The name of the location from which the address pool is advertised. A network border group is a unique set
+     *        of Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublicIpv4Pool withNetworkBorderGroup(String networkBorderGroup) {
+        setNetworkBorderGroup(networkBorderGroup);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any tags for the address pool.
      * </p>
      * 
@@ -391,6 +444,8 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
             sb.append("TotalAddressCount: ").append(getTotalAddressCount()).append(",");
         if (getTotalAvailableAddressCount() != null)
             sb.append("TotalAvailableAddressCount: ").append(getTotalAvailableAddressCount()).append(",");
+        if (getNetworkBorderGroup() != null)
+            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -427,6 +482,10 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
             return false;
         if (other.getTotalAvailableAddressCount() != null && other.getTotalAvailableAddressCount().equals(this.getTotalAvailableAddressCount()) == false)
             return false;
+        if (other.getNetworkBorderGroup() == null ^ this.getNetworkBorderGroup() == null)
+            return false;
+        if (other.getNetworkBorderGroup() != null && other.getNetworkBorderGroup().equals(this.getNetworkBorderGroup()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -444,6 +503,7 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPoolAddressRanges() == null) ? 0 : getPoolAddressRanges().hashCode());
         hashCode = prime * hashCode + ((getTotalAddressCount() == null) ? 0 : getTotalAddressCount().hashCode());
         hashCode = prime * hashCode + ((getTotalAvailableAddressCount() == null) ? 0 : getTotalAvailableAddressCount().hashCode());
+        hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
