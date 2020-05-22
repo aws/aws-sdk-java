@@ -37,8 +37,8 @@ public class UpdatePortalRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portalDescription").build();
     private static final MarshallingInfo<String> PORTALCONTACTEMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portalContactEmail").build();
-    private static final MarshallingInfo<StructuredPojo> PORTALLOGOIMAGEFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portalLogoImageFile").build();
+    private static final MarshallingInfo<StructuredPojo> PORTALLOGOIMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portalLogoImage").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,7 +65,7 @@ public class UpdatePortalRequestMarshaller {
             protocolMarshaller.marshall(updatePortalRequest.getPortalName(), PORTALNAME_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getPortalDescription(), PORTALDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getPortalContactEmail(), PORTALCONTACTEMAIL_BINDING);
-            protocolMarshaller.marshall(updatePortalRequest.getPortalLogoImageFile(), PORTALLOGOIMAGEFILE_BINDING);
+            protocolMarshaller.marshall(updatePortalRequest.getPortalLogoImage(), PORTALLOGOIMAGE_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {

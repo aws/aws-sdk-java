@@ -27,25 +27,25 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group).
+     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * </p>
      */
     private String identityType;
     /**
      * <p>
-     * The ID of the identity.
+     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      * </p>
      */
     private String identityId;
     /**
      * <p>
-     * The type of resource (portal or project).
+     * The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The ID of the resource.
+     * The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      * </p>
      */
     private String resourceId;
@@ -64,11 +64,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group).
+     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (user or group).
+     *        The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * @see IdentityType
      */
 
@@ -78,10 +78,10 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group).
+     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * </p>
      * 
-     * @return The type of identity (user or group).
+     * @return The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * @see IdentityType
      */
 
@@ -91,11 +91,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group).
+     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (user or group).
+     *        The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -107,11 +107,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group).
+     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (user or group).
+     *        The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -123,11 +123,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the identity.
+     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      * </p>
      * 
      * @param identityId
-     *        The ID of the identity.
+     *        The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      */
 
     public void setIdentityId(String identityId) {
@@ -136,10 +136,10 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the identity.
+     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      * </p>
      * 
-     * @return The ID of the identity.
+     * @return The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      */
 
     public String getIdentityId() {
@@ -148,11 +148,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the identity.
+     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      * </p>
      * 
      * @param identityId
-     *        The ID of the identity.
+     *        The ID of the identity. This parameter is required if you specify <code>identityType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,12 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of resource (portal or project).
+     * The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource (portal or project).
+     *        The type of resource (portal or project). This parameter is required if you specify
+     *        <code>resourceId</code>.
      * @see ResourceType
      */
 
@@ -177,10 +178,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of resource (portal or project).
+     * The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
      * </p>
      * 
-     * @return The type of resource (portal or project).
+     * @return The type of resource (portal or project). This parameter is required if you specify
+     *         <code>resourceId</code>.
      * @see ResourceType
      */
 
@@ -190,11 +192,12 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of resource (portal or project).
+     * The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource (portal or project).
+     *        The type of resource (portal or project). This parameter is required if you specify
+     *        <code>resourceId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -206,11 +209,12 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of resource (portal or project).
+     * The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource (portal or project).
+     *        The type of resource (portal or project). This parameter is required if you specify
+     *        <code>resourceId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -222,11 +226,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the resource.
+     * The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource.
+     *        The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      */
 
     public void setResourceId(String resourceId) {
@@ -235,10 +239,10 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the resource.
+     * The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      * </p>
      * 
-     * @return The ID of the resource.
+     * @return The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      */
 
     public String getResourceId() {
@@ -247,11 +251,11 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the resource.
+     * The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource.
+     *        The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

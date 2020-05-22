@@ -17,7 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an override for a launch template.
+ * Describes an override for a launch template. Currently, the only supported override is instance type.
+ * </p>
+ * <p>
+ * The maximum number of instance type overrides that can be associated with an Auto Scaling group is 20.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplateOverrides"
@@ -28,7 +31,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. You must use an instance type that is supported in your requested Region and Availability
+     * Zones.
      * </p>
      * <p>
      * For information about available instance types, see <a
@@ -57,7 +61,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. You must use an instance type that is supported in your requested Region and Availability
+     * Zones.
      * </p>
      * <p>
      * For information about available instance types, see <a
@@ -66,7 +71,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceType
-     *        The instance type.</p>
+     *        The instance type. You must use an instance type that is supported in your requested Region and
+     *        Availability Zones. </p>
      *        <p>
      *        For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
@@ -79,7 +85,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. You must use an instance type that is supported in your requested Region and Availability
+     * Zones.
      * </p>
      * <p>
      * For information about available instance types, see <a
@@ -87,7 +94,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
-     * @return The instance type.</p>
+     * @return The instance type. You must use an instance type that is supported in your requested Region and
+     *         Availability Zones. </p>
      *         <p>
      *         For information about available instance types, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
@@ -100,7 +108,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
+     * The instance type. You must use an instance type that is supported in your requested Region and Availability
+     * Zones.
      * </p>
      * <p>
      * For information about available instance types, see <a
@@ -109,7 +118,8 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * 
      * @param instanceType
-     *        The instance type.</p>
+     *        The instance type. You must use an instance type that is supported in your requested Region and
+     *        Availability Zones. </p>
      *        <p>
      *        For information about available instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"

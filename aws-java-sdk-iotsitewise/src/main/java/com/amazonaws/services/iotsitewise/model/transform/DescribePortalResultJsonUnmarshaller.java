@@ -88,9 +88,9 @@ public class DescribePortalResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describePortalResult.setPortalLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("portalLogoImage", targetDepth)) {
+                if (context.testExpression("portalLogoImageLocation", targetDepth)) {
                     context.nextToken();
-                    describePortalResult.setPortalLogoImage(ImageJsonUnmarshaller.getInstance().unmarshall(context));
+                    describePortalResult.setPortalLogoImageLocation(ImageLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();

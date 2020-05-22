@@ -151,7 +151,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<EnabledMetric> enabledMetrics;
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     * The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      * </p>
      */
     private String status;
@@ -186,7 +186,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      */
     private Integer maxInstanceLifetime;
@@ -1212,11 +1212,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     * The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      * </p>
      * 
      * @param status
-     *        The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     *        The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      */
 
     public void setStatus(String status) {
@@ -1225,10 +1225,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     * The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      * </p>
      * 
-     * @return The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     * @return The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      */
 
     public String getStatus() {
@@ -1237,11 +1237,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     * The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      * </p>
      * 
      * @param status
-     *        The current state of the group when <a>DeleteAutoScalingGroup</a> is in progress.
+     *        The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1507,13 +1507,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      * 
      * @param maxInstanceLifetime
      *        The maximum amount of time, in seconds, that an instance can be in service.</p>
      *        <p>
-     *        Valid Range: Minimum value of 604800.
+     *        Valid Range: Minimum value of 0.
      */
 
     public void setMaxInstanceLifetime(Integer maxInstanceLifetime) {
@@ -1525,12 +1525,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      * 
      * @return The maximum amount of time, in seconds, that an instance can be in service.</p>
      *         <p>
-     *         Valid Range: Minimum value of 604800.
+     *         Valid Range: Minimum value of 0.
      */
 
     public Integer getMaxInstanceLifetime() {
@@ -1542,13 +1542,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      * 
      * @param maxInstanceLifetime
      *        The maximum amount of time, in seconds, that an instance can be in service.</p>
      *        <p>
-     *        Valid Range: Minimum value of 604800.
+     *        Valid Range: Minimum value of 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

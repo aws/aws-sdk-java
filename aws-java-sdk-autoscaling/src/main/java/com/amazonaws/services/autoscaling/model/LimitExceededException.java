@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch
- * configurations, or lifecycle hooks). For more information, see <a>DescribeAccountLimits</a>.
+ * configurations, or lifecycle hooks). For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+ * >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -100,8 +100,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     * <a>RecordLifecycleActionHeartbeat</a> API.
      * </p>
      */
     private Integer heartbeatTimeout;
@@ -550,8 +550,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     * <a>RecordLifecycleActionHeartbeat</a> API.
      * </p>
      * 
      * @param heartbeatTimeout
@@ -559,8 +559,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
      *        <p>
      *        If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     *        <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>.
+     *        <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     *        <a>RecordLifecycleActionHeartbeat</a> API.
      */
 
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -574,8 +574,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     * <a>RecordLifecycleActionHeartbeat</a> API.
      * </p>
      * 
      * @return The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from
@@ -583,8 +583,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      *         hour).</p>
      *         <p>
      *         If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     *         <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     *         <a>RecordLifecycleActionHeartbeat</a>.
+     *         <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     *         <a>RecordLifecycleActionHeartbeat</a> API.
      */
 
     public Integer getHeartbeatTimeout() {
@@ -598,8 +598,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.
+     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     * <a>RecordLifecycleActionHeartbeat</a> API.
      * </p>
      * 
      * @param heartbeatTimeout
@@ -607,8 +607,8 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
      *        <p>
      *        If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the
-     *        <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>.
+     *        <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the
+     *        <a>RecordLifecycleActionHeartbeat</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

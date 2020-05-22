@@ -79,19 +79,20 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     private String recurrence;
     /**
      * <p>
-     * The minimum number of instances in the Auto Scaling group.
+     * The minimum size of the Auto Scaling group.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * The maximum number of instances in the Auto Scaling group.
+     * The maximum size of the Auto Scaling group.
      * </p>
      */
     private Integer maxSize;
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
+     * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
      */
     private Integer desiredCapacity;
@@ -428,11 +429,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The minimum number of instances in the Auto Scaling group.
+     * The minimum size of the Auto Scaling group.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of instances in the Auto Scaling group.
+     *        The minimum size of the Auto Scaling group.
      */
 
     public void setMinSize(Integer minSize) {
@@ -441,10 +442,10 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The minimum number of instances in the Auto Scaling group.
+     * The minimum size of the Auto Scaling group.
      * </p>
      * 
-     * @return The minimum number of instances in the Auto Scaling group.
+     * @return The minimum size of the Auto Scaling group.
      */
 
     public Integer getMinSize() {
@@ -453,11 +454,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The minimum number of instances in the Auto Scaling group.
+     * The minimum size of the Auto Scaling group.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of instances in the Auto Scaling group.
+     *        The minimum size of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,11 +469,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of instances in the Auto Scaling group.
+     * The maximum size of the Auto Scaling group.
      * </p>
      * 
      * @param maxSize
-     *        The maximum number of instances in the Auto Scaling group.
+     *        The maximum size of the Auto Scaling group.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -481,10 +482,10 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of instances in the Auto Scaling group.
+     * The maximum size of the Auto Scaling group.
      * </p>
      * 
-     * @return The maximum number of instances in the Auto Scaling group.
+     * @return The maximum size of the Auto Scaling group.
      */
 
     public Integer getMaxSize() {
@@ -493,11 +494,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The maximum number of instances in the Auto Scaling group.
+     * The maximum size of the Auto Scaling group.
      * </p>
      * 
      * @param maxSize
-     *        The maximum number of instances in the Auto Scaling group.
+     *        The maximum size of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,11 +509,14 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
+     * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
      * 
      * @param desiredCapacity
-     *        The number of EC2 instances that should be running in the Auto Scaling group.
+     *        The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and
+     *        the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling
+     *        conditions.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -521,10 +525,13 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
+     * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
      * 
-     * @return The number of EC2 instances that should be running in the Auto Scaling group.
+     * @return The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs
+     *         and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling
+     *         conditions.
      */
 
     public Integer getDesiredCapacity() {
@@ -533,11 +540,14 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the
+     * capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
      * </p>
      * 
      * @param desiredCapacity
-     *        The number of EC2 instances that should be running in the Auto Scaling group.
+     *        The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and
+     *        the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling
+     *        conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

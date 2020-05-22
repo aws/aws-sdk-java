@@ -33,7 +33,7 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
+     * Specifies one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -76,7 +76,35 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>GroupInServiceCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupStandbyCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all metrics are disabled.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> metrics;
 
@@ -122,7 +150,7 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
+     * Specifies one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -165,9 +193,37 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>GroupInServiceCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupStandbyCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all metrics are disabled.
+     * </p>
      * 
-     * @return One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
+     * @return Specifies one or more of the following metrics:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -209,6 +265,34 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *         <code>GroupTotalInstances</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupInServiceCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupPendingCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupStandbyCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupTerminatingCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupTotalCapacity</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you omit this parameter, all metrics are disabled.
      */
 
     public java.util.List<String> getMetrics() {
@@ -220,7 +304,7 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
+     * Specifies one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -263,10 +347,38 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>GroupInServiceCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupStandbyCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all metrics are disabled.
+     * </p>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
+     *        Specifies one or more of the following metrics:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -308,6 +420,34 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupInServiceCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupStandbyCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, all metrics are disabled.
      */
 
     public void setMetrics(java.util.Collection<String> metrics) {
@@ -321,7 +461,7 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
+     * Specifies one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -364,7 +504,35 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>GroupInServiceCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupStandbyCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all metrics are disabled.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
@@ -372,7 +540,7 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
+     *        Specifies one or more of the following metrics:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -414,6 +582,34 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupInServiceCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupStandbyCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, all metrics are disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,7 +625,7 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * One or more of the following metrics. If you omit this parameter, all metrics are disabled.
+     * Specifies one or more of the following metrics:
      * </p>
      * <ul>
      * <li>
@@ -472,10 +668,38 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalInstances</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>GroupInServiceCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupStandbyCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * If you omit this parameter, all metrics are disabled.
+     * </p>
      * 
      * @param metrics
-     *        One or more of the following metrics. If you omit this parameter, all metrics are disabled.</p>
+     *        Specifies one or more of the following metrics:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -517,6 +741,34 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <code>GroupTotalInstances</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupInServiceCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupStandbyCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, all metrics are disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a lifecycle hook. Used in combination with <a>CreateAutoScalingGroup</a>.
+ * Describes information used to specify a lifecycle hook for an Auto Scaling group.
  * </p>
  * <p>
  * A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches (before
@@ -46,24 +46,18 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state using
- * <a>RecordLifecycleActionHeartbeat</a>.
+ * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.
  * </p>
  * </li>
  * <li>
  * <p>
- * If you finish before the timeout period ends, complete the lifecycle action using <a>CompleteLifecycleAction</a>.
+ * If you finish before the timeout period ends, complete the lifecycle action.
  * </p>
  * </li>
  * </ol>
  * <p>
  * For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
  * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
- * </p>
- * <p>
- * You can view the lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>. You can modify an
- * existing lifecycle hook or create new lifecycle hooks using <a>PutLifecycleHook</a>. If you are no longer using a
- * lifecycle hook, you can delete it using <a>DeleteLifecycleHook</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHookSpecification"

@@ -37,6 +37,8 @@ public class AggregatesMarshaller {
             .marshallLocationName("minimum").build();
     private static final MarshallingInfo<Double> SUM_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sum").build();
+    private static final MarshallingInfo<Double> STANDARDDEVIATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("standardDeviation").build();
 
     private static final AggregatesMarshaller instance = new AggregatesMarshaller();
 
@@ -59,6 +61,7 @@ public class AggregatesMarshaller {
             protocolMarshaller.marshall(aggregates.getMaximum(), MAXIMUM_BINDING);
             protocolMarshaller.marshall(aggregates.getMinimum(), MINIMUM_BINDING);
             protocolMarshaller.marshall(aggregates.getSum(), SUM_BINDING);
+            protocolMarshaller.marshall(aggregates.getStandardDeviation(), STANDARDDEVIATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

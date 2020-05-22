@@ -19,8 +19,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an image that is available at a URL.
+ * Contains an image that is one of the following:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * An image file. Choose this option to upload a new image.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The ID of an existing image. Choose this option to keep an existing image.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Image" target="_top">AWS API
  *      Documentation</a>
@@ -30,97 +42,76 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the image.
+     * The ID of an existing image. Specify this parameter to keep an existing image.
      * </p>
      */
-    private String locationUrl;
-    /**
-     * <p>
-     * The date the image was last updated, in Unix epoch time.
-     * </p>
-     */
-    private java.util.Date lastUpdateDate;
+    private String id;
+
+    private ImageFile file;
 
     /**
      * <p>
-     * A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the image.
+     * The ID of an existing image. Specify this parameter to keep an existing image.
      * </p>
      * 
-     * @param locationUrl
-     *        A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the
-     *        image.
+     * @param id
+     *        The ID of an existing image. Specify this parameter to keep an existing image.
      */
 
-    public void setLocationUrl(String locationUrl) {
-        this.locationUrl = locationUrl;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * <p>
-     * A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the image.
+     * The ID of an existing image. Specify this parameter to keep an existing image.
      * </p>
      * 
-     * @return A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the
-     *         image.
+     * @return The ID of an existing image. Specify this parameter to keep an existing image.
      */
 
-    public String getLocationUrl() {
-        return this.locationUrl;
+    public String getId() {
+        return this.id;
     }
 
     /**
      * <p>
-     * A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the image.
+     * The ID of an existing image. Specify this parameter to keep an existing image.
      * </p>
      * 
-     * @param locationUrl
-     *        A URL at which the image is available. The URL is valid for 15 minutes for you to view and download the
-     *        image.
+     * @param id
+     *        The ID of an existing image. Specify this parameter to keep an existing image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Image withLocationUrl(String locationUrl) {
-        setLocationUrl(locationUrl);
+    public Image withId(String id) {
+        setId(id);
         return this;
     }
 
     /**
-     * <p>
-     * The date the image was last updated, in Unix epoch time.
-     * </p>
-     * 
-     * @param lastUpdateDate
-     *        The date the image was last updated, in Unix epoch time.
+     * @param file
      */
 
-    public void setLastUpdateDate(java.util.Date lastUpdateDate) {
-        this.lastUpdateDate = lastUpdateDate;
+    public void setFile(ImageFile file) {
+        this.file = file;
     }
 
     /**
-     * <p>
-     * The date the image was last updated, in Unix epoch time.
-     * </p>
-     * 
-     * @return The date the image was last updated, in Unix epoch time.
+     * @return
      */
 
-    public java.util.Date getLastUpdateDate() {
-        return this.lastUpdateDate;
+    public ImageFile getFile() {
+        return this.file;
     }
 
     /**
-     * <p>
-     * The date the image was last updated, in Unix epoch time.
-     * </p>
-     * 
-     * @param lastUpdateDate
-     *        The date the image was last updated, in Unix epoch time.
+     * @param file
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Image withLastUpdateDate(java.util.Date lastUpdateDate) {
-        setLastUpdateDate(lastUpdateDate);
+    public Image withFile(ImageFile file) {
+        setFile(file);
         return this;
     }
 
@@ -136,10 +127,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLocationUrl() != null)
-            sb.append("LocationUrl: ").append(getLocationUrl()).append(",");
-        if (getLastUpdateDate() != null)
-            sb.append("LastUpdateDate: ").append(getLastUpdateDate());
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getFile() != null)
+            sb.append("File: ").append(getFile());
         sb.append("}");
         return sb.toString();
     }
@@ -154,13 +145,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Image == false)
             return false;
         Image other = (Image) obj;
-        if (other.getLocationUrl() == null ^ this.getLocationUrl() == null)
+        if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getLocationUrl() != null && other.getLocationUrl().equals(this.getLocationUrl()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
-        if (other.getLastUpdateDate() == null ^ this.getLastUpdateDate() == null)
+        if (other.getFile() == null ^ this.getFile() == null)
             return false;
-        if (other.getLastUpdateDate() != null && other.getLastUpdateDate().equals(this.getLastUpdateDate()) == false)
+        if (other.getFile() != null && other.getFile().equals(this.getFile()) == false)
             return false;
         return true;
     }
@@ -170,8 +161,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getLocationUrl() == null) ? 0 : getLocationUrl().hashCode());
-        hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getFile() == null) ? 0 : getFile().hashCode());
         return hashCode;
     }
 

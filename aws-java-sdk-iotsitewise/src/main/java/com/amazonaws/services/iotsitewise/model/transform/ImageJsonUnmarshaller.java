@@ -48,13 +48,13 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("locationUrl", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    image.setLocationUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                    image.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("lastUpdateDate", targetDepth)) {
+                if (context.testExpression("file", targetDepth)) {
                     context.nextToken();
-                    image.setLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    image.setFile(ImageFileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

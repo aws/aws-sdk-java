@@ -1,3 +1,12 @@
+# __1.11.789__ __2020-05-22__
+## __AWS IoT SiteWise__
+  - ### Features
+    - This release adds support for the standard deviation auto-computed aggregate and improved support for portal logo images in SiteWise.
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates for Amazon EC2 Auto Scaling
+
 # __1.11.788__ __2020-05-21__
 ## __AWS CodeBuild__
   - ### Features

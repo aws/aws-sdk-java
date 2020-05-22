@@ -26,7 +26,7 @@ public class UpdateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this
-     * action) and any error message.
+     * operation) and any error message.
      * </p>
      */
     private AssetModelStatus assetModelStatus;
@@ -34,12 +34,12 @@ public class UpdateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this
-     * action) and any error message.
+     * operation) and any error message.
      * </p>
      * 
      * @param assetModelStatus
      *        The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling
-     *        this action) and any error message.
+     *        this operation) and any error message.
      */
 
     public void setAssetModelStatus(AssetModelStatus assetModelStatus) {
@@ -49,11 +49,11 @@ public class UpdateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this
-     * action) and any error message.
+     * operation) and any error message.
      * </p>
      * 
      * @return The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling
-     *         this action) and any error message.
+     *         this operation) and any error message.
      */
 
     public AssetModelStatus getAssetModelStatus() {
@@ -63,12 +63,12 @@ public class UpdateAssetModelResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this
-     * action) and any error message.
+     * operation) and any error message.
      * </p>
      * 
      * @param assetModelStatus
      *        The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling
-     *        this action) and any error message.
+     *        this operation) and any error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

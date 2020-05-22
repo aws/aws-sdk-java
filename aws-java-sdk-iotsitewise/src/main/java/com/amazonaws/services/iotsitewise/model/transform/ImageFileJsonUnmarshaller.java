@@ -48,13 +48,13 @@ public class ImageFileJsonUnmarshaller implements Unmarshaller<ImageFile, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("encodedString", targetDepth)) {
+                if (context.testExpression("data", targetDepth)) {
                     context.nextToken();
-                    imageFile.setEncodedString(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                    imageFile.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
-                if (context.testExpression("fileType", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    imageFile.setFileType(context.getUnmarshaller(String.class).unmarshall(context));
+                    imageFile.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

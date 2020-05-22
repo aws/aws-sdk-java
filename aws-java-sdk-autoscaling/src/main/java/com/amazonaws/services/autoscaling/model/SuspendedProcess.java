@@ -17,7 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an automatic scaling process that has been suspended. For more information, see <a>ProcessType</a>.
+ * Describes an automatic scaling process that has been suspended.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling
+ * Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendedProcess" target="_top">AWS API

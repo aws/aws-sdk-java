@@ -17,7 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a filter.
+ * Describes a filter that is used to return a more specific list of results when describing tags.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling Groups and
+ * Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Filter" target="_top">AWS API
@@ -28,27 +33,27 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     * The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     * <code>value</code>, and <code>propagate-at-launch</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value of the filter.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     * The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     * <code>value</code>, and <code>propagate-at-launch</code>.
      * </p>
      * 
      * @param name
-     *        The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     *        <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     *        The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     *        <code>value</code>, and <code>propagate-at-launch</code>.
      */
 
     public void setName(String name) {
@@ -57,12 +62,12 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     * The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     * <code>value</code>, and <code>propagate-at-launch</code>.
      * </p>
      * 
-     * @return The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     * @return The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     *         <code>value</code>, and <code>propagate-at-launch</code>.
      */
 
     public String getName() {
@@ -71,13 +76,13 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     * The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     * <code>value</code>, and <code>propagate-at-launch</code>.
      * </p>
      * 
      * @param name
-     *        The name of the filter. The valid values are: <code>"auto-scaling-group"</code>, <code>"key"</code>,
-     *        <code>"value"</code>, and <code>"propagate-at-launch"</code>.
+     *        The name of the filter. The valid values are: <code>auto-scaling-group</code>, <code>key</code>,
+     *        <code>value</code>, and <code>propagate-at-launch</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +93,10 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the filter.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * 
-     * @return The value of the filter.
+     * @return One or more filter values. Filter values are case-sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -103,11 +108,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the filter.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        The value of the filter.
+     *        One or more filter values. Filter values are case-sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -121,7 +126,7 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the filter.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +135,7 @@ public class Filter implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        The value of the filter.
+     *        One or more filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +151,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the filter.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        The value of the filter.
+     *        One or more filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

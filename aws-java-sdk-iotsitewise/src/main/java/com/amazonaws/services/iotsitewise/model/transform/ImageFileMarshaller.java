@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ImageFileMarshaller {
 
-    private static final MarshallingInfo<java.nio.ByteBuffer> ENCODEDSTRING_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encodedString").build();
-    private static final MarshallingInfo<String> FILETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("fileType").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final ImageFileMarshaller instance = new ImageFileMarshaller();
 
@@ -48,8 +48,8 @@ public class ImageFileMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(imageFile.getEncodedString(), ENCODEDSTRING_BINDING);
-            protocolMarshaller.marshall(imageFile.getFileType(), FILETYPE_BINDING);
+            protocolMarshaller.marshall(imageFile.getData(), DATA_BINDING);
+            protocolMarshaller.marshall(imageFile.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

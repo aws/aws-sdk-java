@@ -89,10 +89,10 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date portalLastUpdateDate;
     /**
      * <p>
-     * The portal's logo image.
+     * The portal's logo image, which is available at a URL.
      * </p>
      */
-    private Image portalLogoImage;
+    private ImageLocation portalLogoImageLocation;
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the service
@@ -527,41 +527,41 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The portal's logo image.
+     * The portal's logo image, which is available at a URL.
      * </p>
      * 
-     * @param portalLogoImage
-     *        The portal's logo image.
+     * @param portalLogoImageLocation
+     *        The portal's logo image, which is available at a URL.
      */
 
-    public void setPortalLogoImage(Image portalLogoImage) {
-        this.portalLogoImage = portalLogoImage;
+    public void setPortalLogoImageLocation(ImageLocation portalLogoImageLocation) {
+        this.portalLogoImageLocation = portalLogoImageLocation;
     }
 
     /**
      * <p>
-     * The portal's logo image.
+     * The portal's logo image, which is available at a URL.
      * </p>
      * 
-     * @return The portal's logo image.
+     * @return The portal's logo image, which is available at a URL.
      */
 
-    public Image getPortalLogoImage() {
-        return this.portalLogoImage;
+    public ImageLocation getPortalLogoImageLocation() {
+        return this.portalLogoImageLocation;
     }
 
     /**
      * <p>
-     * The portal's logo image.
+     * The portal's logo image, which is available at a URL.
      * </p>
      * 
-     * @param portalLogoImage
-     *        The portal's logo image.
+     * @param portalLogoImageLocation
+     *        The portal's logo image, which is available at a URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribePortalResult withPortalLogoImage(Image portalLogoImage) {
-        setPortalLogoImage(portalLogoImage);
+    public DescribePortalResult withPortalLogoImageLocation(ImageLocation portalLogoImageLocation) {
+        setPortalLogoImageLocation(portalLogoImageLocation);
         return this;
     }
 
@@ -661,8 +661,8 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("PortalCreationDate: ").append(getPortalCreationDate()).append(",");
         if (getPortalLastUpdateDate() != null)
             sb.append("PortalLastUpdateDate: ").append(getPortalLastUpdateDate()).append(",");
-        if (getPortalLogoImage() != null)
-            sb.append("PortalLogoImage: ").append(getPortalLogoImage()).append(",");
+        if (getPortalLogoImageLocation() != null)
+            sb.append("PortalLogoImageLocation: ").append(getPortalLogoImageLocation()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
@@ -719,9 +719,9 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getPortalLastUpdateDate() != null && other.getPortalLastUpdateDate().equals(this.getPortalLastUpdateDate()) == false)
             return false;
-        if (other.getPortalLogoImage() == null ^ this.getPortalLogoImage() == null)
+        if (other.getPortalLogoImageLocation() == null ^ this.getPortalLogoImageLocation() == null)
             return false;
-        if (other.getPortalLogoImage() != null && other.getPortalLogoImage().equals(this.getPortalLogoImage()) == false)
+        if (other.getPortalLogoImageLocation() != null && other.getPortalLogoImageLocation().equals(this.getPortalLogoImageLocation()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
@@ -745,7 +745,7 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getPortalStatus() == null) ? 0 : getPortalStatus().hashCode());
         hashCode = prime * hashCode + ((getPortalCreationDate() == null) ? 0 : getPortalCreationDate().hashCode());
         hashCode = prime * hashCode + ((getPortalLastUpdateDate() == null) ? 0 : getPortalLastUpdateDate().hashCode());
-        hashCode = prime * hashCode + ((getPortalLogoImage() == null) ? 0 : getPortalLogoImage().hashCode());
+        hashCode = prime * hashCode + ((getPortalLogoImageLocation() == null) ? 0 : getPortalLogoImageLocation().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }

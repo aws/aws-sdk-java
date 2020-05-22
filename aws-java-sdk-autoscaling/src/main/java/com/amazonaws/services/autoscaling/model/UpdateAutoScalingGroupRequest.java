@@ -77,12 +77,24 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum size of the Auto Scaling group.
      * </p>
+     * <note>
+     * <p>
+     * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
+     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).
+     * </p>
+     * </note>
      */
     private Integer maxSize;
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or
-     * equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the
+     * capacity it attempts to maintain.
+     * </p>
+     * <p>
+     * This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum
+     * size of the group.
      * </p>
      */
     private Integer desiredCapacity;
@@ -184,7 +196,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String serviceLinkedRoleARN;
     /**
      * <p>
-     * The maximum amount of time, in seconds, that an instance can be in service.
+     * The maximum amount of time, in seconds, that an instance can be in service. The default is null.
+     * </p>
+     * <p>
+     * This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800
+     * seconds (7 days). To clear a previously set value, specify a new value of 0.
      * </p>
      * <p>
      * For more information, see <a
@@ -192,7 +208,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      */
     private Integer maxInstanceLifetime;
@@ -507,9 +523,23 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum size of the Auto Scaling group.
      * </p>
+     * <note>
+     * <p>
+     * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
+     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).
+     * </p>
+     * </note>
      * 
      * @param maxSize
-     *        The maximum size of the Auto Scaling group.
+     *        The maximum size of the Auto Scaling group.</p> <note>
+     *        <p>
+     *        With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     *        <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never
+     *        go above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many
+     *        capacity units each instance contributes to the capacity of the group).
+     *        </p>
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -520,8 +550,22 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum size of the Auto Scaling group.
      * </p>
+     * <note>
+     * <p>
+     * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
+     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).
+     * </p>
+     * </note>
      * 
-     * @return The maximum size of the Auto Scaling group.
+     * @return The maximum size of the Auto Scaling group.</p> <note>
+     *         <p>
+     *         With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     *         <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will
+     *         never go above <code>MaxSize</code> by more than your maximum instance weight (weights that define how
+     *         many capacity units each instance contributes to the capacity of the group).
+     *         </p>
      */
 
     public Integer getMaxSize() {
@@ -532,9 +576,23 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum size of the Auto Scaling group.
      * </p>
+     * <note>
+     * <p>
+     * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
+     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).
+     * </p>
+     * </note>
      * 
      * @param maxSize
-     *        The maximum size of the Auto Scaling group.
+     *        The maximum size of the Auto Scaling group.</p> <note>
+     *        <p>
+     *        With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
+     *        <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never
+     *        go above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many
+     *        capacity units each instance contributes to the capacity of the group).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -545,13 +603,20 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or
-     * equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the
+     * capacity it attempts to maintain.
+     * </p>
+     * <p>
+     * This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum
+     * size of the group.
      * </p>
      * 
      * @param desiredCapacity
-     *        The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater
-     *        than or equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     *        The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and
+     *        the capacity it attempts to maintain.</p>
+     *        <p>
+     *        This number must be greater than or equal to the minimum size of the group and less than or equal to the
+     *        maximum size of the group.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -560,12 +625,19 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or
-     * equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the
+     * capacity it attempts to maintain.
+     * </p>
+     * <p>
+     * This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum
+     * size of the group.
      * </p>
      * 
-     * @return The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater
-     *         than or equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     * @return The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and
+     *         the capacity it attempts to maintain.</p>
+     *         <p>
+     *         This number must be greater than or equal to the minimum size of the group and less than or equal to the
+     *         maximum size of the group.
      */
 
     public Integer getDesiredCapacity() {
@@ -574,13 +646,20 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater than or
-     * equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     * The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the
+     * capacity it attempts to maintain.
+     * </p>
+     * <p>
+     * This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum
+     * size of the group.
      * </p>
      * 
      * @param desiredCapacity
-     *        The number of EC2 instances that should be running in the Auto Scaling group. This number must be greater
-     *        than or equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     *        The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and
+     *        the capacity it attempts to maintain.</p>
+     *        <p>
+     *        This number must be greater than or equal to the minimum size of the group and less than or equal to the
+     *        maximum size of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1292,7 +1371,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum amount of time, in seconds, that an instance can be in service.
+     * The maximum amount of time, in seconds, that an instance can be in service. The default is null.
+     * </p>
+     * <p>
+     * This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800
+     * seconds (7 days). To clear a previously set value, specify a new value of 0.
      * </p>
      * <p>
      * For more information, see <a
@@ -1300,18 +1383,22 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      * 
      * @param maxInstanceLifetime
-     *        The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *        The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p>
+     *        <p>
+     *        This parameter is optional, but if you specify a value for it, you must specify a value of at least
+     *        604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
      *        Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        Valid Range: Minimum value of 604800.
+     *        Valid Range: Minimum value of 0.
      */
 
     public void setMaxInstanceLifetime(Integer maxInstanceLifetime) {
@@ -1320,7 +1407,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum amount of time, in seconds, that an instance can be in service.
+     * The maximum amount of time, in seconds, that an instance can be in service. The default is null.
+     * </p>
+     * <p>
+     * This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800
+     * seconds (7 days). To clear a previously set value, specify a new value of 0.
      * </p>
      * <p>
      * For more information, see <a
@@ -1328,10 +1419,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      * 
-     * @return The maximum amount of time, in seconds, that an instance can be in service.</p>
+     * @return The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p>
+     *         <p>
+     *         This parameter is optional, but if you specify a value for it, you must specify a value of at least
+     *         604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
@@ -1339,7 +1434,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         Guide</i>.
      *         </p>
      *         <p>
-     *         Valid Range: Minimum value of 604800.
+     *         Valid Range: Minimum value of 0.
      */
 
     public Integer getMaxInstanceLifetime() {
@@ -1348,7 +1443,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum amount of time, in seconds, that an instance can be in service.
+     * The maximum amount of time, in seconds, that an instance can be in service. The default is null.
+     * </p>
+     * <p>
+     * This parameter is optional, but if you specify a value for it, you must specify a value of at least 604,800
+     * seconds (7 days). To clear a previously set value, specify a new value of 0.
      * </p>
      * <p>
      * For more information, see <a
@@ -1356,18 +1455,22 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
-     * Valid Range: Minimum value of 604800.
+     * Valid Range: Minimum value of 0.
      * </p>
      * 
      * @param maxInstanceLifetime
-     *        The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *        The maximum amount of time, in seconds, that an instance can be in service. The default is null.</p>
+     *        <p>
+     *        This parameter is optional, but if you specify a value for it, you must specify a value of at least
+     *        604,800 seconds (7 days). To clear a previously set value, specify a new value of 0.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
      *        Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
-     *        Valid Range: Minimum value of 604800.
+     *        Valid Range: Minimum value of 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

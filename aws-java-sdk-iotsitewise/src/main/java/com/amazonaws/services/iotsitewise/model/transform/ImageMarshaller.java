@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ImageMarshaller {
 
-    private static final MarshallingInfo<String> LOCATIONURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("locationUrl").build();
-    private static final MarshallingInfo<java.util.Date> LASTUPDATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
+    private static final MarshallingInfo<StructuredPojo> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("file").build();
 
     private static final ImageMarshaller instance = new ImageMarshaller();
 
@@ -48,8 +48,8 @@ public class ImageMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(image.getLocationUrl(), LOCATIONURL_BINDING);
-            protocolMarshaller.marshall(image.getLastUpdateDate(), LASTUPDATEDATE_BINDING);
+            protocolMarshaller.marshall(image.getId(), ID_BINDING);
+            protocolMarshaller.marshall(image.getFile(), FILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

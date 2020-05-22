@@ -25,21 +25,21 @@ public class UpdatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this action)
-     * and any error message.
+     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
+     * operation) and any error message.
      * </p>
      */
     private PortalStatus portalStatus;
 
     /**
      * <p>
-     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this action)
-     * and any error message.
+     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
+     * operation) and any error message.
      * </p>
      * 
      * @param portalStatus
      *        The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
-     *        action) and any error message.
+     *        operation) and any error message.
      */
 
     public void setPortalStatus(PortalStatus portalStatus) {
@@ -48,12 +48,12 @@ public class UpdatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this action)
-     * and any error message.
+     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
+     * operation) and any error message.
      * </p>
      * 
      * @return The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
-     *         action) and any error message.
+     *         operation) and any error message.
      */
 
     public PortalStatus getPortalStatus() {
@@ -62,13 +62,13 @@ public class UpdatePortalResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this action)
-     * and any error message.
+     * The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
+     * operation) and any error message.
      * </p>
      * 
      * @param portalStatus
      *        The status of the portal, which contains a state (<code>UPDATING</code> after successfully calling this
-     *        action) and any error message.
+     *        operation) and any error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

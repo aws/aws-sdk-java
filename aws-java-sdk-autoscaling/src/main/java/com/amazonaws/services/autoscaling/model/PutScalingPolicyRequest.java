@@ -67,19 +67,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer minAdjustmentStep;
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
+     * instances.
      * </p>
      * <p>
-     * This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create a step
-     * scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
-     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
-     * Scaling scales out the group by 2 instances.
-     * </p>
-     * <p>
-     * Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
+     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer minAdjustmentMagnitude;
@@ -421,35 +419,30 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
+     * instances.
      * </p>
      * <p>
-     * This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create a step
-     * scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
-     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
-     * Scaling scales out the group by 2 instances.
-     * </p>
-     * <p>
-     * Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
+     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     *        <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the
-     *        Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>
-     *        .</p>
-     *        <p>
-     *        This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create a
-     *        step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
+     *        scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
      *        <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is
      *        performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of
-     *        2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
-     *        </p>
+     *        2, Amazon EC2 Auto Scaling scales out the group by 2 instances. </p>
      *        <p>
-     *        Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment
+     *        type is <code>PercentChangeInCapacity</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     *        >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
@@ -458,34 +451,29 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
+     * instances.
      * </p>
      * <p>
-     * This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create a step
-     * scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
-     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
-     * Scaling scales out the group by 2 instances.
-     * </p>
-     * <p>
-     * Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
+     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     *         <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the
-     *         Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>
-     *         .</p>
-     *         <p>
-     *         This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create
-     *         a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     * @return The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
+     *         scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
      *         <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is
      *         performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of
-     *         2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
-     *         </p>
+     *         2, Amazon EC2 Auto Scaling scales out the group by 2 instances. </p>
      *         <p>
-     *         Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     *         Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the
+     *         adjustment type is <code>PercentChangeInCapacity</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     *         >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Integer getMinAdjustmentMagnitude() {
@@ -494,35 +482,30 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     * <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the Auto
-     * Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>.
+     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
+     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
+     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
+     * instances.
      * </p>
      * <p>
-     * This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create a step
-     * scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
-     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
-     * Scaling scales out the group by 2 instances.
-     * </p>
-     * <p>
-     * Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
+     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum number of instances to scale. If the value of <code>AdjustmentType</code> is
-     *        <code>PercentChangeInCapacity</code>, the scaling policy changes the <code>DesiredCapacity</code> of the
-     *        Auto Scaling group by at least this many instances. Otherwise, the error is <code>ValidationError</code>
-     *        .</p>
-     *        <p>
-     *        This property replaces the <code>MinAdjustmentStep</code> property. For example, suppose that you create a
-     *        step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
+     *        scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
      *        <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is
      *        performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of
-     *        2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
-     *        </p>
+     *        2, Amazon EC2 Auto Scaling scales out the group by 2 instances. </p>
      *        <p>
-     *        Valid only if the policy type is <code>SimpleScaling</code> or <code>StepScaling</code>.
+     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment
+     *        type is <code>PercentChangeInCapacity</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     *        >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

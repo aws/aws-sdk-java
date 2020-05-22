@@ -49,13 +49,8 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String portalContactEmail;
-    /**
-     * <p>
-     * A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark
-     * background.
-     * </p>
-     */
-    private ImageFile portalLogoImageFile;
+
+    private Image portalLogoImage;
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service
@@ -235,48 +230,28 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p>
-     * A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark
-     * background.
-     * </p>
-     * 
-     * @param portalLogoImageFile
-     *        A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a
-     *        dark background.
+     * @param portalLogoImage
      */
 
-    public void setPortalLogoImageFile(ImageFile portalLogoImageFile) {
-        this.portalLogoImageFile = portalLogoImageFile;
+    public void setPortalLogoImage(Image portalLogoImage) {
+        this.portalLogoImage = portalLogoImage;
     }
 
     /**
-     * <p>
-     * A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark
-     * background.
-     * </p>
-     * 
-     * @return A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on
-     *         a dark background.
+     * @return
      */
 
-    public ImageFile getPortalLogoImageFile() {
-        return this.portalLogoImageFile;
+    public Image getPortalLogoImage() {
+        return this.portalLogoImage;
     }
 
     /**
-     * <p>
-     * A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark
-     * background.
-     * </p>
-     * 
-     * @param portalLogoImageFile
-     *        A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a
-     *        dark background.
+     * @param portalLogoImage
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdatePortalRequest withPortalLogoImageFile(ImageFile portalLogoImageFile) {
-        setPortalLogoImageFile(portalLogoImageFile);
+    public UpdatePortalRequest withPortalLogoImage(Image portalLogoImage) {
+        setPortalLogoImage(portalLogoImage);
         return this;
     }
 
@@ -410,8 +385,8 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("PortalDescription: ").append(getPortalDescription()).append(",");
         if (getPortalContactEmail() != null)
             sb.append("PortalContactEmail: ").append(getPortalContactEmail()).append(",");
-        if (getPortalLogoImageFile() != null)
-            sb.append("PortalLogoImageFile: ").append(getPortalLogoImageFile()).append(",");
+        if (getPortalLogoImage() != null)
+            sb.append("PortalLogoImage: ").append(getPortalLogoImage()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getClientToken() != null)
@@ -446,9 +421,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getPortalContactEmail() != null && other.getPortalContactEmail().equals(this.getPortalContactEmail()) == false)
             return false;
-        if (other.getPortalLogoImageFile() == null ^ this.getPortalLogoImageFile() == null)
+        if (other.getPortalLogoImage() == null ^ this.getPortalLogoImage() == null)
             return false;
-        if (other.getPortalLogoImageFile() != null && other.getPortalLogoImageFile().equals(this.getPortalLogoImageFile()) == false)
+        if (other.getPortalLogoImage() != null && other.getPortalLogoImage().equals(this.getPortalLogoImage()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
@@ -470,7 +445,7 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPortalName() == null) ? 0 : getPortalName().hashCode());
         hashCode = prime * hashCode + ((getPortalDescription() == null) ? 0 : getPortalDescription().hashCode());
         hashCode = prime * hashCode + ((getPortalContactEmail() == null) ? 0 : getPortalContactEmail().hashCode());
-        hashCode = prime * hashCode + ((getPortalLogoImageFile() == null) ? 0 : getPortalLogoImageFile().hashCode());
+        hashCode = prime * hashCode + ((getPortalLogoImage() == null) ? 0 : getPortalLogoImage().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;

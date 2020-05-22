@@ -24,7 +24,8 @@ public enum AggregateType {
     COUNT("COUNT"),
     MAXIMUM("MAXIMUM"),
     MINIMUM("MINIMUM"),
-    SUM("SUM");
+    SUM("SUM"),
+    STANDARD_DEVIATION("STANDARD_DEVIATION");
 
     private String value;
 

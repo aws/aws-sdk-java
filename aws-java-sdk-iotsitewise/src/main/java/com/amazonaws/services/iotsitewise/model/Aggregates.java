@@ -30,42 +30,48 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The average (mean) value of the time series for the last time interval window.
+     * The average (mean) value of the time series over a time interval window.
      * </p>
      */
     private Double average;
     /**
      * <p>
-     * The count of data points in the time series for the last time interval window.
+     * The count of data points in the time series over a time interval window.
      * </p>
      */
     private Double count;
     /**
      * <p>
-     * The maximum value of the time series for the last time interval window.
+     * The maximum value of the time series over a time interval window.
      * </p>
      */
     private Double maximum;
     /**
      * <p>
-     * The minimum value of the time series for the last time interval window.
+     * The minimum value of the time series over a time interval window.
      * </p>
      */
     private Double minimum;
     /**
      * <p>
-     * The sum of the time series for the last time interval window.
+     * The sum of the time series over a time interval window.
      * </p>
      */
     private Double sum;
+    /**
+     * <p>
+     * The standard deviation of the time series over a time interval window.
+     * </p>
+     */
+    private Double standardDeviation;
 
     /**
      * <p>
-     * The average (mean) value of the time series for the last time interval window.
+     * The average (mean) value of the time series over a time interval window.
      * </p>
      * 
      * @param average
-     *        The average (mean) value of the time series for the last time interval window.
+     *        The average (mean) value of the time series over a time interval window.
      */
 
     public void setAverage(Double average) {
@@ -74,10 +80,10 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The average (mean) value of the time series for the last time interval window.
+     * The average (mean) value of the time series over a time interval window.
      * </p>
      * 
-     * @return The average (mean) value of the time series for the last time interval window.
+     * @return The average (mean) value of the time series over a time interval window.
      */
 
     public Double getAverage() {
@@ -86,11 +92,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The average (mean) value of the time series for the last time interval window.
+     * The average (mean) value of the time series over a time interval window.
      * </p>
      * 
      * @param average
-     *        The average (mean) value of the time series for the last time interval window.
+     *        The average (mean) value of the time series over a time interval window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +107,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The count of data points in the time series for the last time interval window.
+     * The count of data points in the time series over a time interval window.
      * </p>
      * 
      * @param count
-     *        The count of data points in the time series for the last time interval window.
+     *        The count of data points in the time series over a time interval window.
      */
 
     public void setCount(Double count) {
@@ -114,10 +120,10 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The count of data points in the time series for the last time interval window.
+     * The count of data points in the time series over a time interval window.
      * </p>
      * 
-     * @return The count of data points in the time series for the last time interval window.
+     * @return The count of data points in the time series over a time interval window.
      */
 
     public Double getCount() {
@@ -126,11 +132,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The count of data points in the time series for the last time interval window.
+     * The count of data points in the time series over a time interval window.
      * </p>
      * 
      * @param count
-     *        The count of data points in the time series for the last time interval window.
+     *        The count of data points in the time series over a time interval window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +147,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum value of the time series for the last time interval window.
+     * The maximum value of the time series over a time interval window.
      * </p>
      * 
      * @param maximum
-     *        The maximum value of the time series for the last time interval window.
+     *        The maximum value of the time series over a time interval window.
      */
 
     public void setMaximum(Double maximum) {
@@ -154,10 +160,10 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum value of the time series for the last time interval window.
+     * The maximum value of the time series over a time interval window.
      * </p>
      * 
-     * @return The maximum value of the time series for the last time interval window.
+     * @return The maximum value of the time series over a time interval window.
      */
 
     public Double getMaximum() {
@@ -166,11 +172,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum value of the time series for the last time interval window.
+     * The maximum value of the time series over a time interval window.
      * </p>
      * 
      * @param maximum
-     *        The maximum value of the time series for the last time interval window.
+     *        The maximum value of the time series over a time interval window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +187,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum value of the time series for the last time interval window.
+     * The minimum value of the time series over a time interval window.
      * </p>
      * 
      * @param minimum
-     *        The minimum value of the time series for the last time interval window.
+     *        The minimum value of the time series over a time interval window.
      */
 
     public void setMinimum(Double minimum) {
@@ -194,10 +200,10 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum value of the time series for the last time interval window.
+     * The minimum value of the time series over a time interval window.
      * </p>
      * 
-     * @return The minimum value of the time series for the last time interval window.
+     * @return The minimum value of the time series over a time interval window.
      */
 
     public Double getMinimum() {
@@ -206,11 +212,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum value of the time series for the last time interval window.
+     * The minimum value of the time series over a time interval window.
      * </p>
      * 
      * @param minimum
-     *        The minimum value of the time series for the last time interval window.
+     *        The minimum value of the time series over a time interval window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +227,11 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sum of the time series for the last time interval window.
+     * The sum of the time series over a time interval window.
      * </p>
      * 
      * @param sum
-     *        The sum of the time series for the last time interval window.
+     *        The sum of the time series over a time interval window.
      */
 
     public void setSum(Double sum) {
@@ -234,10 +240,10 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sum of the time series for the last time interval window.
+     * The sum of the time series over a time interval window.
      * </p>
      * 
-     * @return The sum of the time series for the last time interval window.
+     * @return The sum of the time series over a time interval window.
      */
 
     public Double getSum() {
@@ -246,16 +252,56 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sum of the time series for the last time interval window.
+     * The sum of the time series over a time interval window.
      * </p>
      * 
      * @param sum
-     *        The sum of the time series for the last time interval window.
+     *        The sum of the time series over a time interval window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Aggregates withSum(Double sum) {
         setSum(sum);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The standard deviation of the time series over a time interval window.
+     * </p>
+     * 
+     * @param standardDeviation
+     *        The standard deviation of the time series over a time interval window.
+     */
+
+    public void setStandardDeviation(Double standardDeviation) {
+        this.standardDeviation = standardDeviation;
+    }
+
+    /**
+     * <p>
+     * The standard deviation of the time series over a time interval window.
+     * </p>
+     * 
+     * @return The standard deviation of the time series over a time interval window.
+     */
+
+    public Double getStandardDeviation() {
+        return this.standardDeviation;
+    }
+
+    /**
+     * <p>
+     * The standard deviation of the time series over a time interval window.
+     * </p>
+     * 
+     * @param standardDeviation
+     *        The standard deviation of the time series over a time interval window.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Aggregates withStandardDeviation(Double standardDeviation) {
+        setStandardDeviation(standardDeviation);
         return this;
     }
 
@@ -280,7 +326,9 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
         if (getMinimum() != null)
             sb.append("Minimum: ").append(getMinimum()).append(",");
         if (getSum() != null)
-            sb.append("Sum: ").append(getSum());
+            sb.append("Sum: ").append(getSum()).append(",");
+        if (getStandardDeviation() != null)
+            sb.append("StandardDeviation: ").append(getStandardDeviation());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +363,10 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSum() != null && other.getSum().equals(this.getSum()) == false)
             return false;
+        if (other.getStandardDeviation() == null ^ this.getStandardDeviation() == null)
+            return false;
+        if (other.getStandardDeviation() != null && other.getStandardDeviation().equals(this.getStandardDeviation()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class Aggregates implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaximum() == null) ? 0 : getMaximum().hashCode());
         hashCode = prime * hashCode + ((getMinimum() == null) ? 0 : getMinimum().hashCode());
         hashCode = prime * hashCode + ((getSum() == null) ? 0 : getSum().hashCode());
+        hashCode = prime * hashCode + ((getStandardDeviation() == null) ? 0 : getStandardDeviation().hashCode());
         return hashCode;
     }
 

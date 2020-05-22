@@ -25,7 +25,7 @@ public class DeleteAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this action)
+     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation)
      * and any error message.
      * </p>
      */
@@ -33,13 +33,13 @@ public class DeleteAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this action)
+     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation)
      * and any error message.
      * </p>
      * 
      * @param assetStatus
      *        The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this
-     *        action) and any error message.
+     *        operation) and any error message.
      */
 
     public void setAssetStatus(AssetStatus assetStatus) {
@@ -48,12 +48,12 @@ public class DeleteAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this action)
+     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation)
      * and any error message.
      * </p>
      * 
      * @return The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this
-     *         action) and any error message.
+     *         operation) and any error message.
      */
 
     public AssetStatus getAssetStatus() {
@@ -62,13 +62,13 @@ public class DeleteAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this action)
+     * The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this operation)
      * and any error message.
      * </p>
      * 
      * @param assetStatus
      *        The status of the asset, which contains a state (<code>DELETING</code> after successfully calling this
-     *        action) and any error message.
+     *        operation) and any error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

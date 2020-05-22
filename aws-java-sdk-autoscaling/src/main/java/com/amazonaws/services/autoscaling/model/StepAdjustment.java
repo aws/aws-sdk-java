@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach
- * threshold that you've defined for the alarm. Used in combination with <a>PutScalingPolicy</a>.
+ * Describes information used to create a step adjustment for a step scaling policy.
  * </p>
  * <p>
  * For the following examples, suppose that you have an alarm with a breach threshold of 50:
@@ -64,6 +63,11 @@ import javax.annotation.Generated;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step
+ * Adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/StepAdjustment" target="_top">AWS API
  *      Documentation</a>

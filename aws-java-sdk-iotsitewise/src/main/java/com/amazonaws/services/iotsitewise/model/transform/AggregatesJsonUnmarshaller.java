@@ -68,6 +68,10 @@ public class AggregatesJsonUnmarshaller implements Unmarshaller<Aggregates, Json
                     context.nextToken();
                     aggregates.setSum(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("standardDeviation", targetDepth)) {
+                    context.nextToken();
+                    aggregates.setStandardDeviation(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -514,7 +514,7 @@ public interface AWSIoTSiteWise {
     /**
      * <p>
      * Deletes an access policy that grants the specified AWS Single Sign-On identity access to the specified AWS IoT
-     * SiteWise Monitor resource. You can use this action to revoke access to an AWS IoT SiteWise Monitor resource.
+     * SiteWise Monitor resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
      * </p>
      * 
      * @param deleteAccessPolicyRequest
@@ -1619,7 +1619,7 @@ public interface AWSIoTSiteWise {
      * </p>
      * <important>
      * <p>
-     * This action overwrites the existing model with the provided model. To avoid deleting your asset model's
+     * This operation overwrites the existing model with the provided model. To avoid deleting your asset model's
      * properties or hierarchies, you must include their IDs and definitions in the updated asset model payload. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html"
