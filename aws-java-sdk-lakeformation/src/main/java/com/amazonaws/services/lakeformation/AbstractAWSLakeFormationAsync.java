@@ -37,7 +37,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<BatchGrantPermissionsResult> batchGrantPermissionsAsync(BatchGrantPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGrantPermissionsRequest, BatchGrantPermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<BatchRevokePermissionsResult> batchRevokePermissionsAsync(BatchRevokePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchRevokePermissionsRequest, BatchRevokePermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<DeregisterResourceResult> deregisterResourceAsync(DeregisterResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterResourceRequest, DeregisterResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<DescribeResourceResult> describeResourceAsync(DescribeResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeResourceRequest, DescribeResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<GetDataLakeSettingsResult> getDataLakeSettingsAsync(GetDataLakeSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDataLakeSettingsRequest, GetDataLakeSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<GetEffectivePermissionsForPathResult> getEffectivePermissionsForPathAsync(GetEffectivePermissionsForPathRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEffectivePermissionsForPathRequest, GetEffectivePermissionsForPathResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<GrantPermissionsResult> grantPermissionsAsync(GrantPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GrantPermissionsRequest, GrantPermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourcesRequest, ListResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<PutDataLakeSettingsResult> putDataLakeSettingsAsync(PutDataLakeSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDataLakeSettingsRequest, PutDataLakeSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<RegisterResourceResult> registerResourceAsync(RegisterResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterResourceRequest, RegisterResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<RevokePermissionsResult> revokePermissionsAsync(RevokePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokePermissionsRequest, RevokePermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     public java.util.concurrent.Future<UpdateResourceResult> updateResourceAsync(UpdateResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateResourceRequest, UpdateResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

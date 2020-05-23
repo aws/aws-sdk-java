@@ -29,87 +29,87 @@ public class AbstractAmazonCloudSearch implements AmazonCloudSearch {
 
     @Override
     public void setEndpoint(String endpoint) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public BuildSuggestersResult buildSuggesters(BuildSuggestersRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public CreateDomainResult createDomain(CreateDomainRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DefineAnalysisSchemeResult defineAnalysisScheme(DefineAnalysisSchemeRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DefineExpressionResult defineExpression(DefineExpressionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DefineIndexFieldResult defineIndexField(DefineIndexFieldRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DefineSuggesterResult defineSuggester(DefineSuggesterRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteAnalysisSchemeResult deleteAnalysisScheme(DeleteAnalysisSchemeRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteExpressionResult deleteExpression(DeleteExpressionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteIndexFieldResult deleteIndexField(DeleteIndexFieldRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteSuggesterResult deleteSuggester(DeleteSuggesterRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeAnalysisSchemesResult describeAnalysisSchemes(DescribeAnalysisSchemesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeAvailabilityOptionsResult describeAvailabilityOptions(DescribeAvailabilityOptionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeDomainEndpointOptionsResult describeDomainEndpointOptions(DescribeDomainEndpointOptionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeDomainsResult describeDomains(DescribeDomainsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,37 +119,37 @@ public class AbstractAmazonCloudSearch implements AmazonCloudSearch {
 
     @Override
     public DescribeExpressionsResult describeExpressions(DescribeExpressionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeIndexFieldsResult describeIndexFields(DescribeIndexFieldsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeScalingParametersResult describeScalingParameters(DescribeScalingParametersRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeServiceAccessPoliciesResult describeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeSuggestersResult describeSuggesters(DescribeSuggestersRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public IndexDocumentsResult indexDocuments(IndexDocumentsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListDomainNamesResult listDomainNames(ListDomainNamesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -159,32 +159,32 @@ public class AbstractAmazonCloudSearch implements AmazonCloudSearch {
 
     @Override
     public UpdateAvailabilityOptionsResult updateAvailabilityOptions(UpdateAvailabilityOptionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateDomainEndpointOptionsResult updateDomainEndpointOptions(UpdateDomainEndpointOptionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateScalingParametersResult updateScalingParameters(UpdateScalingParametersRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateServiceAccessPoliciesResult updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

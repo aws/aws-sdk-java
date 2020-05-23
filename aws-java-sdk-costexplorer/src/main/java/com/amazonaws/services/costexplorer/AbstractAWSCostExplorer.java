@@ -29,107 +29,107 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
 
     @Override
     public CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteCostCategoryDefinitionResult deleteCostCategoryDefinition(DeleteCostCategoryDefinitionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeCostCategoryDefinitionResult describeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetCostAndUsageResult getCostAndUsage(GetCostAndUsageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetCostAndUsageWithResourcesResult getCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetCostForecastResult getCostForecast(GetCostForecastRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetDimensionValuesResult getDimensionValues(GetDimensionValuesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetReservationCoverageResult getReservationCoverage(GetReservationCoverageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetReservationPurchaseRecommendationResult getReservationPurchaseRecommendation(GetReservationPurchaseRecommendationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetReservationUtilizationResult getReservationUtilization(GetReservationUtilizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetRightsizingRecommendationResult getRightsizingRecommendation(GetRightsizingRecommendationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetSavingsPlansCoverageResult getSavingsPlansCoverage(GetSavingsPlansCoverageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetSavingsPlansPurchaseRecommendationResult getSavingsPlansPurchaseRecommendation(GetSavingsPlansPurchaseRecommendationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetSavingsPlansUtilizationResult getSavingsPlansUtilization(GetSavingsPlansUtilizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetSavingsPlansUtilizationDetailsResult getSavingsPlansUtilizationDetails(GetSavingsPlansUtilizationDetailsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetTagsResult getTags(GetTagsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetUsageForecastResult getUsageForecast(GetUsageForecastRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListCostCategoryDefinitionsResult listCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateCostCategoryDefinitionResult updateCostCategoryDefinition(UpdateCostCategoryDefinitionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<AbortEnvironmentUpdateResult> abortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<AbortEnvironmentUpdateRequest, AbortEnvironmentUpdateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -73,7 +73,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ApplyEnvironmentManagedActionResult> applyEnvironmentManagedActionAsync(ApplyEnvironmentManagedActionRequest request,
             com.amazonaws.handlers.AsyncHandler<ApplyEnvironmentManagedActionRequest, ApplyEnvironmentManagedActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -86,7 +86,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CheckDNSAvailabilityResult> checkDNSAvailabilityAsync(CheckDNSAvailabilityRequest request,
             com.amazonaws.handlers.AsyncHandler<CheckDNSAvailabilityRequest, CheckDNSAvailabilityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -99,7 +99,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ComposeEnvironmentsResult> composeEnvironmentsAsync(ComposeEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ComposeEnvironmentsRequest, ComposeEnvironmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -112,7 +112,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -125,7 +125,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -138,7 +138,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CreateConfigurationTemplateResult> createConfigurationTemplateAsync(CreateConfigurationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -151,7 +151,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -164,7 +164,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(CreatePlatformVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePlatformVersionRequest, CreatePlatformVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -177,7 +177,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<CreateStorageLocationResult> createStorageLocationAsync(CreateStorageLocationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateStorageLocationRequest, CreateStorageLocationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -213,7 +213,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -226,7 +226,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DeleteApplicationVersionResult> deleteApplicationVersionAsync(DeleteApplicationVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationVersionRequest, DeleteApplicationVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -239,7 +239,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DeleteConfigurationTemplateResult> deleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -252,7 +252,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DeleteEnvironmentConfigurationResult> deleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -265,7 +265,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(DeletePlatformVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePlatformVersionRequest, DeletePlatformVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -278,7 +278,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -291,7 +291,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(DescribeApplicationVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionsRequest, DescribeApplicationVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -327,7 +327,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeApplicationsResult> describeApplicationsAsync(DescribeApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationsRequest, DescribeApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -363,7 +363,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeConfigurationOptionsResult> describeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -376,7 +376,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeConfigurationSettingsResult> describeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -389,7 +389,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeEnvironmentHealthResult> describeEnvironmentHealthAsync(DescribeEnvironmentHealthRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentHealthRequest, DescribeEnvironmentHealthResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -404,7 +404,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
             DescribeEnvironmentManagedActionHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionHistoryRequest, DescribeEnvironmentManagedActionHistoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -419,7 +419,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
             DescribeEnvironmentManagedActionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentManagedActionsRequest, DescribeEnvironmentManagedActionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -432,7 +432,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeEnvironmentResourcesResult> describeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -445,7 +445,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(DescribeEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -481,7 +481,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -517,7 +517,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribeInstancesHealthResult> describeInstancesHealthAsync(DescribeInstancesHealthRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancesHealthRequest, DescribeInstancesHealthResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -530,7 +530,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePlatformVersionRequest, DescribePlatformVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -543,7 +543,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -579,7 +579,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ListPlatformBranchesResult> listPlatformBranchesAsync(ListPlatformBranchesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPlatformBranchesRequest, ListPlatformBranchesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -592,7 +592,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPlatformVersionsRequest, ListPlatformVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -605,7 +605,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -618,7 +618,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(RebuildEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<RebuildEnvironmentRequest, RebuildEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -631,7 +631,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<RequestEnvironmentInfoResult> requestEnvironmentInfoAsync(RequestEnvironmentInfoRequest request,
             com.amazonaws.handlers.AsyncHandler<RequestEnvironmentInfoRequest, RequestEnvironmentInfoResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -644,7 +644,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<RestartAppServerResult> restartAppServerAsync(RestartAppServerRequest request,
             com.amazonaws.handlers.AsyncHandler<RestartAppServerRequest, RestartAppServerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -657,7 +657,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<RetrieveEnvironmentInfoResult> retrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest request,
             com.amazonaws.handlers.AsyncHandler<RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -670,7 +670,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<SwapEnvironmentCNAMEsResult> swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest request,
             com.amazonaws.handlers.AsyncHandler<SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -706,7 +706,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<TerminateEnvironmentResult> terminateEnvironmentAsync(TerminateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<TerminateEnvironmentRequest, TerminateEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -719,7 +719,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -734,7 +734,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
             UpdateApplicationResourceLifecycleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationResourceLifecycleRequest, UpdateApplicationResourceLifecycleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -747,7 +747,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(UpdateApplicationVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationVersionRequest, UpdateApplicationVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -760,7 +760,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<UpdateConfigurationTemplateResult> updateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -773,7 +773,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -786,7 +786,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTagsForResourceRequest, UpdateTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -799,7 +799,7 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     public java.util.concurrent.Future<ValidateConfigurationSettingsResult> validateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

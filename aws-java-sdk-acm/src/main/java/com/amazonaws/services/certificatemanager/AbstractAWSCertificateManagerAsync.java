@@ -37,7 +37,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(AddTagsToCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<ExportCertificateResult> exportCertificateAsync(ExportCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<ExportCertificateRequest, ExportCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<GetCertificateResult> getCertificateAsync(GetCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCertificateRequest, GetCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<ImportCertificateResult> importCertificateAsync(ImportCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportCertificateRequest, ImportCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(ListTagsForCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(RemoveTagsFromCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<RenewCertificateResult> renewCertificateAsync(RenewCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RenewCertificateRequest, RenewCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<RequestCertificateResult> requestCertificateAsync(RequestCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RequestCertificateRequest, RequestCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(ResendValidationEmailRequest request,
             com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSCertificateManagerAsync extends AbstractAWSCertificateMa
     public java.util.concurrent.Future<UpdateCertificateOptionsResult> updateCertificateOptionsAsync(UpdateCertificateOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCertificateOptionsRequest, UpdateCertificateOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

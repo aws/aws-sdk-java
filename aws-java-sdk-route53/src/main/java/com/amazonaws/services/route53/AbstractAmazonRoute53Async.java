@@ -37,7 +37,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<AssociateVPCWithHostedZoneResult> associateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateVPCWithHostedZoneRequest, AssociateVPCWithHostedZoneResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ChangeResourceRecordSetsResult> changeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangeResourceRecordSetsRequest, ChangeResourceRecordSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ChangeTagsForResourceResult> changeTagsForResourceAsync(ChangeTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangeTagsForResourceRequest, ChangeTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateHealthCheckResult> createHealthCheckAsync(CreateHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHealthCheckRequest, CreateHealthCheckResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateHostedZoneResult> createHostedZoneAsync(CreateHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateQueryLoggingConfigResult> createQueryLoggingConfigAsync(CreateQueryLoggingConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateQueryLoggingConfigRequest, CreateQueryLoggingConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateReusableDelegationSetResult> createReusableDelegationSetAsync(CreateReusableDelegationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateReusableDelegationSetRequest, CreateReusableDelegationSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateTrafficPolicyResult> createTrafficPolicyAsync(CreateTrafficPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyRequest, CreateTrafficPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateTrafficPolicyInstanceResult> createTrafficPolicyInstanceAsync(CreateTrafficPolicyInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyInstanceRequest, CreateTrafficPolicyInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<CreateTrafficPolicyVersionResult> createTrafficPolicyVersionAsync(CreateTrafficPolicyVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTrafficPolicyVersionRequest, CreateTrafficPolicyVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -169,7 +169,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             CreateVPCAssociationAuthorizationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateVPCAssociationAuthorizationRequest, CreateVPCAssociationAuthorizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DeleteHealthCheckResult> deleteHealthCheckAsync(DeleteHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHealthCheckRequest, DeleteHealthCheckResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DeleteHostedZoneResult> deleteHostedZoneAsync(DeleteHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DeleteQueryLoggingConfigResult> deleteQueryLoggingConfigAsync(DeleteQueryLoggingConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteQueryLoggingConfigRequest, DeleteQueryLoggingConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -221,7 +221,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DeleteReusableDelegationSetResult> deleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteReusableDelegationSetRequest, DeleteReusableDelegationSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -234,7 +234,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DeleteTrafficPolicyResult> deleteTrafficPolicyAsync(DeleteTrafficPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyRequest, DeleteTrafficPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -247,7 +247,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DeleteTrafficPolicyInstanceResult> deleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTrafficPolicyInstanceRequest, DeleteTrafficPolicyInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -262,7 +262,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             DeleteVPCAssociationAuthorizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVPCAssociationAuthorizationRequest, DeleteVPCAssociationAuthorizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -275,7 +275,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -288,7 +288,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccountLimitRequest, GetAccountLimitResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -301,7 +301,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetChangeResult> getChangeAsync(GetChangeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetChangeRequest, GetChangeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -314,7 +314,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(GetCheckerIpRangesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -350,7 +350,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetGeoLocationResult> getGeoLocationAsync(GetGeoLocationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGeoLocationRequest, GetGeoLocationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -386,7 +386,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetHealthCheckResult> getHealthCheckAsync(GetHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckRequest, GetHealthCheckResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -399,7 +399,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetHealthCheckCountResult> getHealthCheckCountAsync(GetHealthCheckCountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckCountRequest, GetHealthCheckCountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -437,7 +437,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             GetHealthCheckLastFailureReasonRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckLastFailureReasonRequest, GetHealthCheckLastFailureReasonResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -450,7 +450,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetHealthCheckStatusResult> getHealthCheckStatusAsync(GetHealthCheckStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHealthCheckStatusRequest, GetHealthCheckStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -463,7 +463,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetHostedZoneResult> getHostedZoneAsync(GetHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHostedZoneRequest, GetHostedZoneResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -476,7 +476,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetHostedZoneCountResult> getHostedZoneCountAsync(GetHostedZoneCountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHostedZoneCountRequest, GetHostedZoneCountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -512,7 +512,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHostedZoneLimitRequest, GetHostedZoneLimitResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -525,7 +525,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetQueryLoggingConfigResult> getQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetQueryLoggingConfigRequest, GetQueryLoggingConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -538,7 +538,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -551,7 +551,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(GetReusableDelegationSetLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetLimitRequest, GetReusableDelegationSetLimitResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -564,7 +564,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetTrafficPolicyResult> getTrafficPolicyAsync(GetTrafficPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyRequest, GetTrafficPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -577,7 +577,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetTrafficPolicyInstanceResult> getTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceRequest, GetTrafficPolicyInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -590,7 +590,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<GetTrafficPolicyInstanceCountResult> getTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTrafficPolicyInstanceCountRequest, GetTrafficPolicyInstanceCountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -627,7 +627,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListGeoLocationsResult> listGeoLocationsAsync(ListGeoLocationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGeoLocationsRequest, ListGeoLocationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -663,7 +663,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListHealthChecksResult> listHealthChecksAsync(ListHealthChecksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHealthChecksRequest, ListHealthChecksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -699,7 +699,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListHostedZonesResult> listHostedZonesAsync(ListHostedZonesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesRequest, ListHostedZonesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -735,7 +735,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListHostedZonesByNameResult> listHostedZonesByNameAsync(ListHostedZonesByNameRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -771,7 +771,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListQueryLoggingConfigsResult> listQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListQueryLoggingConfigsRequest, ListQueryLoggingConfigsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -784,7 +784,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListResourceRecordSetsResult> listResourceRecordSetsAsync(ListResourceRecordSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourceRecordSetsRequest, ListResourceRecordSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -797,7 +797,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListReusableDelegationSetsResult> listReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListReusableDelegationSetsRequest, ListReusableDelegationSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -833,7 +833,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -846,7 +846,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListTagsForResourcesResult> listTagsForResourcesAsync(ListTagsForResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourcesRequest, ListTagsForResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -859,7 +859,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListTrafficPoliciesResult> listTrafficPoliciesAsync(ListTrafficPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrafficPoliciesRequest, ListTrafficPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -895,7 +895,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListTrafficPolicyInstancesResult> listTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesRequest, ListTrafficPolicyInstancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -933,7 +933,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             ListTrafficPolicyInstancesByHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByHostedZoneRequest, ListTrafficPolicyInstancesByHostedZoneResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -948,7 +948,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             ListTrafficPolicyInstancesByPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyInstancesByPolicyRequest, ListTrafficPolicyInstancesByPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -961,7 +961,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<ListTrafficPolicyVersionsResult> listTrafficPolicyVersionsAsync(ListTrafficPolicyVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrafficPolicyVersionsRequest, ListTrafficPolicyVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -976,7 +976,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             ListVPCAssociationAuthorizationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVPCAssociationAuthorizationsRequest, ListVPCAssociationAuthorizationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -989,7 +989,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<TestDNSAnswerResult> testDNSAnswerAsync(TestDNSAnswerRequest request,
             com.amazonaws.handlers.AsyncHandler<TestDNSAnswerRequest, TestDNSAnswerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1002,7 +1002,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<UpdateHealthCheckResult> updateHealthCheckAsync(UpdateHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateHealthCheckRequest, UpdateHealthCheckResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1015,7 +1015,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<UpdateHostedZoneCommentResult> updateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateHostedZoneCommentRequest, UpdateHostedZoneCommentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1028,7 +1028,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<UpdateTrafficPolicyCommentResult> updateTrafficPolicyCommentAsync(UpdateTrafficPolicyCommentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyCommentRequest, UpdateTrafficPolicyCommentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1041,7 +1041,7 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     public java.util.concurrent.Future<UpdateTrafficPolicyInstanceResult> updateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTrafficPolicyInstanceRequest, UpdateTrafficPolicyInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

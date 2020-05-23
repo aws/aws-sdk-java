@@ -29,93 +29,93 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
 
     @Override
     public CreateLicenseConfigurationResult createLicenseConfiguration(CreateLicenseConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteLicenseConfigurationResult deleteLicenseConfiguration(DeleteLicenseConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetLicenseConfigurationResult getLicenseConfiguration(GetLicenseConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetServiceSettingsResult getServiceSettings(GetServiceSettingsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListAssociationsForLicenseConfigurationResult listAssociationsForLicenseConfiguration(ListAssociationsForLicenseConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListFailuresForLicenseConfigurationOperationsResult listFailuresForLicenseConfigurationOperations(
             ListFailuresForLicenseConfigurationOperationsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListLicenseConfigurationsResult listLicenseConfigurations(ListLicenseConfigurationsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListLicenseSpecificationsForResourceResult listLicenseSpecificationsForResource(ListLicenseSpecificationsForResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListResourceInventoryResult listResourceInventory(ListResourceInventoryRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListUsageForLicenseConfigurationResult listUsageForLicenseConfiguration(ListUsageForLicenseConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateLicenseConfigurationResult updateLicenseConfiguration(UpdateLicenseConfigurationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateLicenseSpecificationsForResourceResult updateLicenseSpecificationsForResource(UpdateLicenseSpecificationsForResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateServiceSettingsResult updateServiceSettings(UpdateServiceSettingsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

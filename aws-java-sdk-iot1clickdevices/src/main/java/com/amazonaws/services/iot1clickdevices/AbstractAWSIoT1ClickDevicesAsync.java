@@ -37,7 +37,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<ClaimDevicesByClaimCodeResult> claimDevicesByClaimCodeAsync(ClaimDevicesByClaimCodeRequest request,
             com.amazonaws.handlers.AsyncHandler<ClaimDevicesByClaimCodeRequest, ClaimDevicesByClaimCodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<DescribeDeviceResult> describeDeviceAsync(DescribeDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDeviceRequest, DescribeDeviceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<FinalizeDeviceClaimResult> finalizeDeviceClaimAsync(FinalizeDeviceClaimRequest request,
             com.amazonaws.handlers.AsyncHandler<FinalizeDeviceClaimRequest, FinalizeDeviceClaimResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<GetDeviceMethodsResult> getDeviceMethodsAsync(GetDeviceMethodsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeviceMethodsRequest, GetDeviceMethodsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<InitiateDeviceClaimResult> initiateDeviceClaimAsync(InitiateDeviceClaimRequest request,
             com.amazonaws.handlers.AsyncHandler<InitiateDeviceClaimRequest, InitiateDeviceClaimResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<InvokeDeviceMethodResult> invokeDeviceMethodAsync(InvokeDeviceMethodRequest request,
             com.amazonaws.handlers.AsyncHandler<InvokeDeviceMethodRequest, InvokeDeviceMethodResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(ListDevicesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<UnclaimDeviceResult> unclaimDeviceAsync(UnclaimDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<UnclaimDeviceRequest, UnclaimDeviceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSIoT1ClickDevicesAsync extends AbstractAWSIoT1ClickDevice
     public java.util.concurrent.Future<UpdateDeviceStateResult> updateDeviceStateAsync(UpdateDeviceStateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceStateRequest, UpdateDeviceStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

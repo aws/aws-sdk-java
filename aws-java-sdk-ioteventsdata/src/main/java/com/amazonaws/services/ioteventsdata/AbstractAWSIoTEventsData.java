@@ -29,32 +29,32 @@ public class AbstractAWSIoTEventsData implements AWSIoTEventsData {
 
     @Override
     public BatchPutMessageResult batchPutMessage(BatchPutMessageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public BatchUpdateDetectorResult batchUpdateDetector(BatchUpdateDetectorRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeDetectorResult describeDetector(DescribeDetectorRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListDetectorsResult listDetectors(ListDetectorsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

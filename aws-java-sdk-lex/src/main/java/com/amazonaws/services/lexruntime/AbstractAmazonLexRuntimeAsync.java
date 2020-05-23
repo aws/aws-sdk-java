@@ -37,7 +37,7 @@ public class AbstractAmazonLexRuntimeAsync extends AbstractAmazonLexRuntime impl
     public java.util.concurrent.Future<DeleteSessionResult> deleteSessionAsync(DeleteSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSessionRequest, DeleteSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonLexRuntimeAsync extends AbstractAmazonLexRuntime impl
     public java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSessionRequest, GetSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonLexRuntimeAsync extends AbstractAmazonLexRuntime impl
     public java.util.concurrent.Future<PostContentResult> postContentAsync(PostContentRequest request,
             com.amazonaws.handlers.AsyncHandler<PostContentRequest, PostContentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonLexRuntimeAsync extends AbstractAmazonLexRuntime impl
     public java.util.concurrent.Future<PostTextResult> postTextAsync(PostTextRequest request,
             com.amazonaws.handlers.AsyncHandler<PostTextRequest, PostTextResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonLexRuntimeAsync extends AbstractAmazonLexRuntime impl
     public java.util.concurrent.Future<PutSessionResult> putSessionAsync(PutSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<PutSessionRequest, PutSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

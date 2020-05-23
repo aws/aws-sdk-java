@@ -37,7 +37,7 @@ public class AbstractAWSMarketplaceMeteringAsync extends AbstractAWSMarketplaceM
     public java.util.concurrent.Future<BatchMeterUsageResult> batchMeterUsageAsync(BatchMeterUsageRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchMeterUsageRequest, BatchMeterUsageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMarketplaceMeteringAsync extends AbstractAWSMarketplaceM
     public java.util.concurrent.Future<MeterUsageResult> meterUsageAsync(MeterUsageRequest request,
             com.amazonaws.handlers.AsyncHandler<MeterUsageRequest, MeterUsageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMarketplaceMeteringAsync extends AbstractAWSMarketplaceM
     public java.util.concurrent.Future<RegisterUsageResult> registerUsageAsync(RegisterUsageRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterUsageRequest, RegisterUsageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSMarketplaceMeteringAsync extends AbstractAWSMarketplaceM
     public java.util.concurrent.Future<ResolveCustomerResult> resolveCustomerAsync(ResolveCustomerRequest request,
             com.amazonaws.handlers.AsyncHandler<ResolveCustomerRequest, ResolveCustomerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

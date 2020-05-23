@@ -37,7 +37,7 @@ public class AbstractAWSSSOOIDCAsync extends AbstractAWSSSOOIDC implements AWSSS
     public java.util.concurrent.Future<CreateTokenResult> createTokenAsync(CreateTokenRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTokenRequest, CreateTokenResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSSSOOIDCAsync extends AbstractAWSSSOOIDC implements AWSSS
     public java.util.concurrent.Future<RegisterClientResult> registerClientAsync(RegisterClientRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterClientRequest, RegisterClientResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSSSOOIDCAsync extends AbstractAWSSSOOIDC implements AWSSS
     public java.util.concurrent.Future<StartDeviceAuthorizationResult> startDeviceAuthorizationAsync(StartDeviceAuthorizationRequest request,
             com.amazonaws.handlers.AsyncHandler<StartDeviceAuthorizationRequest, StartDeviceAuthorizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

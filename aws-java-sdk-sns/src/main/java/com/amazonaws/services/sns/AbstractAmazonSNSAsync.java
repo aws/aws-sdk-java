@@ -36,7 +36,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -75,7 +75,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<CheckIfPhoneNumberIsOptedOutResult> checkIfPhoneNumberIsOptedOutAsync(CheckIfPhoneNumberIsOptedOutRequest request,
             com.amazonaws.handlers.AsyncHandler<CheckIfPhoneNumberIsOptedOutRequest, CheckIfPhoneNumberIsOptedOutResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ConfirmSubscriptionResult> confirmSubscriptionAsync(ConfirmSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<ConfirmSubscriptionRequest, ConfirmSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -149,7 +149,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<CreatePlatformApplicationResult> createPlatformApplicationAsync(CreatePlatformApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePlatformApplicationRequest, CreatePlatformApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -162,7 +162,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<CreatePlatformEndpointResult> createPlatformEndpointAsync(CreatePlatformEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePlatformEndpointRequest, CreatePlatformEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -175,7 +175,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(CreateTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -211,7 +211,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -224,7 +224,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(DeletePlatformApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, DeletePlatformApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -237,7 +237,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(DeleteTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -273,7 +273,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<GetEndpointAttributesResult> getEndpointAttributesAsync(GetEndpointAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEndpointAttributesRequest, GetEndpointAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -288,7 +288,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
             GetPlatformApplicationAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -301,7 +301,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<GetSMSAttributesResult> getSMSAttributesAsync(GetSMSAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSMSAttributesRequest, GetSMSAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -314,7 +314,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSubscriptionAttributesRequest, GetSubscriptionAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -350,7 +350,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<GetTopicAttributesResult> getTopicAttributesAsync(GetTopicAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTopicAttributesRequest, GetTopicAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -388,7 +388,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
             ListEndpointsByPlatformApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ListPhoneNumbersOptedOutResult> listPhoneNumbersOptedOutAsync(ListPhoneNumbersOptedOutRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPhoneNumbersOptedOutRequest, ListPhoneNumbersOptedOutResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(ListPlatformApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -450,7 +450,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ListSubscriptionsResult> listSubscriptionsAsync(ListSubscriptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsRequest, ListSubscriptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -509,7 +509,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ListSubscriptionsByTopicResult> listSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -568,7 +568,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -581,7 +581,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(ListTopicsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -639,7 +639,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<OptInPhoneNumberResult> optInPhoneNumberAsync(OptInPhoneNumberRequest request,
             com.amazonaws.handlers.AsyncHandler<OptInPhoneNumberRequest, OptInPhoneNumberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -652,7 +652,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<PublishResult> publishAsync(PublishRequest request,
             com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -711,7 +711,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -747,7 +747,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<SetEndpointAttributesResult> setEndpointAttributesAsync(SetEndpointAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, SetEndpointAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -762,7 +762,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
             SetPlatformApplicationAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -775,7 +775,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<SetSMSAttributesResult> setSMSAttributesAsync(SetSMSAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetSMSAttributesRequest, SetSMSAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -788,7 +788,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -827,7 +827,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(SetTopicAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -865,7 +865,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<SubscribeResult> subscribeAsync(SubscribeRequest request,
             com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -901,7 +901,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -914,7 +914,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(UnsubscribeRequest request,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -950,7 +950,7 @@ public class AbstractAmazonSNSAsync extends AbstractAmazonSNS implements AmazonS
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

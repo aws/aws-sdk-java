@@ -37,7 +37,7 @@ public class AbstractAmazonForecastQueryAsync extends AbstractAmazonForecastQuer
     public java.util.concurrent.Future<QueryForecastResult> queryForecastAsync(QueryForecastRequest request,
             com.amazonaws.handlers.AsyncHandler<QueryForecastRequest, QueryForecastResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

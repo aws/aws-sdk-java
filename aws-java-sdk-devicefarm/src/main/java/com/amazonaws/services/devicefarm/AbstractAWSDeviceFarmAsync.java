@@ -37,7 +37,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateDevicePoolResult> createDevicePoolAsync(CreateDevicePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDevicePoolRequest, CreateDevicePoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateInstanceProfileResult> createInstanceProfileAsync(CreateInstanceProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateInstanceProfileRequest, CreateInstanceProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(CreateRemoteAccessSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRemoteAccessSessionRequest, CreateRemoteAccessSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(CreateTestGridProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTestGridProjectRequest, CreateTestGridProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(CreateTestGridUrlRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTestGridUrlRequest, CreateTestGridUrlResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateUploadResult> createUploadAsync(CreateUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUploadRequest, CreateUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<CreateVPCEConfigurationResult> createVPCEConfigurationAsync(CreateVPCEConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateVPCEConfigurationRequest, CreateVPCEConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteDevicePoolResult> deleteDevicePoolAsync(DeleteDevicePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDevicePoolRequest, DeleteDevicePoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(DeleteInstanceProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, DeleteInstanceProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteRemoteAccessSessionResult> deleteRemoteAccessSessionAsync(DeleteRemoteAccessSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRemoteAccessSessionRequest, DeleteRemoteAccessSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(DeleteRunRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(DeleteTestGridProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTestGridProjectRequest, DeleteTestGridProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(DeleteUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUploadRequest, DeleteUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<DeleteVPCEConfigurationResult> deleteVPCEConfigurationAsync(DeleteVPCEConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVPCEConfigurationRequest, DeleteVPCEConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccountSettingsRequest, GetAccountSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetDeviceInstanceResult> getDeviceInstanceAsync(GetDeviceInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeviceInstanceRequest, GetDeviceInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetDevicePoolResult> getDevicePoolAsync(GetDevicePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDevicePoolRequest, GetDevicePoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetDevicePoolCompatibilityResult> getDevicePoolCompatibilityAsync(GetDevicePoolCompatibilityRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDevicePoolCompatibilityRequest, GetDevicePoolCompatibilityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetInstanceProfileResult> getInstanceProfileAsync(GetInstanceProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInstanceProfileRequest, GetInstanceProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetJobResult> getJobAsync(GetJobRequest request,
             com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(GetOfferingStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOfferingStatusRequest, GetOfferingStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetProjectResult> getProjectAsync(GetProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<GetProjectRequest, GetProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetRemoteAccessSessionResult> getRemoteAccessSessionAsync(GetRemoteAccessSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRemoteAccessSessionRequest, GetRemoteAccessSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetRunResult> getRunAsync(GetRunRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRunRequest, GetRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetSuiteResult> getSuiteAsync(GetSuiteRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSuiteRequest, GetSuiteResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetTestResult> getTestAsync(GetTestRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTestRequest, GetTestResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(GetTestGridProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTestGridProjectRequest, GetTestGridProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(GetTestGridSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTestGridSessionRequest, GetTestGridSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetUploadResult> getUploadAsync(GetUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUploadRequest, GetUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<GetVPCEConfigurationResult> getVPCEConfigurationAsync(GetVPCEConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetVPCEConfigurationRequest, GetVPCEConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -505,7 +505,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<InstallToRemoteAccessSessionResult> installToRemoteAccessSessionAsync(InstallToRemoteAccessSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<InstallToRemoteAccessSessionRequest, InstallToRemoteAccessSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -518,7 +518,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListArtifactsResult> listArtifactsAsync(ListArtifactsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListArtifactsRequest, ListArtifactsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -531,7 +531,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListDeviceInstancesResult> listDeviceInstancesAsync(ListDeviceInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeviceInstancesRequest, ListDeviceInstancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -544,7 +544,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListDevicePoolsResult> listDevicePoolsAsync(ListDevicePoolsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDevicePoolsRequest, ListDevicePoolsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -557,7 +557,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListDevicesResult> listDevicesAsync(ListDevicesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDevicesRequest, ListDevicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -570,7 +570,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListInstanceProfilesResult> listInstanceProfilesAsync(ListInstanceProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInstanceProfilesRequest, ListInstanceProfilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -583,7 +583,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -596,7 +596,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListNetworkProfilesResult> listNetworkProfilesAsync(ListNetworkProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListNetworkProfilesRequest, ListNetworkProfilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -609,7 +609,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListOfferingPromotionsResult> listOfferingPromotionsAsync(ListOfferingPromotionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOfferingPromotionsRequest, ListOfferingPromotionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -622,7 +622,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(ListOfferingTransactionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOfferingTransactionsRequest, ListOfferingTransactionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -635,7 +635,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOfferingsRequest, ListOfferingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -648,7 +648,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -661,7 +661,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListRemoteAccessSessionsResult> listRemoteAccessSessionsAsync(ListRemoteAccessSessionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRemoteAccessSessionsRequest, ListRemoteAccessSessionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -674,7 +674,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListRunsResult> listRunsAsync(ListRunsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRunsRequest, ListRunsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -687,7 +687,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListSamplesResult> listSamplesAsync(ListSamplesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSamplesRequest, ListSamplesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -700,7 +700,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListSuitesResult> listSuitesAsync(ListSuitesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSuitesRequest, ListSuitesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -713,7 +713,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -726,7 +726,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(ListTestGridProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTestGridProjectsRequest, ListTestGridProjectsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -739,7 +739,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(ListTestGridSessionActionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTestGridSessionActionsRequest, ListTestGridSessionActionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -752,7 +752,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(ListTestGridSessionArtifactsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTestGridSessionArtifactsRequest, ListTestGridSessionArtifactsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -765,7 +765,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(ListTestGridSessionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTestGridSessionsRequest, ListTestGridSessionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -778,7 +778,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListTestsResult> listTestsAsync(ListTestsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTestsRequest, ListTestsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -791,7 +791,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListUniqueProblemsResult> listUniqueProblemsAsync(ListUniqueProblemsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUniqueProblemsRequest, ListUniqueProblemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -804,7 +804,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListUploadsResult> listUploadsAsync(ListUploadsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUploadsRequest, ListUploadsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -817,7 +817,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ListVPCEConfigurationsResult> listVPCEConfigurationsAsync(ListVPCEConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVPCEConfigurationsRequest, ListVPCEConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -830,7 +830,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest request,
             com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -843,7 +843,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(RenewOfferingRequest request,
             com.amazonaws.handlers.AsyncHandler<RenewOfferingRequest, RenewOfferingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -856,7 +856,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(ScheduleRunRequest request,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -869,7 +869,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest request,
             com.amazonaws.handlers.AsyncHandler<StopJobRequest, StopJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -882,7 +882,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<StopRemoteAccessSessionRequest, StopRemoteAccessSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -895,7 +895,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<StopRunResult> stopRunAsync(StopRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StopRunRequest, StopRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -908,7 +908,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -921,7 +921,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -934,7 +934,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateDeviceInstanceResult> updateDeviceInstanceAsync(UpdateDeviceInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceInstanceRequest, UpdateDeviceInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -947,7 +947,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateDevicePoolResult> updateDevicePoolAsync(UpdateDevicePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDevicePoolRequest, UpdateDevicePoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -960,7 +960,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateInstanceProfileResult> updateInstanceProfileAsync(UpdateInstanceProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInstanceProfileRequest, UpdateInstanceProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -973,7 +973,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -986,7 +986,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -999,7 +999,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(UpdateTestGridProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTestGridProjectRequest, UpdateTestGridProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1012,7 +1012,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateUploadRequest, UpdateUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1025,7 +1025,7 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     public java.util.concurrent.Future<UpdateVPCEConfigurationResult> updateVPCEConfigurationAsync(UpdateVPCEConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateVPCEConfigurationRequest, UpdateVPCEConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

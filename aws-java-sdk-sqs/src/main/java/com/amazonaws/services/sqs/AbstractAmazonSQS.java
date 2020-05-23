@@ -29,17 +29,17 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public void setEndpoint(String endpoint) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public ChangeMessageVisibilityResult changeMessageVisibility(ChangeMessageVisibilityRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -60,7 +60,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public CreateQueueResult createQueue(CreateQueueRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public DeleteMessageResult deleteMessage(DeleteMessageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -90,7 +90,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -100,7 +100,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public DeleteQueueResult deleteQueue(DeleteQueueRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -110,7 +110,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public GetQueueAttributesResult getQueueAttributes(GetQueueAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -120,7 +120,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -130,12 +130,12 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public ListDeadLetterSourceQueuesResult listDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListQueueTagsResult listQueueTags(ListQueueTagsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -145,7 +145,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public ListQueuesResult listQueues(ListQueuesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -160,12 +160,12 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public PurgeQueueResult purgeQueue(PurgeQueueRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ReceiveMessageResult receiveMessage(ReceiveMessageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -175,7 +175,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -185,7 +185,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public SendMessageResult sendMessage(SendMessageRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -205,7 +205,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public SetQueueAttributesResult setQueueAttributes(SetQueueAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -215,7 +215,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public TagQueueResult tagQueue(TagQueueRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -225,7 +225,7 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public UntagQueueResult untagQueue(UntagQueueRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -235,12 +235,12 @@ public class AbstractAmazonSQS implements AmazonSQS {
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

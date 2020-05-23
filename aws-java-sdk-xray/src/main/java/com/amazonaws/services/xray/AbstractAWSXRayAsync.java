@@ -36,7 +36,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<BatchGetTracesResult> batchGetTracesAsync(BatchGetTracesRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGetTracesRequest, BatchGetTracesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<CreateSamplingRuleResult> createSamplingRuleAsync(CreateSamplingRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSamplingRuleRequest, CreateSamplingRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<DeleteSamplingRuleResult> deleteSamplingRuleAsync(DeleteSamplingRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSamplingRuleRequest, DeleteSamplingRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -101,7 +101,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigRequest, GetEncryptionConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -114,7 +114,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -127,7 +127,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetGroupsResult> getGroupsAsync(GetGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGroupsRequest, GetGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -140,7 +140,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetSamplingRulesResult> getSamplingRulesAsync(GetSamplingRulesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSamplingRulesRequest, GetSamplingRulesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -153,7 +153,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetSamplingStatisticSummariesResult> getSamplingStatisticSummariesAsync(GetSamplingStatisticSummariesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSamplingStatisticSummariesRequest, GetSamplingStatisticSummariesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -166,7 +166,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetSamplingTargetsResult> getSamplingTargetsAsync(GetSamplingTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSamplingTargetsRequest, GetSamplingTargetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -179,7 +179,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetServiceGraphResult> getServiceGraphAsync(GetServiceGraphRequest request,
             com.amazonaws.handlers.AsyncHandler<GetServiceGraphRequest, GetServiceGraphResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -192,7 +192,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetTimeSeriesServiceStatisticsResult> getTimeSeriesServiceStatisticsAsync(GetTimeSeriesServiceStatisticsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTimeSeriesServiceStatisticsRequest, GetTimeSeriesServiceStatisticsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -205,7 +205,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetTraceGraphResult> getTraceGraphAsync(GetTraceGraphRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTraceGraphRequest, GetTraceGraphResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -218,7 +218,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<GetTraceSummariesResult> getTraceSummariesAsync(GetTraceSummariesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTraceSummariesRequest, GetTraceSummariesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -231,7 +231,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<PutEncryptionConfigResult> putEncryptionConfigAsync(PutEncryptionConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigRequest, PutEncryptionConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -244,7 +244,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<PutTelemetryRecordsResult> putTelemetryRecordsAsync(PutTelemetryRecordsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutTelemetryRecordsRequest, PutTelemetryRecordsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -257,7 +257,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<PutTraceSegmentsResult> putTraceSegmentsAsync(PutTraceSegmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutTraceSegmentsRequest, PutTraceSegmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -270,7 +270,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -283,7 +283,7 @@ public class AbstractAWSXRayAsync extends AbstractAWSXRay implements AWSXRayAsyn
     public java.util.concurrent.Future<UpdateSamplingRuleResult> updateSamplingRuleAsync(UpdateSamplingRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSamplingRuleRequest, UpdateSamplingRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

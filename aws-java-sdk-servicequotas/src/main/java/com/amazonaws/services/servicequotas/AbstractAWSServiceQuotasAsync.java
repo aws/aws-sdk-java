@@ -37,7 +37,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<AssociateServiceQuotaTemplateResult> associateServiceQuotaTemplateAsync(AssociateServiceQuotaTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateServiceQuotaTemplateRequest, AssociateServiceQuotaTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             DeleteServiceQuotaIncreaseRequestFromTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteServiceQuotaIncreaseRequestFromTemplateRequest, DeleteServiceQuotaIncreaseRequestFromTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             DisassociateServiceQuotaTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateServiceQuotaTemplateRequest, DisassociateServiceQuotaTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<GetAWSDefaultServiceQuotaResult> getAWSDefaultServiceQuotaAsync(GetAWSDefaultServiceQuotaRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAWSDefaultServiceQuotaRequest, GetAWSDefaultServiceQuotaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -95,7 +95,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             GetAssociationForServiceQuotaTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssociationForServiceQuotaTemplateRequest, GetAssociationForServiceQuotaTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -108,7 +108,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<GetRequestedServiceQuotaChangeResult> getRequestedServiceQuotaChangeAsync(GetRequestedServiceQuotaChangeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRequestedServiceQuotaChangeRequest, GetRequestedServiceQuotaChangeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -121,7 +121,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<GetServiceQuotaResult> getServiceQuotaAsync(GetServiceQuotaRequest request,
             com.amazonaws.handlers.AsyncHandler<GetServiceQuotaRequest, GetServiceQuotaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -136,7 +136,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             GetServiceQuotaIncreaseRequestFromTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetServiceQuotaIncreaseRequestFromTemplateRequest, GetServiceQuotaIncreaseRequestFromTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -149,7 +149,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<ListAWSDefaultServiceQuotasResult> listAWSDefaultServiceQuotasAsync(ListAWSDefaultServiceQuotasRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAWSDefaultServiceQuotasRequest, ListAWSDefaultServiceQuotasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -164,7 +164,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             ListRequestedServiceQuotaChangeHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRequestedServiceQuotaChangeHistoryRequest, ListRequestedServiceQuotaChangeHistoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -179,7 +179,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             ListRequestedServiceQuotaChangeHistoryByQuotaRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRequestedServiceQuotaChangeHistoryByQuotaRequest, ListRequestedServiceQuotaChangeHistoryByQuotaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -194,7 +194,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             ListServiceQuotaIncreaseRequestsInTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<ListServiceQuotaIncreaseRequestsInTemplateRequest, ListServiceQuotaIncreaseRequestsInTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -207,7 +207,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<ListServiceQuotasResult> listServiceQuotasAsync(ListServiceQuotasRequest request,
             com.amazonaws.handlers.AsyncHandler<ListServiceQuotasRequest, ListServiceQuotasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -220,7 +220,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<ListServicesResult> listServicesAsync(ListServicesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -235,7 +235,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
             PutServiceQuotaIncreaseRequestIntoTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<PutServiceQuotaIncreaseRequestIntoTemplateRequest, PutServiceQuotaIncreaseRequestIntoTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -248,7 +248,7 @@ public class AbstractAWSServiceQuotasAsync extends AbstractAWSServiceQuotas impl
     public java.util.concurrent.Future<RequestServiceQuotaIncreaseResult> requestServiceQuotaIncreaseAsync(RequestServiceQuotaIncreaseRequest request,
             com.amazonaws.handlers.AsyncHandler<RequestServiceQuotaIncreaseRequest, RequestServiceQuotaIncreaseResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

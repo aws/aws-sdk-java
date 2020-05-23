@@ -29,87 +29,87 @@ public class AbstractAWSHealth implements AWSHealth {
 
     @Override
     public void setEndpoint(String endpoint) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeAffectedAccountsForOrganizationResult describeAffectedAccountsForOrganization(DescribeAffectedAccountsForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeAffectedEntitiesForOrganizationResult describeAffectedEntitiesForOrganization(DescribeAffectedEntitiesForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventDetailsForOrganizationResult describeEventDetailsForOrganization(DescribeEventDetailsForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeEventsForOrganizationResult describeEventsForOrganization(DescribeEventsForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeHealthServiceStatusForOrganizationResult describeHealthServiceStatusForOrganization(DescribeHealthServiceStatusForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DisableHealthServiceAccessForOrganizationResult disableHealthServiceAccessForOrganization(DisableHealthServiceAccessForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public EnableHealthServiceAccessForOrganizationResult enableHealthServiceAccessForOrganization(EnableHealthServiceAccessForOrganizationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CancelTaskExecutionResult> cancelTaskExecutionAsync(CancelTaskExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelTaskExecutionRequest, CancelTaskExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateAgentResult> createAgentAsync(CreateAgentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAgentRequest, CreateAgentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateLocationEfsResult> createLocationEfsAsync(CreateLocationEfsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLocationEfsRequest, CreateLocationEfsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateLocationFsxWindowsResult> createLocationFsxWindowsAsync(CreateLocationFsxWindowsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLocationFsxWindowsRequest, CreateLocationFsxWindowsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateLocationNfsResult> createLocationNfsAsync(CreateLocationNfsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLocationNfsRequest, CreateLocationNfsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateLocationS3Result> createLocationS3Async(CreateLocationS3Request request,
             com.amazonaws.handlers.AsyncHandler<CreateLocationS3Request, CreateLocationS3Result> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(CreateLocationSmbRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLocationSmbRequest, CreateLocationSmbResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<CreateTaskResult> createTaskAsync(CreateTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTaskRequest, CreateTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DeleteAgentResult> deleteAgentAsync(DeleteAgentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAgentRequest, DeleteAgentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DeleteLocationResult> deleteLocationAsync(DeleteLocationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLocationRequest, DeleteLocationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DeleteTaskResult> deleteTaskAsync(DeleteTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTaskRequest, DeleteTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeAgentResult> describeAgentAsync(DescribeAgentRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAgentRequest, DescribeAgentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeLocationEfsResult> describeLocationEfsAsync(DescribeLocationEfsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationEfsRequest, DescribeLocationEfsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeLocationFsxWindowsResult> describeLocationFsxWindowsAsync(DescribeLocationFsxWindowsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationFsxWindowsRequest, DescribeLocationFsxWindowsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeLocationNfsResult> describeLocationNfsAsync(DescribeLocationNfsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationNfsRequest, DescribeLocationNfsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeLocationS3Result> describeLocationS3Async(DescribeLocationS3Request request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationS3Request, DescribeLocationS3Result> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(DescribeLocationSmbRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationSmbRequest, DescribeLocationSmbResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeTaskResult> describeTaskAsync(DescribeTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTaskRequest, DescribeTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<DescribeTaskExecutionResult> describeTaskExecutionAsync(DescribeTaskExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTaskExecutionRequest, DescribeTaskExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<ListAgentsResult> listAgentsAsync(ListAgentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAgentsRequest, ListAgentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<ListLocationsResult> listLocationsAsync(ListLocationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLocationsRequest, ListLocationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<ListTaskExecutionsResult> listTaskExecutionsAsync(ListTaskExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTaskExecutionsRequest, ListTaskExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<ListTasksResult> listTasksAsync(ListTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<StartTaskExecutionResult> startTaskExecutionAsync(StartTaskExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartTaskExecutionRequest, StartTaskExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<UpdateAgentResult> updateAgentAsync(UpdateAgentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAgentRequest, UpdateAgentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     public java.util.concurrent.Future<UpdateTaskResult> updateTaskAsync(UpdateTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTaskRequest, UpdateTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

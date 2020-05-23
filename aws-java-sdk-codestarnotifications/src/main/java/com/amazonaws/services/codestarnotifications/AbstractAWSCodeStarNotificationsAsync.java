@@ -37,7 +37,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<CreateNotificationRuleResult> createNotificationRuleAsync(CreateNotificationRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateNotificationRuleRequest, CreateNotificationRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<DeleteNotificationRuleResult> deleteNotificationRuleAsync(DeleteNotificationRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteNotificationRuleRequest, DeleteNotificationRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<DeleteTargetResult> deleteTargetAsync(DeleteTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTargetRequest, DeleteTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<DescribeNotificationRuleResult> describeNotificationRuleAsync(DescribeNotificationRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeNotificationRuleRequest, DescribeNotificationRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<ListEventTypesResult> listEventTypesAsync(ListEventTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEventTypesRequest, ListEventTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<ListNotificationRulesResult> listNotificationRulesAsync(ListNotificationRulesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListNotificationRulesRequest, ListNotificationRulesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<ListTargetsResult> listTargetsAsync(ListTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTargetsRequest, ListTargetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<SubscribeResult> subscribeAsync(SubscribeRequest request,
             com.amazonaws.handlers.AsyncHandler<SubscribeRequest, SubscribeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(UnsubscribeRequest request,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSCodeStarNotificationsAsync extends AbstractAWSCodeStarNo
     public java.util.concurrent.Future<UpdateNotificationRuleResult> updateNotificationRuleAsync(UpdateNotificationRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNotificationRuleRequest, UpdateNotificationRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

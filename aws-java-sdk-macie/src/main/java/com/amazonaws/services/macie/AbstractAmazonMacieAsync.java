@@ -37,7 +37,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<AssociateMemberAccountResult> associateMemberAccountAsync(AssociateMemberAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateMemberAccountRequest, AssociateMemberAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<AssociateS3ResourcesResult> associateS3ResourcesAsync(AssociateS3ResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateS3ResourcesRequest, AssociateS3ResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<DisassociateMemberAccountResult> disassociateMemberAccountAsync(DisassociateMemberAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateMemberAccountRequest, DisassociateMemberAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<DisassociateS3ResourcesResult> disassociateS3ResourcesAsync(DisassociateS3ResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateS3ResourcesRequest, DisassociateS3ResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<ListMemberAccountsResult> listMemberAccountsAsync(ListMemberAccountsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMemberAccountsRequest, ListMemberAccountsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<ListS3ResourcesResult> listS3ResourcesAsync(ListS3ResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListS3ResourcesRequest, ListS3ResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonMacieAsync extends AbstractAmazonMacie implements Ama
     public java.util.concurrent.Future<UpdateS3ResourcesResult> updateS3ResourcesAsync(UpdateS3ResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateS3ResourcesRequest, UpdateS3ResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

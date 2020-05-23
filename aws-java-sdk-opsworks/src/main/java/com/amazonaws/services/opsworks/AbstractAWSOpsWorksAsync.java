@@ -37,7 +37,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<AssignInstanceResult> assignInstanceAsync(AssignInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<AssignInstanceRequest, AssignInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<AssignVolumeResult> assignVolumeAsync(AssignVolumeRequest request,
             com.amazonaws.handlers.AsyncHandler<AssignVolumeRequest, AssignVolumeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<AssociateElasticIpResult> associateElasticIpAsync(AssociateElasticIpRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateElasticIpRequest, AssociateElasticIpResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<AttachElasticLoadBalancerResult> attachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest request,
             com.amazonaws.handlers.AsyncHandler<AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CloneStackResult> cloneStackAsync(CloneStackRequest request,
             com.amazonaws.handlers.AsyncHandler<CloneStackRequest, CloneStackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CreateDeploymentResult> createDeploymentAsync(CreateDeploymentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDeploymentRequest, CreateDeploymentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateInstanceRequest, CreateInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CreateLayerResult> createLayerAsync(CreateLayerRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLayerRequest, CreateLayerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(CreateStackRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<CreateUserProfileResult> createUserProfileAsync(CreateUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUserProfileRequest, CreateUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeleteLayerResult> deleteLayerAsync(DeleteLayerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLayerRequest, DeleteLayerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(DeleteUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, DeleteUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeregisterEcsClusterResult> deregisterEcsClusterAsync(DeregisterEcsClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterEcsClusterRequest, DeregisterEcsClusterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeregisterElasticIpResult> deregisterElasticIpAsync(DeregisterElasticIpRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterElasticIpRequest, DeregisterElasticIpResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeregisterInstanceResult> deregisterInstanceAsync(DeregisterInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterInstanceRequest, DeregisterInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeregisterRdsDbInstanceResult> deregisterRdsDbInstanceAsync(DeregisterRdsDbInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterRdsDbInstanceRequest, DeregisterRdsDbInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DeregisterVolumeResult> deregisterVolumeAsync(DeregisterVolumeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterVolumeRequest, DeregisterVolumeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeAgentVersionsResult> describeAgentVersionsAsync(DescribeAgentVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAgentVersionsRequest, DescribeAgentVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeAppsResult> describeAppsAsync(DescribeAppsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAppsRequest, DescribeAppsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeCommandsResult> describeCommandsAsync(DescribeCommandsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCommandsRequest, DescribeCommandsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeDeploymentsResult> describeDeploymentsAsync(DescribeDeploymentsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDeploymentsRequest, DescribeDeploymentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeEcsClustersResult> describeEcsClustersAsync(DescribeEcsClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEcsClustersRequest, DescribeEcsClustersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeElasticIpsResult> describeElasticIpsAsync(DescribeElasticIpsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeElasticIpsRequest, DescribeElasticIpsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeElasticLoadBalancersResult> describeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeElasticLoadBalancersRequest, DescribeElasticLoadBalancersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeInstancesResult> describeInstancesAsync(DescribeInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancesRequest, DescribeInstancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeLayersResult> describeLayersAsync(DescribeLayersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLayersRequest, DescribeLayersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeLoadBasedAutoScalingResult> describeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBasedAutoScalingRequest, DescribeLoadBasedAutoScalingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(DescribeMyUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMyUserProfileRequest, DescribeMyUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeOperatingSystemsRequest, DescribeOperatingSystemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribePermissionsResult> describePermissionsAsync(DescribePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePermissionsRequest, DescribePermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeRaidArraysResult> describeRaidArraysAsync(DescribeRaidArraysRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRaidArraysRequest, DescribeRaidArraysResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeRdsDbInstancesResult> describeRdsDbInstancesAsync(DescribeRdsDbInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRdsDbInstancesRequest, DescribeRdsDbInstancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -505,7 +505,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeServiceErrorsResult> describeServiceErrorsAsync(DescribeServiceErrorsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeServiceErrorsRequest, DescribeServiceErrorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -520,7 +520,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
             DescribeStackProvisioningParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStackProvisioningParametersRequest, DescribeStackProvisioningParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -533,7 +533,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeStackSummaryResult> describeStackSummaryAsync(DescribeStackSummaryRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStackSummaryRequest, DescribeStackSummaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -546,7 +546,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -559,7 +559,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeTimeBasedAutoScalingResult> describeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTimeBasedAutoScalingRequest, DescribeTimeBasedAutoScalingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -572,7 +572,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeUserProfilesResult> describeUserProfilesAsync(DescribeUserProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeUserProfilesRequest, DescribeUserProfilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -585,7 +585,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DescribeVolumesResult> describeVolumesAsync(DescribeVolumesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeVolumesRequest, DescribeVolumesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -598,7 +598,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DetachElasticLoadBalancerResult> detachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -611,7 +611,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<DisassociateElasticIpResult> disassociateElasticIpAsync(DisassociateElasticIpRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateElasticIpRequest, DisassociateElasticIpResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -624,7 +624,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<GetHostnameSuggestionResult> getHostnameSuggestionAsync(GetHostnameSuggestionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHostnameSuggestionRequest, GetHostnameSuggestionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -637,7 +637,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<GrantAccessResult> grantAccessAsync(GrantAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<GrantAccessRequest, GrantAccessResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -650,7 +650,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -663,7 +663,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(RebootInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, RebootInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -676,7 +676,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<RegisterEcsClusterResult> registerEcsClusterAsync(RegisterEcsClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterEcsClusterRequest, RegisterEcsClusterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -689,7 +689,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<RegisterElasticIpResult> registerElasticIpAsync(RegisterElasticIpRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterElasticIpRequest, RegisterElasticIpResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -702,7 +702,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<RegisterInstanceResult> registerInstanceAsync(RegisterInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterInstanceRequest, RegisterInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -715,7 +715,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<RegisterRdsDbInstanceResult> registerRdsDbInstanceAsync(RegisterRdsDbInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterRdsDbInstanceRequest, RegisterRdsDbInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -728,7 +728,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<RegisterVolumeResult> registerVolumeAsync(RegisterVolumeRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterVolumeRequest, RegisterVolumeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -741,7 +741,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<SetLoadBasedAutoScalingResult> setLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest request,
             com.amazonaws.handlers.AsyncHandler<SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -754,7 +754,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<SetPermissionResult> setPermissionAsync(SetPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<SetPermissionRequest, SetPermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -767,7 +767,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<SetTimeBasedAutoScalingResult> setTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest request,
             com.amazonaws.handlers.AsyncHandler<SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -780,7 +780,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, StartInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -793,7 +793,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<StartStackResult> startStackAsync(StartStackRequest request,
             com.amazonaws.handlers.AsyncHandler<StartStackRequest, StartStackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -806,7 +806,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(StopInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -819,7 +819,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<StopStackResult> stopStackAsync(StopStackRequest request,
             com.amazonaws.handlers.AsyncHandler<StopStackRequest, StopStackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -832,7 +832,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -845,7 +845,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UnassignInstanceResult> unassignInstanceAsync(UnassignInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UnassignInstanceRequest, UnassignInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -858,7 +858,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UnassignVolumeResult> unassignVolumeAsync(UnassignVolumeRequest request,
             com.amazonaws.handlers.AsyncHandler<UnassignVolumeRequest, UnassignVolumeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -871,7 +871,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -884,7 +884,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(UpdateAppRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, UpdateAppResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -897,7 +897,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateElasticIpResult> updateElasticIpAsync(UpdateElasticIpRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateElasticIpRequest, UpdateElasticIpResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -910,7 +910,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(UpdateInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -923,7 +923,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateLayerResult> updateLayerAsync(UpdateLayerRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLayerRequest, UpdateLayerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -936,7 +936,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateMyUserProfileResult> updateMyUserProfileAsync(UpdateMyUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMyUserProfileRequest, UpdateMyUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -949,7 +949,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateRdsDbInstanceResult> updateRdsDbInstanceAsync(UpdateRdsDbInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRdsDbInstanceRequest, UpdateRdsDbInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -962,7 +962,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(UpdateStackRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -975,7 +975,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(UpdateUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, UpdateUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -988,7 +988,7 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     public java.util.concurrent.Future<UpdateVolumeResult> updateVolumeAsync(UpdateVolumeRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateVolumeRequest, UpdateVolumeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

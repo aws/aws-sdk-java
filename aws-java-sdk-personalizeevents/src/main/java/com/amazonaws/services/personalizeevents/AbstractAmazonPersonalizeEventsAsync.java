@@ -37,7 +37,7 @@ public class AbstractAmazonPersonalizeEventsAsync extends AbstractAmazonPersonal
     public java.util.concurrent.Future<PutEventsResult> putEventsAsync(PutEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

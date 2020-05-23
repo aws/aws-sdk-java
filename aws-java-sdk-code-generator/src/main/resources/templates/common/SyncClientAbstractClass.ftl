@@ -23,12 +23,12 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
 <#if customizationConfig.emitClientMutationMethods() >
     @Override
     public void setEndpoint(String endpoint) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 </#if>
 
@@ -46,27 +46,27 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
   <#if customizationConfig.skipInterfaceAdditions == false>
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     <#assign responseMetadataClassName=customizationConfig.customResponseMetadataClassName!"com.amazonaws.ResponseMetadata" />
     @Override
     public ${responseMetadataClassName} getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
   </#if>
 
   <#if hasWaiters>
       @Override
       public ${metadata.syncInterface}Waiters waiters() {
-           throw new java.lang.UnsupportedOperationException();
+           throw new UnsupportedOperationException();
       }
   </#if>
 
     <#if customizationConfig.presignersFqcn??>
     @Override
     public ${customizationConfig.presignersFqcn} presigners() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
     </#if>
 }

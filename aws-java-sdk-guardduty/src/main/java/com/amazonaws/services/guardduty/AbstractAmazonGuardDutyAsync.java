@@ -37,7 +37,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptInvitationRequest, AcceptInvitationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreateDetectorResult> createDetectorAsync(CreateDetectorRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDetectorRequest, CreateDetectorResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateIPSetRequest, CreateIPSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreateMembersResult> createMembersAsync(CreateMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMembersRequest, CreateMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreatePublishingDestinationResult> createPublishingDestinationAsync(CreatePublishingDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePublishingDestinationRequest, CreatePublishingDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreateSampleFindingsResult> createSampleFindingsAsync(CreateSampleFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSampleFindingsRequest, CreateSampleFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<CreateThreatIntelSetResult> createThreatIntelSetAsync(CreateThreatIntelSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateThreatIntelSetRequest, CreateThreatIntelSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeclineInvitationsResult> declineInvitationsAsync(DeclineInvitationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeclineInvitationsRequest, DeclineInvitationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(DeleteDetectorRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDetectorRequest, DeleteDetectorResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeleteInvitationsResult> deleteInvitationsAsync(DeleteInvitationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInvitationsRequest, DeleteInvitationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeleteMembersResult> deleteMembersAsync(DeleteMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMembersRequest, DeleteMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeletePublishingDestinationResult> deletePublishingDestinationAsync(DeletePublishingDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePublishingDestinationRequest, DeletePublishingDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DeleteThreatIntelSetResult> deleteThreatIntelSetAsync(DeleteThreatIntelSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteThreatIntelSetRequest, DeleteThreatIntelSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -260,7 +260,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
             DescribeOrganizationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigurationRequest, DescribeOrganizationConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -273,7 +273,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DescribePublishingDestinationResult> describePublishingDestinationAsync(DescribePublishingDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePublishingDestinationRequest, DescribePublishingDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -288,7 +288,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
             DisableOrganizationAdminAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableOrganizationAdminAccountRequest, DisableOrganizationAdminAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -301,7 +301,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DisassociateFromMasterAccountResult> disassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateFromMasterAccountRequest, DisassociateFromMasterAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -314,7 +314,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<DisassociateMembersResult> disassociateMembersAsync(DisassociateMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateMembersRequest, DisassociateMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -327,7 +327,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -340,7 +340,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetDetectorResult> getDetectorAsync(GetDetectorRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDetectorRequest, GetDetectorResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -353,7 +353,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetFilterResult> getFilterAsync(GetFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFilterRequest, GetFilterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -366,7 +366,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetFindingsResult> getFindingsAsync(GetFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFindingsRequest, GetFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -379,7 +379,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetFindingsStatisticsResult> getFindingsStatisticsAsync(GetFindingsStatisticsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFindingsStatisticsRequest, GetFindingsStatisticsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -392,7 +392,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -405,7 +405,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetInvitationsCountResult> getInvitationsCountAsync(GetInvitationsCountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInvitationsCountRequest, GetInvitationsCountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -418,7 +418,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetMasterAccountResult> getMasterAccountAsync(GetMasterAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMasterAccountRequest, GetMasterAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -431,7 +431,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetMembersResult> getMembersAsync(GetMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMembersRequest, GetMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -444,7 +444,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<GetThreatIntelSetResult> getThreatIntelSetAsync(GetThreatIntelSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetThreatIntelSetRequest, GetThreatIntelSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -457,7 +457,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<InviteMembersResult> inviteMembersAsync(InviteMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<InviteMembersRequest, InviteMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -470,7 +470,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListDetectorsResult> listDetectorsAsync(ListDetectorsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDetectorsRequest, ListDetectorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -483,7 +483,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -496,7 +496,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(ListFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -509,7 +509,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -522,7 +522,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListInvitationsResult> listInvitationsAsync(ListInvitationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInvitationsRequest, ListInvitationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -535,7 +535,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMembersRequest, ListMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -548,7 +548,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -561,7 +561,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListPublishingDestinationsResult> listPublishingDestinationsAsync(ListPublishingDestinationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPublishingDestinationsRequest, ListPublishingDestinationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -574,7 +574,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -587,7 +587,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<ListThreatIntelSetsResult> listThreatIntelSetsAsync(ListThreatIntelSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThreatIntelSetsRequest, ListThreatIntelSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -600,7 +600,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<StartMonitoringMembersResult> startMonitoringMembersAsync(StartMonitoringMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<StartMonitoringMembersRequest, StartMonitoringMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -613,7 +613,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<StopMonitoringMembersResult> stopMonitoringMembersAsync(StopMonitoringMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<StopMonitoringMembersRequest, StopMonitoringMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -626,7 +626,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -639,7 +639,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -652,7 +652,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -665,7 +665,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UpdateDetectorResult> updateDetectorAsync(UpdateDetectorRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDetectorRequest, UpdateDetectorResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -678,7 +678,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UpdateFilterResult> updateFilterAsync(UpdateFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFilterRequest, UpdateFilterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -691,7 +691,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UpdateFindingsFeedbackResult> updateFindingsFeedbackAsync(UpdateFindingsFeedbackRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFindingsFeedbackRequest, UpdateFindingsFeedbackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -704,7 +704,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -719,7 +719,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
             UpdateOrganizationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -732,7 +732,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UpdatePublishingDestinationResult> updatePublishingDestinationAsync(UpdatePublishingDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePublishingDestinationRequest, UpdatePublishingDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -745,7 +745,7 @@ public class AbstractAmazonGuardDutyAsync extends AbstractAmazonGuardDuty implem
     public java.util.concurrent.Future<UpdateThreatIntelSetResult> updateThreatIntelSetAsync(UpdateThreatIntelSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateThreatIntelSetRequest, UpdateThreatIntelSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

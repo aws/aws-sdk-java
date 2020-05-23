@@ -37,7 +37,7 @@ public class AbstractAmazonPersonalizeRuntimeAsync extends AbstractAmazonPersona
     public java.util.concurrent.Future<GetPersonalizedRankingResult> getPersonalizedRankingAsync(GetPersonalizedRankingRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPersonalizedRankingRequest, GetPersonalizedRankingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonPersonalizeRuntimeAsync extends AbstractAmazonPersona
     public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(GetRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRecommendationsRequest, GetRecommendationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

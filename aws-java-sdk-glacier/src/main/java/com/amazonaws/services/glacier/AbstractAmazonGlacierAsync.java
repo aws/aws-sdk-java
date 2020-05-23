@@ -37,7 +37,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<AbortMultipartUploadResult> abortMultipartUploadAsync(AbortMultipartUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<AbortMultipartUploadRequest, AbortMultipartUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<AbortVaultLockResult> abortVaultLockAsync(AbortVaultLockRequest request,
             com.amazonaws.handlers.AsyncHandler<AbortVaultLockRequest, AbortVaultLockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<AddTagsToVaultResult> addTagsToVaultAsync(AddTagsToVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsToVaultRequest, AddTagsToVaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<CompleteMultipartUploadResult> completeMultipartUploadAsync(CompleteMultipartUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<CompleteMultipartUploadRequest, CompleteMultipartUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<CompleteVaultLockResult> completeVaultLockAsync(CompleteVaultLockRequest request,
             com.amazonaws.handlers.AsyncHandler<CompleteVaultLockRequest, CompleteVaultLockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<CreateVaultResult> createVaultAsync(CreateVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateVaultRequest, CreateVaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<DeleteVaultResult> deleteVaultAsync(DeleteVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVaultRequest, DeleteVaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<DeleteVaultAccessPolicyResult> deleteVaultAccessPolicyAsync(DeleteVaultAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVaultAccessPolicyRequest, DeleteVaultAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<DeleteVaultNotificationsResult> deleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVaultNotificationsRequest, DeleteVaultNotificationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<DescribeVaultResult> describeVaultAsync(DescribeVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeVaultRequest, DescribeVaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<GetDataRetrievalPolicyResult> getDataRetrievalPolicyAsync(GetDataRetrievalPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDataRetrievalPolicyRequest, GetDataRetrievalPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<GetJobOutputResult> getJobOutputAsync(GetJobOutputRequest request,
             com.amazonaws.handlers.AsyncHandler<GetJobOutputRequest, GetJobOutputResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<GetVaultAccessPolicyResult> getVaultAccessPolicyAsync(GetVaultAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetVaultAccessPolicyRequest, GetVaultAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<GetVaultLockResult> getVaultLockAsync(GetVaultLockRequest request,
             com.amazonaws.handlers.AsyncHandler<GetVaultLockRequest, GetVaultLockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<GetVaultNotificationsResult> getVaultNotificationsAsync(GetVaultNotificationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetVaultNotificationsRequest, GetVaultNotificationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<InitiateJobResult> initiateJobAsync(InitiateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<InitiateJobRequest, InitiateJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<InitiateMultipartUploadResult> initiateMultipartUploadAsync(InitiateMultipartUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<InitiateMultipartUploadRequest, InitiateMultipartUploadResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<InitiateVaultLockResult> initiateVaultLockAsync(InitiateVaultLockRequest request,
             com.amazonaws.handlers.AsyncHandler<InitiateVaultLockRequest, InitiateVaultLockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<ListMultipartUploadsResult> listMultipartUploadsAsync(ListMultipartUploadsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMultipartUploadsRequest, ListMultipartUploadsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<ListPartsResult> listPartsAsync(ListPartsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPartsRequest, ListPartsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<ListProvisionedCapacityResult> listProvisionedCapacityAsync(ListProvisionedCapacityRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProvisionedCapacityRequest, ListProvisionedCapacityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<ListTagsForVaultResult> listTagsForVaultAsync(ListTagsForVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForVaultRequest, ListTagsForVaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<ListVaultsResult> listVaultsAsync(ListVaultsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVaultsRequest, ListVaultsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<PurchaseProvisionedCapacityResult> purchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request,
             com.amazonaws.handlers.AsyncHandler<PurchaseProvisionedCapacityRequest, PurchaseProvisionedCapacityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<RemoveTagsFromVaultResult> removeTagsFromVaultAsync(RemoveTagsFromVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromVaultRequest, RemoveTagsFromVaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<SetDataRetrievalPolicyResult> setDataRetrievalPolicyAsync(SetDataRetrievalPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<SetDataRetrievalPolicyRequest, SetDataRetrievalPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<SetVaultAccessPolicyResult> setVaultAccessPolicyAsync(SetVaultAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<SetVaultAccessPolicyRequest, SetVaultAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<SetVaultNotificationsResult> setVaultNotificationsAsync(SetVaultNotificationsRequest request,
             com.amazonaws.handlers.AsyncHandler<SetVaultNotificationsRequest, SetVaultNotificationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<UploadArchiveResult> uploadArchiveAsync(UploadArchiveRequest request,
             com.amazonaws.handlers.AsyncHandler<UploadArchiveRequest, UploadArchiveResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAmazonGlacierAsync extends AbstractAmazonGlacier implements
     public java.util.concurrent.Future<UploadMultipartPartResult> uploadMultipartPartAsync(UploadMultipartPartRequest request,
             com.amazonaws.handlers.AsyncHandler<UploadMultipartPartRequest, UploadMultipartPartResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

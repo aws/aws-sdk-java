@@ -37,7 +37,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<CreateBotVersionResult> createBotVersionAsync(CreateBotVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateBotVersionRequest, CreateBotVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<CreateIntentVersionResult> createIntentVersionAsync(CreateIntentVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateIntentVersionRequest, CreateIntentVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<CreateSlotTypeVersionResult> createSlotTypeVersionAsync(CreateSlotTypeVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSlotTypeVersionRequest, CreateSlotTypeVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteBotResult> deleteBotAsync(DeleteBotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBotRequest, DeleteBotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteBotAliasResult> deleteBotAliasAsync(DeleteBotAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBotAliasRequest, DeleteBotAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteBotChannelAssociationResult> deleteBotChannelAssociationAsync(DeleteBotChannelAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBotChannelAssociationRequest, DeleteBotChannelAssociationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBotVersionRequest, DeleteBotVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteIntentResult> deleteIntentAsync(DeleteIntentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteIntentRequest, DeleteIntentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(DeleteIntentVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteIntentVersionRequest, DeleteIntentVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteSlotTypeResult> deleteSlotTypeAsync(DeleteSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSlotTypeRequest, DeleteSlotTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSlotTypeVersionRequest, DeleteSlotTypeVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<DeleteUtterancesResult> deleteUtterancesAsync(DeleteUtterancesRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUtterancesRequest, DeleteUtterancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotRequest, GetBotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotAliasResult> getBotAliasAsync(GetBotAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotAliasRequest, GetBotAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotAliasesResult> getBotAliasesAsync(GetBotAliasesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotAliasesRequest, GetBotAliasesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotChannelAssociationResult> getBotChannelAssociationAsync(GetBotChannelAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotChannelAssociationRequest, GetBotChannelAssociationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotChannelAssociationsResult> getBotChannelAssociationsAsync(GetBotChannelAssociationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotChannelAssociationsRequest, GetBotChannelAssociationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotVersionsResult> getBotVersionsAsync(GetBotVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotVersionsRequest, GetBotVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBotsResult> getBotsAsync(GetBotsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBotsRequest, GetBotsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBuiltinIntentResult> getBuiltinIntentAsync(GetBuiltinIntentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBuiltinIntentRequest, GetBuiltinIntentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBuiltinIntentsResult> getBuiltinIntentsAsync(GetBuiltinIntentsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBuiltinIntentsRequest, GetBuiltinIntentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetBuiltinSlotTypesResult> getBuiltinSlotTypesAsync(GetBuiltinSlotTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBuiltinSlotTypesRequest, GetBuiltinSlotTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImportRequest, GetImportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetIntentResult> getIntentAsync(GetIntentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIntentRequest, GetIntentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetIntentVersionsResult> getIntentVersionsAsync(GetIntentVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIntentVersionsRequest, GetIntentVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetIntentsResult> getIntentsAsync(GetIntentsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIntentsRequest, GetIntentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetSlotTypeResult> getSlotTypeAsync(GetSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSlotTypeRequest, GetSlotTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetSlotTypeVersionsResult> getSlotTypeVersionsAsync(GetSlotTypeVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSlotTypeVersionsRequest, GetSlotTypeVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetSlotTypesResult> getSlotTypesAsync(GetSlotTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSlotTypesRequest, GetSlotTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<GetUtterancesViewResult> getUtterancesViewAsync(GetUtterancesViewRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUtterancesViewRequest, GetUtterancesViewResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<PutBotResult> putBotAsync(PutBotRequest request,
             com.amazonaws.handlers.AsyncHandler<PutBotRequest, PutBotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<PutBotAliasResult> putBotAliasAsync(PutBotAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<PutBotAliasRequest, PutBotAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<PutIntentResult> putIntentAsync(PutIntentRequest request,
             com.amazonaws.handlers.AsyncHandler<PutIntentRequest, PutIntentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<PutSlotTypeResult> putSlotTypeAsync(PutSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<PutSlotTypeRequest, PutSlotTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -505,7 +505,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request,
             com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -518,7 +518,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -531,7 +531,7 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

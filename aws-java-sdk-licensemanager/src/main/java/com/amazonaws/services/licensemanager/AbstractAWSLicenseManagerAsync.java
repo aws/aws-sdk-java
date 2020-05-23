@@ -37,7 +37,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<CreateLicenseConfigurationResult> createLicenseConfigurationAsync(CreateLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLicenseConfigurationRequest, CreateLicenseConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<DeleteLicenseConfigurationResult> deleteLicenseConfigurationAsync(DeleteLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLicenseConfigurationRequest, DeleteLicenseConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<GetLicenseConfigurationResult> getLicenseConfigurationAsync(GetLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLicenseConfigurationRequest, GetLicenseConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<GetServiceSettingsResult> getServiceSettingsAsync(GetServiceSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetServiceSettingsRequest, GetServiceSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
             ListAssociationsForLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociationsForLicenseConfigurationRequest, ListAssociationsForLicenseConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -106,7 +106,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
             ListFailuresForLicenseConfigurationOperationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFailuresForLicenseConfigurationOperationsRequest, ListFailuresForLicenseConfigurationOperationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,7 +119,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<ListLicenseConfigurationsResult> listLicenseConfigurationsAsync(ListLicenseConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLicenseConfigurationsRequest, ListLicenseConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -134,7 +134,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
             ListLicenseSpecificationsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLicenseSpecificationsForResourceRequest, ListLicenseSpecificationsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -147,7 +147,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<ListResourceInventoryResult> listResourceInventoryAsync(ListResourceInventoryRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourceInventoryRequest, ListResourceInventoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -160,7 +160,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -175,7 +175,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
             ListUsageForLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUsageForLicenseConfigurationRequest, ListUsageForLicenseConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -188,7 +188,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -201,7 +201,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -214,7 +214,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<UpdateLicenseConfigurationResult> updateLicenseConfigurationAsync(UpdateLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLicenseConfigurationRequest, UpdateLicenseConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -229,7 +229,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
             UpdateLicenseSpecificationsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLicenseSpecificationsForResourceRequest, UpdateLicenseSpecificationsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -242,7 +242,7 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     public java.util.concurrent.Future<UpdateServiceSettingsResult> updateServiceSettingsAsync(UpdateServiceSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceSettingsRequest, UpdateServiceSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

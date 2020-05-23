@@ -36,7 +36,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<DescribeBundleResult> describeBundleAsync(DescribeBundleRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBundleRequest, DescribeBundleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProjectRequest, DescribeProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<ExportBundleResult> exportBundleAsync(ExportBundleRequest request,
             com.amazonaws.handlers.AsyncHandler<ExportBundleRequest, ExportBundleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -101,7 +101,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<ExportProjectResult> exportProjectAsync(ExportProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<ExportProjectRequest, ExportProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -114,7 +114,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<ListBundlesResult> listBundlesAsync(ListBundlesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBundlesRequest, ListBundlesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -127,7 +127,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -140,7 +140,7 @@ public class AbstractAWSMobileAsync extends AbstractAWSMobile implements AWSMobi
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

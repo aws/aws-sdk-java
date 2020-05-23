@@ -29,47 +29,47 @@ public class AbstractAmazonMacie implements AmazonMacie {
 
     @Override
     public AssociateMemberAccountResult associateMemberAccount(AssociateMemberAccountRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public AssociateS3ResourcesResult associateS3Resources(AssociateS3ResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DisassociateMemberAccountResult disassociateMemberAccount(DisassociateMemberAccountRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DisassociateS3ResourcesResult disassociateS3Resources(DisassociateS3ResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListMemberAccountsResult listMemberAccounts(ListMemberAccountsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListS3ResourcesResult listS3Resources(ListS3ResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateS3ResourcesResult updateS3Resources(UpdateS3ResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

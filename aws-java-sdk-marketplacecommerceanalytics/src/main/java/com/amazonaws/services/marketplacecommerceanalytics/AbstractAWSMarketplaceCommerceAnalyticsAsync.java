@@ -37,7 +37,7 @@ public class AbstractAWSMarketplaceCommerceAnalyticsAsync extends AbstractAWSMar
     public java.util.concurrent.Future<GenerateDataSetResult> generateDataSetAsync(GenerateDataSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GenerateDataSetRequest, GenerateDataSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMarketplaceCommerceAnalyticsAsync extends AbstractAWSMar
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -29,37 +29,37 @@ public class AbstractAmazonAugmentedAIRuntime implements AmazonAugmentedAIRuntim
 
     @Override
     public DeleteHumanLoopResult deleteHumanLoop(DeleteHumanLoopRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeHumanLoopResult describeHumanLoop(DescribeHumanLoopRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListHumanLoopsResult listHumanLoops(ListHumanLoopsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public StartHumanLoopResult startHumanLoop(StartHumanLoopRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public StopHumanLoopResult stopHumanLoop(StopHumanLoopRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

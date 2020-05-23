@@ -29,27 +29,27 @@ public class AbstractAWSMigrationHubConfig implements AWSMigrationHubConfig {
 
     @Override
     public CreateHomeRegionControlResult createHomeRegionControl(CreateHomeRegionControlRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeHomeRegionControlsResult describeHomeRegionControls(DescribeHomeRegionControlsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetHomeRegionResult getHomeRegion(GetHomeRegionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

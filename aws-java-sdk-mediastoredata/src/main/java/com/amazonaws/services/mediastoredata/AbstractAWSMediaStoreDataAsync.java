@@ -37,7 +37,7 @@ public class AbstractAWSMediaStoreDataAsync extends AbstractAWSMediaStoreData im
     public java.util.concurrent.Future<DeleteObjectResult> deleteObjectAsync(DeleteObjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteObjectRequest, DeleteObjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMediaStoreDataAsync extends AbstractAWSMediaStoreData im
     public java.util.concurrent.Future<DescribeObjectResult> describeObjectAsync(DescribeObjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeObjectRequest, DescribeObjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMediaStoreDataAsync extends AbstractAWSMediaStoreData im
     public java.util.concurrent.Future<GetObjectResult> getObjectAsync(GetObjectRequest request,
             com.amazonaws.handlers.AsyncHandler<GetObjectRequest, GetObjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSMediaStoreDataAsync extends AbstractAWSMediaStoreData im
     public java.util.concurrent.Future<ListItemsResult> listItemsAsync(ListItemsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListItemsRequest, ListItemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSMediaStoreDataAsync extends AbstractAWSMediaStoreData im
     public java.util.concurrent.Future<PutObjectResult> putObjectAsync(PutObjectRequest request,
             com.amazonaws.handlers.AsyncHandler<PutObjectRequest, PutObjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

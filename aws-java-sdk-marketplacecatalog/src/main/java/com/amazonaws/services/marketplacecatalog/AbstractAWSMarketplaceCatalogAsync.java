@@ -37,7 +37,7 @@ public class AbstractAWSMarketplaceCatalogAsync extends AbstractAWSMarketplaceCa
     public java.util.concurrent.Future<CancelChangeSetResult> cancelChangeSetAsync(CancelChangeSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelChangeSetRequest, CancelChangeSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMarketplaceCatalogAsync extends AbstractAWSMarketplaceCa
     public java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(DescribeChangeSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMarketplaceCatalogAsync extends AbstractAWSMarketplaceCa
     public java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEntityRequest, DescribeEntityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSMarketplaceCatalogAsync extends AbstractAWSMarketplaceCa
     public java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(ListChangeSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSMarketplaceCatalogAsync extends AbstractAWSMarketplaceCa
     public java.util.concurrent.Future<ListEntitiesResult> listEntitiesAsync(ListEntitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEntitiesRequest, ListEntitiesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSMarketplaceCatalogAsync extends AbstractAWSMarketplaceCa
     public java.util.concurrent.Future<StartChangeSetResult> startChangeSetAsync(StartChangeSetRequest request,
             com.amazonaws.handlers.AsyncHandler<StartChangeSetRequest, StartChangeSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

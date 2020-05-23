@@ -36,7 +36,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<AcceptResourceShareInvitationResult> acceptResourceShareInvitationAsync(AcceptResourceShareInvitationRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptResourceShareInvitationRequest, AcceptResourceShareInvitationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<AssociateResourceShareResult> associateResourceShareAsync(AssociateResourceShareRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateResourceShareRequest, AssociateResourceShareResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
             AssociateResourceSharePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateResourceSharePermissionRequest, AssociateResourceSharePermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -77,7 +77,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<CreateResourceShareResult> createResourceShareAsync(CreateResourceShareRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateResourceShareRequest, CreateResourceShareResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -90,7 +90,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<DeleteResourceShareResult> deleteResourceShareAsync(DeleteResourceShareRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteResourceShareRequest, DeleteResourceShareResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -103,7 +103,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<DisassociateResourceShareResult> disassociateResourceShareAsync(DisassociateResourceShareRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateResourceShareRequest, DisassociateResourceShareResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -118,7 +118,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
             DisassociateResourceSharePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateResourceSharePermissionRequest, DisassociateResourceSharePermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -133,7 +133,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
             EnableSharingWithAwsOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableSharingWithAwsOrganizationRequest, EnableSharingWithAwsOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -146,7 +146,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<GetPermissionResult> getPermissionAsync(GetPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPermissionRequest, GetPermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -159,7 +159,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<GetResourcePoliciesResult> getResourcePoliciesAsync(GetResourcePoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourcePoliciesRequest, GetResourcePoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -172,7 +172,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<GetResourceShareAssociationsResult> getResourceShareAssociationsAsync(GetResourceShareAssociationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourceShareAssociationsRequest, GetResourceShareAssociationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -185,7 +185,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<GetResourceShareInvitationsResult> getResourceShareInvitationsAsync(GetResourceShareInvitationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourceShareInvitationsRequest, GetResourceShareInvitationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -198,7 +198,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<GetResourceSharesResult> getResourceSharesAsync(GetResourceSharesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourceSharesRequest, GetResourceSharesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -211,7 +211,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<ListPendingInvitationResourcesResult> listPendingInvitationResourcesAsync(ListPendingInvitationResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPendingInvitationResourcesRequest, ListPendingInvitationResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -224,7 +224,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -237,7 +237,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<ListPrincipalsResult> listPrincipalsAsync(ListPrincipalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalsRequest, ListPrincipalsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -250,7 +250,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<ListResourceSharePermissionsResult> listResourceSharePermissionsAsync(ListResourceSharePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourceSharePermissionsRequest, ListResourceSharePermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -263,7 +263,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<ListResourceTypesResult> listResourceTypesAsync(ListResourceTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourceTypesRequest, ListResourceTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -276,7 +276,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourcesRequest, ListResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -291,7 +291,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
             PromoteResourceShareCreatedFromPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PromoteResourceShareCreatedFromPolicyRequest, PromoteResourceShareCreatedFromPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -304,7 +304,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<RejectResourceShareInvitationResult> rejectResourceShareInvitationAsync(RejectResourceShareInvitationRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -317,7 +317,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -330,7 +330,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -343,7 +343,7 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     public java.util.concurrent.Future<UpdateResourceShareResult> updateResourceShareAsync(UpdateResourceShareRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateResourceShareRequest, UpdateResourceShareResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

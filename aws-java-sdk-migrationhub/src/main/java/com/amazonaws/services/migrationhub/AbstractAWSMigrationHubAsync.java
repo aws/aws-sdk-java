@@ -37,7 +37,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<AssociateCreatedArtifactResult> associateCreatedArtifactAsync(AssociateCreatedArtifactRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateCreatedArtifactRequest, AssociateCreatedArtifactResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<AssociateDiscoveredResourceResult> associateDiscoveredResourceAsync(AssociateDiscoveredResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateDiscoveredResourceRequest, AssociateDiscoveredResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<CreateProgressUpdateStreamResult> createProgressUpdateStreamAsync(CreateProgressUpdateStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProgressUpdateStreamRequest, CreateProgressUpdateStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<DeleteProgressUpdateStreamResult> deleteProgressUpdateStreamAsync(DeleteProgressUpdateStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProgressUpdateStreamRequest, DeleteProgressUpdateStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<DescribeApplicationStateResult> describeApplicationStateAsync(DescribeApplicationStateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationStateRequest, DescribeApplicationStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<DescribeMigrationTaskResult> describeMigrationTaskAsync(DescribeMigrationTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMigrationTaskRequest, DescribeMigrationTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<DisassociateCreatedArtifactResult> disassociateCreatedArtifactAsync(DisassociateCreatedArtifactRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateCreatedArtifactRequest, DisassociateCreatedArtifactResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<DisassociateDiscoveredResourceResult> disassociateDiscoveredResourceAsync(DisassociateDiscoveredResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateDiscoveredResourceRequest, DisassociateDiscoveredResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<ImportMigrationTaskResult> importMigrationTaskAsync(ImportMigrationTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportMigrationTaskRequest, ImportMigrationTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(ListApplicationStatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApplicationStatesRequest, ListApplicationStatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<ListCreatedArtifactsResult> listCreatedArtifactsAsync(ListCreatedArtifactsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCreatedArtifactsRequest, ListCreatedArtifactsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<ListMigrationTasksResult> listMigrationTasksAsync(ListMigrationTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMigrationTasksRequest, ListMigrationTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<ListProgressUpdateStreamsResult> listProgressUpdateStreamsAsync(ListProgressUpdateStreamsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProgressUpdateStreamsRequest, ListProgressUpdateStreamsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<NotifyApplicationStateResult> notifyApplicationStateAsync(NotifyApplicationStateRequest request,
             com.amazonaws.handlers.AsyncHandler<NotifyApplicationStateRequest, NotifyApplicationStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<NotifyMigrationTaskStateResult> notifyMigrationTaskStateAsync(NotifyMigrationTaskStateRequest request,
             com.amazonaws.handlers.AsyncHandler<NotifyMigrationTaskStateRequest, NotifyMigrationTaskStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     public java.util.concurrent.Future<PutResourceAttributesResult> putResourceAttributesAsync(PutResourceAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutResourceAttributesRequest, PutResourceAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

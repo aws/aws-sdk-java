@@ -37,7 +37,7 @@ public class AbstractAWSIoTJobsDataPlaneAsync extends AbstractAWSIoTJobsDataPlan
     public java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobExecutionRequest, DescribeJobExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSIoTJobsDataPlaneAsync extends AbstractAWSIoTJobsDataPlan
     public java.util.concurrent.Future<GetPendingJobExecutionsResult> getPendingJobExecutionsAsync(GetPendingJobExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPendingJobExecutionsRequest, GetPendingJobExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSIoTJobsDataPlaneAsync extends AbstractAWSIoTJobsDataPlan
     public java.util.concurrent.Future<StartNextPendingJobExecutionResult> startNextPendingJobExecutionAsync(StartNextPendingJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartNextPendingJobExecutionRequest, StartNextPendingJobExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSIoTJobsDataPlaneAsync extends AbstractAWSIoTJobsDataPlan
     public java.util.concurrent.Future<UpdateJobExecutionResult> updateJobExecutionAsync(UpdateJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateJobExecutionRequest, UpdateJobExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

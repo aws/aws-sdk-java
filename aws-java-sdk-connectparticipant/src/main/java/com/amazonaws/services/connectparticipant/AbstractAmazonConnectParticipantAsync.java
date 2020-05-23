@@ -37,7 +37,7 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     public java.util.concurrent.Future<CreateParticipantConnectionResult> createParticipantConnectionAsync(CreateParticipantConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateParticipantConnectionRequest, CreateParticipantConnectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     public java.util.concurrent.Future<DisconnectParticipantResult> disconnectParticipantAsync(DisconnectParticipantRequest request,
             com.amazonaws.handlers.AsyncHandler<DisconnectParticipantRequest, DisconnectParticipantResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     public java.util.concurrent.Future<GetTranscriptResult> getTranscriptAsync(GetTranscriptRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTranscriptRequest, GetTranscriptResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     public java.util.concurrent.Future<SendEventResult> sendEventAsync(SendEventRequest request,
             com.amazonaws.handlers.AsyncHandler<SendEventRequest, SendEventResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     public java.util.concurrent.Future<SendMessageResult> sendMessageAsync(SendMessageRequest request,
             com.amazonaws.handlers.AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

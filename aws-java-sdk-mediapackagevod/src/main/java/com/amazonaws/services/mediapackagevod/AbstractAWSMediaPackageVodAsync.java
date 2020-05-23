@@ -37,7 +37,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<CreateAssetResult> createAssetAsync(CreateAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssetRequest, CreateAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<CreatePackagingConfigurationResult> createPackagingConfigurationAsync(CreatePackagingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePackagingConfigurationRequest, CreatePackagingConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<CreatePackagingGroupResult> createPackagingGroupAsync(CreatePackagingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePackagingGroupRequest, CreatePackagingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<DeleteAssetResult> deleteAssetAsync(DeleteAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssetRequest, DeleteAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<DeletePackagingConfigurationResult> deletePackagingConfigurationAsync(DeletePackagingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePackagingConfigurationRequest, DeletePackagingConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<DeletePackagingGroupResult> deletePackagingGroupAsync(DeletePackagingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePackagingGroupRequest, DeletePackagingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<DescribeAssetResult> describeAssetAsync(DescribeAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetRequest, DescribeAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<DescribePackagingConfigurationResult> describePackagingConfigurationAsync(DescribePackagingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePackagingConfigurationRequest, DescribePackagingConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<DescribePackagingGroupResult> describePackagingGroupAsync(DescribePackagingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePackagingGroupRequest, DescribePackagingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<ListAssetsResult> listAssetsAsync(ListAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetsRequest, ListAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<ListPackagingConfigurationsResult> listPackagingConfigurationsAsync(ListPackagingConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPackagingConfigurationsRequest, ListPackagingConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<ListPackagingGroupsResult> listPackagingGroupsAsync(ListPackagingGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPackagingGroupsRequest, ListPackagingGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSMediaPackageVodAsync extends AbstractAWSMediaPackageVod 
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

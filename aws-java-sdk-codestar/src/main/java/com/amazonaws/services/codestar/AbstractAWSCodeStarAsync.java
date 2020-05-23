@@ -37,7 +37,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<AssociateTeamMemberResult> associateTeamMemberAsync(AssociateTeamMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateTeamMemberRequest, AssociateTeamMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<CreateUserProfileResult> createUserProfileAsync(CreateUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUserProfileRequest, CreateUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(DeleteUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, DeleteUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProjectRequest, DescribeProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<DescribeUserProfileResult> describeUserProfileAsync(DescribeUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeUserProfileRequest, DescribeUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<DisassociateTeamMemberResult> disassociateTeamMemberAsync(DisassociateTeamMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateTeamMemberRequest, DisassociateTeamMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<ListResourcesResult> listResourcesAsync(ListResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourcesRequest, ListResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<ListTagsForProjectResult> listTagsForProjectAsync(ListTagsForProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForProjectRequest, ListTagsForProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<ListTeamMembersResult> listTeamMembersAsync(ListTeamMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTeamMembersRequest, ListTeamMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<ListUserProfilesResult> listUserProfilesAsync(ListUserProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUserProfilesRequest, ListUserProfilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<TagProjectResult> tagProjectAsync(TagProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<TagProjectRequest, TagProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<UntagProjectResult> untagProjectAsync(UntagProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagProjectRequest, UntagProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<UpdateTeamMemberResult> updateTeamMemberAsync(UpdateTeamMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTeamMemberRequest, UpdateTeamMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSCodeStarAsync extends AbstractAWSCodeStar implements AWS
     public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(UpdateUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, UpdateUserProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

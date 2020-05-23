@@ -36,7 +36,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(AddPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -74,7 +74,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(ChangeMessageVisibilityRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -114,7 +114,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -152,7 +152,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateQueueRequest, CreateQueueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -188,7 +188,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(DeleteMessageRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -224,7 +224,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<DeleteMessageBatchResult> deleteMessageBatchAsync(DeleteMessageBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMessageBatchRequest, DeleteMessageBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -261,7 +261,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(DeleteQueueRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -297,7 +297,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<GetQueueAttributesResult> getQueueAttributesAsync(GetQueueAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetQueueAttributesRequest, GetQueueAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -333,7 +333,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<GetQueueUrlResult> getQueueUrlAsync(GetQueueUrlRequest request,
             com.amazonaws.handlers.AsyncHandler<GetQueueUrlRequest, GetQueueUrlResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -369,7 +369,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<ListDeadLetterSourceQueuesResult> listDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeadLetterSourceQueuesRequest, ListDeadLetterSourceQueuesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -382,7 +382,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -418,7 +418,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -476,7 +476,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(PurgeQueueRequest request,
             com.amazonaws.handlers.AsyncHandler<PurgeQueueRequest, PurgeQueueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -489,7 +489,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<ReceiveMessageResult> receiveMessageAsync(ReceiveMessageRequest request,
             com.amazonaws.handlers.AsyncHandler<ReceiveMessageRequest, ReceiveMessageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -525,7 +525,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -561,7 +561,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<SendMessageResult> sendMessageAsync(SendMessageRequest request,
             com.amazonaws.handlers.AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -597,7 +597,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<SendMessageBatchResult> sendMessageBatchAsync(SendMessageBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<SendMessageBatchRequest, SendMessageBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -633,7 +633,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(SetQueueAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -669,7 +669,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(TagQueueRequest request,
             com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -705,7 +705,7 @@ public class AbstractAmazonSQSAsync extends AbstractAmazonSQS implements AmazonS
     public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**

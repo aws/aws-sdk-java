@@ -37,7 +37,7 @@ public class AbstractAmazonDynamoDBStreamsAsync extends AbstractAmazonDynamoDBSt
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonDynamoDBStreamsAsync extends AbstractAmazonDynamoDBSt
     public java.util.concurrent.Future<GetRecordsResult> getRecordsAsync(GetRecordsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRecordsRequest, GetRecordsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonDynamoDBStreamsAsync extends AbstractAmazonDynamoDBSt
     public java.util.concurrent.Future<GetShardIteratorResult> getShardIteratorAsync(GetShardIteratorRequest request,
             com.amazonaws.handlers.AsyncHandler<GetShardIteratorRequest, GetShardIteratorResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonDynamoDBStreamsAsync extends AbstractAmazonDynamoDBSt
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

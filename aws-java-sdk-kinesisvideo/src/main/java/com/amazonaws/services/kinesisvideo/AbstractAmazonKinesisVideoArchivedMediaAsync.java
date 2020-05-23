@@ -37,7 +37,7 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     public java.util.concurrent.Future<GetClipResult> getClipAsync(GetClipRequest request,
             com.amazonaws.handlers.AsyncHandler<GetClipRequest, GetClipResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     public java.util.concurrent.Future<GetDASHStreamingSessionURLResult> getDASHStreamingSessionURLAsync(GetDASHStreamingSessionURLRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDASHStreamingSessionURLRequest, GetDASHStreamingSessionURLResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     public java.util.concurrent.Future<GetHLSStreamingSessionURLResult> getHLSStreamingSessionURLAsync(GetHLSStreamingSessionURLRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHLSStreamingSessionURLRequest, GetHLSStreamingSessionURLResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     public java.util.concurrent.Future<GetMediaForFragmentListResult> getMediaForFragmentListAsync(GetMediaForFragmentListRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMediaForFragmentListRequest, GetMediaForFragmentListResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonKinesisVideoArchivedMediaAsync extends AbstractAmazon
     public java.util.concurrent.Future<ListFragmentsResult> listFragmentsAsync(ListFragmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFragmentsRequest, ListFragmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

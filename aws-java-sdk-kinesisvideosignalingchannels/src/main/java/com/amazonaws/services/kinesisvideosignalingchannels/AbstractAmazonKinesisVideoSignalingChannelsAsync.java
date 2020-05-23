@@ -38,7 +38,7 @@ public class AbstractAmazonKinesisVideoSignalingChannelsAsync extends AbstractAm
     public java.util.concurrent.Future<GetIceServerConfigResult> getIceServerConfigAsync(GetIceServerConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIceServerConfigRequest, GetIceServerConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -51,7 +51,7 @@ public class AbstractAmazonKinesisVideoSignalingChannelsAsync extends AbstractAm
     public java.util.concurrent.Future<SendAlexaOfferToMasterResult> sendAlexaOfferToMasterAsync(SendAlexaOfferToMasterRequest request,
             com.amazonaws.handlers.AsyncHandler<SendAlexaOfferToMasterRequest, SendAlexaOfferToMasterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

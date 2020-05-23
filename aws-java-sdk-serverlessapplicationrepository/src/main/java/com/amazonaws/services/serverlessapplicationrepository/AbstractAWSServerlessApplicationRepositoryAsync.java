@@ -38,7 +38,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -51,7 +51,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<CreateCloudFormationChangeSetResult> createCloudFormationChangeSetAsync(CreateCloudFormationChangeSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCloudFormationChangeSetRequest, CreateCloudFormationChangeSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -77,7 +77,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<CreateCloudFormationTemplateResult> createCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCloudFormationTemplateRequest, CreateCloudFormationTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -90,7 +90,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -103,7 +103,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -116,7 +116,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<GetApplicationPolicyResult> getApplicationPolicyAsync(GetApplicationPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetApplicationPolicyRequest, GetApplicationPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -129,7 +129,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<GetCloudFormationTemplateResult> getCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCloudFormationTemplateRequest, GetCloudFormationTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -142,7 +142,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(ListApplicationDependenciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApplicationDependenciesRequest, ListApplicationDependenciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -155,7 +155,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApplicationVersionsRequest, ListApplicationVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -168,7 +168,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -181,7 +181,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<PutApplicationPolicyResult> putApplicationPolicyAsync(PutApplicationPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutApplicationPolicyRequest, PutApplicationPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -194,7 +194,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<UnshareApplicationResult> unshareApplicationAsync(UnshareApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UnshareApplicationRequest, UnshareApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -207,7 +207,7 @@ public class AbstractAWSServerlessApplicationRepositoryAsync extends AbstractAWS
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

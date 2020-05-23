@@ -37,7 +37,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<DescribeReportCreationResult> describeReportCreationAsync(DescribeReportCreationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReportCreationRequest, DescribeReportCreationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<GetComplianceSummaryResult> getComplianceSummaryAsync(GetComplianceSummaryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryRequest, GetComplianceSummaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourcesRequest, GetResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<GetTagKeysResult> getTagKeysAsync(GetTagKeysRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagKeysRequest, GetTagKeysResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<GetTagValuesResult> getTagValuesAsync(GetTagValuesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagValuesRequest, GetTagValuesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<StartReportCreationResult> startReportCreationAsync(StartReportCreationRequest request,
             com.amazonaws.handlers.AsyncHandler<StartReportCreationRequest, StartReportCreationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<TagResourcesResult> tagResourcesAsync(TagResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourcesRequest, TagResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSResourceGroupsTaggingAPIAsync extends AbstractAWSResourc
     public java.util.concurrent.Future<UntagResourcesResult> untagResourcesAsync(UntagResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourcesRequest, UntagResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

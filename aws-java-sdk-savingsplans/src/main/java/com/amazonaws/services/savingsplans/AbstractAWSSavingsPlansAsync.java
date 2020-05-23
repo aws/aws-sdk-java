@@ -37,7 +37,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<CreateSavingsPlanResult> createSavingsPlanAsync(CreateSavingsPlanRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSavingsPlanRequest, CreateSavingsPlanResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<DescribeSavingsPlanRatesResult> describeSavingsPlanRatesAsync(DescribeSavingsPlanRatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSavingsPlanRatesRequest, DescribeSavingsPlanRatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<DescribeSavingsPlansResult> describeSavingsPlansAsync(DescribeSavingsPlansRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSavingsPlansRequest, DescribeSavingsPlansResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -78,7 +78,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
             DescribeSavingsPlansOfferingRatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSavingsPlansOfferingRatesRequest, DescribeSavingsPlansOfferingRatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<DescribeSavingsPlansOfferingsResult> describeSavingsPlansOfferingsAsync(DescribeSavingsPlansOfferingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSavingsPlansOfferingsRequest, DescribeSavingsPlansOfferingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -117,7 +117,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -130,7 +130,7 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

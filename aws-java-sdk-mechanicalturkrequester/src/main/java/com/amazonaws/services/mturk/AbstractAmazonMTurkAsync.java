@@ -37,7 +37,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<AcceptQualificationRequestResult> acceptQualificationRequestAsync(AcceptQualificationRequestRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptQualificationRequestRequest, AcceptQualificationRequestResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ApproveAssignmentResult> approveAssignmentAsync(ApproveAssignmentRequest request,
             com.amazonaws.handlers.AsyncHandler<ApproveAssignmentRequest, ApproveAssignmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
             AssociateQualificationWithWorkerRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateQualificationWithWorkerRequest, AssociateQualificationWithWorkerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
             CreateAdditionalAssignmentsForHITRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAdditionalAssignmentsForHITRequest, CreateAdditionalAssignmentsForHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -93,7 +93,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<CreateHITResult> createHITAsync(CreateHITRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHITRequest, CreateHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -106,7 +106,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<CreateHITTypeResult> createHITTypeAsync(CreateHITTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHITTypeRequest, CreateHITTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,7 +119,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<CreateHITWithHITTypeResult> createHITWithHITTypeAsync(CreateHITWithHITTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHITWithHITTypeRequest, CreateHITWithHITTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -132,7 +132,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<CreateQualificationTypeResult> createQualificationTypeAsync(CreateQualificationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateQualificationTypeRequest, CreateQualificationTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -145,7 +145,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<CreateWorkerBlockResult> createWorkerBlockAsync(CreateWorkerBlockRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWorkerBlockRequest, CreateWorkerBlockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<DeleteHITResult> deleteHITAsync(DeleteHITRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHITRequest, DeleteHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -171,7 +171,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<DeleteQualificationTypeResult> deleteQualificationTypeAsync(DeleteQualificationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteQualificationTypeRequest, DeleteQualificationTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -184,7 +184,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<DeleteWorkerBlockResult> deleteWorkerBlockAsync(DeleteWorkerBlockRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkerBlockRequest, DeleteWorkerBlockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -199,7 +199,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
             DisassociateQualificationFromWorkerRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateQualificationFromWorkerRequest, DisassociateQualificationFromWorkerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -212,7 +212,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<GetAccountBalanceResult> getAccountBalanceAsync(GetAccountBalanceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccountBalanceRequest, GetAccountBalanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -225,7 +225,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<GetAssignmentResult> getAssignmentAsync(GetAssignmentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssignmentRequest, GetAssignmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -238,7 +238,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<GetFileUploadURLResult> getFileUploadURLAsync(GetFileUploadURLRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFileUploadURLRequest, GetFileUploadURLResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -251,7 +251,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<GetHITResult> getHITAsync(GetHITRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHITRequest, GetHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -264,7 +264,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<GetQualificationScoreResult> getQualificationScoreAsync(GetQualificationScoreRequest request,
             com.amazonaws.handlers.AsyncHandler<GetQualificationScoreRequest, GetQualificationScoreResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -277,7 +277,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<GetQualificationTypeResult> getQualificationTypeAsync(GetQualificationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetQualificationTypeRequest, GetQualificationTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -290,7 +290,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListAssignmentsForHITResult> listAssignmentsForHITAsync(ListAssignmentsForHITRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssignmentsForHITRequest, ListAssignmentsForHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -303,7 +303,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListBonusPaymentsResult> listBonusPaymentsAsync(ListBonusPaymentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBonusPaymentsRequest, ListBonusPaymentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -316,7 +316,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListHITsResult> listHITsAsync(ListHITsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHITsRequest, ListHITsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -329,7 +329,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListHITsForQualificationTypeResult> listHITsForQualificationTypeAsync(ListHITsForQualificationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHITsForQualificationTypeRequest, ListHITsForQualificationTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -342,7 +342,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListQualificationRequestsResult> listQualificationRequestsAsync(ListQualificationRequestsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListQualificationRequestsRequest, ListQualificationRequestsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -355,7 +355,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListQualificationTypesResult> listQualificationTypesAsync(ListQualificationTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListQualificationTypesRequest, ListQualificationTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -368,7 +368,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListReviewPolicyResultsForHITResult> listReviewPolicyResultsForHITAsync(ListReviewPolicyResultsForHITRequest request,
             com.amazonaws.handlers.AsyncHandler<ListReviewPolicyResultsForHITRequest, ListReviewPolicyResultsForHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -381,7 +381,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListReviewableHITsResult> listReviewableHITsAsync(ListReviewableHITsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListReviewableHITsRequest, ListReviewableHITsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -394,7 +394,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<ListWorkerBlocksResult> listWorkerBlocksAsync(ListWorkerBlocksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWorkerBlocksRequest, ListWorkerBlocksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -409,7 +409,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
             ListWorkersWithQualificationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWorkersWithQualificationTypeRequest, ListWorkersWithQualificationTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -422,7 +422,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<NotifyWorkersResult> notifyWorkersAsync(NotifyWorkersRequest request,
             com.amazonaws.handlers.AsyncHandler<NotifyWorkersRequest, NotifyWorkersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -435,7 +435,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<RejectAssignmentResult> rejectAssignmentAsync(RejectAssignmentRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectAssignmentRequest, RejectAssignmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -448,7 +448,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<RejectQualificationRequestResult> rejectQualificationRequestAsync(RejectQualificationRequestRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectQualificationRequestRequest, RejectQualificationRequestResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -461,7 +461,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<SendBonusResult> sendBonusAsync(SendBonusRequest request,
             com.amazonaws.handlers.AsyncHandler<SendBonusRequest, SendBonusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -474,7 +474,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<SendTestEventNotificationResult> sendTestEventNotificationAsync(SendTestEventNotificationRequest request,
             com.amazonaws.handlers.AsyncHandler<SendTestEventNotificationRequest, SendTestEventNotificationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -487,7 +487,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<UpdateExpirationForHITResult> updateExpirationForHITAsync(UpdateExpirationForHITRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateExpirationForHITRequest, UpdateExpirationForHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -500,7 +500,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<UpdateHITReviewStatusResult> updateHITReviewStatusAsync(UpdateHITReviewStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateHITReviewStatusRequest, UpdateHITReviewStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -513,7 +513,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<UpdateHITTypeOfHITResult> updateHITTypeOfHITAsync(UpdateHITTypeOfHITRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateHITTypeOfHITRequest, UpdateHITTypeOfHITResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -526,7 +526,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<UpdateNotificationSettingsResult> updateNotificationSettingsAsync(UpdateNotificationSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNotificationSettingsRequest, UpdateNotificationSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -539,7 +539,7 @@ public class AbstractAmazonMTurkAsync extends AbstractAmazonMTurk implements Ama
     public java.util.concurrent.Future<UpdateQualificationTypeResult> updateQualificationTypeAsync(UpdateQualificationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateQualificationTypeRequest, UpdateQualificationTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

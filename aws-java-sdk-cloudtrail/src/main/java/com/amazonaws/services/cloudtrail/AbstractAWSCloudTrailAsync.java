@@ -37,7 +37,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<CreateTrailResult> createTrailAsync(CreateTrailRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTrailRequest, CreateTrailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(DeleteTrailRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<DescribeTrailsResult> describeTrailsAsync(DescribeTrailsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -112,7 +112,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<GetEventSelectorsResult> getEventSelectorsAsync(GetEventSelectorsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEventSelectorsRequest, GetEventSelectorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -125,7 +125,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<GetInsightSelectorsResult> getInsightSelectorsAsync(GetInsightSelectorsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInsightSelectorsRequest, GetInsightSelectorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -138,7 +138,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<GetTrailResult> getTrailAsync(GetTrailRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTrailRequest, GetTrailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -151,7 +151,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<GetTrailStatusResult> getTrailStatusAsync(GetTrailStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTrailStatusRequest, GetTrailStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -164,7 +164,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -200,7 +200,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -213,7 +213,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<ListTrailsResult> listTrailsAsync(ListTrailsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTrailsRequest, ListTrailsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -226,7 +226,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<LookupEventsResult> lookupEventsAsync(LookupEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<LookupEventsRequest, LookupEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -262,7 +262,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<PutEventSelectorsResult> putEventSelectorsAsync(PutEventSelectorsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEventSelectorsRequest, PutEventSelectorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -275,7 +275,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<PutInsightSelectorsResult> putInsightSelectorsAsync(PutInsightSelectorsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutInsightSelectorsRequest, PutInsightSelectorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -288,7 +288,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -301,7 +301,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<StartLoggingResult> startLoggingAsync(StartLoggingRequest request,
             com.amazonaws.handlers.AsyncHandler<StartLoggingRequest, StartLoggingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -314,7 +314,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(StopLoggingRequest request,
             com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -327,7 +327,7 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     public java.util.concurrent.Future<UpdateTrailResult> updateTrailAsync(UpdateTrailRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTrailRequest, UpdateTrailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

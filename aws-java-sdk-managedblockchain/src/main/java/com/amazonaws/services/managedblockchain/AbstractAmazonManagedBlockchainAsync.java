@@ -37,7 +37,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<CreateMemberResult> createMemberAsync(CreateMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMemberRequest, CreateMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<CreateNetworkResult> createNetworkAsync(CreateNetworkRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateNetworkRequest, CreateNetworkResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<CreateNodeResult> createNodeAsync(CreateNodeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateNodeRequest, CreateNodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<CreateProposalResult> createProposalAsync(CreateProposalRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProposalRequest, CreateProposalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<DeleteMemberResult> deleteMemberAsync(DeleteMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMemberRequest, DeleteMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<DeleteNodeResult> deleteNodeAsync(DeleteNodeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteNodeRequest, DeleteNodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<GetMemberResult> getMemberAsync(GetMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMemberRequest, GetMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<GetNetworkResult> getNetworkAsync(GetNetworkRequest request,
             com.amazonaws.handlers.AsyncHandler<GetNetworkRequest, GetNetworkResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<GetNodeResult> getNodeAsync(GetNodeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetNodeRequest, GetNodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<GetProposalResult> getProposalAsync(GetProposalRequest request,
             com.amazonaws.handlers.AsyncHandler<GetProposalRequest, GetProposalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<ListInvitationsResult> listInvitationsAsync(ListInvitationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInvitationsRequest, ListInvitationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMembersRequest, ListMembersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<ListNetworksResult> listNetworksAsync(ListNetworksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListNetworksRequest, ListNetworksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<ListNodesResult> listNodesAsync(ListNodesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListNodesRequest, ListNodesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<ListProposalVotesResult> listProposalVotesAsync(ListProposalVotesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProposalVotesRequest, ListProposalVotesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<ListProposalsResult> listProposalsAsync(ListProposalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProposalsRequest, ListProposalsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<RejectInvitationResult> rejectInvitationAsync(RejectInvitationRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectInvitationRequest, RejectInvitationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<UpdateMemberResult> updateMemberAsync(UpdateMemberRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMemberRequest, UpdateMemberResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<UpdateNodeResult> updateNodeAsync(UpdateNodeRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNodeRequest, UpdateNodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonManagedBlockchainAsync extends AbstractAmazonManagedB
     public java.util.concurrent.Future<VoteOnProposalResult> voteOnProposalAsync(VoteOnProposalRequest request,
             com.amazonaws.handlers.AsyncHandler<VoteOnProposalRequest, VoteOnProposalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

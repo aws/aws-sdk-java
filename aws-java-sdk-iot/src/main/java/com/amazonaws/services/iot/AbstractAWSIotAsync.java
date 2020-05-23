@@ -36,7 +36,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(AcceptCertificateTransferRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, AcceptCertificateTransferResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AddThingToBillingGroupResult> addThingToBillingGroupAsync(AddThingToBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<AddThingToBillingGroupRequest, AddThingToBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AddThingToThingGroupResult> addThingToThingGroupAsync(AddThingToThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<AddThingToThingGroupRequest, AddThingToThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AssociateTargetsWithJobResult> associateTargetsWithJobAsync(AssociateTargetsWithJobRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateTargetsWithJobRequest, AssociateTargetsWithJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AttachPolicyResult> attachPolicyAsync(AttachPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<AttachPolicyRequest, AttachPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -103,7 +103,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(AttachPrincipalPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, AttachPrincipalPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -116,7 +116,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AttachSecurityProfileResult> attachSecurityProfileAsync(AttachSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<AttachSecurityProfileRequest, AttachSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -129,7 +129,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<AttachThingPrincipalResult> attachThingPrincipalAsync(AttachThingPrincipalRequest request,
             com.amazonaws.handlers.AsyncHandler<AttachThingPrincipalRequest, AttachThingPrincipalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -144,7 +144,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             CancelAuditMitigationActionsTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelAuditMitigationActionsTaskRequest, CancelAuditMitigationActionsTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -157,7 +157,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CancelAuditTaskResult> cancelAuditTaskAsync(CancelAuditTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelAuditTaskRequest, CancelAuditTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -170,7 +170,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(CancelCertificateTransferRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, CancelCertificateTransferResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -183,7 +183,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -196,7 +196,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CancelJobExecutionResult> cancelJobExecutionAsync(CancelJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelJobExecutionRequest, CancelJobExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -209,7 +209,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ClearDefaultAuthorizerResult> clearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<ClearDefaultAuthorizerRequest, ClearDefaultAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -222,7 +222,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ConfirmTopicRuleDestinationResult> confirmTopicRuleDestinationAsync(ConfirmTopicRuleDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<ConfirmTopicRuleDestinationRequest, ConfirmTopicRuleDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -235,7 +235,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(CreateAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAuthorizerRequest, CreateAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -248,7 +248,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateBillingGroupResult> createBillingGroupAsync(CreateBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateBillingGroupRequest, CreateBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -261,7 +261,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateCertificateFromCsrResult> createCertificateFromCsrAsync(CreateCertificateFromCsrRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCertificateFromCsrRequest, CreateCertificateFromCsrResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -274,7 +274,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateDimensionResult> createDimensionAsync(CreateDimensionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDimensionRequest, CreateDimensionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -287,7 +287,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateDomainConfigurationResult> createDomainConfigurationAsync(CreateDomainConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDomainConfigurationRequest, CreateDomainConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -300,7 +300,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateDynamicThingGroupResult> createDynamicThingGroupAsync(CreateDynamicThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDynamicThingGroupRequest, CreateDynamicThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -313,7 +313,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -326,7 +326,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(CreateKeysAndCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateKeysAndCertificateRequest, CreateKeysAndCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -339,7 +339,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateMitigationActionResult> createMitigationActionAsync(CreateMitigationActionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMitigationActionRequest, CreateMitigationActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -352,7 +352,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateOTAUpdateRequest, CreateOTAUpdateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -365,7 +365,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(CreatePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePolicyRequest, CreatePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -378,7 +378,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreatePolicyVersionResult> createPolicyVersionAsync(CreatePolicyVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePolicyVersionRequest, CreatePolicyVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -391,7 +391,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateProvisioningClaimResult> createProvisioningClaimAsync(CreateProvisioningClaimRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProvisioningClaimRequest, CreateProvisioningClaimResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -404,7 +404,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateProvisioningTemplateResult> createProvisioningTemplateAsync(CreateProvisioningTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProvisioningTemplateRequest, CreateProvisioningTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -419,7 +419,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             CreateProvisioningTemplateVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProvisioningTemplateVersionRequest, CreateProvisioningTemplateVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -432,7 +432,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateRoleAliasResult> createRoleAliasAsync(CreateRoleAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRoleAliasRequest, CreateRoleAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -445,7 +445,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateScheduledAuditResult> createScheduledAuditAsync(CreateScheduledAuditRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateScheduledAuditRequest, CreateScheduledAuditResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -458,7 +458,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateSecurityProfileResult> createSecurityProfileAsync(CreateSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSecurityProfileRequest, CreateSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -471,7 +471,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -484,7 +484,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateThingResult> createThingAsync(CreateThingRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateThingRequest, CreateThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -497,7 +497,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateThingGroupResult> createThingGroupAsync(CreateThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateThingGroupRequest, CreateThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -510,7 +510,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateThingTypeResult> createThingTypeAsync(CreateThingTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateThingTypeRequest, CreateThingTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -523,7 +523,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(CreateTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, CreateTopicRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -536,7 +536,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<CreateTopicRuleDestinationResult> createTopicRuleDestinationAsync(CreateTopicRuleDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTopicRuleDestinationRequest, CreateTopicRuleDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -551,7 +551,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             DeleteAccountAuditConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountAuditConfigurationRequest, DeleteAccountAuditConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -564,7 +564,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(DeleteAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, DeleteAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -577,7 +577,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteBillingGroupResult> deleteBillingGroupAsync(DeleteBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBillingGroupRequest, DeleteBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -590,7 +590,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(DeleteCACertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCACertificateRequest, DeleteCACertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -603,7 +603,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -616,7 +616,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteDimensionResult> deleteDimensionAsync(DeleteDimensionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDimensionRequest, DeleteDimensionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -629,7 +629,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteDomainConfigurationResult> deleteDomainConfigurationAsync(DeleteDomainConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainConfigurationRequest, DeleteDomainConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -642,7 +642,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteDynamicThingGroupResult> deleteDynamicThingGroupAsync(DeleteDynamicThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDynamicThingGroupRequest, DeleteDynamicThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -655,7 +655,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -668,7 +668,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -681,7 +681,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteMitigationActionResult> deleteMitigationActionAsync(DeleteMitigationActionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMitigationActionRequest, DeleteMitigationActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -694,7 +694,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -707,7 +707,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -720,7 +720,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(DeletePolicyVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -733,7 +733,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteProvisioningTemplateResult> deleteProvisioningTemplateAsync(DeleteProvisioningTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProvisioningTemplateRequest, DeleteProvisioningTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -748,7 +748,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             DeleteProvisioningTemplateVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProvisioningTemplateVersionRequest, DeleteProvisioningTemplateVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -761,7 +761,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(DeleteRegistrationCodeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRegistrationCodeRequest, DeleteRegistrationCodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -774,7 +774,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteRoleAliasResult> deleteRoleAliasAsync(DeleteRoleAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRoleAliasRequest, DeleteRoleAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -787,7 +787,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteScheduledAuditResult> deleteScheduledAuditAsync(DeleteScheduledAuditRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteScheduledAuditRequest, DeleteScheduledAuditResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -800,7 +800,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteSecurityProfileResult> deleteSecurityProfileAsync(DeleteSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSecurityProfileRequest, DeleteSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -813,7 +813,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -826,7 +826,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteThingResult> deleteThingAsync(DeleteThingRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteThingRequest, DeleteThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -839,7 +839,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteThingGroupResult> deleteThingGroupAsync(DeleteThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteThingGroupRequest, DeleteThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -852,7 +852,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteThingTypeResult> deleteThingTypeAsync(DeleteThingTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteThingTypeRequest, DeleteThingTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -865,7 +865,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(DeleteTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -878,7 +878,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteTopicRuleDestinationResult> deleteTopicRuleDestinationAsync(DeleteTopicRuleDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleDestinationRequest, DeleteTopicRuleDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -891,7 +891,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeleteV2LoggingLevelResult> deleteV2LoggingLevelAsync(DeleteV2LoggingLevelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteV2LoggingLevelRequest, DeleteV2LoggingLevelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -904,7 +904,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DeprecateThingTypeResult> deprecateThingTypeAsync(DeprecateThingTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeprecateThingTypeRequest, DeprecateThingTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -919,7 +919,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             DescribeAccountAuditConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAuditConfigurationRequest, DescribeAccountAuditConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -932,7 +932,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeAuditFindingResult> describeAuditFindingAsync(DescribeAuditFindingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAuditFindingRequest, DescribeAuditFindingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -947,7 +947,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             DescribeAuditMitigationActionsTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAuditMitigationActionsTaskRequest, DescribeAuditMitigationActionsTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -960,7 +960,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeAuditTaskResult> describeAuditTaskAsync(DescribeAuditTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAuditTaskRequest, DescribeAuditTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -973,7 +973,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeAuthorizerResult> describeAuthorizerAsync(DescribeAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAuthorizerRequest, DescribeAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -986,7 +986,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeBillingGroupResult> describeBillingGroupAsync(DescribeBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBillingGroupRequest, DescribeBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -999,7 +999,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(DescribeCACertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCACertificateRequest, DescribeCACertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1012,7 +1012,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1025,7 +1025,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeDefaultAuthorizerResult> describeDefaultAuthorizerAsync(DescribeDefaultAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDefaultAuthorizerRequest, DescribeDefaultAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1038,7 +1038,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeDimensionResult> describeDimensionAsync(DescribeDimensionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDimensionRequest, DescribeDimensionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1051,7 +1051,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeDomainConfigurationResult> describeDomainConfigurationAsync(DescribeDomainConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainConfigurationRequest, DescribeDomainConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1064,7 +1064,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeEndpointResult> describeEndpointAsync(DescribeEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointRequest, DescribeEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1077,7 +1077,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeEventConfigurationsResult> describeEventConfigurationsAsync(DescribeEventConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventConfigurationsRequest, DescribeEventConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1090,7 +1090,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1103,7 +1103,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(DescribeJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1116,7 +1116,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobExecutionRequest, DescribeJobExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1129,7 +1129,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeMitigationActionResult> describeMitigationActionAsync(DescribeMitigationActionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMitigationActionRequest, DescribeMitigationActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1142,7 +1142,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeProvisioningTemplateResult> describeProvisioningTemplateAsync(DescribeProvisioningTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProvisioningTemplateRequest, DescribeProvisioningTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1157,7 +1157,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             DescribeProvisioningTemplateVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProvisioningTemplateVersionRequest, DescribeProvisioningTemplateVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1170,7 +1170,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeRoleAliasResult> describeRoleAliasAsync(DescribeRoleAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRoleAliasRequest, DescribeRoleAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1183,7 +1183,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeScheduledAuditResult> describeScheduledAuditAsync(DescribeScheduledAuditRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeScheduledAuditRequest, DescribeScheduledAuditResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1196,7 +1196,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeSecurityProfileResult> describeSecurityProfileAsync(DescribeSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSecurityProfileRequest, DescribeSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1209,7 +1209,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1222,7 +1222,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeThingResult> describeThingAsync(DescribeThingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeThingRequest, DescribeThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1235,7 +1235,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeThingGroupResult> describeThingGroupAsync(DescribeThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeThingGroupRequest, DescribeThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1248,7 +1248,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeThingRegistrationTaskResult> describeThingRegistrationTaskAsync(DescribeThingRegistrationTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeThingRegistrationTaskRequest, DescribeThingRegistrationTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1261,7 +1261,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DescribeThingTypeResult> describeThingTypeAsync(DescribeThingTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeThingTypeRequest, DescribeThingTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1274,7 +1274,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachPolicyRequest, DetachPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1289,7 +1289,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(DetachPrincipalPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, DetachPrincipalPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1302,7 +1302,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DetachSecurityProfileResult> detachSecurityProfileAsync(DetachSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachSecurityProfileRequest, DetachSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1315,7 +1315,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DetachThingPrincipalResult> detachThingPrincipalAsync(DetachThingPrincipalRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachThingPrincipalRequest, DetachThingPrincipalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1328,7 +1328,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(DisableTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, DisableTopicRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1341,7 +1341,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(EnableTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, EnableTopicRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1354,7 +1354,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetCardinalityResult> getCardinalityAsync(GetCardinalityRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCardinalityRequest, GetCardinalityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1367,7 +1367,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetEffectivePoliciesResult> getEffectivePoliciesAsync(GetEffectivePoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEffectivePoliciesRequest, GetEffectivePoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1380,7 +1380,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetIndexingConfigurationResult> getIndexingConfigurationAsync(GetIndexingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIndexingConfigurationRequest, GetIndexingConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1393,7 +1393,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetJobDocumentResult> getJobDocumentAsync(GetJobDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetJobDocumentRequest, GetJobDocumentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1406,7 +1406,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(GetLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLoggingOptionsRequest, GetLoggingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1419,7 +1419,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOTAUpdateRequest, GetOTAUpdateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1432,7 +1432,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetPercentilesResult> getPercentilesAsync(GetPercentilesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPercentilesRequest, GetPercentilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1445,7 +1445,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1458,7 +1458,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetPolicyVersionResult> getPolicyVersionAsync(GetPolicyVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPolicyVersionRequest, GetPolicyVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1471,7 +1471,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(GetRegistrationCodeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRegistrationCodeRequest, GetRegistrationCodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1484,7 +1484,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetStatisticsResult> getStatisticsAsync(GetStatisticsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetStatisticsRequest, GetStatisticsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1497,7 +1497,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(GetTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTopicRuleRequest, GetTopicRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1510,7 +1510,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetTopicRuleDestinationResult> getTopicRuleDestinationAsync(GetTopicRuleDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTopicRuleDestinationRequest, GetTopicRuleDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1523,7 +1523,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<GetV2LoggingOptionsResult> getV2LoggingOptionsAsync(GetV2LoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetV2LoggingOptionsRequest, GetV2LoggingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1536,7 +1536,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListActiveViolationsResult> listActiveViolationsAsync(ListActiveViolationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListActiveViolationsRequest, ListActiveViolationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1549,7 +1549,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListAttachedPoliciesResult> listAttachedPoliciesAsync(ListAttachedPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAttachedPoliciesRequest, ListAttachedPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1562,7 +1562,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListAuditFindingsResult> listAuditFindingsAsync(ListAuditFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAuditFindingsRequest, ListAuditFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1577,7 +1577,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             ListAuditMitigationActionsExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAuditMitigationActionsExecutionsRequest, ListAuditMitigationActionsExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1592,7 +1592,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             ListAuditMitigationActionsTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAuditMitigationActionsTasksRequest, ListAuditMitigationActionsTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1605,7 +1605,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListAuditTasksResult> listAuditTasksAsync(ListAuditTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAuditTasksRequest, ListAuditTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1618,7 +1618,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListAuthorizersResult> listAuthorizersAsync(ListAuthorizersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAuthorizersRequest, ListAuthorizersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1631,7 +1631,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListBillingGroupsResult> listBillingGroupsAsync(ListBillingGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBillingGroupsRequest, ListBillingGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1644,7 +1644,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(ListCACertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1657,7 +1657,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1670,7 +1670,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(ListCertificatesByCARequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1683,7 +1683,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListDimensionsResult> listDimensionsAsync(ListDimensionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDimensionsRequest, ListDimensionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1696,7 +1696,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListDomainConfigurationsResult> listDomainConfigurationsAsync(ListDomainConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainConfigurationsRequest, ListDomainConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1709,7 +1709,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListIndicesResult> listIndicesAsync(ListIndicesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListIndicesRequest, ListIndicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1722,7 +1722,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListJobExecutionsForJobResult> listJobExecutionsForJobAsync(ListJobExecutionsForJobRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobExecutionsForJobRequest, ListJobExecutionsForJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1735,7 +1735,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListJobExecutionsForThingResult> listJobExecutionsForThingAsync(ListJobExecutionsForThingRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobExecutionsForThingRequest, ListJobExecutionsForThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1748,7 +1748,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1761,7 +1761,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListMitigationActionsResult> listMitigationActionsAsync(ListMitigationActionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMitigationActionsRequest, ListMitigationActionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1774,7 +1774,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(ListOTAUpdatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOTAUpdatesRequest, ListOTAUpdatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1787,7 +1787,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOutgoingCertificatesRequest, ListOutgoingCertificatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1800,7 +1800,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(ListPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1815,7 +1815,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListPolicyPrincipalsResult> listPolicyPrincipalsAsync(ListPolicyPrincipalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPolicyPrincipalsRequest, ListPolicyPrincipalsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1828,7 +1828,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(ListPolicyVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPolicyVersionsRequest, ListPolicyVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1843,7 +1843,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListPrincipalPoliciesResult> listPrincipalPoliciesAsync(ListPrincipalPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalPoliciesRequest, ListPrincipalPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1856,7 +1856,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListPrincipalThingsResult> listPrincipalThingsAsync(ListPrincipalThingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalThingsRequest, ListPrincipalThingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1871,7 +1871,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             ListProvisioningTemplateVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProvisioningTemplateVersionsRequest, ListProvisioningTemplateVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1884,7 +1884,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListProvisioningTemplatesResult> listProvisioningTemplatesAsync(ListProvisioningTemplatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProvisioningTemplatesRequest, ListProvisioningTemplatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1897,7 +1897,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListRoleAliasesResult> listRoleAliasesAsync(ListRoleAliasesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRoleAliasesRequest, ListRoleAliasesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1910,7 +1910,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListScheduledAuditsResult> listScheduledAuditsAsync(ListScheduledAuditsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListScheduledAuditsRequest, ListScheduledAuditsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1923,7 +1923,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListSecurityProfilesResult> listSecurityProfilesAsync(ListSecurityProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSecurityProfilesRequest, ListSecurityProfilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1936,7 +1936,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListSecurityProfilesForTargetResult> listSecurityProfilesForTargetAsync(ListSecurityProfilesForTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSecurityProfilesForTargetRequest, ListSecurityProfilesForTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1949,7 +1949,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1962,7 +1962,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1975,7 +1975,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListTargetsForPolicyResult> listTargetsForPolicyAsync(ListTargetsForPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTargetsForPolicyRequest, ListTargetsForPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1988,7 +1988,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListTargetsForSecurityProfileResult> listTargetsForSecurityProfileAsync(ListTargetsForSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTargetsForSecurityProfileRequest, ListTargetsForSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2001,7 +2001,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingGroupsResult> listThingGroupsAsync(ListThingGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingGroupsRequest, ListThingGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2014,7 +2014,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingGroupsForThingResult> listThingGroupsForThingAsync(ListThingGroupsForThingRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingGroupsForThingRequest, ListThingGroupsForThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2027,7 +2027,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingPrincipalsResult> listThingPrincipalsAsync(ListThingPrincipalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingPrincipalsRequest, ListThingPrincipalsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2042,7 +2042,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             ListThingRegistrationTaskReportsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingRegistrationTaskReportsRequest, ListThingRegistrationTaskReportsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2055,7 +2055,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingRegistrationTasksResult> listThingRegistrationTasksAsync(ListThingRegistrationTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingRegistrationTasksRequest, ListThingRegistrationTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2068,7 +2068,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingTypesResult> listThingTypesAsync(ListThingTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingTypesRequest, ListThingTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2081,7 +2081,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingsResult> listThingsAsync(ListThingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingsRequest, ListThingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2094,7 +2094,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingsInBillingGroupResult> listThingsInBillingGroupAsync(ListThingsInBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingsInBillingGroupRequest, ListThingsInBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2107,7 +2107,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListThingsInThingGroupResult> listThingsInThingGroupAsync(ListThingsInThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThingsInThingGroupRequest, ListThingsInThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2120,7 +2120,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListTopicRuleDestinationsResult> listTopicRuleDestinationsAsync(ListTopicRuleDestinationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTopicRuleDestinationsRequest, ListTopicRuleDestinationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2133,7 +2133,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListTopicRulesResult> listTopicRulesAsync(ListTopicRulesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTopicRulesRequest, ListTopicRulesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2146,7 +2146,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListV2LoggingLevelsResult> listV2LoggingLevelsAsync(ListV2LoggingLevelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListV2LoggingLevelsRequest, ListV2LoggingLevelsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2159,7 +2159,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListViolationEventsResult> listViolationEventsAsync(ListViolationEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListViolationEventsRequest, ListViolationEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2172,7 +2172,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(RegisterCACertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterCACertificateRequest, RegisterCACertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2185,7 +2185,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(RegisterCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2198,7 +2198,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RegisterCertificateWithoutCAResult> registerCertificateWithoutCAAsync(RegisterCertificateWithoutCARequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterCertificateWithoutCARequest, RegisterCertificateWithoutCAResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2211,7 +2211,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RegisterThingResult> registerThingAsync(RegisterThingRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterThingRequest, RegisterThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2224,7 +2224,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(RejectCertificateTransferRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, RejectCertificateTransferResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2237,7 +2237,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RemoveThingFromBillingGroupResult> removeThingFromBillingGroupAsync(RemoveThingFromBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveThingFromBillingGroupRequest, RemoveThingFromBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2250,7 +2250,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<RemoveThingFromThingGroupResult> removeThingFromThingGroupAsync(RemoveThingFromThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveThingFromThingGroupRequest, RemoveThingFromThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2263,7 +2263,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(ReplaceTopicRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, ReplaceTopicRuleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2276,7 +2276,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<SearchIndexResult> searchIndexAsync(SearchIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchIndexRequest, SearchIndexResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2289,7 +2289,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<SetDefaultAuthorizerResult> setDefaultAuthorizerAsync(SetDefaultAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<SetDefaultAuthorizerRequest, SetDefaultAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2302,7 +2302,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2315,7 +2315,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(SetLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, SetLoggingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2328,7 +2328,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<SetV2LoggingLevelResult> setV2LoggingLevelAsync(SetV2LoggingLevelRequest request,
             com.amazonaws.handlers.AsyncHandler<SetV2LoggingLevelRequest, SetV2LoggingLevelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2341,7 +2341,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<SetV2LoggingOptionsResult> setV2LoggingOptionsAsync(SetV2LoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<SetV2LoggingOptionsRequest, SetV2LoggingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2356,7 +2356,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             StartAuditMitigationActionsTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StartAuditMitigationActionsTaskRequest, StartAuditMitigationActionsTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2369,7 +2369,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<StartOnDemandAuditTaskResult> startOnDemandAuditTaskAsync(StartOnDemandAuditTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StartOnDemandAuditTaskRequest, StartOnDemandAuditTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2382,7 +2382,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<StartThingRegistrationTaskResult> startThingRegistrationTaskAsync(StartThingRegistrationTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StartThingRegistrationTaskRequest, StartThingRegistrationTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2395,7 +2395,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<StopThingRegistrationTaskResult> stopThingRegistrationTaskAsync(StopThingRegistrationTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StopThingRegistrationTaskRequest, StopThingRegistrationTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2408,7 +2408,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2421,7 +2421,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<TestAuthorizationResult> testAuthorizationAsync(TestAuthorizationRequest request,
             com.amazonaws.handlers.AsyncHandler<TestAuthorizationRequest, TestAuthorizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2434,7 +2434,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<TestInvokeAuthorizerResult> testInvokeAuthorizerAsync(TestInvokeAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<TestInvokeAuthorizerRequest, TestInvokeAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2447,7 +2447,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<TransferCertificateResult> transferCertificateAsync(TransferCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<TransferCertificateRequest, TransferCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2460,7 +2460,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2475,7 +2475,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             UpdateAccountAuditConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAccountAuditConfigurationRequest, UpdateAccountAuditConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2488,7 +2488,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateAuthorizerResult> updateAuthorizerAsync(UpdateAuthorizerRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAuthorizerRequest, UpdateAuthorizerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2501,7 +2501,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateBillingGroupResult> updateBillingGroupAsync(UpdateBillingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateBillingGroupRequest, UpdateBillingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2514,7 +2514,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(UpdateCACertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, UpdateCACertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2527,7 +2527,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2540,7 +2540,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateDimensionResult> updateDimensionAsync(UpdateDimensionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDimensionRequest, UpdateDimensionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2553,7 +2553,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateDomainConfigurationResult> updateDomainConfigurationAsync(UpdateDomainConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainConfigurationRequest, UpdateDomainConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2566,7 +2566,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateDynamicThingGroupResult> updateDynamicThingGroupAsync(UpdateDynamicThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDynamicThingGroupRequest, UpdateDynamicThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2579,7 +2579,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateEventConfigurationsResult> updateEventConfigurationsAsync(UpdateEventConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEventConfigurationsRequest, UpdateEventConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2592,7 +2592,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateIndexingConfigurationResult> updateIndexingConfigurationAsync(UpdateIndexingConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIndexingConfigurationRequest, UpdateIndexingConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2605,7 +2605,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateJobResult> updateJobAsync(UpdateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateJobRequest, UpdateJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2618,7 +2618,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateMitigationActionResult> updateMitigationActionAsync(UpdateMitigationActionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMitigationActionRequest, UpdateMitigationActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2631,7 +2631,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateProvisioningTemplateResult> updateProvisioningTemplateAsync(UpdateProvisioningTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisioningTemplateRequest, UpdateProvisioningTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2644,7 +2644,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateRoleAliasResult> updateRoleAliasAsync(UpdateRoleAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRoleAliasRequest, UpdateRoleAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2657,7 +2657,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateScheduledAuditResult> updateScheduledAuditAsync(UpdateScheduledAuditRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateScheduledAuditRequest, UpdateScheduledAuditResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2670,7 +2670,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateSecurityProfileResult> updateSecurityProfileAsync(UpdateSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSecurityProfileRequest, UpdateSecurityProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2683,7 +2683,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(UpdateStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateStreamRequest, UpdateStreamResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2696,7 +2696,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateThingResult> updateThingAsync(UpdateThingRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateThingRequest, UpdateThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2709,7 +2709,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateThingGroupResult> updateThingGroupAsync(UpdateThingGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateThingGroupRequest, UpdateThingGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2722,7 +2722,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateThingGroupsForThingResult> updateThingGroupsForThingAsync(UpdateThingGroupsForThingRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateThingGroupsForThingRequest, UpdateThingGroupsForThingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2735,7 +2735,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<UpdateTopicRuleDestinationResult> updateTopicRuleDestinationAsync(UpdateTopicRuleDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTopicRuleDestinationRequest, UpdateTopicRuleDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -2750,7 +2750,7 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
             ValidateSecurityProfileBehaviorsRequest request,
             com.amazonaws.handlers.AsyncHandler<ValidateSecurityProfileBehaviorsRequest, ValidateSecurityProfileBehaviorsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

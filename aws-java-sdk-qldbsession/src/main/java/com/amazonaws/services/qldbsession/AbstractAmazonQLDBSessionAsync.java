@@ -37,7 +37,7 @@ public class AbstractAmazonQLDBSessionAsync extends AbstractAmazonQLDBSession im
     public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest request,
             com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

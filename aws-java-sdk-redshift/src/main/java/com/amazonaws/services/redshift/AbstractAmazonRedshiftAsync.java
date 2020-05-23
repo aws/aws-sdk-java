@@ -37,7 +37,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ReservedNode> acceptReservedNodeExchangeAsync(AcceptReservedNodeExchangeRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptReservedNodeExchangeRequest, ReservedNode> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ClusterSecurityGroup> authorizeClusterSecurityGroupIngressAsync(AuthorizeClusterSecurityGroupIngressRequest request,
             com.amazonaws.handlers.AsyncHandler<AuthorizeClusterSecurityGroupIngressRequest, ClusterSecurityGroup> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<AuthorizeSnapshotAccessRequest, Snapshot> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<BatchDeleteClusterSnapshotsResult> batchDeleteClusterSnapshotsAsync(BatchDeleteClusterSnapshotsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchDeleteClusterSnapshotsRequest, BatchDeleteClusterSnapshotsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<BatchModifyClusterSnapshotsResult> batchModifyClusterSnapshotsAsync(BatchModifyClusterSnapshotsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchModifyClusterSnapshotsRequest, BatchModifyClusterSnapshotsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<CancelResizeResult> cancelResizeAsync(CancelResizeRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelResizeRequest, CancelResizeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Snapshot> copyClusterSnapshotAsync(CopyClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<CopyClusterSnapshotRequest, Snapshot> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> createClusterAsync(CreateClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ClusterParameterGroup> createClusterParameterGroupAsync(CreateClusterParameterGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterParameterGroupRequest, ClusterParameterGroup> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ClusterSecurityGroup> createClusterSecurityGroupAsync(CreateClusterSecurityGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSecurityGroupRequest, ClusterSecurityGroup> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Snapshot> createClusterSnapshotAsync(CreateClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSnapshotRequest, Snapshot> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ClusterSubnetGroup> createClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSubnetGroupRequest, ClusterSubnetGroup> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(CreateEventSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEventSubscriptionRequest, EventSubscription> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<HsmClientCertificate> createHsmClientCertificateAsync(CreateHsmClientCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHsmClientCertificateRequest, HsmClientCertificate> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<HsmConfiguration> createHsmConfigurationAsync(CreateHsmConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHsmConfigurationRequest, HsmConfiguration> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateScheduledActionRequest, CreateScheduledActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<SnapshotCopyGrant> createSnapshotCopyGrantAsync(CreateSnapshotCopyGrantRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotCopyGrantRequest, SnapshotCopyGrant> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<CreateSnapshotScheduleResult> createSnapshotScheduleAsync(CreateSnapshotScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotScheduleRequest, CreateSnapshotScheduleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<CreateUsageLimitResult> createUsageLimitAsync(CreateUsageLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUsageLimitRequest, CreateUsageLimitResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> deleteClusterAsync(DeleteClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteClusterParameterGroupResult> deleteClusterParameterGroupAsync(DeleteClusterParameterGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterParameterGroupRequest, DeleteClusterParameterGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteClusterSecurityGroupResult> deleteClusterSecurityGroupAsync(DeleteClusterSecurityGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSecurityGroupRequest, DeleteClusterSecurityGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Snapshot> deleteClusterSnapshotAsync(DeleteClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSnapshotRequest, Snapshot> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteClusterSubnetGroupResult> deleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, DeleteEventSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteHsmClientCertificateResult> deleteHsmClientCertificateAsync(DeleteHsmClientCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmClientCertificateRequest, DeleteHsmClientCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteHsmConfigurationResult> deleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmConfigurationRequest, DeleteHsmConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteSnapshotCopyGrantResult> deleteSnapshotCopyGrantAsync(DeleteSnapshotCopyGrantRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotCopyGrantRequest, DeleteSnapshotCopyGrantResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DeleteUsageLimitResult> deleteUsageLimitAsync(DeleteUsageLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUsageLimitRequest, DeleteUsageLimitResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterDbRevisionsResult> describeClusterDbRevisionsAsync(DescribeClusterDbRevisionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterDbRevisionsRequest, DescribeClusterDbRevisionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterParameterGroupsResult> describeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterParameterGroupsRequest, DescribeClusterParameterGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -529,7 +529,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterParametersResult> describeClusterParametersAsync(DescribeClusterParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterParametersRequest, DescribeClusterParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -542,7 +542,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterSecurityGroupsResult> describeClusterSecurityGroupsAsync(DescribeClusterSecurityGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSecurityGroupsRequest, DescribeClusterSecurityGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -579,7 +579,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterSnapshotsResult> describeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -615,7 +615,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterSubnetGroupsResult> describeClusterSubnetGroupsAsync(DescribeClusterSubnetGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSubnetGroupsRequest, DescribeClusterSubnetGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -651,7 +651,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterTracksResult> describeClusterTracksAsync(DescribeClusterTracksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterTracksRequest, DescribeClusterTracksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -664,7 +664,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClusterVersionsResult> describeClusterVersionsAsync(DescribeClusterVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterVersionsRequest, DescribeClusterVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -700,7 +700,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -736,7 +736,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DefaultClusterParameters> describeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDefaultClusterParametersRequest, DefaultClusterParameters> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -749,7 +749,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(DescribeEventCategoriesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventCategoriesRequest, DescribeEventCategoriesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -785,7 +785,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -821,7 +821,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -857,7 +857,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeHsmClientCertificatesResult> describeHsmClientCertificatesAsync(DescribeHsmClientCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHsmClientCertificatesRequest, DescribeHsmClientCertificatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -894,7 +894,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeHsmConfigurationsResult> describeHsmConfigurationsAsync(DescribeHsmConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHsmConfigurationsRequest, DescribeHsmConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -930,7 +930,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeLoggingStatusResult> describeLoggingStatusAsync(DescribeLoggingStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLoggingStatusRequest, DescribeLoggingStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -945,7 +945,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
             DescribeNodeConfigurationOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeNodeConfigurationOptionsRequest, DescribeNodeConfigurationOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -960,7 +960,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
             DescribeOrderableClusterOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -997,7 +997,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeReservedNodeOfferingsResult> describeReservedNodeOfferingsAsync(DescribeReservedNodeOfferingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReservedNodeOfferingsRequest, DescribeReservedNodeOfferingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1034,7 +1034,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesRequest, DescribeReservedNodesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1070,7 +1070,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeResizeResult> describeResizeAsync(DescribeResizeRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeResizeRequest, DescribeResizeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1083,7 +1083,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1096,7 +1096,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotCopyGrantsRequest, DescribeSnapshotCopyGrantsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1132,7 +1132,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeSnapshotSchedulesResult> describeSnapshotSchedulesAsync(DescribeSnapshotSchedulesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotSchedulesRequest, DescribeSnapshotSchedulesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1145,7 +1145,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeStorageResult> describeStorageAsync(DescribeStorageRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStorageRequest, DescribeStorageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1158,7 +1158,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTableRestoreStatusRequest, DescribeTableRestoreStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1194,7 +1194,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1230,7 +1230,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DescribeUsageLimitsResult> describeUsageLimitsAsync(DescribeUsageLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeUsageLimitsRequest, DescribeUsageLimitsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1243,7 +1243,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<DisableLoggingResult> disableLoggingAsync(DisableLoggingRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableLoggingRequest, DisableLoggingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1256,7 +1256,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> disableSnapshotCopyAsync(DisableSnapshotCopyRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableSnapshotCopyRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1269,7 +1269,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<EnableLoggingResult> enableLoggingAsync(EnableLoggingRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableLoggingRequest, EnableLoggingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1282,7 +1282,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> enableSnapshotCopyAsync(EnableSnapshotCopyRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableSnapshotCopyRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1295,7 +1295,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<GetClusterCredentialsResult> getClusterCredentialsAsync(GetClusterCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetClusterCredentialsRequest, GetClusterCredentialsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1310,7 +1310,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
             GetReservedNodeExchangeOfferingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetReservedNodeExchangeOfferingsRequest, GetReservedNodeExchangeOfferingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1323,7 +1323,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1336,7 +1336,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> modifyClusterDbRevisionAsync(ModifyClusterDbRevisionRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterDbRevisionRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1349,7 +1349,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> modifyClusterIamRolesAsync(ModifyClusterIamRolesRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterIamRolesRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1362,7 +1362,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> modifyClusterMaintenanceAsync(ModifyClusterMaintenanceRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterMaintenanceRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1375,7 +1375,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ModifyClusterParameterGroupResult> modifyClusterParameterGroupAsync(ModifyClusterParameterGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterParameterGroupRequest, ModifyClusterParameterGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1388,7 +1388,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Snapshot> modifyClusterSnapshotAsync(ModifyClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterSnapshotRequest, Snapshot> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1401,7 +1401,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ModifyClusterSnapshotScheduleResult> modifyClusterSnapshotScheduleAsync(ModifyClusterSnapshotScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterSnapshotScheduleRequest, ModifyClusterSnapshotScheduleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1414,7 +1414,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ClusterSubnetGroup> modifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterSubnetGroupRequest, ClusterSubnetGroup> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1427,7 +1427,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1440,7 +1440,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ModifyScheduledActionResult> modifyScheduledActionAsync(ModifyScheduledActionRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyScheduledActionRequest, ModifyScheduledActionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1453,7 +1453,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> modifySnapshotCopyRetentionPeriodAsync(ModifySnapshotCopyRetentionPeriodRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifySnapshotCopyRetentionPeriodRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1466,7 +1466,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ModifySnapshotScheduleResult> modifySnapshotScheduleAsync(ModifySnapshotScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifySnapshotScheduleRequest, ModifySnapshotScheduleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1479,7 +1479,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ModifyUsageLimitResult> modifyUsageLimitAsync(ModifyUsageLimitRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyUsageLimitRequest, ModifyUsageLimitResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1492,7 +1492,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> pauseClusterAsync(PauseClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<PauseClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1505,7 +1505,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ReservedNode> purchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest request,
             com.amazonaws.handlers.AsyncHandler<PurchaseReservedNodeOfferingRequest, ReservedNode> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1518,7 +1518,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> rebootClusterAsync(RebootClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<RebootClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1531,7 +1531,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ResetClusterParameterGroupResult> resetClusterParameterGroupAsync(ResetClusterParameterGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<ResetClusterParameterGroupRequest, ResetClusterParameterGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1544,7 +1544,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> resizeClusterAsync(ResizeClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<ResizeClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1557,7 +1557,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> restoreFromClusterSnapshotAsync(RestoreFromClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreFromClusterSnapshotRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1570,7 +1570,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<TableRestoreStatus> restoreTableFromClusterSnapshotAsync(RestoreTableFromClusterSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreTableFromClusterSnapshotRequest, TableRestoreStatus> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1583,7 +1583,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> resumeClusterAsync(ResumeClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<ResumeClusterRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1596,7 +1596,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeClusterSecurityGroupIngressRequest, ClusterSecurityGroup> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1609,7 +1609,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Snapshot> revokeSnapshotAccessAsync(RevokeSnapshotAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeSnapshotAccessRequest, Snapshot> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1622,7 +1622,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     public java.util.concurrent.Future<Cluster> rotateEncryptionKeyAsync(RotateEncryptionKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateEncryptionKeyRequest, Cluster> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

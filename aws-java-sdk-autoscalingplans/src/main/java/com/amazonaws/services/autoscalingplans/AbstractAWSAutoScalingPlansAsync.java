@@ -37,7 +37,7 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
     public java.util.concurrent.Future<CreateScalingPlanResult> createScalingPlanAsync(CreateScalingPlanRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateScalingPlanRequest, CreateScalingPlanResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
     public java.util.concurrent.Future<DeleteScalingPlanResult> deleteScalingPlanAsync(DeleteScalingPlanRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteScalingPlanRequest, DeleteScalingPlanResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
     public java.util.concurrent.Future<DescribeScalingPlanResourcesResult> describeScalingPlanResourcesAsync(DescribeScalingPlanResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPlanResourcesRequest, DescribeScalingPlanResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
     public java.util.concurrent.Future<DescribeScalingPlansResult> describeScalingPlansAsync(DescribeScalingPlansRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPlansRequest, DescribeScalingPlansResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
             GetScalingPlanResourceForecastDataRequest request,
             com.amazonaws.handlers.AsyncHandler<GetScalingPlanResourceForecastDataRequest, GetScalingPlanResourceForecastDataResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class AbstractAWSAutoScalingPlansAsync extends AbstractAWSAutoScalingPlan
     public java.util.concurrent.Future<UpdateScalingPlanResult> updateScalingPlanAsync(UpdateScalingPlanRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateScalingPlanRequest, UpdateScalingPlanResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

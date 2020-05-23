@@ -37,7 +37,7 @@ public class AbstractAmazonApiGatewayManagementApiAsync extends AbstractAmazonAp
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonApiGatewayManagementApiAsync extends AbstractAmazonAp
     public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConnectionRequest, GetConnectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonApiGatewayManagementApiAsync extends AbstractAmazonAp
     public java.util.concurrent.Future<PostToConnectionResult> postToConnectionAsync(PostToConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<PostToConnectionRequest, PostToConnectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

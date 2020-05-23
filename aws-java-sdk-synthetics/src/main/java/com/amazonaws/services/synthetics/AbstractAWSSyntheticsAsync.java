@@ -37,7 +37,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<CreateCanaryResult> createCanaryAsync(CreateCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCanaryRequest, CreateCanaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<DeleteCanaryResult> deleteCanaryAsync(DeleteCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCanaryRequest, DeleteCanaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<DescribeCanariesResult> describeCanariesAsync(DescribeCanariesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCanariesRequest, DescribeCanariesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<DescribeCanariesLastRunResult> describeCanariesLastRunAsync(DescribeCanariesLastRunRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCanariesLastRunRequest, DescribeCanariesLastRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<DescribeRuntimeVersionsResult> describeRuntimeVersionsAsync(DescribeRuntimeVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRuntimeVersionsRequest, DescribeRuntimeVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<GetCanaryResult> getCanaryAsync(GetCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCanaryRequest, GetCanaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<GetCanaryRunsResult> getCanaryRunsAsync(GetCanaryRunsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCanaryRunsRequest, GetCanaryRunsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<StartCanaryResult> startCanaryAsync(StartCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<StartCanaryRequest, StartCanaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<StopCanaryResult> stopCanaryAsync(StopCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<StopCanaryRequest, StopCanaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSSyntheticsAsync extends AbstractAWSSynthetics implements
     public java.util.concurrent.Future<UpdateCanaryResult> updateCanaryAsync(UpdateCanaryRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCanaryRequest, UpdateCanaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

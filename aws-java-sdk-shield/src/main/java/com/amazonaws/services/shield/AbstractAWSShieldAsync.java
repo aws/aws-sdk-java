@@ -36,7 +36,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<AssociateDRTLogBucketResult> associateDRTLogBucketAsync(AssociateDRTLogBucketRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateDRTLogBucketRequest, AssociateDRTLogBucketResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<AssociateDRTRoleResult> associateDRTRoleAsync(AssociateDRTRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateDRTRoleRequest, AssociateDRTRoleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<AssociateHealthCheckResult> associateHealthCheckAsync(AssociateHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateHealthCheckRequest, AssociateHealthCheckResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProtectionRequest, CreateProtectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<CreateSubscriptionResult> createSubscriptionAsync(CreateSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSubscriptionRequest, CreateSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -101,7 +101,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DeleteProtectionResult> deleteProtectionAsync(DeleteProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProtectionRequest, DeleteProtectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -116,7 +116,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DeleteSubscriptionResult> deleteSubscriptionAsync(DeleteSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionRequest, DeleteSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -129,7 +129,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DescribeAttackResult> describeAttackAsync(DescribeAttackRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAttackRequest, DescribeAttackResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -142,7 +142,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DescribeDRTAccessResult> describeDRTAccessAsync(DescribeDRTAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDRTAccessRequest, DescribeDRTAccessResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -157,7 +157,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
             DescribeEmergencyContactSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEmergencyContactSettingsRequest, DescribeEmergencyContactSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -170,7 +170,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DescribeProtectionResult> describeProtectionAsync(DescribeProtectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProtectionRequest, DescribeProtectionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -183,7 +183,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DescribeSubscriptionResult> describeSubscriptionAsync(DescribeSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionRequest, DescribeSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -196,7 +196,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DisassociateDRTLogBucketResult> disassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateDRTLogBucketRequest, DisassociateDRTLogBucketResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -209,7 +209,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DisassociateDRTRoleResult> disassociateDRTRoleAsync(DisassociateDRTRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateDRTRoleRequest, DisassociateDRTRoleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -222,7 +222,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(DisassociateHealthCheckRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateHealthCheckRequest, DisassociateHealthCheckResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -235,7 +235,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(GetSubscriptionStateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSubscriptionStateRequest, GetSubscriptionStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -248,7 +248,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<ListAttacksResult> listAttacksAsync(ListAttacksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAttacksRequest, ListAttacksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -261,7 +261,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<ListProtectionsResult> listProtectionsAsync(ListProtectionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProtectionsRequest, ListProtectionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -274,7 +274,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEmergencyContactSettingsRequest, UpdateEmergencyContactSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -287,7 +287,7 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     public java.util.concurrent.Future<UpdateSubscriptionResult> updateSubscriptionAsync(UpdateSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionRequest, UpdateSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

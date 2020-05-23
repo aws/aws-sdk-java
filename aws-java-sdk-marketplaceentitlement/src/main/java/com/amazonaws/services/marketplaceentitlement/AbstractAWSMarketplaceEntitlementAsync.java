@@ -37,7 +37,7 @@ public class AbstractAWSMarketplaceEntitlementAsync extends AbstractAWSMarketpla
     public java.util.concurrent.Future<GetEntitlementsResult> getEntitlementsAsync(GetEntitlementsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEntitlementsRequest, GetEntitlementsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

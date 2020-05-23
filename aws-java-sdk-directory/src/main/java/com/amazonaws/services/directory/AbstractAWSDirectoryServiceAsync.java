@@ -37,7 +37,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<AcceptSharedDirectoryResult> acceptSharedDirectoryAsync(AcceptSharedDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptSharedDirectoryRequest, AcceptSharedDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(AddIpRoutesRequest request,
             com.amazonaws.handlers.AsyncHandler<AddIpRoutesRequest, AddIpRoutesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CancelSchemaExtensionResult> cancelSchemaExtensionAsync(CancelSchemaExtensionRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelSchemaExtensionRequest, CancelSchemaExtensionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ConnectDirectoryResult> connectDirectoryAsync(ConnectDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<ConnectDirectoryRequest, ConnectDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateComputerResult> createComputerAsync(CreateComputerRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateComputerRequest, CreateComputerResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(CreateConditionalForwarderRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateConditionalForwarderRequest, CreateConditionalForwarderResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateDirectoryResult> createDirectoryAsync(CreateDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDirectoryRequest, CreateDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateLogSubscriptionResult> createLogSubscriptionAsync(CreateLogSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLogSubscriptionRequest, CreateLogSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateMicrosoftADResult> createMicrosoftADAsync(CreateMicrosoftADRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMicrosoftADRequest, CreateMicrosoftADResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<CreateTrustResult> createTrustAsync(CreateTrustRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTrustRequest, CreateTrustResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(DeleteConditionalForwarderRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConditionalForwarderRequest, DeleteConditionalForwarderResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(DeleteDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDirectoryRequest, DeleteDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeleteLogSubscriptionResult> deleteLogSubscriptionAsync(DeleteLogSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLogSubscriptionRequest, DeleteLogSubscriptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(DeleteSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeleteTrustResult> deleteTrustAsync(DeleteTrustRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTrustRequest, DeleteTrustResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeregisterCertificateResult> deregisterCertificateAsync(DeregisterCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterCertificateRequest, DeregisterCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(DeregisterEventTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(DescribeConditionalForwardersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConditionalForwardersRequest, DescribeConditionalForwardersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeDirectoriesResult> describeDirectoriesAsync(DescribeDirectoriesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDirectoriesRequest, DescribeDirectoriesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -359,7 +359,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(DescribeDomainControllersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainControllersRequest, DescribeDomainControllersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -372,7 +372,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(DescribeEventTopicsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventTopicsRequest, DescribeEventTopicsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -385,7 +385,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeLDAPSSettingsResult> describeLDAPSSettingsAsync(DescribeLDAPSSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLDAPSSettingsRequest, DescribeLDAPSSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -398,7 +398,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeSharedDirectoriesResult> describeSharedDirectoriesAsync(DescribeSharedDirectoriesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSharedDirectoriesRequest, DescribeSharedDirectoriesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -411,7 +411,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(DescribeSnapshotsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -447,7 +447,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DescribeTrustsResult> describeTrustsAsync(DescribeTrustsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTrustsRequest, DescribeTrustsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -460,7 +460,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DisableLDAPSResult> disableLDAPSAsync(DisableLDAPSRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableLDAPSRequest, DisableLDAPSResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -473,7 +473,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DisableRadiusResult> disableRadiusAsync(DisableRadiusRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableRadiusRequest, DisableRadiusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -486,7 +486,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<DisableSsoResult> disableSsoAsync(DisableSsoRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableSsoRequest, DisableSsoResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -499,7 +499,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<EnableLDAPSResult> enableLDAPSAsync(EnableLDAPSRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableLDAPSRequest, EnableLDAPSResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -512,7 +512,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<EnableRadiusResult> enableRadiusAsync(EnableRadiusRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableRadiusRequest, EnableRadiusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -525,7 +525,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<EnableSsoResult> enableSsoAsync(EnableSsoRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableSsoRequest, EnableSsoResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -538,7 +538,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<GetDirectoryLimitsResult> getDirectoryLimitsAsync(GetDirectoryLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDirectoryLimitsRequest, GetDirectoryLimitsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -574,7 +574,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<GetSnapshotLimitsResult> getSnapshotLimitsAsync(GetSnapshotLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSnapshotLimitsRequest, GetSnapshotLimitsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -587,7 +587,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(ListCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -600,7 +600,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ListIpRoutesResult> listIpRoutesAsync(ListIpRoutesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListIpRoutesRequest, ListIpRoutesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -613,7 +613,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ListLogSubscriptionsResult> listLogSubscriptionsAsync(ListLogSubscriptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLogSubscriptionsRequest, ListLogSubscriptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -626,7 +626,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ListSchemaExtensionsResult> listSchemaExtensionsAsync(ListSchemaExtensionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSchemaExtensionsRequest, ListSchemaExtensionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -639,7 +639,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -652,7 +652,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(RegisterCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -665,7 +665,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(RegisterEventTopicRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -678,7 +678,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<RejectSharedDirectoryResult> rejectSharedDirectoryAsync(RejectSharedDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectSharedDirectoryRequest, RejectSharedDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -691,7 +691,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(RemoveIpRoutesRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveIpRoutesRequest, RemoveIpRoutesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -704,7 +704,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -717,7 +717,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ResetUserPasswordResult> resetUserPasswordAsync(ResetUserPasswordRequest request,
             com.amazonaws.handlers.AsyncHandler<ResetUserPasswordRequest, ResetUserPasswordResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -730,7 +730,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(RestoreFromSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -743,7 +743,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<ShareDirectoryResult> shareDirectoryAsync(ShareDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<ShareDirectoryRequest, ShareDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -756,7 +756,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<StartSchemaExtensionResult> startSchemaExtensionAsync(StartSchemaExtensionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSchemaExtensionRequest, StartSchemaExtensionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -769,7 +769,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<UnshareDirectoryResult> unshareDirectoryAsync(UnshareDirectoryRequest request,
             com.amazonaws.handlers.AsyncHandler<UnshareDirectoryRequest, UnshareDirectoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -782,7 +782,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(UpdateConditionalForwarderRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -797,7 +797,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
             UpdateNumberOfDomainControllersRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNumberOfDomainControllersRequest, UpdateNumberOfDomainControllersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -810,7 +810,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<UpdateRadiusResult> updateRadiusAsync(UpdateRadiusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRadiusRequest, UpdateRadiusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -823,7 +823,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<UpdateTrustResult> updateTrustAsync(UpdateTrustRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTrustRequest, UpdateTrustResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -836,7 +836,7 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     public java.util.concurrent.Future<VerifyTrustResult> verifyTrustAsync(VerifyTrustRequest request,
             com.amazonaws.handlers.AsyncHandler<VerifyTrustRequest, VerifyTrustResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

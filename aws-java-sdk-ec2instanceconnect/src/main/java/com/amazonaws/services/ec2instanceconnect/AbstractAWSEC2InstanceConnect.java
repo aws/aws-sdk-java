@@ -29,17 +29,17 @@ public class AbstractAWSEC2InstanceConnect implements AWSEC2InstanceConnect {
 
     @Override
     public SendSSHPublicKeyResult sendSSHPublicKey(SendSSHPublicKeyRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

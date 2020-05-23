@@ -37,7 +37,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateComponentRequest, CreateComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<CreateLogPatternResult> createLogPatternAsync(CreateLogPatternRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLogPatternRequest, CreateLogPatternResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DeleteLogPatternResult> deleteLogPatternAsync(DeleteLogPatternRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLogPatternRequest, DeleteLogPatternResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeComponentResult> describeComponentAsync(DescribeComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeComponentRequest, DescribeComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeComponentConfigurationResult> describeComponentConfigurationAsync(DescribeComponentConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeComponentConfigurationRequest, DescribeComponentConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -156,7 +156,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
             DescribeComponentConfigurationRecommendationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeComponentConfigurationRecommendationRequest, DescribeComponentConfigurationRecommendationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -169,7 +169,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeLogPatternResult> describeLogPatternAsync(DescribeLogPatternRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLogPatternRequest, DescribeLogPatternResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeObservationResult> describeObservationAsync(DescribeObservationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeObservationRequest, DescribeObservationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeProblemResult> describeProblemAsync(DescribeProblemRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProblemRequest, DescribeProblemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<DescribeProblemObservationsResult> describeProblemObservationsAsync(DescribeProblemObservationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProblemObservationsRequest, DescribeProblemObservationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -221,7 +221,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -234,7 +234,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -247,7 +247,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListConfigurationHistoryResult> listConfigurationHistoryAsync(ListConfigurationHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationHistoryRequest, ListConfigurationHistoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -260,7 +260,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListLogPatternSetsResult> listLogPatternSetsAsync(ListLogPatternSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLogPatternSetsRequest, ListLogPatternSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -273,7 +273,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListLogPatternsResult> listLogPatternsAsync(ListLogPatternsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLogPatternsRequest, ListLogPatternsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -286,7 +286,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListProblemsResult> listProblemsAsync(ListProblemsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProblemsRequest, ListProblemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -299,7 +299,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -312,7 +312,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -325,7 +325,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -338,7 +338,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -351,7 +351,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<UpdateComponentResult> updateComponentAsync(UpdateComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateComponentRequest, UpdateComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -364,7 +364,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<UpdateComponentConfigurationResult> updateComponentConfigurationAsync(UpdateComponentConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateComponentConfigurationRequest, UpdateComponentConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -377,7 +377,7 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     public java.util.concurrent.Future<UpdateLogPatternResult> updateLogPatternAsync(UpdateLogPatternRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLogPatternRequest, UpdateLogPatternResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

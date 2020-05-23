@@ -37,7 +37,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<CreateDiscovererResult> createDiscovererAsync(CreateDiscovererRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDiscovererRequest, CreateDiscovererResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<CreateRegistryResult> createRegistryAsync(CreateRegistryRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRegistryRequest, CreateRegistryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(CreateSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSchemaRequest, CreateSchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DeleteDiscovererResult> deleteDiscovererAsync(DeleteDiscovererRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDiscovererRequest, DeleteDiscovererResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DeleteRegistryResult> deleteRegistryAsync(DeleteRegistryRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRegistryRequest, DeleteRegistryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(DeleteSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSchemaRequest, DeleteSchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DeleteSchemaVersionResult> deleteSchemaVersionAsync(DeleteSchemaVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSchemaVersionRequest, DeleteSchemaVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DescribeCodeBindingResult> describeCodeBindingAsync(DescribeCodeBindingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCodeBindingRequest, DescribeCodeBindingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DescribeDiscovererResult> describeDiscovererAsync(DescribeDiscovererRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDiscovererRequest, DescribeDiscovererResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DescribeRegistryResult> describeRegistryAsync(DescribeRegistryRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRegistryRequest, DescribeRegistryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<DescribeSchemaResult> describeSchemaAsync(DescribeSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSchemaRequest, DescribeSchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<GetCodeBindingSourceResult> getCodeBindingSourceAsync(GetCodeBindingSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCodeBindingSourceRequest, GetCodeBindingSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<GetDiscoveredSchemaResult> getDiscoveredSchemaAsync(GetDiscoveredSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDiscoveredSchemaRequest, GetDiscoveredSchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<ListDiscoverersResult> listDiscoverersAsync(ListDiscoverersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDiscoverersRequest, ListDiscoverersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<ListRegistriesResult> listRegistriesAsync(ListRegistriesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRegistriesRequest, ListRegistriesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<ListSchemaVersionsResult> listSchemaVersionsAsync(ListSchemaVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSchemaVersionsRequest, ListSchemaVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<ListSchemasResult> listSchemasAsync(ListSchemasRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSchemasRequest, ListSchemasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<PutCodeBindingResult> putCodeBindingAsync(PutCodeBindingRequest request,
             com.amazonaws.handlers.AsyncHandler<PutCodeBindingRequest, PutCodeBindingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<SearchSchemasResult> searchSchemasAsync(SearchSchemasRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchSchemasRequest, SearchSchemasResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<StartDiscovererResult> startDiscovererAsync(StartDiscovererRequest request,
             com.amazonaws.handlers.AsyncHandler<StartDiscovererRequest, StartDiscovererResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<StopDiscovererResult> stopDiscovererAsync(StopDiscovererRequest request,
             com.amazonaws.handlers.AsyncHandler<StopDiscovererRequest, StopDiscovererResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<UpdateDiscovererResult> updateDiscovererAsync(UpdateDiscovererRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDiscovererRequest, UpdateDiscovererResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<UpdateRegistryResult> updateRegistryAsync(UpdateRegistryRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRegistryRequest, UpdateRegistryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     public java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(UpdateSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSchemaRequest, UpdateSchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateBatchPredictionResult> createBatchPredictionAsync(CreateBatchPredictionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionRequest, CreateBatchPredictionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateDataSourceFromRDSResult> createDataSourceFromRDSAsync(CreateDataSourceFromRDSRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRDSRequest, CreateDataSourceFromRDSResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateDataSourceFromRedshiftResult> createDataSourceFromRedshiftAsync(CreateDataSourceFromRedshiftRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromRedshiftRequest, CreateDataSourceFromRedshiftResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateDataSourceFromS3Result> createDataSourceFromS3Async(CreateDataSourceFromS3Request request,
             com.amazonaws.handlers.AsyncHandler<CreateDataSourceFromS3Request, CreateDataSourceFromS3Result> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateEvaluationResult> createEvaluationAsync(CreateEvaluationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEvaluationRequest, CreateEvaluationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateMLModelResult> createMLModelAsync(CreateMLModelRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMLModelRequest, CreateMLModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<CreateRealtimeEndpointResult> createRealtimeEndpointAsync(CreateRealtimeEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRealtimeEndpointRequest, CreateRealtimeEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DeleteBatchPredictionResult> deleteBatchPredictionAsync(DeleteBatchPredictionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionRequest, DeleteBatchPredictionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DeleteEvaluationResult> deleteEvaluationAsync(DeleteEvaluationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEvaluationRequest, DeleteEvaluationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DeleteMLModelResult> deleteMLModelAsync(DeleteMLModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMLModelRequest, DeleteMLModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DeleteRealtimeEndpointResult> deleteRealtimeEndpointAsync(DeleteRealtimeEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRealtimeEndpointRequest, DeleteRealtimeEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DescribeBatchPredictionsResult> describeBatchPredictionsAsync(DescribeBatchPredictionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBatchPredictionsRequest, DescribeBatchPredictionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -255,7 +255,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DescribeDataSourcesResult> describeDataSourcesAsync(DescribeDataSourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDataSourcesRequest, DescribeDataSourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -291,7 +291,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DescribeEvaluationsResult> describeEvaluationsAsync(DescribeEvaluationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEvaluationsRequest, DescribeEvaluationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -327,7 +327,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DescribeMLModelsResult> describeMLModelsAsync(DescribeMLModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMLModelsRequest, DescribeMLModelsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -363,7 +363,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -376,7 +376,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<GetBatchPredictionResult> getBatchPredictionAsync(GetBatchPredictionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBatchPredictionRequest, GetBatchPredictionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -389,7 +389,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -402,7 +402,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<GetEvaluationResult> getEvaluationAsync(GetEvaluationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEvaluationRequest, GetEvaluationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -415,7 +415,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<GetMLModelResult> getMLModelAsync(GetMLModelRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMLModelRequest, GetMLModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -428,7 +428,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<PredictResult> predictAsync(PredictRequest request,
             com.amazonaws.handlers.AsyncHandler<PredictRequest, PredictResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -441,7 +441,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<UpdateBatchPredictionResult> updateBatchPredictionAsync(UpdateBatchPredictionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateBatchPredictionRequest, UpdateBatchPredictionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -454,7 +454,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -467,7 +467,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<UpdateEvaluationResult> updateEvaluationAsync(UpdateEvaluationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEvaluationRequest, UpdateEvaluationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -480,7 +480,7 @@ public class AbstractAmazonMachineLearningAsync extends AbstractAmazonMachineLea
     public java.util.concurrent.Future<UpdateMLModelResult> updateMLModelAsync(UpdateMLModelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMLModelRequest, UpdateMLModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

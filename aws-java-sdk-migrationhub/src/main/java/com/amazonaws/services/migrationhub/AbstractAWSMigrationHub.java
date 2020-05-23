@@ -29,97 +29,97 @@ public class AbstractAWSMigrationHub implements AWSMigrationHub {
 
     @Override
     public AssociateCreatedArtifactResult associateCreatedArtifact(AssociateCreatedArtifactRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public AssociateDiscoveredResourceResult associateDiscoveredResource(AssociateDiscoveredResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public CreateProgressUpdateStreamResult createProgressUpdateStream(CreateProgressUpdateStreamRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteProgressUpdateStreamResult deleteProgressUpdateStream(DeleteProgressUpdateStreamRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeApplicationStateResult describeApplicationState(DescribeApplicationStateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeMigrationTaskResult describeMigrationTask(DescribeMigrationTaskRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DisassociateCreatedArtifactResult disassociateCreatedArtifact(DisassociateCreatedArtifactRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DisassociateDiscoveredResourceResult disassociateDiscoveredResource(DisassociateDiscoveredResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ImportMigrationTaskResult importMigrationTask(ImportMigrationTaskRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListApplicationStatesResult listApplicationStates(ListApplicationStatesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListCreatedArtifactsResult listCreatedArtifacts(ListCreatedArtifactsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListMigrationTasksResult listMigrationTasks(ListMigrationTasksRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListProgressUpdateStreamsResult listProgressUpdateStreams(ListProgressUpdateStreamsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public NotifyApplicationStateResult notifyApplicationState(NotifyApplicationStateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public NotifyMigrationTaskStateResult notifyMigrationTaskState(NotifyMigrationTaskStateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public PutResourceAttributesResult putResourceAttributes(PutResourceAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

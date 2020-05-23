@@ -37,7 +37,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<BuildSuggestersResult> buildSuggestersAsync(BuildSuggestersRequest request,
             com.amazonaws.handlers.AsyncHandler<BuildSuggestersRequest, BuildSuggestersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DefineAnalysisSchemeResult> defineAnalysisSchemeAsync(DefineAnalysisSchemeRequest request,
             com.amazonaws.handlers.AsyncHandler<DefineAnalysisSchemeRequest, DefineAnalysisSchemeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DefineExpressionResult> defineExpressionAsync(DefineExpressionRequest request,
             com.amazonaws.handlers.AsyncHandler<DefineExpressionRequest, DefineExpressionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DefineIndexFieldResult> defineIndexFieldAsync(DefineIndexFieldRequest request,
             com.amazonaws.handlers.AsyncHandler<DefineIndexFieldRequest, DefineIndexFieldResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DefineSuggesterResult> defineSuggesterAsync(DefineSuggesterRequest request,
             com.amazonaws.handlers.AsyncHandler<DefineSuggesterRequest, DefineSuggesterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DeleteAnalysisSchemeResult> deleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAnalysisSchemeRequest, DeleteAnalysisSchemeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DeleteExpressionResult> deleteExpressionAsync(DeleteExpressionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteExpressionRequest, DeleteExpressionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DeleteIndexFieldResult> deleteIndexFieldAsync(DeleteIndexFieldRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteIndexFieldRequest, DeleteIndexFieldResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DeleteSuggesterResult> deleteSuggesterAsync(DeleteSuggesterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSuggesterRequest, DeleteSuggesterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeAnalysisSchemesResult> describeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAnalysisSchemesRequest, DescribeAnalysisSchemesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeAvailabilityOptionsResult> describeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAvailabilityOptionsRequest, DescribeAvailabilityOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeDomainEndpointOptionsResult> describeDomainEndpointOptionsAsync(DescribeDomainEndpointOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainEndpointOptionsRequest, DescribeDomainEndpointOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainsRequest, DescribeDomainsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -255,7 +255,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeExpressionsResult> describeExpressionsAsync(DescribeExpressionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeExpressionsRequest, DescribeExpressionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -268,7 +268,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeIndexFieldsResult> describeIndexFieldsAsync(DescribeIndexFieldsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexFieldsRequest, DescribeIndexFieldsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -281,7 +281,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeScalingParametersResult> describeScalingParametersAsync(DescribeScalingParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingParametersRequest, DescribeScalingParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -294,7 +294,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeServiceAccessPoliciesResult> describeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -307,7 +307,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<DescribeSuggestersResult> describeSuggestersAsync(DescribeSuggestersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSuggestersRequest, DescribeSuggestersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -320,7 +320,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<IndexDocumentsResult> indexDocumentsAsync(IndexDocumentsRequest request,
             com.amazonaws.handlers.AsyncHandler<IndexDocumentsRequest, IndexDocumentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -333,7 +333,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(ListDomainNamesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainNamesRequest, ListDomainNamesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -369,7 +369,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<UpdateAvailabilityOptionsResult> updateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAvailabilityOptionsRequest, UpdateAvailabilityOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -382,7 +382,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<UpdateDomainEndpointOptionsResult> updateDomainEndpointOptionsAsync(UpdateDomainEndpointOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainEndpointOptionsRequest, UpdateDomainEndpointOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -395,7 +395,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<UpdateScalingParametersResult> updateScalingParametersAsync(UpdateScalingParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateScalingParametersRequest, UpdateScalingParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -408,7 +408,7 @@ public class AbstractAmazonCloudSearchAsync extends AbstractAmazonCloudSearch im
     public java.util.concurrent.Future<UpdateServiceAccessPoliciesResult> updateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

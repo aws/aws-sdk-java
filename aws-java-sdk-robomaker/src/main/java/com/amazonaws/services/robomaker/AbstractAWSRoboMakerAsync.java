@@ -37,7 +37,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<BatchDescribeSimulationJobResult> batchDescribeSimulationJobAsync(BatchDescribeSimulationJobRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchDescribeSimulationJobRequest, BatchDescribeSimulationJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CancelDeploymentJobResult> cancelDeploymentJobAsync(CancelDeploymentJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelDeploymentJobRequest, CancelDeploymentJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CancelSimulationJobResult> cancelSimulationJobAsync(CancelSimulationJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelSimulationJobRequest, CancelSimulationJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CancelSimulationJobBatchResult> cancelSimulationJobBatchAsync(CancelSimulationJobBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelSimulationJobBatchRequest, CancelSimulationJobBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateDeploymentJobResult> createDeploymentJobAsync(CreateDeploymentJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDeploymentJobRequest, CreateDeploymentJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateRobotResult> createRobotAsync(CreateRobotRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRobotRequest, CreateRobotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateRobotApplicationResult> createRobotApplicationAsync(CreateRobotApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRobotApplicationRequest, CreateRobotApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateRobotApplicationVersionResult> createRobotApplicationVersionAsync(CreateRobotApplicationVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRobotApplicationVersionRequest, CreateRobotApplicationVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateSimulationApplicationResult> createSimulationApplicationAsync(CreateSimulationApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSimulationApplicationRequest, CreateSimulationApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -169,7 +169,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
             CreateSimulationApplicationVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSimulationApplicationVersionRequest, CreateSimulationApplicationVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<CreateSimulationJobResult> createSimulationJobAsync(CreateSimulationJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSimulationJobRequest, CreateSimulationJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DeleteRobotResult> deleteRobotAsync(DeleteRobotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRobotRequest, DeleteRobotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -221,7 +221,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DeleteRobotApplicationResult> deleteRobotApplicationAsync(DeleteRobotApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRobotApplicationRequest, DeleteRobotApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -234,7 +234,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DeleteSimulationApplicationResult> deleteSimulationApplicationAsync(DeleteSimulationApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSimulationApplicationRequest, DeleteSimulationApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -247,7 +247,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DeregisterRobotResult> deregisterRobotAsync(DeregisterRobotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterRobotRequest, DeregisterRobotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -260,7 +260,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeDeploymentJobResult> describeDeploymentJobAsync(DescribeDeploymentJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDeploymentJobRequest, DescribeDeploymentJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -273,7 +273,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeFleetResult> describeFleetAsync(DescribeFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetRequest, DescribeFleetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -286,7 +286,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeRobotResult> describeRobotAsync(DescribeRobotRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRobotRequest, DescribeRobotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -299,7 +299,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeRobotApplicationResult> describeRobotApplicationAsync(DescribeRobotApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRobotApplicationRequest, DescribeRobotApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -312,7 +312,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeSimulationApplicationResult> describeSimulationApplicationAsync(DescribeSimulationApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSimulationApplicationRequest, DescribeSimulationApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -325,7 +325,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeSimulationJobResult> describeSimulationJobAsync(DescribeSimulationJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSimulationJobRequest, DescribeSimulationJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -338,7 +338,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<DescribeSimulationJobBatchResult> describeSimulationJobBatchAsync(DescribeSimulationJobBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSimulationJobBatchRequest, DescribeSimulationJobBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -351,7 +351,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListDeploymentJobsResult> listDeploymentJobsAsync(ListDeploymentJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentJobsRequest, ListDeploymentJobsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -364,7 +364,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFleetsRequest, ListFleetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -377,7 +377,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListRobotApplicationsResult> listRobotApplicationsAsync(ListRobotApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRobotApplicationsRequest, ListRobotApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -390,7 +390,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListRobotsResult> listRobotsAsync(ListRobotsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRobotsRequest, ListRobotsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -403,7 +403,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListSimulationApplicationsResult> listSimulationApplicationsAsync(ListSimulationApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSimulationApplicationsRequest, ListSimulationApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -416,7 +416,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListSimulationJobBatchesResult> listSimulationJobBatchesAsync(ListSimulationJobBatchesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSimulationJobBatchesRequest, ListSimulationJobBatchesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -429,7 +429,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListSimulationJobsResult> listSimulationJobsAsync(ListSimulationJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSimulationJobsRequest, ListSimulationJobsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -442,7 +442,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -455,7 +455,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<RegisterRobotResult> registerRobotAsync(RegisterRobotRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterRobotRequest, RegisterRobotResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -468,7 +468,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<RestartSimulationJobResult> restartSimulationJobAsync(RestartSimulationJobRequest request,
             com.amazonaws.handlers.AsyncHandler<RestartSimulationJobRequest, RestartSimulationJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -481,7 +481,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<StartSimulationJobBatchResult> startSimulationJobBatchAsync(StartSimulationJobBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSimulationJobBatchRequest, StartSimulationJobBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -494,7 +494,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<SyncDeploymentJobResult> syncDeploymentJobAsync(SyncDeploymentJobRequest request,
             com.amazonaws.handlers.AsyncHandler<SyncDeploymentJobRequest, SyncDeploymentJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -507,7 +507,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -520,7 +520,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -533,7 +533,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<UpdateRobotApplicationResult> updateRobotApplicationAsync(UpdateRobotApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRobotApplicationRequest, UpdateRobotApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -546,7 +546,7 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     public java.util.concurrent.Future<UpdateSimulationApplicationResult> updateSimulationApplicationAsync(UpdateSimulationApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSimulationApplicationRequest, UpdateSimulationApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

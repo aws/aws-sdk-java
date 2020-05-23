@@ -37,7 +37,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateApiCacheResult> createApiCacheAsync(CreateApiCacheRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApiCacheRequest, CreateApiCacheResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateApiKeyResult> createApiKeyAsync(CreateApiKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApiKeyRequest, CreateApiKeyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateDataSourceResult> createDataSourceAsync(CreateDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDataSourceRequest, CreateDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateGraphqlApiResult> createGraphqlApiAsync(CreateGraphqlApiRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGraphqlApiRequest, CreateGraphqlApiResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateResolverResult> createResolverAsync(CreateResolverRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateResolverRequest, CreateResolverResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<CreateTypeResult> createTypeAsync(CreateTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTypeRequest, CreateTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteApiCacheResult> deleteApiCacheAsync(DeleteApiCacheRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApiCacheRequest, DeleteApiCacheResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteApiKeyResult> deleteApiKeyAsync(DeleteApiKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteGraphqlApiResult> deleteGraphqlApiAsync(DeleteGraphqlApiRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGraphqlApiRequest, DeleteGraphqlApiResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteResolverResult> deleteResolverAsync(DeleteResolverRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteResolverRequest, DeleteResolverResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<DeleteTypeResult> deleteTypeAsync(DeleteTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTypeRequest, DeleteTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<FlushApiCacheResult> flushApiCacheAsync(FlushApiCacheRequest request,
             com.amazonaws.handlers.AsyncHandler<FlushApiCacheRequest, FlushApiCacheResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetApiCacheResult> getApiCacheAsync(GetApiCacheRequest request,
             com.amazonaws.handlers.AsyncHandler<GetApiCacheRequest, GetApiCacheResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetGraphqlApiResult> getGraphqlApiAsync(GetGraphqlApiRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGraphqlApiRequest, GetGraphqlApiResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetIntrospectionSchemaResult> getIntrospectionSchemaAsync(GetIntrospectionSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIntrospectionSchemaRequest, GetIntrospectionSchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetResolverResult> getResolverAsync(GetResolverRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResolverRequest, GetResolverResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetSchemaCreationStatusResult> getSchemaCreationStatusAsync(GetSchemaCreationStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSchemaCreationStatusRequest, GetSchemaCreationStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<GetTypeResult> getTypeAsync(GetTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTypeRequest, GetTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListApiKeysResult> listApiKeysAsync(ListApiKeysRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApiKeysRequest, ListApiKeysResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListGraphqlApisResult> listGraphqlApisAsync(ListGraphqlApisRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGraphqlApisRequest, ListGraphqlApisResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListResolversResult> listResolversAsync(ListResolversRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResolversRequest, ListResolversResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListResolversByFunctionResult> listResolversByFunctionAsync(ListResolversByFunctionRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResolversByFunctionRequest, ListResolversByFunctionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<ListTypesResult> listTypesAsync(ListTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTypesRequest, ListTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<StartSchemaCreationResult> startSchemaCreationAsync(StartSchemaCreationRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSchemaCreationRequest, StartSchemaCreationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateApiCacheResult> updateApiCacheAsync(UpdateApiCacheRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApiCacheRequest, UpdateApiCacheResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(UpdateApiKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -505,7 +505,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -518,7 +518,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFunctionRequest, UpdateFunctionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -531,7 +531,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateGraphqlApiResult> updateGraphqlApiAsync(UpdateGraphqlApiRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGraphqlApiRequest, UpdateGraphqlApiResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -544,7 +544,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateResolverResult> updateResolverAsync(UpdateResolverRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateResolverRequest, UpdateResolverResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -557,7 +557,7 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     public java.util.concurrent.Future<UpdateTypeResult> updateTypeAsync(UpdateTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTypeRequest, UpdateTypeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

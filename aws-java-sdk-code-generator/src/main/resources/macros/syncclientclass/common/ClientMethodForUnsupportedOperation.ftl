@@ -5,6 +5,6 @@
         @Deprecated
     </#if>
     public ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.input.variableType} request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 </#macro>

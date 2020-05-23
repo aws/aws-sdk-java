@@ -29,17 +29,17 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public void setEndpoint(String endpoint) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,12 +49,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public CheckIfPhoneNumberIsOptedOutResult checkIfPhoneNumberIsOptedOut(CheckIfPhoneNumberIsOptedOutRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -70,17 +70,17 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public CreatePlatformApplicationResult createPlatformApplication(CreatePlatformApplicationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public CreatePlatformEndpointResult createPlatformEndpoint(CreatePlatformEndpointRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public CreateTopicResult createTopic(CreateTopicRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -90,17 +90,17 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeletePlatformApplicationResult deletePlatformApplication(DeletePlatformApplicationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteTopicResult deleteTopic(DeleteTopicRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -110,22 +110,22 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public GetEndpointAttributesResult getEndpointAttributes(GetEndpointAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetPlatformApplicationAttributesResult getPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetSMSAttributesResult getSMSAttributes(GetSMSAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -135,7 +135,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -145,17 +145,17 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public ListEndpointsByPlatformApplicationResult listEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListPlatformApplicationsResult listPlatformApplications(ListPlatformApplicationsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -165,7 +165,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,12 +195,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListTopicsResult listTopics(ListTopicsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -215,12 +215,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public OptInPhoneNumberResult optInPhoneNumber(OptInPhoneNumberRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public PublishResult publish(PublishRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -235,7 +235,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,22 +245,22 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public SetEndpointAttributesResult setEndpointAttributes(SetEndpointAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public SetSMSAttributesResult setSMSAttributes(SetSMSAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public SetSubscriptionAttributesResult setSubscriptionAttributes(SetSubscriptionAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public SetTopicAttributesResult setTopicAttributes(SetTopicAttributesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -281,7 +281,7 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public SubscribeResult subscribe(SubscribeRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -291,12 +291,12 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UnsubscribeResult unsubscribe(UnsubscribeRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -306,17 +306,17 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

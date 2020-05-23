@@ -37,7 +37,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<GetGroupQueryResult> getGroupQueryAsync(GetGroupQueryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetGroupQueryRequest, GetGroupQueryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<ListGroupResourcesResult> listGroupResourcesAsync(ListGroupResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGroupResourcesRequest, ListGroupResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchResourcesRequest, SearchResourcesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -140,7 +140,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     @Override
     public java.util.concurrent.Future<TagResult> tagAsync(TagRequest request, com.amazonaws.handlers.AsyncHandler<TagRequest, TagResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -152,7 +152,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     @Override
     public java.util.concurrent.Future<UntagResult> untagAsync(UntagRequest request, com.amazonaws.handlers.AsyncHandler<UntagRequest, UntagResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -165,7 +165,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -178,7 +178,7 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     public java.util.concurrent.Future<UpdateGroupQueryResult> updateGroupQueryAsync(UpdateGroupQueryRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGroupQueryRequest, UpdateGroupQueryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

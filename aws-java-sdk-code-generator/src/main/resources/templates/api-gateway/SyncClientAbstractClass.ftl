@@ -22,7 +22,7 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

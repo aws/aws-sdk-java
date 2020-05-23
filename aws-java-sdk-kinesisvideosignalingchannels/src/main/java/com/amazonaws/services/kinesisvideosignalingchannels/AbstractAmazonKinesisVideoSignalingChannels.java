@@ -29,22 +29,22 @@ public class AbstractAmazonKinesisVideoSignalingChannels implements AmazonKinesi
 
     @Override
     public GetIceServerConfigResult getIceServerConfig(GetIceServerConfigRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public SendAlexaOfferToMasterResult sendAlexaOfferToMaster(SendAlexaOfferToMasterRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

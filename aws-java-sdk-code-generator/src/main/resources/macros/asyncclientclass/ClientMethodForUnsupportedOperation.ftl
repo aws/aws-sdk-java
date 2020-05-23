@@ -18,6 +18,6 @@ public ${operation.asyncFutureType} ${operation.methodName}Async(
         ${operation.input.variableType} request,
         ${operation.asyncHandlerType} asyncHandler) {
 
-    throw new java.lang.UnsupportedOperationException();
+    throw new UnsupportedOperationException();
 }
 </#macro>

@@ -37,7 +37,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<CreateHarvestJobResult> createHarvestJobAsync(CreateHarvestJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHarvestJobRequest, CreateHarvestJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<CreateOriginEndpointResult> createOriginEndpointAsync(CreateOriginEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateOriginEndpointRequest, CreateOriginEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteChannelRequest, DeleteChannelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<DeleteOriginEndpointResult> deleteOriginEndpointAsync(DeleteOriginEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteOriginEndpointRequest, DeleteOriginEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeChannelRequest, DescribeChannelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<DescribeHarvestJobResult> describeHarvestJobAsync(DescribeHarvestJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHarvestJobRequest, DescribeHarvestJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<DescribeOriginEndpointResult> describeOriginEndpointAsync(DescribeOriginEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeOriginEndpointRequest, DescribeOriginEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<ListHarvestJobsResult> listHarvestJobsAsync(ListHarvestJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHarvestJobsRequest, ListHarvestJobsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<ListOriginEndpointsResult> listOriginEndpointsAsync(ListOriginEndpointsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOriginEndpointsRequest, ListOriginEndpointsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<RotateChannelCredentialsResult> rotateChannelCredentialsAsync(RotateChannelCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateChannelCredentialsRequest, RotateChannelCredentialsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -210,7 +210,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
             RotateIngestEndpointCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateIngestEndpointCredentialsRequest, RotateIngestEndpointCredentialsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -223,7 +223,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -236,7 +236,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -249,7 +249,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateChannelRequest, UpdateChannelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -262,7 +262,7 @@ public class AbstractAWSMediaPackageAsync extends AbstractAWSMediaPackage implem
     public java.util.concurrent.Future<UpdateOriginEndpointResult> updateOriginEndpointAsync(UpdateOriginEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateOriginEndpointRequest, UpdateOriginEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

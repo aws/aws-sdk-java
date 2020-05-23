@@ -37,7 +37,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowExecutionCount> countClosedWorkflowExecutionsAsync(CountClosedWorkflowExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<CountClosedWorkflowExecutionsRequest, WorkflowExecutionCount> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowExecutionCount> countOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<CountOpenWorkflowExecutionsRequest, WorkflowExecutionCount> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<PendingTaskCount> countPendingActivityTasksAsync(CountPendingActivityTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<CountPendingActivityTasksRequest, PendingTaskCount> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<PendingTaskCount> countPendingDecisionTasksAsync(CountPendingDecisionTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<CountPendingDecisionTasksRequest, PendingTaskCount> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> deprecateActivityTypeAsync(DeprecateActivityTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeprecateActivityTypeRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> deprecateDomainAsync(DeprecateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<DeprecateDomainRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> deprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeprecateWorkflowTypeRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<ActivityTypeDetail> describeActivityTypeAsync(DescribeActivityTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeActivityTypeRequest, ActivityTypeDetail> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<DomainDetail> describeDomainAsync(DescribeDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DomainDetail> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkflowExecutionRequest, WorkflowExecutionDetail> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowTypeDetail> describeWorkflowTypeAsync(DescribeWorkflowTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkflowTypeRequest, WorkflowTypeDetail> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<History> getWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetWorkflowExecutionHistoryRequest, History> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<ActivityTypeInfos> listActivityTypesAsync(ListActivityTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListActivityTypesRequest, ActivityTypeInfos> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowExecutionInfos> listClosedWorkflowExecutionsAsync(ListClosedWorkflowExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListClosedWorkflowExecutionsRequest, WorkflowExecutionInfos> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<DomainInfos> listDomainsAsync(ListDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, DomainInfos> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowExecutionInfos> listOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOpenWorkflowExecutionsRequest, WorkflowExecutionInfos> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<ListTagsForResourceOutput> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceOutput> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<WorkflowTypeInfos> listWorkflowTypesAsync(ListWorkflowTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWorkflowTypesRequest, WorkflowTypeInfos> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<ActivityTask> pollForActivityTaskAsync(PollForActivityTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<PollForActivityTaskRequest, ActivityTask> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<DecisionTask> pollForDecisionTaskAsync(PollForDecisionTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<PollForDecisionTaskRequest, DecisionTask> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<ActivityTaskStatus> recordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest request,
             com.amazonaws.handlers.AsyncHandler<RecordActivityTaskHeartbeatRequest, ActivityTaskStatus> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> registerActivityTypeAsync(RegisterActivityTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterActivityTypeRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> registerDomainAsync(RegisterDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> registerWorkflowTypeAsync(RegisterWorkflowTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterWorkflowTypeRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> requestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<RequestCancelWorkflowExecutionRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> respondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest request,
             com.amazonaws.handlers.AsyncHandler<RespondActivityTaskCanceledRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> respondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest request,
             com.amazonaws.handlers.AsyncHandler<RespondActivityTaskCompletedRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> respondActivityTaskFailedAsync(RespondActivityTaskFailedRequest request,
             com.amazonaws.handlers.AsyncHandler<RespondActivityTaskFailedRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> respondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest request,
             com.amazonaws.handlers.AsyncHandler<RespondDecisionTaskCompletedRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> signalWorkflowExecutionAsync(SignalWorkflowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<SignalWorkflowExecutionRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Run> startWorkflowExecutionAsync(StartWorkflowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartWorkflowExecutionRequest, Run> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<TerminateWorkflowExecutionRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> undeprecateActivityTypeAsync(UndeprecateActivityTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<UndeprecateActivityTypeRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> undeprecateDomainAsync(UndeprecateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<UndeprecateDomainRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> undeprecateWorkflowTypeAsync(UndeprecateWorkflowTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<UndeprecateWorkflowTypeRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -505,7 +505,7 @@ public class AbstractAmazonSimpleWorkflowAsync extends AbstractAmazonSimpleWorkf
     public java.util.concurrent.Future<Void> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, Void> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

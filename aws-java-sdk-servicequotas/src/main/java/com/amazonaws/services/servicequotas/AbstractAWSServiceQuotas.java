@@ -29,94 +29,94 @@ public class AbstractAWSServiceQuotas implements AWSServiceQuotas {
 
     @Override
     public AssociateServiceQuotaTemplateResult associateServiceQuotaTemplate(AssociateServiceQuotaTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteServiceQuotaIncreaseRequestFromTemplateResult deleteServiceQuotaIncreaseRequestFromTemplate(
             DeleteServiceQuotaIncreaseRequestFromTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DisassociateServiceQuotaTemplateResult disassociateServiceQuotaTemplate(DisassociateServiceQuotaTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetAWSDefaultServiceQuotaResult getAWSDefaultServiceQuota(GetAWSDefaultServiceQuotaRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetAssociationForServiceQuotaTemplateResult getAssociationForServiceQuotaTemplate(GetAssociationForServiceQuotaTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetRequestedServiceQuotaChangeResult getRequestedServiceQuotaChange(GetRequestedServiceQuotaChangeRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetServiceQuotaResult getServiceQuota(GetServiceQuotaRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetServiceQuotaIncreaseRequestFromTemplateResult getServiceQuotaIncreaseRequestFromTemplate(GetServiceQuotaIncreaseRequestFromTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListAWSDefaultServiceQuotasResult listAWSDefaultServiceQuotas(ListAWSDefaultServiceQuotasRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListRequestedServiceQuotaChangeHistoryResult listRequestedServiceQuotaChangeHistory(ListRequestedServiceQuotaChangeHistoryRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListRequestedServiceQuotaChangeHistoryByQuotaResult listRequestedServiceQuotaChangeHistoryByQuota(
             ListRequestedServiceQuotaChangeHistoryByQuotaRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListServiceQuotaIncreaseRequestsInTemplateResult listServiceQuotaIncreaseRequestsInTemplate(ListServiceQuotaIncreaseRequestsInTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListServiceQuotasResult listServiceQuotas(ListServiceQuotasRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ListServicesResult listServices(ListServicesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public PutServiceQuotaIncreaseRequestIntoTemplateResult putServiceQuotaIncreaseRequestIntoTemplate(PutServiceQuotaIncreaseRequestIntoTemplateRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public RequestServiceQuotaIncreaseResult requestServiceQuotaIncrease(RequestServiceQuotaIncreaseRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

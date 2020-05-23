@@ -37,7 +37,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<CreateOutpostResult> createOutpostAsync(CreateOutpostRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateOutpostRequest, CreateOutpostResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(DeleteOutpostRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteOutpostRequest, DeleteOutpostResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSiteRequest, DeleteSiteResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<GetOutpostResult> getOutpostAsync(GetOutpostRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOutpostRequest, GetOutpostResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<GetOutpostInstanceTypesResult> getOutpostInstanceTypesAsync(GetOutpostInstanceTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOutpostInstanceTypesRequest, GetOutpostInstanceTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<ListOutpostsResult> listOutpostsAsync(ListOutpostsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOutpostsRequest, ListOutpostsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     public java.util.concurrent.Future<ListSitesResult> listSitesAsync(ListSitesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSitesRequest, ListSitesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

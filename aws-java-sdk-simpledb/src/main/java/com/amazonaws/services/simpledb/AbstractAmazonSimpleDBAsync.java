@@ -37,7 +37,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<BatchDeleteAttributesResult> batchDeleteAttributesAsync(BatchDeleteAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchDeleteAttributesRequest, BatchDeleteAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<BatchPutAttributesResult> batchPutAttributesAsync(BatchPutAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchPutAttributesRequest, BatchPutAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<DomainMetadataResult> domainMetadataAsync(DomainMetadataRequest request,
             com.amazonaws.handlers.AsyncHandler<DomainMetadataRequest, DomainMetadataResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<GetAttributesResult> getAttributesAsync(GetAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAttributesRequest, GetAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -164,7 +164,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -177,7 +177,7 @@ public class AbstractAmazonSimpleDBAsync extends AbstractAmazonSimpleDB implemen
     public java.util.concurrent.Future<SelectResult> selectAsync(SelectRequest request,
             com.amazonaws.handlers.AsyncHandler<SelectRequest, SelectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(BatchGetItemRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGetItemRequest, BatchGetItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -97,7 +97,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(BatchWriteItemRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchWriteItemRequest, BatchWriteItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -133,7 +133,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateBackupRequest, CreateBackupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -146,7 +146,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<CreateGlobalTableResult> createGlobalTableAsync(CreateGlobalTableRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGlobalTableRequest, CreateGlobalTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -159,7 +159,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<CreateTableResult> createTableAsync(CreateTableRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTableRequest, CreateTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -199,7 +199,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBackupRequest, DeleteBackupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -212,7 +212,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(DeleteItemRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteItemRequest, DeleteItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -271,7 +271,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(DeleteTableRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -307,7 +307,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeBackupResult> describeBackupAsync(DescribeBackupRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBackupRequest, DescribeBackupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -320,7 +320,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeContinuousBackupsResult> describeContinuousBackupsAsync(DescribeContinuousBackupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -333,7 +333,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeContributorInsightsResult> describeContributorInsightsAsync(DescribeContributorInsightsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeContributorInsightsRequest, DescribeContributorInsightsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -346,7 +346,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -359,7 +359,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeGlobalTableRequest, DescribeGlobalTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -372,7 +372,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeGlobalTableSettingsResult> describeGlobalTableSettingsAsync(DescribeGlobalTableSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeGlobalTableSettingsRequest, DescribeGlobalTableSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -385,7 +385,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(DescribeLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -398,7 +398,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeTableResult> describeTableAsync(DescribeTableRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTableRequest, DescribeTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -436,7 +436,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
             DescribeTableReplicaAutoScalingRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTableReplicaAutoScalingRequest, DescribeTableReplicaAutoScalingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -449,7 +449,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTimeToLiveRequest, DescribeTimeToLiveResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -462,7 +462,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<GetItemResult> getItemAsync(GetItemRequest request,
             com.amazonaws.handlers.AsyncHandler<GetItemRequest, GetItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -521,7 +521,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<ListBackupsResult> listBackupsAsync(ListBackupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBackupsRequest, ListBackupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -534,7 +534,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListContributorInsightsRequest, ListContributorInsightsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -547,7 +547,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<ListGlobalTablesResult> listGlobalTablesAsync(ListGlobalTablesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGlobalTablesRequest, ListGlobalTablesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -560,7 +560,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(ListTablesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -664,7 +664,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<ListTagsOfResourceResult> listTagsOfResourceAsync(ListTagsOfResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsOfResourceRequest, ListTagsOfResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -677,7 +677,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<PutItemResult> putItemAsync(PutItemRequest request,
             com.amazonaws.handlers.AsyncHandler<PutItemRequest, PutItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -735,7 +735,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     @Override
     public java.util.concurrent.Future<QueryResult> queryAsync(QueryRequest request, com.amazonaws.handlers.AsyncHandler<QueryRequest, QueryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -748,7 +748,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<RestoreTableFromBackupResult> restoreTableFromBackupAsync(RestoreTableFromBackupRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreTableFromBackupRequest, RestoreTableFromBackupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -761,7 +761,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<RestoreTableToPointInTimeResult> restoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreTableToPointInTimeRequest, RestoreTableToPointInTimeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -773,7 +773,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(ScanRequest request, com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -856,7 +856,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -869,7 +869,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<TransactGetItemsResult> transactGetItemsAsync(TransactGetItemsRequest request,
             com.amazonaws.handlers.AsyncHandler<TransactGetItemsRequest, TransactGetItemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -882,7 +882,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<TransactWriteItemsResult> transactWriteItemsAsync(TransactWriteItemsRequest request,
             com.amazonaws.handlers.AsyncHandler<TransactWriteItemsRequest, TransactWriteItemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -895,7 +895,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -908,7 +908,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(UpdateContinuousBackupsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -921,7 +921,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateContributorInsightsResult> updateContributorInsightsAsync(UpdateContributorInsightsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContributorInsightsRequest, UpdateContributorInsightsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -934,7 +934,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateGlobalTableResult> updateGlobalTableAsync(UpdateGlobalTableRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGlobalTableRequest, UpdateGlobalTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -947,7 +947,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateGlobalTableSettingsResult> updateGlobalTableSettingsAsync(UpdateGlobalTableSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGlobalTableSettingsRequest, UpdateGlobalTableSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -960,7 +960,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(UpdateItemRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateItemRequest, UpdateItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1025,7 +1025,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateTableResult> updateTableAsync(UpdateTableRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1061,7 +1061,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateTableReplicaAutoScalingResult> updateTableReplicaAutoScalingAsync(UpdateTableReplicaAutoScalingRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTableReplicaAutoScalingRequest, UpdateTableReplicaAutoScalingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1074,7 +1074,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     public java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(UpdateTimeToLiveRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTimeToLiveRequest, UpdateTimeToLiveResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

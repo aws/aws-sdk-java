@@ -37,7 +37,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<AssociateAssetsResult> associateAssetsAsync(AssociateAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateAssetsRequest, AssociateAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<BatchAssociateProjectAssetsResult> batchAssociateProjectAssetsAsync(BatchAssociateProjectAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchAssociateProjectAssetsRequest, BatchAssociateProjectAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<BatchDisassociateProjectAssetsResult> batchDisassociateProjectAssetsAsync(BatchDisassociateProjectAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchDisassociateProjectAssetsRequest, BatchDisassociateProjectAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<BatchPutAssetPropertyValueResult> batchPutAssetPropertyValueAsync(BatchPutAssetPropertyValueRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchPutAssetPropertyValueRequest, BatchPutAssetPropertyValueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreateAccessPolicyResult> createAccessPolicyAsync(CreateAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAccessPolicyRequest, CreateAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreateAssetResult> createAssetAsync(CreateAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssetRequest, CreateAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreateAssetModelResult> createAssetModelAsync(CreateAssetModelRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssetModelRequest, CreateAssetModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreateDashboardResult> createDashboardAsync(CreateDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDashboardRequest, CreateDashboardResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(CreateGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateGatewayRequest, CreateGatewayResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreatePortalResult> createPortalAsync(CreatePortalRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePortalRequest, CreatePortalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeleteAccessPolicyResult> deleteAccessPolicyAsync(DeleteAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAccessPolicyRequest, DeleteAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeleteAssetResult> deleteAssetAsync(DeleteAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssetRequest, DeleteAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeleteAssetModelResult> deleteAssetModelAsync(DeleteAssetModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssetModelRequest, DeleteAssetModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeleteDashboardResult> deleteDashboardAsync(DeleteDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDashboardRequest, DeleteDashboardResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(DeleteGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeletePortalResult> deletePortalAsync(DeletePortalRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePortalRequest, DeletePortalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeAccessPolicyResult> describeAccessPolicyAsync(DescribeAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccessPolicyRequest, DescribeAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeAssetResult> describeAssetAsync(DescribeAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetRequest, DescribeAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeAssetModelResult> describeAssetModelAsync(DescribeAssetModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetModelRequest, DescribeAssetModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeAssetPropertyResult> describeAssetPropertyAsync(DescribeAssetPropertyRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssetPropertyRequest, DescribeAssetPropertyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeDashboardResult> describeDashboardAsync(DescribeDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDashboardRequest, DescribeDashboardResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeGatewayRequest, DescribeGatewayResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -351,7 +351,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
             DescribeGatewayCapabilityConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeGatewayCapabilityConfigurationRequest, DescribeGatewayCapabilityConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -364,7 +364,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeLoggingOptionsResult> describeLoggingOptionsAsync(DescribeLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLoggingOptionsRequest, DescribeLoggingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -377,7 +377,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribePortalResult> describePortalAsync(DescribePortalRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePortalRequest, DescribePortalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -390,7 +390,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProjectRequest, DescribeProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -403,7 +403,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<DisassociateAssetsResult> disassociateAssetsAsync(DisassociateAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateAssetsRequest, DisassociateAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -416,7 +416,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<GetAssetPropertyAggregatesResult> getAssetPropertyAggregatesAsync(GetAssetPropertyAggregatesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssetPropertyAggregatesRequest, GetAssetPropertyAggregatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -429,7 +429,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<GetAssetPropertyValueResult> getAssetPropertyValueAsync(GetAssetPropertyValueRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssetPropertyValueRequest, GetAssetPropertyValueResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -442,7 +442,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<GetAssetPropertyValueHistoryResult> getAssetPropertyValueHistoryAsync(GetAssetPropertyValueHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssetPropertyValueHistoryRequest, GetAssetPropertyValueHistoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -455,7 +455,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -468,7 +468,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -481,7 +481,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListAssetsResult> listAssetsAsync(ListAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetsRequest, ListAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -494,7 +494,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListAssociatedAssetsResult> listAssociatedAssetsAsync(ListAssociatedAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociatedAssetsRequest, ListAssociatedAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -507,7 +507,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDashboardsRequest, ListDashboardsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -520,7 +520,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -533,7 +533,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListPortalsResult> listPortalsAsync(ListPortalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPortalsRequest, ListPortalsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -546,7 +546,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListProjectAssetsResult> listProjectAssetsAsync(ListProjectAssetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectAssetsRequest, ListProjectAssetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -559,7 +559,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -572,7 +572,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -585,7 +585,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<PutLoggingOptionsResult> putLoggingOptionsAsync(PutLoggingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutLoggingOptionsRequest, PutLoggingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -598,7 +598,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -611,7 +611,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -624,7 +624,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateAccessPolicyResult> updateAccessPolicyAsync(UpdateAccessPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAccessPolicyRequest, UpdateAccessPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -637,7 +637,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateAssetResult> updateAssetAsync(UpdateAssetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssetRequest, UpdateAssetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -650,7 +650,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateAssetModelResult> updateAssetModelAsync(UpdateAssetModelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssetModelRequest, UpdateAssetModelResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -663,7 +663,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateAssetPropertyResult> updateAssetPropertyAsync(UpdateAssetPropertyRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssetPropertyRequest, UpdateAssetPropertyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -676,7 +676,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateDashboardResult> updateDashboardAsync(UpdateDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDashboardRequest, UpdateDashboardResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -689,7 +689,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -704,7 +704,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
             UpdateGatewayCapabilityConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayCapabilityConfigurationRequest, UpdateGatewayCapabilityConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -717,7 +717,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdatePortalResult> updatePortalAsync(UpdatePortalRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePortalRequest, UpdatePortalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -730,7 +730,7 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

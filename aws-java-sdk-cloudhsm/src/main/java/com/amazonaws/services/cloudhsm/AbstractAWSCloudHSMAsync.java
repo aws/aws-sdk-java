@@ -37,7 +37,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<CreateHapgResult> createHapgAsync(CreateHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -177,7 +177,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -213,7 +213,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<GetConfigResult> getConfigAsync(GetConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -226,7 +226,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -262,7 +262,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -297,7 +297,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -332,7 +332,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -368,7 +368,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -381,7 +381,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -394,7 +394,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -407,7 +407,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -420,7 +420,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<AssociateDeviceWithPlacementResult> associateDeviceWithPlacementAsync(AssociateDeviceWithPlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithPlacementRequest, AssociateDeviceWithPlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<CreatePlacementResult> createPlacementAsync(CreatePlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePlacementRequest, CreatePlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<DeletePlacementResult> deletePlacementAsync(DeletePlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePlacementRequest, DeletePlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<DescribePlacementResult> describePlacementAsync(DescribePlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePlacementRequest, DescribePlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeProjectRequest, DescribeProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -130,7 +130,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
             DisassociateDeviceFromPlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateDeviceFromPlacementRequest, DisassociateDeviceFromPlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -143,7 +143,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<GetDevicesInPlacementResult> getDevicesInPlacementAsync(GetDevicesInPlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDevicesInPlacementRequest, GetDevicesInPlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -156,7 +156,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<ListPlacementsResult> listPlacementsAsync(ListPlacementsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPlacementsRequest, ListPlacementsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -169,7 +169,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -221,7 +221,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<UpdatePlacementResult> updatePlacementAsync(UpdatePlacementRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePlacementRequest, UpdatePlacementResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -234,7 +234,7 @@ public class AbstractAWSIoT1ClickProjectsAsync extends AbstractAWSIoT1ClickProje
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

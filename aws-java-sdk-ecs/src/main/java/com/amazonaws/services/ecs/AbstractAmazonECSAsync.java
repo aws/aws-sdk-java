@@ -36,7 +36,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<CreateCapacityProviderResult> createCapacityProviderAsync(CreateCapacityProviderRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCapacityProviderRequest, CreateCapacityProviderResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -85,7 +85,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<CreateServiceResult> createServiceAsync(CreateServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -98,7 +98,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(CreateTaskSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTaskSetRequest, CreateTaskSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -111,7 +111,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountSettingRequest, DeleteAccountSettingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -124,7 +124,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAttributesRequest, DeleteAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -137,7 +137,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -150,7 +150,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeleteServiceResult> deleteServiceAsync(DeleteServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteServiceRequest, DeleteServiceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -163,7 +163,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTaskSetRequest, DeleteTaskSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -176,7 +176,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeregisterContainerInstanceResult> deregisterContainerInstanceAsync(DeregisterContainerInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterContainerInstanceRequest, DeregisterContainerInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -189,7 +189,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -202,7 +202,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeCapacityProvidersResult> describeCapacityProvidersAsync(DescribeCapacityProvidersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCapacityProvidersRequest, DescribeCapacityProvidersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -215,7 +215,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(DescribeClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -251,7 +251,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeContainerInstancesResult> describeContainerInstancesAsync(DescribeContainerInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeContainerInstancesRequest, DescribeContainerInstancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -264,7 +264,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -277,7 +277,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeTaskDefinitionResult> describeTaskDefinitionAsync(DescribeTaskDefinitionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTaskDefinitionRequest, DescribeTaskDefinitionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -290,7 +290,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(DescribeTaskSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTaskSetsRequest, DescribeTaskSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -303,7 +303,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DescribeTasksResult> describeTasksAsync(DescribeTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTasksRequest, DescribeTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -316,7 +316,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(DiscoverPollEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -352,7 +352,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccountSettingsRequest, ListAccountSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -365,7 +365,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListAttributesResult> listAttributesAsync(ListAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAttributesRequest, ListAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -378,7 +378,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -414,7 +414,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(ListContainerInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListContainerInstancesRequest, ListContainerInstancesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -450,7 +450,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListServicesResult> listServicesAsync(ListServicesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -486,7 +486,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -499,7 +499,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -535,7 +535,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(ListTaskDefinitionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionsRequest, ListTaskDefinitionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -571,7 +571,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<ListTasksResult> listTasksAsync(ListTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -606,7 +606,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(PutAccountSettingRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccountSettingRequest, PutAccountSettingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -619,7 +619,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(PutAccountSettingDefaultRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccountSettingDefaultRequest, PutAccountSettingDefaultResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -632,7 +632,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -645,7 +645,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<PutClusterCapacityProvidersResult> putClusterCapacityProvidersAsync(PutClusterCapacityProvidersRequest request,
             com.amazonaws.handlers.AsyncHandler<PutClusterCapacityProvidersRequest, PutClusterCapacityProvidersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -658,7 +658,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<RegisterContainerInstanceResult> registerContainerInstanceAsync(RegisterContainerInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterContainerInstanceRequest, RegisterContainerInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -671,7 +671,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<RegisterTaskDefinitionResult> registerTaskDefinitionAsync(RegisterTaskDefinitionRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterTaskDefinitionRequest, RegisterTaskDefinitionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -684,7 +684,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<RunTaskResult> runTaskAsync(RunTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<RunTaskRequest, RunTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -697,7 +697,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<StartTaskResult> startTaskAsync(StartTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StartTaskRequest, StartTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -710,7 +710,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<StopTaskResult> stopTaskAsync(StopTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<StopTaskRequest, StopTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -723,7 +723,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<SubmitAttachmentStateChangesResult> submitAttachmentStateChangesAsync(SubmitAttachmentStateChangesRequest request,
             com.amazonaws.handlers.AsyncHandler<SubmitAttachmentStateChangesRequest, SubmitAttachmentStateChangesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -736,7 +736,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(SubmitContainerStateChangeRequest request,
             com.amazonaws.handlers.AsyncHandler<SubmitContainerStateChangeRequest, SubmitContainerStateChangeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -772,7 +772,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<SubmitTaskStateChangeResult> submitTaskStateChangeAsync(SubmitTaskStateChangeRequest request,
             com.amazonaws.handlers.AsyncHandler<SubmitTaskStateChangeRequest, SubmitTaskStateChangeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -785,7 +785,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -798,7 +798,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -811,7 +811,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UpdateClusterSettingsResult> updateClusterSettingsAsync(UpdateClusterSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateClusterSettingsRequest, UpdateClusterSettingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -824,7 +824,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UpdateContainerAgentResult> updateContainerAgentAsync(UpdateContainerAgentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContainerAgentRequest, UpdateContainerAgentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -837,7 +837,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UpdateContainerInstancesStateResult> updateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateContainerInstancesStateRequest, UpdateContainerInstancesStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -850,7 +850,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -863,7 +863,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServicePrimaryTaskSetRequest, UpdateServicePrimaryTaskSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -876,7 +876,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     public java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(UpdateTaskSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTaskSetRequest, UpdateTaskSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

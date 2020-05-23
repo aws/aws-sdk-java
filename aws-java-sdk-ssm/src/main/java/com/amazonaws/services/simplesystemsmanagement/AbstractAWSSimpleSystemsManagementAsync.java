@@ -37,7 +37,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(CancelCommandRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             CancelMaintenanceWindowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelMaintenanceWindowExecutionRequest, CancelMaintenanceWindowExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -78,7 +78,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateActivationResult> createActivationAsync(CreateActivationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateActivationRequest, CreateActivationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(CreateAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssociationRequest, CreateAssociationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(CreateAssociationBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssociationBatchRequest, CreateAssociationBatchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -117,7 +117,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(CreateDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -130,7 +130,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateMaintenanceWindowResult> createMaintenanceWindowAsync(CreateMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateMaintenanceWindowRequest, CreateMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -143,7 +143,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateOpsItemResult> createOpsItemAsync(CreateOpsItemRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateOpsItemRequest, CreateOpsItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -156,7 +156,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePatchBaselineRequest, CreatePatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -169,7 +169,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(CreateResourceDataSyncRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateResourceDataSyncRequest, CreateResourceDataSyncResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(DeleteActivationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteActivationRequest, DeleteActivationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -195,7 +195,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(DeleteAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -208,7 +208,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -221,7 +221,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteInventoryResult> deleteInventoryAsync(DeleteInventoryRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInventoryRequest, DeleteInventoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -234,7 +234,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -247,7 +247,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(DeleteParameterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteParameterRequest, DeleteParameterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -260,7 +260,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(DeleteParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteParametersRequest, DeleteParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -273,7 +273,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePatchBaselineRequest, DeletePatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -286,7 +286,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteResourceDataSyncRequest, DeleteResourceDataSyncResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -299,7 +299,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterManagedInstanceRequest, DeregisterManagedInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -314,7 +314,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DeregisterPatchBaselineForPatchGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterPatchBaselineForPatchGroupRequest, DeregisterPatchBaselineForPatchGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -329,7 +329,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DeregisterTargetFromMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterTargetFromMaintenanceWindowRequest, DeregisterTargetFromMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -344,7 +344,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DeregisterTaskFromMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<DeregisterTaskFromMaintenanceWindowRequest, DeregisterTaskFromMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -357,7 +357,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeActivationsResult> describeActivationsAsync(DescribeActivationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeActivationsRequest, DescribeActivationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -370,7 +370,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(DescribeAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -385,7 +385,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeAssociationExecutionTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionTargetsRequest, DescribeAssociationExecutionTargetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -398,7 +398,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionsRequest, DescribeAssociationExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -411,7 +411,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAutomationExecutionsRequest, DescribeAutomationExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -426,7 +426,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeAutomationStepExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAutomationStepExecutionsRequest, DescribeAutomationStepExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -439,7 +439,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeAvailablePatchesResult> describeAvailablePatchesAsync(DescribeAvailablePatchesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAvailablePatchesRequest, DescribeAvailablePatchesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -452,7 +452,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(DescribeDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -465,7 +465,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(DescribeDocumentPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -480,7 +480,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeEffectiveInstanceAssociationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEffectiveInstanceAssociationsRequest, DescribeEffectiveInstanceAssociationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -495,7 +495,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeEffectivePatchesForPatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEffectivePatchesForPatchBaselineRequest, DescribeEffectivePatchesForPatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -510,7 +510,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeInstanceAssociationsStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceAssociationsStatusRequest, DescribeInstanceAssociationsStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -523,7 +523,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(DescribeInstanceInformationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceInformationRequest, DescribeInstanceInformationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -536,7 +536,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeInstancePatchStatesResult> describeInstancePatchStatesAsync(DescribeInstancePatchStatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchStatesRequest, DescribeInstancePatchStatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -551,7 +551,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeInstancePatchStatesForPatchGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchStatesForPatchGroupRequest, DescribeInstancePatchStatesForPatchGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -564,7 +564,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(DescribeInstancePatchesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchesRequest, DescribeInstancePatchesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -577,7 +577,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeInventoryDeletionsResult> describeInventoryDeletionsAsync(DescribeInventoryDeletionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeInventoryDeletionsRequest, DescribeInventoryDeletionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -592,7 +592,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionTaskInvocationsRequest, DescribeMaintenanceWindowExecutionTaskInvocationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -607,7 +607,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeMaintenanceWindowExecutionTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionTasksRequest, DescribeMaintenanceWindowExecutionTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -622,7 +622,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeMaintenanceWindowExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionsRequest, DescribeMaintenanceWindowExecutionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -637,7 +637,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeMaintenanceWindowScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowScheduleRequest, DescribeMaintenanceWindowScheduleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -652,7 +652,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeMaintenanceWindowTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowTargetsRequest, DescribeMaintenanceWindowTargetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -665,7 +665,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeMaintenanceWindowTasksResult> describeMaintenanceWindowTasksAsync(DescribeMaintenanceWindowTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowTasksRequest, DescribeMaintenanceWindowTasksResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -678,7 +678,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(DescribeMaintenanceWindowsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowsRequest, DescribeMaintenanceWindowsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -693,7 +693,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             DescribeMaintenanceWindowsForTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowsForTargetRequest, DescribeMaintenanceWindowsForTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -706,7 +706,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeOpsItemsResult> describeOpsItemsAsync(DescribeOpsItemsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeOpsItemsRequest, DescribeOpsItemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -719,7 +719,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeParametersResult> describeParametersAsync(DescribeParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeParametersRequest, DescribeParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -732,7 +732,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribePatchBaselinesResult> describePatchBaselinesAsync(DescribePatchBaselinesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePatchBaselinesRequest, DescribePatchBaselinesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -745,7 +745,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribePatchGroupStateResult> describePatchGroupStateAsync(DescribePatchGroupStateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePatchGroupStateRequest, DescribePatchGroupStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -758,7 +758,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribePatchGroupsResult> describePatchGroupsAsync(DescribePatchGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePatchGroupsRequest, DescribePatchGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -771,7 +771,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribePatchPropertiesResult> describePatchPropertiesAsync(DescribePatchPropertiesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePatchPropertiesRequest, DescribePatchPropertiesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -784,7 +784,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(DescribeSessionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeSessionsRequest, DescribeSessionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -797,7 +797,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAutomationExecutionRequest, GetAutomationExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -810,7 +810,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(GetCalendarStateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCalendarStateRequest, GetCalendarStateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -823,7 +823,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCommandInvocationRequest, GetCommandInvocationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -836,7 +836,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetConnectionStatusResult> getConnectionStatusAsync(GetConnectionStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConnectionStatusRequest, GetConnectionStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -849,7 +849,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetDefaultPatchBaselineResult> getDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDefaultPatchBaselineRequest, GetDefaultPatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -864,7 +864,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             GetDeployablePatchSnapshotForInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeployablePatchSnapshotForInstanceRequest, GetDeployablePatchSnapshotForInstanceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -877,7 +877,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(GetDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -890,7 +890,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetInventoryResult> getInventoryAsync(GetInventoryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInventoryRequest, GetInventoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -903,7 +903,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetInventorySchemaResult> getInventorySchemaAsync(GetInventorySchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInventorySchemaRequest, GetInventorySchemaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -916,7 +916,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetMaintenanceWindowResult> getMaintenanceWindowAsync(GetMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowRequest, GetMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -929,7 +929,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetMaintenanceWindowExecutionResult> getMaintenanceWindowExecutionAsync(GetMaintenanceWindowExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionRequest, GetMaintenanceWindowExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -944,7 +944,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             GetMaintenanceWindowExecutionTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionTaskRequest, GetMaintenanceWindowExecutionTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -959,7 +959,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             GetMaintenanceWindowExecutionTaskInvocationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionTaskInvocationRequest, GetMaintenanceWindowExecutionTaskInvocationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -972,7 +972,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetMaintenanceWindowTaskResult> getMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowTaskRequest, GetMaintenanceWindowTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -985,7 +985,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetOpsItemResult> getOpsItemAsync(GetOpsItemRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOpsItemRequest, GetOpsItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -998,7 +998,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetOpsSummaryResult> getOpsSummaryAsync(GetOpsSummaryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOpsSummaryRequest, GetOpsSummaryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1011,7 +1011,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest request,
             com.amazonaws.handlers.AsyncHandler<GetParameterRequest, GetParameterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1024,7 +1024,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetParameterHistoryRequest, GetParameterHistoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1037,7 +1037,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1050,7 +1050,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(GetParametersByPathRequest request,
             com.amazonaws.handlers.AsyncHandler<GetParametersByPathRequest, GetParametersByPathResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1063,7 +1063,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetPatchBaselineResult> getPatchBaselineAsync(GetPatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPatchBaselineRequest, GetPatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1076,7 +1076,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(GetPatchBaselineForPatchGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPatchBaselineForPatchGroupRequest, GetPatchBaselineForPatchGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1089,7 +1089,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<GetServiceSettingResult> getServiceSettingAsync(GetServiceSettingRequest request,
             com.amazonaws.handlers.AsyncHandler<GetServiceSettingRequest, GetServiceSettingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1102,7 +1102,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<LabelParameterVersionResult> labelParameterVersionAsync(LabelParameterVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<LabelParameterVersionRequest, LabelParameterVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1115,7 +1115,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListAssociationVersionsResult> listAssociationVersionsAsync(ListAssociationVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociationVersionsRequest, ListAssociationVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1128,7 +1128,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(ListAssociationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1141,7 +1141,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(ListCommandInvocationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCommandInvocationsRequest, ListCommandInvocationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1154,7 +1154,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(ListCommandsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCommandsRequest, ListCommandsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1167,7 +1167,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListComplianceItemsResult> listComplianceItemsAsync(ListComplianceItemsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComplianceItemsRequest, ListComplianceItemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1180,7 +1180,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListComplianceSummariesResult> listComplianceSummariesAsync(ListComplianceSummariesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComplianceSummariesRequest, ListComplianceSummariesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1193,7 +1193,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDocumentVersionsRequest, ListDocumentVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1206,7 +1206,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(ListDocumentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1242,7 +1242,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1257,7 +1257,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             ListResourceComplianceSummariesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourceComplianceSummariesRequest, ListResourceComplianceSummariesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1270,7 +1270,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest request,
             com.amazonaws.handlers.AsyncHandler<ListResourceDataSyncRequest, ListResourceDataSyncResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1283,7 +1283,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1296,7 +1296,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(ModifyDocumentPermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1309,7 +1309,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<PutComplianceItemsResult> putComplianceItemsAsync(PutComplianceItemsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutComplianceItemsRequest, PutComplianceItemsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1322,7 +1322,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<PutInventoryResult> putInventoryAsync(PutInventoryRequest request,
             com.amazonaws.handlers.AsyncHandler<PutInventoryRequest, PutInventoryResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1335,7 +1335,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest request,
             com.amazonaws.handlers.AsyncHandler<PutParameterRequest, PutParameterResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1348,7 +1348,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<RegisterDefaultPatchBaselineResult> registerDefaultPatchBaselineAsync(RegisterDefaultPatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterDefaultPatchBaselineRequest, RegisterDefaultPatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1363,7 +1363,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             RegisterPatchBaselineForPatchGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterPatchBaselineForPatchGroupRequest, RegisterPatchBaselineForPatchGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1378,7 +1378,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             RegisterTargetWithMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterTargetWithMaintenanceWindowRequest, RegisterTargetWithMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1393,7 +1393,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
             RegisterTaskWithMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterTaskWithMaintenanceWindowRequest, RegisterTaskWithMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1406,7 +1406,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1419,7 +1419,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ResetServiceSettingResult> resetServiceSettingAsync(ResetServiceSettingRequest request,
             com.amazonaws.handlers.AsyncHandler<ResetServiceSettingRequest, ResetServiceSettingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1432,7 +1432,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<ResumeSessionResult> resumeSessionAsync(ResumeSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<ResumeSessionRequest, ResumeSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1445,7 +1445,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<SendAutomationSignalResult> sendAutomationSignalAsync(SendAutomationSignalRequest request,
             com.amazonaws.handlers.AsyncHandler<SendAutomationSignalRequest, SendAutomationSignalResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1458,7 +1458,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest request,
             com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1471,7 +1471,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(StartAssociationsOnceRequest request,
             com.amazonaws.handlers.AsyncHandler<StartAssociationsOnceRequest, StartAssociationsOnceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1484,7 +1484,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<StartAutomationExecutionResult> startAutomationExecutionAsync(StartAutomationExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartAutomationExecutionRequest, StartAutomationExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1497,7 +1497,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSessionRequest, StartSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1510,7 +1510,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(StopAutomationExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StopAutomationExecutionRequest, StopAutomationExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1523,7 +1523,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<TerminateSessionRequest, TerminateSessionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1536,7 +1536,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(UpdateAssociationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssociationRequest, UpdateAssociationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1549,7 +1549,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(UpdateAssociationStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1562,7 +1562,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(UpdateDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDocumentRequest, UpdateDocumentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1575,7 +1575,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(UpdateDocumentDefaultVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDocumentDefaultVersionRequest, UpdateDocumentDefaultVersionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1588,7 +1588,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1601,7 +1601,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateMaintenanceWindowTargetResult> updateMaintenanceWindowTargetAsync(UpdateMaintenanceWindowTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowTargetRequest, UpdateMaintenanceWindowTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1614,7 +1614,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateMaintenanceWindowTaskResult> updateMaintenanceWindowTaskAsync(UpdateMaintenanceWindowTaskRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowTaskRequest, UpdateMaintenanceWindowTaskResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1627,7 +1627,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateManagedInstanceRoleRequest, UpdateManagedInstanceRoleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1640,7 +1640,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateOpsItemResult> updateOpsItemAsync(UpdateOpsItemRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateOpsItemRequest, UpdateOpsItemResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1653,7 +1653,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePatchBaselineRequest, UpdatePatchBaselineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1666,7 +1666,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateResourceDataSyncResult> updateResourceDataSyncAsync(UpdateResourceDataSyncRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateResourceDataSyncRequest, UpdateResourceDataSyncResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1679,7 +1679,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     public java.util.concurrent.Future<UpdateServiceSettingResult> updateServiceSettingAsync(UpdateServiceSettingRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceSettingRequest, UpdateServiceSettingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

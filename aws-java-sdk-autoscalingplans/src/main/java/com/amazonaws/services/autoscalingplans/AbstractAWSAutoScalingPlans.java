@@ -29,42 +29,42 @@ public class AbstractAWSAutoScalingPlans implements AWSAutoScalingPlans {
 
     @Override
     public CreateScalingPlanResult createScalingPlan(CreateScalingPlanRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeleteScalingPlanResult deleteScalingPlan(DeleteScalingPlanRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeScalingPlanResourcesResult describeScalingPlanResources(DescribeScalingPlanResourcesRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DescribeScalingPlansResult describeScalingPlans(DescribeScalingPlansRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public GetScalingPlanResourceForecastDataResult getScalingPlanResourceForecastData(GetScalingPlanResourceForecastDataRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public UpdateScalingPlanResult updateScalingPlan(UpdateScalingPlanRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void shutdown() {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<CancelImageCreationResult> cancelImageCreationAsync(CancelImageCreationRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelImageCreationRequest, CancelImageCreationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateComponentRequest, CreateComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             CreateDistributionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDistributionConfigurationRequest, CreateDistributionConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -78,7 +78,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateImageRequest, CreateImageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<CreateImagePipelineResult> createImagePipelineAsync(CreateImagePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateImagePipelineRequest, CreateImagePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<CreateImageRecipeResult> createImageRecipeAsync(CreateImageRecipeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateImageRecipeRequest, CreateImageRecipeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,7 +119,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             CreateInfrastructureConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateInfrastructureConfigurationRequest, CreateInfrastructureConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -132,7 +132,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -147,7 +147,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             DeleteDistributionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDistributionConfigurationRequest, DeleteDistributionConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -160,7 +160,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteImageRequest, DeleteImageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -173,7 +173,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<DeleteImagePipelineResult> deleteImagePipelineAsync(DeleteImagePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteImagePipelineRequest, DeleteImagePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -186,7 +186,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<DeleteImageRecipeResult> deleteImageRecipeAsync(DeleteImageRecipeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteImageRecipeRequest, DeleteImageRecipeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -201,7 +201,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             DeleteInfrastructureConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInfrastructureConfigurationRequest, DeleteInfrastructureConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -214,7 +214,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -227,7 +227,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetComponentPolicyResult> getComponentPolicyAsync(GetComponentPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetComponentPolicyRequest, GetComponentPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -240,7 +240,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetDistributionConfigurationResult> getDistributionConfigurationAsync(GetDistributionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDistributionConfigurationRequest, GetDistributionConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -253,7 +253,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetImageResult> getImageAsync(GetImageRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImageRequest, GetImageResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -266,7 +266,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetImagePipelineResult> getImagePipelineAsync(GetImagePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImagePipelineRequest, GetImagePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -279,7 +279,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetImagePolicyResult> getImagePolicyAsync(GetImagePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImagePolicyRequest, GetImagePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -292,7 +292,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetImageRecipeResult> getImageRecipeAsync(GetImageRecipeRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImageRecipeRequest, GetImageRecipeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -305,7 +305,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetImageRecipePolicyResult> getImageRecipePolicyAsync(GetImageRecipePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetImageRecipePolicyRequest, GetImageRecipePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -318,7 +318,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<GetInfrastructureConfigurationResult> getInfrastructureConfigurationAsync(GetInfrastructureConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetInfrastructureConfigurationRequest, GetInfrastructureConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -331,7 +331,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ImportComponentResult> importComponentAsync(ImportComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportComponentRequest, ImportComponentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -344,7 +344,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListComponentBuildVersionsResult> listComponentBuildVersionsAsync(ListComponentBuildVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComponentBuildVersionsRequest, ListComponentBuildVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -357,7 +357,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -370,7 +370,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListDistributionConfigurationsResult> listDistributionConfigurationsAsync(ListDistributionConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDistributionConfigurationsRequest, ListDistributionConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -383,7 +383,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListImageBuildVersionsResult> listImageBuildVersionsAsync(ListImageBuildVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImageBuildVersionsRequest, ListImageBuildVersionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -396,7 +396,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListImagePipelineImagesResult> listImagePipelineImagesAsync(ListImagePipelineImagesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImagePipelineImagesRequest, ListImagePipelineImagesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -409,7 +409,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListImagePipelinesResult> listImagePipelinesAsync(ListImagePipelinesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImagePipelinesRequest, ListImagePipelinesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -422,7 +422,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListImageRecipesResult> listImageRecipesAsync(ListImageRecipesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImageRecipesRequest, ListImageRecipesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -435,7 +435,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -450,7 +450,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             ListInfrastructureConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInfrastructureConfigurationsRequest, ListInfrastructureConfigurationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -463,7 +463,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -476,7 +476,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<PutComponentPolicyResult> putComponentPolicyAsync(PutComponentPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutComponentPolicyRequest, PutComponentPolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -489,7 +489,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<PutImagePolicyResult> putImagePolicyAsync(PutImagePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutImagePolicyRequest, PutImagePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -502,7 +502,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<PutImageRecipePolicyResult> putImageRecipePolicyAsync(PutImageRecipePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutImageRecipePolicyRequest, PutImageRecipePolicyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -515,7 +515,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<StartImagePipelineExecutionResult> startImagePipelineExecutionAsync(StartImagePipelineExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartImagePipelineExecutionRequest, StartImagePipelineExecutionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -528,7 +528,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -541,7 +541,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -556,7 +556,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             UpdateDistributionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDistributionConfigurationRequest, UpdateDistributionConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -569,7 +569,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     public java.util.concurrent.Future<UpdateImagePipelineResult> updateImagePipelineAsync(UpdateImagePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateImagePipelineRequest, UpdateImagePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -584,7 +584,7 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
             UpdateInfrastructureConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateInfrastructureConfigurationRequest, UpdateInfrastructureConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<CreateConfigurationSetResult> createConfigurationSetAsync(CreateConfigurationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetRequest, CreateConfigurationSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             CreateConfigurationSetEventDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetEventDestinationRequest, CreateConfigurationSetEventDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<CreateDedicatedIpPoolResult> createDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDedicatedIpPoolRequest, CreateDedicatedIpPoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -78,7 +78,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDeliverabilityTestReportRequest, CreateDeliverabilityTestReportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<CreateEmailIdentityResult> createEmailIdentityAsync(CreateEmailIdentityRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEmailIdentityRequest, CreateEmailIdentityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetRequest, DeleteConfigurationSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,7 +119,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             DeleteConfigurationSetEventDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetEventDestinationRequest, DeleteConfigurationSetEventDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -132,7 +132,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<DeleteDedicatedIpPoolResult> deleteDedicatedIpPoolAsync(DeleteDedicatedIpPoolRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDedicatedIpPoolRequest, DeleteDedicatedIpPoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -145,7 +145,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<DeleteEmailIdentityResult> deleteEmailIdentityAsync(DeleteEmailIdentityRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEmailIdentityRequest, DeleteEmailIdentityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<DeleteSuppressedDestinationResult> deleteSuppressedDestinationAsync(DeleteSuppressedDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSuppressedDestinationRequest, DeleteSuppressedDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -171,7 +171,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetAccountResult> getAccountAsync(GetAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccountRequest, GetAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -184,7 +184,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(GetBlacklistReportsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBlacklistReportsRequest, GetBlacklistReportsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -197,7 +197,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetConfigurationSetResult> getConfigurationSetAsync(GetConfigurationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationSetRequest, GetConfigurationSetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -212,7 +212,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             GetConfigurationSetEventDestinationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationSetEventDestinationsRequest, GetConfigurationSetEventDestinationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -225,7 +225,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetDedicatedIpResult> getDedicatedIpAsync(GetDedicatedIpRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDedicatedIpRequest, GetDedicatedIpResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -238,7 +238,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetDedicatedIpsResult> getDedicatedIpsAsync(GetDedicatedIpsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDedicatedIpsRequest, GetDedicatedIpsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -253,7 +253,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             GetDeliverabilityDashboardOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeliverabilityDashboardOptionsRequest, GetDeliverabilityDashboardOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -266,7 +266,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeliverabilityTestReportRequest, GetDeliverabilityTestReportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -281,7 +281,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             GetDomainDeliverabilityCampaignRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainDeliverabilityCampaignRequest, GetDomainDeliverabilityCampaignResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -294,7 +294,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainStatisticsReportRequest, GetDomainStatisticsReportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -307,7 +307,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetEmailIdentityResult> getEmailIdentityAsync(GetEmailIdentityRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEmailIdentityRequest, GetEmailIdentityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -320,7 +320,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSuppressedDestinationRequest, GetSuppressedDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -333,7 +333,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -346,7 +346,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<ListDedicatedIpPoolsResult> listDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDedicatedIpPoolsRequest, ListDedicatedIpPoolsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -359,7 +359,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -374,7 +374,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             ListDomainDeliverabilityCampaignsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainDeliverabilityCampaignsRequest, ListDomainDeliverabilityCampaignsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -387,7 +387,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<ListEmailIdentitiesResult> listEmailIdentitiesAsync(ListEmailIdentitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEmailIdentitiesRequest, ListEmailIdentitiesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -400,7 +400,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSuppressedDestinationsRequest, ListSuppressedDestinationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -413,7 +413,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -428,7 +428,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutAccountDedicatedIpWarmupAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccountDedicatedIpWarmupAttributesRequest, PutAccountDedicatedIpWarmupAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -441,7 +441,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutAccountSendingAttributesResult> putAccountSendingAttributesAsync(PutAccountSendingAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccountSendingAttributesRequest, PutAccountSendingAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -456,7 +456,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutAccountSuppressionAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccountSuppressionAttributesRequest, PutAccountSuppressionAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -471,7 +471,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutConfigurationSetDeliveryOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetDeliveryOptionsRequest, PutConfigurationSetDeliveryOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -486,7 +486,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutConfigurationSetReputationOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetReputationOptionsRequest, PutConfigurationSetReputationOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -501,7 +501,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutConfigurationSetSendingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSendingOptionsRequest, PutConfigurationSetSendingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -516,7 +516,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutConfigurationSetSuppressionOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetSuppressionOptionsRequest, PutConfigurationSetSuppressionOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -531,7 +531,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutConfigurationSetTrackingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutConfigurationSetTrackingOptionsRequest, PutConfigurationSetTrackingOptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -544,7 +544,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutDedicatedIpInPoolResult> putDedicatedIpInPoolAsync(PutDedicatedIpInPoolRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDedicatedIpInPoolRequest, PutDedicatedIpInPoolResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -557,7 +557,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutDedicatedIpWarmupAttributesResult> putDedicatedIpWarmupAttributesAsync(PutDedicatedIpWarmupAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDedicatedIpWarmupAttributesRequest, PutDedicatedIpWarmupAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -572,7 +572,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutDeliverabilityDashboardOptionRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDeliverabilityDashboardOptionRequest, PutDeliverabilityDashboardOptionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -585,7 +585,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutEmailIdentityDkimAttributesResult> putEmailIdentityDkimAttributesAsync(PutEmailIdentityDkimAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityDkimAttributesRequest, PutEmailIdentityDkimAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -600,7 +600,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutEmailIdentityDkimSigningAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityDkimSigningAttributesRequest, PutEmailIdentityDkimSigningAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -615,7 +615,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutEmailIdentityFeedbackAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityFeedbackAttributesRequest, PutEmailIdentityFeedbackAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -630,7 +630,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             PutEmailIdentityMailFromAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityMailFromAttributesRequest, PutEmailIdentityMailFromAttributesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -643,7 +643,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<PutSuppressedDestinationResult> putSuppressedDestinationAsync(PutSuppressedDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<PutSuppressedDestinationRequest, PutSuppressedDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -656,7 +656,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<SendEmailResult> sendEmailAsync(SendEmailRequest request,
             com.amazonaws.handlers.AsyncHandler<SendEmailRequest, SendEmailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -669,7 +669,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -682,7 +682,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -697,7 +697,7 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
             UpdateConfigurationSetEventDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<CreatePipelineResult> createPipelineAsync(CreatePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePipelineRequest, CreatePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<CreatePresetResult> createPresetAsync(CreatePresetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<DeletePresetResult> deletePresetAsync(DeletePresetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePresetRequest, DeletePresetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ListJobsByPipelineResult> listJobsByPipelineAsync(ListJobsByPipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ListJobsByStatusResult> listJobsByStatusAsync(ListJobsByStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobsByStatusRequest, ListJobsByStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -177,7 +177,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ListPresetsResult> listPresetsAsync(ListPresetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPresetsRequest, ListPresetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -213,7 +213,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ReadJobResult> readJobAsync(ReadJobRequest request,
             com.amazonaws.handlers.AsyncHandler<ReadJobRequest, ReadJobResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -226,7 +226,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ReadPipelineResult> readPipelineAsync(ReadPipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<ReadPipelineRequest, ReadPipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -239,7 +239,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<ReadPresetResult> readPresetAsync(ReadPresetRequest request,
             com.amazonaws.handlers.AsyncHandler<ReadPresetRequest, ReadPresetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -254,7 +254,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<TestRoleResult> testRoleAsync(TestRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<TestRoleRequest, TestRoleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -267,7 +267,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<UpdatePipelineResult> updatePipelineAsync(UpdatePipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -280,7 +280,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<UpdatePipelineNotificationsResult> updatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -293,7 +293,7 @@ public class AbstractAmazonElasticTranscoderAsync extends AbstractAmazonElasticT
     public java.util.concurrent.Future<UpdatePipelineStatusResult> updatePipelineStatusAsync(UpdatePipelineStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

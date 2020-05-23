@@ -37,7 +37,7 @@ public class AbstractAWSMigrationHubConfigAsync extends AbstractAWSMigrationHubC
     public java.util.concurrent.Future<CreateHomeRegionControlResult> createHomeRegionControlAsync(CreateHomeRegionControlRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHomeRegionControlRequest, CreateHomeRegionControlResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSMigrationHubConfigAsync extends AbstractAWSMigrationHubC
     public java.util.concurrent.Future<DescribeHomeRegionControlsResult> describeHomeRegionControlsAsync(DescribeHomeRegionControlsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHomeRegionControlsRequest, DescribeHomeRegionControlsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSMigrationHubConfigAsync extends AbstractAWSMigrationHubC
     public java.util.concurrent.Future<GetHomeRegionResult> getHomeRegionAsync(GetHomeRegionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetHomeRegionRequest, GetHomeRegionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

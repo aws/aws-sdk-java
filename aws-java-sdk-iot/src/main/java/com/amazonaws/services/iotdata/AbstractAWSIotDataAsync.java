@@ -37,7 +37,7 @@ public class AbstractAWSIotDataAsync extends AbstractAWSIotData implements AWSIo
     public java.util.concurrent.Future<DeleteThingShadowResult> deleteThingShadowAsync(DeleteThingShadowRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSIotDataAsync extends AbstractAWSIotData implements AWSIo
     public java.util.concurrent.Future<GetThingShadowResult> getThingShadowAsync(GetThingShadowRequest request,
             com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSIotDataAsync extends AbstractAWSIotData implements AWSIo
     public java.util.concurrent.Future<PublishResult> publishAsync(PublishRequest request,
             com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAWSIotDataAsync extends AbstractAWSIotData implements AWSIo
     public java.util.concurrent.Future<UpdateThingShadowResult> updateThingShadowAsync(UpdateThingShadowRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

@@ -37,7 +37,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<AddAttributesToFindingsResult> addAttributesToFindingsAsync(AddAttributesToFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<AddAttributesToFindingsRequest, AddAttributesToFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(CreateAssessmentTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssessmentTargetRequest, CreateAssessmentTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(CreateAssessmentTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateExclusionsPreviewRequest, CreateExclusionsPreviewResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(CreateResourceGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateResourceGroupRequest, CreateResourceGroupResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(DeleteAssessmentRunRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(DeleteAssessmentTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(DescribeAssessmentRunsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRunsRequest, DescribeAssessmentRunsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(DescribeAssessmentTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTargetsRequest, DescribeAssessmentTargetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(DescribeAssessmentTemplatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTemplatesRequest, DescribeAssessmentTemplatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeCrossAccountAccessRoleResult> describeCrossAccountAccessRoleAsync(DescribeCrossAccountAccessRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCrossAccountAccessRoleRequest, DescribeCrossAccountAccessRoleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeExclusionsRequest, DescribeExclusionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(DescribeFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFindingsRequest, DescribeFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(DescribeResourceGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupsRequest, DescribeResourceGroupsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(DescribeRulesPackagesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRulesPackagesRequest, DescribeRulesPackagesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest request,
             com.amazonaws.handlers.AsyncHandler<GetExclusionsPreviewRequest, GetExclusionsPreviewResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(GetTelemetryMetadataRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTelemetryMetadataRequest, GetTelemetryMetadataResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentRunAgentsRequest, ListAssessmentRunAgentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(ListAssessmentRunsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentRunsRequest, ListAssessmentRunsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(ListAssessmentTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentTargetsRequest, ListAssessmentTargetsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(ListAssessmentTemplatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssessmentTemplatesRequest, ListAssessmentTemplatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(ListEventSubscriptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListExclusionsRequest, ListExclusionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(ListFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListRulesPackagesResult> listRulesPackagesAsync(ListRulesPackagesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRulesPackagesRequest, ListRulesPackagesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(PreviewAgentsRequest request,
             com.amazonaws.handlers.AsyncHandler<PreviewAgentsRequest, PreviewAgentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -414,7 +414,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<RegisterCrossAccountAccessRoleResult> registerCrossAccountAccessRoleAsync(RegisterCrossAccountAccessRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterCrossAccountAccessRoleRequest, RegisterCrossAccountAccessRoleResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -427,7 +427,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<RemoveAttributesFromFindingsResult> removeAttributesFromFindingsAsync(RemoveAttributesFromFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveAttributesFromFindingsRequest, RemoveAttributesFromFindingsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -440,7 +440,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(SetTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<SetTagsForResourceRequest, SetTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -453,7 +453,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(StartAssessmentRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StartAssessmentRunRequest, StartAssessmentRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -466,7 +466,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(StopAssessmentRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -479,7 +479,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(SubscribeToEventRequest request,
             com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -492,7 +492,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(UnsubscribeFromEventRequest request,
             com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -505,7 +505,7 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(UpdateAssessmentTargetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

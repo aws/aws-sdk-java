@@ -37,7 +37,7 @@ public class AbstractAmazonCloudSearchDomainAsync extends AbstractAmazonCloudSea
     public java.util.concurrent.Future<SearchResult> searchAsync(SearchRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchRequest, SearchResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonCloudSearchDomainAsync extends AbstractAmazonCloudSea
     public java.util.concurrent.Future<SuggestResult> suggestAsync(SuggestRequest request,
             com.amazonaws.handlers.AsyncHandler<SuggestRequest, SuggestResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonCloudSearchDomainAsync extends AbstractAmazonCloudSea
     public java.util.concurrent.Future<UploadDocumentsResult> uploadDocumentsAsync(UploadDocumentsRequest request,
             com.amazonaws.handlers.AsyncHandler<UploadDocumentsRequest, UploadDocumentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

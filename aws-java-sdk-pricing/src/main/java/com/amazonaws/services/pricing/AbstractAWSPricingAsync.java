@@ -37,7 +37,7 @@ public class AbstractAWSPricingAsync extends AbstractAWSPricing implements AWSPr
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(DescribeServicesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAWSPricingAsync extends AbstractAWSPricing implements AWSPr
     public java.util.concurrent.Future<GetAttributeValuesResult> getAttributeValuesAsync(GetAttributeValuesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAttributeValuesRequest, GetAttributeValuesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAWSPricingAsync extends AbstractAWSPricing implements AWSPr
     public java.util.concurrent.Future<GetProductsResult> getProductsAsync(GetProductsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetProductsRequest, GetProductsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

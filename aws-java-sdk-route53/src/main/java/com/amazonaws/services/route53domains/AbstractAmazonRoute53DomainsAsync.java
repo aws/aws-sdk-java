@@ -39,7 +39,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
             AcceptDomainTransferFromAnotherAwsAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<AcceptDomainTransferFromAnotherAwsAccountRequest, AcceptDomainTransferFromAnotherAwsAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
             CancelDomainTransferToAnotherAwsAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelDomainTransferToAnotherAwsAccountRequest, CancelDomainTransferToAnotherAwsAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -67,7 +67,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<CheckDomainAvailabilityResult> checkDomainAvailabilityAsync(CheckDomainAvailabilityRequest request,
             com.amazonaws.handlers.AsyncHandler<CheckDomainAvailabilityRequest, CheckDomainAvailabilityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(CheckDomainTransferabilityRequest request,
             com.amazonaws.handlers.AsyncHandler<CheckDomainTransferabilityRequest, CheckDomainTransferabilityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -93,7 +93,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsForDomainRequest, DeleteTagsForDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -106,7 +106,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<DisableDomainAutoRenewResult> disableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableDomainAutoRenewRequest, DisableDomainAutoRenewResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -119,7 +119,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(DisableDomainTransferLockRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableDomainTransferLockRequest, DisableDomainTransferLockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -132,7 +132,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<EnableDomainAutoRenewResult> enableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableDomainAutoRenewRequest, EnableDomainAutoRenewResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -145,7 +145,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(EnableDomainTransferLockRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -158,7 +158,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(GetContactReachabilityStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetContactReachabilityStatusRequest, GetContactReachabilityStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -171,7 +171,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<GetDomainDetailResult> getDomainDetailAsync(GetDomainDetailRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainDetailRequest, GetDomainDetailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -184,7 +184,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<GetDomainSuggestionsResult> getDomainSuggestionsAsync(GetDomainSuggestionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDomainSuggestionsRequest, GetDomainSuggestionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -197,7 +197,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<GetOperationDetailResult> getOperationDetailAsync(GetOperationDetailRequest request,
             com.amazonaws.handlers.AsyncHandler<GetOperationDetailRequest, GetOperationDetailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -210,7 +210,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -246,7 +246,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(ListOperationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -282,7 +282,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<ListTagsForDomainResult> listTagsForDomainAsync(ListTagsForDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForDomainRequest, ListTagsForDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -295,7 +295,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(RegisterDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
             RejectDomainTransferFromAnotherAwsAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectDomainTransferFromAnotherAwsAccountRequest, RejectDomainTransferFromAnotherAwsAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<RenewDomainResult> renewDomainAsync(RenewDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<RenewDomainRequest, RenewDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(ResendContactReachabilityEmailRequest request,
             com.amazonaws.handlers.AsyncHandler<ResendContactReachabilityEmailRequest, ResendContactReachabilityEmailResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<RetrieveDomainAuthCodeResult> retrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest request,
             com.amazonaws.handlers.AsyncHandler<RetrieveDomainAuthCodeRequest, RetrieveDomainAuthCodeResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<TransferDomainResult> transferDomainAsync(TransferDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<TransferDomainRequest, TransferDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -377,7 +377,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
             TransferDomainToAnotherAwsAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<TransferDomainToAnotherAwsAccountRequest, TransferDomainToAnotherAwsAccountResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -390,7 +390,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<UpdateDomainContactResult> updateDomainContactAsync(UpdateDomainContactRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainContactRequest, UpdateDomainContactResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -403,7 +403,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<UpdateDomainContactPrivacyResult> updateDomainContactPrivacyAsync(UpdateDomainContactPrivacyRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainContactPrivacyRequest, UpdateDomainContactPrivacyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -416,7 +416,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<UpdateDomainNameserversResult> updateDomainNameserversAsync(UpdateDomainNameserversRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainNameserversRequest, UpdateDomainNameserversResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -429,7 +429,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<UpdateTagsForDomainResult> updateTagsForDomainAsync(UpdateTagsForDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTagsForDomainRequest, UpdateTagsForDomainResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -442,7 +442,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     public java.util.concurrent.Future<ViewBillingResult> viewBillingAsync(ViewBillingRequest request,
             com.amazonaws.handlers.AsyncHandler<ViewBillingRequest, ViewBillingResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

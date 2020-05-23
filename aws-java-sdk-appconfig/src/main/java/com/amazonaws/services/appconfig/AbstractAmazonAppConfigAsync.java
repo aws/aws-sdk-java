@@ -37,7 +37,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<CreateConfigurationProfileResult> createConfigurationProfileAsync(CreateConfigurationProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateConfigurationProfileRequest, CreateConfigurationProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<CreateDeploymentStrategyResult> createDeploymentStrategyAsync(CreateDeploymentStrategyRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDeploymentStrategyRequest, CreateDeploymentStrategyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<CreateEnvironmentResult> createEnvironmentAsync(CreateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEnvironmentRequest, CreateEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -89,7 +89,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -102,7 +102,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<DeleteConfigurationProfileResult> deleteConfigurationProfileAsync(DeleteConfigurationProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationProfileRequest, DeleteConfigurationProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<DeleteDeploymentStrategyResult> deleteDeploymentStrategyAsync(DeleteDeploymentStrategyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDeploymentStrategyRequest, DeleteDeploymentStrategyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -128,7 +128,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentRequest, DeleteEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationRequest, GetConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<GetConfigurationProfileResult> getConfigurationProfileAsync(GetConfigurationProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationProfileRequest, GetConfigurationProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -180,7 +180,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -193,7 +193,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<GetDeploymentStrategyResult> getDeploymentStrategyAsync(GetDeploymentStrategyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentStrategyRequest, GetDeploymentStrategyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -206,7 +206,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<GetEnvironmentResult> getEnvironmentAsync(GetEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEnvironmentRequest, GetEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -219,7 +219,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -232,7 +232,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ListConfigurationProfilesResult> listConfigurationProfilesAsync(ListConfigurationProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationProfilesRequest, ListConfigurationProfilesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -245,7 +245,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ListDeploymentStrategiesResult> listDeploymentStrategiesAsync(ListDeploymentStrategiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentStrategiesRequest, ListDeploymentStrategiesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -258,7 +258,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ListDeploymentsResult> listDeploymentsAsync(ListDeploymentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeploymentsRequest, ListDeploymentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -271,7 +271,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -297,7 +297,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<StartDeploymentResult> startDeploymentAsync(StartDeploymentRequest request,
             com.amazonaws.handlers.AsyncHandler<StartDeploymentRequest, StartDeploymentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -310,7 +310,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<StopDeploymentResult> stopDeploymentAsync(StopDeploymentRequest request,
             com.amazonaws.handlers.AsyncHandler<StopDeploymentRequest, StopDeploymentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -323,7 +323,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -336,7 +336,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -349,7 +349,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -362,7 +362,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<UpdateConfigurationProfileResult> updateConfigurationProfileAsync(UpdateConfigurationProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationProfileRequest, UpdateConfigurationProfileResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -375,7 +375,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<UpdateDeploymentStrategyResult> updateDeploymentStrategyAsync(UpdateDeploymentStrategyRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDeploymentStrategyRequest, UpdateDeploymentStrategyResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -388,7 +388,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -401,7 +401,7 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     public java.util.concurrent.Future<ValidateConfigurationResult> validateConfigurationAsync(ValidateConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<ValidateConfigurationRequest, ValidateConfigurationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

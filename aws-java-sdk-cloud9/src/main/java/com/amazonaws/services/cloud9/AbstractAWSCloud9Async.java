@@ -36,7 +36,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<CreateEnvironmentEC2Result> createEnvironmentEC2Async(CreateEnvironmentEC2Request request,
             com.amazonaws.handlers.AsyncHandler<CreateEnvironmentEC2Request, CreateEnvironmentEC2Result> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<CreateEnvironmentMembershipResult> createEnvironmentMembershipAsync(CreateEnvironmentMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEnvironmentMembershipRequest, CreateEnvironmentMembershipResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentRequest, DeleteEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<DeleteEnvironmentMembershipResult> deleteEnvironmentMembershipAsync(DeleteEnvironmentMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentMembershipRequest, DeleteEnvironmentMembershipResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<DescribeEnvironmentMembershipsResult> describeEnvironmentMembershipsAsync(DescribeEnvironmentMembershipsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentMembershipsRequest, DescribeEnvironmentMembershipsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -101,7 +101,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<DescribeEnvironmentStatusResult> describeEnvironmentStatusAsync(DescribeEnvironmentStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentStatusRequest, DescribeEnvironmentStatusResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -114,7 +114,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<DescribeEnvironmentsResult> describeEnvironmentsAsync(DescribeEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEnvironmentsRequest, DescribeEnvironmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -127,7 +127,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -140,7 +140,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -153,7 +153,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -166,7 +166,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -179,7 +179,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -192,7 +192,7 @@ public class AbstractAWSCloud9Async extends AbstractAWSCloud9 implements AWSClou
     public java.util.concurrent.Future<UpdateEnvironmentMembershipResult> updateEnvironmentMembershipAsync(UpdateEnvironmentMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentMembershipRequest, UpdateEnvironmentMembershipResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

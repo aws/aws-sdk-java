@@ -36,7 +36,7 @@ public class AbstractAWSSSOAsync extends AbstractAWSSSO implements AWSSSOAsync {
     public java.util.concurrent.Future<GetRoleCredentialsResult> getRoleCredentialsAsync(GetRoleCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRoleCredentialsRequest, GetRoleCredentialsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class AbstractAWSSSOAsync extends AbstractAWSSSO implements AWSSSOAsync {
     public java.util.concurrent.Future<ListAccountRolesResult> listAccountRolesAsync(ListAccountRolesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccountRolesRequest, ListAccountRolesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class AbstractAWSSSOAsync extends AbstractAWSSSO implements AWSSSOAsync {
     public java.util.concurrent.Future<ListAccountsResult> listAccountsAsync(ListAccountsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccountsRequest, ListAccountsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -75,7 +75,7 @@ public class AbstractAWSSSOAsync extends AbstractAWSSSO implements AWSSSOAsync {
     public java.util.concurrent.Future<LogoutResult> logoutAsync(LogoutRequest request,
             com.amazonaws.handlers.AsyncHandler<LogoutRequest, LogoutResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

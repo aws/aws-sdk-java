@@ -38,7 +38,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
             DescribeAffectedAccountsForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAffectedAccountsForOrganizationRequest, DescribeAffectedAccountsForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -51,7 +51,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesRequest, DescribeAffectedEntitiesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -66,7 +66,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
             DescribeAffectedEntitiesForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesForOrganizationRequest, DescribeAffectedEntitiesForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -79,7 +79,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeEntityAggregatesResult> describeEntityAggregatesAsync(DescribeEntityAggregatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEntityAggregatesRequest, DescribeEntityAggregatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -92,7 +92,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeEventAggregatesResult> describeEventAggregatesAsync(DescribeEventAggregatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventAggregatesRequest, DescribeEventAggregatesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -105,7 +105,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeEventDetailsResult> describeEventDetailsAsync(DescribeEventDetailsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventDetailsRequest, DescribeEventDetailsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -120,7 +120,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
             DescribeEventDetailsForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventDetailsForOrganizationRequest, DescribeEventDetailsForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -133,7 +133,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeEventTypesResult> describeEventTypesAsync(DescribeEventTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventTypesRequest, DescribeEventTypesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -146,7 +146,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -159,7 +159,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     public java.util.concurrent.Future<DescribeEventsForOrganizationResult> describeEventsForOrganizationAsync(DescribeEventsForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsForOrganizationRequest, DescribeEventsForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -174,7 +174,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
             DescribeHealthServiceStatusForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHealthServiceStatusForOrganizationRequest, DescribeHealthServiceStatusForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -189,7 +189,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
             DisableHealthServiceAccessForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableHealthServiceAccessForOrganizationRequest, DisableHealthServiceAccessForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -204,7 +204,7 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
             EnableHealthServiceAccessForOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableHealthServiceAccessForOrganizationRequest, EnableHealthServiceAccessForOrganizationResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

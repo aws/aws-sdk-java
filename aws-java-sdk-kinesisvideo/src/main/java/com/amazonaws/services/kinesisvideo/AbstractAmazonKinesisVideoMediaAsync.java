@@ -37,7 +37,7 @@ public class AbstractAmazonKinesisVideoMediaAsync extends AbstractAmazonKinesisV
     public java.util.concurrent.Future<GetMediaResult> getMediaAsync(GetMediaRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMediaRequest, GetMediaResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }

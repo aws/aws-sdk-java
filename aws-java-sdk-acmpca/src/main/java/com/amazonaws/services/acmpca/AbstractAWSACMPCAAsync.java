@@ -36,7 +36,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<CreateCertificateAuthorityResult> createCertificateAuthorityAsync(CreateCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCertificateAuthorityRequest, CreateCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -51,7 +51,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
             CreateCertificateAuthorityAuditReportRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCertificateAuthorityAuditReportRequest, CreateCertificateAuthorityAuditReportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -77,7 +77,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<DeleteCertificateAuthorityResult> deleteCertificateAuthorityAsync(DeleteCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -90,7 +90,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -103,7 +103,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<DescribeCertificateAuthorityResult> describeCertificateAuthorityAsync(DescribeCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCertificateAuthorityRequest, DescribeCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -118,7 +118,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
             DescribeCertificateAuthorityAuditReportRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCertificateAuthorityAuditReportRequest, DescribeCertificateAuthorityAuditReportResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -131,7 +131,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<GetCertificateResult> getCertificateAsync(GetCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCertificateRequest, GetCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -146,7 +146,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
             GetCertificateAuthorityCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCertificateAuthorityCertificateRequest, GetCertificateAuthorityCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -159,7 +159,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<GetCertificateAuthorityCsrResult> getCertificateAuthorityCsrAsync(GetCertificateAuthorityCsrRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCertificateAuthorityCsrRequest, GetCertificateAuthorityCsrResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -174,7 +174,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
             ImportCertificateAuthorityCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportCertificateAuthorityCertificateRequest, ImportCertificateAuthorityCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -187,7 +187,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<IssueCertificateResult> issueCertificateAsync(IssueCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<IssueCertificateRequest, IssueCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -200,7 +200,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<ListCertificateAuthoritiesResult> listCertificateAuthoritiesAsync(ListCertificateAuthoritiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -213,7 +213,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -226,7 +226,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -239,7 +239,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<RestoreCertificateAuthorityResult> restoreCertificateAuthorityAsync(RestoreCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreCertificateAuthorityRequest, RestoreCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -252,7 +252,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<RevokeCertificateResult> revokeCertificateAsync(RevokeCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeCertificateRequest, RevokeCertificateResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -265,7 +265,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<TagCertificateAuthorityResult> tagCertificateAuthorityAsync(TagCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<TagCertificateAuthorityRequest, TagCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -278,7 +278,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<UntagCertificateAuthorityResult> untagCertificateAuthorityAsync(UntagCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagCertificateAuthorityRequest, UntagCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -291,7 +291,7 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     public java.util.concurrent.Future<UpdateCertificateAuthorityResult> updateCertificateAuthorityAsync(UpdateCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCertificateAuthorityRequest, UpdateCertificateAuthorityResult> asyncHandler) {
 
-        throw new java.lang.UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
 }
