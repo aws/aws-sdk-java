@@ -23,7 +23,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.worklink.AmazonWorkLink}. Use of the builder is preferred over using
  * constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonWorkLinkClientBuilder extends AwsSyncClientBuilder<AmazonWorkLinkClientBuilder, AmazonWorkLink> {

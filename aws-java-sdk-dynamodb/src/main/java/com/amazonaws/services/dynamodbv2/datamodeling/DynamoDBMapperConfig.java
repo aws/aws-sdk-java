@@ -928,7 +928,7 @@ public class DynamoDBMapperConfig {
      * Legacy constructor, using default PaginationLoadingStrategy
      * @deprecated in favor of the fluent {@link Builder}
      * @see DynamoDBMapperConfig#builder()
-     **/
+     */
     @Deprecated
     public DynamoDBMapperConfig(
             SaveBehavior saveBehavior,

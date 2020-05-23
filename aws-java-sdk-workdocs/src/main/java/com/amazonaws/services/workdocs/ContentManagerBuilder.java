@@ -18,7 +18,7 @@ import com.amazonaws.annotation.NotThreadSafe;
 /**
  * Fluent builder for {@link com.amazonaws.services.workdocs.ContentManager}.
  * Use of the builder is required instead of constructors of the client class.
- **/
+ */
 @NotThreadSafe
 public class ContentManagerBuilder {
     private AmazonWorkDocs workDocsClient;

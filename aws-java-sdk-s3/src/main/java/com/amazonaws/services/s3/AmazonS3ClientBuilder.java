@@ -24,7 +24,7 @@ import com.amazonaws.regions.AwsRegionProvider;
 /**
  * Fluent builder for AmazonS3. Capable of building synchronous and asynchronous clients. Use of the
  * builder is preferred over using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 public final class AmazonS3ClientBuilder extends AmazonS3Builder<AmazonS3ClientBuilder, AmazonS3> {
 

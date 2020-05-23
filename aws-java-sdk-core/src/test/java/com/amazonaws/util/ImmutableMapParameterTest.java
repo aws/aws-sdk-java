@@ -106,7 +106,7 @@ public class ImmutableMapParameterTest {
 
 		assertEquals(3, builtMap.size());
 		
-		/** Unsupported methods **/
+		/** Unsupported methods */
 		try {
 			builtMap.clear();
 			fail("UnsupportedOperationException expected.");

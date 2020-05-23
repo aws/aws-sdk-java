@@ -151,7 +151,7 @@ public class ClientConfiguration {
      */
     private int maxErrorRetry = -1;
 
-    /** The retry policy upon failed requests. **/
+    /** The retry policy upon failed requests. */
     private RetryPolicy retryPolicy = DEFAULT_RETRY_POLICY;
 
     /** Optionally specifies the local address to bind to */

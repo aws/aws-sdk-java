@@ -94,7 +94,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
+     */
     public CreateSecurityGroupRequest(String groupName, String description) {
         setGroupName(groupName);
         setDescription(description);
@@ -124,7 +124,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
+     */
 
     public void setDescription(String description) {
         this.description = description;
@@ -153,7 +153,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *         </p>
      *         <p>
      *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
+     */
 
     public String getDescription() {
         return this.description;
@@ -215,7 +215,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        </p>
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
+     */
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
@@ -244,7 +244,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *         </p>
      *         <p>
      *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
+     */
 
     public String getGroupName() {
         return this.groupName;

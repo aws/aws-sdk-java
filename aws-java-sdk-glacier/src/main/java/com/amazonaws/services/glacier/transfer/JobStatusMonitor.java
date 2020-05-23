@@ -125,7 +125,7 @@ public class JobStatusMonitor {
         }
     }
 
-    /** Poll the SQS queue to see if we've received a message about the job completion yet. **/
+    /** Poll the SQS queue to see if we've received a message about the job completion yet. */
     public void waitForJobToComplete(String jobId) {
         while (true) {
             List<Message> messages = sqs.receiveMessage(new ReceiveMessageRequest(queueUrl)).getMessages();

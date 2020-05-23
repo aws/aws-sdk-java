@@ -29,7 +29,7 @@ import java.net.URL;
  */
 public class PresignedUrlDownloadRequest extends AmazonWebServiceRequest implements Serializable {
 
-    /** Required member indicating the endpoint to send the request **/
+    /** Required member indicating the endpoint to send the request */
     private URL presignedUrl;
 
     /** Optional member indicating the byte range of data to retrieve */

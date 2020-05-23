@@ -245,7 +245,7 @@ public class AmazonHttpClient {
      * Used to generate UUID's for client transaction id. This gives a higher probability of id
      * clashes but is more performant then using {@link UUID#randomUUID()} which uses SecureRandom
      * internally.
-     **/
+     */
     private final Random random = new Random();
 
     /**

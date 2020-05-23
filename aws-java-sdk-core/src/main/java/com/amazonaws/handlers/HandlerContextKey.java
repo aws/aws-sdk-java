@@ -47,7 +47,7 @@ public class HandlerContextKey<T> {
 
     /**
      * The key under which the request credentials are set.
-     **/
+     */
     public static final HandlerContextKey<AWSCredentials> AWS_CREDENTIALS = new HandlerContextKey<AWSCredentials>("AWSCredentials");
 
     /**

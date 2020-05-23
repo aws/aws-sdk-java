@@ -26,7 +26,7 @@ import java.io.IOException;
  */
 public class PredefinedRetryPolicies {
 
-    /** No retry policy **/
+    /** No retry policy */
     public static final RetryPolicy NO_RETRY_POLICY = new RetryPolicy(
             RetryPolicy.RetryCondition.NO_RETRY_CONDITION,
             RetryPolicy.BackoffStrategy.NO_DELAY,
@@ -35,10 +35,10 @@ public class PredefinedRetryPolicies {
 
     /* SDK default */
 
-    /** SDK default max retry count for legacy retry mode **/
+    /** SDK default max retry count for legacy retry mode */
     public static final int DEFAULT_MAX_ERROR_RETRY = 3;
 
-    /** SDK default max retry count for standard retry mode **/
+    /** SDK default max retry count for standard retry mode */
     public static final int DEFAULT_MAX_ERROR_RETRY_STANDARD_MODE = 2;
 
     /**
@@ -49,10 +49,10 @@ public class PredefinedRetryPolicies {
 
     /* Default for DynamoDB client */
 
-    /** Default max retry count for DynamoDB client **/
+    /** Default max retry count for DynamoDB client */
     public static final int DYNAMODB_DEFAULT_MAX_ERROR_RETRY = 10;
 
-    /** Default policy for DynamoDB client **/
+    /** Default policy for DynamoDB client */
     public static final RetryPolicy DYNAMODB_DEFAULT;
 
     /* Reusable retry policy components */

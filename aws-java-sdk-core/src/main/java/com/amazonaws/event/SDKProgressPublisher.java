@@ -241,7 +241,7 @@ public class SDKProgressPublisher {
      * Used to avoid creating the extra thread until absolutely necessary.
      */
     private static final class LazyHolder {
-        /** A single thread pool for executing all ProgressListener callbacks. **/
+        /** A single thread pool for executing all ProgressListener callbacks. */
         private static final ExecutorService executor = createNewExecutorService();
 
         /**

@@ -23,7 +23,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.inspector.AmazonInspector}. Use of the builder is preferred over
  * using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonInspectorClientBuilder extends AwsSyncClientBuilder<AmazonInspectorClientBuilder, AmazonInspector> {

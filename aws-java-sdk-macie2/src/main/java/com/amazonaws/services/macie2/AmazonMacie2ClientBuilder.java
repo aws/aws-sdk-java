@@ -23,7 +23,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.macie2.AmazonMacie2}. Use of the builder is preferred over using
  * constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonMacie2ClientBuilder extends AwsSyncClientBuilder<AmazonMacie2ClientBuilder, AmazonMacie2> {

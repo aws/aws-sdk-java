@@ -44,7 +44,7 @@ public class EC2MetadataClient {
 
     private static final Log log = LogFactory.getLog(EC2MetadataClient.class);
 
-    /** User-Agent for requests to the metadata service **/
+    /** User-Agent for requests to the metadata service */
     private static final String USER_AGENT = String.format("aws-sdk-java/%s", VersionInfoUtils.getVersion());
 
     /**

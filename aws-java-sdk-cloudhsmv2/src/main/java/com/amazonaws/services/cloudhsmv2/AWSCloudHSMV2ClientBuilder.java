@@ -23,7 +23,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.cloudhsmv2.AWSCloudHSMV2}. Use of the builder is preferred over
  * using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSCloudHSMV2ClientBuilder extends AwsSyncClientBuilder<AWSCloudHSMV2ClientBuilder, AWSCloudHSMV2> {

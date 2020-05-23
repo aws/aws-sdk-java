@@ -116,7 +116,7 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
      *        </p>
      *        <p>
      *        Pattern: ARN:[-a-zA-Z0-9:/]
-     **/
+     */
 
     public void setChangeSetId(String changeSetId) {
         this.changeSetId = changeSetId;
@@ -139,7 +139,7 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
      *         </p>
      *         <p>
      *         Pattern: ARN:[-a-zA-Z0-9:/]
-     **/
+     */
 
     public String getChangeSetId() {
         return this.changeSetId;

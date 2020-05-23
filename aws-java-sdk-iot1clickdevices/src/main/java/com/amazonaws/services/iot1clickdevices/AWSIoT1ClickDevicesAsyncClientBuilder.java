@@ -22,7 +22,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.iot1clickdevices.AWSIoT1ClickDevicesAsync}. Use of the builder is
  * preferred over using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSIoT1ClickDevicesAsyncClientBuilder extends AwsAsyncClientBuilder<AWSIoT1ClickDevicesAsyncClientBuilder, AWSIoT1ClickDevicesAsync> {

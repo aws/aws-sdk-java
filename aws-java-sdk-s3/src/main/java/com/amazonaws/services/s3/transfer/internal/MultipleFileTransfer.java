@@ -29,7 +29,7 @@ public abstract class MultipleFileTransfer<T extends Transfer> extends AbstractT
 
     protected final Collection<? extends T> subTransfers;
 
-    /** Whether any of the sub-transfers has started. **/
+    /** Whether any of the sub-transfers has started. */
     private AtomicBoolean subTransferStarted = new AtomicBoolean(false);
 
     MultipleFileTransfer(String description, TransferProgress transferProgress,

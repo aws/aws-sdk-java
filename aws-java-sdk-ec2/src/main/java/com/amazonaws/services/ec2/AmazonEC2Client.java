@@ -25013,7 +25013,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
-     **/
+     */
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
@@ -25022,7 +25022,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
-     **/
+     */
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
 
@@ -25034,7 +25034,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * Invoke with no authentication. Credentials are not required and any credentials set on the client or request will
      * be ignored for this operation.
-     **/
+     */
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
@@ -25044,7 +25044,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * Invoke the request using the http client. Assumes credentials (or lack thereof) have been configured in the
      * ExecutionContext beforehand.
-     **/
+     */
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
 

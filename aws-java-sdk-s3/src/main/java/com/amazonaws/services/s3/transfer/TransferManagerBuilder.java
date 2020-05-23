@@ -32,7 +32,7 @@ import java.util.concurrent.ExecutorService;
  *
  * Note that if no {@link AmazonS3} is provided via {@link #withS3Client(AmazonS3)}} or {@link #setS3Client(AmazonS3)}
  * a default client will be created using {@link DefaultAwsRegionProviderChain} and {@link DefaultAWSCredentialsProviderChain}.
- **/
+ */
 @NotThreadSafe
 public final class TransferManagerBuilder {
 

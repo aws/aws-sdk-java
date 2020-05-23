@@ -172,7 +172,7 @@ public class ClientHandlerImpl extends ClientHandler {
     /**
      * Normal invoke with authentication. Credentials are required and may be overriden at the
      * request level.
-     **/
+     */
     private <Output, Input> Response<Output> invoke(Request<Input> request,
                                                     RequestConfig requestConfig,
                                                     ExecutionContext executionContext,
@@ -189,7 +189,7 @@ public class ClientHandlerImpl extends ClientHandler {
     /**
      * Invoke the request using the http client. Assumes credentials (or lack thereof) have been
      * configured in the ExecutionContext beforehand.
-     **/
+     */
     private <Output, Input> Response<Output> doInvoke(Request<Input> request,
                                                       RequestConfig requestConfig,
                                                       ExecutionContext executionContext,

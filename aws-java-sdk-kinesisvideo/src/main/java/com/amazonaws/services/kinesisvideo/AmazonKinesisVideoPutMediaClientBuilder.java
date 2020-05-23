@@ -26,7 +26,7 @@ import java.net.URI;
 /**
  * Fluent builder for {@link AmazonKinesisVideoPutMedia}. An instance of this builder may be obtained via {@link
  * AmazonKinesisVideoPutMediaClient#builder()} or via {@link AmazonKinesisVideoPutMediaClientBuilder#standard()}.
- **/
+ */
 public final class AmazonKinesisVideoPutMediaClientBuilder {
 
     /**

@@ -14,7 +14,7 @@ import com.amazonaws.internal.config.InternalConfig;
 /**
  * Fluent builder for {@link ${metadata.packageName + "." + metadata.asyncInterface}}. Use of the
  * builder is preferred over using constructors of the client class.
-**/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class ${metadata.asyncClientBuilderClassName}

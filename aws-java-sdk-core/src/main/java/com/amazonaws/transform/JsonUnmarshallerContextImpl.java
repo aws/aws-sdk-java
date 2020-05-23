@@ -30,10 +30,10 @@ import java.util.Map;
 import java.util.Stack;
 
 public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
-    /** The current JsonToken that the private JsonParser is currently pointing to. **/
+    /** The current JsonToken that the private JsonParser is currently pointing to. */
     private JsonToken currentToken;
 
-    /** A cache of the next token if it has been peeked ahead. **/
+    /** A cache of the next token if it has been peeked ahead. */
     private JsonToken nextToken;
 
     private final JsonParser jsonParser;

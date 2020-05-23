@@ -99,7 +99,7 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      *        <p>
      *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
      *        ._-:/()#,@[]+=;{}!$
-     **/
+     */
 
     public void setDescription(String description) {
         this.description = description;
@@ -118,7 +118,7 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      *         <p>
      *         Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
      *         ._-:/()#,@[]+=;{}!$
-     **/
+     */
 
     public String getDescription() {
         return this.description;

@@ -802,22 +802,22 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          */
         protected abstract void executeLowLevelRequest();
 
-        /** Get the SaveBehavior used locally for this save operation. **/
+        /** Get the SaveBehavior used locally for this save operation. */
         protected SaveBehavior getLocalSaveBehavior() {
             return saveConfig.getSaveBehavior();
         }
 
-        /** Get the table name **/
+        /** Get the table name */
         protected String getTableName() {
             return tableName;
         }
 
-        /** Get the map of all the specified primamry keys of the saved object. **/
+        /** Get the map of all the specified primamry keys of the saved object. */
         protected Map<String, AttributeValue> getPrimaryKeyAttributeValues() {
             return primaryKeys;
         }
 
-        /** Get the map of AttributeValueUpdate on each modeled attribute. **/
+        /** Get the map of AttributeValueUpdate on each modeled attribute. */
         protected Map<String, AttributeValueUpdate> getAttributeValueUpdates() {
             return updateValues;
         }
@@ -834,7 +834,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                     userProvidedConditionOperator);
         }
 
-        /** Get the list of all the necessary in-memory update on the object. **/
+        /** Get the list of all the necessary in-memory update on the object. */
         protected List<ValueUpdate> getInMemoryUpdates() {
             return inMemoryUpdates;
         }

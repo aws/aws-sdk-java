@@ -21,7 +21,7 @@ import javax.annotation.Generated;
 /**
  * Fluent builder for {@link ${metadata.packageName + "." + metadata.syncInterface}}.
  * @see ${metadata.packageName + "." + metadata.syncInterface}#builder
-**/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class ${metadata.syncClientBuilderClassName}

@@ -22,7 +22,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.route53.AmazonRoute53Async}. Use of the builder is preferred over
  * using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonRoute53AsyncClientBuilder extends AwsAsyncClientBuilder<AmazonRoute53AsyncClientBuilder, AmazonRoute53Async> {

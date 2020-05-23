@@ -193,7 +193,7 @@ public class ImmutableMapParameter<K, V> implements Map<K, V> {
         return new ImmutableMapParameter<K, V>(map);
     }
 
-    /** Inherited methods **/
+    /** Inherited methods */
 
     public boolean containsKey(Object key) {
         return map.containsKey(key);
@@ -227,7 +227,7 @@ public class ImmutableMapParameter<K, V> implements Map<K, V> {
         return map.values();
     }
 
-    /** Unsupported methods **/
+    /** Unsupported methods */
 
     public void clear() {
         throw new UnsupportedOperationException(UNMODIFIABLE_MESSAGE);

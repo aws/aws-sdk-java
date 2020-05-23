@@ -22,7 +22,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.s3control.AWSS3ControlAsync}. Use of the builder is preferred over
  * using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSS3ControlAsyncClientBuilder extends AwsAsyncClientBuilder<AWSS3ControlAsyncClientBuilder, AWSS3ControlAsync> {

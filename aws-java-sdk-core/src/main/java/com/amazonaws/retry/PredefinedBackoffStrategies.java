@@ -29,12 +29,12 @@ public class PredefinedBackoffStrategies {
 
     /**
      * Default base sleep time (milliseconds) for non-throttled exceptions.
-     **/
+     */
     private static final int SDK_DEFAULT_BASE_DELAY = 100;
 
     /**
      * Default base sleep time (milliseconds) for throttled exceptions.
-     **/
+     */
     static final int SDK_DEFAULT_THROTTLED_BASE_DELAY = 500;
 
     /**
@@ -44,7 +44,7 @@ public class PredefinedBackoffStrategies {
 
     /**
      * Default base sleep time for DynamoDB.
-     **/
+     */
     static final int DYNAMODB_DEFAULT_BASE_DELAY = 25;
 
     /**
@@ -52,7 +52,7 @@ public class PredefinedBackoffStrategies {
      *
      * NOTE: If the value is greater than 30, there can be integer overflow
      * issues during delay calculation.
-     **/
+     */
     private static final int MAX_RETRIES = 30;
 
     public static class FullJitterBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
@@ -119,7 +119,7 @@ public class PredefinedBackoffStrategies {
 
     /**
      * A private class that implements the default back-off strategy.
-     **/
+     */
     public static class SDKDefaultBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
 
         private final BackoffStrategy fullJitterBackoffStrategy;

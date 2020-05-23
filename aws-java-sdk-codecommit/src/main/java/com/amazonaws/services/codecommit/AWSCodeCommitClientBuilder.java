@@ -23,7 +23,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 /**
  * Fluent builder for {@link com.amazonaws.services.codecommit.AWSCodeCommit}. Use of the builder is preferred over
  * using constructors of the client class.
- **/
+ */
 @NotThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AWSCodeCommitClientBuilder extends AwsSyncClientBuilder<AWSCodeCommitClientBuilder, AWSCodeCommit> {

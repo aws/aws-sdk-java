@@ -72,7 +72,7 @@ public abstract class PaginatedList<T> implements List<T> {
     /** Lazily loaded next results waiting to be added into allResults */
     protected final List<T> nextResults = new LinkedList<T>();
     
-    /** The pagination loading strategy for this paginated list **/
+    /** The pagination loading strategy for this paginated list */
     private final PaginationLoadingStrategy paginationLoadingStrategy;
     
     /** 
